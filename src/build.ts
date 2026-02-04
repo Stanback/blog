@@ -179,6 +179,9 @@ async function parseContent(items: ValidatedContentItem[]): Promise<Content[]> {
 			case 'skills':
 				content = { ...baseContent, type: 'skills' };
 				break;
+			default:
+				// book and chapter types are handled separately by collectBooks
+				throw new Error(`Unexpected content type: ${item.type}`);
 		}
 
 		results.push(content);
