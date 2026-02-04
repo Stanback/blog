@@ -40,7 +40,7 @@ export const strings = {
 
 	// Footer
 	footer: {
-		tagline: 'Built slowly. No tracking.',
+		tagline: 'The workshop is open.',
 		privacy: 'No tracking. No popups. Just pages.',
 		links: {
 			rss: 'RSS',

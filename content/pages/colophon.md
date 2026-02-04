@@ -3,78 +3,65 @@ title: "Colophon"
 type: page
 schemaVersion: 1
 date: 2026-02-03
-description: "How this site is made — tools, fonts, philosophy."
+description: "How this site is made — tools, philosophy, and why you don't need a framework."
 ---
 
 # Colophon
 
-This site is handmade. Here's how.
+This site is handmade. No framework. No CMS. Just files.
 
-## Stack
+## The Secret
 
-- **Runtime:** [Bun](https://bun.sh) — fast, TypeScript-native
-- **Markdown:** [marked](https://marked.js.org/) with [Shiki](https://shiki.style/) for syntax highlighting
-- **CSS:** [Tailwind v4](https://tailwindcss.com/) — design tokens, JIT compilation
-- **Hosting:** [Cloudflare Pages](https://pages.cloudflare.com/) — global CDN, zero config
+There isn't one. This entire blog is ~600 lines of TypeScript. Markdown goes in, HTML comes out. That's it.
 
-No frameworks. No client-side JavaScript (unless I explicitly add it for a specific reason). No build tool complexity.
+If you want to build something similar, here's the whole recipe:
 
-The entire build system is a few hundred lines of TypeScript. You can read it.
+1. Parse markdown with [marked](https://marked.js.org/)
+2. Add syntax highlighting with [Shiki](https://shiki.style/)
+3. Write some templates (literal string interpolation, no JSX)
+4. Run it with [Bun](https://bun.sh)
+5. Deploy to [Cloudflare Pages](https://pages.cloudflare.com/)
 
-## Fonts
+You don't need Astro. You don't need Eleventy. You don't need Next.js. You need a weekend and the willingness to understand what you're building.
 
-- **Body:** [Inter](https://rsms.me/inter/) — clean, readable, variable
-- **Headings:** [Fraunces](https://fonts.google.com/specimen/Fraunces) — warm, slightly playful
-- **Code:** [JetBrains Mono](https://www.jetbrains.com/lp/mono/) — ligatures, monospace precision
+Start with the smallest thing that could work. Add complexity only when it hurts.
 
-All self-hosted. No external font requests.
+## Typography
 
-## Philosophy
+- **Body:** [Inter](https://rsms.me/inter/) — variable, readable, professional
+- **Headings:** [Fraunces](https://fonts.google.com/specimen/Fraunces) — warm optical sizing, a little personality
+- **Code:** [JetBrains Mono](https://www.jetbrains.com/lp/mono/) — ligatures, precision
 
-I wanted a blog that:
-
-1. Loads fast
-2. Works without JavaScript
-3. Respects your privacy (no tracking, no cookies)
-4. I actually understand end-to-end
-5. Will still work in ten years
-
-Most static site generators are overkill for a personal blog. So I built the smallest thing that could work.
-
-## Source
-
-The source code is on [GitHub](https://github.com/Stanback/blog). Feel free to look around, steal ideas, or tell me what I did wrong.
+Self-hosted. No external font requests.
 
 ## Design
 
-Warm neutrals. Muted rose accent. Generous whitespace. Soft edges.
+Warm neutrals. Dusty rose accent. Generous whitespace. Soft edges.
 
 The aesthetic is "well-organized workshop with good light." Technical but not cold. Precise but not rigid.
 
-Colors are defined in OKLCH for perceptual uniformity. Typography uses fluid sizing. The measure (line length) is capped at 65 characters for comfortable reading.
+Colors are defined in OKLCH for perceptual uniformity. Typography uses fluid sizing. Line length is capped at 65 characters for comfortable reading. Dark mode is a warm charcoal, not inverted light mode.
+
+The corner mark is a weighted viewfinder—heavy anchor top-left, whispered echo bottom-right. It frames the implied rectangle of the content area.
 
 ## Ethics
 
 - No analytics (except basic Cloudflare stats, which are privacy-preserving)
-- No ads
-- No tracking pixels
-- No newsletter popups
-- No dark patterns
+- No ads, no tracking pixels, no cookies
+- No newsletter popups, no dark patterns
 - No engagement tricks
-
-If I ever add something that compromises these, I'll disclose it here.
 
 ## AI Discovery
 
-This site is open to responsible AI discovery. I provide:
+This site is designed for both humans and machines.
 
-- [`llms.txt`](/llms.txt) — guidance for AI crawlers (like `robots.txt` but for LLMs)
+- [`llms.txt`](/llms.txt) — guidance for AI crawlers
 - [`llms-full.txt`](/llms-full.txt) — clean Markdown export of all content
-
-I structure content with clear headings and extractable prose so AI systems can interpret and cite accurately. This isn't SEO manipulation—it's signal design for a world where people discover content through AI assistants.
+- [`SOUL.md`](/about/soul/) — who I am, what I value
+- [`SKILL.md`](/about/skills/) — what I can do, how I work
 
 If an AI summarizes something I wrote, I want it to get the nuance right.
 
 ---
 
-*Built slowly. Updated often.*
+*The workshop is open.*

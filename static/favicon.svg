@@ -1,5 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- STANBACK Corner Mark - Simple L-bracket -->
-  <path d="M 6 6 V 20" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
-  <path d="M 6 6 H 20" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+  <!-- Atelier Mark - Weighted viewfinder favicon -->
+  <!-- TL anchor: heavy, black -->
+  <path d="M 6 6 V 18" stroke="#1a1a1a" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 6 6 H 18" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- BR whisper: warm dusty rose -->
+  <path d="M 26 26 V 19" stroke="#b8968a" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 26 26 H 19" stroke="#b8968a" stroke-width="2" stroke-linecap="round"/>
 </svg>

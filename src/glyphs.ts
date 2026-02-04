@@ -17,26 +17,26 @@
  */
 
 // G0 — Full Mark (32×32) - Two-corner weighted viewfinder
-// TL: heavy anchor, BR: delicate whisper with rose accent
+// TL: heavy anchor, BR: delicate whisper with warm dusty rose accent
 // Use cases: header lockup, favicon, thesis decoration
 export const glyphMarkFull = `<svg class="glyph glyph-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <!-- TL anchor -->
-  <path d="M 6 6 V 18" stroke="var(--logo-ink, currentColor)" stroke-width="3" stroke-linecap="round"/>
-  <path d="M 6 6 H 18" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round"/>
-  <!-- BR whisper -->
-  <path d="M 26 26 V 20" stroke="var(--logo-ink, currentColor)" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M 26 26 H 20" stroke="var(--logo-accent, #9d6b6b)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 6 6 V 18" stroke="var(--logo-ink, currentColor)" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 6 6 H 18" stroke="var(--logo-ink, currentColor)" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- BR whisper - warm dusty rose -->
+  <path d="M 26 26 V 19" stroke="var(--logo-accent, #b8968a)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 26 26 H 19" stroke="var(--logo-accent, #b8968a)" stroke-width="2" stroke-linecap="round"/>
 </svg>`;
 
 // G0 — Full Mark (48×48, scaled for larger contexts)
 // Used in thesis/hero sections
 export const glyphMarkFullLarge = `<svg class="glyph glyph-mark glyph-mark--large" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <!-- TL anchor -->
-  <path d="M 8 8 V 26" stroke="var(--logo-ink, currentColor)" stroke-width="4" stroke-linecap="round"/>
-  <path d="M 8 8 H 26" stroke="var(--logo-ink, currentColor)" stroke-width="3" stroke-linecap="round"/>
-  <!-- BR whisper -->
-  <path d="M 40 40 V 30" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round"/>
-  <path d="M 40 40 H 30" stroke="var(--logo-accent, #9d6b6b)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 8 8 V 28" stroke="var(--logo-ink, currentColor)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M 8 8 H 28" stroke="var(--logo-ink, currentColor)" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- BR whisper - warm dusty rose -->
+  <path d="M 40 40 V 28" stroke="var(--logo-accent, #b8968a)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 40 40 H 28" stroke="var(--logo-accent, #b8968a)" stroke-width="2.5" stroke-linecap="round"/>
 </svg>`;
 
 // G1 — Corner Anchor, Top-Left (smaller, for modules)
@@ -53,9 +53,9 @@ export const glyphCornerBR = `<svg class="glyph glyph-corner glyph-corner--br" v
 </svg>`;
 
 // G3 — Accent Dash (horizontal, for list items)
-// The rose accent dash used before featured post titles
+// The warm dusty rose accent dash used before featured post titles
 export const glyphAccentDash = `<svg class="glyph glyph-accent" viewBox="0 0 12 4" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 1 2 H 11" stroke="var(--logo-accent, #C45A8A)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 1 2 H 11" stroke="var(--logo-accent, #b8968a)" stroke-width="2" stroke-linecap="round"/>
 </svg>`;
 
 // Theme toggle icons
