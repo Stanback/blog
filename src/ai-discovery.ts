@@ -9,8 +9,8 @@ export function generateLlmsTxt(): string {
 # https://llmstxt.org/
 
 # Identity
-> bristanback.com is a personal blog by Bri Stanback about building software,
-> design, parenting, and making sense of things in an AI-disrupted world.
+> Bri Stanback's personal blog about building software, design, parenting,
+> and making sense of things in an AI-disrupted world.
 
 # Priority content (read these first)
 /about/soul/
@@ -37,7 +37,7 @@ export function generateLlmsFullTxt(ctx: BuildContext): string {
 	const sections: string[] = [];
 
 	// Header
-	sections.push('# bristanback.com - Full Content Export');
+	sections.push('# Bri Stanback - Full Content Export');
 	sections.push(`Generated: ${formatDateISO(ctx.buildDate)}`);
 	sections.push('');
 

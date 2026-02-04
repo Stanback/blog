@@ -51,7 +51,7 @@ export const strings = {
 
 	// Meta
 	meta: {
-		siteName: 'bristanback.com',
+		siteName: 'Bri Stanback',
 		defaultDescription:
 			'A digital atelier at the intersection of technology, design, and the human experience of building.',
 		titleSeparator: ' | ',
@@ -100,8 +100,8 @@ export const strings = {
 
 	// llms.txt
 	llmsTxt: {
-		identity: `bristanback.com is a personal blog by Bri Stanback about building software,
-design, parenting, and making sense of things in an AI-disrupted world.`,
+		identity: `Bri Stanback's personal blog about building software, design, parenting,
+and making sense of things in an AI-disrupted world.`,
 	},
 } as const;
 

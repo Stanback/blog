@@ -2,7 +2,7 @@ import type { SiteConfig } from './types.js';
 
 export const config: SiteConfig = {
 	// Identity
-	title: 'bristanback.com',
+	title: 'Bri Stanback',
 	description:
 		'A digital atelier at the intersection of technology, design, and the human experience of building.',
 	url: 'https://bristanback.com',

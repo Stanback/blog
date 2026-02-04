@@ -1,7 +1,7 @@
 // Render content to HTML and write to dist/
 
 import { config } from './config.js';
-import { glyphCornerTL, glyphMarkFull, glyphMarkFullLarge, iconMoon, iconSun } from './glyphs.js';
+import { glyphCornerBR, glyphCornerTL, glyphMarkFull, iconMoon, iconSun } from './glyphs.js';
 import { strings } from './strings.js';
 import type {
 	Book,
@@ -164,7 +164,8 @@ function baseTemplate(options: {
       </label>
       <div class="nav-menu">
         <ul>
-          <li><a href="/posts/">Posts</a></li>
+          <li><a href="/posts/">Writing</a></li>
+          <li><a href="/books/">Library</a></li>
           <li><a href="/notes/">Notes</a></li>
           <li><a href="/photos/">Photos</a></li>
           <li><a href="/about/">About</a></li>
@@ -364,36 +365,64 @@ function renderSkills(skills: Skills, ctx: BuildContext): string {
 	});
 }
 
-// Render posts index
+// Render posts index — editorial archive layout
 function renderPostsIndex(posts: Post[], ctx: BuildContext): string {
 	const publishedPosts = posts
 		.filter((p) => !p.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime());
 
+	// Group posts by year
+	const postsByYear = publishedPosts.reduce(
+		(acc, post) => {
+			const year = post.date.getFullYear();
+			if (!acc[year]) acc[year] = [];
+			acc[year].push(post);
+			return acc;
+		},
+		{} as Record<number, Post[]>,
+	);
+
+	const years = Object.keys(postsByYear)
+		.map(Number)
+		.sort((a, b) => b - a);
+
 	const content = `
-    <h1>${strings.lists.posts}</h1>
+    <header class="archive-header">
+      <h1>Writing</h1>
+      <p class="archive-intro">Long-form thinking on building, design, and the things that matter.</p>
+    </header>
     ${
 			publishedPosts.length > 0
 				? `
-    <ul class="post-list">
-      ${publishedPosts
+    <div class="archive-grid">
+      ${years
 				.map(
-					(post) => `
-      <li>
-        <article>
-          <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
-          <h2><a href="${getUrl(post)}">${post.title}</a></h2>
-          <p>${post.description}</p>
-        </article>
-      </li>`,
+					(year) => `
+        <section class="archive-year">
+          <h2 class="year-heading">${year}</h2>
+          <ul class="archive-list">
+            ${postsByYear[year]
+							.map(
+								(post) => `
+            <li class="archive-item">
+              <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
+              <a href="${getUrl(post)}" class="archive-link">
+                <span class="archive-title">${post.title}</span>
+                <span class="archive-desc">${post.description}</span>
+              </a>
+            </li>`,
+							)
+							.join('')}
+          </ul>
+        </section>`,
 				)
 				.join('')}
-    </ul>`
+    </div>`
 				: `<p class="empty-state">${strings.empty.posts}</p>`
 		}`;
 
 	return baseTemplate({
-		title: strings.lists.posts,
+		title: 'Writing',
 		description: 'Long-form writing about building, design, and life.',
 		url: '/posts/',
 		content,
@@ -470,10 +499,15 @@ function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 	});
 }
 
-// Larger atelier mark for hero (G0 - Full Mark, 48x48)
-const heroMark = glyphMarkFullLarge.replace(
-	'class="glyph glyph-mark glyph-mark--large"',
-	'class="atelier-mark"',
+// Corner marks for thesis bounding box
+const thesisCornerTL = glyphCornerTL.replace(
+	'class="glyph glyph-corner glyph-corner--tl"',
+	'class="thesis-corner thesis-corner-tl"',
+);
+
+const thesisCornerBR = glyphCornerBR.replace(
+	'class="glyph glyph-corner glyph-corner--br"',
+	'class="thesis-corner thesis-corner-br"',
 );
 
 // Corner mark for "Start here" module header
@@ -543,11 +577,14 @@ function renderHome(ctx: BuildContext): string {
 
 	const content = `
     <section class="thesis">
-      <div class="thesis-decoration" aria-hidden="true">
-        ${heroMark}
+      <div class="thesis-bound" aria-hidden="true">
+        ${thesisCornerTL}
+        ${thesisCornerBR}
       </div>
-      <h1 class="thesis-headline">${strings.thesis.headline}</h1>
-      <p class="thesis-body">${strings.thesis.body}</p>
+      <div class="thesis-content">
+        <h1 class="thesis-headline">${strings.thesis.headline}</h1>
+        <p class="thesis-body">${strings.thesis.body}</p>
+      </div>
     </section>
 
     ${modulesSection}`;
@@ -757,31 +794,47 @@ function renderChapter(chapter: Chapter, book: Book, ctx: BuildContext): string 
 	});
 }
 
-// Render books index page (list all books)
+// Render books index page — editorial library layout
 function renderBooksIndex(books: Book[], ctx: BuildContext): string {
 	const content = `
-    <article class="books-index">
-      <h1>Books</h1>
-      <ul class="book-list">
-        ${books
-					.map(
-						(book) => `
-          <li>
-            <a href="${getBookUrl(book)}">
-              <h2>${book.title}</h2>
-              <p class="book-author">by ${book.author}</p>
-              <p>${book.description}</p>
-              <p class="book-meta">${book.chapters.length} chapters ${book.status === 'in-progress' ? '· 📝 In Progress' : ''}</p>
-            </a>
-          </li>`,
-					)
-					.join('')}
-      </ul>
-    </article>`;
+    <header class="archive-header">
+      <h1>Library</h1>
+      <p class="archive-intro">Longer-form work. Novels, collections, and things that needed more space.</p>
+    </header>
+    ${
+			books.length > 0
+				? `
+    <div class="books-grid">
+      ${books
+				.map((book) => {
+					const coverImage = book.coverImage || getBookCoverImage(book);
+					const mainChapters = book.chapters.filter((ch) => ch.chapterNumber > 0);
+					const totalWords = mainChapters.reduce((sum, ch) => sum + (ch.wordCount || 0), 0);
+					return `
+        <article class="book-card">
+          <a href="${getBookUrl(book)}" class="book-card-link">
+            ${coverImage ? `<figure class="book-card-cover"><img src="${coverImage}" alt="Cover of ${book.title}" loading="lazy"/></figure>` : ''}
+            <div class="book-card-info">
+              <h2 class="book-card-title">${book.title}</h2>
+              <p class="book-card-author">by ${book.author}</p>
+              ${book.genre ? `<p class="book-card-genre">${book.genre}</p>` : ''}
+              <p class="book-card-desc">${book.description}</p>
+              <p class="book-card-meta">
+                ${mainChapters.length} chapters · ${totalWords.toLocaleString()} words
+                ${book.status === 'in-progress' ? ' · <span class="book-status-badge">In Progress</span>' : ''}
+              </p>
+            </div>
+          </a>
+        </article>`;
+				})
+				.join('')}
+    </div>`
+				: `<p class="empty-state">No books yet. Check back soon.</p>`
+		}`;
 
 	return baseTemplate({
-		title: 'Books',
-		description: 'Long-form writing and novels',
+		title: 'Library',
+		description: 'Novels, collections, and longer-form writing.',
 		url: '/books/',
 		content,
 		cssFilename: ctx.cssFilename,
@@ -864,7 +917,10 @@ export function renderSite(ctx: BuildContext): RenderOutput[] {
 		output.push({ path: 'about/skills/index.html', content: renderSkills(ctx.skills, ctx) });
 	}
 
-	// Books (unlisted - accessible by direct URL only, like drafts)
+	// Books index and individual book pages
+	if (ctx.books.length > 0) {
+		output.push({ path: 'books/index.html', content: renderBooksIndex(ctx.books, ctx) });
+	}
 	for (const book of ctx.books) {
 		output.push({ path: `books/${book.slug}/index.html`, content: renderBook(book, ctx) });
 		for (const chapter of book.chapters) {

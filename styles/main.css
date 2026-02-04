@@ -413,21 +413,49 @@ footer .separator {
    THESIS SECTION — Homepage hero
    ═══════════════════════════════════════════════════════════════════════════ */
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   THESIS — Logo-bounded hero statement
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 .thesis {
-	text-align: left;
-	padding: var(--space-8) 0 var(--space-12);
-	margin-bottom: var(--space-8);
 	position: relative;
+	padding: var(--space-12) 0 var(--space-16);
+	margin-bottom: var(--space-8);
 }
 
-.thesis-decoration {
-	margin-bottom: var(--space-4);
+/* The bounding box container — positions the corner marks */
+.thesis-bound {
+	position: absolute;
+	inset: var(--space-8) 0;
+	max-width: 480px;
+	pointer-events: none;
 }
 
-.thesis-decoration .atelier-mark {
-	width: 40px;
-	height: 40px;
-	opacity: 0.9;
+/* Corner marks positioned absolutely */
+.thesis-corner {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	opacity: 0.85;
+}
+
+.thesis-corner-tl {
+	top: 0;
+	left: 0;
+}
+
+.thesis-corner-br {
+	bottom: 0;
+	right: 0;
+	/* The BR corner uses accent color via CSS vars */
+	--logo-ink: var(--color-accent-500);
+}
+
+/* Content sits inside the visual bounding box */
+.thesis-content {
+	position: relative;
+	padding: var(--space-6) var(--space-8);
+	max-width: 480px;
 }
 
 .thesis-headline {
@@ -438,15 +466,37 @@ footer .separator {
 	margin: 0 0 var(--space-4);
 	letter-spacing: var(--tracking-tight);
 	line-height: var(--leading-tight);
-	max-width: var(--measure-narrow);
 }
 
 .thesis-body {
 	font-size: var(--font-size-lg);
 	color: var(--color-text-secondary);
-	max-width: var(--measure-narrow);
 	margin: 0;
 	line-height: var(--leading-relaxed);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+	.thesis {
+		padding: var(--space-8) 0 var(--space-12);
+	}
+
+	.thesis-bound {
+		inset: var(--space-4) 0;
+	}
+
+	.thesis-content {
+		padding: var(--space-4) var(--space-6);
+	}
+
+	.thesis-corner {
+		width: 20px;
+		height: 20px;
+	}
+
+	.thesis-headline {
+		font-size: var(--font-size-3xl);
+	}
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -891,6 +941,236 @@ footer .separator {
 /* Photo thumbnail link */
 .photo-thumb {
 	display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ARCHIVE PAGES — Posts & Books index with editorial treatment
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.archive-header {
+	margin-bottom: var(--space-8);
+	padding-bottom: var(--space-6);
+	border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.archive-header h1 {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-3xl);
+	font-weight: 500;
+	margin: 0 0 var(--space-3);
+	letter-spacing: var(--tracking-tight);
+}
+
+.archive-intro {
+	font-size: var(--font-size-lg);
+	color: var(--color-text-secondary);
+	margin: 0;
+	max-width: var(--measure-normal);
+	line-height: var(--leading-relaxed);
+}
+
+/* Year-grouped archive grid */
+.archive-grid {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-12);
+}
+
+.archive-year {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: var(--space-8);
+	align-items: start;
+}
+
+.year-heading {
+	font-family: var(--font-mono);
+	font-size: var(--font-size-sm);
+	font-weight: 400;
+	color: var(--color-text-muted);
+	margin: 0;
+	padding-top: var(--space-1);
+	position: sticky;
+	top: var(--space-4);
+	letter-spacing: var(--tracking-wide);
+}
+
+.archive-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-6);
+}
+
+.archive-item {
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	gap: var(--space-4);
+	align-items: start;
+}
+
+.archive-item time {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	padding-top: 0.15em;
+}
+
+.archive-link {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+	text-decoration: none;
+	transition: transform var(--transition-fast);
+}
+
+.archive-link:hover {
+	transform: translateX(4px);
+}
+
+.archive-title {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-lg);
+	font-weight: 500;
+	color: var(--color-text-primary);
+	line-height: var(--leading-snug);
+	transition: color var(--transition-fast);
+}
+
+.archive-link:hover .archive-title {
+	color: var(--color-accent-500);
+}
+
+.archive-desc {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	line-height: var(--leading-normal);
+}
+
+/* Mobile: stack layout */
+@media (max-width: 640px) {
+	.archive-year {
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+	}
+
+	.year-heading {
+		position: static;
+		font-size: var(--font-size-base);
+		padding-bottom: var(--space-2);
+		border-bottom: 1px solid var(--color-border-subtle);
+	}
+
+	.archive-item {
+		grid-template-columns: 1fr;
+		gap: var(--space-1);
+	}
+
+	.archive-item time {
+		font-size: var(--font-size-xs);
+	}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BOOKS INDEX — Library grid
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.books-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	gap: var(--space-8);
+}
+
+.book-card {
+	background: var(--color-bg-muted);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	transition: background var(--transition-normal), transform var(--transition-fast);
+}
+
+.book-card:hover {
+	transform: translateY(-2px);
+}
+
+.book-card-link {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+}
+
+.book-card-cover {
+	margin: 0;
+	aspect-ratio: 3/2;
+	overflow: hidden;
+}
+
+.book-card-cover img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform var(--transition-normal);
+}
+
+.book-card:hover .book-card-cover img {
+	transform: scale(1.02);
+}
+
+.book-card-info {
+	padding: var(--space-6);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+}
+
+.book-card-title {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-xl);
+	font-weight: 500;
+	color: var(--color-text-primary);
+	margin: 0;
+	line-height: var(--leading-snug);
+	transition: color var(--transition-fast);
+}
+
+.book-card:hover .book-card-title {
+	color: var(--color-accent-500);
+}
+
+.book-card-author {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	margin: 0;
+}
+
+.book-card-genre {
+	font-size: var(--font-size-xs);
+	color: var(--color-accent-500);
+	text-transform: uppercase;
+	letter-spacing: var(--tracking-wider);
+	margin: 0;
+}
+
+.book-card-desc {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	margin: var(--space-2) 0 0;
+	line-height: var(--leading-normal);
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.book-card-meta {
+	font-size: var(--font-size-xs);
+	color: var(--color-text-muted);
+	margin: var(--space-2) 0 0;
+}
+
+.book-status-badge {
+	color: var(--color-accent-500);
+	font-weight: 500;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
