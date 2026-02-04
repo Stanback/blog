@@ -4,6 +4,7 @@ type: soul
 schemaVersion: 1
 date: 2026-02-03
 description: "Identity manifesto — who this blog is, what it values, and how it shows up."
+draft: true
 ---
 
 # Soul

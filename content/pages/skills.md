@@ -4,6 +4,7 @@ type: skills
 schemaVersion: 1
 date: 2026-02-03
 description: "Capabilities and methods — not what I've done, but how I approach building."
+draft: true
 ---
 
 # Skills
