@@ -186,9 +186,10 @@ function baseTemplate(options: {
 // Render single post
 function renderPost(post: Post, ctx: BuildContext): string {
 	// Build author line
-	const authorLine = post.coAuthors && post.coAuthors.length > 0
-		? `<p class="byline">By ${config.author.name} ${post.coAuthors.map(ca => `& ${ca.emoji || ''} ${ca.name}`.trim()).join(' ')}</p>`
-		: `<p class="byline">By ${config.author.name}</p>`;
+	const authorLine =
+		post.coAuthors && post.coAuthors.length > 0
+			? `<p class="byline">By ${config.author.name} ${post.coAuthors.map((ca) => `& ${ca.emoji || ''} ${ca.name}`.trim()).join(' ')}</p>`
+			: `<p class="byline">By ${config.author.name}</p>`;
 
 	const content = `
     <article class="prose">
