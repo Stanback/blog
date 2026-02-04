@@ -1,0 +1,975 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   MAIN STYLES — bristanback.com
+   ═══════════════════════════════════════════════════════════════════════════
+
+   Tailwind v4 + custom prose and component styles.
+   Design tokens are imported from tokens.css.
+
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import "./fonts.css";
+@import "./tokens.css";
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TAILWIND THEME MAPPING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@theme {
+	/* Colors */
+	--color-void: var(--color-void);
+	--color-ink: var(--color-ink);
+	--color-charcoal: var(--color-charcoal);
+	--color-stone: var(--color-stone);
+	--color-sand: var(--color-sand);
+	--color-cream: var(--color-cream);
+	--color-paper: var(--color-paper);
+	--color-white: var(--color-white);
+
+	--color-accent-100: var(--color-accent-100);
+	--color-accent-200: var(--color-accent-200);
+	--color-accent-300: var(--color-accent-300);
+	--color-accent-400: var(--color-accent-400);
+	--color-accent-500: var(--color-accent-500);
+	--color-accent-600: var(--color-accent-600);
+	--color-accent-700: var(--color-accent-700);
+
+	/* Semantic colors */
+	--color-text: var(--color-text);
+	--color-text-muted: var(--color-text-muted);
+	--color-bg: var(--color-bg);
+	--color-link: var(--color-link);
+	--color-link-hover: var(--color-link-hover);
+	--color-code-bg: var(--color-code-bg);
+	--color-code-text: var(--color-code-text);
+
+	/* Font families */
+	--font-sans: var(--font-sans);
+	--font-serif: var(--font-serif);
+	--font-mono: var(--font-mono);
+
+	/* Font sizes */
+	--font-size-xs: var(--font-size-xs);
+	--font-size-sm: var(--font-size-sm);
+	--font-size-base: var(--font-size-base);
+	--font-size-lg: var(--font-size-lg);
+	--font-size-xl: var(--font-size-xl);
+	--font-size-2xl: var(--font-size-2xl);
+	--font-size-3xl: var(--font-size-3xl);
+	--font-size-4xl: var(--font-size-4xl);
+
+	/* Line heights */
+	--leading-tight: var(--leading-tight);
+	--leading-snug: var(--leading-snug);
+	--leading-normal: var(--leading-normal);
+	--leading-relaxed: var(--leading-relaxed);
+
+	/* Spacing */
+	--spacing-1: var(--space-1);
+	--spacing-2: var(--space-2);
+	--spacing-3: var(--space-3);
+	--spacing-4: var(--space-4);
+	--spacing-6: var(--space-6);
+	--spacing-8: var(--space-8);
+	--spacing-12: var(--space-12);
+	--spacing-16: var(--space-16);
+	--spacing-24: var(--space-24);
+	--spacing-32: var(--space-32);
+
+	/* Border radius */
+	--radius-sm: var(--radius-sm);
+	--radius-md: var(--radius-md);
+	--radius-lg: var(--radius-lg);
+
+	/* Shadows */
+	--shadow-sm: var(--shadow-sm);
+	--shadow-md: var(--shadow-md);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+html {
+	font-family: var(--font-sans);
+	font-size: 100%;
+	line-height: var(--leading-normal);
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+header {
+	padding: var(--space-4) var(--space-page-margin);
+	border-bottom: 1px solid var(--color-sand);
+}
+
+header nav {
+	max-width: var(--measure-wide);
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--space-4);
+}
+
+header .site-title {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-lg);
+	font-weight: 600;
+	color: var(--color-ink);
+	text-decoration: none;
+}
+
+header .site-title:hover {
+	color: var(--color-accent-600);
+}
+
+header nav ul {
+	display: flex;
+	gap: var(--space-6);
+	list-style: none;
+}
+
+header nav a {
+	color: var(--color-stone);
+	text-decoration: none;
+	font-size: var(--font-size-sm);
+	transition: color 0.15s ease;
+}
+
+header nav a:hover {
+	color: var(--color-ink);
+}
+
+main {
+	flex: 1;
+	padding: var(--space-12) var(--space-page-margin);
+}
+
+main > * {
+	max-width: var(--measure-normal);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer {
+	padding: var(--space-8) var(--space-page-margin);
+	border-top: 1px solid var(--color-sand);
+	text-align: center;
+	font-size: var(--font-size-sm);
+	color: var(--color-stone);
+}
+
+footer p {
+	margin-bottom: var(--space-2);
+}
+
+footer p:last-child {
+	margin-bottom: 0;
+}
+
+footer a {
+	color: var(--color-stone);
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: var(--color-ink);
+	text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HOME PAGE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.hero {
+	text-align: center;
+	padding: var(--space-16) 0;
+}
+
+.hero h1 {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-4xl);
+	font-weight: 600;
+	color: var(--color-ink);
+	margin-bottom: var(--space-4);
+}
+
+.hero p {
+	font-size: var(--font-size-lg);
+	color: var(--color-stone);
+	max-width: var(--measure-narrow);
+	margin: 0 auto;
+}
+
+.recent {
+	margin-top: var(--space-12);
+}
+
+.recent h2 {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-xl);
+	font-weight: 600;
+	color: var(--color-ink);
+	margin-bottom: var(--space-6);
+}
+
+.recent > p {
+	margin-top: var(--space-4);
+}
+
+.recent > p a {
+	color: var(--color-link);
+	text-decoration: none;
+}
+
+.recent > p a:hover {
+	text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   POST / NOTE / PHOTO LISTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.post-list,
+.note-list,
+.photo-list {
+	list-style: none;
+	padding: 0;
+}
+
+.post-list li,
+.note-list li {
+	padding: var(--space-4) 0;
+	border-bottom: 1px solid var(--color-sand);
+}
+
+.post-list li:first-child,
+.note-list li:first-child {
+	padding-top: 0;
+}
+
+.post-list li:last-child,
+.note-list li:last-child {
+	border-bottom: none;
+}
+
+.post-list article,
+.note-list article {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+}
+
+.post-list time,
+.note-list time {
+	font-size: var(--font-size-sm);
+	color: var(--color-stone);
+}
+
+.post-list h3,
+.note-list h3 {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-lg);
+	font-weight: 500;
+	margin: 0;
+}
+
+.post-list h3 a,
+.note-list h3 a {
+	color: var(--color-ink);
+	text-decoration: none;
+}
+
+.post-list h3 a:hover,
+.note-list h3 a:hover {
+	color: var(--color-accent-600);
+}
+
+.post-list .description {
+	font-size: var(--font-size-sm);
+	color: var(--color-stone);
+	margin-top: var(--space-1);
+}
+
+/* Photo grid */
+.photo-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: var(--space-4);
+}
+
+.photo-list li {
+	padding: 0;
+	border: none;
+}
+
+.photo-list img {
+	width: 100%;
+	aspect-ratio: 1;
+	object-fit: cover;
+	border-radius: var(--radius-md);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SINGLE POST / NOTE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+article.prose > header {
+	margin-bottom: var(--space-8);
+	padding-bottom: var(--space-6);
+	border-bottom: 1px solid var(--color-sand);
+}
+
+article.prose > header time {
+	font-size: var(--font-size-sm);
+	color: var(--color-stone);
+	display: block;
+	margin-bottom: var(--space-2);
+}
+
+article.prose > header h1 {
+	font-size: var(--font-size-3xl);
+	margin: 0;
+}
+
+article.prose > header .reading-time {
+	font-size: var(--font-size-sm);
+	color: var(--color-stone);
+	margin-top: var(--space-2);
+	display: block;
+}
+
+article.prose > footer {
+	margin-top: var(--space-12);
+	padding-top: var(--space-6);
+	border-top: 1px solid var(--color-sand);
+}
+
+article.prose > footer .tags {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	gap: var(--space-2);
+	flex-wrap: wrap;
+}
+
+article.prose > footer .tags a {
+	font-size: var(--font-size-sm);
+	color: var(--color-accent-600);
+	text-decoration: none;
+	background: var(--color-accent-100);
+	padding: var(--space-1) var(--space-2);
+	border-radius: var(--radius-sm);
+}
+
+article.prose > footer .tags a:hover {
+	background: var(--color-accent-200);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SOUL / SKILLS PAGES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+article.soul,
+article.skills {
+	max-width: var(--measure-normal);
+}
+
+article.soul h1,
+article.skills h1 {
+	font-size: var(--font-size-4xl);
+	text-align: center;
+	margin-bottom: var(--space-12);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIST PAGE HEADERS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.list-header {
+	margin-bottom: var(--space-8);
+}
+
+.list-header h1 {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-3xl);
+	font-weight: 600;
+	color: var(--color-ink);
+	margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   404 PAGE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.not-found {
+	text-align: center;
+	padding: var(--space-16) 0;
+}
+
+.not-found h1 {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-4xl);
+	font-weight: 600;
+	color: var(--color-ink);
+	margin-bottom: var(--space-4);
+}
+
+.not-found p {
+	font-size: var(--font-size-lg);
+	color: var(--color-stone);
+	margin-bottom: var(--space-6);
+}
+
+.not-found a {
+	color: var(--color-link);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EMPTY STATES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.empty-state {
+	text-align: center;
+	padding: var(--space-12) 0;
+	color: var(--color-stone);
+	font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SKIP LINK
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.skip-link {
+	position: absolute;
+	top: -100%;
+	left: var(--space-4);
+	padding: var(--space-2) var(--space-4);
+	background: var(--color-ink);
+	color: var(--color-paper);
+	border-radius: var(--radius-sm);
+	z-index: 100;
+	font-size: var(--font-size-sm);
+	font-weight: 500;
+	text-decoration: none;
+	transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+	top: var(--space-4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FOCUS STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:focus-visible {
+	outline: 2px solid var(--color-accent-500);
+	outline-offset: 2px;
+}
+
+/* Remove default outline when :focus-visible applies */
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROSE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.prose {
+	max-width: var(--measure-normal);
+	font-size: var(--font-size-base);
+	line-height: var(--leading-normal);
+	color: var(--color-text);
+}
+
+/* Headings */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+	font-family: var(--font-serif);
+	font-weight: 600;
+	line-height: var(--leading-tight);
+	color: var(--color-ink);
+}
+
+.prose h1 {
+	font-size: var(--font-size-3xl);
+	margin-top: var(--space-16);
+	margin-bottom: var(--space-6);
+}
+
+.prose h2 {
+	font-size: var(--font-size-2xl);
+	margin-top: var(--space-12);
+	margin-bottom: var(--space-4);
+}
+
+.prose h3 {
+	font-size: var(--font-size-xl);
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-3);
+}
+
+.prose h4 {
+	font-size: var(--font-size-lg);
+	margin-top: var(--space-6);
+	margin-bottom: var(--space-2);
+}
+
+/* First heading after title shouldn't have excessive top margin */
+.prose > h1:first-child,
+.prose > h2:first-child,
+.prose > h3:first-child,
+.prose > h4:first-child {
+	margin-top: 0;
+}
+
+/* Paragraphs */
+.prose p {
+	margin-bottom: var(--space-6);
+}
+
+/* Links */
+.prose a {
+	color: var(--color-link);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	text-decoration-thickness: 1px;
+	transition: color 0.15s ease;
+}
+
+.prose a:hover {
+	color: var(--color-link-hover);
+}
+
+/* Lists */
+.prose ul,
+.prose ol {
+	margin-bottom: var(--space-6);
+	padding-left: var(--space-6);
+}
+
+.prose ul {
+	list-style-type: disc;
+}
+
+.prose ol {
+	list-style-type: decimal;
+}
+
+.prose li {
+	margin-bottom: var(--space-2);
+}
+
+.prose li > ul,
+.prose li > ol {
+	margin-top: var(--space-2);
+	margin-bottom: 0;
+}
+
+/* Blockquotes */
+.prose blockquote {
+	border-left: 3px solid var(--color-accent-300);
+	padding-left: var(--space-4);
+	margin: var(--space-6) 0;
+	font-style: italic;
+	color: var(--color-stone);
+}
+
+.prose blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* Inline code */
+.prose code {
+	font-family: var(--font-mono);
+	font-size: 0.9em;
+	background: var(--color-code-bg);
+	padding: 0.1em 0.3em;
+	border-radius: var(--radius-sm);
+}
+
+/* Code blocks */
+.prose pre {
+	background: var(--color-code-bg);
+	padding: var(--space-4);
+	border-radius: var(--radius-md);
+	overflow-x: auto;
+	margin: var(--space-6) 0;
+	font-size: var(--font-size-sm);
+	line-height: var(--leading-relaxed);
+}
+
+.prose pre code {
+	background: none;
+	padding: 0;
+	font-size: inherit;
+	border-radius: 0;
+}
+
+/* Shiki code block styles */
+.prose pre .shiki {
+	background: transparent !important;
+	padding: 0;
+	margin: 0;
+}
+
+.prose pre .shiki code {
+	display: block;
+	width: 100%;
+}
+
+/* Line numbers in code blocks (if used) */
+.prose pre .line-number {
+	color: var(--color-stone);
+	user-select: none;
+	margin-right: var(--space-4);
+	min-width: 2ch;
+	display: inline-block;
+	text-align: right;
+}
+
+/* Images */
+.prose img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--radius-md);
+	margin: var(--space-6) 0;
+}
+
+.prose figure {
+	margin: var(--space-8) 0;
+}
+
+.prose figcaption {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+	margin-top: var(--space-2);
+	text-align: center;
+}
+
+/* Horizontal rules */
+.prose hr {
+	border: none;
+	border-top: 1px solid var(--color-sand);
+	margin: var(--space-12) 0;
+}
+
+/* Tables */
+.prose table {
+	width: 100%;
+	margin: var(--space-6) 0;
+	border-collapse: collapse;
+	font-size: var(--font-size-sm);
+}
+
+.prose th,
+.prose td {
+	padding: var(--space-2) var(--space-3);
+	text-align: left;
+	border-bottom: 1px solid var(--color-sand);
+}
+
+.prose th {
+	font-weight: 600;
+	color: var(--color-ink);
+}
+
+.prose thead th {
+	border-bottom: 2px solid var(--color-stone);
+}
+
+/* Strong and emphasis */
+.prose strong {
+	font-weight: 600;
+	color: var(--color-ink);
+}
+
+.prose em {
+	font-style: italic;
+}
+
+/* Small text */
+.prose small {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+}
+
+/* Definition lists */
+.prose dl {
+	margin-bottom: var(--space-6);
+}
+
+.prose dt {
+	font-weight: 600;
+	color: var(--color-ink);
+	margin-top: var(--space-4);
+}
+
+.prose dd {
+	margin-left: var(--space-4);
+	margin-bottom: var(--space-2);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CALLOUT COMPONENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Base callout styles */
+.aside,
+.constraints,
+.lens {
+	padding: var(--space-4);
+	margin: var(--space-6) 0;
+	border-radius: var(--radius-md);
+	font-size: var(--font-size-sm);
+}
+
+.aside p:last-child,
+.constraints p:last-child,
+.lens p:last-child {
+	margin-bottom: 0;
+}
+
+/* Aside - general notes and tangential thoughts */
+.aside {
+	background: var(--color-cream);
+	border-left: 3px solid var(--color-sand);
+}
+
+/* Constraints - project limitations, trade-offs */
+.constraints {
+	background: var(--color-accent-100);
+	border-left: 3px solid var(--color-accent-300);
+}
+
+.constraints::before {
+	content: "Constraints";
+	display: block;
+	font-weight: 600;
+	font-size: var(--font-size-xs);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--color-accent-600);
+	margin-bottom: var(--space-2);
+}
+
+/* Lens - perspective shifts, framing devices */
+.lens {
+	background: var(--color-paper);
+	border: 1px solid var(--color-sand);
+	font-style: italic;
+	color: var(--color-stone);
+}
+
+.lens::before {
+	content: "Another way to see it";
+	display: block;
+	font-weight: 500;
+	font-style: normal;
+	font-size: var(--font-size-xs);
+	color: var(--color-stone);
+	margin-bottom: var(--space-2);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CODE BLOCK ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Language label for code blocks */
+.prose pre[data-language]::before {
+	content: attr(data-language);
+	display: block;
+	font-family: var(--font-sans);
+	font-size: var(--font-size-xs);
+	color: var(--color-stone);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: var(--space-2);
+	padding-bottom: var(--space-2);
+	border-bottom: 1px solid var(--color-sand);
+}
+
+/* Scrollbar styling for code blocks */
+.prose pre::-webkit-scrollbar {
+	height: 8px;
+}
+
+.prose pre::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.prose pre::-webkit-scrollbar-thumb {
+	background: var(--color-sand);
+	border-radius: var(--radius-sm);
+}
+
+.prose pre::-webkit-scrollbar-thumb:hover {
+	background: var(--color-stone);
+}
+
+/* Firefox scrollbar */
+.prose pre {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-sand) transparent;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+	/* Hide non-essential elements */
+	header,
+	footer,
+	nav,
+	.skip-link {
+		display: none !important;
+	}
+
+	/* Reset background and colors */
+	html {
+		background: white;
+	}
+
+	body {
+		color: black;
+	}
+
+	/* Prose adjustments */
+	.prose {
+		max-width: 100%;
+		font-size: 11pt;
+		line-height: 1.5;
+	}
+
+	.prose h1,
+	.prose h2,
+	.prose h3,
+	.prose h4 {
+		color: black;
+		page-break-after: avoid;
+	}
+
+	.prose h1 {
+		font-size: 24pt;
+	}
+
+	.prose h2 {
+		font-size: 18pt;
+	}
+
+	.prose h3 {
+		font-size: 14pt;
+	}
+
+	.prose h4 {
+		font-size: 12pt;
+	}
+
+	/* Links */
+	.prose a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.prose a[href^="http"]::after {
+		content: " (" attr(href) ")";
+		font-size: 0.8em;
+		color: #666;
+	}
+
+	/* Don't show URL for internal links */
+	.prose a[href^="/"]::after {
+		content: none;
+	}
+
+	/* Images */
+	.prose img {
+		max-width: 100%;
+		page-break-inside: avoid;
+	}
+
+	/* Code blocks */
+	.prose pre {
+		background: #f5f5f5 !important;
+		border: 1px solid #ddd;
+		page-break-inside: avoid;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+
+	.prose code {
+		background: #f5f5f5;
+	}
+
+	/* Blockquotes */
+	.prose blockquote {
+		border-left-color: #999;
+		color: #666;
+	}
+
+	/* Callouts */
+	.aside,
+	.constraints,
+	.lens {
+		background: #f9f9f9;
+		border-color: #ddd;
+		page-break-inside: avoid;
+	}
+
+	/* Page margins */
+	@page {
+		margin: 1in;
+	}
+
+	/* Avoid orphans and widows */
+	.prose p {
+		orphans: 3;
+		widows: 3;
+	}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Text utilities */
+.text-muted {
+	color: var(--color-text-muted);
+}
+
+/* Measure utilities */
+.measure-narrow {
+	max-width: var(--measure-narrow);
+}
+
+.measure-normal {
+	max-width: var(--measure-normal);
+}
+
+.measure-wide {
+	max-width: var(--measure-wide);
+}
+
+/* Page margin utility */
+.page-margin {
+	padding-left: var(--space-page-margin);
+	padding-right: var(--space-page-margin);
+}

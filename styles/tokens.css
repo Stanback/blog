@@ -1,0 +1,102 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   DESIGN TOKENS — bristanback.com
+   ═══════════════════════════════════════════════════════════════════════════
+
+   Single source of truth for all design values.
+   Tailwind imports these tokens via @theme in main.css.
+
+   Keywords: Technical, artful, soft edges, feminine, minimal, warm
+
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+	/* ═══════════════════════════════════════════════════════════════════════════
+     COLORS (OKLCH)
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+	/* Neutral palette - warm undertones */
+	--color-void: oklch(0.0 0.0 0); /* true black */
+	--color-ink: oklch(0.15 0.01 60); /* deep warm black */
+	--color-charcoal: oklch(0.25 0.01 60); /* dark warm gray */
+	--color-stone: oklch(0.45 0.01 60); /* medium warm gray */
+	--color-sand: oklch(0.7 0.02 60); /* light warm gray */
+	--color-cream: oklch(0.92 0.02 80); /* off-white warm */
+	--color-paper: oklch(0.97 0.01 90); /* near-white */
+	--color-white: oklch(1.0 0.0 0); /* pure white */
+
+	/* Accent - muted rose/mauve (soft, feminine, not girly) */
+	--color-accent-100: oklch(0.95 0.02 350);
+	--color-accent-200: oklch(0.88 0.04 350);
+	--color-accent-300: oklch(0.78 0.06 350);
+	--color-accent-400: oklch(0.68 0.08 350);
+	--color-accent-500: oklch(0.58 0.1 350); /* Primary */
+	--color-accent-600: oklch(0.48 0.1 350);
+	--color-accent-700: oklch(0.38 0.08 350);
+
+	/* Semantic */
+	--color-text: var(--color-ink);
+	--color-text-muted: var(--color-stone);
+	--color-bg: var(--color-paper);
+	--color-link: var(--color-accent-600);
+	--color-link-hover: var(--color-accent-700);
+	--color-code-bg: var(--color-cream);
+	--color-code-text: var(--color-ink);
+
+	/* ═══════════════════════════════════════════════════════════════════════════
+     TYPOGRAPHY
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+	/* Font families */
+	--font-sans: "Inter", system-ui, -apple-system, sans-serif;
+	--font-serif: "Fraunces", Georgia, serif;
+	--font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+	/* Type scale - fluid sizing */
+	--font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+	--font-size-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+	--font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+	--font-size-lg: clamp(1.125rem, 1rem + 0.6vw, 1.25rem);
+	--font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+	--font-size-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+	--font-size-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
+	--font-size-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3.5rem);
+
+	/* Line heights */
+	--leading-tight: 1.25;
+	--leading-snug: 1.375;
+	--leading-normal: 1.625; /* Optimal for body */
+	--leading-relaxed: 1.75;
+
+	/* Measure (line length) */
+	--measure-narrow: 45ch;
+	--measure-normal: 65ch;
+	--measure-wide: 80ch;
+
+	/* ═══════════════════════════════════════════════════════════════════════════
+     SPACING
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-6: 1.5rem;
+	--space-8: 2rem;
+	--space-12: 3rem;
+	--space-16: 4rem;
+	--space-24: 6rem;
+	--space-32: 8rem;
+
+	--space-page-margin: clamp(var(--space-4), 5vw, var(--space-8));
+
+	/* ═══════════════════════════════════════════════════════════════════════════
+     BORDERS & SHADOWS
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+	--radius-sm: 0.25rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 1rem;
+
+	--shadow-sm: 0 1px 2px oklch(0 0 0 / 0.05);
+	--shadow-md: 0 2px 4px oklch(0 0 0 / 0.1);
+}

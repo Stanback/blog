@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Corner Mark logo - two opposing corners suggesting framing/perspective -->
+  <path d="M4 4 L4 12 M4 4 L12 4" stroke="#1a1a1a"/>
+  <path d="M28 28 L28 20 M28 28 L20 28" stroke="#1a1a1a"/>
+</svg>

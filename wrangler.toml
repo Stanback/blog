@@ -1,0 +1,9 @@
+# Cloudflare Pages configuration for bristanback.com
+name = "stanback-blog"
+compatibility_date = "2026-02-04"
+
+# Pages-specific settings
+pages_build_output_dir = "dist"
+
+[vars]
+# Environment variables if needed

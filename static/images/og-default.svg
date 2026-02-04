@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf8f5"/>
+      <stop offset="100%" style="stop-color:#f0ebe3"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b85a3d"/>
+      <stop offset="100%" style="stop-color:#c9785f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative corner elements -->
+  <path d="M0 0 L120 0 L0 120 Z" fill="#b85a3d" opacity="0.1"/>
+  <path d="M1200 630 L1080 630 L1200 510 Z" fill="#b85a3d" opacity="0.1"/>
+
+  <!-- Decorative line -->
+  <rect x="100" y="280" width="80" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Title -->
+  <text x="100" y="350" font-family="Georgia, serif" font-size="72" font-weight="400" fill="#2d2926">
+    bristanback.com
+  </text>
+
+  <!-- Tagline -->
+  <text x="100" y="420" font-family="system-ui, sans-serif" font-size="28" fill="#5c534b" letter-spacing="0.5">
+    A digital atelier at the intersection of
+  </text>
+  <text x="100" y="460" font-family="system-ui, sans-serif" font-size="28" fill="#5c534b" letter-spacing="0.5">
+    technology, design, and the human experience
+  </text>
+
+  <!-- Author -->
+  <text x="100" y="550" font-family="system-ui, sans-serif" font-size="22" fill="#8a7f74">
+    by Bri Stanback
+  </text>
+
+  <!-- Small decorative dots -->
+  <circle cx="1050" cy="150" r="40" fill="#b85a3d" opacity="0.08"/>
+  <circle cx="1100" cy="200" r="25" fill="#b85a3d" opacity="0.06"/>
+</svg>

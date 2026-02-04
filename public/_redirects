@@ -1,0 +1,10 @@
+# Redirect www to apex
+https://www.bristanback.com/* https://bristanback.com/:splat 301
+
+# Redirect alternate domains to primary
+https://brianstanback.com/* https://bristanback.com/:splat 301
+https://www.brianstanback.com/* https://bristanback.com/:splat 301
+https://briannastanback.com/* https://bristanback.com/:splat 301
+https://www.briannastanback.com/* https://bristanback.com/:splat 301
+https://stanback.net/* https://bristanback.com/:splat 301
+https://www.stanback.net/* https://bristanback.com/:splat 301
