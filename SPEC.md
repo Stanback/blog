@@ -24,13 +24,14 @@
 10. [Homepage Architecture (The Thesis Pattern)](#10-homepage-architecture-the-thesis-pattern)
 11. [Design System](#11-design-system)
 12. [Logo Specification](#12-logo-specification)
-13. [SEO + Sharing](#13-seo--sharing)
-14. [Accessibility](#14-accessibility)
-15. [Security + Privacy](#15-security--privacy)
-16. [Deployment](#16-deployment)
-17. [Domain Strategy](#17-domain-strategy)
-18. [Implementation Roadmap](#18-implementation-roadmap)
-19. [Appendices](#appendices)
+13. [Glyph System (Atelier Mark Usage)](#13-glyph-system-atelier-mark-usage)
+14. [SEO + Sharing](#14-seo--sharing)
+15. [Accessibility](#15-accessibility)
+16. [Security + Privacy](#16-security--privacy)
+17. [Deployment](#17-deployment)
+18. [Domain Strategy](#18-domain-strategy)
+19. [Implementation Roadmap](#19-implementation-roadmap)
+20. [Appendices](#appendices)
 
 ---
 
@@ -1344,18 +1345,18 @@ Self-host fonts from `static/fonts/` to avoid third-party requests.
 
 ## 12. Logo Specification
 
-### The Atelier Mark
+### The Atelier Mark (v1)
 
-The logo is called the **Atelier Mark** — weighted viewfinder corners that suggest framing, perspective, and the act of seeing.
+The logo is called the **STANBACK Atelier Mark** — a woven corner system that suggests framing, craft, and layered attention.
 
 #### Concept
 
-- **Top-left corner:** Heavy anchor (thick vertical stroke, thinner horizontal arm)
-- **Bottom-right corner:** Delicate echo (thinner strokes, accent color on horizontal arm)
-- **Asymmetric weight:** Creates visual hierarchy and character
-- **Viewfinder metaphor:** Photography + framing + perspective
+- **Primary mark:** Two L-brackets at opposite corners (TL anchor, BR whisper)
+- **Woven inner thread:** An offset inner L at 45% opacity, creating depth
+- **Accent thread:** A short rose segment on the inner horizontal, the only color
+- **Unified stroke weight:** 2px throughout for cohesion
 
-The asymmetry is intentional — the heavy anchor draws the eye, the delicate echo completes the frame without competing.
+The layering creates visual depth without complexity. The accent is surgical—one small gesture of color.
 
 #### The 8 Logo Tests (All Pass)
 
@@ -1367,53 +1368,63 @@ The asymmetry is intentional — the heavy anchor draws the eye, the delicate ec
 | 04 Organic Form | No blobby shapes | ✓ Geometric L-shapes |
 | 05 Radial Symmetry | No aperture/blossom | ✓ Diagonal asymmetry |
 | 06 Screenshot Test | Recognizable at 200ms/32px | ✓ Bold, simple form |
-| 07 Material Clarity | Nameable in <3s | ✓ "Corner brackets" |
+| 07 Material Clarity | Nameable in <3s | ✓ "Woven corners" |
 | 08 Animation Test | Mechanical motion only | ✓ Simple transforms |
 
-#### SVG Implementation
+#### SVG Implementation (32×32)
 
 ```svg
-<svg viewBox="0 0 32 32" fill="none">
-  <!-- Top-left: heavy anchor -->
-  <path d="M5 5 L5 15" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-  <path d="M5 5 L15 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-  <!-- Bottom-right: delicate echo with accent -->
-  <path d="M27 27 L27 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M27 27 L21 27" stroke="var(--color-accent-500)" stroke-width="1.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Primary mark (ink) -->
+  <path
+    d="M 6 16 V 6 H 16
+       M 26 18 V 26 H 18"
+    stroke="var(--logo-ink, currentColor)"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Woven inner thread (subtle ink) -->
+  <path
+    d="M 8 14 V 8 H 14"
+    stroke="var(--logo-ink, currentColor)"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.45"
+  />
+  <!-- Single accent thread (rose) -->
+  <path
+    d="M 12 8 H 14"
+    stroke="var(--logo-accent, #C45A8A)"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
 </svg>
 ```
 
-#### Design System Usage
+#### Grid Specifications
 
-The Atelier Mark is a **design primitive** that appears throughout the site:
+- **Canvas:** 32×32
+- **Margin:** 6px
+- **Stroke:** 2px uniform
+- **Corner radius:** via round joins/caps
 
-| Context | Usage |
-|---------|-------|
-| **Header** | Logo lockup (mark + wordmark) |
-| **Hero** | Larger mark next to site title |
-| **Blockquotes** | Single corner as pull-quote accent |
-| **Section breaks** | Two corners facing each other |
-| **Favicon** | 32×32 mark only |
+**Geometry:**
+- TL anchor L: (6,16) → (6,6) → (16,6)
+- BR whisper L: (26,18) → (26,26) → (18,26)
+- Inner thread: (8,14) → (8,8) → (14,8)
+- Accent thread: (12,8) → (14,8)
 
-#### Stroke Weights by Size
+#### Scaling
 
-| Size | Anchor vertical | Anchor horizontal | Echo strokes |
-|------|-----------------|-------------------|--------------|
-| 32px (favicon) | 4px | 2.5px | 1.5px |
-| 48px (hero) | 5px | 3px | 2px |
-| 28px (header) | 4px | 2.5px | 1.5px |
+When scaling to 48×48 (hero size), multiply all coordinates by 1.5 and stroke by 1.5:
 
-#### Visual Reference
-
-```
-    ┃━━━━━━
-    ┃
-    ┃
-    ┃
-                    │
-                    │
-              ━━━━━━┛ (accent color)
-```
+| Size | Stroke | Use Case |
+|------|--------|----------|
+| 32px | 2px | Favicon, header |
+| 48px | 3px | Hero/thesis block |
 
 ### Wordmark
 
@@ -1423,7 +1434,228 @@ The Atelier Mark is a **design primitive** that appears throughout the site:
 
 ---
 
-## 13. SEO + Sharing
+## 13. Glyph System (Atelier Mark Usage)
+
+### Goal
+
+Use the logo mark as a **structural typographic device**, not a sticker.
+
+The mark should behave like:
+- Margin punctuation in a book
+- A printer's ornament
+- A quiet editorial cue
+
+**Anti-goal:** Do not "brand" every surface. No repeated logos. No wallpaper motifs.
+
+### Glyph Inventory
+
+We define 4 glyph primitives derived from the logo:
+
+| Glyph | Name | Description | Frequency |
+|-------|------|-------------|-----------|
+| **G0** | Full Mark | Complete logo with both corners + thread + accent | Rare (≤1 per page above fold) |
+| **G1** | Corner Anchor | Single L-corner (TL or BR) | Common |
+| **G2** | Woven Thread | Inner offset line at 40–55% opacity | Subtle |
+| **G3** | Accent Thread | Short 6–10px rose line segment | State indicator only |
+
+#### Use Cases by Glyph
+
+**G0 — Full Mark (rare)**
+- Header lockup
+- Favicon
+- Footer signature
+- Thesis block hero
+
+**G1 — Corner Anchor (common)**
+- Blockquotes
+- Callouts
+- "Start Here" module header
+- Image captions
+
+**G2 — Woven Thread (subtle)**
+- Section breaks
+- List separators
+- "Current thesis" card
+
+**G3 — Accent Thread (rose)**
+- Hover/focus highlight
+- Active nav indicator
+- "Selected" state
+- **Rule:** Exactly one accent stroke per component (never mirrored)
+
+### Placement Rules
+
+#### Global Rules
+
+1. Never repeat the full logo inside article prose
+2. Glyphs appear as layout punctuation, not ornament
+3. The accent stroke only indicates meaningful state:
+   - Current page
+   - Selected item
+   - Focus/hover
+   - Featured content
+
+#### Frequency Caps (Hard Limits)
+
+| Page Type | Full Mark (G0) | Corner Anchor (G1) | Accent (G3) |
+|-----------|----------------|--------------------| ------------|
+| Home | Max 2 (header + footer) | As needed | State only |
+| Article | Max 1 (header) | Blockquotes, callouts | State only |
+| Index | Max 1 (header) | Optional on cards | Hover only |
+
+### Color Policy
+
+#### Tokens
+
+```css
+--logo-ink: var(--color-text-primary);
+--logo-muted: var(--color-text-secondary);
+--logo-accent: var(--color-accent-500);
+```
+
+#### Stroke Usage
+
+| Glyph | Default | Active/Emphasis |
+|-------|---------|-----------------|
+| G1 Corner | `--logo-muted` | `--logo-ink` |
+| G2 Thread | `--logo-muted` at 40–55% | — |
+| G3 Accent | `--logo-accent` only | Never gradients |
+
+#### Dark Mode Adjustments
+
+- Increase subtle stroke opacity by +10% (so they don't vanish)
+- Accent remains restrained: never used for large fills
+
+### Component Specifications
+
+#### Header Lockup
+
+- Left: Full mark (G0) + wordmark "bristanback.com"
+- Right: Nav links
+- Active page: G3 accent thread under active nav label (6–10px line), not a pill
+- Mark size: 18–22px square
+- Wordmark: 16–18px, minimal letter-spacing
+
+#### Thesis Block (Homepage only)
+
+- G0 full mark as hero element
+- Thesis text in display type
+- No accent inside thesis text (it's already a signal)
+- The glyph feels like editorial punctuation, not branding
+
+#### Start Here Module
+
+- Module title gets G1 corner anchor in `--logo-ink`
+- Each featured item gets G3 accent thread on hover/focus only
+- Items are editorially selected, not chronological
+
+#### Post Cards (Index/Lists)
+
+- Default: No glyph
+- Hover/focus: Reveal G1 corner anchor (TL) at low opacity
+- Featured card: Add one G3 accent thread near title baseline
+- **Rule:** No more than one glyph per card
+
+#### Blockquotes
+
+Replace the usual left border with a corner anchor:
+
+- Left margin: G1 corner anchor (muted)
+- Quote text: Slightly larger, relaxed line height
+- No accent inside normal blockquotes (unless "Key Insight" callout type)
+
+#### Callouts (3 types max)
+
+| Type | Glyph Treatment |
+|------|-----------------|
+| Insight (rare) | G1 in `--logo-ink` + one small G3 accent |
+| Constraint | G1 in `--logo-muted` (no accent) |
+| Aside | G2 woven thread only (no corner anchor) |
+
+**Rule:** Callouts must not become a second design language.
+
+#### Section Breaks
+
+- 1px rule in `--color-border-subtle`
+- Centered G2 woven thread above the rule (or left margin—pick one globally)
+- Keep consistent across the whole site
+
+#### Code Blocks
+
+- No glyph by default
+- Optional: Tiny G3 accent thread appears when copy succeeds (brief feedback)
+- Never full mark
+
+#### Photos
+
+- Photos are sacred—UI must be invisible
+- G1 corner anchor as subtle "frame" cue near caption area only
+- Never overlay glyph on image
+
+### Implementation Guidance
+
+#### SVG Components
+
+Create glyphs as inline SVG snippets that inherit CSS variables:
+
+```typescript
+// src/glyphs.ts
+export const glyphMarkFull = `<svg>...</svg>`;
+export const glyphCornerTL = `<svg>...</svg>`;
+export const glyphCornerBR = `<svg>...</svg>`;
+export const glyphThread = `<svg>...</svg>`;
+export const glyphAccentDash = `<svg>...</svg>`;
+```
+
+#### Accessibility
+
+- All glyph SVGs: `aria-hidden="true"` unless the glyph conveys meaning
+- If glyph conveys meaning (e.g., active nav), ensure non-color cue (underline/font weight) or `aria-current="page"`
+
+#### Motion
+
+If any animation exists:
+- Only opacity/translate
+- Max 150ms
+- Respect `prefers-reduced-motion`
+
+### Taste Tests (Acceptance Criteria)
+
+A design change is **rejected** if:
+
+- [ ] Logo appears more than twice per page above the fold
+- [ ] Accent appears as a large filled shape
+- [ ] Glyphs appear inside prose paragraphs
+- [ ] Design reads "branded template" rather than "editorial atelier"
+- [ ] Any page looks busier in dark mode than light mode
+
+### Default Page Recipes
+
+#### Homepage
+
+1. Header lockup (G0)
+2. Thesis block (G0 as hero)
+3. Start Here module (G1 header + hover G3)
+4. Latest notes (no glyph)
+5. Footer (optional G0 or minimal)
+
+#### Article Page
+
+1. Header lockup (G0)
+2. Article header (no glyph)
+3. Body with blockquote signature (G1)
+4. Section breaks (G2)
+5. Footer (optional G1 or none)
+
+#### Index Page
+
+1. Header lockup (G0)
+2. Cards (hover G1, featured G3)
+3. Footer (minimal)
+
+---
+
+## 14. SEO + Sharing
 
 ### Required `<head>` Elements
 
@@ -1558,7 +1790,7 @@ Policy: Open external links in new tab. Internal links stay in same tab.
 
 ---
 
-## 14. Accessibility
+## 15. Accessibility
 
 ### Baseline Checklist
 
@@ -1620,7 +1852,7 @@ Ensure these combinations meet WCAG AA:
 
 ---
 
-## 15. Security + Privacy
+## 16. Security + Privacy
 
 ### Security Headers
 
@@ -1649,7 +1881,7 @@ If Cloudflare Web Analytics is added later, disclose in footer/colophon.
 
 ---
 
-## 16. Deployment
+## 17. Deployment
 
 ### Deployment Strategy
 
@@ -1726,7 +1958,7 @@ Cloudflare Pages provides the CNAME target. Do not hardcode IPs.
 
 ---
 
-## 17. Domain Strategy
+## 18. Domain Strategy
 
 ### Primary Domain
 
@@ -1754,7 +1986,7 @@ For other domains, configure redirects at the DNS/registrar level or via separat
 
 ---
 
-## 18. Implementation Roadmap
+## 19. Implementation Roadmap
 
 ### MVP Scope Fence
 
@@ -1912,6 +2144,6 @@ When evaluating logo designs, verify:
 
 ---
 
-*Spec version: 1.2*
+*Spec version: 1.3*
 *Last updated: 2026-02-04*
 *Authors: Bri Stanback + Claude*

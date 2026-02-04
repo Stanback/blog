@@ -1,6 +1,7 @@
 // Render content to HTML and write to dist/
 
 import { config } from './config.js';
+import { glyphMarkFull, glyphMarkFullLarge } from './glyphs.js';
 import { strings } from './strings.js';
 import type { BuildContext, Content, Note, Page, Photo, Post, Skills, Soul } from './types.js';
 import { formatDateLong, formatDateMachine } from './utils/dates.js';
@@ -27,12 +28,8 @@ function getUrl(content: Content): string {
 const formatDate = formatDateLong;
 const isoDate = formatDateMachine;
 
-// Atelier Mark SVG inline for header
-const atelierMark = `<svg class="atelier-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 6 16 V 6 H 16 M 26 18 V 26 H 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 8 14 V 8 H 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
-  <path d="M 12 8 H 14" stroke="var(--color-accent-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`;
+// Atelier Mark for header (G0 - Full Mark)
+const atelierMark = glyphMarkFull.replace('class="glyph glyph-mark"', 'class="atelier-mark"');
 
 // Base HTML template
 function baseTemplate(options: {
@@ -402,12 +399,11 @@ function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 	});
 }
 
-// Larger atelier mark for hero (scaled up from 32x32 to 48x48, factor of 1.5)
-const heroMark = `<svg class="atelier-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 9 24 V 9 H 24 M 39 27 V 39 H 27" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 12 21 V 12 H 21" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
-  <path d="M 18 12 H 21" stroke="var(--color-accent-500)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`;
+// Larger atelier mark for hero (G0 - Full Mark, 48x48)
+const heroMark = glyphMarkFullLarge.replace(
+	'class="glyph glyph-mark glyph-mark--large"',
+	'class="atelier-mark"',
+);
 
 // Render home page
 function renderHome(ctx: BuildContext): string {

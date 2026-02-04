@@ -59,6 +59,11 @@
 	--color-code-bg: var(--color-cream);
 	--color-code-text: var(--color-ink);
 
+	/* Logo/Glyph tokens */
+	--logo-ink: var(--color-text-primary);
+	--logo-muted: var(--color-text-secondary);
+	--logo-accent: var(--color-accent-500);
+
 	/* Legacy semantic aliases (for compatibility) */
 	--color-text: var(--color-text-primary);
 	--color-bg: var(--color-bg-main);
@@ -192,6 +197,11 @@
 		--color-code-bg: oklch(0.18 0.01 260);
 		--color-code-text: oklch(0.88 0.01 80);
 
+		/* Logo/Glyph tokens - slightly brighter in dark mode */
+		--logo-ink: var(--color-text-primary);
+		--logo-muted: var(--color-text-secondary);
+		--logo-accent: var(--color-accent-500);
+
 		/* Legacy semantic aliases */
 		--color-text: var(--color-text-primary);
 		--color-bg: var(--color-bg-main);
@@ -232,6 +242,10 @@
 	--color-code-bg: oklch(0.18 0.01 260);
 	--color-code-text: oklch(0.88 0.01 80);
 
+	--logo-ink: var(--color-text-primary);
+	--logo-muted: var(--color-text-secondary);
+	--logo-accent: var(--color-accent-500);
+
 	--color-text: var(--color-text-primary);
 	--color-bg: var(--color-bg-main);
 }
@@ -267,6 +281,10 @@
 
 	--color-code-bg: oklch(0.94 0.01 80);
 	--color-code-text: oklch(0.18 0.01 60);
+
+	--logo-ink: var(--color-text-primary);
+	--logo-muted: var(--color-text-secondary);
+	--logo-accent: var(--color-accent-500);
 
 	--color-text: var(--color-text-primary);
 	--color-bg: var(--color-bg-main);
