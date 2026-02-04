@@ -39,7 +39,7 @@ const SUPPORTED_LANGUAGES = [
 async function getShikiHighlighter(): Promise<Highlighter> {
 	if (!highlighter) {
 		highlighter = await createHighlighter({
-			themes: ['github-light', 'github-dark'],
+			themes: ['rose-pine-dawn', 'rose-pine'],
 			langs: [...SUPPORTED_LANGUAGES],
 		});
 	}
@@ -151,8 +151,8 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 						return shiki.codeToHtml(code, {
 							lang,
 							themes: {
-								light: 'github-light',
-								dark: 'github-dark',
+								light: 'rose-pine-dawn',
+								dark: 'rose-pine',
 							},
 							defaultColor: false, // Use CSS variables
 						});
