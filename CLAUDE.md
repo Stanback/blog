@@ -1,40 +1,80 @@
-# CLAUDE.md - Content Guidelines
+# CLAUDE.md — Agent Instructions
 
-## Sensitive Terms (DO NOT publish)
+> bristanback.com: A bespoke static blog at the intersection of technology, design, and making sense of things in an AI-disrupted world.
 
-These terms are internal and should never appear in public content:
+## Quick Context
 
-- **ARC** / **ARC Protocol** — internal research project name
-- **Axiom** / **Axioms** — internal terminology (use "principle" or "pattern" instead)
-- Any internal Product.ai / SimplyCodes architecture details
+- **Stack:** Bun + TypeScript + Tailwind v4 + Cloudflare Pages
+- **Build:** `bun run build` → `dist/`
+- **Dev:** `bun run serve` → localhost:8788
+- **Deploy:** Push to main → GitHub Actions → Cloudflare
 
-## Rewording Guide
+## Axioms (Source of Truth)
 
-| Internal Term | Public Alternative |
-|---------------|-------------------|
-| ARC Axiom | "A key principle" / "Design principle" |
-| ARC Protocol | "multi-model research" / "AI orchestration" |
-| Axiom 1, 2, 3... | "First principle" / "Core pattern" |
+All principles are decomposed into `axioms/`. Read the relevant axiom before working in that area.
 
-## Content Review Checklist
+| Axiom | Governs |
+|-------|---------|
+| [accessibility.md](axioms/accessibility.md) | WCAG compliance, ARIA, keyboard nav |
+| [content-policy.md](axioms/content-policy.md) | Sensitive terms, co-authorship, drafts |
+| [voice.md](axioms/voice.md) | Tone, microcopy, writing style |
+| [thesis.md](axioms/thesis.md) | Homepage thesis, signal physics |
+| [design-system.md](axioms/design-system.md) | Colors, typography, glyphs, spacing |
+| [architecture.md](axioms/architecture.md) | Tech stack, build pipeline, content types |
 
-Before publishing, verify:
-- [ ] No ARC references
-- [ ] No Axiom terminology
-- [ ] No internal project names
-- [ ] No sensitive architecture details
-- [ ] Principles are stated generically (could apply to anyone's system)
+## Before You Build
 
-## Co-Authorship
+1. **Check the axiom** — Don't reinvent; extend
+2. **Accessibility first** — Every feature must pass `axioms/accessibility.md` checklist
+3. **Content policy** — Review `axioms/content-policy.md` for sensitive terms
+4. **Type safety** — TypeScript strict mode, no `any`
 
-Posts adapted from collaborative work (e.g., Moltbook) should credit co-authors:
+## Before You Publish
 
-```yaml
-coAuthors:
-  - name: "Lunen"
-    emoji: "🌙"
+- [ ] `bun run typecheck` passes
+- [ ] `bun run lint` passes
+- [ ] `bun run build` succeeds
+- [ ] Content reviewed against `axioms/content-policy.md`
+- [ ] Images have alt text
+- [ ] Links tested
+
+## Common Tasks
+
+### New Post
+```bash
+# Create content/posts/YYYY-MM-DD-slug.md with frontmatter
 ```
 
-## Draft Workflow
+### Update Book Submodule
+```bash
+cd content/books/the-turning-point && git pull
+cd ../../.. && git add -A && git commit -m "update book" && git push
+```
 
-Use `draft: true` in frontmatter for work-in-progress. Drafts build to `/drafts/` and are accessible by direct URL but not listed publicly.
+### Add New Axiom
+1. Create `axioms/[name].md`
+2. Add to table above
+3. Reference from relevant code comments
+
+## File Purposes
+
+| File | Purpose |
+|------|---------|
+| `CLAUDE.md` | This file — agent instructions hub |
+| `README.md` | GitHub basics (setup, commands) |
+| `axioms/` | Decomposed principles (source of truth) |
+| `styles/tokens.css` | Design tokens (colors, spacing, fonts) |
+| `src/strings.ts` | UI microcopy |
+| `content/` | All markdown content |
+
+## Symlinks
+
+This file is symlinked for other AI tools:
+- `.cursor/rules` → `CLAUDE.md`
+- `AGENTS.md` → `CLAUDE.md`
+
+Same instructions, multiple entry points.
+
+---
+
+*When in doubt, read the axiom. When the axiom is wrong, fix it.*
