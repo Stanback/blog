@@ -751,17 +751,14 @@ export function renderSite(ctx: BuildContext): RenderOutput[] {
 		output.push({ path: 'about/skills/index.html', content: renderSkills(ctx.skills, ctx) });
 	}
 
-	// Books
-	if (ctx.books.length > 0) {
-		output.push({ path: 'books/index.html', content: renderBooksIndex(ctx.books, ctx) });
-		for (const book of ctx.books) {
-			output.push({ path: `books/${book.slug}/index.html`, content: renderBook(book, ctx) });
-			for (const chapter of book.chapters) {
-				output.push({
-					path: `books/${book.slug}/${chapter.slug}/index.html`,
-					content: renderChapter(chapter, book, ctx),
-				});
-			}
+	// Books (unlisted - accessible by direct URL only, like drafts)
+	for (const book of ctx.books) {
+		output.push({ path: `books/${book.slug}/index.html`, content: renderBook(book, ctx) });
+		for (const chapter of book.chapters) {
+			output.push({
+				path: `books/${book.slug}/${chapter.slug}/index.html`,
+				content: renderChapter(chapter, book, ctx),
+			});
 		}
 	}
 
