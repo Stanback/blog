@@ -309,7 +309,7 @@ footer .separator {
 .thesis {
 	text-align: left;
 	padding: var(--space-12) 0 var(--space-16);
-	margin-bottom: var(--space-8);
+	margin-bottom: var(--space-12);
 	position: relative;
 }
 
@@ -324,10 +324,10 @@ footer .separator {
 
 .thesis-headline {
 	font-family: var(--font-serif);
-	font-size: var(--font-size-3xl);
+	font-size: var(--font-size-4xl);
 	font-weight: 500;
 	color: var(--color-text-primary);
-	margin: 0 0 var(--space-4);
+	margin: 0 0 var(--space-6);
 	letter-spacing: var(--tracking-tight);
 	line-height: var(--leading-tight);
 	max-width: var(--measure-narrow);
@@ -346,19 +346,19 @@ footer .separator {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .start-here-module {
-	border: 1px solid var(--color-border-subtle);
+	border: none;
 	border-radius: var(--radius-md);
-	padding: var(--space-6);
-	margin-bottom: var(--space-12);
-	background: var(--color-bg-elevated);
-	transition: border-color var(--transition-normal), background var(--transition-normal);
+	padding: var(--space-8);
+	margin-bottom: var(--space-8);
+	background: var(--color-bg-muted);
+	transition: background var(--transition-normal);
 }
 
 .module-header {
 	display: flex;
 	align-items: center;
 	gap: var(--space-3);
-	margin-bottom: var(--space-4);
+	margin-bottom: var(--space-6);
 }
 
 .module-decoration {
@@ -366,8 +366,8 @@ footer .separator {
 }
 
 .module-corner {
-	width: 20px;
-	height: 20px;
+	width: 24px;
+	height: 24px;
 }
 
 .module-header h2 {
@@ -419,6 +419,8 @@ footer .separator {
 
 .recent-notes {
 	margin-bottom: var(--space-12);
+	padding-top: var(--space-8);
+	border-top: 1px solid var(--color-border-subtle);
 }
 
 .recent-notes h2 {
@@ -427,6 +429,35 @@ footer .separator {
 	font-weight: 500;
 	color: var(--color-text-primary);
 	margin-bottom: var(--space-4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TWO-COLUMN LAYOUT — Desktop homepage modules
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.homepage-modules {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+	.homepage-modules {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--space-8);
+		align-items: start;
+	}
+
+	.homepage-modules .start-here-module {
+		margin-bottom: 0;
+	}
+
+	.homepage-modules .recent-notes {
+		margin-bottom: 0;
+		padding-top: 0;
+		border-top: none;
+	}
 }
 
 .note-list-simple {
@@ -604,6 +635,40 @@ footer .separator {
 .note-list h2 a:hover,
 .note-list h3 a:hover {
 	color: var(--color-accent-500);
+}
+
+/* Post card hover: reveal corner glyph */
+.post-list li::before {
+	content: "";
+	position: absolute;
+	top: var(--space-6);
+	right: 0;
+	width: 16px;
+	height: 16px;
+	opacity: 0;
+	transition: opacity var(--transition-normal);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M13 13 V8' stroke='%231a1a1a' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M13 13 H8' stroke='%239d6b6b' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.post-list li:first-child::before {
+	top: 0;
+}
+
+.post-list li:hover::before {
+	opacity: 0.6;
+}
+
+/* Dark mode hover glyph */
+@media (prefers-color-scheme: dark) {
+	.post-list li::before {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M13 13 V8' stroke='%23e8e4df' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M13 13 H8' stroke='%23c9a5a5' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+	}
+}
+
+[data-theme="dark"] .post-list li::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M13 13 V8' stroke='%23e8e4df' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M13 13 H8' stroke='%23c9a5a5' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 .post-list p,

@@ -4,30 +4,39 @@
  * SVG components for the logo mark used as typographic devices.
  * All glyphs use CSS custom properties for theming:
  *   --logo-ink: Primary stroke color (defaults to currentColor)
- *   --logo-accent: Accent color (defaults to #C45A8A)
+ *   --logo-accent: Accent color (defaults to #9d6b6b)
  *
- * The logo is a simple corner bracket (two L-strokes) in the top-left.
- * Used as a decorative element to frame content.
+ * The logo is a weighted viewfinder with two corners:
+ *   - Top-left: heavy anchor (primary)
+ *   - Bottom-right: delicate whisper with rose accent
  *
  * Glyph inventory:
- *   G0 - Corner Mark: Simple L-bracket (the logo)
- *   G1 - Corner Anchor: Single L-corner for decoration
+ *   G0 - Full Mark: Two-corner weighted viewfinder (the logo)
+ *   G1 - Corner Anchor: Single L-corner for modules/decoration
  *   G3 - Accent Dash: Short rose segment for list items
  */
 
-// G0 — Corner Mark (32×32) - The simplified logo
-// Just two strokes forming an L in the top-left corner
+// G0 — Full Mark (32×32) - Two-corner weighted viewfinder
+// TL: heavy anchor, BR: delicate whisper with rose accent
 // Use cases: header lockup, favicon, thesis decoration
 export const glyphMarkFull = `<svg class="glyph glyph-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 6 6 V 20" stroke="var(--logo-ink, currentColor)" stroke-width="3" stroke-linecap="round"/>
-  <path d="M 6 6 H 20" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round"/>
+  <!-- TL anchor -->
+  <path d="M 6 6 V 18" stroke="var(--logo-ink, currentColor)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 6 6 H 18" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round"/>
+  <!-- BR whisper -->
+  <path d="M 26 26 V 20" stroke="var(--logo-ink, currentColor)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 26 26 H 20" stroke="var(--logo-accent, #9d6b6b)" stroke-width="1.5" stroke-linecap="round"/>
 </svg>`;
 
-// G0 — Corner Mark (48×48, scaled for larger contexts)
+// G0 — Full Mark (48×48, scaled for larger contexts)
 // Used in thesis/hero sections
 export const glyphMarkFullLarge = `<svg class="glyph glyph-mark glyph-mark--large" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 8 8 V 32" stroke="var(--logo-ink, currentColor)" stroke-width="4" stroke-linecap="round"/>
-  <path d="M 8 8 H 32" stroke="var(--logo-ink, currentColor)" stroke-width="3" stroke-linecap="round"/>
+  <!-- TL anchor -->
+  <path d="M 8 8 V 26" stroke="var(--logo-ink, currentColor)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 8 8 H 26" stroke="var(--logo-ink, currentColor)" stroke-width="3" stroke-linecap="round"/>
+  <!-- BR whisper -->
+  <path d="M 40 40 V 30" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 40 40 H 30" stroke="var(--logo-accent, #9d6b6b)" stroke-width="2" stroke-linecap="round"/>
 </svg>`;
 
 // G1 — Corner Anchor, Top-Left (smaller, for modules)

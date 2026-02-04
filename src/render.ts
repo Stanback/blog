@@ -439,18 +439,10 @@ function renderHome(ctx: BuildContext): string {
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
 		.slice(0, 4);
 
-	const content = `
-    <section class="thesis">
-      <div class="thesis-decoration" aria-hidden="true">
-        ${heroMark}
-      </div>
-      <h1 class="thesis-headline">${strings.thesis.headline}</h1>
-      <p class="thesis-body">${strings.thesis.body}</p>
-    </section>
-
-    ${
-			featuredPosts.length > 0
-				? `
+	// Build Start Here module HTML
+	const startHereModule =
+		featuredPosts.length > 0
+			? `
     <section class="start-here-module">
       <div class="module-header">
         <span class="module-decoration" aria-hidden="true">${moduleCorner}</span>
@@ -468,20 +460,40 @@ function renderHome(ctx: BuildContext): string {
 					.join('')}
       </ul>
     </section>`
-				: ''
-		}
+			: '';
 
-    ${
-			recentNotes.length > 0
-				? `
+	// Build Recent Notes module HTML
+	const recentNotesModule =
+		recentNotes.length > 0
+			? `
     <section class="recent-notes">
       <h2>${strings.home.recentNotes}</h2>
       <ul class="note-list-simple">
         ${recentNotes.map((note) => `<li><a href="${getUrl(note)}">${note.title}</a></li>`).join('')}
       </ul>
     </section>`
-				: ''
-		}`;
+			: '';
+
+	// Wrap modules in two-column container if both exist
+	const modulesSection =
+		startHereModule || recentNotesModule
+			? `
+    <div class="homepage-modules">
+      ${startHereModule}
+      ${recentNotesModule}
+    </div>`
+			: '';
+
+	const content = `
+    <section class="thesis">
+      <div class="thesis-decoration" aria-hidden="true">
+        ${heroMark}
+      </div>
+      <h1 class="thesis-headline">${strings.thesis.headline}</h1>
+      <p class="thesis-body">${strings.thesis.body}</p>
+    </section>
+
+    ${modulesSection}`;
 
 	return baseTemplate({
 		title: config.title,
