@@ -1280,35 +1280,45 @@ article.skills-page h1 {
 }
 
 /* Shiki code block styles - dual theme support */
-.prose pre .shiki {
-	background: transparent !important;
-	padding: 0;
-	margin: 0;
+.prose pre.shiki {
+	background: var(--shiki-light-bg) !important;
+	padding: var(--space-4);
+	margin: var(--space-6) 0;
 }
 
-.prose pre .shiki code {
+.prose pre.shiki code {
 	display: block;
 	width: 100%;
+	background: transparent;
 }
 
 /* Light mode: use light theme colors */
-.prose pre .shiki,
-.prose pre .shiki span {
+.prose pre.shiki,
+.prose pre.shiki span {
 	color: var(--shiki-light) !important;
+}
+
+.prose pre.shiki {
 	background-color: var(--shiki-light-bg) !important;
 }
 
 /* Dark mode: use dark theme colors */
-[data-theme="dark"] .prose pre .shiki,
-[data-theme="dark"] .prose pre .shiki span {
+[data-theme="dark"] .prose pre.shiki,
+[data-theme="dark"] .prose pre.shiki span {
 	color: var(--shiki-dark) !important;
+}
+
+[data-theme="dark"] .prose pre.shiki {
 	background-color: var(--shiki-dark-bg) !important;
 }
 
 @media (prefers-color-scheme: dark) {
-	:root:not([data-theme="light"]) .prose pre .shiki,
-	:root:not([data-theme="light"]) .prose pre .shiki span {
+	:root:not([data-theme="light"]) .prose pre.shiki,
+	:root:not([data-theme="light"]) .prose pre.shiki span {
 		color: var(--shiki-dark) !important;
+	}
+
+	:root:not([data-theme="light"]) .prose pre.shiki {
 		background-color: var(--shiki-dark-bg) !important;
 	}
 }
