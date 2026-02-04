@@ -558,35 +558,76 @@ function renderHome(ctx: BuildContext): string {
 	});
 }
 
+// Extract cover image from Chapter 0 if available
+function getBookCoverImage(book: Book): string | null {
+	const chapter0 = book.chapters.find((ch) => ch.chapterNumber === 0);
+	if (!chapter0) return null;
+	const imgMatch = chapter0.html.match(/<img[^>]+src="([^"]+)"/);
+	return imgMatch ? imgMatch[1] : null;
+}
+
 // Render book index page (table of contents)
 function renderBook(book: Book, ctx: BuildContext): string {
-	const totalWords = book.chapters.reduce((sum, ch) => sum + (ch.wordCount || 0), 0);
-	const totalReadingTime = book.chapters.reduce((sum, ch) => sum + (ch.readingTime || 0), 0);
+	const mainChapters = book.chapters.filter((ch) => ch.chapterNumber > 0);
+	const chapter0 = book.chapters.find((ch) => ch.chapterNumber === 0);
+	const coverImage = book.coverImage || getBookCoverImage(book);
+	const totalWords = mainChapters.reduce((sum, ch) => sum + (ch.wordCount || 0), 0);
+	const totalReadingTime = mainChapters.reduce((sum, ch) => sum + (ch.readingTime || 0), 0);
+
+	// JSON-LD Schema for the book
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Book',
+		name: book.title,
+		author: { '@type': 'Person', name: book.author },
+		description: book.description,
+		genre: book.genre,
+		url: `${config.url}${getBookUrl(book)}`,
+		...(coverImage && { image: `${config.url}${coverImage}` }),
+		numberOfPages: mainChapters.length,
+		bookFormat: 'EBook',
+	};
 
 	const content = `
-    <article class="prose book-page">
+    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+    <article class="book-page">
       <header class="book-header">
-        ${book.coverImage ? `<img src="${book.coverImage}" alt="Cover of ${book.title}" class="book-cover"/>` : ''}
-        <h1>${book.title}</h1>
-        <p class="book-author">by ${book.author}</p>
-        ${book.genre ? `<p class="book-genre">${book.genre}</p>` : ''}
-        ${book.status === 'in-progress' ? '<p class="book-status">📝 In Progress</p>' : ''}
-        <p class="book-meta">${book.chapters.length} chapters · ${totalWords.toLocaleString()} words · ${totalReadingTime} min read</p>
+        ${coverImage ? `<img src="${coverImage}" alt="Cover of ${book.title}" class="book-cover"/>` : ''}
+        <div class="book-header-text">
+          <h1>${book.title}</h1>
+          <p class="book-author">by ${book.author}</p>
+          ${book.genre ? `<p class="book-genre">${book.genre}</p>` : ''}
+          ${book.status === 'in-progress' ? '<p class="book-status">📝 In Progress</p>' : ''}
+          <p class="book-meta">${mainChapters.length} chapters · ${totalWords.toLocaleString()} words · ${totalReadingTime} min read</p>
+        </div>
       </header>
       
-      <section class="book-description">
+      ${
+				chapter0
+					? `
+      <section class="book-synopsis">
+        <a href="${getUrl(chapter0)}" class="synopsis-link">
+          <span class="synopsis-label">Synopsis</span>
+          <span class="synopsis-arrow">→</span>
+        </a>
+      </section>
+      `
+					: ''
+			}
+
+      <section class="book-description prose">
         <p>${book.description}</p>
       </section>
 
       <section class="book-toc">
         <h2>Chapters</h2>
         <ol class="chapter-list">
-          ${book.chapters
+          ${mainChapters
 						.map(
 							(ch) => `
             <li>
               <a href="${getUrl(ch)}">
-                <span class="chapter-number">Chapter ${ch.chapterNumber}</span>
+                <span class="chapter-number">${ch.chapterNumber}</span>
                 <span class="chapter-title">${ch.chapterTitle}</span>
                 ${ch.readingTime ? `<span class="chapter-time">${ch.readingTime} min</span>` : ''}
               </a>
@@ -608,45 +649,73 @@ function renderBook(book: Book, ctx: BuildContext): string {
 
 // Render individual chapter - 2026 book reading experience
 function renderChapter(chapter: Chapter, book: Book, ctx: BuildContext): string {
+	const mainChapters = book.chapters.filter((ch) => ch.chapterNumber > 0);
 	const chapterIndex = book.chapters.findIndex((ch) => ch.slug === chapter.slug);
+	const mainIndex = mainChapters.findIndex((ch) => ch.slug === chapter.slug);
 	const prevChapter = chapterIndex > 0 ? book.chapters[chapterIndex - 1] : null;
 	const nextChapter =
 		chapterIndex < book.chapters.length - 1 ? book.chapters[chapterIndex + 1] : null;
 
+	const isChapter0 = chapter.chapterNumber === 0;
+	const coverImage = getBookCoverImage(book);
+
 	// Extract first image as hero, remove H1 (we have our own header)
 	let heroImage = '';
+	let heroImageSrc = '';
 	let chapterBody = chapter.html;
 
 	// Find and extract first image for hero
 	const imgMatch = chapterBody.match(/<img[^>]+src="([^"]+)"[^>]*>/);
 	if (imgMatch) {
-		heroImage = imgMatch[0].replace('<img', '<img class="chapter-hero-img"');
+		heroImageSrc = imgMatch[1];
+		// Chapter 0 gets special cover treatment (no crop), others get landscape crop
+		const heroClass = isChapter0 ? 'chapter-hero-img chapter-cover-img' : 'chapter-hero-img';
+		heroImage = imgMatch[0].replace('<img', `<img class="${heroClass}"`);
 		chapterBody = chapterBody.replace(imgMatch[0], ''); // Remove from body
 	}
 
 	// Remove the first H1 (redundant with our header)
 	chapterBody = chapterBody.replace(/<h1[^>]*>.*?<\/h1>/i, '');
 
-	// Progress through book
-	const progress = Math.round(((chapterIndex + 1) / book.chapters.length) * 100);
+	// Progress through book (based on main chapters only)
+	const progress = mainIndex >= 0 ? Math.round(((mainIndex + 1) / mainChapters.length) * 100) : 0;
+
+	// JSON-LD for chapter
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Chapter',
+		name: chapter.chapterTitle,
+		position: chapter.chapterNumber,
+		isPartOf: {
+			'@type': 'Book',
+			name: book.title,
+			author: { '@type': 'Person', name: book.author },
+		},
+		url: `${config.url}${getUrl(chapter)}`,
+		...(heroImageSrc && { image: `${config.url}${heroImageSrc}` }),
+	};
 
 	const content = `
-    <div class="book-reader">
+    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+    <div class="book-reader ${isChapter0 ? 'is-chapter-0' : ''}">
       <!-- Sidebar: Chapter Navigation -->
       <aside class="book-sidebar">
         <div class="sidebar-header">
-          <a href="${getBookUrl(book)}" class="book-title-link">${book.title}</a>
-          <span class="book-progress">${progress}% complete</span>
+          ${coverImage ? `<img src="${coverImage}" alt="${book.title}" class="sidebar-cover"/>` : ''}
+          <div class="sidebar-header-text">
+            <a href="${getBookUrl(book)}" class="book-title-link">${book.title}</a>
+            ${!isChapter0 ? `<span class="book-progress">${progress}% complete</span>` : '<span class="book-progress">Synopsis</span>'}
+          </div>
         </div>
         <nav class="chapter-toc">
           <ol>
             ${book.chapters
 							.map(
 								(ch, i) => `
-              <li class="${ch.slug === chapter.slug ? 'current' : ''} ${i < chapterIndex ? 'read' : ''}">
+              <li class="${ch.slug === chapter.slug ? 'current' : ''} ${i < chapterIndex ? 'read' : ''} ${ch.chapterNumber === 0 ? 'is-synopsis' : ''}">
                 <a href="${getUrl(ch)}">
-                  <span class="toc-num">${ch.chapterNumber}</span>
-                  <span class="toc-title">${ch.chapterTitle}</span>
+                  <span class="toc-num">${ch.chapterNumber === 0 ? '◆' : ch.chapterNumber}</span>
+                  <span class="toc-title">${ch.chapterNumber === 0 ? 'Synopsis' : ch.chapterTitle}</span>
                 </a>
               </li>`,
 							)
@@ -656,12 +725,12 @@ function renderChapter(chapter: Chapter, book: Book, ctx: BuildContext): string 
       </aside>
 
       <!-- Main Reading Area -->
-      <article class="chapter-page">
-        ${heroImage ? `<figure class="chapter-hero">${heroImage}</figure>` : ''}
+      <article class="chapter-page ${isChapter0 ? 'chapter-synopsis' : ''}">
+        ${heroImage ? `<figure class="chapter-hero ${isChapter0 ? 'chapter-hero-cover' : ''}">${heroImage}</figure>` : ''}
         
         <header class="chapter-header">
-          <span class="chapter-label">Chapter ${chapter.chapterNumber}</span>
-          <h1>${chapter.chapterTitle}</h1>
+          ${isChapter0 ? '<span class="chapter-label">Synopsis</span>' : `<span class="chapter-label">Chapter ${chapter.chapterNumber}</span>`}
+          <h1>${isChapter0 ? book.title : chapter.chapterTitle}</h1>
           ${chapter.readingTime ? `<span class="reading-time">${chapter.readingTime} min read</span>` : ''}
         </header>
         
