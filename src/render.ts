@@ -10,11 +10,11 @@ import { formatDateLong, formatDateMachine } from './utils/dates.js';
 function getUrl(content: Content): string {
 	switch (content.type) {
 		case 'post':
-			return `/posts/${content.slug}/`;
+			return content.draft ? `/drafts/${content.slug}/` : `/posts/${content.slug}/`;
 		case 'note':
-			return `/notes/${content.slug}/`;
+			return content.draft ? `/drafts/${content.slug}/` : `/notes/${content.slug}/`;
 		case 'photo':
-			return `/photos/${content.slug}/`;
+			return content.draft ? `/drafts/${content.slug}/` : `/photos/${content.slug}/`;
 		case 'soul':
 			return '/about/soul/';
 		case 'skills':
@@ -573,22 +573,35 @@ export function renderSite(ctx: BuildContext): RenderOutput[] {
 	// Home page
 	output.push({ path: 'index.html', content: renderHome(ctx) });
 
-	// Posts
+	// Posts (published)
 	output.push({ path: 'posts/index.html', content: renderPostsIndex(ctx.posts, ctx) });
 	for (const post of ctx.posts.filter((p) => !p.draft)) {
 		output.push({ path: `posts/${post.slug}/index.html`, content: renderPost(post, ctx) });
 	}
 
-	// Notes
+	// Drafts (hidden but accessible via direct URL)
+	for (const post of ctx.posts.filter((p) => p.draft)) {
+		output.push({ path: `drafts/${post.slug}/index.html`, content: renderPost(post, ctx) });
+	}
+
+	// Notes (published)
 	output.push({ path: 'notes/index.html', content: renderNotesIndex(ctx.notes, ctx) });
 	for (const note of ctx.notes.filter((n) => !n.draft)) {
 		output.push({ path: `notes/${note.slug}/index.html`, content: renderNote(note, ctx) });
 	}
+	// Draft notes
+	for (const note of ctx.notes.filter((n) => n.draft)) {
+		output.push({ path: `drafts/${note.slug}/index.html`, content: renderNote(note, ctx) });
+	}
 
-	// Photos
+	// Photos (published)
 	output.push({ path: 'photos/index.html', content: renderPhotosIndex(ctx.photos, ctx) });
 	for (const photo of ctx.photos.filter((p) => !p.draft)) {
 		output.push({ path: `photos/${photo.slug}/index.html`, content: renderPhoto(photo, ctx) });
+	}
+	// Draft photos
+	for (const photo of ctx.photos.filter((p) => p.draft)) {
+		output.push({ path: `drafts/${photo.slug}/index.html`, content: renderPhoto(photo, ctx) });
 	}
 
 	// Pages
