@@ -7,6 +7,8 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  repository_dispatch:
+    types: [submodule-update]
 
 jobs:
   build-and-deploy:
@@ -16,6 +18,10 @@ jobs:
         with:
           submodules: true
           token: ${{ secrets.GH_PAT }}
+
+      - name: Update submodules to latest
+        if: github.event_name == 'repository_dispatch'
+        run: git submodule update --remote --merge
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
