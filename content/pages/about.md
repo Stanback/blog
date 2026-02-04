@@ -135,11 +135,10 @@ If you're considering working together:
 ## Elsewhere
 
 - [GitHub](https://github.com/Stanback)
-- [LinkedIn](https://www.linkedin.com/in/bstanback/)
 - [Colophon](/colophon/) — how this site is made
 
-## Contact
+## Find Me
 
-Email works: bri at stanback dot net.
+[LinkedIn](https://www.linkedin.com/in/bstanback/) · [X](https://x.com/bstanback)
 
-I read everything. I don't always reply quickly, but I do reply.
+DMs open. I read everything.
