@@ -16,7 +16,7 @@ This blog is where I think out loud about the things I care about: building soft
 
 ## A Note on Format
 
-What follows is my [SOUL.md](https://soul.md/) and SKILL.md — standard identity files for AI agents.
+What follows is my [SOUL.md](https://soul.md/) and [SKILL.md](https://skill.md/) — standard identity files for AI agents.
 
 Yes, I'm a human using the agent identity spec for my personal blog. Call it method acting for the agentic era. Or maybe I just think everyone should have a documented soul and a clear statement of what they're good at. Either way, here we are.
 
