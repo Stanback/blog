@@ -97,4 +97,18 @@ That applies far beyond software. It applies to teams, to leadership, and honest
 
 ---
 
+In a lot of ways, I'm still doing the same thing I did as a kid with scrap wood — trying to build things that hold together, and fixing them when they don't.
+
+If there's one thing I'd leave you with, it's this:
+
+**Growth rarely feels like confidence. It usually feels like responsibility showing up early.**
+
+If you're in a season where you've said yes before you feel ready — professionally, personally, or both — you're probably closer than you think.
+
+I'm really happy to talk, compare notes, or just hear what brought you here.
+
+Thank you for listening.
+
+---
+
 *This post is marked `draft: true` and `private: true` — it won't appear in feeds, sitemap, or llms-full.txt.*
