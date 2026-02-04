@@ -1273,7 +1273,7 @@ article.skills-page h1 {
 	border-radius: 0;
 }
 
-/* Shiki code block styles */
+/* Shiki code block styles - dual theme support */
 .prose pre .shiki {
 	background: transparent !important;
 	padding: 0;
@@ -1283,6 +1283,28 @@ article.skills-page h1 {
 .prose pre .shiki code {
 	display: block;
 	width: 100%;
+}
+
+/* Light mode: use light theme colors */
+.prose pre .shiki,
+.prose pre .shiki span {
+	color: var(--shiki-light) !important;
+	background-color: var(--shiki-light-bg) !important;
+}
+
+/* Dark mode: use dark theme colors */
+[data-theme="dark"] .prose pre .shiki,
+[data-theme="dark"] .prose pre .shiki span {
+	color: var(--shiki-dark) !important;
+	background-color: var(--shiki-dark-bg) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) .prose pre .shiki,
+	:root:not([data-theme="light"]) .prose pre .shiki span {
+		color: var(--shiki-dark) !important;
+		background-color: var(--shiki-dark-bg) !important;
+	}
 }
 
 /* Language label for code blocks */

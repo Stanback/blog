@@ -39,7 +39,7 @@ const SUPPORTED_LANGUAGES = [
 async function getShikiHighlighter(): Promise<Highlighter> {
 	if (!highlighter) {
 		highlighter = await createHighlighter({
-			themes: ['github-light'],
+			themes: ['github-light', 'github-dark'],
 			langs: [...SUPPORTED_LANGUAGES],
 		});
 	}
@@ -147,7 +147,15 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 					// Check if language is supported
 					const loadedLangs = shiki.getLoadedLanguages();
 					if (lang && loadedLangs.includes(lang)) {
-						return shiki.codeToHtml(code, { lang, theme: 'github-light' });
+						// Use dual themes with CSS variables for light/dark mode
+						return shiki.codeToHtml(code, {
+							lang,
+							themes: {
+								light: 'github-light',
+								dark: 'github-dark',
+							},
+							defaultColor: false, // Use CSS variables
+						});
 					}
 				} catch {
 					// Fall through to plain code block

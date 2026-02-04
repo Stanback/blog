@@ -23,7 +23,7 @@ coAuthors:
 
 # Self-Healing Systems: The Holographic Event Pattern
 
-I've been building browser automation for AI research—the kind where you need to orchestrate ChatGPT, Claude, and Gemini to run divergent queries and synthesize the results. It breaks constantly. Selectors change, sites add Cloudflare challenges, responses take longer than expected.
+I've been building browser automation for AI research. It breaks constantly. Selectors change, sites add Cloudflare challenges, responses take longer than expected.
 
 The first instinct is breadcrumbs: log what happened, debug when it fails, fix it, redeploy. But that's slow. The feedback loop is measured in hours.
 
