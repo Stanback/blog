@@ -35,6 +35,14 @@ function isoDate(date: Date): string {
 	return date.toISOString();
 }
 
+// Atelier Mark SVG inline for header
+const atelierMark = `<svg class="atelier-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M5 5 L5 15" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  <path d="M5 5 L15 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M27 27 L27 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M27 27 L21 27" stroke="var(--color-accent-500)" stroke-width="1.5" stroke-linecap="round"/>
+</svg>`;
+
 // Base HTML template
 function baseTemplate(options: {
 	title: string;
@@ -111,8 +119,11 @@ function baseTemplate(options: {
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header>
-    <nav>
-      <a href="/" class="site-title">${config.title}</a>
+    <nav aria-label="Main navigation">
+      <a href="/" class="site-logo">
+        ${atelierMark}
+        <span class="wordmark">${config.title}</span>
+      </a>
       <ul>
         <li><a href="/posts/">Posts</a></li>
         <li><a href="/notes/">Notes</a></li>
@@ -122,13 +133,17 @@ function baseTemplate(options: {
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" aria-label="Main content">
     ${content}
   </main>
 
-  <footer>
-    <p>&copy; ${new Date().getFullYear()} ${config.author.name}</p>
-    <p><a href="/rss.xml">RSS</a> &middot; <a href="/colophon/">Colophon</a></p>
+  <footer aria-label="Footer">
+    <p>© ${new Date().getFullYear()} ${config.author.name}</p>
+    <nav>
+      <a href="/rss.xml">RSS</a>
+      <span class="separator" aria-hidden="true">·</span>
+      <a href="/colophon/">Colophon</a>
+    </nav>
   </footer>
 </body>
 </html>`;
@@ -359,6 +374,14 @@ function renderPhotosIndex(photos: Photo[]): string {
 	});
 }
 
+// Larger atelier mark for hero
+const heroMark = `<svg class="atelier-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M6 6 L6 24" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+  <path d="M6 6 L24 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  <path d="M42 42 L42 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M42 42 L32 42" stroke="var(--color-accent-500)" stroke-width="2" stroke-linecap="round"/>
+</svg>`;
+
 // Render home page
 function renderHome(ctx: BuildContext): string {
 	const recentPosts = ctx.posts
@@ -372,12 +395,18 @@ function renderHome(ctx: BuildContext): string {
 
 	const content = `
     <section class="hero">
-      <h1>${config.title}</h1>
-      <p>${config.description}</p>
+      <div class="hero-logo">
+        ${heroMark}
+        <h1>${config.title}</h1>
+      </div>
+      <p class="hero-tagline">${config.description}</p>
     </section>
 
     <section class="recent">
       <h2>Recent Posts</h2>
+      ${
+				recentPosts.length > 0
+					? `
       <ul class="post-list">
         ${recentPosts
 					.map(
@@ -386,12 +415,15 @@ function renderHome(ctx: BuildContext): string {
           <article>
             <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
             <h3><a href="${getUrl(post)}">${post.title}</a></h3>
+            ${post.description ? `<p>${post.description}</p>` : ''}
           </article>
         </li>`,
 					)
 					.join('')}
       </ul>
-      <p><a href="/posts/">All posts &rarr;</a></p>
+      <p><a href="/posts/">All posts →</a></p>`
+					: `<p class="empty-state">No posts yet. Check back soon.</p>`
+			}
     </section>
 
     ${
@@ -412,7 +444,7 @@ function renderHome(ctx: BuildContext): string {
 					)
 					.join('')}
       </ul>
-      <p><a href="/notes/">All notes &rarr;</a></p>
+      <p><a href="/notes/">All notes →</a></p>
     </section>`
 				: ''
 		}`;

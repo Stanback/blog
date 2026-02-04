@@ -77,6 +77,14 @@ export function baseTemplate(content: string, meta: PageMeta): string {
 			? config.title
 			: `${escapeHtml(title)}${strings.meta.titleSeparator}${config.title}`;
 
+	// Atelier Mark SVG inline for header
+	const atelierMark = `<svg class="atelier-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M5 5 L5 15" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    <path d="M5 5 L15 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M27 27 L27 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M27 27 L21 27" stroke="var(--color-accent-500)" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`;
+
 	return `<!DOCTYPE html>
 <html lang="${config.language}">
 <head>
@@ -126,7 +134,10 @@ export function baseTemplate(content: string, meta: PageMeta): string {
 
   <header>
     <nav aria-label="${strings.a11y.navigation}">
-      <a href="/" class="site-title">${strings.meta.siteName}</a>
+      <a href="/" class="site-logo">
+        ${atelierMark}
+        <span class="wordmark">${strings.meta.siteName}</span>
+      </a>
       <ul>
         <li><a href="/posts/">${strings.nav.posts}</a></li>
         <li><a href="/notes/">${strings.nav.notes}</a></li>
@@ -141,13 +152,11 @@ export function baseTemplate(content: string, meta: PageMeta): string {
   </main>
 
   <footer aria-label="${strings.a11y.footer}">
-    <p>${strings.footer.tagline}</p>
+    <p>© ${new Date().getFullYear()} ${config.author.name}</p>
     <nav>
       <a href="/rss.xml">${strings.footer.links.rss}</a>
-      <span aria-hidden="true">&middot;</span>
-      <a href="/sitemap.xml">${strings.footer.links.sitemap}</a>
-      <span aria-hidden="true">&middot;</span>
-      <a href="/llms.txt">${strings.footer.links.llms}</a>
+      <span class="separator" aria-hidden="true">·</span>
+      <a href="/colophon/">${strings.nav.colophon}</a>
     </nav>
   </footer>
 </body>
@@ -410,9 +419,20 @@ export function indexTemplate(context: BuildContext): string {
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
 		.slice(0, 3);
 
+	// Larger atelier mark for hero
+	const heroMark = `<svg class="atelier-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M6 6 L6 24" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    <path d="M6 6 L24 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <path d="M42 42 L42 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M42 42 L32 42" stroke="var(--color-accent-500)" stroke-width="2" stroke-linecap="round"/>
+  </svg>`;
+
 	const content = `
     <section class="hero">
-      <h1>${strings.meta.siteName}</h1>
+      <div class="hero-logo">
+        ${heroMark}
+        <h1>${strings.meta.siteName}</h1>
+      </div>
       <p class="hero-tagline">${strings.meta.defaultDescription}</p>
     </section>
 
@@ -429,12 +449,13 @@ export function indexTemplate(context: BuildContext): string {
           <article>
             <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
             <h3><a href="${getUrl('post', post.slug)}">${escapeHtml(post.title)}</a></h3>
+            ${post.description ? `<p>${escapeHtml(post.description)}</p>` : ''}
           </article>
         </li>`,
 					)
 					.join('')}
       </ul>
-      <p><a href="/posts/">${strings.labels.allPosts} &rarr;</a></p>`
+      <p><a href="/posts/">${strings.labels.allPosts} →</a></p>`
 					: `<p class="empty-state">${strings.empty.posts}</p>`
 			}
     </section>
@@ -457,7 +478,7 @@ export function indexTemplate(context: BuildContext): string {
 					)
 					.join('')}
       </ul>
-      <p><a href="/notes/">${strings.labels.allNotes} &rarr;</a></p>
+      <p><a href="/notes/">${strings.labels.allNotes} →</a></p>
     </section>`
 				: ''
 		}`;

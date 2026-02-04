@@ -1,8 +1,10 @@
-# BRISTANBACK.COM — Blog Specification v1.1
+# BRISTANBACK.COM — Blog Specification v1.2
 
 > A bespoke static blog at the intersection of technology, design, photography, UX, and the human experience of building in the age of AI.
 
 **Companion docs:**
+- [CLAUDE.md](./CLAUDE.md) — Axioms for building (AI agent instructions)
+- [THESIS.md](./THESIS.md) — Homepage thesis block (single source of truth)
 - [VOICE.md](./VOICE.md) — Voice, personality, microcopy, and content scaffolding
 - [content/pages/soul.md](./content/pages/soul.md) — Identity manifesto (the blog's SOUL.md)
 
@@ -11,22 +13,24 @@
 ## Table of Contents
 
 1. [Project Overview](#1-project-overview)
-2. [Hard Constraints](#2-hard-constraints)
-3. [Author Profile](#3-author-profile)
-4. [Content Strategy](#4-content-strategy)
-5. [Content Model](#5-content-model)
-6. [URL Design](#6-url-design)
-7. [Technical Architecture](#7-technical-architecture)
-8. [Build Pipeline](#8-build-pipeline)
-9. [Design System](#9-design-system)
-10. [Logo Specification](#10-logo-specification)
-11. [SEO + Sharing](#11-seo--sharing)
-12. [Accessibility](#12-accessibility)
-13. [Security + Privacy](#13-security--privacy)
-14. [Deployment](#14-deployment)
-15. [Domain Strategy](#15-domain-strategy)
-16. [Implementation Roadmap](#16-implementation-roadmap)
-17. [Appendices](#appendices)
+2. [First Principles](#2-first-principles)
+3. [Hard Constraints](#3-hard-constraints)
+4. [Author Profile](#4-author-profile)
+5. [Content Strategy](#5-content-strategy)
+6. [Content Model](#6-content-model)
+7. [URL Design](#7-url-design)
+8. [Technical Architecture](#8-technical-architecture)
+9. [Build Pipeline](#9-build-pipeline)
+10. [Homepage Architecture (The Thesis Pattern)](#10-homepage-architecture-the-thesis-pattern)
+11. [Design System](#11-design-system)
+12. [Logo Specification](#12-logo-specification)
+13. [SEO + Sharing](#13-seo--sharing)
+14. [Accessibility](#14-accessibility)
+15. [Security + Privacy](#15-security--privacy)
+16. [Deployment](#16-deployment)
+17. [Domain Strategy](#17-domain-strategy)
+18. [Implementation Roadmap](#18-implementation-roadmap)
+19. [Appendices](#appendices)
 
 ---
 
@@ -57,7 +61,72 @@ A personal blog that feels like a **digital atelier**—technical depth meets ar
 
 ---
 
-## 2. Hard Constraints
+## 2. First Principles
+
+### The Physics of This Blog
+
+**A blog is a deliberate signal emitted by a specific mind into a noisy, competitive network.**
+
+This is the corrected first-principles definition. It reconciles:
+
+| Dimension | What It Means |
+|-----------|---------------|
+| **Memory** | Internal value—the archive exists for the author |
+| **Signal** | External value—the transmission exists for the reader |
+| **Taste** | Human trust—curation demonstrates judgment |
+| **Structure** | Machine trust—semantic clarity enables discovery |
+
+### Corollaries
+
+1. **Publishing is not archiving; it is transmission.**
+2. **Transmission implies competition for attention.**
+3. **Competition implies framing, filtering, and prioritization.**
+4. **Failure to frame is not humility—it is delegation to entropy.**
+
+### Core Signal Axioms
+
+These replace any "quiet lobby" framing entirely.
+
+#### Signal > Storage
+The blog must optimize for meaning transfer, not idea accumulation. If the author does not decide what matters most, the network will decide for them—poorly.
+
+#### The Homepage Is a Context Filter
+The homepage is not a lobby, a feed, or a welcome mat. It is a filter that answers one question: "Can I trust this person's filter of the world?" This requires curation, not chronology.
+
+#### Taste Is the Primary Trust Primitive
+In an era of AI abundance:
+- Competence is assumed
+- Structure is table stakes
+- **Taste is the differentiator**
+
+Taste is visible through: what is foregrounded, what is omitted, how strongly a worldview is stated, how clearly priorities are ranked. A list with no prioritization is not neutral; it is weak taste.
+
+#### Reduce Cognitive Load Before Asking for Depth
+Humans will not parse your archive to understand you. The site must:
+- Collapse worldview early
+- Reduce choice anxiety
+- Provide a clear "start here"
+
+This is not marketing—it is cognitive empathy.
+
+#### Humans and Machines Are Orthogonal Audiences
+Do not trade one for the other.
+- Machines require: semantic HTML, llms.txt, summaries, stable structure
+- Humans require: vibe, framing, aesthetic cohesion, effort signals
+
+Engineering exists so these can coexist.
+
+#### Quiet Without Leverage Is Invisibility
+Minimalism only works when reputation does the signaling. If reputation ≠ known:
+- Silence reads as absence
+- Restraint reads as underinvestment
+- Brutalism reads as affectation
+
+The site must earn quiet over time.
+
+---
+
+## 3. Hard Constraints
 
 These constraints define "no framework" and prevent scope creep.
 
@@ -90,7 +159,7 @@ collect → parse → render → write
 
 ---
 
-## 3. Author Profile
+## 4. Author Profile
 
 ### Who is Bri Stanback?
 
@@ -118,7 +187,7 @@ The AI bot @Lunen represents a playful, frontier-exploring voice—curious about
 
 ---
 
-## 4. Content Strategy
+## 5. Content Strategy
 
 ### Thematic Pillars
 
@@ -250,7 +319,7 @@ This is not SEO manipulation—it's signal design for a world where people disco
 
 ---
 
-## 5. Content Model
+## 6. Content Model
 
 ### Base Type
 
@@ -397,7 +466,7 @@ Slug generation follows this precedence:
 
 ---
 
-## 6. URL Design
+## 7. URL Design
 
 ### URL Patterns
 
@@ -436,7 +505,7 @@ Generate `dist/404.html` with:
 
 ---
 
-## 7. Technical Architecture
+## 8. Technical Architecture
 
 ### High-Level Flow
 
@@ -599,7 +668,7 @@ export async function parseMarkdown(content: string): Promise<string> {
 
 ---
 
-## 8. Build Pipeline
+## 9. Build Pipeline
 
 ### Main Build Script
 
@@ -864,11 +933,125 @@ test('slugify handles dates in filenames', () => {
 
 ---
 
-## 9. Design System
+## 10. Homepage Architecture (The Thesis Pattern)
 
-### Design Philosophy
+### Purpose
 
-**Keywords:** Technical, artful, soft edges, feminine, minimal, warm
+The homepage acts as an **intellectual membrane**:
+- Repel misaligned readers
+- Magnetize aligned ones
+- Compress worldview into a low-friction surface
+
+This is not a hero section. It is a thesis.
+
+### Component 1: The Thesis Block (Top ~30% of viewport)
+
+**Function:** This is not a hero. It is a thesis statement.
+
+It must:
+- Be opinionated
+- Be falsifiable
+- Be revisable
+- Set the interpretive lens for everything below
+
+**Rules:**
+- No biography
+- No tool lists
+- No vague abstractions
+- No future-proof fluff
+
+**Current thesis (v1.0):**
+
+> **Software is no longer scarce. Judgment is.**
+> I build systems, interfaces, and identities that survive AI abundance.
+
+This is stored in `THESIS.md` as the single source of truth.
+
+This block must change over time. That's a feature—but changes should be intentional and logged.
+
+### Component 2: The Proof (Curated Relevance, Not Recency)
+
+Immediately below the thesis:
+
+**"Start Here"** — 3–5 editorially chosen essays that support the thesis.
+
+This communicates:
+- Judgment
+- Confidence
+- Respect for the reader's time
+
+Then, and only then:
+- "Recent writing"
+- "Notes"
+- "Photos"
+
+**Chronology is subordinate to curation.**
+
+### Component 3: The Network (Machine + Power User Layer)
+
+This layer is not hidden, but it's not dominant.
+
+Includes:
+- `llms.txt`
+- RSS
+- Sitemap
+- SOUL.md (identity + values)
+- SKILLS.md (capabilities + method)
+
+This tells:
+- **AIs:** "Here is the structure"
+- **Humans:** "This work is meant to travel and be reused"
+
+### How This Serves SEO, AEO, and Reality
+
+The pragmatic stance:
+- Traditional SEO fundamentals still matter (speed, links, structure)
+- AEO matters when AI cites you
+- llms.txt is necessary but insufficient
+
+The Thesis Pattern helps because:
+- It increases dwell time (humans)
+- It improves extractability (machines)
+- It clarifies authorial intent (reduces AI hallucination)
+- It improves linkability ("this person has a clear POV")
+
+**You are not designing for the AI you wish existed. You are designing for the human who decides whether to trust the AI's summary of you.**
+
+### The Hero Question (Final Answer)
+
+Do you need a hero? **No.**
+
+Do you need framing, vibe, and thesis? **Absolutely yes.**
+
+The Thesis Block is the engineering solution that:
+- Avoids marketing theater
+- Avoids cargo-cult brutalism
+- Respects cognitive load
+- Asserts responsibility for signal
+
+It is not anti-hero. It is **post-hero**.
+
+### Thesis Evolution Rules
+
+The thesis must evolve as thinking evolves. Rules for revision:
+
+1. **Change the thesis when your worldview changes**, not when you feel pressure to be fresh
+2. **Archive old theses** in the colophon or a changelog (transparency)
+3. **Never apologize for past positions**—show the evolution
+4. **Rate of change:** expect 1-2 major thesis revisions per year maximum
+
+---
+
+## 11. Design System
+
+### Design North Star
+
+**Editorial atelier.**
+Feels like a personal notebook crossed with a Parisian photo book crossed with a well-maintained codebase.
+
+**Keywords:** Quiet · Observational · Warm · Precise · Unhurried
+
+Not brutalist. Not bloggy. Not "product page."
 
 The aesthetic should feel like:
 - A well-organized workspace with natural light
@@ -883,25 +1066,51 @@ The aesthetic should feel like:
 
 Tailwind imports these tokens. They are not duplicated elsewhere.
 
+### Color System (Light + Dark as First-Class Citizens)
+
+**Core Principle:** Dark mode is NOT inverted light mode. It's a *night studio*, not a black UI.
+
+#### Light Mode (Paper)
+
+```css
+--color-bg-main:        oklch(0.97 0.01 90);   /* paper */
+--color-bg-muted:       oklch(0.94 0.01 80);
+--color-text-primary:   oklch(0.18 0.01 60);   /* ink */
+--color-text-secondary: oklch(0.35 0.01 60);
+--color-border-subtle:  oklch(0.85 0.01 80);
+--color-accent-500:     oklch(0.58 0.10 350);  /* rose */
+```
+
+#### Dark Mode (Night Studio)
+
+```css
+--color-bg-main:        oklch(0.14 0.01 260);  /* warm charcoal */
+--color-bg-muted:       oklch(0.18 0.01 260);
+--color-text-primary:   oklch(0.92 0.01 80);   /* warm paper */
+--color-text-secondary: oklch(0.70 0.01 80);
+--color-border-subtle:  oklch(0.30 0.01 260);
+--color-accent-500:     oklch(0.62 0.10 350);  /* rose lifts slightly */
+```
+
+**Rule:** Accent is *slightly brighter in dark mode*, never louder.
+
+#### Full Token Reference
+
 ```css
 /* styles/tokens.css */
 
 :root {
-  /* ═══════════════════════════════════════════════════════════
-     COLORS (OKLCH)
-     ═══════════════════════════════════════════════════════════ */
-
   /* Neutral palette - warm undertones */
   --color-void:     oklch(0.00 0.00 0);      /* true black */
-  --color-ink:      oklch(0.15 0.01 60);     /* deep warm black */
+  --color-ink:      oklch(0.18 0.01 60);     /* deep warm black */
   --color-charcoal: oklch(0.25 0.01 60);     /* dark warm gray */
-  --color-stone:    oklch(0.45 0.01 60);     /* medium warm gray */
+  --color-stone:    oklch(0.35 0.01 60);     /* medium warm gray */
   --color-sand:     oklch(0.70 0.02 60);     /* light warm gray */
-  --color-cream:    oklch(0.92 0.02 80);     /* off-white warm */
+  --color-cream:    oklch(0.94 0.01 80);     /* off-white warm */
   --color-paper:    oklch(0.97 0.01 90);     /* near-white */
   --color-white:    oklch(1.00 0.00 0);      /* pure white */
 
-  /* Accent - muted rose/mauve (soft, feminine, not girly) */
+  /* Accent - muted rose (soft, warm, not loud) */
   --color-accent-100: oklch(0.95 0.02 350);
   --color-accent-200: oklch(0.88 0.04 350);
   --color-accent-300: oklch(0.78 0.06 350);
@@ -911,13 +1120,13 @@ Tailwind imports these tokens. They are not duplicated elsewhere.
   --color-accent-700: oklch(0.38 0.08 350);
 
   /* Semantic */
-  --color-text:       var(--color-ink);
-  --color-text-muted: var(--color-stone);
-  --color-bg:         var(--color-paper);
-  --color-link:       var(--color-accent-600);
-  --color-link-hover: var(--color-accent-700);
-  --color-code-bg:    var(--color-cream);
-  --color-code-text:  var(--color-ink);
+  --color-text-primary:   var(--color-ink);
+  --color-text-secondary: var(--color-stone);
+  --color-bg-main:        var(--color-paper);
+  --color-link:           var(--color-accent-600);
+  --color-link-hover:     var(--color-accent-700);
+  --color-code-bg:        var(--color-cream);
+  --color-code-text:      var(--color-ink);
 
   /* ═══════════════════════════════════════════════════════════
      TYPOGRAPHY
@@ -1133,85 +1342,88 @@ Self-host fonts from `static/fonts/` to avoid third-party requests.
 
 ---
 
-## 10. Logo Specification
+## 12. Logo Specification
 
-### Concept
+### The Atelier Mark
 
-The logo should pass all 8 tests from the brief:
+The logo is called the **Atelier Mark** — weighted viewfinder corners that suggest framing, perspective, and the act of seeing.
 
-| Test | Requirement | Approach |
-|------|-------------|----------|
-| 01 Gradient | No multi-color gradients | Single color or monochrome |
-| 02 Edge Softness | No blur/feather | Crisp vector paths |
-| 03 Glow Test | Light source visible | No glow effects |
-| 04 Organic Form | No blobby shapes | Geometric precision |
-| 05 Radial Symmetry | No aperture/blossom | Asymmetric or linear |
-| 06 Screenshot Test | Recognizable at 200ms/32px | Simple, bold form |
-| 07 Material Clarity | Nameable in <3s | "It's a [shape]" |
-| 08 Animation Test | Mechanical motion only | Simple transforms |
+#### Concept
 
-### Proposed Concept: "The Window"
+- **Top-left corner:** Heavy anchor (thick vertical stroke, thinner horizontal arm)
+- **Bottom-right corner:** Delicate echo (thinner strokes, accent color on horizontal arm)
+- **Asymmetric weight:** Creates visual hierarchy and character
+- **Viewfinder metaphor:** Photography + framing + perspective
 
-A simple geometric mark that suggests:
-- A window or frame (seeing, perspective)
-- A bracket or code delimiter (technical)
-- Openness, light, possibility
+The asymmetry is intentional — the heavy anchor draws the eye, the delicate echo completes the frame without competing.
 
-**Option A: Offset Square**
+#### The 8 Logo Tests (All Pass)
+
+| Test | Requirement | Result |
+|------|-------------|--------|
+| 01 Gradient | No multi-color gradients | ✓ Two colors (ink + accent) |
+| 02 Edge Softness | No blur/feather | ✓ Crisp vector strokes |
+| 03 Glow Test | Light source visible | ✓ No glow effects |
+| 04 Organic Form | No blobby shapes | ✓ Geometric L-shapes |
+| 05 Radial Symmetry | No aperture/blossom | ✓ Diagonal asymmetry |
+| 06 Screenshot Test | Recognizable at 200ms/32px | ✓ Bold, simple form |
+| 07 Material Clarity | Nameable in <3s | ✓ "Corner brackets" |
+| 08 Animation Test | Mechanical motion only | ✓ Simple transforms |
+
+#### SVG Implementation
+
+```svg
+<svg viewBox="0 0 32 32" fill="none">
+  <!-- Top-left: heavy anchor -->
+  <path d="M5 5 L5 15" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  <path d="M5 5 L15 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Bottom-right: delicate echo with accent -->
+  <path d="M27 27 L27 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M27 27 L21 27" stroke="var(--color-accent-500)" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
 ```
-    ┌────────┐
-    │        │
-    │   ┌────┼────┐
-    │   │    │    │
-    └───┼────┘    │
-        │         │
-        └─────────┘
-```
-Two overlapping squares, offset—suggesting depth, perspective, layers.
 
-**Option B: Soft Bracket**
-```
-    ╭─────╮
-    │     │
-    │
-    │     │
-    ╰─────╯
-```
-A rounded bracket or partial frame—suggesting code, containment, openness.
+#### Design System Usage
 
-**Option C: Corner Mark**
-```
-    ┌─────
-    │
-    │
+The Atelier Mark is a **design primitive** that appears throughout the site:
 
-       ─────┘
-```
-Two corner marks, opposing—suggesting framing, perspective, incompleteness that implies completeness.
+| Context | Usage |
+|---------|-------|
+| **Header** | Logo lockup (mark + wordmark) |
+| **Hero** | Larger mark next to site title |
+| **Blockquotes** | Single corner as pull-quote accent |
+| **Section breaks** | Two corners facing each other |
+| **Favicon** | 32×32 mark only |
 
-### Logo Specifications
+#### Stroke Weights by Size
+
+| Size | Anchor vertical | Anchor horizontal | Echo strokes |
+|------|-----------------|-------------------|--------------|
+| 32px (favicon) | 4px | 2.5px | 1.5px |
+| 48px (hero) | 5px | 3px | 2px |
+| 28px (header) | 4px | 2.5px | 1.5px |
+
+#### Visual Reference
 
 ```
-Size: 32×32px base (scales to any size)
-Stroke weight: 2px at 32px (scales proportionally)
-Corner radius: 2px at 32px
-Color: Single color (--color-ink or --color-accent-500)
-Formats: SVG (primary), PNG fallbacks at 32, 64, 128, 256, 512px
+    ┃━━━━━━
+    ┃
+    ┃
+    ┃
+                    │
+                    │
+              ━━━━━━┛ (accent color)
 ```
 
 ### Wordmark
 
-**STANBACK** in Inter, all caps, letter-spaced
-- Or: **bristanback.com** in lowercase
-
-The logo mark + wordmark should work:
-- Side by side (horizontal)
-- Stacked (vertical)
-- Mark only (favicon, small contexts)
+**bristanback.com** in Inter, lowercase
+- Logo lockup: mark + wordmark side by side
+- Mark only for favicon and small contexts
 
 ---
 
-## 11. SEO + Sharing
+## 13. SEO + Sharing
 
 ### Required `<head>` Elements
 
@@ -1346,7 +1558,7 @@ Policy: Open external links in new tab. Internal links stay in same tab.
 
 ---
 
-## 12. Accessibility
+## 14. Accessibility
 
 ### Baseline Checklist
 
@@ -1408,7 +1620,7 @@ Ensure these combinations meet WCAG AA:
 
 ---
 
-## 13. Security + Privacy
+## 15. Security + Privacy
 
 ### Security Headers
 
@@ -1437,7 +1649,7 @@ If Cloudflare Web Analytics is added later, disclose in footer/colophon.
 
 ---
 
-## 14. Deployment
+## 16. Deployment
 
 ### Deployment Strategy
 
@@ -1514,7 +1726,7 @@ Cloudflare Pages provides the CNAME target. Do not hardcode IPs.
 
 ---
 
-## 15. Domain Strategy
+## 17. Domain Strategy
 
 ### Primary Domain
 
@@ -1542,7 +1754,7 @@ For other domains, configure redirects at the DNS/registrar level or via separat
 
 ---
 
-## 16. Implementation Roadmap
+## 18. Implementation Roadmap
 
 ### MVP Scope Fence
 
@@ -1700,6 +1912,6 @@ When evaluating logo designs, verify:
 
 ---
 
-*Spec version: 1.1*
-*Last updated: 2026-02-03*
+*Spec version: 1.2*
+*Last updated: 2026-02-04*
 *Authors: Bri Stanback + Claude*

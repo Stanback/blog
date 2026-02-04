@@ -1,5 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Corner Mark logo - two opposing corners suggesting framing/perspective -->
-  <path d="M4 4 L4 12 M4 4 L12 4" stroke="#1a1a1a"/>
-  <path d="M28 28 L28 20 M28 28 L20 28" stroke="#1a1a1a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Atelier Mark: Weighted viewfinder corners -->
+  <!-- Top-left: heavy anchor -->
+  <path d="M6 6 L6 16" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M6 6 L16 6" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Bottom-right: delicate echo with accent -->
+  <path d="M26 26 L26 20" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M26 26 L20 26" stroke="#9d6b6b" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
