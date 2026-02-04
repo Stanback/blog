@@ -1,7 +1,13 @@
 // Render content to HTML and write to dist/
 
 import { config } from './config.js';
-import { glyphMarkFull, glyphMarkFullLarge } from './glyphs.js';
+import {
+	glyphCornerTL,
+	glyphMarkFull,
+	glyphMarkFullLarge,
+	iconMoon,
+	iconSun,
+} from './glyphs.js';
 import { strings } from './strings.js';
 import type { BuildContext, Content, Note, Page, Photo, Post, Skills, Soul } from './types.js';
 import { formatDateLong, formatDateMachine } from './utils/dates.js';
@@ -114,12 +120,19 @@ function baseTemplate(options: {
         ${atelierMark}
         <span class="wordmark">${config.title}</span>
       </a>
-      <ul>
-        <li><a href="/posts/">Posts</a></li>
-        <li><a href="/notes/">Notes</a></li>
-        <li><a href="/photos/">Photos</a></li>
-        <li><a href="/about/">About</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul>
+          <li><a href="/posts/">Posts</a></li>
+          <li><a href="/notes/">Notes</a></li>
+          <li><a href="/photos/">Photos</a></li>
+          <li><a href="/about/soul/" class="nav-special">SOUL</a></li>
+          <li><a href="/about/skills/" class="nav-special">SKILL</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+          ${iconSun}
+          ${iconMoon}
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -128,13 +141,20 @@ function baseTemplate(options: {
   </main>
 
   <footer aria-label="Footer">
-    <p>© ${new Date().getFullYear()} ${config.author.name}</p>
-    <nav>
-      <a href="/rss.xml">RSS</a>
-      <span class="separator" aria-hidden="true">·</span>
-      <a href="/colophon/">Colophon</a>
-    </nav>
+    <p class="footer-tagline">${strings.footer.tagline}</p>
   </footer>
+
+  <script>
+  (function(){
+    var t=document.querySelector('.theme-toggle'),h=document.documentElement,s=localStorage.getItem('theme');
+    if(s)h.dataset.theme=s;
+    t&&t.addEventListener('click',function(){
+      var n=h.dataset.theme==='dark'?'light':'dark';
+      h.dataset.theme=n;
+      localStorage.setItem('theme',n);
+    });
+  })();
+  </script>
 </body>
 </html>`;
 }
@@ -405,6 +425,9 @@ const heroMark = glyphMarkFullLarge.replace(
 	'class="atelier-mark"',
 );
 
+// Corner mark for "Start here" module header
+const moduleCorner = glyphCornerTL.replace('class="glyph glyph-corner glyph-corner--tl"', 'class="module-corner"');
+
 // Render home page
 function renderHome(ctx: BuildContext): string {
 	// Featured posts for "Start Here" section
@@ -413,21 +436,15 @@ function renderHome(ctx: BuildContext): string {
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
 		.slice(0, 5);
 
-	// Recent posts (excluding featured to avoid duplication)
-	const featuredSlugs = new Set(featuredPosts.map((p) => p.slug));
-	const recentPosts = ctx.posts
-		.filter((p) => !p.draft && !featuredSlugs.has(p.slug))
-		.sort((a, b) => b.date.getTime() - a.date.getTime())
-		.slice(0, 5);
-
+	// Recent notes
 	const recentNotes = ctx.notes
 		.filter((n) => !n.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
-		.slice(0, 3);
+		.slice(0, 4);
 
 	const content = `
     <section class="thesis">
-      <div class="thesis-logo">
+      <div class="thesis-decoration" aria-hidden="true">
         ${heroMark}
       </div>
       <h1 class="thesis-headline">${strings.thesis.headline}</h1>
@@ -437,19 +454,18 @@ function renderHome(ctx: BuildContext): string {
     ${
 			featuredPosts.length > 0
 				? `
-    <section class="start-here">
-      <h2>${strings.home.startHere}</h2>
-      <p class="section-description">${strings.home.startHereDescription}</p>
-      <ul class="post-list">
+    <section class="start-here-module">
+      <div class="module-header">
+        <span class="module-decoration" aria-hidden="true">${moduleCorner}</span>
+        <h2>${strings.home.startHere}</h2>
+      </div>
+      <ul class="featured-list">
         ${featuredPosts
 					.map(
 						(post) => `
         <li>
-          <article>
-            <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
-            <h3><a href="${getUrl(post)}">${post.title}</a></h3>
-            ${post.description ? `<p>${post.description}</p>` : ''}
-          </article>
+          <span class="accent-dash" aria-hidden="true"></span>
+          <a href="${getUrl(post)}">${post.title}</a>
         </li>`,
 					)
 					.join('')}
@@ -458,49 +474,14 @@ function renderHome(ctx: BuildContext): string {
 				: ''
 		}
 
-    <section class="recent">
-      <h2>${strings.home.recentPosts}</h2>
-      ${
-				recentPosts.length > 0
-					? `
-      <ul class="post-list">
-        ${recentPosts
-					.map(
-						(post) => `
-        <li>
-          <article>
-            <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
-            <h3><a href="${getUrl(post)}">${post.title}</a></h3>
-            ${post.description ? `<p>${post.description}</p>` : ''}
-          </article>
-        </li>`,
-					)
-					.join('')}
-      </ul>
-      <p><a href="/posts/">${strings.labels.allPosts} →</a></p>`
-					: `<p class="empty-state">${strings.empty.posts}</p>`
-			}
-    </section>
-
     ${
 			recentNotes.length > 0
 				? `
-    <section class="recent">
+    <section class="recent-notes">
       <h2>${strings.home.recentNotes}</h2>
-      <ul class="note-list">
-        ${recentNotes
-					.map(
-						(note) => `
-        <li>
-          <article>
-            <time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
-            <h3><a href="${getUrl(note)}">${note.title}</a></h3>
-          </article>
-        </li>`,
-					)
-					.join('')}
+      <ul class="note-list-simple">
+        ${recentNotes.map((note) => `<li><a href="${getUrl(note)}">${note.title}</a></li>`).join('')}
       </ul>
-      <p><a href="/notes/">${strings.labels.allNotes} →</a></p>
     </section>`
 				: ''
 		}`;

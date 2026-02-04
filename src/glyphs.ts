@@ -6,53 +6,55 @@
  *   --logo-ink: Primary stroke color (defaults to currentColor)
  *   --logo-accent: Accent color (defaults to #C45A8A)
  *
+ * The logo is a simple corner bracket (two L-strokes) in the top-left.
+ * Used as a decorative element to frame content.
+ *
  * Glyph inventory:
- *   G0 - Full Mark: Complete logo (rare, ≤1 per page above fold)
- *   G1 - Corner Anchor: Single L-corner (common)
- *   G2 - Woven Thread: Inner offset line at 45% opacity (subtle)
- *   G3 - Accent Thread: Short rose segment (state indicator only)
+ *   G0 - Corner Mark: Simple L-bracket (the logo)
+ *   G1 - Corner Anchor: Single L-corner for decoration
+ *   G3 - Accent Dash: Short rose segment for list items
  */
 
-// G0 — Full Mark (32×32)
-// Use cases: header lockup, favicon, footer signature, thesis hero
+// G0 — Corner Mark (32×32) - The simplified logo
+// Just two strokes forming an L in the top-left corner
+// Use cases: header lockup, favicon, thesis decoration
 export const glyphMarkFull = `<svg class="glyph glyph-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 6 16 V 6 H 16 M 26 18 V 26 H 18" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 8 14 V 8 H 14" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
-  <path d="M 12 8 H 14" stroke="var(--logo-accent, #C45A8A)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 6 6 V 20" stroke="var(--logo-ink, currentColor)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 6 6 H 20" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round"/>
 </svg>`;
 
-// G0 — Full Mark (48×48, scaled 1.5x for hero)
+// G0 — Corner Mark (48×48, scaled for larger contexts)
+// Used in thesis/hero sections
 export const glyphMarkFullLarge = `<svg class="glyph glyph-mark glyph-mark--large" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 9 24 V 9 H 24 M 39 27 V 39 H 27" stroke="var(--logo-ink, currentColor)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 12 21 V 12 H 21" stroke="var(--logo-ink, currentColor)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
-  <path d="M 18 12 H 21" stroke="var(--logo-accent, #C45A8A)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 8 8 V 32" stroke="var(--logo-ink, currentColor)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 8 8 H 32" stroke="var(--logo-ink, currentColor)" stroke-width="3" stroke-linecap="round"/>
 </svg>`;
 
-// G1 — Corner Anchor, Top-Left
+// G1 — Corner Anchor, Top-Left (smaller, for modules)
 // Use cases: blockquotes, callouts, module headers, image captions
-export const glyphCornerTL = `<svg class="glyph glyph-corner glyph-corner--tl" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 3 13 V 3 H 13" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+export const glyphCornerTL = `<svg class="glyph glyph-corner glyph-corner--tl" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M 3 3 V 17" stroke="var(--logo-ink, currentColor)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 3 3 H 17" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round"/>
 </svg>`;
 
-// G1 — Corner Anchor, Bottom-Right
-export const glyphCornerBR = `<svg class="glyph glyph-corner glyph-corner--br" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 13 3 V 13 H 3" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+// G1 — Corner Anchor, Bottom-Right (for framing)
+export const glyphCornerBR = `<svg class="glyph glyph-corner glyph-corner--br" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M 17 17 V 3" stroke="var(--logo-ink, currentColor)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 17 17 H 3" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round"/>
 </svg>`;
 
-// G2 — Woven Thread
-// Use cases: section breaks, list separators
-export const glyphThread = `<svg class="glyph glyph-thread" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 2 10 V 2 H 10" stroke="var(--logo-ink, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+// G3 — Accent Dash (horizontal, for list items)
+// The rose accent dash used before featured post titles
+export const glyphAccentDash = `<svg class="glyph glyph-accent" viewBox="0 0 12 4" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M 1 2 H 11" stroke="var(--logo-accent, #C45A8A)" stroke-width="2" stroke-linecap="round"/>
 </svg>`;
 
-// G3 — Accent Thread (horizontal dash)
-// Use cases: active nav indicator, hover states, selected items
-// Rule: Exactly one per component, never mirrored
-export const glyphAccentDash = `<svg class="glyph glyph-accent" viewBox="0 0 10 4" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 2 2 H 8" stroke="var(--logo-accent, #C45A8A)" stroke-width="2" stroke-linecap="round"/>
+// Theme toggle icons
+export const iconSun = `<svg class="icon icon-sun" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.93 4.93l1.41 1.41M13.66 13.66l1.41 1.41M4.93 15.07l1.41-1.41M13.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
 </svg>`;
 
-// G3 — Accent Thread (vertical dash variant)
-export const glyphAccentDashVertical = `<svg class="glyph glyph-accent glyph-accent--vertical" viewBox="0 0 4 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M 2 2 V 8" stroke="var(--logo-accent, #C45A8A)" stroke-width="2" stroke-linecap="round"/>
+export const iconMoon = `<svg class="icon icon-moon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M17.5 10.5a7.5 7.5 0 01-10-10 7.5 7.5 0 1010 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;

@@ -1,29 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- STANBACK Atelier Mark v1 -->
-  <!-- Primary mark (ink) -->
-  <path
-    d="M 6 16 V 6 H 16
-       M 26 18 V 26 H 18"
-    stroke="#1a1a1a"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-  <!-- Woven inner thread (subtle ink) -->
-  <path
-    d="M 8 14 V 8 H 14"
-    stroke="#1a1a1a"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    opacity="0.45"
-  />
-  <!-- Single accent thread (rose) -->
-  <path
-    d="M 12 8 H 14"
-    stroke="#C45A8A"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
+  <!-- STANBACK Corner Mark - Simple L-bracket -->
+  <path d="M 6 6 V 20" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 6 6 H 20" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
 </svg>

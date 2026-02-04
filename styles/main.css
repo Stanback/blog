@@ -156,6 +156,13 @@ header nav {
 	letter-spacing: var(--tracking-tight);
 }
 
+/* Nav right section: links + toggle */
+.nav-right {
+	display: flex;
+	align-items: center;
+	gap: var(--space-6);
+}
+
 /* Navigation links */
 header nav ul {
 	display: flex;
@@ -206,6 +213,29 @@ header nav .nav-special {
 	height: 18px;
 }
 
+/* Show sun icon by default (light mode), moon on hover/focus */
+.theme-toggle .icon-moon {
+	display: none;
+}
+
+/* In dark mode, show moon, hide sun */
+[data-theme="dark"] .theme-toggle .icon-sun {
+	display: none;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+	display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) .theme-toggle .icon-sun {
+		display: none;
+	}
+	:root:not([data-theme="light"]) .theme-toggle .icon-moon {
+		display: block;
+	}
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    MAIN CONTENT AREA
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -230,8 +260,13 @@ footer {
 	border-top: 1px solid var(--color-border-subtle);
 	text-align: center;
 	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	color: var(--color-text-muted);
 	transition: border-color var(--transition-normal), color var(--transition-normal);
+}
+
+footer .footer-tagline {
+	margin: 0;
+	font-style: italic;
 }
 
 footer p {
@@ -267,21 +302,22 @@ footer .separator {
    HOME PAGE — Thesis Pattern
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Thesis block - the intellectual membrane */
+/* ═══════════════════════════════════════════════════════════════════════════
+   THESIS SECTION — Homepage hero
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 .thesis {
-	text-align: center;
-	padding: var(--space-16) 0 var(--space-12);
-	border-bottom: 1px solid var(--color-border-subtle);
-	margin-bottom: var(--space-12);
-}
-
-.thesis-logo {
-	display: flex;
-	justify-content: center;
+	text-align: left;
+	padding: var(--space-12) 0 var(--space-16);
 	margin-bottom: var(--space-8);
+	position: relative;
 }
 
-.thesis-logo .atelier-mark {
+.thesis-decoration {
+	margin-bottom: var(--space-6);
+}
+
+.thesis-decoration .atelier-mark {
 	width: 48px;
 	height: 48px;
 }
@@ -295,19 +331,129 @@ footer .separator {
 	letter-spacing: var(--tracking-tight);
 	line-height: var(--leading-tight);
 	max-width: var(--measure-narrow);
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .thesis-body {
 	font-size: var(--font-size-lg);
 	color: var(--color-text-secondary);
 	max-width: var(--measure-narrow);
-	margin: 0 auto;
+	margin: 0;
 	line-height: var(--leading-relaxed);
 }
 
-/* Start Here section - curated posts */
+/* ═══════════════════════════════════════════════════════════════════════════
+   START HERE MODULE — Bordered featured posts box
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.start-here-module {
+	border: 1px solid var(--color-border-subtle);
+	border-radius: var(--radius-md);
+	padding: var(--space-6);
+	margin-bottom: var(--space-12);
+	background: var(--color-bg-elevated);
+	transition: border-color var(--transition-normal), background var(--transition-normal);
+}
+
+.module-header {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+	margin-bottom: var(--space-4);
+}
+
+.module-decoration {
+	flex-shrink: 0;
+}
+
+.module-corner {
+	width: 20px;
+	height: 20px;
+}
+
+.module-header h2 {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-lg);
+	font-weight: 500;
+	color: var(--color-text-primary);
+	margin: 0;
+}
+
+/* Featured list with accent dashes */
+.featured-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-3);
+}
+
+.featured-list li {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+}
+
+.featured-list .accent-dash {
+	width: 12px;
+	height: 2px;
+	background: var(--color-accent-500);
+	border-radius: 1px;
+	flex-shrink: 0;
+}
+
+.featured-list a {
+	color: var(--color-text-primary);
+	text-decoration: none;
+	font-size: var(--font-size-base);
+	transition: color var(--transition-fast);
+}
+
+.featured-list a:hover {
+	color: var(--color-accent-500);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RECENT NOTES — Simple list on homepage
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.recent-notes {
+	margin-bottom: var(--space-12);
+}
+
+.recent-notes h2 {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-xl);
+	font-weight: 500;
+	color: var(--color-text-primary);
+	margin-bottom: var(--space-4);
+}
+
+.note-list-simple {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+}
+
+.note-list-simple li {
+	padding: 0;
+}
+
+.note-list-simple a {
+	color: var(--color-text-secondary);
+	text-decoration: none;
+	font-size: var(--font-size-base);
+	transition: color var(--transition-fast);
+}
+
+.note-list-simple a:hover {
+	color: var(--color-text-primary);
+}
+
+/* Legacy Start Here section (kept for compatibility) */
 .start-here {
 	margin-bottom: var(--space-12);
 	padding-bottom: var(--space-12);

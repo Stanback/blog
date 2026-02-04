@@ -4,6 +4,7 @@ date: 2026-02-03
 type: post
 schemaVersion: 1
 draft: false
+featured: true
 tags:
   - building
   - meta
