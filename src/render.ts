@@ -29,10 +29,9 @@ const isoDate = formatDateMachine;
 
 // Atelier Mark SVG inline for header
 const atelierMark = `<svg class="atelier-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M5 5 L5 15" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-  <path d="M5 5 L15 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M27 27 L27 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M27 27 L21 27" stroke="var(--color-accent-500)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 6 16 V 6 H 16 M 26 18 V 26 H 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 8 14 V 8 H 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+  <path d="M 12 8 H 14" stroke="var(--color-accent-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 
 // Base HTML template
@@ -403,12 +402,11 @@ function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 	});
 }
 
-// Larger atelier mark for hero
+// Larger atelier mark for hero (scaled up from 32x32 to 48x48, factor of 1.5)
 const heroMark = `<svg class="atelier-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M6 6 L6 24" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-  <path d="M6 6 L24 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-  <path d="M42 42 L42 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-  <path d="M42 42 L32 42" stroke="var(--color-accent-500)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 9 24 V 9 H 24 M 39 27 V 39 H 27" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 12 21 V 12 H 21" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+  <path d="M 18 12 H 21" stroke="var(--color-accent-500)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 
 // Render home page
