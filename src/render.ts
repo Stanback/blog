@@ -86,7 +86,33 @@ function baseTemplate(options: {
 			? `<!-- Article-specific -->
   <meta property="article:published_time" content="${isoDate(date)}">
   ${updated ? `<meta property="article:modified_time" content="${isoDate(updated)}">` : ''}
-  <meta property="article:author" content="${config.author.name}">`
+  <meta property="article:author" content="${config.author.name}">
+  
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "${title.replace(/"/g, '\\"')}",
+    "description": "${description.replace(/"/g, '\\"')}",
+    "datePublished": "${isoDate(date)}",
+    ${updated ? `"dateModified": "${isoDate(updated)}",` : ''}
+    "author": {
+      "@type": "Person",
+      "name": "${config.author.name}",
+      "url": "${config.author.url}"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "${config.author.name}",
+      "url": "${config.url}"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "${fullUrl}"
+    }
+  }
+  </script>`
 			: ''
 	}
 
@@ -159,12 +185,18 @@ function baseTemplate(options: {
 
 // Render single post
 function renderPost(post: Post, ctx: BuildContext): string {
+	// Build author line
+	const authorLine = post.coAuthors && post.coAuthors.length > 0
+		? `<p class="byline">By ${config.author.name} ${post.coAuthors.map(ca => `& ${ca.emoji || ''} ${ca.name}`.trim()).join(' ')}</p>`
+		: `<p class="byline">By ${config.author.name}</p>`;
+
 	const content = `
     <article class="prose">
       <header>
         <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
         ${post.updated ? `<span class="updated">Updated ${formatDate(post.updated)}</span>` : ''}
         <h1>${post.title}</h1>
+        ${authorLine}
         ${post.readingTime ? `<span class="reading-time">${post.readingTime} min read</span>` : ''}
       </header>
       ${post.html}

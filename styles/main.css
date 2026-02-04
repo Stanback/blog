@@ -916,6 +916,12 @@ article.prose > header h1 {
 	line-height: var(--leading-tight);
 }
 
+article.prose > header .byline {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	margin: var(--space-2) 0 0 0;
+}
+
 article.prose > header .reading-time {
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);

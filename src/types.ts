@@ -31,6 +31,13 @@ export interface ContentItem {
 	filepath: string;
 }
 
+// Co-author info
+export interface CoAuthor {
+	name: string;
+	emoji?: string;
+	note?: string;
+}
+
 // Post - long-form content
 export interface Post extends ContentItem {
 	type: 'post';
@@ -40,6 +47,7 @@ export interface Post extends ContentItem {
 	series?: string;
 	noIndex?: boolean;
 	featured?: boolean; // For "Start Here" section on homepage
+	coAuthors?: CoAuthor[]; // For collaborative posts
 
 	// Voice fields (from VOICE.md)
 	tension?: string;
