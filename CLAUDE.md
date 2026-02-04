@@ -194,6 +194,20 @@ content/*.md → validate frontmatter → parse markdown → render HTML → wri
 - No horizontal scroll. Ever.
 - Touch targets: minimum 44x44px.
 
+**Breakpoints (min-width, mobile-first):**
+- `640px` — Navigation switches from hamburger to inline
+- `768px` — Two-column layouts (homepage modules)
+
+**CSS-First Responsive:**
+- Prefer CSS-only solutions over JavaScript (e.g., checkbox hack for hamburger menu)
+- Use `clamp()` for fluid typography instead of breakpoint jumps
+- Flexbox/Grid with `auto-fit`/`auto-fill` for natural reflow
+
+**Navigation Pattern:**
+- Mobile: CSS-only hamburger menu (checkbox + label hack)
+- Desktop: Inline horizontal nav
+- No JavaScript required for menu toggle
+
 ### Axiom 20: Performance Is UX
 **Every byte matters.**
 

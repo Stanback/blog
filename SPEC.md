@@ -1188,6 +1188,52 @@ Tailwind imports these tokens. They are not duplicated elsewhere.
 }
 ```
 
+### Responsive Design
+
+**Philosophy:** Mobile-first, CSS-only where possible.
+
+#### Breakpoints
+
+| Breakpoint | min-width | Purpose |
+|------------|-----------|---------|
+| `sm` | `640px` | Navigation: hamburger → inline |
+| `md` | `768px` | Layout: single → two-column (homepage modules) |
+
+#### Implementation Patterns
+
+**Fluid Typography:** Use `clamp()` for smooth scaling without breakpoint jumps:
+```css
+--font-size-4xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+```
+
+**CSS-Only Hamburger Menu:** Uses the checkbox hack for no-JS navigation toggle:
+```html
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
+<label for="nav-toggle" class="nav-toggle-label">
+  <span class="hamburger"></span>
+</label>
+<div class="nav-menu">...</div>
+```
+
+**Responsive Layouts:** Use CSS Grid with `auto-fit`/`auto-fill` for natural reflow:
+```css
+.homepage-modules {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .homepage-modules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+```
+
+#### Touch Targets
+
+Minimum 44×44px for all interactive elements (per Apple HIG / WCAG 2.5.5).
+
 ### Typography Decisions (MVP)
 
 **Body + UI:** Inter (variable)

@@ -114,7 +114,11 @@ function baseTemplate(options: {
         ${atelierMark}
         <span class="wordmark">${config.title}</span>
       </a>
-      <div class="nav-right">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+        <span class="hamburger"></span>
+      </label>
+      <div class="nav-menu">
         <ul>
           <li><a href="/posts/">Posts</a></li>
           <li><a href="/notes/">Notes</a></li>
