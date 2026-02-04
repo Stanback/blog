@@ -1,11 +1,7 @@
 // AI discovery files: llms.txt and llms-full.txt
 
 import type { BuildContext } from './types.js';
-
-// Format date for display
-function formatDate(date: Date): string {
-	return date.toISOString().split('T')[0];
-}
+import { formatDateISO } from './utils/dates.js';
 
 // Generate llms.txt (AI crawler guidance with priority paths)
 export function generateLlmsTxt(): string {
@@ -42,7 +38,7 @@ export function generateLlmsFullTxt(ctx: BuildContext): string {
 
 	// Header
 	sections.push('# bristanback.com - Full Content Export');
-	sections.push(`Generated: ${formatDate(ctx.buildDate)}`);
+	sections.push(`Generated: ${formatDateISO(ctx.buildDate)}`);
 	sections.push('');
 
 	// Soul (if exists)
@@ -84,7 +80,7 @@ export function generateLlmsFullTxt(ctx: BuildContext): string {
 		sections.push('## Posts');
 		sections.push('');
 		for (const post of publishedPosts) {
-			sections.push(`### ${post.title} (${formatDate(post.date)})`);
+			sections.push(`### ${post.title} (${formatDateISO(post.date)})`);
 			sections.push(post.bodyMarkdown);
 			sections.push('');
 		}
@@ -99,7 +95,7 @@ export function generateLlmsFullTxt(ctx: BuildContext): string {
 		sections.push('## Notes');
 		sections.push('');
 		for (const note of publishedNotes) {
-			sections.push(`### ${note.title} (${formatDate(note.date)})`);
+			sections.push(`### ${note.title} (${formatDateISO(note.date)})`);
 			sections.push(note.bodyMarkdown);
 			sections.push('');
 		}

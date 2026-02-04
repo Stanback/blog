@@ -39,6 +39,7 @@ export interface Post extends ContentItem {
 	canonicalUrl?: string;
 	series?: string;
 	noIndex?: boolean;
+	featured?: boolean; // For "Start Here" section on homepage
 
 	// Voice fields (from VOICE.md)
 	tension?: string;
@@ -114,6 +115,7 @@ export interface BuildContext {
 	skills?: Skills;
 	allContent: Content[];
 	buildDate: Date;
+	cssFilename?: string; // Hashed CSS filename (e.g., "styles.abc12345.css")
 }
 
 // Raw content item before validation

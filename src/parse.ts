@@ -5,6 +5,7 @@
 
 import { Marked, type MarkedExtension, type Tokens } from 'marked';
 import { type Highlighter, createHighlighter } from 'shiki';
+import { calculateReadingTime, countWords } from './utils/text.js';
 
 // ============================================================================
 // Types
@@ -123,30 +124,7 @@ function createCalloutExtension(): MarkedExtension {
 	};
 }
 
-// ============================================================================
-// Word Count & Reading Time
-// ============================================================================
-
-const WORDS_PER_MINUTE = 200;
-
-function countWords(text: string): number {
-	// Strip markdown/HTML and count words
-	const stripped = text
-		.replace(/```[\s\S]*?```/g, '') // Remove code blocks
-		.replace(/`[^`]+`/g, '') // Remove inline code
-		.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Convert links to text
-		.replace(/[#*_~>\-|]/g, '') // Remove markdown symbols
-		.replace(/<[^>]+>/g, '') // Remove HTML tags
-		.replace(/\s+/g, ' ') // Normalize whitespace
-		.trim();
-
-	if (!stripped) return 0;
-	return stripped.split(/\s+/).length;
-}
-
-function calculateReadingTime(wordCount: number): number {
-	return Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE));
-}
+// Word count and reading time use shared utilities from utils/text.ts
 
 // ============================================================================
 // Main Parse Function

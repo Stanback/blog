@@ -2,6 +2,7 @@
 
 import type { ContentType, RawContentItem, SCHEMA_VERSION, ValidatedContentItem } from './types.js';
 import { parseDate } from './utils/dates.js';
+import { calculateReadingTime, countWords } from './utils/text.js';
 
 const VALID_TYPES: ContentType[] = ['post', 'note', 'photo', 'page', 'soul', 'skills'];
 
@@ -88,20 +89,24 @@ function validateItem(
 		}
 	}
 
-	// Slug uniqueness (only check if we have a valid type)
+	// Slug validation and uniqueness (only check if we have a valid type)
 	if (type && VALID_TYPES.includes(type)) {
-		const slug = frontmatter.slug as string;
-		const typeSet = slugsByType.get(type) ?? new Set<string>();
+		const slug = frontmatter.slug;
+		if (typeof slug !== 'string' || !slug) {
+			errors.push({ filepath, message: 'missing or invalid slug' });
+		} else {
+			const typeSet = slugsByType.get(type) ?? new Set<string>();
 
-		if (typeSet.has(slug)) {
-			errors.push({
-				filepath,
-				message: `duplicate slug "${slug}" for type "${type}"`,
-			});
+			if (typeSet.has(slug)) {
+				errors.push({
+					filepath,
+					message: `duplicate slug "${slug}" for type "${type}"`,
+				});
+			}
+
+			typeSet.add(slug);
+			slugsByType.set(type, typeSet);
 		}
-
-		typeSet.add(slug);
-		slugsByType.set(type, typeSet);
 	}
 
 	// Optional: updated date validation
@@ -139,15 +144,18 @@ function validateItem(
 
 /**
  * Converts a raw content item to a validated content item.
+ * Called only after validateItem passes, so we can trust the types.
  */
 function toValidatedItem(item: RawContentItem): ValidatedContentItem {
 	const { filepath, frontmatter, bodyMarkdown } = item;
+
+	// These casts are safe because validateItem already verified the types
 	const date = parseDate(frontmatter.date) as Date;
 	const updated = frontmatter.updated ? (parseDate(frontmatter.updated) as Date) : undefined;
 
-	// Calculate word count and reading time
+	// Calculate word count and reading time using shared utilities
 	const wordCount = countWords(bodyMarkdown);
-	const readingTime = Math.max(1, Math.ceil(wordCount / 200)); // ~200 wpm
+	const readingTime = calculateReadingTime(wordCount);
 
 	return {
 		filepath,
@@ -165,26 +173,4 @@ function toValidatedItem(item: RawContentItem): ValidatedContentItem {
 		readingTime,
 		frontmatter,
 	};
-}
-
-/**
- * Counts words in markdown content.
- * Strips code blocks and common markdown syntax.
- */
-function countWords(markdown: string): number {
-	// Remove code blocks
-	let text = markdown.replace(/```[\s\S]*?```/g, '');
-	// Remove inline code
-	text = text.replace(/`[^`]*`/g, '');
-	// Remove links but keep text
-	text = text.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
-	// Remove images
-	text = text.replace(/!\[([^\]]*)\]\([^)]*\)/g, '');
-	// Remove markdown formatting
-	text = text.replace(/[#*_~`]/g, '');
-
-	// Count words
-	const words = text.split(/\s+/).filter((word) => word.length > 0 && /\w/.test(word));
-
-	return words.length;
 }

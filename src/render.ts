@@ -1,7 +1,9 @@
 // Render content to HTML and write to dist/
 
 import { config } from './config.js';
+import { strings } from './strings.js';
 import type { BuildContext, Content, Note, Page, Photo, Post, Skills, Soul } from './types.js';
+import { formatDateLong, formatDateMachine } from './utils/dates.js';
 
 // URL patterns per content type
 function getUrl(content: Content): string {
@@ -21,19 +23,9 @@ function getUrl(content: Content): string {
 	}
 }
 
-// Format date for display
-function formatDate(date: Date): string {
-	return date.toLocaleDateString('en-US', {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-	});
-}
-
-// Format date as ISO string
-function isoDate(date: Date): string {
-	return date.toISOString();
-}
+// Re-export date utilities for backward compatibility
+const formatDate = formatDateLong;
+const isoDate = formatDateMachine;
 
 // Atelier Mark SVG inline for header
 const atelierMark = `<svg class="atelier-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -54,6 +46,7 @@ function baseTemplate(options: {
 	updated?: Date;
 	heroImage?: string;
 	noIndex?: boolean;
+	cssFilename?: string;
 }): string {
 	const {
 		title,
@@ -65,6 +58,7 @@ function baseTemplate(options: {
 		updated,
 		heroImage,
 		noIndex,
+		cssFilename = 'styles.css',
 	} = options;
 
 	const fullUrl = `${config.url}${url}`;
@@ -113,7 +107,7 @@ function baseTemplate(options: {
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/${cssFilename}">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -150,7 +144,7 @@ function baseTemplate(options: {
 }
 
 // Render single post
-function renderPost(post: Post): string {
+function renderPost(post: Post, ctx: BuildContext): string {
 	const content = `
     <article class="prose">
       <header>
@@ -164,8 +158,9 @@ function renderPost(post: Post): string {
 				post.tags.length > 0
 					? `
       <footer>
+        <p class="tags-label">${strings.labels.tagged}:</p>
         <ul class="tags">
-          ${post.tags.map((tag) => `<li><a href="/tags/${tag}/">${tag}</a></li>`).join('')}
+          ${post.tags.map((tag) => `<li><span class="tag">${tag}</span></li>`).join('')}
         </ul>
       </footer>`
 					: ''
@@ -182,11 +177,12 @@ function renderPost(post: Post): string {
 		updated: post.updated,
 		heroImage: post.heroImage,
 		noIndex: post.noIndex,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
 // Render single note
-function renderNote(note: Note): string {
+function renderNote(note: Note, ctx: BuildContext): string {
 	const content = `
     <article class="prose">
       <header>
@@ -203,11 +199,12 @@ function renderNote(note: Note): string {
 		content,
 		type: 'article',
 		date: note.date,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
 // Render single photo
-function renderPhoto(photo: Photo): string {
+function renderPhoto(photo: Photo, ctx: BuildContext): string {
 	const content = `
     <article class="photo-single">
       <figure>
@@ -238,11 +235,12 @@ function renderPhoto(photo: Photo): string {
 		type: 'article',
 		date: photo.date,
 		heroImage: photo.image,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
 // Render page
-function renderPage(page: Page): string {
+function renderPage(page: Page, ctx: BuildContext): string {
 	const content = `
     <article class="prose">
       ${page.html}
@@ -253,14 +251,20 @@ function renderPage(page: Page): string {
 		description: page.description || config.description,
 		url: getUrl(page),
 		content,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
 // Render soul page (special template)
-function renderSoul(soul: Soul): string {
+function renderSoul(soul: Soul, ctx: BuildContext): string {
 	const content = `
-    <article class="prose soul">
-      ${soul.html}
+    <article class="prose soul-page">
+      <header class="soul-header">
+        <h1>${soul.title}</h1>
+      </header>
+      <div class="soul-content">
+        ${soul.html}
+      </div>
     </article>`;
 
 	return baseTemplate({
@@ -268,14 +272,20 @@ function renderSoul(soul: Soul): string {
 		description: soul.description || 'Identity manifesto',
 		url: getUrl(soul),
 		content,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
 // Render skills page (special template)
-function renderSkills(skills: Skills): string {
+function renderSkills(skills: Skills, ctx: BuildContext): string {
 	const content = `
-    <article class="prose skills">
-      ${skills.html}
+    <article class="prose skills-page">
+      <header class="skills-header">
+        <h1>${skills.title}</h1>
+      </header>
+      <div class="skills-content">
+        ${skills.html}
+      </div>
     </article>`;
 
 	return baseTemplate({
@@ -283,17 +293,21 @@ function renderSkills(skills: Skills): string {
 		description: skills.description || 'Capabilities manifest',
 		url: getUrl(skills),
 		content,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
 // Render posts index
-function renderPostsIndex(posts: Post[]): string {
+function renderPostsIndex(posts: Post[], ctx: BuildContext): string {
 	const publishedPosts = posts
 		.filter((p) => !p.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime());
 
 	const content = `
-    <h1>Posts</h1>
+    <h1>${strings.lists.posts}</h1>
+    ${
+			publishedPosts.length > 0
+				? `
     <ul class="post-list">
       ${publishedPosts
 				.map(
@@ -307,24 +321,30 @@ function renderPostsIndex(posts: Post[]): string {
       </li>`,
 				)
 				.join('')}
-    </ul>`;
+    </ul>`
+				: `<p class="empty-state">${strings.empty.posts}</p>`
+		}`;
 
 	return baseTemplate({
-		title: 'Posts',
+		title: strings.lists.posts,
 		description: 'Long-form writing about building, design, and life.',
 		url: '/posts/',
 		content,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
 // Render notes index
-function renderNotesIndex(notes: Note[]): string {
+function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
 	const publishedNotes = notes
 		.filter((n) => !n.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime());
 
 	const content = `
-    <h1>Notes</h1>
+    <h1>${strings.lists.notes}</h1>
+    ${
+			publishedNotes.length > 0
+				? `
     <ul class="note-list">
       ${publishedNotes
 				.map(
@@ -337,24 +357,30 @@ function renderNotesIndex(notes: Note[]): string {
       </li>`,
 				)
 				.join('')}
-    </ul>`;
+    </ul>`
+				: `<p class="empty-state">${strings.empty.notes}</p>`
+		}`;
 
 	return baseTemplate({
-		title: 'Notes',
+		title: strings.lists.notes,
 		description: 'Quick thoughts and observations.',
 		url: '/notes/',
 		content,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
 // Render photos index
-function renderPhotosIndex(photos: Photo[]): string {
+function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 	const publishedPhotos = photos
 		.filter((p) => !p.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime());
 
 	const content = `
-    <h1>Photos</h1>
+    <h1>${strings.lists.photos}</h1>
+    ${
+			publishedPhotos.length > 0
+				? `
     <div class="photo-grid">
       ${publishedPhotos
 				.map(
@@ -364,13 +390,16 @@ function renderPhotosIndex(photos: Photo[]): string {
       </a>`,
 				)
 				.join('')}
-    </div>`;
+    </div>`
+				: `<p class="empty-state">${strings.empty.photos}</p>`
+		}`;
 
 	return baseTemplate({
-		title: 'Photos',
+		title: strings.lists.photos,
 		description: 'Photography with minimal context.',
 		url: '/photos/',
 		content,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
@@ -384,26 +413,59 @@ const heroMark = `<svg class="atelier-mark" viewBox="0 0 48 48" fill="none" xmln
 
 // Render home page
 function renderHome(ctx: BuildContext): string {
-	const recentPosts = ctx.posts
-		.filter((p) => !p.draft)
+	// Featured posts for "Start Here" section
+	const featuredPosts = ctx.posts
+		.filter((p) => !p.draft && p.featured)
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
 		.slice(0, 5);
+
+	// Recent posts (excluding featured to avoid duplication)
+	const featuredSlugs = new Set(featuredPosts.map((p) => p.slug));
+	const recentPosts = ctx.posts
+		.filter((p) => !p.draft && !featuredSlugs.has(p.slug))
+		.sort((a, b) => b.date.getTime() - a.date.getTime())
+		.slice(0, 5);
+
 	const recentNotes = ctx.notes
 		.filter((n) => !n.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
 		.slice(0, 3);
 
 	const content = `
-    <section class="hero">
-      <div class="hero-logo">
+    <section class="thesis">
+      <div class="thesis-logo">
         ${heroMark}
-        <h1>${config.title}</h1>
       </div>
-      <p class="hero-tagline">${config.description}</p>
+      <h1 class="thesis-headline">${strings.thesis.headline}</h1>
+      <p class="thesis-body">${strings.thesis.body}</p>
     </section>
 
+    ${
+			featuredPosts.length > 0
+				? `
+    <section class="start-here">
+      <h2>${strings.home.startHere}</h2>
+      <p class="section-description">${strings.home.startHereDescription}</p>
+      <ul class="post-list">
+        ${featuredPosts
+					.map(
+						(post) => `
+        <li>
+          <article>
+            <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
+            <h3><a href="${getUrl(post)}">${post.title}</a></h3>
+            ${post.description ? `<p>${post.description}</p>` : ''}
+          </article>
+        </li>`,
+					)
+					.join('')}
+      </ul>
+    </section>`
+				: ''
+		}
+
     <section class="recent">
-      <h2>Recent Posts</h2>
+      <h2>${strings.home.recentPosts}</h2>
       ${
 				recentPosts.length > 0
 					? `
@@ -421,8 +483,8 @@ function renderHome(ctx: BuildContext): string {
 					)
 					.join('')}
       </ul>
-      <p><a href="/posts/">All posts →</a></p>`
-					: `<p class="empty-state">No posts yet. Check back soon.</p>`
+      <p><a href="/posts/">${strings.labels.allPosts} →</a></p>`
+					: `<p class="empty-state">${strings.empty.posts}</p>`
 			}
     </section>
 
@@ -430,7 +492,7 @@ function renderHome(ctx: BuildContext): string {
 			recentNotes.length > 0
 				? `
     <section class="recent">
-      <h2>Recent Notes</h2>
+      <h2>${strings.home.recentNotes}</h2>
       <ul class="note-list">
         ${recentNotes
 					.map(
@@ -444,7 +506,7 @@ function renderHome(ctx: BuildContext): string {
 					)
 					.join('')}
       </ul>
-      <p><a href="/notes/">All notes →</a></p>
+      <p><a href="/notes/">${strings.labels.allNotes} →</a></p>
     </section>`
 				: ''
 		}`;
@@ -454,24 +516,26 @@ function renderHome(ctx: BuildContext): string {
 		description: config.description,
 		url: '/',
 		content,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
 // Render 404 page
-function render404(): string {
+function render404(ctx: BuildContext): string {
 	const content = `
     <article class="error-page">
-      <h1>Page not found</h1>
-      <p>The page you're looking for doesn't exist.</p>
-      <p><a href="/">Go home &rarr;</a></p>
+      <h1>${strings.notFound.title}</h1>
+      <p>${strings.notFound.body}</p>
+      <p><a href="/">${strings.notFound.action} &rarr;</a></p>
     </article>`;
 
 	return baseTemplate({
-		title: 'Page not found',
-		description: "The page you're looking for doesn't exist.",
+		title: strings.notFound.title,
+		description: strings.notFound.body,
 		url: '/404.html',
 		content,
 		noIndex: true,
+		cssFilename: ctx.cssFilename,
 	});
 }
 
@@ -489,38 +553,38 @@ export function renderSite(ctx: BuildContext): RenderOutput[] {
 	output.push({ path: 'index.html', content: renderHome(ctx) });
 
 	// Posts
-	output.push({ path: 'posts/index.html', content: renderPostsIndex(ctx.posts) });
+	output.push({ path: 'posts/index.html', content: renderPostsIndex(ctx.posts, ctx) });
 	for (const post of ctx.posts.filter((p) => !p.draft)) {
-		output.push({ path: `posts/${post.slug}/index.html`, content: renderPost(post) });
+		output.push({ path: `posts/${post.slug}/index.html`, content: renderPost(post, ctx) });
 	}
 
 	// Notes
-	output.push({ path: 'notes/index.html', content: renderNotesIndex(ctx.notes) });
+	output.push({ path: 'notes/index.html', content: renderNotesIndex(ctx.notes, ctx) });
 	for (const note of ctx.notes.filter((n) => !n.draft)) {
-		output.push({ path: `notes/${note.slug}/index.html`, content: renderNote(note) });
+		output.push({ path: `notes/${note.slug}/index.html`, content: renderNote(note, ctx) });
 	}
 
 	// Photos
-	output.push({ path: 'photos/index.html', content: renderPhotosIndex(ctx.photos) });
+	output.push({ path: 'photos/index.html', content: renderPhotosIndex(ctx.photos, ctx) });
 	for (const photo of ctx.photos.filter((p) => !p.draft)) {
-		output.push({ path: `photos/${photo.slug}/index.html`, content: renderPhoto(photo) });
+		output.push({ path: `photos/${photo.slug}/index.html`, content: renderPhoto(photo, ctx) });
 	}
 
 	// Pages
 	for (const page of ctx.pages.filter((p) => !p.draft)) {
-		output.push({ path: `${page.slug}/index.html`, content: renderPage(page) });
+		output.push({ path: `${page.slug}/index.html`, content: renderPage(page, ctx) });
 	}
 
 	// Soul and Skills (special pages under /about/)
 	if (ctx.soul && !ctx.soul.draft) {
-		output.push({ path: 'about/soul/index.html', content: renderSoul(ctx.soul) });
+		output.push({ path: 'about/soul/index.html', content: renderSoul(ctx.soul, ctx) });
 	}
 	if (ctx.skills && !ctx.skills.draft) {
-		output.push({ path: 'about/skills/index.html', content: renderSkills(ctx.skills) });
+		output.push({ path: 'about/skills/index.html', content: renderSkills(ctx.skills, ctx) });
 	}
 
 	// 404
-	output.push({ path: '404.html', content: render404() });
+	output.push({ path: '404.html', content: render404(ctx) });
 
 	return output;
 }

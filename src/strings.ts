@@ -57,6 +57,21 @@ export const strings = {
 		titleSeparator: ' | ',
 	},
 
+	// Homepage thesis (see THESIS.md for rationale and changelog)
+	thesis: {
+		headline: 'Software is no longer scarce. Judgment is.',
+		body: 'I build systems, interfaces, and identities that survive AI abundance.',
+	},
+
+	// Homepage sections
+	home: {
+		startHere: 'Start Here',
+		startHereDescription:
+			"If you're new, these are the posts that best represent what I'm trying to do.",
+		recentPosts: 'Recent Writing',
+		recentNotes: 'Recent Notes',
+	},
+
 	// Accessibility
 	a11y: {
 		skipToContent: 'Skip to content',

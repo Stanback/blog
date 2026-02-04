@@ -25,27 +25,38 @@ import type {
 } from './types.js';
 import { validateContent } from './validate.js';
 
+// Constants
+const CSS_HASH_LENGTH = 8;
+
 interface TimingResult {
 	step: string;
 	duration: number;
 }
 
-const timings: TimingResult[] = [];
+/**
+ * Creates a timing tracker for measuring build step durations.
+ * Returns functions scoped to the tracking instance to avoid module-level state.
+ */
+function createTimingTracker() {
+	const timings: TimingResult[] = [];
 
-async function timeAsync<T>(step: string, fn: () => Promise<T>): Promise<T> {
-	const start = performance.now();
-	const result = await fn();
-	timings.push({ step, duration: performance.now() - start });
-	return result;
-}
-
-function printTimings(totalMs: number): void {
-	console.log('\n--- Build Timings ---');
-	for (const { step, duration } of timings) {
-		console.log(`  ${step}: ${duration.toFixed(1)}ms`);
+	async function timeAsync<T>(step: string, fn: () => Promise<T>): Promise<T> {
+		const start = performance.now();
+		const result = await fn();
+		timings.push({ step, duration: performance.now() - start });
+		return result;
 	}
-	console.log(`  Total: ${totalMs.toFixed(1)}ms`);
-	console.log('');
+
+	function printTimings(totalMs: number): void {
+		console.log('\n--- Build Timings ---');
+		for (const { step, duration } of timings) {
+			console.log(`  ${step}: ${duration.toFixed(1)}ms`);
+		}
+		console.log(`  Total: ${totalMs.toFixed(1)}ms`);
+		console.log('');
+	}
+
+	return { timeAsync, printTimings };
 }
 
 async function copyStatic(srcDir: string, destDir: string): Promise<void> {
@@ -53,25 +64,56 @@ async function copyStatic(srcDir: string, destDir: string): Promise<void> {
 	await cp(srcDir, destDir, { recursive: true });
 }
 
-async function buildCSS(srcFile: string, destDir: string): Promise<void> {
+async function buildCSS(srcFile: string, destDir: string): Promise<string> {
 	await mkdir(destDir, { recursive: true });
 
-	const proc = Bun.spawn(
-		['bunx', 'tailwindcss', '-i', srcFile, '-o', join(destDir, 'styles.css'), '--minify'],
-		{ stderr: 'pipe' },
-	);
+	// Build to temp file first
+	const tempOutput = join(destDir, 'styles.temp.css');
+	const proc = Bun.spawn(['bunx', 'tailwindcss', '-i', srcFile, '-o', tempOutput, '--minify'], {
+		stderr: 'pipe',
+	});
 
 	const exitCode = await proc.exited;
 	if (exitCode !== 0) {
 		const stderr = await new Response(proc.stderr).text();
 		throw new Error(`Tailwind build failed: ${stderr}`);
 	}
+
+	// Generate content hash
+	const cssContent = await Bun.file(tempOutput).text();
+	const hasher = new Bun.CryptoHasher('md5');
+	hasher.update(cssContent);
+	const hash = hasher.digest('hex').slice(0, CSS_HASH_LENGTH);
+
+	// Rename to hashed filename
+	const hashedFilename = `styles.${hash}.css`;
+	const finalPath = join(destDir, hashedFilename);
+	await Bun.write(finalPath, cssContent);
+
+	// Clean up temp file
+	await rm(tempOutput);
+
+	return hashedFilename;
 }
 
 async function writeFile(filepath: string, content: string): Promise<void> {
 	const dir = dirname(filepath);
 	await mkdir(dir, { recursive: true });
 	await Bun.write(filepath, content);
+}
+
+// Type guard helpers for frontmatter extraction
+function getString(value: unknown): string | undefined {
+	return typeof value === 'string' ? value : undefined;
+}
+
+function getBoolean(value: unknown): boolean | undefined {
+	return typeof value === 'boolean' ? value : undefined;
+}
+
+function getStringArray(value: unknown): string[] | undefined {
+	if (!Array.isArray(value)) return undefined;
+	return value.every((v) => typeof v === 'string') ? value : undefined;
 }
 
 /**
@@ -82,32 +124,60 @@ async function parseContent(items: ValidatedContentItem[]): Promise<Content[]> {
 
 	for (const item of items) {
 		const { html, wordCount, readingTime } = await parseMarkdown(item.bodyMarkdown);
+		const fm = item.frontmatter;
 
-		const content: Content = {
+		// Build content with type-safe field extraction
+		const baseContent = {
 			...item,
 			html,
 			wordCount,
 			readingTime,
-			// Add type-specific fields from frontmatter
-			...(item.type === 'post' && {
-				heroImage: item.frontmatter.heroImage as string | undefined,
-				canonicalUrl: item.frontmatter.canonicalUrl as string | undefined,
-				series: item.frontmatter.series as string | undefined,
-				noIndex: item.frontmatter.noIndex as boolean | undefined,
-				tension: item.frontmatter.tension as string | undefined,
-				questions: item.frontmatter.questions as string[] | undefined,
-				constraints: item.frontmatter.constraints as string[] | undefined,
-				tools: item.frontmatter.tools as string[] | undefined,
-			}),
-			...(item.type === 'photo' && {
-				image: item.frontmatter.image as string,
-				alt: item.frontmatter.alt as string,
-				caption: item.frontmatter.caption as string | undefined,
-				location: item.frontmatter.location as string | undefined,
-				camera: item.frontmatter.camera as string | undefined,
-				settings: item.frontmatter.settings as string | undefined,
-			}),
-		} as Content;
+		};
+
+		let content: Content;
+
+		switch (item.type) {
+			case 'post':
+				content = {
+					...baseContent,
+					type: 'post',
+					description: item.description ?? '',
+					heroImage: getString(fm.heroImage),
+					canonicalUrl: getString(fm.canonicalUrl),
+					series: getString(fm.series),
+					noIndex: getBoolean(fm.noIndex),
+					featured: getBoolean(fm.featured),
+					tension: getString(fm.tension),
+					questions: getStringArray(fm.questions),
+					constraints: getStringArray(fm.constraints),
+					tools: getStringArray(fm.tools),
+				};
+				break;
+			case 'photo':
+				content = {
+					...baseContent,
+					type: 'photo',
+					image: getString(fm.image) ?? '',
+					alt: getString(fm.alt) ?? '',
+					caption: getString(fm.caption),
+					location: getString(fm.location),
+					camera: getString(fm.camera),
+					settings: getString(fm.settings),
+				};
+				break;
+			case 'note':
+				content = { ...baseContent, type: 'note' };
+				break;
+			case 'page':
+				content = { ...baseContent, type: 'page' };
+				break;
+			case 'soul':
+				content = { ...baseContent, type: 'soul' };
+				break;
+			case 'skills':
+				content = { ...baseContent, type: 'skills' };
+				break;
+		}
 
 		results.push(content);
 	}
@@ -118,7 +188,7 @@ async function parseContent(items: ValidatedContentItem[]): Promise<Content[]> {
 /**
  * Build the context from parsed content
  */
-function buildContext(content: Content[]): BuildContext {
+function buildContext(content: Content[], cssFilename: string): BuildContext {
 	const posts: Post[] = [];
 	const notes: Note[] = [];
 	const photos: Photo[] = [];
@@ -164,12 +234,13 @@ function buildContext(content: Content[]): BuildContext {
 		skills,
 		allContent: content,
 		buildDate: new Date(),
+		cssFilename,
 	};
 }
 
 export async function build(): Promise<void> {
 	const buildStart = performance.now();
-	timings.length = 0;
+	const { timeAsync, printTimings } = createTimingTracker();
 
 	console.log('Building bristanback.com...\n');
 
@@ -193,22 +264,28 @@ export async function build(): Promise<void> {
 	const parsedContent = await timeAsync('parse', () => parseContent(validatedContent));
 	console.log(`  Parsed ${parsedContent.length} content items`);
 
-	// 4. Build context
-	const ctx = buildContext(parsedContent);
+	// 4. Build CSS (do this before render so we have the hashed filename)
+	const cssFilename = await timeAsync('css', () =>
+		buildCSS(join(config.stylesDir, 'main.css'), join(config.outputDir, 'css')),
+	);
+	console.log(`  Built CSS: ${cssFilename}`);
 
-	// 5. Render HTML pages from templates
+	// 5. Build context (includes CSS filename for templates)
+	const ctx = buildContext(parsedContent, cssFilename);
+
+	// 6. Render HTML pages from templates
 	const pages = await timeAsync('render', async () => renderSite(ctx));
 	console.log(`  Rendered ${pages.length} pages`);
 
-	// 6. Generate feeds
+	// 7. Generate feeds
 	const feeds = await timeAsync('feeds', async () => generateFeeds(ctx));
 	console.log(`  Generated ${feeds.length} feed files`);
 
-	// 7. Generate AI discovery files
+	// 8. Generate AI discovery files
 	const aiFiles = await timeAsync('ai-discovery', async () => generateAiDiscovery(ctx));
 	console.log(`  Generated ${aiFiles.length} AI discovery files`);
 
-	// 8. Write all output files
+	// 9. Write all output files
 	await timeAsync('write', async () => {
 		const allOutputs = [...pages, ...feeds, ...aiFiles];
 		await Promise.all(
@@ -216,12 +293,11 @@ export async function build(): Promise<void> {
 		);
 	});
 
-	// 9. Assets: copy static files and build CSS
+	// 10. Assets: copy static files (CSS already built in step 4)
 	await timeAsync('assets', async () => {
 		await Promise.all([
 			copyStatic(config.staticDir, config.outputDir),
 			copyStatic('public', config.outputDir),
-			buildCSS(join(config.stylesDir, 'main.css'), join(config.outputDir, 'css')),
 		]);
 	});
 
