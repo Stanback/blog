@@ -606,34 +606,75 @@ function renderBook(book: Book, ctx: BuildContext): string {
 	});
 }
 
-// Render individual chapter
+// Render individual chapter - 2026 book reading experience
 function renderChapter(chapter: Chapter, book: Book, ctx: BuildContext): string {
 	const chapterIndex = book.chapters.findIndex((ch) => ch.slug === chapter.slug);
 	const prevChapter = chapterIndex > 0 ? book.chapters[chapterIndex - 1] : null;
 	const nextChapter =
 		chapterIndex < book.chapters.length - 1 ? book.chapters[chapterIndex + 1] : null;
 
-	const content = `
-    <article class="prose chapter-page">
-      <header class="chapter-header">
-        <nav class="chapter-breadcrumb">
-          <a href="${getBookUrl(book)}">${book.title}</a>
-        </nav>
-        <p class="chapter-number">Chapter ${chapter.chapterNumber}</p>
-        <h1>${chapter.chapterTitle}</h1>
-        ${chapter.readingTime ? `<span class="reading-time">${chapter.readingTime} min read</span>` : ''}
-      </header>
-      
-      <div class="chapter-content">
-        ${chapter.html}
-      </div>
+	// Extract first image as hero, remove H1 (we have our own header)
+	let heroImage = '';
+	let chapterBody = chapter.html;
 
-      <nav class="chapter-nav">
-        ${prevChapter ? `<a href="${getUrl(prevChapter)}" class="prev-chapter">&larr; ${prevChapter.chapterTitle}</a>` : '<span></span>'}
-        <a href="${getBookUrl(book)}" class="toc-link">Table of Contents</a>
-        ${nextChapter ? `<a href="${getUrl(nextChapter)}" class="next-chapter">${nextChapter.chapterTitle} &rarr;</a>` : '<span></span>'}
-      </nav>
-    </article>`;
+	// Find and extract first image for hero
+	const imgMatch = chapterBody.match(/<img[^>]+src="([^"]+)"[^>]*>/);
+	if (imgMatch) {
+		heroImage = imgMatch[0].replace('<img', '<img class="chapter-hero-img"');
+		chapterBody = chapterBody.replace(imgMatch[0], ''); // Remove from body
+	}
+
+	// Remove the first H1 (redundant with our header)
+	chapterBody = chapterBody.replace(/<h1[^>]*>.*?<\/h1>/i, '');
+
+	// Progress through book
+	const progress = Math.round(((chapterIndex + 1) / book.chapters.length) * 100);
+
+	const content = `
+    <div class="book-reader">
+      <!-- Sidebar: Chapter Navigation -->
+      <aside class="book-sidebar">
+        <div class="sidebar-header">
+          <a href="${getBookUrl(book)}" class="book-title-link">${book.title}</a>
+          <span class="book-progress">${progress}% complete</span>
+        </div>
+        <nav class="chapter-toc">
+          <ol>
+            ${book.chapters
+							.map(
+								(ch, i) => `
+              <li class="${ch.slug === chapter.slug ? 'current' : ''} ${i < chapterIndex ? 'read' : ''}">
+                <a href="${getUrl(ch)}">
+                  <span class="toc-num">${ch.chapterNumber}</span>
+                  <span class="toc-title">${ch.chapterTitle}</span>
+                </a>
+              </li>`,
+							)
+							.join('')}
+          </ol>
+        </nav>
+      </aside>
+
+      <!-- Main Reading Area -->
+      <article class="chapter-page">
+        ${heroImage ? `<figure class="chapter-hero">${heroImage}</figure>` : ''}
+        
+        <header class="chapter-header">
+          <span class="chapter-label">Chapter ${chapter.chapterNumber}</span>
+          <h1>${chapter.chapterTitle}</h1>
+          ${chapter.readingTime ? `<span class="reading-time">${chapter.readingTime} min read</span>` : ''}
+        </header>
+        
+        <div class="chapter-content prose">
+          ${chapterBody}
+        </div>
+
+        <nav class="chapter-nav">
+          ${prevChapter ? `<a href="${getUrl(prevChapter)}" class="nav-prev"><span class="nav-label">Previous</span><span class="nav-title">${prevChapter.chapterTitle}</span></a>` : '<span class="nav-placeholder"></span>'}
+          ${nextChapter ? `<a href="${getUrl(nextChapter)}" class="nav-next"><span class="nav-label">Next</span><span class="nav-title">${nextChapter.chapterTitle}</span></a>` : '<span class="nav-placeholder"></span>'}
+        </nav>
+      </article>
+    </div>`;
 
 	return baseTemplate({
 		title: `${chapter.chapterTitle} — ${book.title}`,
