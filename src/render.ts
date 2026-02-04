@@ -1,13 +1,7 @@
 // Render content to HTML and write to dist/
 
 import { config } from './config.js';
-import {
-	glyphCornerTL,
-	glyphMarkFull,
-	glyphMarkFullLarge,
-	iconMoon,
-	iconSun,
-} from './glyphs.js';
+import { glyphCornerTL, glyphMarkFull, glyphMarkFullLarge, iconMoon, iconSun } from './glyphs.js';
 import { strings } from './strings.js';
 import type { BuildContext, Content, Note, Page, Photo, Post, Skills, Soul } from './types.js';
 import { formatDateLong, formatDateMachine } from './utils/dates.js';
@@ -426,7 +420,10 @@ const heroMark = glyphMarkFullLarge.replace(
 );
 
 // Corner mark for "Start here" module header
-const moduleCorner = glyphCornerTL.replace('class="glyph glyph-corner glyph-corner--tl"', 'class="module-corner"');
+const moduleCorner = glyphCornerTL.replace(
+	'class="glyph glyph-corner glyph-corner--tl"',
+	'class="module-corner"',
+);
 
 // Render home page
 function renderHome(ctx: BuildContext): string {
