@@ -149,8 +149,7 @@ function baseTemplate(options: {
           <li><a href="/posts/">Posts</a></li>
           <li><a href="/notes/">Notes</a></li>
           <li><a href="/photos/">Photos</a></li>
-          <li><a href="/about/soul/" class="nav-special">SOUL</a></li>
-          <li><a href="/about/skills/" class="nav-special">SKILL</a></li>
+          <li><a href="/about/">About</a></li>
         </ul>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
           ${iconSun}
