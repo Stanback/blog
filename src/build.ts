@@ -7,12 +7,14 @@ import { existsSync } from 'node:fs';
 import { cp, mkdir, rm } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { generateAiDiscovery } from './ai-discovery.js';
+import { collectBooks } from './collect-books.js';
 import { collectContent } from './collect.js';
 import { config } from './config.js';
 import { generateFeeds } from './feeds.js';
 import { parseMarkdown } from './parse.js';
 import { renderSite } from './render.js';
 import type {
+	Book,
 	BuildContext,
 	Content,
 	Note,
@@ -188,7 +190,7 @@ async function parseContent(items: ValidatedContentItem[]): Promise<Content[]> {
 /**
  * Build the context from parsed content
  */
-function buildContext(content: Content[], cssFilename: string): BuildContext {
+function buildContext(content: Content[], books: Book[], cssFilename: string): BuildContext {
 	const posts: Post[] = [];
 	const notes: Note[] = [];
 	const photos: Photo[] = [];
@@ -216,6 +218,9 @@ function buildContext(content: Content[], cssFilename: string): BuildContext {
 			case 'skills':
 				skills = item;
 				break;
+			case 'chapter':
+				// Chapters are handled via books
+				break;
 		}
 	}
 
@@ -230,6 +235,7 @@ function buildContext(content: Content[], cssFilename: string): BuildContext {
 		notes,
 		photos,
 		pages,
+		books,
 		soul,
 		skills,
 		allContent: content,
@@ -264,6 +270,13 @@ export async function build(): Promise<void> {
 	const parsedContent = await timeAsync('parse', () => parseContent(validatedContent));
 	console.log(`  Parsed ${parsedContent.length} content items`);
 
+	// 3b. Collect books (separate from regular content)
+	const books = await timeAsync('books', () => collectBooks(join(config.contentDir, 'books')));
+	if (books.length > 0) {
+		const totalChapters = books.reduce((sum, b) => sum + b.chapters.length, 0);
+		console.log(`  Collected ${books.length} books with ${totalChapters} chapters`);
+	}
+
 	// 4. Build CSS (do this before render so we have the hashed filename)
 	const cssFilename = await timeAsync('css', () =>
 		buildCSS(join(config.stylesDir, 'main.css'), join(config.outputDir, 'css')),
@@ -271,7 +284,7 @@ export async function build(): Promise<void> {
 	console.log(`  Built CSS: ${cssFilename}`);
 
 	// 5. Build context (includes CSS filename for templates)
-	const ctx = buildContext(parsedContent, cssFilename);
+	const ctx = buildContext(parsedContent, books, cssFilename);
 
 	// 6. Render HTML pages from templates
 	const pages = await timeAsync('render', async () => renderSite(ctx));
@@ -299,6 +312,15 @@ export async function build(): Promise<void> {
 			copyStatic(config.staticDir, config.outputDir),
 			copyStatic('public', config.outputDir),
 		]);
+
+		// Copy book chapter assets (images, etc.)
+		for (const book of books) {
+			const bookChaptersDir = join(config.contentDir, 'books', book.slug, 'chapters');
+			const destChaptersDir = join(config.outputDir, 'books', book.slug, 'chapters');
+			if (existsSync(bookChaptersDir)) {
+				await copyStatic(bookChaptersDir, destChaptersDir);
+			}
+		}
 	});
 
 	const totalMs = performance.now() - buildStart;

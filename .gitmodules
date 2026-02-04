@@ -1,0 +1,3 @@
+[submodule "content/books/the-turning-point"]
+	path = content/books/the-turning-point
+	url = ../the-turning-point-novel

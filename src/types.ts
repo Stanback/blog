@@ -2,7 +2,15 @@
 // Schema version for future migrations
 export const SCHEMA_VERSION = 1 as const;
 
-export type ContentType = 'post' | 'note' | 'photo' | 'page' | 'soul' | 'skills';
+export type ContentType =
+	| 'post'
+	| 'note'
+	| 'photo'
+	| 'page'
+	| 'soul'
+	| 'skills'
+	| 'book'
+	| 'chapter';
 
 // Base content item - all content shares these fields
 export interface ContentItem {
@@ -87,8 +95,30 @@ export interface Skills extends ContentItem {
 	type: 'skills';
 }
 
+// Chapter - part of a book
+export interface Chapter extends ContentItem {
+	type: 'chapter';
+	bookSlug: string; // Parent book reference
+	chapterNumber: number;
+	chapterTitle: string;
+}
+
+// Book - collection of chapters
+export interface Book {
+	slug: string;
+	title: string;
+	author: string;
+	description: string;
+	genre?: string;
+	status?: 'in-progress' | 'complete' | 'draft';
+	date: Date;
+	coverImage?: string;
+	chapters: Chapter[];
+	filepath: string;
+}
+
 // Union type for all content
-export type Content = Post | Note | Photo | Page | Soul | Skills;
+export type Content = Post | Note | Photo | Page | Soul | Skills | Chapter;
 
 // Site configuration
 export interface SiteConfig {
@@ -119,6 +149,7 @@ export interface BuildContext {
 	notes: Note[];
 	photos: Photo[];
 	pages: Page[];
+	books: Book[];
 	soul?: Soul;
 	skills?: Skills;
 	allContent: Content[];

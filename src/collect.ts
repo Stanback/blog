@@ -140,9 +140,12 @@ function inferType(filepath: string): ContentType {
 /**
  * Collects all markdown content from a directory.
  * Returns raw content items with parsed frontmatter.
+ * Excludes content/books/ which is handled separately by collectBooks.
  */
 export async function collectContent(contentDir: string): Promise<RawContentItem[]> {
-	const files = await readDirRecursive(contentDir, /\.md$/);
+	const allFiles = await readDirRecursive(contentDir, /\.md$/);
+	// Exclude books directory - handled separately
+	const files = allFiles.filter((f) => !f.includes('/books/'));
 	const items: RawContentItem[] = [];
 
 	for (const filepath of files) {

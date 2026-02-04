@@ -28,6 +28,7 @@
 		"wrangler": "^3.99.0"
 	},
 	"dependencies": {
-		"@fontsource-variable/fraunces": "^5.2.9"
+		"@fontsource-variable/fraunces": "^5.2.9",
+		"yaml": "^2.8.2"
 	}
 }

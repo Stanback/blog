@@ -3,7 +3,18 @@
 import { config } from './config.js';
 import { glyphCornerTL, glyphMarkFull, glyphMarkFullLarge, iconMoon, iconSun } from './glyphs.js';
 import { strings } from './strings.js';
-import type { BuildContext, Content, Note, Page, Photo, Post, Skills, Soul } from './types.js';
+import type {
+	Book,
+	BuildContext,
+	Chapter,
+	Content,
+	Note,
+	Page,
+	Photo,
+	Post,
+	Skills,
+	Soul,
+} from './types.js';
 import { formatDateLong, formatDateMachine } from './utils/dates.js';
 
 // URL patterns per content type
@@ -15,6 +26,8 @@ function getUrl(content: Content): string {
 			return content.draft ? `/drafts/${content.slug}/` : `/notes/${content.slug}/`;
 		case 'photo':
 			return content.draft ? `/drafts/${content.slug}/` : `/photos/${content.slug}/`;
+		case 'chapter':
+			return `/books/${content.bookSlug}/${content.slug}/`;
 		case 'soul':
 			return '/about/soul/';
 		case 'skills':
@@ -22,6 +35,11 @@ function getUrl(content: Content): string {
 		case 'page':
 			return `/${content.slug}/`;
 	}
+}
+
+// Book URL helper
+function getBookUrl(book: Book): string {
+	return `/books/${book.slug}/`;
 }
 
 // Re-export date utilities for backward compatibility
@@ -540,6 +558,123 @@ function renderHome(ctx: BuildContext): string {
 	});
 }
 
+// Render book index page (table of contents)
+function renderBook(book: Book, ctx: BuildContext): string {
+	const totalWords = book.chapters.reduce((sum, ch) => sum + (ch.wordCount || 0), 0);
+	const totalReadingTime = book.chapters.reduce((sum, ch) => sum + (ch.readingTime || 0), 0);
+
+	const content = `
+    <article class="prose book-page">
+      <header class="book-header">
+        ${book.coverImage ? `<img src="${book.coverImage}" alt="Cover of ${book.title}" class="book-cover"/>` : ''}
+        <h1>${book.title}</h1>
+        <p class="book-author">by ${book.author}</p>
+        ${book.genre ? `<p class="book-genre">${book.genre}</p>` : ''}
+        ${book.status === 'in-progress' ? '<p class="book-status">📝 In Progress</p>' : ''}
+        <p class="book-meta">${book.chapters.length} chapters · ${totalWords.toLocaleString()} words · ${totalReadingTime} min read</p>
+      </header>
+      
+      <section class="book-description">
+        <p>${book.description}</p>
+      </section>
+
+      <section class="book-toc">
+        <h2>Chapters</h2>
+        <ol class="chapter-list">
+          ${book.chapters
+						.map(
+							(ch) => `
+            <li>
+              <a href="${getUrl(ch)}">
+                <span class="chapter-number">Chapter ${ch.chapterNumber}</span>
+                <span class="chapter-title">${ch.chapterTitle}</span>
+                ${ch.readingTime ? `<span class="chapter-time">${ch.readingTime} min</span>` : ''}
+              </a>
+            </li>`,
+						)
+						.join('')}
+        </ol>
+      </section>
+    </article>`;
+
+	return baseTemplate({
+		title: book.title,
+		description: book.description,
+		url: getBookUrl(book),
+		content,
+		cssFilename: ctx.cssFilename,
+	});
+}
+
+// Render individual chapter
+function renderChapter(chapter: Chapter, book: Book, ctx: BuildContext): string {
+	const chapterIndex = book.chapters.findIndex((ch) => ch.slug === chapter.slug);
+	const prevChapter = chapterIndex > 0 ? book.chapters[chapterIndex - 1] : null;
+	const nextChapter =
+		chapterIndex < book.chapters.length - 1 ? book.chapters[chapterIndex + 1] : null;
+
+	const content = `
+    <article class="prose chapter-page">
+      <header class="chapter-header">
+        <nav class="chapter-breadcrumb">
+          <a href="${getBookUrl(book)}">${book.title}</a>
+        </nav>
+        <p class="chapter-number">Chapter ${chapter.chapterNumber}</p>
+        <h1>${chapter.chapterTitle}</h1>
+        ${chapter.readingTime ? `<span class="reading-time">${chapter.readingTime} min read</span>` : ''}
+      </header>
+      
+      <div class="chapter-content">
+        ${chapter.html}
+      </div>
+
+      <nav class="chapter-nav">
+        ${prevChapter ? `<a href="${getUrl(prevChapter)}" class="prev-chapter">&larr; ${prevChapter.chapterTitle}</a>` : '<span></span>'}
+        <a href="${getBookUrl(book)}" class="toc-link">Table of Contents</a>
+        ${nextChapter ? `<a href="${getUrl(nextChapter)}" class="next-chapter">${nextChapter.chapterTitle} &rarr;</a>` : '<span></span>'}
+      </nav>
+    </article>`;
+
+	return baseTemplate({
+		title: `${chapter.chapterTitle} — ${book.title}`,
+		description: `Chapter ${chapter.chapterNumber} of ${book.title}`,
+		url: getUrl(chapter),
+		content,
+		cssFilename: ctx.cssFilename,
+	});
+}
+
+// Render books index page (list all books)
+function renderBooksIndex(books: Book[], ctx: BuildContext): string {
+	const content = `
+    <article class="books-index">
+      <h1>Books</h1>
+      <ul class="book-list">
+        ${books
+					.map(
+						(book) => `
+          <li>
+            <a href="${getBookUrl(book)}">
+              <h2>${book.title}</h2>
+              <p class="book-author">by ${book.author}</p>
+              <p>${book.description}</p>
+              <p class="book-meta">${book.chapters.length} chapters ${book.status === 'in-progress' ? '· 📝 In Progress' : ''}</p>
+            </a>
+          </li>`,
+					)
+					.join('')}
+      </ul>
+    </article>`;
+
+	return baseTemplate({
+		title: 'Books',
+		description: 'Long-form writing and novels',
+		url: '/books/',
+		content,
+		cssFilename: ctx.cssFilename,
+	});
+}
+
 // Render 404 page
 function render404(ctx: BuildContext): string {
 	const content = `
@@ -614,6 +749,20 @@ export function renderSite(ctx: BuildContext): RenderOutput[] {
 	}
 	if (ctx.skills && !ctx.skills.draft) {
 		output.push({ path: 'about/skills/index.html', content: renderSkills(ctx.skills, ctx) });
+	}
+
+	// Books
+	if (ctx.books.length > 0) {
+		output.push({ path: 'books/index.html', content: renderBooksIndex(ctx.books, ctx) });
+		for (const book of ctx.books) {
+			output.push({ path: `books/${book.slug}/index.html`, content: renderBook(book, ctx) });
+			for (const chapter of book.chapters) {
+				output.push({
+					path: `books/${book.slug}/${chapter.slug}/index.html`,
+					content: renderChapter(chapter, book, ctx),
+				});
+			}
+		}
 	}
 
 	// 404
