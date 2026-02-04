@@ -1101,7 +1101,7 @@ footer .separator {
 
 .book-card-cover {
 	margin: 0;
-	aspect-ratio: 3/2;
+	aspect-ratio: 3 / 2;
 	overflow: hidden;
 }
 
