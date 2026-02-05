@@ -200,9 +200,10 @@ function renderPost(post: Post, ctx: BuildContext): string {
 			: `<span class="byline">By ${config.author.name}</span>`;
 
 	// Updated date (if different from publish date)
-	const updatedLine = post.updated && post.updated.getTime() !== post.date.getTime()
-		? `<span class="updated-date">Updated ${formatDate(post.updated)}</span>`
-		: '';
+	const updatedLine =
+		post.updated && post.updated.getTime() !== post.date.getTime()
+			? `<span class="updated-date">Updated ${formatDate(post.updated)}</span>`
+			: '';
 
 	// Hero banner with image background and text overlay
 	const heroSection = post.heroImage
@@ -263,9 +264,10 @@ function renderPost(post: Post, ctx: BuildContext): string {
 // Render single note
 function renderNote(note: Note, ctx: BuildContext): string {
 	// Updated date (if different from publish date)
-	const updatedLine = note.updated && note.updated.getTime() !== note.date.getTime()
-		? `<div class="updated-date">Updated ${formatDate(note.updated)}</div>`
-		: '';
+	const updatedLine =
+		note.updated && note.updated.getTime() !== note.date.getTime()
+			? `<div class="updated-date">Updated ${formatDate(note.updated)}</div>`
+			: '';
 
 	// Hero section - same treatment as posts
 	const heroSection = note.heroImage
