@@ -16,11 +16,12 @@ All principles are decomposed into `axioms/`. Read the relevant axiom before wor
 | Axiom | Governs |
 |-------|---------|
 | [accessibility.md](axioms/accessibility.md) | WCAG compliance, ARIA, keyboard nav |
+| [architecture.md](axioms/architecture.md) | Tech stack, build pipeline, directory structure |
 | [content-policy.md](axioms/content-policy.md) | Sensitive terms, co-authorship, drafts |
-| [voice.md](axioms/voice.md) | Tone, microcopy, writing style |
-| [thesis.md](axioms/thesis.md) | Homepage thesis, signal physics |
+| [content-types.md](axioms/content-types.md) | Writing vs Notes, graduation model, wikilinks |
 | [design-system.md](axioms/design-system.md) | Colors, typography, glyphs, spacing |
-| [architecture.md](axioms/architecture.md) | Tech stack, build pipeline, content types |
+| [thesis.md](axioms/thesis.md) | Homepage thesis, signal physics |
+| [voice.md](axioms/voice.md) | Tone, microcopy, writing style |
 
 ## Before You Build
 
