@@ -104,6 +104,7 @@ export interface Post extends ContentItem {
 // Note - short-form content
 export interface Note extends ContentItem {
 	type: 'note';
+	heroImage?: string; // Optional hero image (mirrors Post)
 }
 
 // Photo - visual observation (not a photo dump, each one is intentional)

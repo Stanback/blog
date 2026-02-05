@@ -255,12 +255,24 @@ function renderPost(post: Post, ctx: BuildContext): string {
 
 // Render single note
 function renderNote(note: Note, ctx: BuildContext): string {
+	// Hero section - same treatment as posts
+	const heroSection = note.heroImage
+		? `
+		<header class="post-hero" style="--hero-image: url('${note.heroImage}')">
+			<div class="post-hero-content">
+				<time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
+				<h1>${note.title}</h1>
+			</div>
+		</header>`
+		: `
+		<header class="post-header-simple">
+			<time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
+			<h1>${note.title}</h1>
+		</header>`;
+
 	const content = `
-    <article class="prose">
-      <header>
-        <time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
-        <h1>${note.title}</h1>
-      </header>
+    ${heroSection}
+    <article class="prose post-body">
       ${note.html}
     </article>`;
 
@@ -271,6 +283,7 @@ function renderNote(note: Note, ctx: BuildContext): string {
 		content,
 		type: 'article',
 		date: note.date,
+		heroImage: note.heroImage,
 		cssFilename: ctx.cssFilename,
 	});
 }
@@ -427,31 +440,59 @@ function renderPostsIndex(posts: Post[], ctx: BuildContext): string {
 	});
 }
 
-// Render notes index — simpler than posts, just quick thoughts
+// Render notes index — mirrors posts archive layout
 function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
 	const publishedNotes = notes
 		.filter((n) => !n.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime());
 
+	// Group notes by year (same as posts)
+	const notesByYear = publishedNotes.reduce(
+		(acc, note) => {
+			const year = note.date.getFullYear();
+			if (!acc[year]) acc[year] = [];
+			acc[year].push(note);
+			return acc;
+		},
+		{} as Record<number, Note[]>,
+	);
+
+	const years = Object.keys(notesByYear)
+		.map(Number)
+		.sort((a, b) => b - a);
+
 	const content = `
     <header class="archive-header">
       <h1>Notes</h1>
-      <p class="archive-intro">Quick thoughts, half-formed ideas, things that don't need a thesis.</p>
+      <p class="archive-intro">Quick thoughts, observations, things that don't need a thesis.</p>
     </header>
     ${
 			publishedNotes.length > 0
 				? `
-    <ul class="notes-list">
-      ${publishedNotes
+    <div class="archive-grid">
+      ${years
 				.map(
-					(note) => `
-      <li class="note-item">
-        <time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
-        <a href="${getUrl(note)}" class="note-link">${note.title}</a>
-      </li>`,
+					(year) => `
+        <section class="archive-year">
+          <h2 class="year-heading">${year}</h2>
+          <ul class="archive-list">
+            ${notesByYear[year]
+							.map(
+								(note) => `
+              <li class="archive-item">
+                <time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
+                <a href="${getUrl(note)}" class="archive-link">
+                  <span class="archive-title">${note.title}</span>
+                  ${note.description ? `<span class="archive-desc">${note.description}</span>` : ''}
+                </a>
+              </li>`,
+							)
+							.join('')}
+          </ul>
+        </section>`,
 				)
 				.join('')}
-    </ul>`
+    </div>`
 				: `<p class="empty-state">${strings.empty.notes}</p>`
 		}`;
 

@@ -168,7 +168,11 @@ async function parseContent(items: ValidatedContentItem[]): Promise<Content[]> {
 				};
 				break;
 			case 'note':
-				content = { ...baseContent, type: 'note' };
+				content = {
+					...baseContent,
+					type: 'note',
+					heroImage: getString(fm.heroImage),
+				};
 				break;
 			case 'page':
 				content = { ...baseContent, type: 'page' };
