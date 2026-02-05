@@ -492,9 +492,46 @@ footer .separator {
 .thesis-orientation {
 	font-size: var(--font-size-base);
 	color: var(--color-text-muted);
-	margin: 0;
+	margin: 0 0 var(--space-6);
 	line-height: var(--leading-relaxed);
 	max-width: 50ch;
+}
+
+.thesis-pillars {
+	display: flex;
+	gap: var(--space-4);
+	flex-wrap: wrap;
+}
+
+.pillar-item {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+	letter-spacing: 0.02em;
+}
+
+.thesis-pillars {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-4);
+	margin-top: var(--space-6);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+	opacity: 0.6;
+}
+
+.pillar-item {
+	color: var(--color-text-muted);
+	transition: opacity var(--transition-normal);
+}
+
+.pillar-item:not(:last-child)::after {
+	content: '·';
+	margin-left: var(--space-4);
+	opacity: 0.5;
+}
+
+.thesis:hover .thesis-pillars {
+	opacity: 0.8;
 }
 
 /* Responsive adjustments */

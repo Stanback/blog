@@ -711,6 +711,12 @@ function renderHome(ctx: BuildContext): string {
         <h1 class="thesis-headline">${strings.thesis.headline}</h1>
         <p class="thesis-body">${strings.thesis.body}</p>
         <p class="thesis-orientation">This is a space for thinking about judgment, systems, and design in an era where execution is cheap and discernment isn't.</p>
+        <nav class="thesis-pillars" aria-label="Content pillars">
+          <span class="pillar-item">Judgment</span>
+          <span class="pillar-item">Systems</span>
+          <span class="pillar-item">Interfaces</span>
+          <span class="pillar-item">Identity</span>
+        </nav>
       </div>
     </section>
 
