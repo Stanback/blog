@@ -617,10 +617,11 @@ footer .separator {
 
 .featured-content time {
 	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	color: var(--color-text-primary);
 	letter-spacing: 0.03em;
 	display: block;
 	margin-bottom: var(--space-3);
+	opacity: 0.85;
 }
 
 .featured-content h2 {
@@ -639,10 +640,11 @@ footer .separator {
 
 .featured-desc {
 	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	color: var(--color-text-primary);
 	line-height: var(--leading-relaxed);
 	margin: 0;
 	max-width: 50ch;
+	opacity: 0.8;
 }
 
 /* Mobile: more generous line height */
