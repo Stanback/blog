@@ -165,13 +165,14 @@ function createWikilinkExtension(): MarkedExtension {
 					}
 					return undefined;
 				},
-				renderer(token: { title: string; display: string }) {
-					const url = wikilinkResolver.get(token.title.toLowerCase());
+				renderer(token) {
+					const t = token as unknown as { title: string; display: string };
+					const url = wikilinkResolver.get(t.title.toLowerCase());
 					if (url) {
-						return `<a href="${url}" class="wikilink">${token.display}</a>`;
+						return `<a href="${url}" class="wikilink">${t.display}</a>`;
 					}
 					// Unresolved link - show as broken
-					return `<span class="wikilink wikilink-broken" title="Link not found">${token.display}</span>`;
+					return `<span class="wikilink wikilink-broken" title="Link not found">${t.display}</span>`;
 				},
 			},
 		],
