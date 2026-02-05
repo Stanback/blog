@@ -1617,7 +1617,7 @@ article.prose > header .reading-time {
 	margin-bottom: var(--space-16);
 	padding-top: var(--space-16);
 	padding-right: var(--space-page-margin);
-	padding-bottom: var(--space-10);
+	padding-bottom: var(--space-16);
 	padding-left: var(--space-page-margin);
 	max-width: none;
 }
@@ -1715,7 +1715,7 @@ article.prose.post-body {
 	.post-hero {
 		min-height: 450px;
 		padding-top: var(--space-20);
-		padding-bottom: var(--space-12);
+		padding-bottom: var(--space-20);
 	}
 }
 
