@@ -161,7 +161,7 @@ async function parseContent(items: ValidatedContentItem[]): Promise<Content[]> {
 					type: 'photo',
 					image: getString(fm.image) ?? '',
 					alt: getString(fm.alt) ?? '',
-					caption: getString(fm.caption),
+					observation: getString(fm.observation),
 					location: getString(fm.location),
 					camera: getString(fm.camera),
 					settings: getString(fm.settings),

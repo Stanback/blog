@@ -2,6 +2,43 @@
 // Schema version for future migrations
 export const SCHEMA_VERSION = 1 as const;
 
+// ═══════════════════════════════════════════════════════════════════════════
+// BOUNDED TAG SYSTEM
+// Tags are constrained to known values for consistency and discoverability
+// ═══════════════════════════════════════════════════════════════════════════
+
+// Domain tags - what the content is about
+export const DOMAIN_TAGS = [
+	'building', // software, systems, making things
+	'design', // UX, interfaces, aesthetics
+	'ai', // agents, LLMs, the new world
+	'architecture', // patterns, structure, systems thinking
+	'mental-models', // frameworks, ways of seeing
+	'leadership', // teams, management, growth
+	'life', // parenting, personal, the human stuff
+] as const;
+export type DomainTag = (typeof DOMAIN_TAGS)[number];
+
+// Format tags - what kind of content (optional)
+export const FORMAT_TAGS = [
+	'essay', // argued position
+	'observation', // quick insight (notes default to this)
+	'tutorial', // how-to
+	'reflection', // looking back
+] as const;
+export type FormatTag = (typeof FORMAT_TAGS)[number];
+
+// All valid tags
+export const ALL_TAGS = [...DOMAIN_TAGS, ...FORMAT_TAGS] as const;
+export type ValidTag = DomainTag | FormatTag;
+
+// Helper to check if a tag is valid
+export function isValidTag(tag: string): tag is ValidTag {
+	return ALL_TAGS.includes(tag as ValidTag);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+
 export type ContentType =
 	| 'post'
 	| 'note'
@@ -69,15 +106,15 @@ export interface Note extends ContentItem {
 	type: 'note';
 }
 
-// Photo - image with metadata
+// Photo - visual observation (not a photo dump, each one is intentional)
 export interface Photo extends ContentItem {
 	type: 'photo';
-	image: string; // Required
-	alt: string; // Required
-	caption?: string;
-	location?: string;
-	camera?: string;
-	settings?: string;
+	image: string; // Required - the image path
+	alt: string; // Required - accessibility description
+	observation?: string; // The thought/insight this photo captures (shows below image)
+	location?: string; // Where it was taken
+	camera?: string; // What captured it
+	settings?: string; // Technical details if relevant
 }
 
 // Page - static pages like about, colophon

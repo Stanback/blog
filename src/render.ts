@@ -275,29 +275,22 @@ function renderNote(note: Note, ctx: BuildContext): string {
 function renderPhoto(photo: Photo, ctx: BuildContext): string {
 	const content = `
     <article class="photo-single">
-      <figure>
+      <figure class="polaroid">
         <img src="${photo.image}" alt="${photo.alt}" loading="lazy">
-        ${photo.caption ? `<figcaption>${photo.caption}</figcaption>` : ''}
+        <figcaption class="polaroid-caption">
+          ${photo.observation ? `<p class="observation">${photo.observation}</p>` : ''}
+          <div class="photo-meta">
+            <time datetime="${isoDate(photo.date)}">${formatDate(photo.date)}</time>
+            ${photo.location ? `<span class="location">· ${photo.location}</span>` : ''}
+          </div>
+        </figcaption>
       </figure>
-      <div class="photo-meta">
-        <time datetime="${isoDate(photo.date)}">${formatDate(photo.date)}</time>
-        <h1>${photo.title}</h1>
-        ${photo.location ? `<p class="location">${photo.location}</p>` : ''}
-        ${
-					photo.camera || photo.settings
-						? `
-        <p class="camera-info">
-          ${photo.camera || ''}${photo.camera && photo.settings ? ' &middot; ' : ''}${photo.settings || ''}
-        </p>`
-						: ''
-				}
-      </div>
-      ${photo.html ? `<div class="prose">${photo.html}</div>` : ''}
+      ${photo.html ? `<div class="prose photo-body">${photo.html}</div>` : ''}
     </article>`;
 
 	return baseTemplate({
 		title: photo.title,
-		description: photo.caption || photo.alt,
+		description: photo.observation || photo.alt,
 		url: getUrl(photo),
 		content,
 		type: 'article',
@@ -467,23 +460,31 @@ function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
 	});
 }
 
-// Render photos index
+// Render photos index — visual observations, Polaroid aesthetic
 function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 	const publishedPhotos = photos
 		.filter((p) => !p.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime());
 
 	const content = `
-    <h1>${strings.lists.photos}</h1>
+    <header class="archive-header">
+      <h1>Photos</h1>
+      <p class="archive-intro">Visual observations. Each one intentional.</p>
+    </header>
     ${
 			publishedPhotos.length > 0
 				? `
-    <div class="photo-grid">
+    <div class="photos-grid">
       ${publishedPhotos
 				.map(
-					(photo) => `
-      <a href="${getUrl(photo)}" class="photo-thumb">
-        <img src="${photo.image}" alt="${photo.alt}" loading="lazy">
+					(photo, i) => `
+      <a href="${getUrl(photo)}" class="photo-card" style="--i: ${i}">
+        <figure class="polaroid-thumb">
+          <img src="${photo.image}" alt="${photo.alt}" loading="lazy">
+          <figcaption>
+            ${photo.observation ? `<span class="observation-preview">${photo.observation}</span>` : `<span class="photo-title">${photo.title}</span>`}
+          </figcaption>
+        </figure>
       </a>`,
 				)
 				.join('')}
@@ -492,8 +493,8 @@ function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 		}`;
 
 	return baseTemplate({
-		title: strings.lists.photos,
-		description: 'Photography with minimal context.',
+		title: 'Photos',
+		description: 'Visual observations and moments.',
 		url: '/photos/',
 		content,
 		cssFilename: ctx.cssFilename,
