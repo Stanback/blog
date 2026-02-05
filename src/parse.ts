@@ -139,6 +139,19 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 	marked.use({
 		async: true,
 		renderer: {
+			// Wrap tables in scrollable container for mobile
+			table(token: Tokens.Table): string {
+				const header = token.header
+					.map((cell) => `<th>${cell.tokens.map((t) => ('text' in t ? t.text : '')).join('')}</th>`)
+					.join('');
+				const rows = token.rows
+					.map(
+						(row) =>
+							`<tr>${row.map((cell) => `<td>${cell.tokens.map((t) => ('text' in t ? t.text : '')).join('')}</td>`).join('')}</tr>`,
+					)
+					.join('');
+				return `<div class="table-scroll"><table><thead><tr>${header}</tr></thead><tbody>${rows}</tbody></table></div>`;
+			},
 			code(token: Tokens.Code): string {
 				const lang = token.lang || '';
 				const code = token.text;

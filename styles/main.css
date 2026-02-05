@@ -2763,11 +2763,32 @@ article.skills-page h1 {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   TABLES
+   TABLES — Mobile-friendly horizontal scroll
    ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Wrapper for horizontal scroll on mobile */
+.table-scroll {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	margin: var(--space-6) 0;
+	/* Fade hint for scrollable content */
+	background: 
+		linear-gradient(to right, var(--color-bg) 30%, transparent),
+		linear-gradient(to right, transparent, var(--color-bg) 70%) 100% 0,
+		linear-gradient(to right, rgba(0,0,0,0.08), transparent 15px),
+		linear-gradient(to left, rgba(0,0,0,0.08), transparent 15px) 100% 0;
+	background-repeat: no-repeat;
+	background-size: 40px 100%, 40px 100%, 15px 100%, 15px 100%;
+	background-attachment: local, local, scroll, scroll;
+}
+
+.table-scroll table {
+	margin: 0;
+}
 
 .prose table {
 	width: 100%;
+	min-width: 500px; /* Force scroll on narrow screens */
 	margin: var(--space-6) 0;
 	border-collapse: collapse;
 	font-size: var(--font-size-sm);
@@ -2778,6 +2799,7 @@ article.skills-page h1 {
 	padding: var(--space-2) var(--space-3);
 	text-align: left;
 	border-bottom: 1px solid var(--color-border-subtle);
+	white-space: nowrap; /* Prevent text wrapping in cells */
 }
 
 .prose th {
@@ -2787,6 +2809,14 @@ article.skills-page h1 {
 
 .prose thead th {
 	border-bottom: 2px solid var(--color-border-strong);
+}
+
+/* On mobile, allow cell text to wrap for readability */
+@media (max-width: 640px) {
+	.prose td {
+		white-space: normal;
+		min-width: 120px;
+	}
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
