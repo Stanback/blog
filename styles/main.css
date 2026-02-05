@@ -419,30 +419,30 @@ footer .separator {
 
 .thesis {
 	position: relative;
-	padding: var(--space-16) 0 var(--space-20);
-	margin-bottom: var(--space-8);
-	max-width: var(--content-width-wide);
+	padding: var(--space-20) 0 var(--space-24);
+	margin-bottom: var(--space-16);
+	max-width: 100%; /* Override main > * constraint */
 }
 
 /* The bounding box container — positions the corner marks */
 .thesis-bound {
 	position: absolute;
-	inset: var(--space-10) 0;
-	max-width: var(--content-width);
+	inset: var(--space-12) 0;
+	max-width: 600px;
 	pointer-events: none;
 }
 
 /* Corner marks positioned absolutely */
 .thesis-corner {
 	position: absolute;
-	width: 28px;
-	height: 28px;
-	opacity: 0.7;
+	width: 32px;
+	height: 32px;
+	opacity: 0.6;
 	transition: opacity var(--transition-normal);
 }
 
 .thesis:hover .thesis-corner {
-	opacity: 0.9;
+	opacity: 0.85;
 }
 
 .thesis-corner-tl {
@@ -460,33 +460,34 @@ footer .separator {
 /* Content sits inside the visual bounding box */
 .thesis-content {
 	position: relative;
-	padding: var(--space-8) var(--space-10);
-	max-width: var(--content-width);
+	padding: var(--space-10) var(--space-12);
+	max-width: 600px;
 }
 
 .thesis-headline {
 	font-family: var(--font-serif);
-	font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+	font-size: clamp(2.25rem, 6vw, 3.5rem);
 	font-weight: 400;
 	font-style: italic;
 	color: var(--color-text-primary);
-	margin: 0 0 var(--space-5);
-	letter-spacing: var(--tracking-tight);
-	line-height: 1.15;
+	margin: 0 0 var(--space-6);
+	letter-spacing: -0.02em;
+	line-height: 1.1;
 }
 
 .thesis-body {
-	font-size: var(--font-size-lg);
+	font-size: var(--font-size-xl);
 	color: var(--color-text-secondary);
 	margin: 0;
 	line-height: var(--leading-relaxed);
-	max-width: 55ch;
+	max-width: 50ch;
 }
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
 	.thesis {
-		padding: var(--space-10) 0 var(--space-14);
+		padding: var(--space-12) 0 var(--space-16);
+		margin-bottom: var(--space-10);
 	}
 
 	.thesis-bound {
@@ -494,7 +495,7 @@ footer .separator {
 	}
 
 	.thesis-content {
-		padding: var(--space-5) var(--space-6);
+		padding: var(--space-6) var(--space-6);
 	}
 
 	.thesis-corner {
@@ -627,9 +628,10 @@ footer .separator {
 .homepage-modules {
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-6);
-	padding-top: var(--space-4);
+	gap: var(--space-8);
+	padding-top: var(--space-10);
 	border-top: 1px solid var(--color-border-subtle);
+	max-width: 100%; /* Override main > * constraint */
 }
 
 @media (min-width: 640px) {
@@ -641,25 +643,28 @@ footer .separator {
 	/* When both modules present, split 50/50 */
 	.start-here-module {
 		flex: 1 1 auto;
-		min-width: 280px;
+		min-width: 300px;
+		max-width: 400px;
 	}
 
 	.recent-notes {
 		flex: 1 1 auto;
+		max-width: 400px;
 	}
 
 	/* When only one module, let it breathe */
 	.start-here-module:only-child {
-		max-width: 480px;
+		max-width: 500px;
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
 	.homepage-modules {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: var(--space-8);
+		grid-template-columns: minmax(280px, 380px) minmax(280px, 380px);
+		gap: var(--space-16);
 		align-items: start;
+		justify-content: start;
 	}
 
 	.homepage-modules .start-here-module {
@@ -1374,17 +1379,23 @@ article.prose > header .reading-time {
 	display: block;
 }
 
-/* Post hero banner with image overlay */
+/* Post hero banner with image overlay — FULL BLEED */
 .post-hero {
 	position: relative;
-	min-height: 320px;
+	min-height: 380px;
 	display: flex;
 	align-items: flex-end;
 	background-image: var(--hero-image);
 	background-size: cover;
 	background-position: center;
-	margin: 0 calc(-1 * var(--page-padding-x)) var(--space-10);
-	padding: var(--space-12) var(--page-padding-x) var(--space-8);
+	/* Full bleed: break out of parent padding */
+	width: 100vw;
+	margin-left: calc(-1 * var(--space-page-margin));
+	margin-right: calc(-1 * var(--space-page-margin));
+	margin-top: calc(-1 * var(--space-12)); /* Counteract main padding-top */
+	margin-bottom: var(--space-12);
+	padding: var(--space-16) var(--space-page-margin) var(--space-10);
+	max-width: none;
 }
 
 .post-hero::before {
@@ -1394,9 +1405,9 @@ article.prose > header .reading-time {
 	background: linear-gradient(
 		to bottom,
 		transparent 0%,
-		transparent 20%,
-		color-mix(in oklch, var(--color-bg) 40%, transparent) 50%,
-		color-mix(in oklch, var(--color-bg) 85%, transparent) 75%,
+		transparent 30%,
+		color-mix(in oklch, var(--color-bg) 50%, transparent) 60%,
+		color-mix(in oklch, var(--color-bg) 90%, transparent) 80%,
 		var(--color-bg) 100%
 	);
 }
@@ -1412,18 +1423,19 @@ article.prose > header .reading-time {
 .post-hero time {
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
-	letter-spacing: 0.02em;
+	letter-spacing: 0.05em;
 	text-transform: uppercase;
+	display: block;
+	margin-bottom: var(--space-2);
 }
 
 .post-hero h1 {
 	font-family: var(--font-serif);
-	font-size: clamp(1.75rem, 5vw, 2.5rem);
-	font-weight: 500;
-	line-height: 1.2;
-	margin: var(--space-3) 0 var(--space-4);
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-weight: 400;
+	line-height: 1.15;
+	margin: 0 0 var(--space-5);
 	color: var(--color-text);
-	text-shadow: 0 1px 2px rgba(var(--color-bg-rgb), 0.3);
 }
 
 .post-hero .post-meta {
@@ -1433,31 +1445,28 @@ article.prose > header .reading-time {
 	color: var(--color-text-secondary);
 }
 
-.post-hero .byline,
-.post-hero .reading-time {
-	opacity: 0.85;
-}
-
 /* Simple header for posts without hero image */
 .post-header-simple {
 	max-width: var(--content-width);
-	margin: 0 auto var(--space-10);
-	padding-top: var(--space-8);
+	margin: 0 auto var(--space-12);
+	padding-top: var(--space-4);
 }
 
 .post-header-simple time {
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
-	letter-spacing: 0.02em;
+	letter-spacing: 0.05em;
 	text-transform: uppercase;
+	display: block;
+	margin-bottom: var(--space-2);
 }
 
 .post-header-simple h1 {
 	font-family: var(--font-serif);
-	font-size: clamp(1.75rem, 5vw, 2.5rem);
-	font-weight: 500;
-	line-height: 1.2;
-	margin: var(--space-3) 0 var(--space-4);
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-weight: 400;
+	line-height: 1.15;
+	margin: 0 0 var(--space-5);
 }
 
 .post-header-simple .post-meta {
@@ -1473,15 +1482,16 @@ article.prose > header .reading-time {
 	margin: 0 auto;
 }
 
-/* Hide duplicate title from markdown (first h1 if it matches the post title) */
+/* Hide duplicate title from markdown */
 .post-body > h1:first-child {
 	display: none;
 }
 
 @media (min-width: 768px) {
 	.post-hero {
-		min-height: 400px;
-		padding-bottom: var(--space-10);
+		min-height: 450px;
+		padding-top: var(--space-20);
+		padding-bottom: var(--space-12);
 	}
 }
 
