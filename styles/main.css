@@ -613,6 +613,82 @@ footer .separator {
 	color: var(--color-accent-500);
 }
 
+/* Start Here module */
+.start-here {
+	padding: var(--space-8);
+	background: var(--color-bg-subtle);
+	border: 1px solid var(--color-border-subtle);
+}
+
+.module-header {
+	position: relative;
+	margin-bottom: var(--space-6);
+}
+
+.module-corner {
+	position: absolute;
+	top: calc(-1 * var(--space-8));
+	left: calc(-1 * var(--space-8));
+	width: 24px;
+	height: 24px;
+	opacity: 0.4;
+}
+
+.module-title {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-xl);
+	font-weight: 400;
+	font-style: italic;
+	letter-spacing: var(--tracking-tight);
+	margin-bottom: var(--space-2);
+	color: var(--color-text-primary);
+}
+
+.module-intro {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	margin: 0;
+}
+
+.featured-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-4);
+}
+
+.featured-item-link {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+	padding: var(--space-4);
+	text-decoration: none;
+	color: var(--color-text-primary);
+	background: var(--color-bg-primary);
+	border-left: 3px solid transparent;
+	transition: all var(--transition-fast);
+}
+
+.featured-item-link:hover {
+	border-left-color: var(--color-accent-400);
+	background: var(--color-bg-hover);
+}
+
+.featured-item-title {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-lg);
+	font-weight: 500;
+	color: var(--color-text-primary);
+}
+
+.featured-item-desc {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	line-height: var(--line-height-relaxed);
+}
+
 /* Latest Writing — Featured post with overlay treatment */
 .featured-post {
 	position: relative;
@@ -2122,6 +2198,17 @@ article.skills-page h1 {
 /* Paragraphs */
 .prose p {
 	margin-bottom: var(--space-6);
+}
+
+/* Pull-quote - for occasional emphasis (use sparingly, 1x per long essay max) */
+.pull-quote {
+	margin: var(--space-10) 0;
+	padding: var(--space-6) var(--space-8);
+	font-size: var(--font-size-lg);
+	line-height: var(--line-height-relaxed);
+	color: var(--color-text-primary);
+	border-left: 3px solid var(--color-accent-300);
+	background: var(--color-bg-subtle);
 }
 
 /* Links */

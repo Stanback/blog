@@ -5,6 +5,7 @@ date: 2026-02-04
 type: post
 schemaVersion: 1
 draft: false
+featured: true
 tags:
   - architecture
   - ai

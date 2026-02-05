@@ -459,7 +459,7 @@ function renderPostsIndex(posts: Post[], ctx: BuildContext): string {
 	const content = `
     <header class="archive-header">
       <h1>Writing</h1>
-      <p class="archive-intro">Long-form thinking on building, design, and the things that matter.</p>
+      <p class="archive-intro">Essays on judgment & systems</p>
     </header>
     ${
 			publishedPosts.length > 0
@@ -524,7 +524,7 @@ function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
 	const content = `
     <header class="archive-header">
       <h1>Notes</h1>
-      <p class="archive-intro">Quick thoughts, observations, things that don't need a thesis.</p>
+      <p class="archive-intro">In-progress thinking</p>
     </header>
     ${
 			publishedNotes.length > 0
@@ -574,7 +574,7 @@ function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 	const content = `
     <header class="archive-header">
       <h1>Photos</h1>
-      <p class="archive-intro">Visual observations. Each one intentional.</p>
+      <p class="archive-intro">Observations</p>
     </header>
     ${
 			publishedPhotos.length > 0
@@ -641,6 +641,37 @@ function renderHome(ctx: BuildContext): string {
 		.filter((n) => !n.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
 		.slice(0, 3);
+
+	// Featured posts for "Start Here" section
+	const featuredPosts = ctx.posts
+		.filter((p) => !p.draft && p.featured)
+		.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+	// Start Here section
+	const startHereSection =
+		featuredPosts.length > 0
+			? `
+    <section class="home-section start-here">
+      <header class="module-header">
+        ${moduleCorner}
+        <h2 class="module-title">Start Here</h2>
+        <p class="module-intro">If you're new, these are good entry points.</p>
+      </header>
+      <ul class="featured-list">
+        ${featuredPosts
+					.map(
+						(post) => `
+        <li class="featured-item">
+          <a href="${getUrl(post)}" class="featured-item-link">
+            <span class="featured-item-title">${post.title}</span>
+            <span class="featured-item-desc">${post.description}</span>
+          </a>
+        </li>`,
+					)
+					.join('')}
+      </ul>
+    </section>`
+			: '';
 
 	// Latest Writing section - featured treatment for most recent post
 	// Latest Writing section - featured treatment with overlay
@@ -725,6 +756,7 @@ function renderHome(ctx: BuildContext): string {
     </section>
 
     <div class="home-content">
+      ${startHereSection}
       ${latestWritingSection}
       ${moreWritingSection}
       ${notesSection}
