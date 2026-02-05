@@ -629,7 +629,8 @@ footer .separator {
 	width: 100vw;
 	margin-left: calc(-1 * var(--space-page-margin));
 	margin-right: calc(-1 * var(--space-page-margin));
-	padding: var(--space-16) var(--space-page-margin);
+	/* Generous padding — whitespace around content */
+	padding: var(--space-16) var(--space-8) var(--space-12);
 }
 
 /* Gradient overlay for text readability — stronger at top for date */
@@ -674,6 +675,9 @@ footer .separator {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
+	/* Breathing room from edges */
+	padding-left: var(--space-page-margin);
+	padding-right: var(--space-page-margin);
 }
 
 .featured-content time {
