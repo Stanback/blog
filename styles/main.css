@@ -3152,12 +3152,14 @@ article.skills-page h1 {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .graph-page {
-	max-width: var(--measure-page);
+	max-width: var(--content-width);
 	margin: 0 auto;
 }
 
 .graph-header {
 	margin-bottom: var(--space-8);
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .graph-header h1 {
