@@ -861,7 +861,7 @@ footer .separator {
 	font-size: var(--font-size-sm);
 	color: var(--color-text-muted);
 	grid-column: 1;
-	grid-row: 1;
+	grid-row: 1 / -1; /* Span all rows */
 }
 
 .post-list-compact .post-title {
@@ -871,7 +871,6 @@ footer .separator {
 	color: var(--color-text-primary);
 	transition: color var(--transition-fast);
 	grid-column: 2;
-	grid-row: 1;
 }
 
 .post-list-compact .post-desc {
@@ -879,7 +878,6 @@ footer .separator {
 	color: var(--color-text-secondary);
 	line-height: var(--leading-relaxed);
 	grid-column: 2;
-	grid-row: 2;
 }
 
 .post-list-compact li a:hover .post-title {
