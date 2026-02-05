@@ -256,7 +256,7 @@ function renderPost(post: Post, ctx: BuildContext): string {
 				post.tags.length > 0
 					? `
       <footer>
-        <p class="tags-label">${strings.labels.tagged}:</p>
+        <p class="tags-label">${strings.labels.tagged}</p>
         <ul class="tags">
           ${post.tags.map((tag) => `<li><span class="tag">${tag}</span></li>`).join('')}
         </ul>
