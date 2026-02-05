@@ -261,9 +261,10 @@ function buildContext(
 		}
 	}
 
-	// Build graph nodes
+	// Build graph nodes (exclude drafts)
 	const graphNodes = content
 		.filter((item) => ['post', 'note', 'page'].includes(item.type))
+		.filter((item) => !('draft' in item && (item as { draft?: boolean }).draft))
 		.map((item) => ({
 			id: getContentUrl(item) || item.slug,
 			title: item.title,
