@@ -1369,6 +1369,28 @@ article.prose > header .reading-time {
 	display: block;
 }
 
+/* Hero image for posts */
+article.prose > .hero-image {
+	margin: var(--space-8) calc(-1 * var(--space-4)) var(--space-8);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+}
+
+article.prose > .hero-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+@media (min-width: 768px) {
+	article.prose > .hero-image {
+		margin-left: calc(-1 * var(--space-8));
+		margin-right: calc(-1 * var(--space-8));
+	}
+}
+
 article.prose > footer {
 	margin-top: var(--space-12);
 	padding-top: var(--space-6);

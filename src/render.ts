@@ -199,6 +199,10 @@ function renderPost(post: Post, ctx: BuildContext): string {
 			? `<p class="byline">By ${config.author.name} ${post.coAuthors.map((ca) => `& ${ca.emoji || ''} ${ca.name}`.trim()).join(' ')}</p>`
 			: `<p class="byline">By ${config.author.name}</p>`;
 
+	const heroImageHtml = post.heroImage
+		? `<figure class="hero-image"><img src="${post.heroImage}" alt="" loading="eager" /></figure>`
+		: '';
+
 	const content = `
     <article class="prose">
       <header>
@@ -208,6 +212,7 @@ function renderPost(post: Post, ctx: BuildContext): string {
         ${authorLine}
         ${post.readingTime ? `<span class="reading-time">${post.readingTime} min read</span>` : ''}
       </header>
+      ${heroImageHtml}
       ${post.html}
       ${
 				post.tags.length > 0
