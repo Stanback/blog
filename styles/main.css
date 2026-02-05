@@ -1882,11 +1882,12 @@ article.prose > header .reading-time {
 
 .post-hero time {
 	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	color: var(--color-text-primary);
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	display: block;
 	margin-bottom: var(--space-2);
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .post-hero h1 {
@@ -1897,13 +1898,15 @@ article.prose > header .reading-time {
 	line-height: 1.15;
 	margin: 0 0 var(--space-6);
 	color: var(--color-text);
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .post-hero .post-meta {
 	display: flex;
 	gap: var(--space-4);
 	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
+	color: var(--color-text-primary);
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Simple header for posts without hero image */
