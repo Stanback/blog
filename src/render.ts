@@ -626,7 +626,7 @@ function renderHome(ctx: BuildContext): string {
     </section>`
 			: '';
 
-	// Notes section - with more visual treatment
+	// Notes section - living documents, no dates (undated list style)
 	const notesSection =
 		recentNotes.length > 0
 			? `
@@ -635,19 +635,19 @@ function renderHome(ctx: BuildContext): string {
         <span class="section-label">Notes</span>
         <a href="/notes/" class="section-link">View all →</a>
       </div>
-      <div class="notes-grid">
+      <ul class="notes-list-compact">
         ${recentNotes
 					.map(
 						(note) => `
-        <article class="note-card">
-          <a href="${getUrl(note)}">
-            <h3>${note.title}</h3>
-            ${note.description ? `<p>${note.description}</p>` : ''}
+        <li class="note-item">
+          <a href="${getUrl(note)}" class="note-link">
+            <span class="note-title">${note.title}</span>
+            ${note.description ? `<span class="note-desc">${note.description}</span>` : ''}
           </a>
-        </article>`,
+        </li>`,
 					)
 					.join('')}
-      </div>
+      </ul>
     </section>`
 			: '';
 

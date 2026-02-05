@@ -723,47 +723,48 @@ footer .separator {
 }
 
 /* Notes section — Card grid */
-.notes-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	gap: var(--space-4);
+/* Notes list — living documents, undated, clean list style */
+.notes-list-compact {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
 }
 
-.note-card {
-	background: var(--color-bg-muted);
-	border-radius: var(--radius-md);
-	padding: var(--space-5);
-	transition: background var(--transition-fast), transform var(--transition-fast);
+.note-item {
+	border-bottom: 1px solid var(--color-border-subtle);
 }
 
-.note-card:hover {
-	background: var(--color-bg-elevated);
-	transform: translateY(-2px);
+.note-item:last-child {
+	border-bottom: none;
 }
 
-.note-card a {
+.note-link {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+	padding: var(--space-4) 0;
 	text-decoration: none;
 	color: inherit;
-	display: block;
+	transition: color var(--transition-fast);
 }
 
-.note-card h3 {
+.note-title {
 	font-family: var(--font-serif);
-	font-size: var(--font-size-base);
-	font-weight: 500;
-	margin: 0 0 var(--space-2);
+	font-size: var(--font-size-lg);
+	font-weight: 400;
 	color: var(--color-text-primary);
 	transition: color var(--transition-fast);
 }
 
-.note-card:hover h3 {
+.note-link:hover .note-title {
 	color: var(--color-accent-500);
 }
 
-.note-card p {
+.note-desc {
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
-	margin: 0;
 	line-height: var(--leading-normal);
 }
 
@@ -778,8 +779,8 @@ footer .separator {
 		font-size: var(--font-size-xs);
 	}
 
-	.notes-grid {
-		grid-template-columns: 1fr;
+	.notes-list-compact {
+		/* Already single column */
 	}
 }
 
