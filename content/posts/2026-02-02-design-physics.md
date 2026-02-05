@@ -11,6 +11,7 @@ tags:
   - ux
   - agents
 description: "The 2×2 framework for understanding interface design in an age of AI agents. Why we need new physics."
+heroImage: /images/posts/design-physics-hero.png
 tension: "Traditional UX assumes humans on both sides. That's no longer true."
 questions:
   - "What does 'good design' mean when the user might be an AI?"

@@ -11,6 +11,7 @@ tags:
   - systems
   - knowledge
 description: "Why knowledge systems should claim to show their work, not to know the truth. The case for Proof Graphs over Truth Graphs."
+heroImage: /images/posts/proof-not-truth-hero.png
 tension: "Truth implies certainty. But the best we can do is justified belief with receipts."
 questions:
   - "What's the difference between claiming truth and claiming proof?"

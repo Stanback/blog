@@ -9,6 +9,7 @@ tags:
   - building
   - meta
 description: "First post. Why I built this blog, what I hope it becomes, and what I still don't know."
+heroImage: /images/posts/hello-world-hero.png
 tension: "I'm not sure if anyone will read this."
 questions:
   - "What makes a personal blog worth reading in 2026?"

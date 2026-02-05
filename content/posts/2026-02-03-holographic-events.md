@@ -11,6 +11,7 @@ tags:
   - ai
   - engineering
 description: "Why self-contained event payloads enable systems that repair themselves. A pattern from building browser automation for AI research."
+heroImage: /images/posts/holographic-events-hero.png
 tension: "Breadcrumbs are too thin. Logs require context reconstruction. What if events carried everything?"
 questions:
   - "How do you design events that a repair bot can act on without asking questions?"

@@ -123,29 +123,30 @@ Output the image generation prompt only, ready to paste into an image model.
 	return prompt;
 }
 
-// Call Gemini API to generate image (optional)
-async function generateImageWithGemini(prompt: string, outputPath: string): Promise<void> {
-	const apiKey = process.env.GEMINI_API_KEY;
-	if (!apiKey) {
-		console.error('Error: GEMINI_API_KEY environment variable not set');
-		console.error('Set it with: export GEMINI_API_KEY=your-key');
-		process.exit(1);
-	}
+// Use Gemini text model to refine meta-prompt into a direct image prompt
+async function refinePromptWithGemini(metaPrompt: string, apiKey: string): Promise<string> {
+	console.log('Refining prompt with Gemini...');
 
-	console.log('Generating image with Gemini...');
-
-	// Use Imagen 3 via Gemini API
 	const response = await fetch(
-		`https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`,
+		`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
 		{
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
-				instances: [{ prompt }],
-				parameters: {
-					sampleCount: 1,
-					aspectRatio: '16:9',
-					safetyFilterLevel: 'block_few',
+				contents: [
+					{
+						parts: [
+							{
+								text: `${metaPrompt}
+
+IMPORTANT: Output ONLY the image generation prompt. No explanations, no markdown formatting, no code blocks. Just the direct prompt text that can be sent to an image model like Imagen or DALL-E. Keep it under 500 words. Be specific and visual.`,
+							},
+						],
+					},
+				],
+				generationConfig: {
+					temperature: 0.7,
+					maxOutputTokens: 1024,
 				},
 			}),
 		},
@@ -153,12 +154,67 @@ async function generateImageWithGemini(prompt: string, outputPath: string): Prom
 
 	if (!response.ok) {
 		const error = await response.text();
-		console.error('Gemini API error:', error);
+		throw new Error(`Gemini API error: ${error}`);
+	}
+
+	const data = await response.json();
+	const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+	if (!text) {
+		throw new Error('No text in Gemini response');
+	}
+
+	return text.trim();
+}
+
+// Call Gemini Imagen API to generate image
+async function generateImageWithGemini(
+	metaPrompt: string,
+	outputPath: string,
+	apiKey: string,
+): Promise<void> {
+	// Step 1: Refine meta-prompt into direct image prompt
+	const imagePrompt = await refinePromptWithGemini(metaPrompt, apiKey);
+	console.log('\n--- Refined Image Prompt ---');
+	console.log(imagePrompt);
+	console.log('----------------------------\n');
+
+	// Step 2: Generate image with Gemini 2.0 Flash (image generation mode)
+	console.log('Generating image with Gemini 2.0 Flash...');
+
+	const response = await fetch(
+		`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key=${apiKey}`,
+		{
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				contents: [
+					{
+						parts: [{ text: `Generate an image: ${imagePrompt}` }],
+					},
+				],
+				generationConfig: {
+					responseModalities: ['image', 'text'],
+					responseMimeType: 'text/plain',
+				},
+			}),
+		},
+	);
+
+	if (!response.ok) {
+		const error = await response.text();
+		console.error('Gemini image generation error:', error);
 		process.exit(1);
 	}
 
 	const data = await response.json();
-	const imageData = data.predictions?.[0]?.bytesBase64Encoded;
+
+	// Find the inline_data part with the image
+	const parts = data.candidates?.[0]?.content?.parts || [];
+	const imagePart = parts.find((p: { inlineData?: { mimeType: string } }) =>
+		p.inlineData?.mimeType?.startsWith('image/'),
+	);
+	const imageData = imagePart?.inlineData?.data;
 
 	if (!imageData) {
 		console.error('No image data in response');
@@ -169,7 +225,12 @@ async function generateImageWithGemini(prompt: string, outputPath: string): Prom
 	// Write image
 	const buffer = Buffer.from(imageData, 'base64');
 	await Bun.write(outputPath, buffer);
-	console.log(`Image saved to: ${outputPath}`);
+	console.log(`✓ Image saved to: ${outputPath}`);
+}
+
+// Just refine the prompt (without generating image)
+async function refineOnly(metaPrompt: string, apiKey: string): Promise<string> {
+	return refinePromptWithGemini(metaPrompt, apiKey);
 }
 
 // Main
@@ -178,14 +239,28 @@ async function main() {
 		args: Bun.argv.slice(2),
 		options: {
 			generate: { type: 'boolean', default: false },
+			refine: { type: 'boolean', default: false },
 			output: { type: 'string', default: 'static/images/posts' },
+			save: { type: 'boolean', default: false },
 		},
 		allowPositionals: true,
 	});
 
 	const articlePath = positionals[0];
 	if (!articlePath) {
-		console.error('Usage: bun scripts/generate-image-prompt.ts <article.md> [--generate]');
+		console.error(`Usage: bun scripts/generate-image-prompt.ts <article.md> [options]
+
+Options:
+  --refine    Use Gemini to convert meta-prompt to direct image prompt
+  --generate  Generate image via Imagen API (includes --refine)
+  --output    Output directory for images (default: static/images/posts)
+  --save      Save refined prompt to prompts/posts/
+
+Examples:
+  bun scripts/generate-image-prompt.ts content/posts/2026-02-04-proof-not-truth.md
+  bun scripts/generate-image-prompt.ts content/posts/2026-02-04-proof-not-truth.md --refine
+  bun scripts/generate-image-prompt.ts content/posts/2026-02-04-proof-not-truth.md --generate
+`);
 		process.exit(1);
 	}
 
@@ -205,23 +280,50 @@ async function main() {
 	const themes = extractThemes(body, tags);
 	const tone = inferTone(body, frontmatter);
 
-	// Generate prompt
-	const prompt = generatePrompt(title, description, tension, themes, tone, body);
+	// Generate meta-prompt
+	const metaPrompt = generatePrompt(title, description, tension, themes, tone, body);
+	const slug = basename(articlePath, '.md').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+
+	// Check for API key if needed
+	const apiKey = process.env.GEMINI_API_KEY;
+	const needsApi = values.generate || values.refine;
+
+	if (needsApi && !apiKey) {
+		console.error('Error: GEMINI_API_KEY environment variable not set');
+		console.error('Run with: GEMINI_API_KEY=xxx bun scripts/generate-image-prompt.ts ...');
+		console.error('Or: source ~/.config/shell/secrets.zsh && bun scripts/...');
+		process.exit(1);
+	}
 
 	if (values.generate) {
-		// Generate image
-		const slug = basename(articlePath, '.md').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+		// Full pipeline: refine + generate image
 		const outputPath = join(values.output, `${slug}-hero.png`);
-		await generateImageWithGemini(prompt, outputPath);
+		await generateImageWithGemini(metaPrompt, outputPath, apiKey!);
+	} else if (values.refine) {
+		// Just refine the prompt
+		const imagePrompt = await refineOnly(metaPrompt, apiKey!);
+		console.log('\n' + '='.repeat(80));
+		console.log('REFINED IMAGE PROMPT (ready for Imagen/DALL-E)');
+		console.log('='.repeat(80));
+		console.log(imagePrompt);
+		console.log('='.repeat(80));
+
+		if (values.save) {
+			const promptPath = join('prompts', 'posts', `${slug}-refined.md`);
+			await Bun.write(promptPath, `# Image Prompt: ${title}\n\n${imagePrompt}`);
+			console.log(`\n✓ Saved to ${promptPath}`);
+		}
 	} else {
-		// Just output the prompt
+		// Just output the meta-prompt
 		console.log('='.repeat(80));
-		console.log('IMAGE GENERATION PROMPT');
+		console.log('META-PROMPT (for Claude/GPT to refine, or paste into Gemini directly)');
 		console.log('='.repeat(80));
-		console.log(prompt);
+		console.log(metaPrompt);
 		console.log('='.repeat(80));
-		console.log('\nTo generate image, run with --generate flag');
-		console.log('Or copy the prompt above into Gemini/DALL-E/Midjourney');
+		console.log('\nOptions:');
+		console.log('  --refine    → Use Gemini to create direct image prompt');
+		console.log('  --generate  → Generate image with Imagen API');
+		console.log('  --save      → Save refined prompt to file');
 	}
 }
 
