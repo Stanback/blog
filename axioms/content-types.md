@@ -2,45 +2,53 @@
 
 > The distinction between content types should reflect how knowledge actually works, not arbitrary categories.
 
-## The Spectrum
+## The Pipeline
 
-Content lives on a spectrum from ephemeral to evergreen:
+Content moves through stages of confidence and vulnerability:
 
 ```
-Raw capture → Working notes → Published essays → Archived reference
+Drafts (private) → Notes (public exploration) → Writing (published commitment)
 ```
 
-## Writing vs Notes: The Core Distinction
+This isn't just about polish — it's about emotional readiness.
 
-| Aspect | Writing | Notes |
-|--------|---------|-------|
-| **Temporality** | Dated, timestamped | Living, can evolve |
-| **Intent** | "I'm making a claim" | "I'm thinking out loud" |
-| **Polish** | Edited, structured | May be rough |
-| **Commitment** | This is my position | This might change |
-| **Updated field** | Shows revision history | Updates silently |
+## The Three Layers
 
-### Writing (Posts)
-- Published pieces with a date
-- Either a fixed point in time, or slowly revised with explicit "Updated" markers
-- The archive — what you're willing to stand behind
-- Shows reading time, has descriptions for SEO/sharing
+### Drafts (Private)
+- **Intimate.** The stuff you're not sure about yet.
+- **Vulnerable.** Might be wrong. Might be embarrassing. Might change your mind completely.
+- **Not ready to defend.** You're still working it out.
+- Lives in `content/posts/` with `draft: true` — exists in the repo, but never published.
 
-### Notes  
-- Living documents that can evolve without ceremony
-- More ephemeral and fluid
-- The workshop — thinking in public
-- May graduate to Writing when mature
+Drafts aren't just "unfinished notes." They're a different emotional register. The ideas that feel too raw to think about in public. The opinions you haven't stress-tested. The things you might regret saying.
+
+### Notes (Public Exploration)  
+- **Thinking in public.** You're okay being incomplete.
+- **Living documents.** Can evolve without ceremony.
+- **Exploratory.** "I'm working through this" rather than "here's my position."
+- Lives in `content/notes/` — published but understood to be in flux.
+
+Notes are the workshop floor. You're comfortable being seen mid-process.
+
+### Writing (Published Commitment)
+- **Standing behind it.** You've thought it through enough to commit.
+- **Dated and timestamped.** A fixed point in time.
+- **Edited and structured.** Ready for external scrutiny.
+- Lives in `content/posts/` — the archive, what you're willing to defend.
+
+Writing doesn't mean you'll never change your mind. It means you're ready to say "this is where I am" publicly.
 
 ## The Graduation Model
 
-Notes can "graduate" to Writing when they:
-- Have substantial structure (sections, references)
-- Make clear claims rather than exploring
-- Feel "done" (even if they'll be updated later)
-- Are worth standing behind publicly
+Content can move between layers:
 
-When graduating a note to a post:
+**Draft → Note:** When you're ready to think in public, but not ready to commit.
+
+**Draft → Writing:** When something crystallizes directly into a finished piece.
+
+**Note → Writing:** When a note matures — develops structure, makes clear claims, feels "done enough" to stand behind.
+
+When graduating a note to writing:
 1. Move file from `content/notes/` to `content/posts/`
 2. Add proper `description` frontmatter
 3. Set the `date` to the graduation date (or keep original)
@@ -81,16 +89,32 @@ The graph doesn't care about the Writing/Notes distinction — ideas connect reg
 
 ## The Human Constraint
 
-The decision of "is this a Note or Writing?" is itself a human constraint — it requires taste and judgment. No rule can fully capture it.
+The decision of "where does this belong?" is itself a human constraint — it requires taste and judgment. No rule can fully capture it.
 
 When in doubt:
-- If you'd be embarrassed to share it widely → Note
+- If you're not ready for *anyone* to see it → Draft
+- If you'd be embarrassed to share it widely but okay with people stumbling across it → Note
 - If you're ready for it to represent you → Writing
-- If you're not sure → Start as Note, graduate later
+- If you're genuinely not sure → Start as Draft, move to Note when you're comfortable, graduate when it's ready
+
+The vulnerability gradient: **Drafts** (private, might be wrong) → **Notes** (public, exploratory) → **Writing** (public, committed).
 
 ## Anti-Patterns
 
+- ❌ Don't let Drafts become a graveyard — review them, decide their fate
 - ❌ Don't use Notes as a dumping ground for half-baked posts
 - ❌ Don't let Notes accumulate without ever graduating any
 - ❌ Don't make Writing so precious that nothing gets published
 - ❌ Don't stress the distinction — it's a tool, not a law
+
+## Why This Matters
+
+The pipeline isn't about quality control. It's about **emotional readiness**.
+
+Some ideas need privacy to develop. They're too fragile for public scrutiny. Drafts give them that protected space.
+
+Some ideas benefit from public exploration. You learn by writing them out loud. Notes create that workshop environment.
+
+Some ideas are ready to be staked. You've done the thinking. Writing is where you plant the flag.
+
+Respecting these stages makes it easier to write at all. You don't have to be ready to defend everything you think. You just have to know which layer you're working in.

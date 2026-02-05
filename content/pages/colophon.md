@@ -44,6 +44,18 @@ Colors are defined in OKLCH for perceptual uniformity. Typography uses fluid siz
 
 The corner mark is a weighted viewfinder—heavy anchor top-left, whispered echo bottom-right. It frames the implied rectangle of the content area.
 
+## Content Architecture
+
+This site has three layers of content, based on emotional readiness rather than just polish:
+
+**Drafts** — Private. Vulnerable. Ideas too raw to defend in public. Might be wrong. Might be embarrassing. Exist in the repo but never published. (You won't see these.)
+
+**Notes** — Thinking in public. Living documents that can evolve. Exploratory. I'm okay being incomplete here.
+
+**Writing** — Published commitment. I've thought it through enough to stand behind it. Dated, structured, ready for scrutiny.
+
+Content moves through these layers as it matures. Some things graduate from Note to Writing. Some drafts stay private forever. The pipeline respects that not every idea is ready for every audience.
+
 ## Ethics
 
 - No analytics (except basic Cloudflare stats, which are privacy-preserving)
