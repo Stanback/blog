@@ -99,6 +99,7 @@ export interface Post extends ContentItem {
 	questions?: string[];
 	constraints?: string[];
 	tools?: string[];
+	preface?: string; // 1-2 sentence orientation, rendered in italics before first paragraph
 }
 
 // Note - short-form content

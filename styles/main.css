@@ -429,7 +429,7 @@ footer .separator {
 	position: relative;
 	padding: var(--space-20) 0 var(--space-24);
 	margin-bottom: var(--space-16);
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 }
 
 /* The bounding box container — positions the corner marks */
@@ -573,11 +573,11 @@ footer .separator {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-16);
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 }
 
 .home-section {
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 }
 
 /* Latest Writing — full bleed hero treatment */
@@ -808,7 +808,7 @@ footer .separator {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 }
 
 .note-item {
@@ -1288,7 +1288,7 @@ footer .separator {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 	gap: var(--space-8);
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 	padding: var(--space-4) 0;
 }
 
@@ -1449,7 +1449,7 @@ footer .separator {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-12);
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 }
 
 .archive-year {
@@ -1564,7 +1564,7 @@ footer .separator {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-4);
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 }
 
 .note-item {
@@ -1949,7 +1949,7 @@ article.prose > footer .tags-label {
 
 article.soul-page,
 article.skills-page {
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 }
 
 article.soul-page h1,
@@ -2058,7 +2058,7 @@ article.skills-page h1 {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .prose {
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 	font-size: var(--font-size-base);
 	line-height: var(--leading-normal);
 	color: var(--color-text-primary);
@@ -2741,7 +2741,7 @@ article.skills-page h1 {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .book-page {
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 	margin: 0 auto;
 	padding: var(--space-8);
 }
@@ -3142,7 +3142,7 @@ article.skills-page h1 {
 }
 
 .measure-normal {
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 }
 
 .measure-wide {
