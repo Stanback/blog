@@ -15,7 +15,7 @@ import type {
 	Skills,
 	Soul,
 } from './types.js';
-import { formatDateLong, formatDateMachine } from './utils/dates.js';
+import { formatDateLong, formatDateMachine, formatDateNoYear } from './utils/dates.js';
 
 // URL patterns per content type
 function getUrl(content: Content): string {
@@ -44,6 +44,7 @@ function getBookUrl(book: Book): string {
 
 // Re-export date utilities for backward compatibility
 const formatDate = formatDateLong;
+const formatDateArchive = formatDateNoYear;
 const isoDate = formatDateMachine;
 
 // Render backlinks section if any exist
@@ -465,7 +466,7 @@ function renderPostsIndex(posts: Post[], ctx: BuildContext): string {
 							.map(
 								(post) => `
             <li class="archive-item">
-              <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
+              <time datetime="${isoDate(post.date)}">${formatDateArchive(post.date)}</time>
               <a href="${getUrl(post)}" class="archive-link">
                 <span class="archive-title">${post.title}</span>
                 <span class="archive-desc">${post.description}</span>
@@ -711,12 +712,6 @@ function renderHome(ctx: BuildContext): string {
         <h1 class="thesis-headline">${strings.thesis.headline}</h1>
         <p class="thesis-body">${strings.thesis.body}</p>
         <p class="thesis-orientation">This is a space for thinking about judgment, systems, and design in an era where execution is cheap and discernment isn't.</p>
-        <nav class="thesis-pillars" aria-label="Content pillars">
-          <span class="pillar-item">Judgment</span>
-          <span class="pillar-item">Systems</span>
-          <span class="pillar-item">Interfaces</span>
-          <span class="pillar-item">Identity</span>
-        </nav>
       </div>
     </section>
 

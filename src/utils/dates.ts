@@ -56,6 +56,16 @@ export function formatDateMachine(date: Date): string {
 }
 
 /**
+ * Formats a date without year (e.g., "February 3") - for use when year is shown elsewhere
+ */
+export function formatDateNoYear(date: Date): string {
+	return date.toLocaleDateString('en-US', {
+		month: 'long',
+		day: 'numeric',
+	});
+}
+
+/**
  * Formats a date for RSS (RFC 822)
  */
 export function formatDateRSS(date: Date): string {

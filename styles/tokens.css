@@ -103,7 +103,7 @@
 
 	/* Measure (line length) */
 	--measure-narrow: 45ch;
-	--measure-normal: 65ch;
+	--measure-normal: 72ch;
 	--measure-wide: 80ch;
 	--measure-page: 900px;
 	--content-width: 720px; /* Main content column */
