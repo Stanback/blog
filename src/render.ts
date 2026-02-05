@@ -196,23 +196,35 @@ function renderPost(post: Post, ctx: BuildContext): string {
 	// Build author line
 	const authorLine =
 		post.coAuthors && post.coAuthors.length > 0
-			? `<p class="byline">By ${config.author.name} ${post.coAuthors.map((ca) => `& ${ca.emoji || ''} ${ca.name}`.trim()).join(' ')}</p>`
-			: `<p class="byline">By ${config.author.name}</p>`;
+			? `<span class="byline">By ${config.author.name} ${post.coAuthors.map((ca) => `& ${ca.emoji || ''} ${ca.name}`.trim()).join(' ')}</span>`
+			: `<span class="byline">By ${config.author.name}</span>`;
 
-	const heroImageHtml = post.heroImage
-		? `<figure class="hero-image"><img src="${post.heroImage}" alt="" loading="eager" /></figure>`
-		: '';
+	// Hero banner with image background and text overlay
+	const heroSection = post.heroImage
+		? `
+		<header class="post-hero" style="--hero-image: url('${post.heroImage}')">
+			<div class="post-hero-content">
+				<time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
+				<h1>${post.title}</h1>
+				<div class="post-meta">
+					${authorLine}
+					${post.readingTime ? `<span class="reading-time">${post.readingTime} min read</span>` : ''}
+				</div>
+			</div>
+		</header>`
+		: `
+		<header class="post-header-simple">
+			<time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
+			<h1>${post.title}</h1>
+			<div class="post-meta">
+				${authorLine}
+				${post.readingTime ? `<span class="reading-time">${post.readingTime} min read</span>` : ''}
+			</div>
+		</header>`;
 
 	const content = `
-    <article class="prose">
-      <header>
-        <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
-        ${post.updated ? `<span class="updated">Updated ${formatDate(post.updated)}</span>` : ''}
-        <h1>${post.title}</h1>
-        ${authorLine}
-        ${post.readingTime ? `<span class="reading-time">${post.readingTime} min read</span>` : ''}
-      </header>
-      ${heroImageHtml}
+    ${heroSection}
+    <article class="prose post-body">
       ${post.html}
       ${
 				post.tags.length > 0
