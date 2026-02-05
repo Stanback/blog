@@ -1636,7 +1636,7 @@ article.prose > header .reading-time {
 .post-hero-content {
 	position: relative;
 	z-index: 1;
-	max-width: var(--measure-normal);
+	max-width: var(--content-width);
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -1699,7 +1699,7 @@ article.prose > header .reading-time {
 
 /* Post body (article content after hero) */
 .post-body {
-	max-width: var(--measure-normal); /* Match main > * and hero content */
+	max-width: var(--content-width);
 	margin: 0 auto;
 }
 
