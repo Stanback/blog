@@ -44,7 +44,7 @@ The "Notes vs Writing" distinction on this site follows this model:
 - **Writing** = published, dated. Either a fixed point in time, or slowly revised with explicit "Updated" markers. The archive.
 - **Notes** = living documents. More ephemeral and fluid. Can change without ceremony. The workshop.
 
-This isn't arbitrary taxonomy. It reflects how memory actually works — some things are events (dated), some things are beliefs (evolving).
+This isn't arbitrary taxonomy. It reflects how memory actually works — some things are events (dated), some things are beliefs (evolving). (Related: [[Code Owns Truth]] on why constraints matter more than prompts.)
 
 ## The Discontinuity Problem
 

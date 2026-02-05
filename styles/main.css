@@ -2028,6 +2028,28 @@ article.skills-page h1 {
 	color: var(--color-link-hover);
 }
 
+/* Wikilinks — internal note/post references */
+.wikilink {
+	color: var(--color-link);
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-underline-offset: 2px;
+	text-decoration-thickness: 1px;
+}
+
+.wikilink:hover {
+	color: var(--color-link-hover);
+	text-decoration-style: solid;
+}
+
+.wikilink-broken {
+	color: var(--color-text-muted);
+	text-decoration: underline;
+	text-decoration-style: wavy;
+	text-decoration-color: var(--color-accent-400);
+	cursor: help;
+}
+
 /* Lists */
 .prose ul,
 .prose ol {

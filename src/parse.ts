@@ -19,6 +19,20 @@ export interface ParseResult {
 
 type CalloutType = 'aside' | 'constraints' | 'lens';
 
+// Wikilink resolver - maps titles to URLs
+// This gets populated from the build context
+let wikilinkResolver: Map<string, string> = new Map();
+
+export function setWikilinkResolver(resolver: Map<string, string>): void {
+	wikilinkResolver = resolver;
+}
+
+// Extract wikilinks from content (for building the graph)
+export function extractWikilinks(content: string): string[] {
+	const matches = content.matchAll(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g);
+	return [...matches].map((m) => m[1].trim());
+}
+
 // ============================================================================
 // Shiki Highlighter (cached singleton)
 // ============================================================================
@@ -127,6 +141,44 @@ function createCalloutExtension(): MarkedExtension {
 // Word count and reading time use shared utilities from utils/text.ts
 
 // ============================================================================
+// Wikilink Extension — [[Title]] or [[Title|display text]]
+// ============================================================================
+
+function createWikilinkExtension(): MarkedExtension {
+	return {
+		extensions: [
+			{
+				name: 'wikilink',
+				level: 'inline',
+				start(src: string) {
+					return src.indexOf('[[');
+				},
+				tokenizer(src: string) {
+					const match = src.match(/^\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/);
+					if (match) {
+						return {
+							type: 'wikilink',
+							raw: match[0],
+							title: match[1].trim(),
+							display: match[2]?.trim() || match[1].trim(),
+						};
+					}
+					return undefined;
+				},
+				renderer(token: { title: string; display: string }) {
+					const url = wikilinkResolver.get(token.title.toLowerCase());
+					if (url) {
+						return `<a href="${url}" class="wikilink">${token.display}</a>`;
+					}
+					// Unresolved link - show as broken
+					return `<span class="wikilink wikilink-broken" title="Link not found">${token.display}</span>`;
+				},
+			},
+		],
+	};
+}
+
+// ============================================================================
 // Main Parse Function
 // ============================================================================
 
@@ -183,6 +235,9 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 
 	// Add callout extension
 	marked.use(createCalloutExtension());
+
+	// Add wikilink extension
+	marked.use(createWikilinkExtension());
 
 	// Calculate word count before parsing (from raw markdown)
 	const wordCount = countWords(content);

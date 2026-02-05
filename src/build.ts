@@ -11,7 +11,7 @@ import { collectBooks } from './collect-books.js';
 import { collectContent } from './collect.js';
 import { config } from './config.js';
 import { generateFeeds } from './feeds.js';
-import { parseMarkdown } from './parse.js';
+import { parseMarkdown, setWikilinkResolver } from './parse.js';
 import { renderSite } from './render.js';
 import type {
 	Book,
@@ -272,6 +272,23 @@ export async function build(): Promise<void> {
 	// 2. Validate frontmatter and required fields
 	const validatedContent = await timeAsync('validate', async () => validateContent(rawContent));
 	console.log(`  Validated ${validatedContent.length} content items`);
+
+	// 2b. Build wikilink resolver (title -> URL) before parsing
+	const wikilinkMap = new Map<string, string>();
+	for (const item of validatedContent) {
+		const url =
+			item.type === 'post'
+				? `/posts/${item.slug}/`
+				: item.type === 'note'
+					? `/notes/${item.slug}/`
+					: item.type === 'page'
+						? `/${item.slug}/`
+						: null;
+		if (url) {
+			wikilinkMap.set(item.title.toLowerCase(), url);
+		}
+	}
+	setWikilinkResolver(wikilinkMap);
 
 	// 3. Parse markdown to HTML
 	const parsedContent = await timeAsync('parse', () => parseContent(validatedContent));

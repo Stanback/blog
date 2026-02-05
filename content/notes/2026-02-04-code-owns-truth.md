@@ -36,6 +36,8 @@ Both survive context windows. Both persist across sessions. But only the mechani
 
 This is why judgment matters more than prompts. The mechanical constraints are table stakes. Anyone can set up tests and linters. The *taste and judgment constraints* are what differentiate.
 
+(See also: [[Memory and Journals]] for how these constraints relate to identity persistence.)
+
 ## What's a prompt then?
 
 The prompt expresses *intent* — the why, what, how. The goal. But it's fuzzy. The model interprets it. It mutates within the constraint space.
