@@ -430,26 +430,27 @@ function renderPostsIndex(posts: Post[], ctx: BuildContext): string {
 	});
 }
 
-// Render notes index
+// Render notes index — simpler than posts, just quick thoughts
 function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
 	const publishedNotes = notes
 		.filter((n) => !n.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime());
 
 	const content = `
-    <h1>${strings.lists.notes}</h1>
+    <header class="archive-header">
+      <h1>Notes</h1>
+      <p class="archive-intro">Quick thoughts, half-formed ideas, things that don't need a thesis.</p>
+    </header>
     ${
 			publishedNotes.length > 0
 				? `
-    <ul class="note-list">
+    <ul class="notes-list">
       ${publishedNotes
 				.map(
 					(note) => `
-      <li>
-        <article>
-          <time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
-          <h2><a href="${getUrl(note)}">${note.title}</a></h2>
-        </article>
+      <li class="note-item">
+        <time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
+        <a href="${getUrl(note)}" class="note-link">${note.title}</a>
       </li>`,
 				)
 				.join('')}
@@ -458,7 +459,7 @@ function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
 		}`;
 
 	return baseTemplate({
-		title: strings.lists.notes,
+		title: 'Notes',
 		description: 'Quick thoughts and observations.',
 		url: '/notes/',
 		content,
