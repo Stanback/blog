@@ -1698,7 +1698,7 @@ article.prose > header .reading-time {
 }
 
 /* Post body (article content after hero) */
-.post-body {
+article.prose.post-body {
 	max-width: var(--content-width);
 	margin: 0 auto;
 }
