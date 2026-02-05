@@ -3084,7 +3084,7 @@ article.skills-page h1 {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .backlinks {
-	margin-top: var(--space-16);
+	margin-top: var(--space-8);
 	padding-top: var(--space-8);
 	border-top: 1px solid var(--color-border-subtle);
 	max-width: var(--content-width);
