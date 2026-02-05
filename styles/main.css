@@ -358,6 +358,14 @@ main > * {
 	margin-right: auto;
 }
 
+/* Full-bleed elements break out of content constraint */
+main > .post-hero,
+main > .latest-writing {
+	max-width: none;
+	margin-left: 0;
+	margin-right: 0;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -1765,17 +1773,12 @@ article.prose > header .reading-time {
 	background-image: var(--hero-image);
 	background-size: cover;
 	background-position: center;
-	/* Full bleed: break out of parent padding */
+	/* Full bleed: viewport-relative positioning */
 	width: 100vw;
-	margin-left: calc(-1 * var(--space-page-margin));
-	margin-right: calc(-1 * var(--space-page-margin));
+	margin-left: calc(50% - 50vw);
 	margin-top: calc(-1 * var(--space-12)); /* Counteract main padding-top */
 	margin-bottom: var(--space-16);
-	padding-top: var(--space-16);
-	padding-right: var(--space-page-margin);
-	padding-bottom: var(--space-16);
-	padding-left: var(--space-page-margin);
-	max-width: none;
+	padding: var(--space-16) var(--space-page-margin);
 }
 
 .post-hero::before {
