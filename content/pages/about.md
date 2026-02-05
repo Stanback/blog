@@ -3,7 +3,7 @@ title: "About"
 type: page
 schemaVersion: 1
 date: 2026-02-03
-description: "Bri Stanback — builder, designer, parent, person trying to make sense of things."
+description: "Bri Stanback — builder, parent, person trying to make sense of things."
 ---
 
 # About
