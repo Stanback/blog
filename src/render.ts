@@ -713,6 +713,10 @@ function renderHome(ctx: BuildContext): string {
       </div>
     </section>
 
+    <section class="orientation-block">
+      <p>This is a space for thinking about judgment, systems, and design in an era where execution is cheap and discernment isn't.</p>
+    </section>
+
     <div class="home-content">
       ${latestWritingSection}
       ${moreWritingSection}
