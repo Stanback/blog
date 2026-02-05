@@ -548,55 +548,82 @@ footer .separator {
 	color: var(--color-accent-500);
 }
 
-/* Latest Writing — Featured post with hero image */
+/* Latest Writing — Featured post with overlay treatment */
 .featured-post {
 	position: relative;
 }
 
 .featured-link {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-height: 280px;
 	text-decoration: none;
 	color: inherit;
 	border-radius: var(--radius-lg);
 	overflow: hidden;
+	background-image: var(--featured-bg);
+	background-size: cover;
+	background-position: center;
+	background-color: var(--color-bg-muted);
+	position: relative;
+	padding: var(--space-6);
 	transition: transform var(--transition-normal);
+}
+
+/* Gradient overlay for text readability */
+.featured-post.has-image .featured-link::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		to bottom,
+		color-mix(in oklch, var(--color-bg) 10%, transparent) 0%,
+		color-mix(in oklch, var(--color-bg) 30%, transparent) 40%,
+		color-mix(in oklch, var(--color-bg) 70%, transparent) 70%,
+		color-mix(in oklch, var(--color-bg) 90%, transparent) 100%
+	);
+	border-radius: var(--radius-lg);
 }
 
 .featured-link:hover {
 	transform: translateY(-2px);
 }
 
-.featured-image {
-	margin: 0;
-	aspect-ratio: 16 / 9;
-	overflow: hidden;
-	border-radius: var(--radius-lg);
-	margin-bottom: var(--space-5);
+/* "Latest" label */
+.featured-label {
+	position: absolute;
+	top: var(--space-4);
+	left: var(--space-4);
+	font-family: var(--font-sans);
+	font-size: var(--font-size-xs);
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--color-text-secondary);
+	background: color-mix(in oklch, var(--color-bg) 80%, transparent);
+	padding: var(--space-1) var(--space-2);
+	border-radius: var(--radius-sm);
+	z-index: 1;
 }
 
-.featured-image img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	transition: transform var(--transition-slow);
-}
-
-.featured-link:hover .featured-image img {
-	transform: scale(1.02);
+.featured-content {
+	position: relative;
+	z-index: 1;
 }
 
 .featured-content time {
 	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	color: var(--color-text-secondary);
 	letter-spacing: 0.02em;
 }
 
 .featured-content h2 {
 	font-family: var(--font-serif);
-	font-size: clamp(1.5rem, 4vw, 2rem);
+	font-size: clamp(1.25rem, 4vw, 1.75rem);
 	font-weight: 400;
 	line-height: 1.2;
-	margin: var(--space-2) 0 var(--space-3);
+	margin: var(--space-2) 0 var(--space-2);
 	color: var(--color-text-primary);
 	transition: color var(--transition-fast);
 }
@@ -606,11 +633,30 @@ footer .separator {
 }
 
 .featured-desc {
-	font-size: var(--font-size-base);
+	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
 	line-height: var(--leading-relaxed);
 	margin: 0;
-	max-width: 60ch;
+	max-width: 50ch;
+}
+
+/* No image fallback - simpler card style */
+.featured-post.no-image .featured-link {
+	min-height: auto;
+	padding: var(--space-8);
+	border: 1px solid var(--color-border-subtle);
+}
+
+@media (min-width: 640px) {
+	.featured-link {
+		min-height: 320px;
+		padding: var(--space-8);
+	}
+
+	.featured-label {
+		top: var(--space-5);
+		left: var(--space-5);
+	}
 }
 
 /* More Writing — Compact chronological list */

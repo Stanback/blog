@@ -542,15 +542,14 @@ function renderHome(ctx: BuildContext): string {
 		.slice(0, 3);
 
 	// Latest Writing section - featured treatment for most recent post
+	// Latest Writing section - featured treatment with overlay
+	const hasHeroImage = latestPost?.heroImage;
 	const latestWritingSection = latestPost
 		? `
     <section class="home-section latest-writing">
-      <div class="section-header">
-        <span class="section-label">Latest</span>
-      </div>
-      <article class="featured-post">
-        <a href="${getUrl(latestPost)}" class="featured-link">
-          ${latestPost.heroImage ? `<figure class="featured-image"><img src="${latestPost.heroImage}" alt="" loading="lazy" /></figure>` : ''}
+      <article class="featured-post ${hasHeroImage ? 'has-image' : 'no-image'}">
+        <a href="${getUrl(latestPost)}" class="featured-link"${hasHeroImage ? ` style="--featured-bg: url('${latestPost.heroImage}')"` : ''}>
+          <span class="featured-label">Latest</span>
           <div class="featured-content">
             <time datetime="${isoDate(latestPost.date)}">${formatDate(latestPost.date)}</time>
             <h2>${latestPost.title}</h2>
