@@ -221,7 +221,8 @@ function buildContext(
 			urlToContent.set(url, {
 				title: item.title,
 				url,
-				description: 'description' in item ? (item as { description?: string }).description : undefined,
+				description:
+					'description' in item ? (item as { description?: string }).description : undefined,
 				date: 'date' in item ? (item as { date?: Date }).date : undefined,
 			});
 		}

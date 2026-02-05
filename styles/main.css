@@ -1742,7 +1742,7 @@ article.prose > header .reading-time {
 	font-size: clamp(2rem, 5vw, 3rem);
 	font-weight: 400;
 	line-height: 1.15;
-	margin: 0 0 var(--space-5);
+	margin: 0 0 var(--space-6);
 	color: var(--color-text);
 }
 

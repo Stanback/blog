@@ -60,8 +60,12 @@ function renderBacklinks(
       <ul class="backlinks-list">
         ${links
 					.map((link) => {
-						const datePart = link.date ? `<time datetime="${formatDateMachine(link.date)}">${formatDateLong(link.date)}</time>` : '';
-						const descPart = link.description ? `<span class="backlink-desc">${link.description}</span>` : '';
+						const datePart = link.date
+							? `<time datetime="${formatDateMachine(link.date)}">${formatDateLong(link.date)}</time>`
+							: '';
+						const descPart = link.description
+							? `<span class="backlink-desc">${link.description}</span>`
+							: '';
 						return `<li class="backlink-item">
               <a href="${link.url}" class="backlink-title">${link.title}</a>
               ${datePart || descPart ? `<div class="backlink-meta">${datePart}${datePart && descPart ? ' · ' : ''}${descPart}</div>` : ''}
