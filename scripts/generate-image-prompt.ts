@@ -88,10 +88,9 @@ function generatePrompt(
 	excerpt: string,
 ): string {
 	const templatePath = join(dirname(import.meta.path), '..', 'prompts', 'image-generation.md');
-	let template = Bun.file(templatePath).text();
 
-	// For sync operation, read synchronously
-	const templateContent = require('fs').readFileSync(templatePath, 'utf-8');
+	// Read template synchronously
+	const templateContent = require('node:fs').readFileSync(templatePath, 'utf-8');
 
 	const prompt = `
 # Image Generation Request

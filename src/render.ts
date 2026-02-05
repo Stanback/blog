@@ -186,20 +186,7 @@ function baseTemplate(options: {
     <p class="footer-tagline">${strings.footer.tagline}</p>
   </footer>
 
-  <script>
-  (function(){
-    var t=document.querySelector('.theme-toggle'),h=document.documentElement,s=localStorage.getItem('theme');
-    // Apply saved preference, or let CSS media query handle it
-    if(s)h.dataset.theme=s;
-    t&&t.addEventListener('click',function(){
-      // Detect current effective theme (from data-attr or system)
-      var isDark=h.dataset.theme==='dark'||(h.dataset.theme!=='light'&&window.matchMedia('(prefers-color-scheme:dark)').matches);
-      var n=isDark?'light':'dark';
-      h.dataset.theme=n;
-      localStorage.setItem('theme',n);
-    });
-  })();
-  </script>
+  <script src="/js/theme.js"></script>
 </body>
 </html>`;
 }
