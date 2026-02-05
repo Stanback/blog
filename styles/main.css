@@ -1189,8 +1189,8 @@ footer .separator {
 
 .tag {
 	font-size: var(--font-size-xs);
-	color: var(--color-text-secondary);
-	background: var(--color-bg-muted);
+	color: var(--color-accent-600);
+	background: var(--color-accent-100);
 	padding: var(--space-1) var(--space-2);
 	border-radius: var(--radius-sm);
 	text-decoration: none;
@@ -1198,8 +1198,8 @@ footer .separator {
 }
 
 .tag:hover {
-	background: var(--color-accent-100);
-	color: var(--color-accent-600);
+	background: var(--color-accent-200);
+	color: var(--color-accent-700);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -1845,9 +1845,13 @@ article.prose > footer .tags a:hover {
 }
 
 article.prose > footer .tags-label {
+	font-family: var(--font-sans);
 	font-size: var(--font-size-sm);
-	color: var(--color-text-secondary);
-	margin-bottom: var(--space-2);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--color-text-muted);
+	margin: 0 0 var(--space-4);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -3108,17 +3112,17 @@ article.skills-page h1 {
 .backlinks-list a {
 	display: inline-block;
 	font-size: var(--font-size-sm);
-	color: var(--color-link);
+	color: var(--color-accent-600);
 	text-decoration: none;
 	padding: var(--space-1) var(--space-3);
-	background: var(--color-bg-muted);
+	background: var(--color-accent-100);
 	border-radius: var(--radius-sm);
 	transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .backlinks-list a:hover {
-	background: var(--color-bg-elevated);
-	color: var(--color-link-hover);
+	background: var(--color-accent-200);
+	color: var(--color-accent-700);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
