@@ -1401,7 +1401,7 @@ footer .separator {
 	padding-bottom: var(--space-6);
 	padding-left: 0;
 	border-bottom: 1px solid var(--color-border-subtle);
-	max-width: var(--content-width-wide);
+	max-width: var(--measure-normal);
 }
 
 .archive-header h1 {
