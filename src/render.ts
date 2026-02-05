@@ -640,37 +640,6 @@ function renderHome(ctx: BuildContext): string {
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
 		.slice(0, 3);
 
-	// Featured posts for "Start Here" section
-	const featuredPosts = ctx.posts
-		.filter((p) => !p.draft && p.featured)
-		.sort((a, b) => b.date.getTime() - a.date.getTime());
-
-	// Start Here section
-	const startHereSection =
-		featuredPosts.length > 0
-			? `
-    <section class="home-section start-here">
-      <header class="module-header">
-        ${moduleCorner}
-        <h2 class="module-title">Start Here</h2>
-        <p class="module-intro">If you're new, these are good entry points.</p>
-      </header>
-      <ul class="featured-list">
-        ${featuredPosts
-					.map(
-						(post) => `
-        <li class="featured-item">
-          <a href="${getUrl(post)}" class="featured-item-link">
-            <span class="featured-item-title">${post.title}</span>
-            <span class="featured-item-desc">${post.description}</span>
-          </a>
-        </li>`,
-					)
-					.join('')}
-      </ul>
-    </section>`
-			: '';
-
 	// Latest Writing section - featured treatment for most recent post
 	// Latest Writing section - featured treatment with overlay
 	const hasHeroImage = latestPost?.heroImage;
@@ -690,7 +659,7 @@ function renderHome(ctx: BuildContext): string {
     </section>`
 		: '';
 
-	// More Writing section - chronological list
+	// More Writing section - chronological list with descriptions
 	const moreWritingSection =
 		morePosts.length > 0
 			? `
@@ -707,6 +676,7 @@ function renderHome(ctx: BuildContext): string {
           <a href="${getUrl(post)}">
             <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
             <span class="post-title">${post.title}</span>
+            ${post.description ? `<span class="post-desc">${post.description}</span>` : ''}
           </a>
         </li>`,
 					)
@@ -754,7 +724,6 @@ function renderHome(ctx: BuildContext): string {
     </section>
 
     <div class="home-content">
-      ${startHereSection}
       ${latestWritingSection}
       ${moreWritingSection}
       ${notesSection}
