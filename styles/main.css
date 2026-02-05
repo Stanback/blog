@@ -1990,6 +1990,7 @@ article.skills-page h1 {
 .prose h4 {
 	font-family: var(--font-serif);
 	font-weight: 500;
+	font-style: italic;
 	line-height: var(--leading-tight);
 	color: var(--color-text-primary);
 	letter-spacing: var(--tracking-tight);
