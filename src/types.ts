@@ -180,6 +180,26 @@ export interface SiteConfig {
 	stylesDir: string;
 }
 
+// Graph node for knowledge graph visualization
+export interface GraphNode {
+	id: string;
+	title: string;
+	url: string;
+	type: ContentType;
+}
+
+// Graph link for knowledge graph visualization
+export interface GraphLink {
+	source: string;
+	target: string;
+}
+
+// Full graph data structure
+export interface GraphData {
+	nodes: GraphNode[];
+	links: GraphLink[];
+}
+
 // Build context - passed to templates and renderers
 export interface BuildContext {
 	config: SiteConfig;
@@ -193,6 +213,8 @@ export interface BuildContext {
 	allContent: Content[];
 	buildDate: Date;
 	cssFilename?: string; // Hashed CSS filename (e.g., "styles.abc12345.css")
+	backlinks: Map<string, Array<{ title: string; url: string }>>; // URL -> items that link to it
+	graph: GraphData;
 }
 
 // Raw content item before validation

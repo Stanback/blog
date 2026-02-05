@@ -11,7 +11,7 @@ import { collectBooks } from './collect-books.js';
 import { collectContent } from './collect.js';
 import { config } from './config.js';
 import { generateFeeds } from './feeds.js';
-import { parseMarkdown, setWikilinkResolver } from './parse.js';
+import { extractWikilinks, parseMarkdown, setWikilinkResolver } from './parse.js';
 import { renderSite } from './render.js';
 import type {
 	Book,
@@ -197,13 +197,61 @@ async function parseContent(items: ValidatedContentItem[]): Promise<Content[]> {
 /**
  * Build the context from parsed content
  */
-function buildContext(content: Content[], books: Book[], cssFilename: string): BuildContext {
+function buildContext(
+	content: Content[],
+	books: Book[],
+	cssFilename: string,
+	wikilinkMap: Map<string, string>,
+): BuildContext {
 	const posts: Post[] = [];
 	const notes: Note[] = [];
 	const photos: Photo[] = [];
 	const pages: Page[] = [];
 	let soul: Soul | undefined;
 	let skills: Skills | undefined;
+
+	// Build URL to content map for backlinks
+	const urlToContent = new Map<string, { title: string; url: string }>();
+	for (const item of content) {
+		const url = getContentUrl(item);
+		if (url) {
+			urlToContent.set(url, { title: item.title, url });
+		}
+	}
+
+	// Extract wikilinks and build backlinks map
+	const backlinks = new Map<string, Array<{ title: string; url: string }>>();
+	const graphLinks: Array<{ source: string; target: string }> = [];
+
+	for (const item of content) {
+		const sourceUrl = getContentUrl(item);
+		if (!sourceUrl) continue;
+
+		const links = extractWikilinks(item.bodyMarkdown);
+		for (const linkTitle of links) {
+			const targetUrl = wikilinkMap.get(linkTitle.toLowerCase());
+			if (targetUrl) {
+				// Add to backlinks
+				if (!backlinks.has(targetUrl)) {
+					backlinks.set(targetUrl, []);
+				}
+				backlinks.get(targetUrl)?.push({ title: item.title, url: sourceUrl });
+
+				// Add to graph
+				graphLinks.push({ source: sourceUrl, target: targetUrl });
+			}
+		}
+	}
+
+	// Build graph nodes
+	const graphNodes = content
+		.filter((item) => ['post', 'note', 'page'].includes(item.type))
+		.map((item) => ({
+			id: getContentUrl(item) || item.slug,
+			title: item.title,
+			url: getContentUrl(item) || `/${item.slug}/`,
+			type: item.type,
+		}));
 
 	for (const item of content) {
 		switch (item.type) {
@@ -248,7 +296,22 @@ function buildContext(content: Content[], books: Book[], cssFilename: string): B
 		allContent: content,
 		buildDate: new Date(),
 		cssFilename,
+		backlinks,
+		graph: { nodes: graphNodes, links: graphLinks },
 	};
+}
+
+function getContentUrl(item: Content): string | null {
+	switch (item.type) {
+		case 'post':
+			return `/posts/${item.slug}/`;
+		case 'note':
+			return `/notes/${item.slug}/`;
+		case 'page':
+			return `/${item.slug}/`;
+		default:
+			return null;
+	}
 }
 
 export async function build(): Promise<void> {
@@ -308,7 +371,7 @@ export async function build(): Promise<void> {
 	console.log(`  Built CSS: ${cssFilename}`);
 
 	// 5. Build context (includes CSS filename for templates)
-	const ctx = buildContext(parsedContent, books, cssFilename);
+	const ctx = buildContext(parsedContent, books, cssFilename, wikilinkMap);
 
 	// 6. Render HTML pages from templates
 	const pages = await timeAsync('render', async () => renderSite(ctx));

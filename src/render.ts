@@ -46,6 +46,23 @@ function getBookUrl(book: Book): string {
 const formatDate = formatDateLong;
 const isoDate = formatDateMachine;
 
+// Render backlinks section if any exist
+function renderBacklinks(
+	url: string,
+	backlinks: Map<string, Array<{ title: string; url: string }>>,
+): string {
+	const links = backlinks.get(url);
+	if (!links || links.length === 0) return '';
+
+	return `
+    <aside class="backlinks" aria-label="Pages that link here">
+      <h2 class="backlinks-title">Linked from</h2>
+      <ul class="backlinks-list">
+        ${links.map((link) => `<li><a href="${link.url}">${link.title}</a></li>`).join('')}
+      </ul>
+    </aside>`;
+}
+
 // Atelier Mark for header (G0 - Full Mark)
 const atelierMark = glyphMarkFull.replace('class="glyph glyph-mark"', 'class="atelier-mark"');
 
@@ -230,6 +247,7 @@ function renderPost(post: Post, ctx: BuildContext): string {
 			</div>
 		</header>`;
 
+	const postUrl = getUrl(post);
 	const content = `
     ${heroSection}
     <article class="prose post-body">
@@ -245,12 +263,13 @@ function renderPost(post: Post, ctx: BuildContext): string {
       </footer>`
 					: ''
 			}
-    </article>`;
+    </article>
+    ${renderBacklinks(postUrl, ctx.backlinks)}`;
 
 	return baseTemplate({
 		title: post.title,
 		description: post.description,
-		url: getUrl(post),
+		url: postUrl,
 		content,
 		type: 'article',
 		date: post.date,
@@ -286,16 +305,18 @@ function renderNote(note: Note, ctx: BuildContext): string {
 			${updatedLine}
 		</header>`;
 
+	const noteUrl = getUrl(note);
 	const content = `
     ${heroSection}
     <article class="prose post-body">
       ${note.html}
-    </article>`;
+    </article>
+    ${renderBacklinks(noteUrl, ctx.backlinks)}`;
 
 	return baseTemplate({
 		title: note.title,
 		description: note.description || `A note from ${formatDate(note.date)}`,
-		url: getUrl(note),
+		url: noteUrl,
 		content,
 		type: 'article',
 		date: note.date,
@@ -961,6 +982,205 @@ function render404(ctx: BuildContext): string {
 	});
 }
 
+// Render knowledge graph page
+function renderGraph(ctx: BuildContext): string {
+	const graphJson = JSON.stringify(ctx.graph);
+
+	const content = `
+    <div class="graph-page">
+      <header class="graph-header">
+        <h1>Knowledge Graph</h1>
+        <p class="graph-intro">Connections between ideas. Click a node to visit, drag to explore.</p>
+      </header>
+      <div id="graph-container" class="graph-container"></div>
+    </div>
+    <script type="module">
+      const graphData = ${graphJson};
+      
+      // Simple force-directed graph using Canvas
+      const container = document.getElementById('graph-container');
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      function resize() {
+        canvas.width = container.clientWidth;
+        canvas.height = Math.min(600, window.innerHeight - 200);
+      }
+      resize();
+      container.appendChild(canvas);
+      window.addEventListener('resize', resize);
+      
+      // Initialize nodes with positions
+      const nodes = graphData.nodes.map((n, i) => ({
+        ...n,
+        x: canvas.width / 2 + (Math.random() - 0.5) * 200,
+        y: canvas.height / 2 + (Math.random() - 0.5) * 200,
+        vx: 0,
+        vy: 0,
+      }));
+      
+      const nodeMap = new Map(nodes.map(n => [n.id, n]));
+      const links = graphData.links.map(l => ({
+        source: nodeMap.get(l.source),
+        target: nodeMap.get(l.target),
+      })).filter(l => l.source && l.target);
+      
+      // Colors
+      const colors = {
+        post: '#c9a88c',
+        note: '#a8c9a8',
+        page: '#a8a8c9',
+        link: 'rgba(150, 150, 150, 0.4)',
+        text: getComputedStyle(document.documentElement).getPropertyValue('--color-text-primary').trim() || '#333',
+      };
+      
+      // Physics simulation
+      function simulate() {
+        // Repulsion between nodes
+        for (let i = 0; i < nodes.length; i++) {
+          for (let j = i + 1; j < nodes.length; j++) {
+            const dx = nodes[j].x - nodes[i].x;
+            const dy = nodes[j].y - nodes[i].y;
+            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            const force = 1000 / (dist * dist);
+            const fx = (dx / dist) * force;
+            const fy = (dy / dist) * force;
+            nodes[i].vx -= fx;
+            nodes[i].vy -= fy;
+            nodes[j].vx += fx;
+            nodes[j].vy += fy;
+          }
+        }
+        
+        // Attraction along links
+        for (const link of links) {
+          const dx = link.target.x - link.source.x;
+          const dy = link.target.y - link.source.y;
+          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          const force = (dist - 100) * 0.01;
+          const fx = (dx / dist) * force;
+          const fy = (dy / dist) * force;
+          link.source.vx += fx;
+          link.source.vy += fy;
+          link.target.vx -= fx;
+          link.target.vy -= fy;
+        }
+        
+        // Center gravity
+        for (const node of nodes) {
+          node.vx += (canvas.width / 2 - node.x) * 0.001;
+          node.vy += (canvas.height / 2 - node.y) * 0.001;
+        }
+        
+        // Apply velocity with damping
+        for (const node of nodes) {
+          node.vx *= 0.9;
+          node.vy *= 0.9;
+          node.x += node.vx;
+          node.y += node.vy;
+          // Bounds
+          node.x = Math.max(50, Math.min(canvas.width - 50, node.x));
+          node.y = Math.max(50, Math.min(canvas.height - 50, node.y));
+        }
+      }
+      
+      // Draw
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw links
+        ctx.strokeStyle = colors.link;
+        ctx.lineWidth = 1;
+        for (const link of links) {
+          ctx.beginPath();
+          ctx.moveTo(link.source.x, link.source.y);
+          ctx.lineTo(link.target.x, link.target.y);
+          ctx.stroke();
+        }
+        
+        // Draw nodes
+        for (const node of nodes) {
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, 8, 0, Math.PI * 2);
+          ctx.fillStyle = colors[node.type] || colors.page;
+          ctx.fill();
+          ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+        
+        // Draw labels
+        ctx.font = '11px system-ui, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = colors.text;
+        for (const node of nodes) {
+          ctx.fillText(node.title.slice(0, 25), node.x, node.y + 20);
+        }
+      }
+      
+      // Interaction
+      let dragNode = null;
+      canvas.addEventListener('mousedown', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        for (const node of nodes) {
+          const dx = node.x - x;
+          const dy = node.y - y;
+          if (dx * dx + dy * dy < 200) {
+            dragNode = node;
+            break;
+          }
+        }
+      });
+      
+      canvas.addEventListener('mousemove', (e) => {
+        if (dragNode) {
+          const rect = canvas.getBoundingClientRect();
+          dragNode.x = e.clientX - rect.left;
+          dragNode.y = e.clientY - rect.top;
+          dragNode.vx = 0;
+          dragNode.vy = 0;
+        }
+      });
+      
+      canvas.addEventListener('mouseup', () => { dragNode = null; });
+      canvas.addEventListener('mouseleave', () => { dragNode = null; });
+      
+      // Click to navigate
+      canvas.addEventListener('click', (e) => {
+        if (dragNode) return;
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        for (const node of nodes) {
+          const dx = node.x - x;
+          const dy = node.y - y;
+          if (dx * dx + dy * dy < 200) {
+            window.location.href = node.url;
+            break;
+          }
+        }
+      });
+      
+      // Animation loop
+      function loop() {
+        simulate();
+        draw();
+        requestAnimationFrame(loop);
+      }
+      loop();
+    </script>`;
+
+	return baseTemplate({
+		title: 'Knowledge Graph',
+		description: 'Visual map of connections between ideas on this site.',
+		url: '/graph/',
+		content,
+		cssFilename: ctx.cssFilename,
+	});
+}
+
 // Output type for the build system
 export interface RenderOutput {
 	path: string;
@@ -1031,6 +1251,10 @@ export function renderSite(ctx: BuildContext): RenderOutput[] {
 			});
 		}
 	}
+
+	// Knowledge graph
+	output.push({ path: 'graph/index.html', content: renderGraph(ctx) });
+	output.push({ path: 'graph.json', content: JSON.stringify(ctx.graph, null, 2) });
 
 	// 404
 	output.push({ path: '404.html', content: render404(ctx) });

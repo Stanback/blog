@@ -3068,3 +3068,98 @@ article.skills-page h1 {
 	white-space: nowrap;
 	border: 0;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BACKLINKS — Pages that link here
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.backlinks {
+	margin-top: var(--space-16);
+	padding-top: var(--space-8);
+	border-top: 1px solid var(--color-border-subtle);
+	max-width: var(--content-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.backlinks-title {
+	font-family: var(--font-sans);
+	font-size: var(--font-size-sm);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--color-text-muted);
+	margin: 0 0 var(--space-4);
+}
+
+.backlinks-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2);
+}
+
+.backlinks-list li {
+	margin: 0;
+}
+
+.backlinks-list a {
+	display: inline-block;
+	font-size: var(--font-size-sm);
+	color: var(--color-link);
+	text-decoration: none;
+	padding: var(--space-1) var(--space-3);
+	background: var(--color-bg-muted);
+	border-radius: var(--radius-sm);
+	transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.backlinks-list a:hover {
+	background: var(--color-bg-elevated);
+	color: var(--color-link-hover);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   KNOWLEDGE GRAPH PAGE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.graph-page {
+	max-width: var(--measure-page);
+	margin: 0 auto;
+}
+
+.graph-header {
+	margin-bottom: var(--space-8);
+}
+
+.graph-header h1 {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-3xl);
+	font-weight: 400;
+	margin: 0 0 var(--space-4);
+}
+
+.graph-intro {
+	font-size: var(--font-size-base);
+	color: var(--color-text-secondary);
+	margin: 0;
+}
+
+.graph-container {
+	width: 100%;
+	min-height: 400px;
+	background: var(--color-bg-muted);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+}
+
+.graph-container canvas {
+	display: block;
+	cursor: grab;
+}
+
+.graph-container canvas:active {
+	cursor: grabbing;
+}
