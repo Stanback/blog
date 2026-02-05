@@ -486,16 +486,16 @@ footer .separator {
 /* Responsive adjustments */
 @media (max-width: 640px) {
 	.thesis {
-		padding: var(--space-12) 0 var(--space-16);
-		margin-bottom: var(--space-10);
+		padding: var(--space-8) 0 var(--space-12);
+		margin-bottom: var(--space-14);
 	}
 
 	.thesis-bound {
-		inset: var(--space-6) 0;
+		inset: var(--space-4) 0;
 	}
 
 	.thesis-content {
-		padding: var(--space-6) var(--space-6);
+		padding: var(--space-4) var(--space-4);
 	}
 
 	.thesis-corner {
@@ -571,17 +571,18 @@ footer .separator {
 	transition: transform var(--transition-normal);
 }
 
-/* Gradient overlay for text readability */
+/* Gradient overlay for text readability — stronger at top for date */
 .featured-post.has-image .featured-link::before {
 	content: "";
 	position: absolute;
 	inset: 0;
 	background: linear-gradient(
 		to bottom,
-		color-mix(in oklch, var(--color-bg) 15%, transparent) 0%,
-		color-mix(in oklch, var(--color-bg) 35%, transparent) 25%,
-		color-mix(in oklch, var(--color-bg) 60%, transparent) 50%,
-		color-mix(in oklch, var(--color-bg) 85%, transparent) 75%,
+		color-mix(in oklch, var(--color-bg) 40%, transparent) 0%,
+		color-mix(in oklch, var(--color-bg) 45%, transparent) 20%,
+		color-mix(in oklch, var(--color-bg) 55%, transparent) 40%,
+		color-mix(in oklch, var(--color-bg) 75%, transparent) 60%,
+		color-mix(in oklch, var(--color-bg) 90%, transparent) 80%,
 		var(--color-bg) 100%
 	);
 	border-radius: var(--radius-lg);
