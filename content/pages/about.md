@@ -106,13 +106,13 @@ This isn't a resume. It's a statement of craft philosophy.
 
 **Languages:** TypeScript, JavaScript, Python. Enough Go and Rust to read them.
 
-**Frontend:** I've used React for years, but I'm increasingly drawn to simpler approaches—HTML, CSS, progressive enhancement.
+**Frontend:** My arc here has been... instructive. Static sites → jQuery → ExtJS/Sencha → Ember → React → Vue → SolidJS → and now... back to static sites. There's probably a lesson in there about complexity, about what we actually need versus what we convince ourselves we need. I still reach for React or SolidJS when the problem calls for it, but I'm increasingly drawn to the simplest approach that works: HTML, CSS, progressive enhancement. The frameworks will keep churning. The fundamentals won't.
 
 **Backend:** Node, Bun, Cloudflare Workers. I like the edge.
 
-**Data:** PostgreSQL, SQLite, Redis. I don't reach for NoSQL unless I have a specific reason.
+**Data:** PostgreSQL, SQLite, Redis, BigQuery, Convex. I don't reach for NoSQL unless I have a specific reason.
 
-**AI:** Claude (obviously), GPT-4, local models when they make sense. Comfortable with the API, with prompt engineering, with building AI-assisted workflows.
+**AI:** Claude, ChatGPT, Gemini, Kimi, local models when they make sense. Comfortable with the APIs, with prompt engineering, with building AI-assisted workflows.
 
 **Design:** Figma, but I'm happiest when I can work directly in code.
 
