@@ -199,6 +199,11 @@ function renderPost(post: Post, ctx: BuildContext): string {
 			? `<span class="byline">By ${config.author.name} ${post.coAuthors.map((ca) => `& ${ca.emoji || ''} ${ca.name}`.trim()).join(' ')}</span>`
 			: `<span class="byline">By ${config.author.name}</span>`;
 
+	// Updated date (if different from publish date)
+	const updatedLine = post.updated && post.updated.getTime() !== post.date.getTime()
+		? `<span class="updated-date">Updated ${formatDate(post.updated)}</span>`
+		: '';
+
 	// Hero banner with image background and text overlay
 	const heroSection = post.heroImage
 		? `
@@ -209,6 +214,7 @@ function renderPost(post: Post, ctx: BuildContext): string {
 				<div class="post-meta">
 					${authorLine}
 					${post.readingTime ? `<span class="reading-time">${post.readingTime} min read</span>` : ''}
+					${updatedLine}
 				</div>
 			</div>
 		</header>`
@@ -219,6 +225,7 @@ function renderPost(post: Post, ctx: BuildContext): string {
 			<div class="post-meta">
 				${authorLine}
 				${post.readingTime ? `<span class="reading-time">${post.readingTime} min read</span>` : ''}
+				${updatedLine}
 			</div>
 		</header>`;
 
@@ -255,6 +262,11 @@ function renderPost(post: Post, ctx: BuildContext): string {
 
 // Render single note
 function renderNote(note: Note, ctx: BuildContext): string {
+	// Updated date (if different from publish date)
+	const updatedLine = note.updated && note.updated.getTime() !== note.date.getTime()
+		? `<div class="updated-date">Updated ${formatDate(note.updated)}</div>`
+		: '';
+
 	// Hero section - same treatment as posts
 	const heroSection = note.heroImage
 		? `
@@ -262,12 +274,14 @@ function renderNote(note: Note, ctx: BuildContext): string {
 			<div class="post-hero-content">
 				<time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
 				<h1>${note.title}</h1>
+				${updatedLine}
 			</div>
 		</header>`
 		: `
 		<header class="post-header-simple">
 			<time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
 			<h1>${note.title}</h1>
+			${updatedLine}
 		</header>`;
 
 	const content = `

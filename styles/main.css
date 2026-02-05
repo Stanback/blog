@@ -1668,6 +1668,22 @@ article.prose > header .reading-time {
 	display: block;
 }
 
+/* Updated date indicator */
+.updated-date {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	font-style: italic;
+}
+
+.post-meta .updated-date {
+	margin-left: var(--space-2);
+}
+
+.post-meta .updated-date::before {
+	content: "·";
+	margin-right: var(--space-2);
+}
+
 /* Post hero banner with image overlay — FULL BLEED */
 .post-hero {
 	position: relative;

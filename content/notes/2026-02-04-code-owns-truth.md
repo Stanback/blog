@@ -1,5 +1,6 @@
 ---
 title: Code Owns Truth
+description: "A frame for thinking about AI systems: constraints, prompts, and code"
 date: 2026-02-04
 tags: [architecture, ai, mental-models]
 ---

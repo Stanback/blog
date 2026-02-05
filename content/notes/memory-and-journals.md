@@ -15,7 +15,7 @@ There's a striking parallel between how AI agents manage memory and how humans h
 - Daily logs (`memory/YYYY-MM-DD.md`) — raw capture of what happened
 - Long-term memory (`MEMORY.md`) — curated, distilled insights
 - Living documents (notes) — evolving, updatable, timeless
-- Published pieces (posts) — timestamped, archived, frozen
+- Published pieces (posts) — timestamped, archived
 
 **Humans have:**
 - Journals — daily raw capture
@@ -25,10 +25,30 @@ There's a striking parallel between how AI agents manage memory and how humans h
 
 The workflow is the same: capture raw → distill over time → distinguish ephemeral from evergreen.
 
-What's interesting is that both systems serve the same purpose: **maintaining coherence across discontinuous consciousness**. Humans sleep and forget. Agents context-compress and restart. Both need external memory to persist identity.
+## The Tools Echo This
+
+The tools humans build for knowledge management reflect these same patterns:
+
+- **Hand journaling** — The original. Raw, sequential, dated. Morning pages, bullet journals, gratitude logs.
+- **Obsidian** — Graph-based, links between notes, emergence over time. Notes as living documents that connect.
+- **Logseq** — Daily pages + block references. Hybrid of journal and wiki.
+- **Traditional blogs** — Published, dated, frozen. The archive.
+
+Each optimizes for different parts of the capture → distill → publish pipeline.
+
+## What This Site Does
 
 The "Notes vs Writing" distinction on this site follows this model:
-- **Writing** = published, dated, frozen thoughts
-- **Notes** = living documents that can update
 
-This isn't arbitrary taxonomy. It reflects how memory actually works — some things are events (dated), some things are beliefs (living).
+- **Writing** = published, dated. Either a fixed point in time, or slowly revised with explicit "Updated" markers. The archive.
+- **Notes** = living documents. More ephemeral and fluid. Can change without ceremony. The workshop.
+
+This isn't arbitrary taxonomy. It reflects how memory actually works — some things are events (dated), some things are beliefs (evolving).
+
+## Why It Matters
+
+Both humans and agents face the same problem: **maintaining coherence across discontinuous consciousness**. 
+
+Humans sleep and forget. Agents context-compress and restart. Both need external memory to persist identity.
+
+The interesting question: what patterns emerge when agents have perfect recall of their external memory but zero recall of their internal state? That's a different memory architecture than humans have ever worked with.
