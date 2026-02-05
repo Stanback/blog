@@ -538,7 +538,7 @@ function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
 							.map(
 								(note) => `
               <li class="archive-item">
-                <time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
+                <time datetime="${isoDate(note.date)}">${formatDateArchive(note.date)}</time>
                 <a href="${getUrl(note)}" class="archive-link">
                   <span class="archive-title">${note.title}</span>
                   ${note.description ? `<span class="archive-desc">${note.description}</span>` : ''}
