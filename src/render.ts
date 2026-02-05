@@ -710,11 +710,8 @@ function renderHome(ctx: BuildContext): string {
       <div class="thesis-content">
         <h1 class="thesis-headline">${strings.thesis.headline}</h1>
         <p class="thesis-body">${strings.thesis.body}</p>
+        <p class="thesis-orientation">This is a space for thinking about judgment, systems, and design in an era where execution is cheap and discernment isn't.</p>
       </div>
-    </section>
-
-    <section class="orientation-block">
-      <p>This is a space for thinking about judgment, systems, and design in an era where execution is cheap and discernment isn't.</p>
     </section>
 
     <div class="home-content">

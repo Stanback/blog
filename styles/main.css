@@ -460,7 +460,14 @@ footer .separator {
 .thesis-content {
 	position: relative;
 	padding: var(--space-10) var(--space-12);
+	padding-left: var(--space-16);
 	max-width: 600px;
+}
+
+@media (max-width: 768px) {
+	.thesis-content {
+		padding-left: var(--space-8);
+	}
 }
 
 .thesis-headline {
@@ -477,6 +484,14 @@ footer .separator {
 .thesis-body {
 	font-size: var(--font-size-xl);
 	color: var(--color-text-secondary);
+	margin: 0 0 var(--space-6);
+	line-height: var(--leading-relaxed);
+	max-width: 50ch;
+}
+
+.thesis-orientation {
+	font-size: var(--font-size-base);
+	color: var(--color-text-muted);
 	margin: 0;
 	line-height: var(--leading-relaxed);
 	max-width: 50ch;
@@ -503,29 +518,7 @@ footer .separator {
 	}
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   ORIENTATION BLOCK — Reader scaffolding below thesis
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.orientation-block {
-	max-width: var(--measure-normal);
-	margin: 0 auto var(--space-16);
-	padding: 0;
-}
-
-.orientation-block p {
-	font-size: var(--font-size-base);
-	color: var(--color-text-secondary);
-	margin: 0;
-	line-height: var(--leading-relaxed);
-}
-
-@media (max-width: 640px) {
-	.orientation-block {
-		padding: 0 var(--space-4);
-		margin-bottom: var(--space-16);
-	}
-}
+/* Orientation block moved into thesis-content as .thesis-orientation */
 
 /* ═══════════════════════════════════════════════════════════════════════════
    HOMEPAGE CONTENT — New editorial layout
