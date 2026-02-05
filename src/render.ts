@@ -641,8 +641,8 @@ function renderHome(ctx: BuildContext): string {
     <section class="home-section latest-writing">
       <article class="featured-post ${hasHeroImage ? 'has-image' : 'no-image'}">
         <a href="${getUrl(latestPost)}" class="featured-link"${hasHeroImage ? ` style="--featured-bg: url('${latestPost.heroImage}')"` : ''}>
-          <span class="featured-label">Latest</span>
           <div class="featured-content">
+            <span class="featured-label">Latest</span>
             <time datetime="${isoDate(latestPost.date)}">${formatDate(latestPost.date)}</time>
             <h2>${latestPost.title}</h2>
             ${latestPost.description ? `<p class="featured-desc">${latestPost.description}</p>` : ''}
