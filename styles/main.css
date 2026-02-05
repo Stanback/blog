@@ -505,7 +505,228 @@ footer .separator {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   START HERE MODULE — Bordered featured posts box
+   HOMEPAGE CONTENT — New editorial layout
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.home-content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-16);
+	max-width: 100%; /* Override main > * constraint */
+}
+
+.home-section {
+	max-width: var(--content-width-wide);
+}
+
+.section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-bottom: var(--space-6);
+	padding-bottom: var(--space-3);
+	border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.section-label {
+	font-family: var(--font-sans);
+	font-size: var(--font-size-xs);
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--color-text-muted);
+}
+
+.section-link {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+.section-link:hover {
+	color: var(--color-accent-500);
+}
+
+/* Latest Writing — Featured post with hero image */
+.featured-post {
+	position: relative;
+}
+
+.featured-link {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	transition: transform var(--transition-normal);
+}
+
+.featured-link:hover {
+	transform: translateY(-2px);
+}
+
+.featured-image {
+	margin: 0;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	border-radius: var(--radius-lg);
+	margin-bottom: var(--space-5);
+}
+
+.featured-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform var(--transition-slow);
+}
+
+.featured-link:hover .featured-image img {
+	transform: scale(1.02);
+}
+
+.featured-content time {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+	letter-spacing: 0.02em;
+}
+
+.featured-content h2 {
+	font-family: var(--font-serif);
+	font-size: clamp(1.5rem, 4vw, 2rem);
+	font-weight: 400;
+	line-height: 1.2;
+	margin: var(--space-2) 0 var(--space-3);
+	color: var(--color-text-primary);
+	transition: color var(--transition-fast);
+}
+
+.featured-link:hover .featured-content h2 {
+	color: var(--color-accent-500);
+}
+
+.featured-desc {
+	font-size: var(--font-size-base);
+	color: var(--color-text-secondary);
+	line-height: var(--leading-relaxed);
+	margin: 0;
+	max-width: 60ch;
+}
+
+/* More Writing — Compact chronological list */
+.post-list-compact {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+}
+
+.post-list-compact li a {
+	display: flex;
+	align-items: baseline;
+	gap: var(--space-4);
+	padding: var(--space-3) 0;
+	text-decoration: none;
+	border-bottom: 1px solid var(--color-border-subtle);
+	transition: background var(--transition-fast);
+}
+
+.post-list-compact li:last-child a {
+	border-bottom: none;
+}
+
+.post-list-compact li a:hover {
+	background: var(--color-bg-muted);
+	margin: 0 calc(-1 * var(--space-3));
+	padding-left: var(--space-3);
+	padding-right: var(--space-3);
+}
+
+.post-list-compact time {
+	font-family: var(--font-mono);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+	flex-shrink: 0;
+	width: 100px;
+}
+
+.post-list-compact .post-title {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-base);
+	font-weight: 450;
+	color: var(--color-text-primary);
+	transition: color var(--transition-fast);
+}
+
+.post-list-compact li a:hover .post-title {
+	color: var(--color-accent-500);
+}
+
+/* Notes section — Card grid */
+.notes-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: var(--space-4);
+}
+
+.note-card {
+	background: var(--color-bg-muted);
+	border-radius: var(--radius-md);
+	padding: var(--space-5);
+	transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.note-card:hover {
+	background: var(--color-bg-elevated);
+	transform: translateY(-2px);
+}
+
+.note-card a {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+
+.note-card h3 {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-base);
+	font-weight: 500;
+	margin: 0 0 var(--space-2);
+	color: var(--color-text-primary);
+	transition: color var(--transition-fast);
+}
+
+.note-card:hover h3 {
+	color: var(--color-accent-500);
+}
+
+.note-card p {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	margin: 0;
+	line-height: var(--leading-normal);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+	.home-content {
+		gap: var(--space-12);
+	}
+
+	.post-list-compact time {
+		width: 80px;
+		font-size: var(--font-size-xs);
+	}
+
+	.notes-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   START HERE MODULE — Bordered featured posts box (LEGACY)
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .start-here-module {
@@ -1415,7 +1636,7 @@ article.prose > header .reading-time {
 .post-hero-content {
 	position: relative;
 	z-index: 1;
-	max-width: var(--content-width);
+	max-width: var(--measure-normal); /* Match main > * and post body */
 	margin: 0 auto;
 	width: 100%;
 }
@@ -1478,7 +1699,7 @@ article.prose > header .reading-time {
 
 /* Post body (article content after hero) */
 .post-body {
-	max-width: var(--content-width);
+	max-width: var(--measure-normal); /* Match main > * and hero content */
 	margin: 0 auto;
 }
 

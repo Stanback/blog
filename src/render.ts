@@ -524,34 +524,61 @@ const moduleCorner = glyphCornerTL.replace(
 
 // Render home page
 function renderHome(ctx: BuildContext): string {
-	// Featured posts for "Start Here" section
-	const featuredPosts = ctx.posts
-		.filter((p) => !p.draft && p.featured)
-		.sort((a, b) => b.date.getTime() - a.date.getTime())
-		.slice(0, 5);
+	// Get all published posts sorted by date
+	const allPosts = ctx.posts
+		.filter((p) => !p.draft)
+		.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+	// Latest post for featured treatment
+	const latestPost = allPosts[0];
+
+	// Remaining posts for chronology (limit to 4)
+	const morePosts = allPosts.slice(1, 5);
 
 	// Recent notes
 	const recentNotes = ctx.notes
 		.filter((n) => !n.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
-		.slice(0, 4);
+		.slice(0, 3);
 
-	// Build Start Here module HTML
-	const startHereModule =
-		featuredPosts.length > 0
-			? `
-    <section class="start-here-module">
-      <div class="module-header">
-        <span class="module-decoration" aria-hidden="true">${moduleCorner}</span>
-        <h2>${strings.home.startHere}</h2>
+	// Latest Writing section - featured treatment for most recent post
+	const latestWritingSection = latestPost
+		? `
+    <section class="home-section latest-writing">
+      <div class="section-header">
+        <span class="section-label">Latest</span>
       </div>
-      <ul class="featured-list">
-        ${featuredPosts
+      <article class="featured-post">
+        <a href="${getUrl(latestPost)}" class="featured-link">
+          ${latestPost.heroImage ? `<figure class="featured-image"><img src="${latestPost.heroImage}" alt="" loading="lazy" /></figure>` : ''}
+          <div class="featured-content">
+            <time datetime="${isoDate(latestPost.date)}">${formatDate(latestPost.date)}</time>
+            <h2>${latestPost.title}</h2>
+            ${latestPost.description ? `<p class="featured-desc">${latestPost.description}</p>` : ''}
+          </div>
+        </a>
+      </article>
+    </section>`
+		: '';
+
+	// More Writing section - chronological list
+	const moreWritingSection =
+		morePosts.length > 0
+			? `
+    <section class="home-section more-writing">
+      <div class="section-header">
+        <span class="section-label">More Writing</span>
+        <a href="/posts/" class="section-link">View all →</a>
+      </div>
+      <ul class="post-list-compact">
+        ${morePosts
 					.map(
 						(post) => `
         <li>
-          <span class="accent-dash" aria-hidden="true"></span>
-          <a href="${getUrl(post)}">${post.title}</a>
+          <a href="${getUrl(post)}">
+            <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
+            <span class="post-title">${post.title}</span>
+          </a>
         </li>`,
 					)
 					.join('')}
@@ -559,26 +586,29 @@ function renderHome(ctx: BuildContext): string {
     </section>`
 			: '';
 
-	// Build Recent Notes module HTML
-	const recentNotesModule =
+	// Notes section - with more visual treatment
+	const notesSection =
 		recentNotes.length > 0
 			? `
-    <section class="recent-notes">
-      <h2>${strings.home.recentNotes}</h2>
-      <ul class="note-list-simple">
-        ${recentNotes.map((note) => `<li><a href="${getUrl(note)}">${note.title}</a></li>`).join('')}
-      </ul>
+    <section class="home-section home-notes">
+      <div class="section-header">
+        <span class="section-label">Notes</span>
+        <a href="/notes/" class="section-link">View all →</a>
+      </div>
+      <div class="notes-grid">
+        ${recentNotes
+					.map(
+						(note) => `
+        <article class="note-card">
+          <a href="${getUrl(note)}">
+            <h3>${note.title}</h3>
+            ${note.description ? `<p>${note.description}</p>` : ''}
+          </a>
+        </article>`,
+					)
+					.join('')}
+      </div>
     </section>`
-			: '';
-
-	// Wrap modules in two-column container if both exist
-	const modulesSection =
-		startHereModule || recentNotesModule
-			? `
-    <div class="homepage-modules">
-      ${startHereModule}
-      ${recentNotesModule}
-    </div>`
 			: '';
 
 	const content = `
@@ -593,7 +623,11 @@ function renderHome(ctx: BuildContext): string {
       </div>
     </section>
 
-    ${modulesSection}`;
+    <div class="home-content">
+      ${latestWritingSection}
+      ${moreWritingSection}
+      ${notesSection}
+    </div>`;
 
 	return baseTemplate({
 		title: config.title,
