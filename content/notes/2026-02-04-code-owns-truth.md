@@ -16,15 +16,25 @@ The prompt is not the product. The code that emerges is.
 
 ## What counts as a constraint?
 
-Constraints are the mechanical, persistent bounds that don't change based on prompts:
+Constraints come in two flavors:
 
+**Mechanical constraints** (machines can verify):
 - **Test suites (TDD)** — define success criteria before implementation
 - **Agent harnesses** — the "operating system" that governs how agents operate
 - **Type systems** — what shapes are valid
 - **Linters, CI/CD** — what patterns are allowed
 - **Feature lists** — what "done" looks like
 
-These survive context windows. They persist across sessions. They're verifiable.
+**Human constraints** (require judgment):
+- **Taste** — what's elegant vs ugly, what belongs vs doesn't
+- **Axioms** — foundational assumptions you build on
+- **Proofs** — logical certainty, mathematical rigor
+- **Physics** — actual laws that can't be violated
+- **Judgment** — wisdom from experience, knowing when to break rules
+
+Both survive context windows. Both persist across sessions. But only the mechanical ones are automatically verifiable — the human constraints require... humans.
+
+This is why judgment matters more than prompts. The mechanical constraints are table stakes. Anyone can set up tests and linters. The *taste and judgment constraints* are what differentiate.
 
 ## What's a prompt then?
 
