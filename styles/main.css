@@ -1741,6 +1741,7 @@ article.prose > header .reading-time {
 	font-family: var(--font-serif);
 	font-size: clamp(2rem, 5vw, 3rem);
 	font-weight: 400;
+	font-style: italic;
 	line-height: 1.15;
 	margin: 0 0 var(--space-6);
 	color: var(--color-text);
@@ -1777,6 +1778,7 @@ article.prose > header .reading-time {
 	font-family: var(--font-serif);
 	font-size: clamp(2rem, 5vw, 3rem);
 	font-weight: 400;
+	font-style: italic;
 	line-height: 1.15;
 	margin: 0 0 var(--space-5);
 }
@@ -3159,6 +3161,7 @@ article.skills-page h1 {
 	font-family: var(--font-serif);
 	font-size: var(--font-size-3xl);
 	font-weight: 400;
+	font-style: italic;
 	margin: 0 0 var(--space-4);
 }
 

@@ -1014,29 +1014,32 @@ function renderGraph(ctx: BuildContext): string {
       const container = document.getElementById('graph-container');
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
+      container.appendChild(canvas);
+      
+      let nodes = [];
+      let links = [];
+      let nodeMap = new Map();
       
       function resize() {
-        canvas.width = container.clientWidth;
+        const width = container.clientWidth || 300;
+        canvas.width = width;
         canvas.height = Math.min(600, window.innerHeight - 200);
       }
-      resize();
-      container.appendChild(canvas);
-      window.addEventListener('resize', resize);
       
-      // Initialize nodes with positions
-      const nodes = graphData.nodes.map((n, i) => ({
-        ...n,
-        x: canvas.width / 2 + (Math.random() - 0.5) * 200,
-        y: canvas.height / 2 + (Math.random() - 0.5) * 200,
-        vx: 0,
-        vy: 0,
-      }));
-      
-      const nodeMap = new Map(nodes.map(n => [n.id, n]));
-      const links = graphData.links.map(l => ({
-        source: nodeMap.get(l.source),
-        target: nodeMap.get(l.target),
-      })).filter(l => l.source && l.target);
+      function initNodes() {
+        nodes = graphData.nodes.map((n, i) => ({
+          ...n,
+          x: canvas.width / 2 + (Math.random() - 0.5) * 200,
+          y: canvas.height / 2 + (Math.random() - 0.5) * 200,
+          vx: 0,
+          vy: 0,
+        }));
+        nodeMap = new Map(nodes.map(n => [n.id, n]));
+        links = graphData.links.map(l => ({
+          source: nodeMap.get(l.source),
+          target: nodeMap.get(l.target),
+        })).filter(l => l.source && l.target);
+      }
       
       // Colors
       const colors = {
@@ -1182,7 +1185,14 @@ function renderGraph(ctx: BuildContext): string {
         draw();
         requestAnimationFrame(loop);
       }
-      loop();
+      
+      // Initialize after layout
+      requestAnimationFrame(() => {
+        resize();
+        initNodes();
+        window.addEventListener('resize', resize);
+        loop();
+      });
     </script>`;
 
 	return baseTemplate({
