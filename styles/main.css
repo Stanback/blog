@@ -486,8 +486,8 @@ footer .separator {
 /* Responsive adjustments */
 @media (max-width: 640px) {
 	.thesis {
-		padding: var(--space-8) 0 var(--space-12);
-		margin-bottom: var(--space-20);
+		padding: var(--space-8) 0 var(--space-16);
+		margin-bottom: var(--space-24);
 	}
 
 	.thesis-bound {
