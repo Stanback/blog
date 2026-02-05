@@ -1614,7 +1614,7 @@ article.prose > header .reading-time {
 	margin-left: calc(-1 * var(--space-page-margin));
 	margin-right: calc(-1 * var(--space-page-margin));
 	margin-top: calc(-1 * var(--space-12)); /* Counteract main padding-top */
-	margin-bottom: var(--space-12);
+	margin-bottom: var(--space-16);
 	padding-top: var(--space-16);
 	padding-right: var(--space-page-margin);
 	padding-bottom: var(--space-10);
@@ -1628,10 +1628,10 @@ article.prose > header .reading-time {
 	inset: 0;
 	background: linear-gradient(
 		to bottom,
-		transparent 0%,
-		transparent 30%,
-		color-mix(in oklch, var(--color-bg) 50%, transparent) 60%,
-		color-mix(in oklch, var(--color-bg) 90%, transparent) 80%,
+		color-mix(in oklch, var(--color-bg) 20%, transparent) 0%,
+		color-mix(in oklch, var(--color-bg) 30%, transparent) 30%,
+		color-mix(in oklch, var(--color-bg) 60%, transparent) 50%,
+		color-mix(in oklch, var(--color-bg) 85%, transparent) 70%,
 		var(--color-bg) 100%
 	);
 }
