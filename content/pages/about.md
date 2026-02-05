@@ -106,9 +106,15 @@ This isn't a resume. It's a statement of craft philosophy.
 
 **Languages:** TypeScript, JavaScript, Python. Enough Go and Rust to read them.
 
-**Frontend:** My arc here has been... instructive. Static sites → jQuery → ExtJS/Sencha → Ember → React → Vue → SolidJS → and now... back to static sites. There's probably a lesson in there about complexity, about what we actually need versus what we convince ourselves we need. I still reach for React or SolidJS when the problem calls for it, but I'm increasingly drawn to the simplest approach that works: HTML, CSS, progressive enhancement. The frameworks will keep churning. The fundamentals won't.
+**Frontend:** Static sites → jQuery → ExtJS/Sencha → Ember → React → Vue → SolidJS → and now... back to static sites.
 
-**Backend:** Node, Bun, Cloudflare Workers. I like the edge.
+**Backend:** Perl → PHP → Express → NestJS → Hono/Bun.
+
+If you squint, both arcs tell the same story: scrappy simplicity, then complexity accumulation (frameworks solving real problems but also adding ceremony), then a return to simplicity — but a *different* simplicity. Not naive. Earned. I know what React's reconciler is doing. I know what NestJS decorators are for. And now I can choose Hono or plain HTML *knowing what I'm giving up* and deciding I don't need it.
+
+The frameworks will keep churning. The fundamentals won't. I still reach for React or SolidJS when the problem calls for it. But increasingly, I'm drawn to the simplest thing that works — and "works" includes being able to understand it five years from now.
+
+Also: Cloudflare Workers. I like the edge.
 
 **Data:** PostgreSQL, SQLite, Redis, BigQuery, Convex. I don't reach for NoSQL unless I have a specific reason.
 
