@@ -1615,7 +1615,10 @@ article.prose > header .reading-time {
 	margin-right: calc(-1 * var(--space-page-margin));
 	margin-top: calc(-1 * var(--space-12)); /* Counteract main padding-top */
 	margin-bottom: var(--space-12);
-	padding: var(--space-16) var(--space-page-margin) var(--space-10);
+	padding-top: var(--space-16);
+	padding-right: var(--space-page-margin);
+	padding-bottom: var(--space-10);
+	padding-left: var(--space-page-margin);
 	max-width: none;
 }
 
