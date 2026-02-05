@@ -49,7 +49,7 @@ const isoDate = formatDateMachine;
 // Render backlinks section if any exist
 function renderBacklinks(
 	url: string,
-	backlinks: Map<string, Array<{ title: string; url: string }>>,
+	backlinks: Map<string, Array<{ title: string; url: string; description?: string; date?: Date }>>,
 ): string {
 	const links = backlinks.get(url);
 	if (!links || links.length === 0) return '';
@@ -58,7 +58,16 @@ function renderBacklinks(
     <aside class="backlinks" aria-label="Pages that link here">
       <h2 class="backlinks-title">Linked from</h2>
       <ul class="backlinks-list">
-        ${links.map((link) => `<li><a href="${link.url}">${link.title}</a></li>`).join('')}
+        ${links
+					.map((link) => {
+						const datePart = link.date ? `<time datetime="${formatDateMachine(link.date)}">${formatDateLong(link.date)}</time>` : '';
+						const descPart = link.description ? `<span class="backlink-desc">${link.description}</span>` : '';
+						return `<li class="backlink-item">
+              <a href="${link.url}" class="backlink-title">${link.title}</a>
+              ${datePart || descPart ? `<div class="backlink-meta">${datePart}${datePart && descPart ? ' · ' : ''}${descPart}</div>` : ''}
+            </li>`;
+					})
+					.join('')}
       </ul>
     </aside>`;
 }

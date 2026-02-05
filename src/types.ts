@@ -213,7 +213,7 @@ export interface BuildContext {
 	allContent: Content[];
 	buildDate: Date;
 	cssFilename?: string; // Hashed CSS filename (e.g., "styles.abc12345.css")
-	backlinks: Map<string, Array<{ title: string; url: string }>>; // URL -> items that link to it
+	backlinks: Map<string, Array<{ title: string; url: string; description?: string; date?: Date }>>; // URL -> items that link to it
 	graph: GraphData;
 }
 

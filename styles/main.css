@@ -3103,32 +3103,47 @@ article.skills-page h1 {
 }
 
 .backlinks-list {
-	list-style: none;
-	padding: 0;
+	list-style: disc;
+	padding-left: var(--space-5);
 	margin: 0;
 	display: flex;
-	flex-wrap: wrap;
-	gap: var(--space-2);
+	flex-direction: column;
+	gap: var(--space-3);
 }
 
 .backlinks-list li {
 	margin: 0;
 }
 
-.backlinks-list a {
-	display: inline-block;
-	font-size: var(--font-size-sm);
-	color: var(--color-accent-600);
-	text-decoration: none;
-	padding: var(--space-1) var(--space-3);
-	background: var(--color-accent-100);
-	border-radius: var(--radius-sm);
-	transition: background var(--transition-fast), color var(--transition-fast);
+.backlinks-list li::marker {
+	color: var(--color-text-muted);
 }
 
-.backlinks-list a:hover {
-	background: var(--color-accent-200);
-	color: var(--color-accent-700);
+.backlink-title {
+	font-size: var(--font-size-base);
+	font-weight: 500;
+	color: var(--color-link);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+.backlink-title:hover {
+	color: var(--color-link-hover);
+	text-decoration: underline;
+}
+
+.backlink-meta {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+	margin-top: var(--space-1);
+}
+
+.backlink-meta time {
+	color: var(--color-text-secondary);
+}
+
+.backlink-desc {
+	color: var(--color-text-muted);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

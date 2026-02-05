@@ -210,17 +210,28 @@ function buildContext(
 	let soul: Soul | undefined;
 	let skills: Skills | undefined;
 
-	// Build URL to content map for backlinks
-	const urlToContent = new Map<string, { title: string; url: string }>();
+	// Build URL to content map for backlinks (with description and date)
+	const urlToContent = new Map<
+		string,
+		{ title: string; url: string; description?: string; date?: Date }
+	>();
 	for (const item of content) {
 		const url = getContentUrl(item);
 		if (url) {
-			urlToContent.set(url, { title: item.title, url });
+			urlToContent.set(url, {
+				title: item.title,
+				url,
+				description: 'description' in item ? (item as { description?: string }).description : undefined,
+				date: 'date' in item ? (item as { date?: Date }).date : undefined,
+			});
 		}
 	}
 
 	// Extract wikilinks and build backlinks map
-	const backlinks = new Map<string, Array<{ title: string; url: string }>>();
+	const backlinks = new Map<
+		string,
+		Array<{ title: string; url: string; description?: string; date?: Date }>
+	>();
 	const graphLinks: Array<{ source: string; target: string }> = [];
 
 	for (const item of content) {
@@ -235,7 +246,13 @@ function buildContext(
 				if (!backlinks.has(targetUrl)) {
 					backlinks.set(targetUrl, []);
 				}
-				backlinks.get(targetUrl)?.push({ title: item.title, url: sourceUrl });
+				const sourceInfo = urlToContent.get(sourceUrl);
+				backlinks.get(targetUrl)?.push({
+					title: item.title,
+					url: sourceUrl,
+					description: sourceInfo?.description,
+					date: sourceInfo?.date,
+				});
 
 				// Add to graph
 				graphLinks.push({ source: sourceUrl, target: targetUrl });
