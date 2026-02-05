@@ -785,16 +785,19 @@ function renderChapter(chapter: Chapter, book: Book, ctx: BuildContext): string 
 
 // Render books index page — editorial library layout
 function renderBooksIndex(books: Book[], ctx: BuildContext): string {
+	// Filter out draft books from the index
+	const publishedBooks = books.filter((b) => b.status !== 'draft');
+
 	const content = `
     <header class="archive-header">
       <h1>Library</h1>
       <p class="archive-intro">Longer-form work. Novels, collections, and things that needed more space.</p>
     </header>
     ${
-			books.length > 0
+			publishedBooks.length > 0
 				? `
     <div class="books-grid">
-      ${books
+      ${publishedBooks
 				.map((book) => {
 					const coverImage = book.coverImage || getBookCoverImage(book);
 					const mainChapters = book.chapters.filter((ch) => ch.chapterNumber > 0);
@@ -826,6 +829,8 @@ function renderBooksIndex(books: Book[], ctx: BuildContext): string {
 		description: 'Novels, collections, and longer-form writing.',
 		url: '/books/',
 		content,
+		// Don't index if no published books
+		noIndex: publishedBooks.length === 0,
 		cssFilename: ctx.cssFilename,
 	});
 }
