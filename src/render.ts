@@ -371,7 +371,11 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
 // Render page
 function renderPage(page: Page, ctx: BuildContext): string {
 	const content = `
-    <article class="prose">
+    <header class="archive-header">
+      <h1>${page.title}</h1>
+      ${page.description ? `<p class="archive-intro">${page.description}</p>` : ''}
+    </header>
+    <article class="prose page-body">
       ${page.html}
     </article>`;
 
