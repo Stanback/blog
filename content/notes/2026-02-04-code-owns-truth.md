@@ -87,6 +87,12 @@ If you're building AI systems and your constraints are weak, your outputs will d
 
 Strong constraints + clear verification = reliable systems.
 
+## What this blog is trying to do
+
+Mechanical constraints are table stakes — anyone can set up tests and linters. The human constraints are harder.
+
+This site is an attempt to practice the human constraint layer: taste in what gets published, judgment in how ideas connect, axioms about what matters. Whether it succeeds is a different question. But that's the intent — to be the physics, not just the prompt.
+
 ## References
 
 - [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Anthropic's approach to multi-session agents
