@@ -302,7 +302,7 @@ Examples:
 	} else if (values.refine) {
 		// Just refine the prompt
 		const imagePrompt = await refineOnly(metaPrompt, apiKey!);
-		console.log('\n' + '='.repeat(80));
+		console.log(`\n${'='.repeat(80)}`);
 		console.log('REFINED IMAGE PROMPT (ready for Imagen/DALL-E)');
 		console.log('='.repeat(80));
 		console.log(imagePrompt);
