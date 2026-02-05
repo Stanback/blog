@@ -100,3 +100,25 @@ Minimum 44×44px for all interactive elements.
 - No hard borders — use background contrast
 - Generous padding
 - Hover: subtle color shifts, not dramatic transforms
+
+## Pull Quotes
+
+For surfacing thesis sentences in long essays.
+
+```css
+.pull-quote {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  border-left: 3px solid var(--color-accent-500);
+  padding-left: var(--space-4);
+  margin: var(--space-8) 0;
+}
+```
+
+**Usage rules:**
+- Maximum 1 per long essay
+- Use for thesis statements, not decoration
+- Should be quotable out of context
+- Don't overuse — density is a feature

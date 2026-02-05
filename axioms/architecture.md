@@ -58,6 +58,22 @@ That's it. No transformer plugins. No "because SOLID" abstractions.
 | Page | `/<slug>/` | Static pages |
 | Book | `/books/<slug>/` | Multi-chapter content |
 
+## Section Descriptors
+
+Navigation labels describe containers. Descriptors explain intent.
+
+| Section | Label | Descriptor |
+|---------|-------|------------|
+| Writing | Writing | Essays on judgment & systems |
+| Notes | Notes | In-progress thinking |
+| Library | Library | Influences & references |
+| Photos | Photos | Observations |
+
+**Implementation:**
+- Show descriptors on section landing pages
+- Optional: subtle descriptor on desktop nav
+- Mobile: labels only (space constraint)
+
 ## Frontmatter Schema
 
 ```yaml
@@ -73,8 +89,27 @@ tags: [building, ai]
 description: "For SEO"       # Required for posts
 tension: "What's unresolved"
 questions: ["Ending questions"]
+preface: "Orientation whisper — what this piece is about in 1-2 sentences"
 ---
 ```
+
+### Preface Field
+
+The `preface` is an **orientation whisper** — not a summary or abstract.
+
+**Purpose:** Help readers orient before diving into dense thinking.
+
+**Format:** 1-2 sentences, rendered in italics before the first paragraph.
+
+**Example:**
+```yaml
+preface: "This piece is about where judgment breaks down when systems scale faster than understanding."
+```
+
+**Rules:**
+- Optional (not every post needs one)
+- Not an intro paragraph — an orientation
+- Should make the reader want to continue, not replace reading
 
 ## Directory Structure
 

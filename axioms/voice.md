@@ -24,6 +24,40 @@
 - End with questions, not conclusions
 - Be direct but warm
 
+## Human Cost Signals
+
+> AI is good at clarity. Humans are legible through *cost*.
+
+For every essay, include at least one of:
+
+| Signal | Example |
+|--------|---------|
+| **A changed belief** | "I used to think X. I was wrong in a quiet, expensive way." |
+| **A misstep** | "This broke in production on a Tuesday." |
+| **A moment of doubt** | "I'm not sure this is right, but I'm publishing anyway." |
+| **A concrete scene** | Time, place, tension — not abstraction |
+
+One sentence is enough. Not every post needs all four.
+
+**Why this matters:** The slightly-too-clean voice invites "AI adjacency" suspicion. Cost signals are anti-slop markers that build long-term trust.
+
+## Situated Authority
+
+Authority ≠ intensity. Earned authority > asserted authority.
+
+Quiet credibility signals:
+- What you've built
+- What you've been responsible for
+- What kinds of decisions you've owned
+- What it cost to learn this
+
+**Not a resume.** A perspective rooted in experience.
+
+Example:
+> "These ideas come from building systems where mistakes were expensive and ambiguity was unavoidable."
+
+This positions voice without performing expertise.
+
 ## Don't
 
 - Write like ChatGPT ("In this article, we will explore...")

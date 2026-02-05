@@ -58,12 +58,46 @@ The site must earn quiet over time.
 - Revisable
 - No biography, no tool lists, no vague abstractions
 
-### 2. The Proof (Curated Relevance)
-**"Start Here"** — 3-5 editorially chosen essays that support the thesis.
+### 2. Reader Orientation (Below Thesis)
 
-Chronology is subordinate to curation.
+> Orientation is inclusiveness. Don't assume readers know why you're worth listening to.
 
-### 3. The Network Layer
+A brief block that answers:
+- What kind of thinking happens here
+- Who it's for
+- What it's not (optional)
+
+**Example:**
+```
+This is a space for thinking about judgment, systems, and design
+in an era where execution is cheap and discernment isn't.
+
+For builders who are curious and tired of performative certainty.
+```
+
+**Rules:**
+- 2-3 sentences max
+- Not marketing — cognitive scaffolding
+- Subtle typography (not hero text)
+- Can evolve with thesis
+
+### 3. Start Here (Curated Relevance)
+
+3-5 editorially chosen essays that:
+- Are most **accessible** (low jargon, clear entry point)
+- Are most **representative** (show range without confusion)
+- Are most **human** (reveal cost, not just clarity)
+
+**Selection criteria:**
+- At least one essay per pillar
+- At least one that shows vulnerability
+- Chronology is subordinate to curation
+
+**Label:** "If you're new, these are good entry points."
+
+**Not a "best of"** — an orientation.
+
+### 4. The Network Layer
 - `llms.txt` — AI discovery
 - RSS — syndication
 - SOUL.md / SKILLS.md — identity manifests
