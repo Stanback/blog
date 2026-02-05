@@ -525,7 +525,7 @@ footer .separator {
 }
 
 .pillar-item:not(:last-child)::after {
-	content: '·';
+	content: "·";
 	margin-left: var(--space-4);
 	opacity: 0.5;
 }
