@@ -1777,6 +1777,14 @@ article.prose.post-body {
 	display: none;
 }
 
+/* Mobile: left-align hero content */
+@media (max-width: 767px) {
+	.post-hero-content {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 @media (min-width: 768px) {
 	.post-hero {
 		min-height: 450px;
