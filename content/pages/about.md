@@ -14,6 +14,8 @@ By day, I work at [Demand.io](https://demand.io), where I've spent the last deca
 
 This blog is where I think out loud about the things I care about: building software, design, photography, parenting, AI, and the ongoing project of making sense of a world that keeps changing faster than I can keep up.
 
+These ideas come from building systems where mistakes were expensive and ambiguity was unavoidable. Not theory—experience. Not credentials—judgment earned through getting it wrong enough times to recognize the patterns.
+
 ## A Note on Format
 
 What follows is my [SOUL.md](https://soul.md/) and [SKILL.md](https://skill.md/) — standard identity files for AI agents.

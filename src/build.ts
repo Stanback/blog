@@ -153,6 +153,7 @@ async function parseContent(items: ValidatedContentItem[]): Promise<Content[]> {
 					questions: getStringArray(fm.questions),
 					constraints: getStringArray(fm.constraints),
 					tools: getStringArray(fm.tools),
+					preface: getString(fm.preface),
 				};
 				break;
 			case 'photo':

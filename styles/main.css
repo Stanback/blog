@@ -362,8 +362,6 @@ main > * {
 main > .post-hero,
 main > .latest-writing {
 	max-width: none;
-	margin-left: 0;
-	margin-right: 0;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -1799,8 +1797,9 @@ article.prose > header .reading-time {
 	position: relative;
 	z-index: 1;
 	max-width: var(--content-width);
-	margin-left: auto;
-	margin-right: auto;
+	/* Align with body content - center within padded area */
+	width: 100%;
+	margin: 0 auto;
 	text-align: left;
 }
 
@@ -1864,6 +1863,18 @@ article.prose > header .reading-time {
 	gap: var(--space-4);
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
+}
+
+/* Post preface - orientation whisper before content */
+.post-preface {
+	max-width: var(--content-width);
+	margin: var(--space-8) auto var(--space-12);
+	padding-left: var(--space-6);
+	padding-right: var(--space-6);
+	font-size: var(--font-size-base);
+	font-style: italic;
+	color: var(--color-text-secondary);
+	line-height: var(--line-height-relaxed);
 }
 
 /* Post body (article content after hero) */

@@ -262,8 +262,13 @@ function renderPost(post: Post, ctx: BuildContext): string {
 		</header>`;
 
 	const postUrl = getUrl(post);
+	const prefaceSection = post.preface
+		? `<p class="post-preface">${post.preface}</p>`
+		: '';
+
 	const content = `
     ${heroSection}
+    ${prefaceSection}
     <article class="prose post-body">
       ${post.html}
       ${
