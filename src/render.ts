@@ -195,7 +195,7 @@ function baseTemplate(options: {
       <div class="nav-menu">
         <ul>
           <li><a href="/posts/">Writing</a></li>
-          <li><a href="/books/">Library</a></li>
+          <!-- <li><a href="/books/">Library</a></li> -->
           <li><a href="/notes/">Notes</a></li>
           <li><a href="/photos/">Photos</a></li>
           <li><a href="/about/">About</a></li>
