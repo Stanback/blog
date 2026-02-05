@@ -1,9 +1,22 @@
 ---
 title: Code Owns Truth
-description: "A frame for thinking about AI systems: constraints, prompts, and code"
+description: "A frame for thinking about AI systems: constraints bound mutation, prompts express intent, code is the artifact"
 date: 2026-02-04
-updated: 2026-02-04
-tags: [architecture, ai, mental-models]
+type: post
+schemaVersion: 1
+draft: false
+tags:
+  - architecture
+  - ai
+  - mental-models
+heroImage: /images/posts/code-owns-truth-hero.png
+tension: "We obsess over prompts when we should be obsessing over constraints."
+questions:
+  - "What actually survives a context window?"
+  - "Why is 'prompt engineering' the wrong frame?"
+coAuthors:
+  - name: "Lunen"
+    emoji: "🌙"
 ---
 
 A frame that keeps clarifying my thinking about AI systems:
