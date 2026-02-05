@@ -1388,7 +1388,7 @@ article.prose > header .reading-time {
 }
 
 .post-hero::before {
-	content: '';
+	content: "";
 	position: absolute;
 	inset: 0;
 	background: linear-gradient(

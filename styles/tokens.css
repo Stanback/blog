@@ -106,8 +106,8 @@
 	--measure-normal: 65ch;
 	--measure-wide: 80ch;
 	--measure-page: 900px;
-	--content-width: 720px;       /* Main content column */
-	--content-width-wide: 960px;  /* Wider content (archive, notes index) */
+	--content-width: 720px; /* Main content column */
+	--content-width-wide: 960px; /* Wider content (archive, notes index) */
 
 	/* ─────────────────────────────────────────────────────────────────────────
 	   SPACING
