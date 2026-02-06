@@ -9,6 +9,7 @@ tags:
   - ai
   - systems
   - engineering
+heroImage: /images/posts/multi-agent-moment-hero.png
 tension: "Everyone's shipping multi-agent. Nobody agrees on what that means."
 preface: "Multi-agent is the new hotness. But the implementations vary wildly—from native CLI features to external orchestration frameworks to community experiments. Here's what's actually available."
 ---
