@@ -615,12 +615,6 @@ const thesisCornerBR = glyphCornerBR.replace(
 	'class="thesis-corner thesis-corner-br"',
 );
 
-// Corner mark for "Start here" module header
-const moduleCorner = glyphCornerTL.replace(
-	'class="glyph glyph-corner glyph-corner--tl"',
-	'class="module-corner"',
-);
-
 // Render home page
 function renderHome(ctx: BuildContext): string {
 	// Get all published posts sorted by date
@@ -640,20 +634,19 @@ function renderHome(ctx: BuildContext): string {
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
 		.slice(0, 3);
 
-	// Latest Writing section - featured treatment for most recent post
-	// Latest Writing section - featured treatment with overlay
-	const hasHeroImage = latestPost?.heroImage;
+	// Featured latest post — contained card treatment
 	const latestWritingSection = latestPost
 		? `
-    <section class="home-section latest-writing">
-      <article class="featured-post ${hasHeroImage ? 'has-image' : 'no-image'}">
-        <a href="${getUrl(latestPost)}" class="featured-link"${hasHeroImage ? ` style="--featured-bg: url('${latestPost.heroImage}')"` : ''}>
-          <div class="featured-content">
+    <section class="home-section home-featured" aria-label="Latest writing">
+      <article class="featured-card">
+        <a href="${getUrl(latestPost)}" class="featured-card-link">
+          <div class="featured-card-body">
             <span class="featured-label">Latest</span>
             <time datetime="${isoDate(latestPost.date)}">${formatDate(latestPost.date)}</time>
-            <h2>${latestPost.title}</h2>
-            ${latestPost.description ? `<p class="featured-desc">${latestPost.description}</p>` : ''}
+            <h2 class="featured-card-title">${latestPost.title}</h2>
+            ${latestPost.description ? `<p class="featured-card-desc">${latestPost.description}</p>` : ''}
           </div>
+          ${latestPost.heroImage ? `<div class="featured-card-image" aria-hidden="true"><img src="${latestPost.heroImage}" alt="" loading="lazy" /></div>` : ''}
         </a>
       </article>
     </section>`
@@ -663,7 +656,7 @@ function renderHome(ctx: BuildContext): string {
 	const moreWritingSection =
 		morePosts.length > 0
 			? `
-    <section class="home-section more-writing">
+    <section class="home-section home-writing" aria-label="More writing">
       <div class="section-header">
         <span class="section-label">More Writing</span>
         <a href="/posts/" class="section-link">View all →</a>
@@ -689,7 +682,7 @@ function renderHome(ctx: BuildContext): string {
 	const notesSection =
 		recentNotes.length > 0
 			? `
-    <section class="home-section home-notes">
+    <section class="home-section home-notes" aria-label="Notes">
       <div class="section-header">
         <span class="section-label">Notes</span>
         <a href="/notes/" class="section-link">View all →</a>
@@ -711,7 +704,7 @@ function renderHome(ctx: BuildContext): string {
 			: '';
 
 	const content = `
-    <section class="thesis">
+    <section class="thesis" aria-label="Site thesis">
       <div class="thesis-bound" aria-hidden="true">
         ${thesisCornerTL}
         ${thesisCornerBR}
