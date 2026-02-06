@@ -1,7 +1,7 @@
 ---
 title: "Memory and Journals"
 description: "The parallel between AI agent memory systems and human journaling practices"
-date: 2026-02-05
+date: 2026-02-04
 updated: 2026-02-05
 type: note
 schemaVersion: 1
