@@ -2,7 +2,7 @@
 title: "Memory and Journals"
 description: "The parallel between AI agent memory systems and human journaling practices"
 date: 2026-02-05
-updated: 2026-02-04
+updated: 2026-02-05
 type: note
 schemaVersion: 1
 tags:
@@ -16,10 +16,10 @@ heroImage: /images/posts/memory-journals-hero.png
 There's a striking parallel between how AI agents manage memory and how humans have always managed knowledge.
 
 **Agents have:**
-- Daily logs (`memory/YYYY-MM-DD.md`) — raw capture of what happened
-- Long-term memory (`MEMORY.md`) — curated, distilled insights
-- Living documents (notes) — evolving, updatable, timeless
-- Published pieces (posts) — timestamped, archived
+- Session artifacts — markdown files after task completion, READMEs, `AGENTS.md`, context files
+- Daily logs — some agents (like OpenClaw) use `memory/YYYY-MM-DD.md` for raw capture
+- Long-term memory — curated files like `MEMORY.md`, or structured storage like [Beads](https://github.com/steveyegge/beads)
+- Semantic retrieval — vector stores like [Supermemory](https://supermemory.ai), embeddings that can be grepped/chunked
 
 **Humans have:**
 - Journals — daily raw capture
