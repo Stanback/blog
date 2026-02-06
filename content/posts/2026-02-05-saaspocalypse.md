@@ -142,7 +142,7 @@ They don't survive as "no-code" tools for humans who can't code. That market is 
 
 **Winners:**
 - **Tools that become infrastructure for AI** — Linear (agents as teammates), Zapier (MCP integrations), n8n (workflow orchestration)
-- **Tools that AI can't replace** — Authentication (Okta), observability (Datadog), infrastructure (AWS)
+- **Core infrastructure AI can't replace** — AWS, GCP, Cloudflare, Fly.io. The compute and network layer isn't going anywhere.
 - **Tools that aggregate judgment** — Platforms where human decisions compound (Figma, Notion when used for strategy)
 
 **Losers:**
@@ -151,6 +151,7 @@ They don't survive as "no-code" tools for humans who can't code. That market is 
 - **Expensive human expertise platforms** — Legal research, financial analysis, anything Cowork plugins demonstrated
 
 **Uncertain:**
+- **Observability (Datadog, Sentry)** — Built for human dashboards. Agents just need a pub/sub bus and error capture. Could be replaced, but implementation cost might not be worth it.
 - **GitHub/GitLab** — AI needs version control, but Copilot/Codex compete with them too
 - **Slack/Teams** — Communication platforms might become agent coordination hubs... or get bypassed entirely
 - **Traditional ticketing (Jira)** — Too much legacy, but also too much lock-in to die quickly
