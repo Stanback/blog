@@ -9,6 +9,8 @@ tags:
   - architecture
 ---
 
+*This expands on the three-layer model introduced in [Code Owns Truth](/posts/code-owns-truth/).*
+
 ## The Rupture
 
 Design in 2025 is still running on print-era physics. The fundamental assumptions:
