@@ -24,11 +24,11 @@ coAuthors:
 
 # Proof, Not Truth: Epistemic Humility in Knowledge Systems
 
-I've been thinking about what we call the knowledge layers we're building.
+Stop calling it a Truth Graph. Call it a **Proof Graph**.
 
-"Truth Graph" sounds confident. Authoritative. It implies we've figured out what's real and stored it. But that's not quite right.
+"Truth" implies you've figured out what's real and stored it. You haven't. What you're actually storing is evidence with confidence levels—a structure where every claim carries its justification.
 
-What we're actually building is a **Proof Graph**: a structure where every claim carries its justification.
+The difference isn't semantic. It changes how engineers think about the system, how users calibrate trust, and what happens when you're wrong.
 
 ## The Difference
 
@@ -101,4 +101,8 @@ We don't sell answers. We sell receipts.
 
 ---
 
-*Proofs can be wrong. But at least they show you why they might be.*
+If you're building a knowledge system and calling it a "truth" anything, you're lying to your users. Maybe not maliciously—but you're claiming certainty you don't have.
+
+Proofs can still be wrong. But when they are, at least you can trace why. That's the difference between a system that fails gracefully and one that fails mysteriously.
+
+**Claim proof, not truth.** Your users will trust you more, not less.
