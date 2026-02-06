@@ -77,17 +77,27 @@ From their docs: "By exposing the CLI as a Model Context Protocol (MCP) server a
 
 ---
 
-## Waiting: Google Gemini CLI
+## Native: Google Antigravity
 
-Gemini CLI has a detailed [community proposal](https://github.com/google-gemini/gemini-cli/discussions/7637) for multi-agent architecture:
+While Gemini CLI is still proposal-stage for multi-agent, Google shipped [Antigravity](https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/) in November 2025—a full agentic development platform.
 
-- **Agent registry** — Register, discover, and manage agents by capability
-- **Event-driven communication** — Pub/sub for agent coordination
-- **Orchestrator agent** — Task analysis, agent selection, work distribution
-- **Specialized agents** — React/frontend, Node.js/backend, testing, DevOps
-- **Sandbox isolation** — File system isolation, process limits, network controls
+The architecture splits into two surfaces:
+- **Editor View** — Standard AI-powered IDE with completions and inline commands
+- **Manager Surface** — Dedicated interface for spawning, orchestrating, and observing multiple agents working asynchronously
 
-The spec is thorough. But it's still just a proposal. Nothing shipped. Google appears to be watching what works—or betting that orchestration commoditizes and only the model matters.
+Agents work across editor, terminal, and browser autonomously. Instead of scrolling through logs, agents generate **Artifacts**—screenshots, recordings, task lists, implementation plans—so you can verify work at a glance. You can leave feedback directly on Artifacts without stopping agent execution.
+
+**Strengths:**
+- Native Google platform with generous Gemini 3 Pro rate limits
+- Model-agnostic (also supports Claude Sonnet 4.5, GPT-OSS)
+- Learning as a primitive—agents save context to a knowledge base for future tasks
+- Artifacts solve the "trust but verify" problem elegantly
+
+**Weaknesses:**
+- New platform, less battle-tested than Claude Code
+- Another tool in the stack (vs. extending existing editor)
+
+This is Google's answer to the multi-agent moment: not bolting orchestration onto Gemini CLI, but building a dedicated platform for agent-first development.
 
 ---
 
@@ -118,13 +128,15 @@ Built on [Beads](https://github.com/steveyegge/beads) for memory persistence. Gi
 
 ## External: The Others
 
-**[claude-flow](https://github.com/ruvnet/claude-flow)** — Enterprise-positioned with 60+ specialized agents, self-learning architecture, consensus algorithms (Raft/BFT/Gossip). Works with multiple providers (Claude/GPT/Gemini/Ollama). Ambitious but unclear how much is implemented vs. architecture diagrams.
+**[Pheromind](https://github.com/mariusgavrila/pheromind)** — The first external orchestrator I experimented with, and what got me thinking about multi-agent seriously. Swarm intelligence inspired by ant colonies: agents coordinate via a shared `.pheromone` file containing structured JSON "signals." No direct peer-to-peer commands—just stigmergy, the same indirect coordination ants use when they leave chemical trails. Each agent senses the pheromone landscape and decides what to do. Decentralized, emergent, no single point of failure.
 
-**[Pheromind](https://github.com/mariusgavrila/pheromind)** — Swarm intelligence inspired by ant colonies. Agents coordinate via a shared `.pheromone` file containing structured JSON signals—no direct peer-to-peer commands. Decentralized stigmergy rather than hierarchical orchestration.
+**[claude-flow](https://github.com/ruvnet/claude-flow)** — Takes the beehive metaphor instead: queen agents coordinate worker swarms with explicit hierarchy. Claims multi-provider support (Claude/GPT/Gemini/Ollama), but in practice it's built around Claude Code primitives. 60+ specialized agents, consensus algorithms (Raft/BFT/Gossip). Ambitious architecture—unclear how much is implemented vs. diagrams.
+
+The ant colony vs. beehive distinction matters: pheromones are fully decentralized (any agent can influence any other through the shared state), while hive-mind has explicit hierarchy (queens command workers). Both are "swarm intelligence," but the coordination primitives differ.
 
 **[oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode)** — Opinionated Claude Code configuration (like oh-my-zsh for zsh). Multiple execution modes including parallel swarm options, with cross-validation support for Gemini CLI and Codex.
 
-The community tools trade polish for portability. They work across providers. They're not locked to anyone's subscription model. But they require more setup and maintenance.
+The community tools trade polish for portability. But here's the thing: most are still built around a single provider's primitives despite claims of agnosticism. And as providers ship native multi-agent, the external tools may become unnecessary. The long-term trajectory points toward native orchestration from each provider.
 
 ---
 
