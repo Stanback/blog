@@ -9,6 +9,7 @@ tags:
   - ai
   - identity
   - writing
+heroImage: /images/posts/why-everyone-needs-soul-md-hero.png
 tension: "AI agents have identity files. Why don't we?"
 ---
 
