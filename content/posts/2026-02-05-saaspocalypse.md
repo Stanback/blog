@@ -172,7 +172,7 @@ Everything in the middle—tools that automate what AI now does natively—faces
 
 The AI coding tools have stratified fast. [85% of developers](https://devecosystem-2025.jetbrains.com/artificial-intelligence) now use AI tools regularly, with Claude Code, Cursor, and Codex fighting for dominance. Each is racing to ship multi-agent orchestration—the ability to spawn and coordinate multiple AI agents on a single task.
 
-The pattern: **Anthropic is winning on integration, Cursor on UX, OpenAI on raw capability, Google on... patience.** But every provider wants to be the platform, not just the model. Anthropic [cracked down on third-party harnesses](https://venturebeat.com/technology/anthropic-cracks-down-on-unauthorized-claude-usage-by-third-party-harnesses) last month—the message: flat-rate pricing requires their tools.
+The pattern: **Anthropic is winning on integration, Cursor on UX, OpenAI on raw capability, Google on.. patience.** But every provider wants to be the platform, not just the model. Anthropic [cracked down on third-party harnesses](https://venturebeat.com/technology/anthropic-cracks-down-on-unauthorized-claude-usage-by-third-party-harnesses) last month—the message: flat-rate pricing requires their tools.
 
 For the full breakdown of what's shipping and how to choose, see [[The Multi-Agent Moment]].
 
