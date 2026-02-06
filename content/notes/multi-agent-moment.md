@@ -159,9 +159,35 @@ Beads gives work items addressable IDs, priorities, dependencies, audit trails. 
 
 **The pattern that matters:** "Land the plane." End every session by updating Beads, syncing state, generating a prompt for the next session. Tomorrow's agent wakes up knowing what's current.
 
-Agent Teams doesn't have this. It has a "shared task list" but no persistence across sessions. If you resume, the lead may message teammates that no longer exist.
+---
 
-This is where external tooling still wins. Beads survives session boundaries. Agent Teams doesn't.
+## Native: Claude Tasks
+
+Anthropic saw the persistence problem too. On January 23, 2025, they shipped **Tasks**—native task management with dependencies.
+
+The old `TodoWrite` tool was a flat checklist. The new system has proper structure:
+
+- **TaskCreate** — Create tasks with subject, description, dependencies
+- **TaskGet/TaskList** — Retrieve task details and state
+- **TaskUpdate** — Mark complete, add blockers, modify
+
+Tasks persist in `~/.claude/tasks/` and survive context compaction. Set `CLAUDE_CODE_TASK_LIST_ID` and multiple sessions coordinate on the same list—when Session A completes a task, Session B sees it immediately.
+
+**Where Tasks wins:**
+- Zero setup — it's built in
+- Dependencies and blockers modeled natively
+- Multi-session sync via shared task list ID
+- Works with Agent Teams out of the box
+
+**Where Beads still wins:**
+- Git-native storage — your tasks are versioned, diffable, portable
+- Works across providers (not locked to Claude)
+- Richer metadata — audit trails, custom fields
+- Survives provider lock-in concerns
+
+The community was building Ralph Wiggum loops, external plan files, and stop hook hacks. Anthropic made the plumbing native. But "native" means "Anthropic's opinions baked in" and "only works with Claude."
+
+For most users, Tasks is enough. For power users running multi-provider swarms or needing Git-native everything, Beads remains the answer.
 
 ---
 
