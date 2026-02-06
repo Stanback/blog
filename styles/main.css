@@ -1384,7 +1384,9 @@ article.prose > header time {
 article.prose > header h1 {
 	font-size: var(--font-size-3xl);
 	margin: 0;
-	line-height: var(--leading-tight);
+	line-height: var(--leading-snug);
+	font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+	font-variant-ligatures: common-ligatures contextual;
 }
 
 article.prose > header .byline {
@@ -1485,10 +1487,12 @@ article.prose > header .reading-time {
 	font-size: clamp(2rem, 5vw, 3rem);
 	font-weight: 400;
 	font-style: italic;
-	line-height: 1.15;
+	line-height: 1.25;
 	margin: 0 0 var(--space-6);
 	color: var(--color-text);
 	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+	font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+	font-variant-ligatures: common-ligatures contextual;
 }
 
 .post-hero .post-meta {
@@ -1525,8 +1529,10 @@ article.prose > header .reading-time {
 	font-size: clamp(2rem, 5vw, 3rem);
 	font-weight: 400;
 	font-style: italic;
-	line-height: 1.15;
+	line-height: 1.25;
 	margin: 0 0 var(--space-6);
+	font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+	font-variant-ligatures: common-ligatures contextual;
 }
 
 .post-header-simple .post-meta {
@@ -1755,9 +1761,11 @@ article.skills-page h1 {
 	font-family: var(--font-serif);
 	font-weight: 500;
 	font-style: italic;
-	line-height: var(--leading-tight);
+	line-height: var(--leading-snug);
 	color: var(--color-text-primary);
 	letter-spacing: var(--tracking-tight);
+	font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+	font-variant-ligatures: common-ligatures contextual;
 }
 
 .prose h1 {

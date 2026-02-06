@@ -20,13 +20,15 @@ coAuthors:
     emoji: "🌙"
 ---
 
-A frame that keeps clarifying my thinking about AI systems:
+The prompt is not the product. The code that emerges is.
+
+Here's the frame:
 
 **Constraints** bound the mutation space.  
 **Prompts** express intent (inherently fuzzy).  
 **Code** is the source of truth.
 
-The prompt is not the product. The code that emerges is.
+We obsess over prompt engineering when we should obsess over constraint engineering. The prompt is a mutation—temporary, lossy, context-dependent. The code is what survives.
 
 ## What counts as a constraint?
 

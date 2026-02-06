@@ -24,11 +24,11 @@ coAuthors:
 
 # Self-Healing Systems: The Holographic Event Pattern
 
-I've been building browser automation for AI research. It breaks constantly. Selectors change, sites add Cloudflare challenges, responses take longer than expected.
+What if your system could fix itself?
 
-The first instinct is breadcrumbs: log what happened, debug when it fails, fix it, redeploy. But that's slow. The feedback loop is measured in hours.
+Browser automation breaks constantly. Selectors change, sites add Cloudflare challenges, responses take longer than expected. The traditional fix is breadcrumbs: log what happened, wait for an alert, reconstruct context, diagnose, patch, deploy. Hours of feedback loop.
 
-What if the system could fix itself?
+That's too slow. The system needs to repair itself—and to do that, every event must carry everything a repair bot needs to act without asking questions.
 
 ## The Problem with Breadcrumbs
 
