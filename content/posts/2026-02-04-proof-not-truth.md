@@ -56,7 +56,7 @@ The proof framing is:
 
 ## Why This Matters for AI Systems
 
-AI hallucination rates run 17-33% even with RAG. The models are confidently wrong about a third of the time.
+Even top-tier LLMs hallucinate. The [Vectara Hallucination Leaderboard](https://github.com/vectara/hallucination-leaderboard) (February 2026) shows hallucination rates of 8-15% for frontier models on grounded summarization—and rates exceed 30% on complex reasoning and open-domain recall.
 
 If your system claims *truth*, you're amplifying that confidence. Every output sounds authoritative even when it shouldn't.
 
