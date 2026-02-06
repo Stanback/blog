@@ -45,6 +45,71 @@ No SQL. No ORM. The query *is* the code.
 
 ---
 
+## How It Actually Works
+
+### Schema: Optional but Powerful
+
+Convex is schemaless by default—you can just start writing data. But add a `schema.ts` file and you get end-to-end type safety:
+
+```typescript
+// convex/schema.ts
+export default defineSchema({
+  messages: defineTable({
+    body: v.string(),
+    user: v.id("users"),
+  }),
+  users: defineTable({
+    name: v.string(),
+    tokenIdentifier: v.string(),
+  }).index("by_token", ["tokenIdentifier"]),
+});
+```
+
+The validators (`v.string()`, `v.id()`, etc.) work at runtime *and* generate TypeScript types. Same validators used for argument validation and schema definition. No separate type definitions to keep in sync.
+
+Philosophy: prototype without a schema, add one when you've solidified your plan. The dashboard can even generate a schema suggestion from your existing data.
+
+### Reactivity: Dependency Tracking
+
+Here's what happens when you call `useQuery()` in React:
+
+1. **Client subscribes** via WebSocket to a query function
+2. **Function runs** in the database, reading whatever tables it needs
+3. **Convex tracks the "read set"** — every document the function touched
+4. **Result returns** to client
+5. **Mutation happens** somewhere (any client, any function)
+6. **Convex checks**: did this mutation touch any document in any active query's read set?
+7. **If yes**: rerun the query, push new result to all subscribed clients
+
+This isn't polling. It's not "listen to a table." It's tracking the actual data dependencies of your query function and invalidating precisely when needed. All clients see the same consistent snapshot simultaneously.
+
+### External World: HTTP Actions
+
+Queries and mutations can't make network requests (that's what keeps them transactional). For external integrations, you use **actions**:
+
+```typescript
+export const sendNotification = action({
+  handler: async (ctx, { userId }) => {
+    const user = await ctx.runQuery(api.users.get, { userId });
+    await fetch("https://api.twilio.com/...", { /* ... */ });
+  },
+});
+```
+
+For incoming webhooks, **HTTP actions** expose endpoints:
+
+```typescript
+export const stripeWebhook = httpAction(async (ctx, request) => {
+  const body = await request.json();
+  await ctx.runMutation(api.payments.record, { data: body });
+  return new Response("ok");
+});
+```
+
+Your endpoint lives at `https://your-app.convex.site/stripeWebhook`. Stripe calls it, you write to the database, reactivity propagates to all connected clients. No pub/sub to configure.
+
+---
+
 ## Comparison: Where Does This Sit?
 
 ### Cloudflare D1
