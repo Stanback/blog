@@ -19,7 +19,7 @@ There's a striking parallel between how AI agents manage memory and how humans h
 - Session artifacts — markdown files after task completion, READMEs, `AGENTS.md`, context files
 - Daily logs — some agents (like OpenClaw) use `memory/YYYY-MM-DD.md` for raw capture
 - Long-term memory — curated files like `MEMORY.md`, or structured storage like [Beads](https://github.com/steveyegge/beads)
-- Semantic retrieval — vector stores like [Supermemory](https://supermemory.ai), embeddings that can be grepped/chunked
+- Semantic retrieval — vector stores like [Supermemory](https://supermemory.ai), chunked and embedded for RAG
 
 **Humans have:**
 - Journals — daily raw capture
