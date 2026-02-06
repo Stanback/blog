@@ -96,6 +96,8 @@ Now the term is spreading beyond engineering. Anthropic's Scott White [announced
 
 Microsoft embedded the same idea into their [Copilot roadmap](https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/29/vibe-working-introducing-agent-mode-and-office-agent-in-microsoft-365-copilot/)—Agent Mode in Excel and Word, where you describe tasks in plain language and the AI handles the technical work. Brief an agent once, let it run in the background, steer and review.
 
+Salesforce went further: [Agentforce 360](https://www.salesforce.com/news/press-releases/2025/10/13/agentic-enterprise-announcement/) is their platform for "the Agentic Enterprise," and they literally shipped a feature called **Agentforce Vibes**—letting builders "vibe-code" apps grounded in company data. They're reporting 119% agent growth in the first half of 2025.
+
 The shift isn't from "engineer" to "prompt engineer." That's too small. The shift is from **maker** to **orchestrator**. From building to coordinating. From depth to breadth. And it's not just for developers anymore—it's coming for every knowledge worker.
 
 Some people will thrive here. They like systems thinking, coordination, judgment calls. Others will struggle. They liked the craft of code, the satisfaction of a clean implementation, the feeling of having *made* something.
