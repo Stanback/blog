@@ -590,6 +590,98 @@ function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
 	});
 }
 
+// Render drafts scratchpad — hidden index of drafts and books (not in sitemap/robots)
+function renderDraftsScratchpad(ctx: BuildContext): string {
+	const draftPosts = ctx.posts.filter((p) => p.draft);
+	const draftNotes = ctx.notes.filter((n) => n.draft);
+
+	const content = `
+    <header class="archive-header">
+      <h1>Drafts Scratchpad</h1>
+      <p class="archive-intro">Work in progress — not indexed</p>
+    </header>
+
+    ${
+			draftPosts.length > 0
+				? `
+    <section class="scratchpad-section">
+      <h2>Draft Posts</h2>
+      <ul class="archive-list">
+        ${draftPosts
+					.map(
+						(post) => `
+          <li class="archive-item">
+            <time datetime="${isoDate(post.date)}">${formatDateArchive(post.date)}</time>
+            <a href="/drafts/${post.slug}/" class="archive-link">
+              <span class="archive-title">${post.title}</span>
+              ${post.description ? `<span class="archive-desc">${post.description}</span>` : ''}
+            </a>
+          </li>`,
+					)
+					.join('')}
+      </ul>
+    </section>`
+				: ''
+		}
+
+    ${
+			draftNotes.length > 0
+				? `
+    <section class="scratchpad-section">
+      <h2>Draft Notes</h2>
+      <ul class="archive-list">
+        ${draftNotes
+					.map(
+						(note) => `
+          <li class="archive-item">
+            <time datetime="${isoDate(note.date)}">${formatDateArchive(note.date)}</time>
+            <a href="/drafts/${note.slug}/" class="archive-link">
+              <span class="archive-title">${note.title}</span>
+              ${note.description ? `<span class="archive-desc">${note.description}</span>` : ''}
+            </a>
+          </li>`,
+					)
+					.join('')}
+      </ul>
+    </section>`
+				: ''
+		}
+
+    ${
+			ctx.books.length > 0
+				? `
+    <section class="scratchpad-section">
+      <h2>Books</h2>
+      <ul class="archive-list">
+        ${ctx.books
+					.map(
+						(book) => `
+          <li class="archive-item">
+            <a href="/books/${book.slug}/" class="archive-link">
+              <span class="archive-title">${book.title}</span>
+              ${book.description ? `<span class="archive-desc">${book.description}</span>` : ''}
+            </a>
+          </li>`,
+					)
+					.join('')}
+      </ul>
+    </section>`
+				: ''
+		}
+
+    ${draftPosts.length === 0 && draftNotes.length === 0 && ctx.books.length === 0 ? '<p class="empty-state">Nothing in the scratchpad.</p>' : ''}
+  `;
+
+	return baseTemplate({
+		title: 'Drafts Scratchpad',
+		description: 'Work in progress',
+		url: '/drafts-scratchpad/',
+		content,
+		cssFilename: ctx.cssFilename,
+		noIndex: true,
+	});
+}
+
 // Render photos index — visual observations, Polaroid aesthetic
 function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 	const publishedPhotos = photos
@@ -1246,6 +1338,9 @@ export function renderSite(ctx: BuildContext): RenderOutput[] {
 
 	// Home page
 	output.push({ path: 'index.html', content: renderHome(ctx) });
+
+	// Drafts scratchpad (hidden, not in sitemap)
+	output.push({ path: 'drafts-scratchpad/index.html', content: renderDraftsScratchpad(ctx) });
 
 	// Posts (published)
 	output.push({ path: 'posts/index.html', content: renderPostsIndex(ctx.posts, ctx) });
