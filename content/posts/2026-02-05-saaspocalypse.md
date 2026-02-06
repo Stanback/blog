@@ -81,7 +81,7 @@ The question becomes: **are you supervising, or are you being supervised?**
 
 ---
 
-## From Vibe Coding to Vibe Managing
+## From Vibe Coding to Vibe Working
 
 Steve Yegge calls his workflow "vibe coding." Work becomes fluid—"an uncountable substance that you sling around freely, like slopping shiny fish into wooden barrels at the docks."
 
@@ -90,7 +90,13 @@ Steve Yegge calls his workflow "vibe coding." Work becomes fluid—"an uncountab
 
 This sounds chaotic. It is chaotic. But it's also the emerging reality for anyone running AI at scale.
 
-The shift isn't from "engineer" to "prompt engineer." That's too small. The shift is from **maker** to **orchestrator**. From building to coordinating. From depth to breadth.
+Now the term is spreading beyond engineering. Anthropic's Scott White [announced Opus 4.6](https://www.cnbc.com/2026/02/05/anthropic-claude-opus-4-6-vibe-working.html) this week with a new framing: **vibe working**.
+
+> "Everybody has seen this transformation happen with software engineering in the last year and a half, where vibe coding started to exist as a concept... I think that we are now transitioning almost into vibe working."
+
+Microsoft embedded the same idea into their [Copilot roadmap](https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/29/vibe-working-introducing-agent-mode-and-office-agent-in-microsoft-365-copilot/)—Agent Mode in Excel and Word, where you describe tasks in plain language and the AI handles the technical work. Brief an agent once, let it run in the background, steer and review.
+
+The shift isn't from "engineer" to "prompt engineer." That's too small. The shift is from **maker** to **orchestrator**. From building to coordinating. From depth to breadth. And it's not just for developers anymore—it's coming for every knowledge worker.
 
 Some people will thrive here. They like systems thinking, coordination, judgment calls. Others will struggle. They liked the craft of code, the satisfaction of a clean implementation, the feeling of having *made* something.
 
