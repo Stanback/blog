@@ -1,6 +1,6 @@
 ---
 title: "The Multi-Agent Moment"
-description: "Claude's Agent Teams vs OpenAI's Agents SDK vs the community alternatives. A technical breakdown of where multi-agent orchestration actually is—and where it's going."
+description: "Claude's Agent Teams vs Gas Town vs the community alternatives. A technical breakdown of where multi-agent orchestration actually is—and where it's going."
 date: 2026-02-05
 type: post
 schemaVersion: 1
@@ -13,6 +13,10 @@ tension: "Everyone's shipping multi-agent. Nobody agrees on what that means."
 preface: "Multi-agent is the new hotness. But the implementations vary wildly—from native CLI features to external orchestration frameworks to community experiments. Here's what's actually available."
 ---
 
+*This is a companion to [[The SaaSpocalypse]], which covers the market implications. This piece is about the tools.*
+
+---
+
 ## The Landscape
 
 Six months ago, "multi-agent" meant research papers and demos. Now it's shipping in production tools. But the approaches differ dramatically.
@@ -21,45 +25,43 @@ Six months ago, "multi-agent" meant research papers and demos. Now it's shipping
 
 **External orchestration** keeps the model separate from the coordination layer. You run orchestrators that spawn and manage agents as separate processes.
 
-**Hybrid approaches** use official SDKs and protocols (like MCP) to bridge the gap—official documentation, but assembly required.
-
-Each approach has tradeoffs. Here's how the major players are handling it.
+Each approach has tradeoffs. Here's what exists as of this week.
 
 ---
 
-## Anthropic: Native Agent Teams
+## Native: Anthropic Agent Teams
 
-Claude Code shipped [Agent Teams](https://docs.anthropic.com/en/docs/claude-code/agent-teams) as a native feature. Enable a flag, and your CLI gains the ability to spawn specialized sub-agents coordinated by a lead.
+Claude Code shipped [Agent Teams](https://docs.anthropic.com/en/docs/claude-code/agent-teams) as a native feature. Enable with `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`, and your CLI gains the ability to spawn specialized sub-agents coordinated by a lead.
 
 The architecture:
 - **Lead agent** — Coordinates the team, delegates tasks, synthesizes results
-- **Specialized agents** — Visual designer, frontend dev, QA, information architect (you define these)
-- **Shared context** — Agents read from the same codebase and can hand off work
-
-It's elegant. One tool, one subscription, everything integrated. But it's also a lock-in play.
-
-Last month Anthropic [cracked down on third-party harnesses](https://venturebeat.com/technology/anthropic-cracks-down-on-unauthorized-claude-usage-by-third-party-harnesses)—tools like OpenCode that let you use your Claude subscription through external interfaces. The message: if you want flat-rate pricing, use our tools. Third-party automation gets API pricing, which runs 5-10x higher for heavy use.
+- **Specialized agents** — You define these (visual designer, frontend dev, QA, etc.)
+- **Shared task list** — Agents self-coordinate with direct messaging
+- **Same context** — CLAUDE.md, MCP servers, skills load automatically
 
 **Strengths:**
 - Zero setup — just enable the flag
-- Tight integration with Claude Code's existing features (hooks, config, MCP)
-- Sub-agents inherit context naturally
+- Tight integration with Claude Code's existing features
+- Officially supported (eventually)
 
 **Weaknesses:**
-- Anthropic-only — no model portability
-- Experimental — still rough edges
-- Lock-in risk if you build deep dependencies
+- Experimental — no session resumption yet
+- Can't inspect or modify coordination logic
+- Anthropic's opinions baked in
+- 5x token cost for 5 agents (obvious but real)
+
+The lock-in risk is real. Last month Anthropic [cracked down on third-party harnesses](https://venturebeat.com/technology/anthropic-cracks-down-on-unauthorized-claude-usage-by-third-party-harnesses)—tools that let you use Claude subscriptions through external interfaces. The message: flat-rate pricing requires their tools.
 
 ---
 
-## OpenAI: Agents SDK + MCP
+## Native: OpenAI Agents SDK
 
-OpenAI took a modular approach. Codex CLI doesn't have native multi-agent built in, but they published [official documentation](https://developers.openai.com/codex/guides/agents-sdk/) for orchestrating it through their Agents SDK via MCP (Model Context Protocol).
+OpenAI took a modular approach. Codex CLI doesn't have native multi-agent built in, but they published [official documentation](https://developers.openai.com/codex/guides/agents-sdk/) for orchestrating it through their Agents SDK via MCP.
 
 The architecture:
-- **Codex as MCP server** — Run `codex mcp-server` and it exposes tools for starting and continuing sessions
-- **Orchestrator agents** — Built with the Agents SDK, these coordinate work across Codex instances
-- **Thread continuity** — Each Codex session has a `threadId` for multi-turn conversations
+- **Codex as MCP server** — Run `codex mcp-server` to expose tools for starting/continuing sessions
+- **Orchestrator agents** — Built with the Agents SDK, coordinate work across Codex instances
+- **Thread continuity** — Each session has a `threadId` for multi-turn conversations
 
 From their docs: "By exposing the CLI as a Model Context Protocol (MCP) server and orchestrating it with the OpenAI Agents SDK, you can create deterministic, auditable workflows that scale from a single agent to a complete software delivery pipeline."
 
@@ -71,38 +73,56 @@ From their docs: "By exposing the CLI as a Model Context Protocol (MCP) server a
 **Weaknesses:**
 - More setup required than native approaches
 - Requires understanding MCP and Agents SDK
-- Less integrated feel than Claude's all-in-one
+- Less integrated than Claude's all-in-one
 
 ---
 
-## Google: Community Proposal (Not Shipped)
+## Waiting: Google Gemini CLI
 
-Gemini CLI has a detailed [community proposal](https://github.com/google-gemini/gemini-cli/discussions/7637) for multi-agent architecture. The spec is thorough:
+Gemini CLI has a detailed [community proposal](https://github.com/google-gemini/gemini-cli/discussions/7637) for multi-agent architecture:
 
-**Proposed architecture:**
-- **Agent registry** — Register, discover, and manage available agents by capability
-- **Event-driven communication** — Pub/sub pattern for agent coordination
+- **Agent registry** — Register, discover, and manage agents by capability
+- **Event-driven communication** — Pub/sub for agent coordination
 - **Orchestrator agent** — Task analysis, agent selection, work distribution
 - **Specialized agents** — React/frontend, Node.js/backend, testing, DevOps
 - **Sandbox isolation** — File system isolation, process limits, network controls
 
-The proposal includes phased implementation across 12+ tickets, covering everything from core infrastructure to built-in agents to isolation systems.
-
-But it's still just a proposal. Nothing shipped. Google appears to be watching what works before committing. Given their resources, they could catch up quickly—or they could be betting that orchestration commoditizes and the model layer is what matters.
+The spec is thorough. But it's still just a proposal. Nothing shipped. Google appears to be watching what works—or betting that orchestration commoditizes and only the model matters.
 
 ---
 
-## Community Alternatives
+## External: Gas Town
 
-Outside the big three, the community is building orchestration layers that work across providers:
+Steve Yegge's [Gas Town](https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04) is the maximalist approach. 20-30 parallel Claude Code instances with operational roles:
 
-**[claude-flow](https://github.com/ruvnet/claude-flow)** — External orchestration for Claude Code. Spawn multiple agents, coordinate work, maintain session continuity. Provider-agnostic in theory, Claude-focused in practice.
+- **Mayor** — Orchestrates the swarm
+- **Polecats** — Execute work in parallel
+- **Witness and Deacon** — Monitor progress
+- **Refinery** — Manages merges
 
-**[Gas Town](https://github.com/AstroMavericks/gas-town)** — Steve Yegge's creation. Git-backed ticketing designed for AI-first workflows. The AI literally asked for the features it needed. Pairs with his "vibe coding" approach.
+Built on [Beads](https://github.com/steveyegge/beads) for memory persistence. Git worktrees for isolation.
 
-**[Beads](https://github.com/steveyegge/beads)** — Also from Yegge. Session continuity and context management for agentic workflows. Designed to solve the "agent forgets everything" problem.
+**Strengths:**
+- Battle-tested at scale (Yegge runs it daily)
+- Transparent coordination logic you can modify
+- Beads integration for persistent memory
+- Git-native isolation
 
-**[Aider](https://aider.chat/)** — Multi-file editing with Git integration. Not multi-agent in the orchestration sense, but handles the "coordinate changes across files" problem that multi-agent systems need to solve.
+**Weaknesses:**
+- Chaos is real ($100/hour burns reported)
+- Requires "Stage 7" expertise—not for beginners
+- Complex setup, steep learning curve
+- You are the ops team
+
+---
+
+## External: The Others
+
+**[claude-flow](https://github.com/ruvnet/claude-flow)** — Enterprise-positioned with 60+ specialized agents, self-learning architecture, consensus algorithms (Raft/BFT/Gossip). Works with multiple providers (Claude/GPT/Gemini/Ollama). Ambitious but unclear how much is implemented vs. architecture diagrams.
+
+**[ccswarm](https://github.com/ruvnet/ccswarm)** — Rust-native orchestration with Git worktree isolation. Clean implementation but still partial (AI execution simulated in places).
+
+**[oh-my-claudecode](https://github.com/ruvnet/oh-my-claudecode)** — 5 execution modes: Autopilot, Ultrapilot (3-5x parallel), Swarm, Pipeline, Ecomode. 32 specialized agents. Multiple modes for different needs, token-efficient options.
 
 The community tools trade polish for portability. They work across providers. They're not locked to anyone's subscription model. But they require more setup and maintenance.
 
@@ -110,80 +130,77 @@ The community tools trade polish for portability. They work across providers. Th
 
 ## The Two Architectures
 
-The fundamental split:
+This is the distinction that matters:
 
-### Native (Anthropic's bet)
-- Agent coordination built into the CLI
-- One subscription, everything included
-- Tight integration, minimal setup
-- Locked to one provider
+**SDLC Simulation** — Tools that recreate org charts. Analyst agent → PM agent → Architect agent → Developer agent. Phase gates, handoffs, specialized personas. These optimize for explainability ("look, we have a PM agent!") rather than effectiveness.
 
-### External (OpenAI's bet, community tools)
-- Coordination layer separate from execution
-- Compose tools from multiple providers
-- More setup, more flexibility
-- Portable but fragmented
+**Operational Roles** — Tools that coordinate work, not process. Mayor orchestrates. Workers execute in parallel. External state management. This is Gas Town's approach, and now Agent Teams'.
 
-Neither is wrong. They optimize for different things.
+The SDLC simulators are solving the wrong problem. They recreate human coordination friction in software.
 
-Native wins on **developer experience**. You want to try multi-agent? Enable a flag. Done.
-
-External wins on **optionality**. You don't trust any single provider to remain the best? Build portable abstractions.
+Agent Teams and Gas Town both take the operational approach. The difference is where the coordination logic lives: inside the Claude Code binary (native) or outside (external).
 
 ---
 
-## What I'm Actually Using
+## The Ticketing Question
 
-Right now: Claude Code with Agent Teams for my blog workflow.
+Here's where it gets interesting.
 
-I set up four agents:
-- **Visual Designer** — Design aesthetic, layout, typography decisions
-- **Frontend Dev** — CSS implementation, responsive behavior, performance
-- **Browser QA** — Testing, accessibility, screenshots
-- **Information Architect** — Content structure, navigation, UX
+Yegge didn't just build Gas Town. He built **Beads**—an issue tracker designed for agents.
 
-The lead coordinates. I describe what I want. Agents do their thing.
+The insight: agents have amnesia. Every session is 50 First Dates. Markdown plans pile up until nothing is authoritative. Agents can't tell the difference between "we decided this yesterday" and "this brainstorm from three weeks ago."
 
-Is it perfect? No. Sometimes agents step on each other. Sometimes the lead makes weird delegation choices. But it's *productive*. I'm shipping faster than I would manually orchestrating separate Claude sessions.
+Beads gives work items addressable IDs, priorities, dependencies, audit trails. It stores everything in Git. Agents already know Git. The AI literally asked for this when Yegge asked what it wanted.
 
-The lock-in risk is real. I'm building workflows that depend on Anthropic-specific features. If they raise prices or degrade the product, I'm exposed.
+> "Claude said 'you've given me memory—I literally couldn't remember anything before, now I can.' And I'm like, okay, that sounds good."
+> — [Steve Yegge](https://paddo.dev/blog/beads-memory-for-coding-agents/)
 
-But the alternative—building provider-agnostic orchestration from scratch—is a project in itself. For now, I'm trading flexibility for velocity.
+**The pattern that matters:** "Land the plane." End every session by updating Beads, syncing state, generating a prompt for the next session. Tomorrow's agent wakes up knowing what's current.
 
----
+Agent Teams doesn't have this. It has a "shared task list" but no persistence across sessions. If you resume, the lead may message teammates that no longer exist.
 
-## What Comes Next
-
-Predictions:
-
-1. **Native multi-agent becomes table stakes.** If Claude Code has it, Codex and Gemini CLI will ship it. The community proposals become product features.
-
-2. **MCP becomes the standard glue.** Model Context Protocol is already how tools talk to each other. Multi-agent orchestration will route through MCP.
-
-3. **The ticketing systems matter.** Linear, Beads, even Jira—whoever becomes the "source of truth" for agent work captures enormous value.
-
-4. **Session continuity is the hard problem.** Agents forget. They hallucinate context. The tools that solve persistent memory win.
-
-5. **Pricing changes everything.** Current API pricing is subsidized. When costs normalize, the economics of multi-agent workflows shift dramatically.
+This is where external tooling still wins. Beads survives session boundaries. Agent Teams doesn't.
 
 ---
 
-## The Builder's Choice
+## The Future of Engineering Workstreams
 
-If you're building with multi-agent today:
+Anthropic's research says developers use AI in 60% of their work but fully delegate only 0-20% of tasks. The gap is supervision, validation, judgment.
 
-**For speed:** Native Agent Teams. Zero setup. Start shipping.
+Multi-agent doesn't change this ratio—it changes what you're supervising.
 
-**For portability:** External orchestrators. More work, but provider-agnostic.
+**Single agent:** you supervise one context, one thread of work.
 
-**For experimentation:** Community tools. See what approaches work before committing.
+**Multi-agent:** you supervise coordination. Are the agents working on the right things? Are they stepping on each other? Is the decomposition correct?
 
-The "right" answer depends on how much you trust any single provider to remain the best option—and how much you value velocity over optionality.
+The workstream shifts from "write code" to "coordinate agents that write code." This is Yegge's thesis from *Revenge of the Junior Developer*: the CNC machine is coming, and your job is operating it.
+
+The question is whether you want that CNC machine to be:
+- **Opaque** (Agent Teams) — Anthropic handles coordination, you see results
+- **Transparent** (Gas Town et al) — You see and modify the coordination logic
+
+For most developers, opaque is fine. Ship faster, don't care how.
+
+For organizations running agents at scale, transparency matters. When something breaks at $100/hour, you need to understand why.
 
 ---
 
-*This is part of my ongoing exploration of how AI changes the work of building software. The companion piece, [[The SaaSpocalypse]], covers the market implications.*
+## Where We Land
+
+If you're not comfortable with 3-5 parallel agents and some chaos, don't use any of this. Single-agent Claude Code with Plan Mode handles most work. Add complexity when you hit real limits, not theoretical ones.
+
+If you want to experiment with multi-agent:
+
+**Agent Teams** — Lower barrier to entry, native integration, but limited persistence and control. Good for trying multi-agent without operational overhead.
+
+**Gas Town + Beads** — Maximum power, maximum chaos. Requires expertise but gives you persistent memory and full control. This is the "vibe coding" stack.
+
+**claude-flow / ccswarm / oh-my-claudecode** — Interesting architectures, less battle-tested. Worth watching.
+
+The native approach will improve. Anthropic will add session resumption, better persistence, more coordination options. The community tools will adapt or die.
+
+But the fundamental tension remains: **native is convenient, external is controllable.** Pick based on whether you need to understand what's happening or just need it to happen.
 
 ---
 
-*What orchestration approach are you using? I'm curious what's working for people.*
+*I'm still exploring Agent Teams myself. As I run more experiments, I'll update this with what actually works vs. what sounds good on paper.*
