@@ -179,11 +179,13 @@ Tasks persist in `~/.claude/tasks/` and survive context compaction. Set `CLAUDE_
 - Multi-session sync via shared task list ID
 - Works with Agent Teams out of the box
 
-**Where Beads still wins:**
+**Where Beads wins:**
+- **Project-level vs session-level** — Tasks lives in `~/.claude/tasks/` (your home dir). Beads lives in `.beads/` (the repo). Clone the project elsewhere, Beads comes with you. Tasks doesn't.
 - Git-native storage — your tasks are versioned, diffable, portable
 - Works across providers (not locked to Claude)
 - Richer metadata — audit trails, custom fields
-- Survives provider lock-in concerns
+
+Tasks is for "what am I doing this session." Beads is for "what has this project been doing for months."
 
 The community was building Ralph Wiggum loops, external plan files, and stop hook hacks. Anthropic made the plumbing native. But "native" means "Anthropic's opinions baked in" and "only works with Claude."
 
