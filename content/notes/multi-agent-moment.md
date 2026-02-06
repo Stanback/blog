@@ -140,6 +140,8 @@ The SDLC simulators are solving the wrong problem. They recreate human coordinat
 
 Agent Teams and Gas Town both take the operational approach. The difference is where the coordination logic lives: inside the Claude Code binary (native) or outside (external).
 
+You might not even need an orchestrator at all. Anthropic's Nick Carlini [built a C compiler](https://www.anthropic.com/engineering/building-c-compiler) with 16 parallel Claudes using just lock files—text files in `current_tasks/` that agents claim before working. Git sync prevents collisions. Each agent picks up the "next most obvious" problem. No mayor, no coordination layer. ~2,000 sessions and $20K later: a 100,000-line compiler that builds the Linux kernel.
+
 ---
 
 ## The Ticketing Question
@@ -158,6 +160,8 @@ Beads gives work items addressable IDs, priorities, dependencies, audit trails. 
 > — [Steve Yegge](https://paddo.dev/blog/beads-memory-for-coding-agents/)
 
 **The pattern that matters:** "Land the plane." End every session by updating Beads, syncing state, generating a prompt for the next session. Tomorrow's agent wakes up knowing what's current.
+
+This matters because fresh agents need to orient fast. Carlini's compiler project maintained extensive READMEs and progress files—each agent dropped into a fresh container with no context. Without orientation artifacts, agents waste tokens rediscovering what's already known.
 
 ---
 
@@ -207,6 +211,8 @@ Multi-agent doesn't change this ratio—it changes what you're supervising.
 
 The workstream shifts from "write code" to "coordinate agents that write code." This is Yegge's thesis from *Revenge of the Junior Developer*: the CNC machine is coming, and your job is operating it.
 
+**Test quality becomes everything.** Carlini's key insight: "Claude will work autonomously to solve whatever problem I give it. So it's important that the task verifier is nearly perfect, otherwise Claude will solve the wrong problem." Your job becomes writing tests so good that agents can't game them.
+
 The question is whether you want that CNC machine to be:
 - **Opaque** (Agent Teams) — Anthropic handles coordination, you see results
 - **Transparent** (Gas Town et al) — You see and modify the coordination logic
@@ -220,6 +226,8 @@ For organizations running agents at scale, transparency matters. When something 
 ## Where We Land
 
 If you're not comfortable with 3-5 parallel agents and some chaos, don't use any of this. Single-agent Claude Code with Plan Mode handles most work. Add complexity when you hit real limits, not theoretical ones.
+
+**Parallelism has a ceiling.** When there are many independent tests, parallelization is trivial—each agent picks a different failing test. But monolithic tasks break down. Carlini's agents all hit the same Linux kernel bug, fixed it, then overwrote each other's changes. Multi-agent shines on decomposable work. For one giant task, you're back to single-threaded.
 
 If you want to experiment with multi-agent:
 
