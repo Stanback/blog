@@ -2,9 +2,8 @@
 title: "The Multi-Agent Moment"
 description: "Claude's Agent Teams vs Gas Town vs the community alternatives. A technical breakdown of where multi-agent orchestration actually is—and where it's going."
 date: 2026-02-05
-type: post
+type: note
 schemaVersion: 1
-draft: true
 tags:
   - ai
   - systems
