@@ -4,7 +4,7 @@ description: "The case for documented identity in an AI-saturated world. Not jus
 date: 2026-02-06
 type: post
 schemaVersion: 1
-draft: true
+draft: false
 tags:
   - ai
   - identity
