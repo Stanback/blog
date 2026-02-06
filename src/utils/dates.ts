@@ -3,8 +3,8 @@
 /**
  * Parses a date from various formats:
  * - Date object (pass through)
- * - String in YYYY-MM-DD format
- * - String in ISO format
+ * - String in YYYY-MM-DD format (defaults to noon PT to avoid timezone display issues)
+ * - String in ISO format (with time)
  */
 export function parseDate(value: unknown): Date | null {
 	if (value instanceof Date) {
@@ -12,6 +12,12 @@ export function parseDate(value: unknown): Date | null {
 	}
 
 	if (typeof value === 'string') {
+		// If it's just a date (YYYY-MM-DD), add noon PT to avoid timezone issues
+		// This prevents "Yesterday at 4:00 PM" display on social platforms
+		if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+			const date = new Date(`${value}T12:00:00-08:00`);
+			return Number.isNaN(date.getTime()) ? null : date;
+		}
 		const date = new Date(value);
 		return Number.isNaN(date.getTime()) ? null : date;
 	}
