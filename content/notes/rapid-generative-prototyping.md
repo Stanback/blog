@@ -9,7 +9,7 @@ tags:
   - architecture
 ---
 
-*Applying the [three-layer model](/posts/code-owns-truth/) to design: what happens when constraints replace mockups.*
+*Applying the three-layer model from [[Code Owns Truth]] to design: what happens when constraints replace mockups.*
 
 ## The Rupture
 
