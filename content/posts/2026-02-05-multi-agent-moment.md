@@ -86,6 +86,69 @@ Both reactions are valid. Neither is wrong.
 
 ---
 
+## The Ecosystem Shakeout
+
+The SaaSpocalypse isn't just about legal and financial software. It's about every tool built on the assumption that humans do the work.
+
+### Ticketing: Jira vs. Linear vs. Beads
+
+The irony: the ticketing systems that track human work are now racing to become platforms for AI work.
+
+**Atlassian** launched Rovo—AI agents that live inside Jira. You can create automation rules using natural language, agents that triage tickets, summarize Confluence pages, and route work. They're treating agents as a feature layer on top of existing workflows.
+
+**Linear** went further. Their "[Linear for Agents](https://linear.app/agents)" positions AI as full workspace members. Agents get assigned to issues. They're added to projects. You @mention them in comments. The human remains "primary assignee" while the agent is a "contributor"—they're preserving accountability while delegating execution.
+
+> "Delegate issues, but not accountability. When an issue gets delegated to an agent, the human user remains the primary assignee, while the agent is added as a contributor."
+> — [Linear](https://linear.app/agents)
+
+**Beads** (Yegge's creation) takes the opposite approach: build the ticketing system *for* agents, not *around* them. Git-backed, designed for session continuity, with the AI literally asking for the features it needed. No legacy assumptions about human workflows.
+
+The question: **Do you adapt existing tools for AI, or build new tools for an AI-first world?**
+
+Linear's hybrid approach might win the transition. Beads might win the destination. Jira's adding AI to a system designed for human bureaucracy—that's a harder pivot.
+
+### Automation: Zapier vs. n8n vs. Claude Cowork
+
+The workflow automation platforms face an existential question: **What happens when AI can just do the thing?**
+
+Zapier's response: lean into it. They shipped [Agent Skills for Claude](https://zapier.com/blog/zapier-mcp-agent-skills/)—MCP integrations that let Claude trigger Zapier automations across 8,000+ apps. They achieved 89% AI adoption internally with 800+ agents deployed. Their strategy: become the glue between AI and everything else.
+
+**n8n** is betting on hybrid workflows—AI for the intelligence, n8n for the plumbing. Claude generates n8n workflows. n8n connects to everything. The platform becomes an orchestration layer that AI writes to.
+
+**Make** (formerly Integromat) is in a similar position, competing on visual workflow building while racing to add AI capabilities.
+
+But here's the threat: **Claude Cowork doesn't need Zapier.** If the AI can directly access APIs, authenticate with services, and execute multi-step workflows autonomously—why route through a middleman?
+
+The automation platforms survive if they become:
+1. **Connectors** — The authentication and API glue that AI uses
+2. **Guardrails** — Human-in-the-loop checkpoints for risky operations
+3. **Monitoring** — Observability for what agents are doing
+
+They don't survive as "no-code" tools for humans who can't code. That market is evaporating.
+
+### Winners and Losers
+
+**Winners:**
+- **Tools that become infrastructure for AI** — Linear (agents as teammates), Zapier (MCP integrations), n8n (workflow orchestration)
+- **Tools that AI can't replace** — Authentication (Okta), observability (Datadog), infrastructure (AWS)
+- **Tools that aggregate judgment** — Platforms where human decisions compound (Figma, Notion when used for strategy)
+
+**Losers:**
+- **Single-function SaaS** — If Claude can do your core function, you're a feature now
+- **"No-code for humans"** — The target user can now just ask AI
+- **Expensive human expertise platforms** — Legal research, financial analysis, anything Cowork plugins demonstrated
+
+**Uncertain:**
+- **GitHub/GitLab** — AI needs version control, but Copilot/Codex compete with them too
+- **Slack/Teams** — Communication platforms might become agent coordination hubs... or get bypassed entirely
+- **Traditional ticketing (Jira)** — Too much legacy, but also too much lock-in to die quickly
+
+The pattern: **tools survive by becoming either infrastructure (AI needs you) or judgment aggregators (humans need you for decisions AI can't make).**
+
+Everything in the middle—tools that automate what AI now does natively—faces compression.
+
+---
+
 ## The Tools (Finally)
 
 Which brings us to the actual announcement.
