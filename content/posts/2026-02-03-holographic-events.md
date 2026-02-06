@@ -1,6 +1,6 @@
 ---
 title: "Self-Healing Systems: The Holographic Event Pattern"
-date: 2026-02-03
+date: 2026-02-03T14:00
 type: post
 schemaVersion: 1
 draft: false

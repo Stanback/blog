@@ -1,7 +1,7 @@
 ---
 title: Code Owns Truth
 description: "A frame for thinking about AI systems: constraints bound mutation, prompts express intent, code is the artifact"
-date: 2026-02-04
+date: 2026-02-04T11:00
 type: post
 schemaVersion: 1
 draft: false

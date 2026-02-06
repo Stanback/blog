@@ -1,6 +1,6 @@
 ---
 title: "Proof, Not Truth: Epistemic Humility in Knowledge Systems"
-date: 2026-02-04
+date: 2026-02-04T13:30
 type: post
 schemaVersion: 1
 draft: false

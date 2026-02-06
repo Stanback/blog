@@ -1,6 +1,6 @@
 ---
 title: "Rapid Generative Prototyping: Design in the Post-Figma Era"
-date: 2026-02-06
+date: 2026-02-06T10:00
 draft: false
 description: "Design is no longer artifact creation—it's constraint architecture. The three-layer model for the agentic economy."
 heroImage: /images/posts/rapid-generative-prototyping-hero.png

@@ -1,6 +1,6 @@
 ---
 title: "Working With AI"
-date: 2026-02-03
+date: 2026-02-03T16:30
 type: note
 schemaVersion: 1
 draft: false

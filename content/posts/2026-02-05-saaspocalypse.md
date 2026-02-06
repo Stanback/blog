@@ -1,7 +1,7 @@
 ---
 title: "The SaaSpocalypse"
 description: "Anthropic wiped $285 billion off software stocks this week. The market is panicking about AI replacing tools. But the real disruption is what it means for the people who build them."
-date: 2026-02-05
+date: 2026-02-05T10:00
 type: post
 schemaVersion: 1
 draft: false

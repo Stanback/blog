@@ -1,7 +1,7 @@
 ---
 title: Building at the Speed of Thought
 description: "What changes when the gap between thinking and shipping collapses"
-date: 2026-02-04
+date: 2026-02-04T08:00
 type: post
 schemaVersion: 1
 draft: true

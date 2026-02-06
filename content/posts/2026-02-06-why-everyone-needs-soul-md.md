@@ -1,7 +1,7 @@
 ---
 title: "Why Everyone Should Have a SOUL.md"
 description: "The case for documented identity in an AI-saturated world. Not just for agents — for humans too."
-date: 2026-02-06
+date: 2026-02-06T15:15
 type: post
 schemaVersion: 1
 draft: true

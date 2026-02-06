@@ -1,6 +1,6 @@
 ---
 title: "Design Physics: When Interfaces Meet Agents"
-date: 2026-02-02
+date: 2026-02-02T10:30
 type: post
 schemaVersion: 1
 draft: false

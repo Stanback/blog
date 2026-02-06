@@ -1,6 +1,6 @@
 ---
 title: "Hello World"
-date: 2026-02-01
+date: 2026-02-01T09:00
 type: post
 schemaVersion: 1
 draft: false

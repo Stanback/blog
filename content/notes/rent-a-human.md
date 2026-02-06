@@ -1,6 +1,6 @@
 ---
 title: "Rent a Human"
-date: 2026-02-06
+date: 2026-02-06T12:00
 draft: false
 description: "A marketplace where AI agents hire humans for physical tasks. The inversion is here."
 heroImage: /images/posts/rent-a-human-hero.png

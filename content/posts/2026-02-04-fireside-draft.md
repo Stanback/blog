@@ -1,6 +1,6 @@
 ---
 title: "The Vehicle and the Destination"
-date: 2026-02-04
+date: 2026-02-04T16:00
 type: post
 schemaVersion: 1
 draft: true
