@@ -92,7 +92,7 @@ This isn't a resume. It's a statement of craft philosophy.
 
 ### Tools I Reach For
 
-**Languages:** TypeScript, JavaScript, Python. Enough Go and Rust to read them.
+**Languages:** TypeScript, JavaScript, Python. Enough Go, Rust, and Zig to read them.
 
 **Frontend:** Static sites → jQuery → ExtJS/Sencha → Ember → React → Vue → SolidJS → and now... back to static sites.
 
