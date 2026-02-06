@@ -4,12 +4,13 @@ description: "Claude's Agent Teams shipped alongside Opus 4.6. How does it compa
 date: 2026-02-05
 type: post
 schemaVersion: 1
-draft: true
+draft: false
 tags:
   - ai
   - systems
   - architecture
   - judgment
+heroImage: /images/posts/multi-agent-moment-hero.png
 tension: "Anthropic productized what the community built. The market panicked. But the existential question isn't about tools—it's about what we're becoming."
 preface: "The Nasdaq just had its worst two-day tumble since April. Software stocks cratered. And somewhere in the noise, Anthropic shipped multi-agent orchestration. This is about more than tools."
 ---
