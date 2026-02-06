@@ -223,4 +223,20 @@ I don't know if Convex "wins." But it's asking the right questions.
 
 ---
 
+## From the Trenches
+
+I've been building a browser automation system that coordinates multiple AI sessions against different platforms. The state management problem is brutal: session state, selector validity, authentication tokens, rate limits—all changing asynchronously while agents work in parallel.
+
+Traditional approach: poll for changes, maintain local state, reconcile conflicts. It's fragile. Stale reads cause retries, retries cause rate limits, rate limits cause cascading failures.
+
+What I actually want: every component subscribes to the state it cares about and reacts when it changes. Agent starts working? UI updates. Selector breaks? Repair pipeline triggers. Token expires? Re-auth flow kicks off. No polling, no reconciliation, no "did I miss an update?"
+
+This is exactly what Convex's model enables. The read-set tracking means you don't declare subscriptions manually—your code implicitly subscribes to whatever it reads. Change propagation is automatic and precise.
+
+The pattern I keep reaching for: **holographic events**—every state change carries enough context to understand and replay it without querying external systems. Convex's document model fits this naturally. Each mutation can include the full context of what happened and why, and reactive queries surface that to whatever needs to know.
+
+Still working through the architecture. But the reactive database model feels like the right primitive for this class of problem.
+
+---
+
 *Still exploring this. These are notes, not conclusions.*
