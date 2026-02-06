@@ -11,16 +11,23 @@ tags:
   - judgment
 heroImage: /images/posts/saaspocalypse-hero.png
 tension: "The market is reacting to the wrong thing. This isn't about tools replacing tools. It's about what happens to us."
-preface: "The Nasdaq just had its worst two-day tumble since April. Software stocks cratered. They're calling it the SaaSpocalypse. But the real story isn't about software—it's about the people who build it."
+preface: "Software stocks just had their worst week since April. The market is probably overreacting. But the anxiety driving the selloff? That's been building for a year. AI is just forcing the conversation into the open."
 ---
 
 ## The $285 Billion Question
 
-On Tuesday, Anthropic's Cowork plugins wiped $285 billion off global software stocks. Thomson Reuters dropped 15.8%. LegalZoom fell nearly 20%. The Nifty IT index crashed 6%. They're calling it the "SaaSpocalypse."
+On Tuesday, Anthropic's Cowork plugins triggered a [$285 billion selloff](https://www.bloomberg.com/news/articles/2026-02-03/legal-software-stocks-plunge-as-anthropic-releases-new-ai-tool) across software, financial services, and legal tech. Thomson Reuters dropped 15.8%. LegalZoom fell nearly 20%. They're calling it the "SaaSpocalypse."
 
-On Thursday, Anthropic followed up with Opus 4.6 and Agent Teams—multi-agent coordination baked directly into Claude Code.
+Is it an overreaction? Probably.
 
-The market is spooked. But the market is reacting to the wrong thing.
+> "Perhaps this is an overreaction, but the threat is real and valuations must account for that."
+> — [Reuters](https://www.reuters.com/business/media-telecom/global-software-stocks-hit-by-anthropic-wake-up-call-ai-disruption-2026-02-04/)
+
+When DeepSeek triggered a similar panic last year, Nvidia lost $600 billion in a day. A year later, the feared disruption never materialized. Markets overcorrect. Fear spreads faster than fundamentals.
+
+But here's what's different this time: **the conversation is finally public.**
+
+The anxiety that builders have felt privately for a year—"wait, can AI actually do my job?"—is now being priced into the market. Wall Street is catching up to what anyone using Claude Code already knew: execution is getting cheaper. Fast.
 
 > "AI doesn't make the tough calls on architecture, compliance, or security. It can't fully understand a company's business logic or the ethical implications of a system. That oversight and judgment still rest with experienced engineers."
 > — [CIO Magazine](https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html), September 2025
