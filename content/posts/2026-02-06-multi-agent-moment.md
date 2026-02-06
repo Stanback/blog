@@ -1,8 +1,8 @@
 ---
 title: "The Multi-Agent Moment"
-description: "A technical breakdown of multi-agent orchestration: Claude's Agent Teams, OpenAI's Agents SDK, Gas Town, Beads, and the community alternatives."
-date: 2026-02-05
-type: note
+description: "A technical breakdown of multi-agent orchestration: Claude's Agent Teams, OpenAI's Agents SDK, Google Antigravity, Gas Town, Beads, and the community alternatives."
+date: 2026-02-06
+type: post
 schemaVersion: 1
 tags:
   - ai
