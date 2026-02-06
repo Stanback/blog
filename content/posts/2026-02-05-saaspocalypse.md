@@ -110,7 +110,7 @@ The ticketing systems that track human work are racing to become platforms for A
 
 **Linear** went further with "[Linear for Agents](https://linear.app/agents)"—AI as full workspace members, assigned to issues, @mentioned in comments. The human remains "primary assignee" while the agent is a "contributor." Accountability preserved, execution delegated.
 
-Meanwhile, new tools like **Beads** skip the adaptation entirely—built *for* agents from scratch, no legacy assumptions about human workflows.
+Meanwhile, new tools like **[Beads](https://github.com/steveyegge/beads)** skip the adaptation entirely—built *for* agents from scratch, no legacy assumptions about human workflows.
 
 The question: **Do you adapt existing tools for AI, or build new tools for an AI-first world?** Linear's hybrid might win the transition. AI-native tools might win the destination. Jira's adding AI to human bureaucracy—that's a harder pivot.
 
