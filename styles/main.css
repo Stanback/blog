@@ -2115,12 +2115,18 @@ article.skills-page h1 {
 	padding-right: var(--space-4);
 }
 
-.sidebar-header {
+.sidebar-header-link {
 	display: flex;
 	gap: var(--space-3);
 	margin-bottom: var(--space-4);
 	padding-bottom: var(--space-4);
 	border-bottom: 1px solid var(--color-border-subtle);
+	text-decoration: none;
+	color: inherit;
+}
+
+.sidebar-header-link:hover {
+	opacity: 0.85;
 }
 
 .sidebar-cover {
@@ -2138,6 +2144,17 @@ article.skills-page h1 {
 	min-width: 0;
 }
 
+.book-title-text {
+	font-weight: 600;
+	color: var(--color-text-primary);
+	font-size: var(--font-size-sm);
+	margin-bottom: var(--space-1);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Legacy - keeping for any old references */
 .book-title-link {
 	font-weight: 600;
 	color: var(--color-text-primary);
@@ -2420,13 +2437,22 @@ article.skills-page h1 {
 		display: none; /* Collapse on mobile - could add toggle later */
 	}
 
-	.sidebar-header {
+	.sidebar-header-link {
 		border-bottom: none;
 		padding-bottom: 0;
 		margin-bottom: 0;
 		display: flex;
-		justify-content: space-between;
+		gap: var(--space-3);
 		align-items: center;
+	}
+
+	.sidebar-cover {
+		width: 56px;
+	}
+
+	.book-title-text {
+		white-space: normal;
+		line-height: 1.3;
 	}
 
 	.chapter-content img {

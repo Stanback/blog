@@ -999,13 +999,13 @@ function renderChapter(chapter: Chapter, book: Book, ctx: BuildContext): string 
     <div class="book-reader ${isChapter0 ? 'is-chapter-0' : ''}">
       <!-- Sidebar: Chapter Navigation -->
       <aside class="book-sidebar">
-        <div class="sidebar-header">
+        <a href="${getBookUrl(book)}" class="sidebar-header-link">
           ${coverImage ? `<img src="${coverImage}" alt="${book.title}" class="sidebar-cover"/>` : ''}
           <div class="sidebar-header-text">
-            <a href="${getBookUrl(book)}" class="book-title-link">${book.title}</a>
+            <span class="book-title-text">${book.title}</span>
             ${!isChapter0 ? `<span class="book-progress">${progress}% complete</span>` : '<span class="book-progress">Synopsis</span>'}
           </div>
-        </div>
+        </a>
         <nav class="chapter-toc">
           <ol>
             ${book.chapters
