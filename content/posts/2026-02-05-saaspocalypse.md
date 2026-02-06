@@ -163,19 +163,11 @@ Everything in the middle—tools that automate what AI now does natively—faces
 
 ### Who's Winning the Vibe Coding Wars?
 
-The AI coding tools have stratified fast. Here's where things stand:
+The AI coding tools have stratified fast. [85% of developers](https://devecosystem-2025.jetbrains.com/artificial-intelligence) now use AI tools regularly, with Claude Code, Cursor, and Codex fighting for dominance. Each is racing to ship multi-agent orchestration—the ability to spawn and coordinate multiple AI agents on a single task.
 
-**Claude Code** is the current favorite for agentic work. [85% of developers](https://devecosystem-2025.jetbrains.com/artificial-intelligence) now use AI tools regularly, and Claude Code gets consistent praise for "just working"—especially for large refactors and multi-file changes. They just shipped [Agent Teams](https://docs.anthropic.com/en/docs/claude-code/agent-teams), letting you spawn specialized sub-agents from one CLI. It's the most integrated experience available.
+The pattern: **Anthropic is winning on integration, Cursor on UX, OpenAI on raw capability, Google on patience.** But every provider wants to be the platform, not just the model. Anthropic [cracked down on third-party harnesses](https://venturebeat.com/technology/anthropic-cracks-down-on-unauthorized-claude-usage-by-third-party-harnesses) last month—the message: flat-rate pricing requires their tools.
 
-**Cursor** leads for IDE integration. Developers who want AI woven into their existing workflow—not a separate terminal—gravitate here. It indexes your whole repo, tracks dependencies, and maintains context across sessions. The UI is polished. The tradeoff: you're in their editor, not yours.
-
-**Codex** has the most powerful underlying model, but the tooling feels less mature. OpenAI published [official multi-agent documentation](https://developers.openai.com/codex/guides/agents-sdk/) using their Agents SDK, but it's more assembly required. Their bet: developers want composable pieces over monolithic tools.
-
-**Gemini CLI** is watching from the sidelines. Google has a [detailed community proposal](https://github.com/google-gemini/gemini-cli/discussions/7637) for multi-agent architecture, but nothing shipped. They're either waiting to see what works, or betting the orchestration layer commoditizes and only the model matters.
-
-The pattern: **Anthropic is winning on integration, Cursor on UX, OpenAI on raw capability, Google on... patience.**
-
-But here's the lock-in risk: Anthropic [cracked down on third-party harnesses](https://venturebeat.com/technology/anthropic-cracks-down-on-unauthorized-claude-usage-by-third-party-harnesses) last month—tools that let you use Claude subscriptions through external interfaces. The message: flat-rate pricing requires their tools. Third-party automation gets API pricing, 5-10x more expensive for heavy use. Every provider wants to be the platform, not just the model.
+For the full breakdown of what's shipping and how to choose, see [[The Multi-Agent Moment]].
 
 ### The Subsidy Question
 
