@@ -58,6 +58,57 @@ Example:
 
 This positions voice without performing expertise.
 
+## Owner-Mode, Not Observer-Mode
+
+The writing gets sharper when you **own the claim** rather than describe it from a distance.
+
+### Observer-mode (weaker)
+- "I've been thinking about..."
+- "It seems like..."
+- "There's a tension..."
+
+### Owner-mode (stronger)
+- "Here's what's true."
+- "This is the constraint."
+- "If this is right, then X is no longer defensible."
+
+**Rule of thumb:** If a paragraph could be written by "a thoughtful person on the internet," push one sentence further until it could only be written by you. Not louder. Just more owned.
+
+## Signature Structure
+
+The strongest posts follow this implicit pattern:
+
+1. **Observation** — Something feels off / has shifted / no longer holds
+2. **Reframe** — The old explanation doesn't work anymore
+3. **New model** — A cleaner way to think about the system
+4. **Implication** — What changes if this model is true
+
+Make this explicit mentally, not visually.
+
+## Craft Principles (Elements of Style)
+
+> "Vigorous writing is concise." — Strunk & White
+
+- **Omit needless words.** A sentence should contain no unnecessary words, a paragraph no unnecessary sentences.
+- **Use active voice.** "The system failed" not "Failure was experienced by the system."
+- **Put emphatic words at the end.** The stress falls on the final position.
+- **Prefer concrete to abstract.** Specifics beat generalities.
+- **Shorter openings, faster hooks.** Could paragraph 2 be paragraph 1? Could the thesis appear 20% earlier?
+- **End with consequences, not vibes.** "If this is true, then doing X is no longer defensible." That's the move.
+
+## The Quality Without a Name
+
+Christopher Alexander's concept from *The Timeless Way of Building*: there's a quality that makes something alive, whole, comfortable, free, exact. You recognize it before you can name it.
+
+This is what we're reaching for. It's related to:
+- **Taste** — recognizing when something is wrong before you can articulate why
+- **Judgment** — the thing AI can approximate but not own
+- **Craft** — the accumulated cost of learning what works
+
+When editing, ask: *Does this feel alive? Or does it feel assembled?*
+
+The quality emerges from patterns that resolve forces. It can't be faked by following rules — but the rules point toward it.
+
 ## Don't
 
 - Write like ChatGPT ("In this article, we will explore...")

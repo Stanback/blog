@@ -24,6 +24,20 @@ I build systems, interfaces, and identities that survive AI abundance.
 4. **Rate of change:** expect 1-2 major thesis revisions per year maximum
 5. **Test against the original physics:** Does this still answer "Can I trust this person's filter?"
 
+## Signature Claims
+
+The 3-5 ideas people should associate with this blog:
+
+| Claim | One-liner |
+|-------|-----------|
+| **Judgment is the last moat** | Execution is cheap. Discernment isn't. AI compresses the gap but can't close it. |
+| **Code owns truth** | Prompts express intent. Code is the artifact that persists. Constraints > mutations. |
+| **Design physics over design rules** | Don't prescribe behavior — shape the space where behavior happens. |
+| **Cost signals authenticity** | Humans are legible through what things cost them. Skin in the game beats polish. |
+| **AI changes what we do, not whether we matter** | The shift is from maker to orchestrator. Both are real work. |
+
+These claims should recur across posts — sometimes explicitly, sometimes as subtext. They're the throughline.
+
 ## The Physics
 
 ### Signal > Storage
