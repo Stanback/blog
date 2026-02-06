@@ -249,6 +249,36 @@ Comments are automatically stripped at build time:
 
 ---
 
+## Promoting Notes to Posts
+
+When a note graduates to a post:
+
+### 1. Move the file
+```bash
+mv content/notes/slug.md content/posts/$(date +%Y-%m-%d)-slug.md
+```
+
+### 2. Update frontmatter
+```yaml
+type: post      # was: note
+date: 2026-02-06  # update to publish date
+```
+
+### 3. Add redirect (preserve SEO)
+Add to `public/_redirects`:
+```
+/notes/slug  /posts/YYYY/MM/DD/slug  301
+```
+
+### 4. Commit both changes together
+```bash
+git add -A && git commit -m "promote: Title from note to post"
+```
+
+**Why redirects matter:** Even for young content, building the habit prevents future headaches when a popular note gets promoted after accumulating backlinks.
+
+---
+
 ## Quick Commands
 
 ```bash
