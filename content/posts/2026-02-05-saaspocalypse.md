@@ -9,7 +9,7 @@ tags:
   - ai
   - systems
   - judgment
-heroImage: /images/posts/multi-agent-moment-hero.png
+heroImage: /images/posts/saaspocalypse-hero.png
 tension: "The market is reacting to the wrong thing. This isn't about tools replacing tools. It's about what happens to us."
 preface: "The Nasdaq just had its worst two-day tumble since April. Software stocks cratered. They're calling it the SaaSpocalypse. But the real story isn't about software—it's about the people who build it."
 ---
