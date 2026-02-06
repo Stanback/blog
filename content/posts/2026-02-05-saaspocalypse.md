@@ -197,6 +197,42 @@ The honest answer: **nobody knows what sustainable AI pricing looks like yet.** 
 
 ---
 
+## What Becomes Valuable
+
+Here's a frame I keep coming back to: **SaaS is paying for opinions.**
+
+When you buy software, you're not just buying features. You're buying someone else's opinion about how work should flow. Their assumptions about what steps come first, what fields matter, what the happy path looks like. Sometimes those opinions are useful. Sometimes they're constraints that don't fit how you actually work.
+
+AI dissolves those opinions. Instead of adapting to Jira's workflow or Salesforce's data model, you describe what you need and the system adapts to you. The opinionated software layer becomes optional.
+
+So what survives?
+
+**Models** — The reasoning engines themselves. Anthropic, OpenAI, Google. They're the new primitives. Everything else is built on top.
+
+**Data** — Not data "sellers" exactly, but **data sources**. The AI labs are paying real money: Reddit pulled [$203 million in data licensing](https://www.allmo.ai/articles/unbundling-ai-a-list-of-public-training-data-deals-october-2025), News Corp got ~$250 million over five years, OpenAI offers $1-5M per corpus. Shutterstock is pivoting from stock photos to "AI services for model training." The value shifted from selling content to humans to licensing it to machines.
+
+**Infrastructure** — AWS, GCP, Azure, Cloudflare. The compute layer. IaaS doesn't care what runs on it. If anything, AI makes infrastructure *more* valuable—it's compute-hungry and the demand is only growing.
+
+The middle layer—SaaS tools that wrap workflows around human workers—that's what's compressing.
+
+### The Data Paradox
+
+Here's the tension: AI labs are paying unprecedented amounts for training data. But what happens when sources start locking it down?
+
+Reddit went from free API to $60M/year licensing deals. Stack Overflow made their data exclusive to OpenAI, and [users deleted their answers in protest](https://techcrunch.com/2024/05/16/openai-inks-deal-to-train-ai-on-reddit-data/). News sites are blocking AI crawlers. Getty sued for copyright infringement.
+
+The implications cut both ways:
+
+**If data stays open:** AI gets smarter, models improve, the winners are whoever has the best reasoning engine. Data becomes a commodity.
+
+**If data locks down:** We get balkanized AI. Models trained on different corpuses. Quality depends on who cut the best licensing deals. Data becomes a moat.
+
+The honest answer: we don't know which world we're heading toward. The legal frameworks haven't caught up. The economic incentives point toward closure. But the technical reality is that models trained on open data are already out there, and you can't un-train them.
+
+What's clear: **the companies that control valuable data sources—Reddit, Stack Overflow, news archives, scientific journals—have leverage they didn't have before.** Whether they use it to extract rent or build walls, the dynamics are shifting.
+
+---
+
 ## The Bigger Picture
 
 The $285 billion selloff isn't about Cowork or Agent Teams or any specific tool. It's about the market finally internalizing what builders have known for a year: **AI changes the economics of knowledge work.**
