@@ -152,6 +152,8 @@ The insight: agents have amnesia. Every session is 50 First Dates. Markdown plan
 
 Beads gives work items addressable IDs, priorities, dependencies, audit trails. It stores everything in Git. Agents already know Git. The AI literally asked for this when Yegge asked what it wanted.
 
+![Land the Plane — the pattern for agent memory persistence](/images/posts/land-the-plane.png)
+
 > "Claude said 'you've given me memory—I literally couldn't remember anything before, now I can.' And I'm like, okay, that sounds good."
 > — [Steve Yegge](https://paddo.dev/blog/beads-memory-for-coding-agents/)
 
