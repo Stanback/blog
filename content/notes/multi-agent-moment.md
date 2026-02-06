@@ -187,7 +187,9 @@ Tasks persist in `~/.claude/tasks/` and survive context compaction. Set `CLAUDE_
 
 The community was building Ralph Wiggum loops, external plan files, and stop hook hacks. Anthropic made the plumbing native. But "native" means "Anthropic's opinions baked in" and "only works with Claude."
 
-For most users, Tasks is enough. For power users running multi-provider swarms or needing Git-native everything, Beads remains the answer.
+**The hybrid play:** Beads isn't just for Gas Town. Run `bd setup claude` and Beads integrates directly with Claude Code. There's even a [beads-orchestration](https://github.com/AvivK5498/beads-orchestration) skill that combines Agent Teams with Beads—native multi-agent coordination with Git-backed persistence. Best of both worlds.
+
+For most users, Tasks is enough. For power users wanting Git-native persistence with native orchestration, Beads + Agent Teams is the play.
 
 ---
 
