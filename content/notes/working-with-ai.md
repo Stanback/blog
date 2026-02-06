@@ -7,6 +7,7 @@ draft: false
 description: "How I think with AI, where I don't trust it, and what co-authorship means."
 tags:
   - ai
+heroImage: /images/posts/working-with-ai-hero.png
 ---
 
 I use AI to build and write. Not sometimes—daily. Claude, ChatGPT, local models when they make sense. It's part of my workflow the same way Git or VS Code is.

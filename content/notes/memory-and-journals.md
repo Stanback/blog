@@ -3,9 +3,12 @@ title: "Memory and Journals"
 description: "The parallel between AI agent memory systems and human journaling practices"
 date: 2026-02-05
 updated: 2026-02-04
+type: note
+schemaVersion: 1
 tags:
   - ai
   - mental-models
+heroImage: /images/posts/memory-journals-hero.png
 ---
 
 # Memory and Journals
