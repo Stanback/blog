@@ -119,11 +119,20 @@ Proofs can still be wrong. But when they are, at least you can trace why. That's
 
 This is where the framing pays off.
 
-If your graph stores assertions and calls them true—that's naive truth. Epistemically reckless. Don't do it.
+The argument above is right about the danger—calling something "truth" when you mean "assertion with vibes" is epistemically reckless. But truth was never a single thing. Decompose it across domains:
+
+- **In science:** falsifiable theory that survives testing
+- **In law:** evidence beyond reasonable doubt
+- **In journalism:** multiple sources, verified
+- **In medicine:** peer-reviewed, replicated findings
+
+Truth was always *truth-according-to-some-methodology*. The methodology was just implicit—which is how "truth" got sloppy. People started claiming it without showing their work.
+
+If your graph stores assertions and calls them true—that's naive truth. Don't do it.
 
 If your graph stores evidence with confidence levels, decays stale claims, and revises when contradicted—that's scientific truth. Provisional knowledge. *True until proven otherwise.*
 
-Call it a Truth Graph. But mean it the scientific way.
+Call it a Truth Graph. But mean it the rigorous way.
 
 Truth in 2026 isn't a claim of certainty. It's a status that evidence earns—and can lose. The graph is where assertions go to become true, stay true, or die when better data arrives.
 
