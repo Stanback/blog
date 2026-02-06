@@ -205,6 +205,50 @@ The `scripts/generate-image-prompt.ts` script:
 
 ---
 
+## Infographic Generation (2x2 Diagrams)
+
+The `scripts/generate-infographic.ts` script creates AI-rendered infographics:
+
+```bash
+# Use a preset
+source ~/.config/shell/secrets.zsh
+bun scripts/generate-infographic.ts --preset multi-agent
+
+# Custom infographic
+bun scripts/generate-infographic.ts \
+  --title "My Diagram" \
+  --x-axis "Left Label,Right Label" \
+  --y-axis "Bottom Label,Top Label" \
+  --items "Item 1:0.2:0.8,Item 2:0.7:0.3" \
+  --output static/images/posts/diagram.png
+```
+
+**Available presets**: `multi-agent`
+
+**Output**: PNG to specified path (default: `static/images/posts/`)
+
+**Known limitation**: AI image generation struggles with precise text placement in diagrams. For accurate quadrant positioning, may need a hybrid approach:
+- AI generates the background style/texture
+- Programmatic overlay adds accurate text labels
+
+---
+
+## Embedding Image Prompts
+
+Use HTML comments to store original prompts for reproducibility:
+
+```markdown
+<!-- IMAGE_PROMPT: Vintage technical illustration of interconnected gears... -->
+![Multi-agent landscape](/images/posts/multi-agent-hero.png)
+```
+
+Comments are automatically stripped at build time:
+- Won't appear in rendered output
+- Don't affect word count or reading time
+- Great for documenting the creative process
+
+---
+
 ## Quick Commands
 
 ```bash
