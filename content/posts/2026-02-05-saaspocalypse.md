@@ -102,22 +102,17 @@ Both reactions are valid. Neither is wrong.
 
 The SaaSpocalypse isn't just about legal and financial software. It's about every tool built on the assumption that humans do the work.
 
-### Ticketing: Jira vs. Linear vs. Beads
+### Ticketing: Adapt or Replace?
 
-The irony: the ticketing systems that track human work are now racing to become platforms for AI work.
+The ticketing systems that track human work are racing to become platforms for AI work.
 
-**Atlassian** launched Rovo—AI agents that live inside Jira. You can create automation rules using natural language, agents that triage tickets, summarize Confluence pages, and route work. They're treating agents as a feature layer on top of existing workflows.
+**Atlassian** launched Rovo—AI agents inside Jira that triage tickets and route work. They're treating agents as a feature layer on top of existing workflows.
 
-**Linear** went further. Their "[Linear for Agents](https://linear.app/agents)" positions AI as full workspace members. Agents get assigned to issues. They're added to projects. You @mention them in comments. The human remains "primary assignee" while the agent is a "contributor"—they're preserving accountability while delegating execution.
+**Linear** went further with "[Linear for Agents](https://linear.app/agents)"—AI as full workspace members, assigned to issues, @mentioned in comments. The human remains "primary assignee" while the agent is a "contributor." Accountability preserved, execution delegated.
 
-> "Delegate issues, but not accountability. When an issue gets delegated to an agent, the human user remains the primary assignee, while the agent is added as a contributor."
-> — [Linear](https://linear.app/agents)
+Meanwhile, new tools like **Beads** skip the adaptation entirely—built *for* agents from scratch, no legacy assumptions about human workflows.
 
-**Beads** (Yegge's creation) takes the opposite approach: build the ticketing system *for* agents, not *around* them. Git-backed, designed for session continuity, with the AI literally asking for the features it needed. No legacy assumptions about human workflows.
-
-The question: **Do you adapt existing tools for AI, or build new tools for an AI-first world?**
-
-Linear's hybrid approach might win the transition. Beads might win the destination. Jira's adding AI to a system designed for human bureaucracy—that's a harder pivot.
+The question: **Do you adapt existing tools for AI, or build new tools for an AI-first world?** Linear's hybrid might win the transition. AI-native tools might win the destination. Jira's adding AI to human bureaucracy—that's a harder pivot.
 
 ### Automation: Zapier vs. n8n vs. Claude Cowork
 
