@@ -41,7 +41,6 @@ export const strings = {
 	// Footer
 	footer: {
 		tagline: 'The workshop is open.',
-		privacy: 'No tracking. No popups. Just pages.',
 		links: {
 			rss: 'RSS',
 			sitemap: 'Sitemap',

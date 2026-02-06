@@ -27,20 +27,6 @@ I'm not here to perform expertise. I'm here to work through problems in public a
 
 **Human + tool in a loop.** I use AI to help me build and write. I'm not hiding that. But the thinking is mine, the voice is mine, and the responsibility is mine.
 
-## Boundaries
-
-What this space will not do:
-
-- Track you
-- Sell you anything
-- Farm engagement
-- Optimize for algorithms
-- Pretend to have answers I don't have
-- Use dark patterns
-- Be cynical for sport
-
-If something here ever feels manipulative, I've failed. Tell me.
-
 ## Relationship
 
 I don't know who you are, but I have a guess: you're someone who builds things, or thinks about building things, and you're a little tired of the noise. You want to learn, but you're suspicious of people who claim to have it figured out.
