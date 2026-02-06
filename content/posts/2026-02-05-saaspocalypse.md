@@ -173,6 +173,24 @@ The pattern: **every provider wants to be the platform, not just the model.** An
 
 For builders, this creates a choice: **optimize for one provider's vision, or build portable abstractions?** Native Agent Teams are convenient. External orchestrators like [claude-flow](https://github.com/ruvnet/claude-flow) or [Gas Town](https://github.com/AstroMavericks/gas-town) are portable. The "right" answer depends on how much you trust any single provider to remain the best option.
 
+### The Subsidy Question
+
+Here's the uncomfortable math: **current AI pricing is subsidized by investor capital, not sustainable economics.**
+
+OpenAI spent [$22 billion in 2025 against $13 billion in revenue](https://fortune.com/2025/11/12/openai-cash-burn-rate-annual-losses-2028-profitable-2030-financial-documents/)—$1.69 for every dollar earned. They project $74 billion in operating losses in 2028 alone, with cumulative cash burn reaching $115 billion through 2029. The bet: hit $200 billion in revenue by 2030 and turn profitable then.
+
+Anthropic is more disciplined. Their cash burn is projected to drop to one-third of revenue in 2026 and just 9% by 2027, with break-even expected in 2028. They're avoiding expensive video and image generation, focusing on corporate customers (80% of revenue).
+
+What does this mean for builders?
+
+**The current pricing is artificially cheap.** API costs reflect what investors are willing to subsidize, not what the compute actually costs. When the subsidy ends—through profitability pressure, funding crunches, or market corrections—prices go up.
+
+**Lock-in gets more expensive over time.** If you build deep dependencies on one provider's cheap API pricing, you're exposed when they need to raise prices. Anthropic's harness crackdown is a preview: subscription arbitrage disappeared overnight.
+
+**The endgame is unclear.** OpenAI is betting on dominance—spend everything to win the market, then monetize. Anthropic is betting on efficiency—reach profitability faster with less risk. Google is betting on integration—bundle AI into existing products. All three could work. All three could fail.
+
+The honest answer: **nobody knows what sustainable AI pricing looks like yet.** We're all building on shifting sand. The companies burning billions are guessing too.
+
 ---
 
 ## The Bigger Picture
