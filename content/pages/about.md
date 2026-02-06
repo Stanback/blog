@@ -10,7 +10,7 @@ description: "Bri Stanback — builder, parent, person trying to make sense of t
 
 I'm Bri Stanback. I build things for the internet.
 
-By day, I work at [Demand.io](https://demand.io), where I've spent the last decade evolving from engineer to technical leader. Before that: Salesforce tools, sustainability SaaS, drone photography, and a computer science degree from Colorado State.
+By day, I work at [Demand.io](https://demand.io), where I've been building for a decade. Still writing code—by choice. Still surprised by what I don't know. Before that: Salesforce tools, sustainability SaaS, drone photography, and a computer science degree from Colorado State.
 
 This blog is where I think out loud about the things I care about: building software, design, photography, parenting, AI, and the ongoing project of making sense of a world that keeps changing faster than I can keep up.
 
