@@ -1,7 +1,7 @@
 ---
 title: "Rapid Generative Prototyping: Design in the Post-Figma Era"
 date: 2026-02-06
-draft: true
+draft: false
 description: "Design is no longer artifact creation—it's constraint architecture. The three-layer model for the agentic economy."
 tags:
   - design
@@ -9,7 +9,7 @@ tags:
   - architecture
 ---
 
-*This expands on the three-layer model introduced in [Code Owns Truth](/posts/code-owns-truth/).*
+*Applying the [three-layer model](/posts/code-owns-truth/) to design: what happens when constraints replace mockups.*
 
 ## The Rupture
 
