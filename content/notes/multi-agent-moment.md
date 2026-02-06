@@ -8,7 +8,7 @@ tags:
   - ai
   - engineering
   - tools
-heroImage: /images/posts/multi-agent-moment-hero.png
+heroImage: /images/posts/multi-agent-imagen4-test.png
 tension: "Everyone's shipping multi-agent. Nobody agrees on what that means."
 preface: "[[The SaaSpocalypse]] covered the existential weight. This is the tools companion—what's actually available for multi-agent orchestration, and how to choose."
 ---
