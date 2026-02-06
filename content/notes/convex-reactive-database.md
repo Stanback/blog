@@ -73,17 +73,18 @@ Philosophy: prototype without a schema, add one when you've solidified your plan
 
 Here's what happens when you call `useQuery()` in React:
 
-1. **Client subscribes** via WebSocket to a query function
-2. **Function runs** in the database, reading whatever tables it needs
-3. **Convex tracks the "read set"** — every document the function touched
-4. **Result returns** to client
-5. **Mutation happens** somewhere (any client, any function)
-6. **Convex checks**: did this mutation touch any document in any active query's read set?
-7. **If yes**: rerun the query, push new result to all subscribed clients
+1. **Client opens WebSocket** — a persistent connection to Convex (not HTTP request/response)
+2. **Client subscribes** to a query function over that connection
+3. **Function runs** in the database, reading whatever tables it needs
+4. **Convex tracks the "read set"** — every document the function touched
+5. **Result streams back** over the WebSocket
+6. **Mutation happens** somewhere (any client, any function)
+7. **Convex checks**: did this mutation touch any document in any active query's read set?
+8. **If yes**: rerun the query, push new result over the WebSocket to all subscribers
 
-This isn't polling. It's not "listen to a table." It's tracking the actual data dependencies of your query function and invalidating precisely when needed. All clients see the same consistent snapshot simultaneously.
+The WebSocket is just the transport—the persistent pipe that lets Convex push updates without clients polling. The magic is the read-set tracking: Convex knows *exactly* which queries care about which data, so it only reruns what's needed.
 
-![Reactive Subscriptions — the read set tracking flow](/images/posts/convex-reactivity-diagram.png)
+![Reactive data flow — one change propagates to all connected clients](/images/posts/convex-reactivity-diagram.png)
 
 ### External World: HTTP Actions
 
