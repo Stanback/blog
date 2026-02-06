@@ -22,6 +22,22 @@ Some people find this concerning. Others assume it means the work isn't mine. Bo
 
 **For research:** summarizing documentation, finding edge cases, explaining concepts I'm rusty on. It's a better search engine for technical context.
 
+## The Creative Director Shift
+
+Here's the part that surprised me: **this is actually liberating.**
+
+I used to think the shift from "maker" to "orchestrator" would feel like a loss. Less hands-on. Less craft. More... management.
+
+It doesn't feel that way. It feels like being promoted to creative director of your own work.
+
+You know how a director doesn't operate the camera, but the film is still *theirs*? They set the vision, make the calls, decide what works. The craft is in the judgment, not the execution.
+
+That's what working with AI feels like now. I'm not writing less—I'm deciding more. What to build, what's good enough, what needs to be scrapped, what the thing is actually *about*. The taste layer. The strategy layer.
+
+And honestly? I like that work more than I liked grinding through boilerplate. I spent a decade building the judgment to make those calls. Now I actually get to use it, instead of burning cycles on implementation details.
+
+Not everyone will feel this way. Some people love the execution—the craft of the code itself, the satisfaction of a clean implementation. That's valid. But for me, the shift to orchestration has been a relief, not a compromise.
+
 ## Where I Don't Trust It
 
 **Judgment.** AI doesn't know when something is a bad idea. It will confidently give you the wrong answer if that's what the pattern suggests.
