@@ -636,7 +636,7 @@ footer .separator {
 .featured-card-image {
 	border-radius: var(--radius-sm);
 	overflow: hidden;
-	aspect-ratio: 3/2;
+	aspect-ratio: 3 / 2;
 }
 
 .featured-card-image img {
