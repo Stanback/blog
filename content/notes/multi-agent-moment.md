@@ -136,6 +136,8 @@ This is the distinction that matters:
 
 **Operational Roles** — Tools that coordinate work, not process. Mayor orchestrates. Workers execute in parallel. External state management. This is Gas Town's approach, and now Agent Teams'.
 
+Cursor's research confirms this. They tried flat self-coordination first—agents with equal status using a shared file. It failed: agents held locks too long, became risk-averse, avoided hard problems. "No agent took responsibility for hard problems or end-to-end implementation." What worked: [planners + workers](https://cursor.com/blog/scaling-agents). Planners explore and create tasks (recursively). Workers grind on assigned task until done, don't coordinate with each other. A judge agent decides whether to continue. This scaled to building a [browser from scratch](https://cursor.com/blog/self-driving-codebases)—1M lines of code, thousands of commits.
+
 The SDLC simulators are solving the wrong problem. They recreate human coordination friction in software.
 
 Agent Teams and Gas Town both take the operational approach. The difference is where the coordination logic lives: inside the Claude Code binary (native) or outside (external).
@@ -221,6 +223,8 @@ For most developers, opaque is fine. Ship faster, don't care how.
 
 For organizations running agents at scale, transparency matters. When something breaks at $100/hour, you need to understand why.
 
+**Model choice matters for long-running work.** Cursor found "GPT-5.2 models are much better at extended autonomous work: following instructions, keeping focus, avoiding drift." Opus 4.5 "tends to stop earlier and take shortcuts when convenient." Different models for different roles—they use the best model per task, not one universal model.
+
 ---
 
 ## Where We Land
@@ -228,6 +232,8 @@ For organizations running agents at scale, transparency matters. When something 
 If you're not comfortable with 3-5 parallel agents and some chaos, don't use any of this. Single-agent Claude Code with Plan Mode handles most work. Add complexity when you hit real limits, not theoretical ones.
 
 **Parallelism has a ceiling.** When there are many independent tests, parallelization is trivial—each agent picks a different failing test. But monolithic tasks break down. Carlini's agents all hit the same Linux kernel bug, fixed it, then overwrote each other's changes. Multi-agent shines on decomposable work. For one giant task, you're back to single-threaded.
+
+**Less structure often wins.** Cursor initially built an "integrator" role for quality control and conflict resolution—it created more bottlenecks than it solved. Workers could handle conflicts themselves. "The right amount of structure is somewhere in the middle. Too little structure and agents conflict, duplicate work, and drift. Too much structure creates fragility."
 
 If you want to experiment with multi-agent:
 
