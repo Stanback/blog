@@ -22,9 +22,11 @@ Design in 2026 is still running on print-era physics. The fundamental assumption
 
 This model is existentially broken. Not failing—*broken*. Here's why:
 
-**AI can now generate "good enough" visual design in seconds.** Tools like v0.dev, Cursor, and Figma Make have commoditized the artifact. The mockup is no longer scarce. The handoff is no longer necessary. The pixel-pushing throughput that defined a designer's value? Machines do it faster.
+**AI can now generate "good enough" visual design in seconds.** Tools like v0.dev, Lovable, Cursor, and Figma Make have commoditized the artifact. The mockup is no longer scarce. The handoff is no longer necessary. The pixel-pushing throughput that defined a designer's value? Machines do it faster.
 
 So what's left?
+
+**A caveat before we go further:** This isn't the whole story. Figma's Code Connect, Dev Mode, and Make are evolving fast. The generated code is still "guidance, not production" — but the gap is closing. And not every designer is running from this shift. At Adobe MAX 2024, attendees complained the conference felt like an "AI conference, not a design conference." But plenty of designers have embraced these tools as *augmentation*, not replacement. The best ones I've worked with use AI to explore more options faster, then apply judgment to curate. More creativity, not less. The real question isn't whether AI replaces designers — it's what design *becomes* when the artifact is no longer the bottleneck.
 
 ---
 
