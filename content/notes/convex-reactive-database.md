@@ -264,8 +264,12 @@ This is exactly what Convex's model enables. The read-set tracking means you don
 
 The pattern I keep reaching for: **holographic events**—every state change carries enough context to understand and replay it without querying external systems. Convex's document model fits this naturally. Each mutation can include the full context of what happened and why, and reactive queries surface that to whatever needs to know.
 
+(Large payloads—screenshots, recordings, logs—still go in object storage. The document carries metadata and references, not the blob itself. Convex has built-in file storage for this.)
+
 Still working through the architecture. But the reactive database model feels like the right primitive for this class of problem.
 
 ---
 
 *Still exploring this. These are notes, not conclusions.*
+
+*Future rabbit hole: how does this compare to the analytics layer—BigQuery, Iceberg, Parquet, Redshift, Snowflake? OLTP vs OLAP is a different axis entirely. Maybe another post.*
