@@ -184,6 +184,9 @@ function createWikilinkExtension(): MarkedExtension {
 // ============================================================================
 
 export async function parseMarkdown(content: string): Promise<ParseResult> {
+	// Strip HTML comments (allows hidden notes/prompts in markdown source)
+	const strippedContent = content.replace(/<!--[\s\S]*?-->/g, '');
+
 	const shiki = await getShikiHighlighter();
 
 	const marked = new Marked();
@@ -240,12 +243,12 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 	// Add wikilink extension
 	marked.use(createWikilinkExtension());
 
-	// Calculate word count before parsing (from raw markdown)
-	const wordCount = countWords(content);
+	// Calculate word count before parsing (from stripped markdown - comments don't count)
+	const wordCount = countWords(strippedContent);
 	const readingTime = calculateReadingTime(wordCount);
 
-	// Parse markdown to HTML
-	const html = await marked.parse(content);
+	// Parse markdown to HTML (stripped of comments)
+	const html = await marked.parse(strippedContent);
 
 	return {
 		html,
