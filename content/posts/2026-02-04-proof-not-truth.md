@@ -48,6 +48,16 @@ Consider a product recommendation system:
 |-------|---------------|---------------|
 | "Best vacuum for pet hair" | This IS the best | Based on 47 reviews, 3 teardown videos, and 12k purchase signals, this has 0.84 confidence for the "best for pet hair" claim |
 
+This is about combining qualitative and quantitative signals into a defensible confidence score.
+
+Now consider a promo code system:
+
+| Claim | Truth Framing | Proof Framing |
+|-------|---------------|---------------|
+| "SAVE20 works at checkout" | This code works | Verified 2 hours ago, 847 successful applies this week, 0.91 confidence—but decaying (last failure signal: 23 min ago) |
+
+This is about **ephemerality**. A promo code is "true" until it isn't. The truth has a half-life. Yesterday's working code is today's expired one. Proof framing makes the time-boundedness explicit—confidence decays, signals refresh, and the system knows when it's getting stale.
+
 The proof framing is:
 - **Honest about uncertainty** (confidence scores)
 - **Traceable** (evidence sources)
