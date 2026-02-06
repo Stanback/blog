@@ -140,7 +140,7 @@ The SDLC simulators are solving the wrong problem. They recreate human coordinat
 
 Agent Teams and Gas Town both take the operational approach. The difference is where the coordination logic lives: inside the Claude Code binary (native) or outside (external).
 
-![Multi-agent landscape: native vs external, transparent vs opaque](/images/posts/multi-agent-imagen4-test.png)
+![Multi-agent landscape: native vs external, transparent vs opaque](/images/posts/multi-agent-infographic.png)
 
 ---
 
