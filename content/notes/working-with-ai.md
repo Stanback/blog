@@ -72,6 +72,30 @@ If the answer is no, it doesn't go out. Doesn't matter if AI wrote it, I wrote i
 
 The tool is irrelevant. The accountability isn't.
 
+## What's Actually Valuable Now
+
+Here's the deeper question: if AI can generate infinite content, why write at all?
+
+Not for **information**. AI can synthesize that on demand. Regurgitating or aggregating existing knowledge is now table stakes.
+
+For **testimony**. Someone with a name, stakes, and history saying "I believe this, and here's why."
+
+What AI commoditizes:
+- Information synthesis
+- How-to content  
+- Basic analysis
+- Consensus views
+
+What a blog still provides:
+- **Situated perspective** — my view from *somewhere*, not generic insight
+- **Stakes** — real consequences if I'm wrong
+- **First-person experience** — "I tried this, here's what happened"
+- **Provocation** — positions AI won't take
+
+The litmus test isn't "did AI touch this?" It's "could AI have generated this given the same prompt?" If yes, I haven't pushed far enough. Not louder—more *owned*, more *situated*, more *costly*.
+
+Using AI doesn't undermine that. It just means I have to be clearer about what I'm actually adding.
+
 ## Why This Matters
 
 We're in a weird moment where using AI is either a secret or a flex. Neither is useful.
