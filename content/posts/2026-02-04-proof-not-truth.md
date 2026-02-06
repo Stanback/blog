@@ -12,7 +12,7 @@ tags:
   - knowledge
 description: "Why knowledge systems should show their work, not just claim truth. And why 'truth' might still be the right word—if we understand what truth means now."
 heroImage: /images/posts/proof-not-truth-hero.png
-tension: "Truth implies certainty. But the best we can do is justified belief with receipts."
+tension: "Naive truth claims certainty. Scientific truth earns it—provisionally, with receipts."
 questions:
   - "What's the difference between claiming truth and claiming proof?"
   - "How do you design systems that are honest about uncertainty?"
@@ -24,17 +24,23 @@ coAuthors:
 
 # Proof, Not Truth: Epistemic Humility in Knowledge Systems
 
-Stop calling it a Truth Graph. Call it a **Proof Graph**.
+Before you call it a Truth Graph, ask: **what kind of truth?**
 
-"Truth" implies you've figured out what's real and stored it. You haven't. What you're actually storing is evidence with confidence levels—a structure where every claim carries its justification.
+There's naive truth—the claim that you've figured out what's real and stored it. Certain. Binary. Permanent.
 
-The difference isn't semantic. It changes how engineers think about the system, how users calibrate trust, and what happens when you're wrong.
+Then there's scientific truth—provisional knowledge, verified against evidence, subject to revision when better data arrives. *True until proven otherwise.*
+
+Most "truth" systems claim the first kind while operating like neither. What you're actually storing is evidence with confidence levels—a structure where every claim carries its justification. That's not naive truth. But it's not nothing, either.
+
+The framing matters. It changes how engineers think about the system, how users calibrate trust, and what happens when you're wrong.
 
 ## The Difference
 
-**Truth** is binary. Something is true or it isn't. Claiming truth means claiming certainty.
+**Naive truth** is binary. Something is true or it isn't. Claiming it means claiming certainty.
 
 **Proof** is a chain. It says: here's the claim, here's the evidence, here's the reasoning, here's my confidence level. It shows the work.
+
+**Scientific truth** is proof that's currently holding. The best-verified model given available evidence—provisional, revisable, alive.
 
 Consider a product recommendation system:
 
@@ -109,34 +115,20 @@ Proofs can still be wrong. But when they are, at least you can trace why. That's
 
 ---
 
-## Postscript: Truth, Redefined
+## So What Do You Call It?
 
-Here's where I land after sitting with this longer.
+This is where the framing pays off.
 
-The argument above is right about the *danger*—calling something "truth" when you mean "assertion with vibes" is epistemically reckless. But maybe the answer isn't to abandon the word. Maybe it's to reclaim it.
+If your graph stores assertions and calls them true—that's naive truth. Epistemically reckless. Don't do it.
 
-Decompose "truth" from first principles. What did it ever mean?
+If your graph stores evidence with confidence levels, decays stale claims, and revises when contradicted—that's scientific truth. Provisional knowledge. *True until proven otherwise.*
 
-- In antiquity: correspondence with reality
-- In religion: divine revelation
-- In science: falsifiable theory that survives testing
-- In law: evidence beyond reasonable doubt
-- In journalism: multiple sources, verified
+Call it a Truth Graph. But mean it the scientific way.
 
-Truth was never a single thing. It was always *truth-according-to-some-methodology*. The methodology was often implicit, which is how "truth" got sloppy—people started claiming it without showing their work.
+Truth in 2026 isn't a claim of certainty. It's a status that evidence earns—and can lose. The graph is where assertions go to become true, stay true, or die when better data arrives.
 
-**In 2026, the methodology became explicit.**
+The receipts aren't separate from the truth. They're what *makes* it true. Proof got absorbed into the noun.
 
-We're drowning in synthetic content. Deepfakes, hallucinations, AI-generated everything. The surface is untrustworthy. You can't look at a claim and know if it's real anymore.
+> **A Truth Graph isn't a database of facts. It's a machine for earning and revoking the status "true."**
 
-So truth—functional truth, truth that does work in the world—absorbed proof into itself. Not as a nice-to-have. As a *requirement*.
-
-> **Truth without proof isn't truth anymore. It's just assertion.**
-
-The graph doesn't store claims and call them true. It stores *evidence* and earns the right to call the output truth. Truth in 2026 means proven. The word upgraded.
-
-This is why "Truth Graph" can still hold weight—if the system actually embodies this. If every node carries its evidence chain. If confidence scores are first-class. If the graph *is* the proof apparatus.
-
-You didn't name it Proof Graph because truth already absorbed the proof. The receipts are inside the noun now.
-
-Call it a Truth Graph. But mean it the 2026 way: **truth is the status claims earn when the graph can verify them.** The graph is where assertions go to become true—or die trying.
+That's not mental gymnastics. That's how science has always worked. We're just making it explicit—because in a world of synthetic everything, implicit methodology isn't good enough anymore.
