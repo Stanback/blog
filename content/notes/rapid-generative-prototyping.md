@@ -28,6 +28,8 @@ So what's left?
 
 **A caveat before we go further:** This isn't the whole story. Figma's Code Connect, Dev Mode, and Make are evolving fast. The generated code is still "guidance, not production" — but the gap is closing. And not every designer is running from this shift. At Adobe MAX 2024, attendees complained the conference felt like an "AI conference, not a design conference." But plenty of designers have embraced these tools as *augmentation*, not replacement. The best ones I've worked with use AI to explore more options faster, then apply judgment to curate. More creativity, not less. The real question isn't whether AI replaces designers — it's what design *becomes* when the artifact is no longer the bottleneck.
 
+Figma's 2025 AI Report shows the tension clearly: 85% of designers and developers say learning to work with AI is essential for their future. But there's a gap — 82% of developers are satisfied with AI tools, while only 69% of designers feel the same. The reason? Code generation *works*. 59% of developers use AI for core work like generating code. Only 31% of designers use it for core design work. Developers found immediate utility; designers are still figuring out where these tools fit. And 78% say AI enhances efficiency — but only 32% say they can rely on the output. The quality gap is real, even as adoption deepens.
+
 ---
 
 ## The New Physics
