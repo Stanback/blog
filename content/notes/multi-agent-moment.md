@@ -1,16 +1,14 @@
 ---
 title: "The Multi-Agent Moment"
-description: "Claude's Agent Teams shipped alongside Opus 4.6. Here's how it compares to Gas Town, claude-flow, ccswarm, and the community tools that got here first—and how to decide which to use."
-date: 2026-02-06
-type: post
+description: "Claude's Agent Teams vs Gas Town vs claude-flow—the landscape of multi-agent orchestration and how to navigate it."
+date: 2026-02-05
+type: note
 schemaVersion: 1
-draft: true
+draft: false
 tags:
   - ai
   - systems
   - architecture
-tension: "Anthropic productized what the community built. But native isn't always better."
-preface: "Agent Teams is now native to Claude Code. But the community has been running multi-agent orchestration for months. Here's the landscape and how to navigate it."
 ---
 
 *This is Part 2 of my response to the Opus 4.6 announcement. For the bigger picture—the market panic, the existential weight, and the ecosystem shakeout—see [[The SaaSpocalypse]].*
