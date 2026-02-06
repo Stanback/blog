@@ -122,7 +122,7 @@ Built on [Beads](https://github.com/steveyegge/beads) for memory persistence. Gi
 
 **[Pheromind](https://github.com/mariusgavrila/pheromind)** — Swarm intelligence inspired by ant colonies. Agents coordinate via a shared `.pheromone` file containing structured JSON signals—no direct peer-to-peer commands. Decentralized stigmergy rather than hierarchical orchestration.
 
-**[oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode)** — 5 execution modes: Autopilot, Ultrapilot (3-5x parallel), Swarm, Pipeline, Ecomode. 32 specialized agents. Multiple modes for different needs, token-efficient options.
+**[oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode)** — Opinionated Claude Code configuration (like oh-my-zsh for zsh). Multiple execution modes including parallel swarm options, with cross-validation support for Gemini CLI and Codex.
 
 The community tools trade polish for portability. They work across providers. They're not locked to anyone's subscription model. But they require more setup and maintenance.
 
