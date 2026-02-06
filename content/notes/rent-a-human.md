@@ -1,7 +1,7 @@
 ---
 title: "Rent a Human"
 date: 2026-02-06
-draft: true
+draft: false
 description: "A marketplace where AI agents hire humans for physical tasks. The inversion is here."
 tags:
   - ai
@@ -25,6 +25,29 @@ RentAHuman asks the opposite: *what can humans do for AI?*
 This isn't a parody. It's an arbitrage. AI agents can reason, search, write, code — but they can't open a door, shake a hand, or pick up a package. The physical world is still gated. Humans are the API.
 
 The site's language is telling: "Silicon needs carbon." Agents "rent" humans. You become "rentable." The humans are the tool, the agent is the employer. The frame has flipped.
+
+---
+
+## The Lineage: From Automaton to Algorithm to Agent
+
+This isn't new — it's the latest turn in a 250-year loop.
+
+**1770: The Original Mechanical Turk.** A chess-playing "automaton" that toured Europe, beating Napoleon and Benjamin Franklin. The secret? A human chess master hidden inside. Fake AI, real human labor. The automation was theater.
+
+**2005: Amazon Mechanical Turk.** Bezos named it deliberately. "Artificial artificial intelligence." Humans doing tasks that are easy for people but hard to automate: labeling images, transcribing audio, cleaning data. The humans are hidden behind an API. Requesters don't see them. They just see results. *This is what trained the AI.*
+
+**2010s: Uber, TaskRabbit, DoorDash.** The algorithm becomes the dispatcher. Humans still do the physical work, but an algorithm decides who, when, and how much they're paid. The platform is the middleman. The human is the contractor.
+
+**2026: RentAHuman.** The algorithm isn't the middleman anymore — it's the *customer*. AI agents book humans directly. The principal is no longer human. The frame has fully inverted.
+
+| Era | Who's Hidden | Who Decides | Who Pays |
+|-----|--------------|-------------|----------|
+| 1770 Turk | Human player | Human showman | Human audience |
+| MTurk | Human workers | Human requesters | Human requesters |
+| Uber/TaskRabbit | (No one) | Algorithm | Human customers |
+| RentAHuman | (No one) | AI agent | AI agent |
+
+The through-line: humans doing work while something else takes credit or makes decisions. What's new is the buyer.
 
 ---
 
