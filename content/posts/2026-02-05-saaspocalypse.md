@@ -159,6 +159,20 @@ The pattern: **tools survive by becoming either infrastructure (AI needs you) or
 
 Everything in the middle—tools that automate what AI now does natively—faces compression.
 
+### The Platform Wars
+
+The AI providers themselves are racing to own the orchestration layer—and their strategies reveal their priorities.
+
+**Anthropic** shipped [Agent Teams](https://docs.anthropic.com/en/docs/claude-code/agent-teams) as a native feature inside Claude Code. One CLI, one subscription, specialized agents coordinated by a lead. It's elegant, but it's also a lock-in play. Last month they [cracked down on third-party harnesses](https://venturebeat.com/technology/anthropic-cracks-down-on-unauthorized-claude-usage-by-third-party-harnesses)—tools like OpenCode that let you use your Claude subscription through external interfaces. The message: if you want flat-rate pricing, use our tools. Third-party automation gets API pricing, which runs 5-10x higher for heavy use.
+
+**OpenAI** took a different approach. Codex CLI doesn't have native multi-agent, but they published [official documentation](https://developers.openai.com/codex/guides/agents-sdk/) for orchestrating Codex through their Agents SDK via MCP. It's modular—separate tools that compose—but it requires more setup. Their bet: developers want flexibility over integration.
+
+**Google** is furthest behind. Gemini CLI has a detailed [community proposal](https://github.com/google-gemini/gemini-cli/discussions/7637) for multi-agent architecture—agent registries, orchestration, the whole spec—but nothing shipped yet. They're watching what works.
+
+The pattern: **every provider wants to be the platform, not just the model.** Anthropic is betting on integration (one tool that does everything). OpenAI is betting on ecosystem (many tools that compose). Google is betting on waiting (let others de-risk the approach).
+
+For builders, this creates a choice: **optimize for one provider's vision, or build portable abstractions?** Native Agent Teams are convenient. External orchestrators like [claude-flow](https://github.com/ruvnet/claude-flow) or [Gas Town](https://github.com/AstroMavericks/gas-town) are portable. The "right" answer depends on how much you trust any single provider to remain the best option.
+
 ---
 
 ## The Bigger Picture
