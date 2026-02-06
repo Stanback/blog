@@ -86,6 +86,30 @@ The WebSocket is just the transport—the persistent pipe that lets Convex push 
 
 ![Reactive data flow — one change propagates to all connected clients](/images/posts/convex-reactivity-diagram.png)
 
+### Storage & Scaling
+
+**Under the hood:** Convex Cloud runs on Amazon RDS with MySQL as the persistence layer. The open-source version supports SQLite, Postgres, or MySQL. Documents are JSON-like objects with system fields (`_id`, `_creationTime`) added automatically.
+
+**Scaling:** Convex handles the infrastructure—load balancing, connection pooling, WebSocket management. You don't configure replicas or shard keys. The tradeoff: less control, but also less ops burden. They enforce read limits per transaction to prevent runaway scans from killing your database.
+
+**Indices:** Convex deliberately avoids a SQL-style query planner that guesses which index to use. Instead, you're explicit:
+
+```typescript
+// In schema.ts
+users: defineTable({
+  email: v.string(),
+  createdAt: v.number(),
+}).index("by_email", ["email"])
+
+// In your query
+const user = await ctx.db
+  .query("users")
+  .withIndex("by_email", (q) => q.eq("email", "test@example.com"))
+  .unique();
+```
+
+The index is a sorted data structure. `.withIndex()` does binary search to jump directly to matching documents. No index = full table scan (which Convex limits to prevent disasters). Think of it like the card catalog in a library—you declare how to organize the cards, then queries can go straight to the right drawer.
+
 ### External World: HTTP Actions
 
 Queries and mutations can't make network requests (that's what keeps them transactional). For external integrations, you use **actions**:
