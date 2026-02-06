@@ -592,88 +592,95 @@ function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
 
 // Render drafts scratchpad — hidden index of drafts and books (not in sitemap/robots)
 function renderDraftsScratchpad(ctx: BuildContext): string {
-	const draftPosts = ctx.posts.filter((p) => p.draft);
-	const draftNotes = ctx.notes.filter((n) => n.draft);
+	const draftPosts = ctx.posts
+		.filter((p) => p.draft)
+		.sort((a, b) => b.date.getTime() - a.date.getTime());
+	const draftNotes = ctx.notes
+		.filter((n) => n.draft)
+		.sort((a, b) => b.date.getTime() - a.date.getTime());
 
 	const content = `
     <header class="archive-header">
-      <h1>Drafts Scratchpad</h1>
-      <p class="archive-intro">Work in progress — not indexed</p>
+      <h1>Scratchpad</h1>
+      <p class="archive-intro">Drafts and works in progress</p>
     </header>
 
+    <div class="archive-grid">
     ${
 			draftPosts.length > 0
 				? `
-    <section class="scratchpad-section">
-      <h2>Draft Posts</h2>
-      <ul class="archive-list">
-        ${draftPosts
-					.map(
-						(post) => `
-          <li class="archive-item">
-            <time datetime="${isoDate(post.date)}">${formatDateArchive(post.date)}</time>
-            <a href="/drafts/${post.slug}/" class="archive-link">
-              <span class="archive-title">${post.title}</span>
-              ${post.description ? `<span class="archive-desc">${post.description}</span>` : ''}
-            </a>
-          </li>`,
-					)
-					.join('')}
-      </ul>
-    </section>`
+      <section class="archive-year">
+        <h2 class="year-heading">Posts</h2>
+        <ul class="archive-list">
+          ${draftPosts
+						.map(
+							(post) => `
+            <li class="archive-item">
+              <time datetime="${isoDate(post.date)}">${formatDateArchive(post.date)}</time>
+              <a href="/drafts/${post.slug}/" class="archive-link">
+                <span class="archive-title">${post.title}</span>
+                ${post.description ? `<span class="archive-desc">${post.description}</span>` : ''}
+              </a>
+            </li>`,
+						)
+						.join('')}
+        </ul>
+      </section>`
 				: ''
 		}
 
     ${
 			draftNotes.length > 0
 				? `
-    <section class="scratchpad-section">
-      <h2>Draft Notes</h2>
-      <ul class="archive-list">
-        ${draftNotes
-					.map(
-						(note) => `
-          <li class="archive-item">
-            <time datetime="${isoDate(note.date)}">${formatDateArchive(note.date)}</time>
-            <a href="/drafts/${note.slug}/" class="archive-link">
-              <span class="archive-title">${note.title}</span>
-              ${note.description ? `<span class="archive-desc">${note.description}</span>` : ''}
-            </a>
-          </li>`,
-					)
-					.join('')}
-      </ul>
-    </section>`
+      <section class="archive-year">
+        <h2 class="year-heading">Notes</h2>
+        <ul class="archive-list">
+          ${draftNotes
+						.map(
+							(note) => `
+            <li class="archive-item">
+              <time datetime="${isoDate(note.date)}">${formatDateArchive(note.date)}</time>
+              <a href="/drafts/${note.slug}/" class="archive-link">
+                <span class="archive-title">${note.title}</span>
+                ${note.description ? `<span class="archive-desc">${note.description}</span>` : ''}
+              </a>
+            </li>`,
+						)
+						.join('')}
+        </ul>
+      </section>`
 				: ''
 		}
 
     ${
 			ctx.books.length > 0
 				? `
-    <section class="scratchpad-section">
-      <h2>Books</h2>
-      <ul class="archive-list">
-        ${ctx.books
-					.map(
-						(book) => `
-          <li class="archive-item">
-            <a href="/books/${book.slug}/" class="archive-link">
-              <span class="archive-title">${book.title}</span>
-              ${book.description ? `<span class="archive-desc">${book.description}</span>` : ''}
-            </a>
-          </li>`,
-					)
-					.join('')}
-      </ul>
-    </section>`
+      <section class="archive-year">
+        <h2 class="year-heading">Books</h2>
+        <ul class="archive-list">
+          ${ctx.books
+						.map(
+							(book) => `
+            <li class="archive-item">
+              <span class="archive-item-spacer"></span>
+              <a href="/books/${book.slug}/" class="archive-link">
+                <span class="archive-title">${book.title}</span>
+                ${book.description ? `<span class="archive-desc">${book.description}</span>` : ''}
+              </a>
+            </li>`,
+						)
+						.join('')}
+        </ul>
+      </section>`
 				: ''
 		}
+    </div>
 
-    ${draftPosts.length === 0 && draftNotes.length === 0 && ctx.books.length === 0 ? '<p class="empty-state">Nothing in the scratchpad.</p>' : ''}
+    ${draftPosts.length === 0 && draftNotes.length === 0 && ctx.books.length === 0 ? '<p class="empty-state">Nothing here yet.</p>' : ''}
   `;
 
 	return baseTemplate({
-		title: 'Drafts Scratchpad',
+		title: 'Scratchpad',
 		description: 'Work in progress',
 		url: '/drafts-scratchpad/',
 		content,
