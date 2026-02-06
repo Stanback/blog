@@ -83,7 +83,7 @@ The question becomes: **are you supervising, or are you being supervised?**
 
 ## From Vibe Coding to Vibe Working
 
-Steve Yegge calls his workflow "vibe coding." Work becomes fluid—"an uncountable substance that you sling around freely, like slopping shiny fish into wooden barrels at the docks."
+[Andrej Karpathy coined "vibe coding"](https://x.com/karpathy/status/1886192184808149383) in February 2025: "fully give in to the vibes, embrace exponentials, and forget that the code even exists." Steve Yegge took it further, describing work as fluid—"an uncountable substance that you sling around freely, like slopping shiny fish into wooden barrels at the docks."
 
 > "Some bugs get fixed 2 or 3 times, and someone has to pick the winner. Other fixes get lost. Designs go missing and need to be redone. It doesn't matter, because you are churning forward relentlessly on huge, huge piles of work."
 > — [Steve Yegge, "Welcome to Gas Town"](https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04)
@@ -99,6 +99,10 @@ Microsoft embedded the same idea into their [Copilot roadmap](https://www.micros
 Salesforce went further: [Agentforce 360](https://www.salesforce.com/news/press-releases/2025/10/13/agentic-enterprise-announcement/) is their platform for "the Agentic Enterprise," and they literally shipped a feature called **Agentforce Vibes**—letting builders "vibe-code" apps grounded in company data. They're reporting 119% agent growth in the first half of 2025.
 
 The shift isn't from "engineer" to "prompt engineer." That's too small. The shift is from **maker** to **orchestrator**. From building to coordinating. From depth to breadth. And it's not just for developers anymore—it's coming for every knowledge worker.
+
+But a year in, the lesson isn't pure chaos. LLMs are genuinely good—and getting better—at greenfield work: new projects, clear requirements, blank slates. They struggle with brownfield: existing codebases, implicit conventions, accumulated context. The answer isn't to reject vibe coding. It's to **harness** it—add constraints, guardrails, structure. Without them, you get [tech debt at AI speed](https://thenewstack.io/5-challenges-with-vibe-coding-for-enterprises/), errors faster than humans can review, and code that works but nobody understands why.
+
+The physics I explore in [[Code Owns Truth]] and [[Proof, Not Truth]] point toward the same conclusion: constraints are the design layer. Prompts express intent. Code owns truth. The vibe is real, but the vibe needs boundaries.
 
 Some people will thrive here. They like systems thinking, coordination, judgment calls. Others will struggle. They liked the craft of code, the satisfaction of a clean implementation, the feeling of having *made* something.
 
