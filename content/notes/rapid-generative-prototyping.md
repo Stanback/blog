@@ -13,7 +13,7 @@ tags:
 
 ## The Rupture
 
-Design in 2025 is still running on print-era physics. The fundamental assumptions:
+Design in 2026 is still running on print-era physics. The fundamental assumptions:
 
 1. **The layout is the constant.** Designers produce static mockups that define pixel-perfect UIs.
 2. **The human is the compiler.** Developers manually translate visual artifacts into code.
