@@ -222,9 +222,8 @@ function buildContext(
 			urlToContent.set(url, {
 				title: item.title,
 				url,
-				description:
-					'description' in item ? (item as { description?: string }).description : undefined,
-				date: 'date' in item ? (item as { date?: Date }).date : undefined,
+				description: item.description,
+				date: item.date,
 			});
 		}
 	}
@@ -265,7 +264,7 @@ function buildContext(
 	// Build graph nodes (exclude drafts)
 	const graphNodes = content
 		.filter((item) => ['post', 'note', 'page'].includes(item.type))
-		.filter((item) => !('draft' in item && (item as { draft?: boolean }).draft))
+		.filter((item) => !item.draft)
 		.map((item) => ({
 			id: getContentUrl(item) || item.slug,
 			title: item.title,

@@ -1,7 +1,14 @@
 // Render content to HTML and write to dist/
 
 import { config } from './config.js';
-import { glyphCornerBR, glyphCornerTL, glyphMarkFull, iconMoon, iconSun } from './glyphs.js';
+import {
+	glyphCornerBR,
+	glyphCornerTL,
+	glyphFlourish,
+	glyphMarkFull,
+	iconMoon,
+	iconSun,
+} from './glyphs.js';
 import { strings } from './strings.js';
 import type {
 	Book,
@@ -183,8 +190,8 @@ function baseTemplate(options: {
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <header>
-    <nav aria-label="Main navigation">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
       <a href="/" class="site-logo">
         ${atelierMark}
         <span class="wordmark">${config.title}</span>
@@ -194,9 +201,8 @@ function baseTemplate(options: {
         <span class="hamburger"></span>
       </label>
       <div class="nav-menu">
-        <ul>
+        <ul class="nav-links">
           <li><a href="/posts/">Writing</a></li>
-          <!-- <li><a href="/books/">Library</a></li> -->
           <li><a href="/notes/">Notes</a></li>
           <li><a href="/photos/">Photos</a></li>
           <li><a href="/about/">About</a></li>
@@ -213,8 +219,18 @@ function baseTemplate(options: {
     ${content}
   </main>
 
-  <footer aria-label="Footer">
-    <p class="footer-tagline">${strings.footer.tagline}</p>
+  <footer class="site-footer" aria-label="Footer">
+    <div class="footer-inner">
+      ${glyphFlourish}
+      <p class="footer-tagline">${strings.footer.tagline}</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/posts/">Writing</a>
+        <a href="/notes/">Notes</a>
+        <a href="/about/">About</a>
+        <a href="/rss.xml">RSS</a>
+      </nav>
+      <p class="footer-copyright">${config.author.name}</p>
+    </div>
   </footer>
 
   <script src="/js/theme.js"></script>
@@ -667,7 +683,7 @@ function renderHome(ctx: BuildContext): string {
 						(post) => `
         <li>
           <a href="${getUrl(post)}">
-            <time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
+            <time datetime="${isoDate(post.date)}">${formatDateArchive(post.date)}</time>
             <span class="post-title">${post.title}</span>
             ${post.description ? `<span class="post-desc">${post.description}</span>` : ''}
           </a>
@@ -712,7 +728,7 @@ function renderHome(ctx: BuildContext): string {
       <div class="thesis-content">
         <h1 class="thesis-headline">${strings.thesis.headline}</h1>
         <p class="thesis-body">${strings.thesis.body}</p>
-        <p class="thesis-orientation">This is a space for thinking about judgment, systems, and design in an era where execution is cheap and discernment isn't.</p>
+        <p class="thesis-orientation">${strings.thesis.orientation}</p>
       </div>
     </section>
 

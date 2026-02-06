@@ -36,9 +36,9 @@ function extractChapterTitle(markdown: string): string {
 }
 
 /**
- * Create a slug from chapter folder name
+ * Create a slug from chapter number
  */
-function chapterSlug(folderName: string, chapterNum: number): string {
+function chapterSlug(chapterNum: number): string {
 	return `chapter-${chapterNum}`;
 }
 
@@ -100,7 +100,7 @@ export async function collectBooks(booksDir: string): Promise<Book[]> {
 				);
 
 				chapters.push({
-					slug: chapterSlug(chapterFolder.name, chapterNum),
+					slug: chapterSlug(chapterNum),
 					type: 'chapter',
 					schemaVersion: 1,
 					title: chapterTitle,

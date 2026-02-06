@@ -38,17 +38,6 @@ export function formatDateLong(date: Date): string {
 }
 
 /**
- * Formats a date for compact display (e.g., "Feb 3, 2026")
- */
-export function formatDateShort(date: Date): string {
-	return date.toLocaleDateString('en-US', {
-		year: 'numeric',
-		month: 'short',
-		day: 'numeric',
-	});
-}
-
-/**
  * Formats a date for machine-readable contexts (ISO 8601)
  */
 export function formatDateMachine(date: Date): string {
@@ -63,11 +52,4 @@ export function formatDateNoYear(date: Date): string {
 		month: 'long',
 		day: 'numeric',
 	});
-}
-
-/**
- * Formats a date for RSS (RFC 822)
- */
-export function formatDateRSS(date: Date): string {
-	return date.toUTCString();
 }

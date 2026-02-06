@@ -1,11 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import {
-	formatDateISO,
-	formatDateLong,
-	formatDateMachine,
-	formatDateShort,
-	parseDate,
-} from './dates.js';
+import { formatDateISO, formatDateLong, formatDateMachine, parseDate } from './dates.js';
 
 describe('parseDate', () => {
 	test('parses Date objects', () => {
@@ -51,13 +45,6 @@ describe('formatDateLong', () => {
 	test('formats date as "Month Day, Year"', () => {
 		const date = new Date('2026-02-03T12:00:00Z');
 		expect(formatDateLong(date)).toBe('February 3, 2026');
-	});
-});
-
-describe('formatDateShort', () => {
-	test('formats date as "Mon Day, Year"', () => {
-		const date = new Date('2026-02-03T12:00:00Z');
-		expect(formatDateShort(date)).toBe('Feb 3, 2026');
 	});
 });
 

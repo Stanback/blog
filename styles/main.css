@@ -111,23 +111,29 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   HEADER — Logo lockup + nav
+   HEADER — Parisian editorial masthead
+   ═══════════════════════════════════════════════════════════════════════════
+
+   Quiet authority. The mark + wordmark on the left, navigation on the right.
+   Generous whitespace, serif wordmark, understated nav links.
+   Mobile: CSS-only hamburger that transforms to X.
+
    ═══════════════════════════════════════════════════════════════════════════ */
 
-header {
+.site-header {
 	position: relative;
-	padding: var(--space-4) var(--space-page-margin);
+	padding: var(--space-6) var(--space-page-margin);
 	border-bottom: 1px solid var(--color-border-subtle);
 	transition: border-color var(--transition-normal);
 }
 
-header nav {
+.site-nav {
 	max-width: var(--measure-page);
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: var(--space-4);
+	gap: var(--space-6);
 }
 
 /* Logo lockup: mark + wordmark */
@@ -152,9 +158,10 @@ header nav {
 }
 
 .site-logo .wordmark {
-	font-family: var(--font-sans);
+	font-family: var(--font-serif);
 	font-size: var(--font-size-lg);
-	font-weight: 500;
+	font-weight: 400;
+	font-style: italic;
 	letter-spacing: var(--tracking-tight);
 }
 
@@ -170,7 +177,7 @@ header nav {
 	height: 0;
 }
 
-/* Hamburger button - only visible on mobile */
+/* Hamburger button — 44×44 touch target, only visible on mobile */
 .nav-toggle-label {
 	display: flex;
 	align-items: center;
@@ -186,8 +193,8 @@ header nav {
 .hamburger::after {
 	display: block;
 	background: var(--color-text-primary);
-	height: 2px;
-	width: 20px;
+	height: 1.5px;
+	width: 18px;
 	border-radius: 1px;
 	transition: transform var(--transition-normal), opacity var(--transition-normal);
 }
@@ -204,14 +211,14 @@ header nav {
 }
 
 .hamburger::before {
-	top: -6px;
+	top: -5px;
 }
 
 .hamburger::after {
-	top: 6px;
+	top: 5px;
 }
 
-/* Hamburger to X animation when checked */
+/* Hamburger → X animation */
 .nav-toggle:checked + .nav-toggle-label .hamburger {
 	background: transparent;
 }
@@ -226,7 +233,7 @@ header nav {
 	top: 0;
 }
 
-/* Nav menu - mobile styles (hidden by default) */
+/* Nav menu — mobile: dropdown panel */
 .nav-menu {
 	display: none;
 	position: absolute;
@@ -235,9 +242,9 @@ header nav {
 	right: 0;
 	background: var(--color-bg-main);
 	border-bottom: 1px solid var(--color-border-subtle);
-	padding: var(--space-4) var(--space-page-margin);
+	padding: var(--space-6) var(--space-page-margin);
 	flex-direction: column;
-	gap: var(--space-4);
+	gap: var(--space-6);
 	z-index: 100;
 }
 
@@ -246,17 +253,17 @@ header nav {
 	display: flex;
 }
 
-/* Mobile nav list */
-.nav-menu ul {
+/* Nav link list */
+.nav-links {
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-3);
+	gap: var(--space-4);
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-/* Desktop styles - hide hamburger, show inline nav */
+/* Desktop: hide hamburger, show inline nav */
 @media (min-width: 640px) {
 	.nav-toggle-label {
 		display: none;
@@ -270,36 +277,29 @@ header nav {
 		padding: 0;
 		flex-direction: row;
 		align-items: center;
-		gap: var(--space-6);
+		gap: var(--space-8);
 	}
 
-	.nav-menu ul {
+	.nav-links {
 		flex-direction: row;
-		gap: var(--space-6);
+		gap: var(--space-8);
 	}
 }
 
-/* Navigation links */
-header nav a {
+/* Navigation links — quiet, secondary until hovered */
+.site-nav a {
 	color: var(--color-text-secondary);
 	text-decoration: none;
 	font-size: var(--font-size-sm);
+	letter-spacing: var(--tracking-wide);
 	transition: color var(--transition-fast);
 }
 
-header nav a:hover {
+.site-nav a:hover {
 	color: var(--color-text-primary);
 }
 
-/* Soul/Skill special nav items - all caps, spaced */
-header nav .nav-special {
-	text-transform: uppercase;
-	letter-spacing: var(--tracking-wider);
-	font-size: var(--font-size-xs);
-	font-weight: 500;
-}
-
-/* Dark mode toggle */
+/* Dark mode toggle — 44×44 touch target */
 .theme-toggle {
 	background: none;
 	border: none;
@@ -310,6 +310,8 @@ header nav .nav-special {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
 }
 
 .theme-toggle:hover {
@@ -321,12 +323,12 @@ header nav .nav-special {
 	height: 18px;
 }
 
-/* Show sun icon by default (light mode), moon on hover/focus */
+/* Light mode: show sun, hide moon */
 .theme-toggle .icon-moon {
 	display: none;
 }
 
-/* In dark mode, show moon, hide sun */
+/* Dark mode: show moon, hide sun */
 [data-theme="dark"] .theme-toggle .icon-sun {
 	display: none;
 }
@@ -342,6 +344,64 @@ header nav .nav-special {
 	:root:not([data-theme="light"]) .theme-toggle .icon-moon {
 		display: block;
 	}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLYPH & ICON BASE — Visual language system
+   ═══════════════════════════════════════════════════════════════════════════
+
+   Glyphs (brand marks): glyph-mark, glyph-corner, glyph-accent, glyph-flourish
+   Icons (UI elements):  icon-arrow, icon-sun, icon-moon, icon-calendar, etc.
+
+   All icons use currentColor, all glyphs use --logo-ink / --logo-accent.
+
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Base glyph sizing */
+.glyph {
+	display: inline-block;
+	vertical-align: middle;
+	flex-shrink: 0;
+}
+
+.glyph-mark {
+	width: 32px;
+	height: 32px;
+}
+
+.glyph-mark--large {
+	width: 48px;
+	height: 48px;
+}
+
+.glyph-corner {
+	width: 20px;
+	height: 20px;
+}
+
+.glyph-accent {
+	width: 12px;
+	height: 4px;
+}
+
+.glyph-flourish {
+	width: 80px;
+	height: 8px;
+}
+
+/* Base icon sizing — 16×16 default, scales with font context */
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+	width: 1em;
+	height: 1em;
+	flex-shrink: 0;
+}
+
+.icon-sun,
+.icon-moon {
+	width: 18px;
+	height: 18px;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -365,50 +425,70 @@ main > .post-hero {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   FOOTER
+   FOOTER — Warm editorial closing
+   ═══════════════════════════════════════════════════════════════════════════
+
+   The quiet end of a well-made book. Flourish divider, italic tagline,
+   secondary nav, understated copyright.
+
    ═══════════════════════════════════════════════════════════════════════════ */
 
-footer {
-	padding: var(--space-8) var(--space-page-margin);
+.site-footer {
+	padding: var(--space-12) var(--space-page-margin) var(--space-8);
 	border-top: 1px solid var(--color-border-subtle);
 	text-align: center;
-	font-size: var(--font-size-sm);
 	color: var(--color-text-muted);
 	transition: border-color var(--transition-normal), color var(--transition-normal);
 }
 
-footer .footer-tagline {
-	margin: 0;
-	font-style: italic;
+.footer-inner {
+	max-width: var(--content-width);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-4);
 }
 
-footer p {
+.footer-inner .glyph-flourish {
+	width: 80px;
+	height: 8px;
+	opacity: 0.5;
 	margin-bottom: var(--space-2);
 }
 
-footer p:last-child {
-	margin-bottom: 0;
+.footer-tagline {
+	font-family: var(--font-serif);
+	font-size: var(--font-size-base);
+	font-style: italic;
+	color: var(--color-text-secondary);
+	margin: 0;
 }
 
-footer nav {
+.footer-nav {
 	display: flex;
 	justify-content: center;
-	gap: var(--space-4);
+	gap: var(--space-6);
 	flex-wrap: wrap;
 }
 
-footer a {
-	color: var(--color-text-secondary);
+.footer-nav a {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
 	text-decoration: none;
+	letter-spacing: var(--tracking-wide);
 	transition: color var(--transition-fast);
 }
 
-footer a:hover {
+.footer-nav a:hover {
 	color: var(--color-text-primary);
 }
 
-footer .separator {
-	color: var(--color-border-subtle);
+.footer-copyright {
+	font-size: var(--font-size-xs);
+	color: var(--color-text-muted);
+	margin: var(--space-2) 0 0;
+	letter-spacing: var(--tracking-wide);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -465,7 +545,7 @@ footer .separator {
 /* Content sits inside the visual bounding box */
 .thesis-content {
 	position: relative;
-	padding: var(--space-10) var(--space-12);
+	padding: var(--space-8) var(--space-12);
 	padding-left: var(--space-16);
 	max-width: 600px;
 }
@@ -574,7 +654,7 @@ footer .separator {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: var(--space-6);
-	padding: var(--space-8);
+	padding: var(--space-6);
 	text-decoration: none;
 	color: var(--color-text-primary);
 	background: var(--color-bg-muted);
@@ -586,6 +666,7 @@ footer .separator {
 	.featured-card-link {
 		grid-template-columns: 1fr 200px;
 		align-items: start;
+		padding: var(--space-8);
 	}
 }
 
@@ -731,7 +812,14 @@ footer .separator {
 	padding: var(--space-4) 0;
 	text-decoration: none;
 	color: inherit;
-	transition: color var(--transition-fast);
+	transition: background var(--transition-fast);
+}
+
+.note-link:hover {
+	background: var(--color-bg-muted);
+	margin: 0 calc(-1 * var(--space-3));
+	padding-left: var(--space-3);
+	padding-right: var(--space-3);
 }
 
 .note-title {
@@ -1172,63 +1260,8 @@ footer .separator {
 	}
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   NOTES INDEX — Simple list of quick thoughts
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.notes-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-4);
-	max-width: var(--content-width);
-}
-
-.note-item {
-	display: flex;
-	align-items: baseline;
-	gap: var(--space-4);
-	padding: var(--space-3) 0;
-	border-bottom: 1px solid var(--color-border-subtle);
-}
-
-.note-item:last-child {
-	border-bottom: none;
-}
-
-.note-item time {
-	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
-	flex-shrink: 0;
-	width: 100px;
-}
-
-.note-link {
-	font-family: var(--font-serif);
-	font-size: var(--font-size-lg);
-	font-weight: 500;
-	color: var(--color-text-primary);
-	text-decoration: none;
-	transition: color var(--transition-fast);
-}
-
-.note-link:hover {
-	color: var(--color-accent-500);
-}
-
-@media (max-width: 640px) {
-	.note-item {
-		flex-direction: column;
-		gap: var(--space-1);
-	}
-
-	.note-item time {
-		width: auto;
-		font-size: var(--font-size-xs);
-	}
-}
+/* Notes index uses the shared archive-grid/archive-list/archive-item classes.
+   Homepage notes use .notes-list-compact / .note-item / .note-link above. */
 
 /* ═══════════════════════════════════════════════════════════════════════════
    BOOKS INDEX — Library grid
@@ -1374,6 +1407,7 @@ article.prose > header .reading-time {
 	font-style: italic;
 }
 
+/* Updated date in post meta (inline with byline) */
 .post-meta .updated-date {
 	margin-left: var(--space-2);
 }
@@ -1381,6 +1415,18 @@ article.prose > header .reading-time {
 .post-meta .updated-date::before {
 	content: "·";
 	margin-right: var(--space-2);
+}
+
+/* Updated date in note headers (standalone, more prominent) */
+.post-header-simple .updated-date {
+	display: inline-block;
+	margin-top: var(--space-2);
+	padding: var(--space-1) var(--space-3);
+	background: var(--color-accent-100);
+	border-radius: var(--radius-sm);
+	color: var(--color-accent-600);
+	font-style: normal;
+	font-weight: 500;
 }
 
 /* Post hero banner with image overlay — FULL BLEED */
@@ -1448,6 +1494,7 @@ article.prose > header .reading-time {
 .post-hero .post-meta {
 	display: flex;
 	gap: var(--space-4);
+	flex-wrap: wrap;
 	font-size: var(--font-size-sm);
 	color: var(--color-text-primary);
 	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -1459,9 +1506,9 @@ article.prose > header .reading-time {
 	margin: 0 auto var(--space-12);
 	padding-top: var(--space-8);
 	padding-right: 0;
-	padding-bottom: 0;
+	padding-bottom: var(--space-8);
 	padding-left: 0;
-	border-bottom: none;
+	border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .post-header-simple time {
@@ -1479,12 +1526,13 @@ article.prose > header .reading-time {
 	font-weight: 400;
 	font-style: italic;
 	line-height: 1.15;
-	margin: 0 0 var(--space-5);
+	margin: 0 0 var(--space-6);
 }
 
 .post-header-simple .post-meta {
 	display: flex;
 	gap: var(--space-4);
+	flex-wrap: wrap;
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
 }
@@ -1492,13 +1540,13 @@ article.prose > header .reading-time {
 /* Post preface - orientation whisper before content */
 .post-preface {
 	max-width: var(--content-width);
-	margin: var(--space-8) auto var(--space-12);
+	margin: 0 auto var(--space-12);
 	padding-left: var(--space-6);
-	padding-right: var(--space-6);
+	border-left: 2px solid var(--color-accent-300);
 	font-size: var(--font-size-base);
 	font-style: italic;
 	color: var(--color-text-secondary);
-	line-height: var(--line-height-relaxed);
+	line-height: var(--leading-relaxed);
 }
 
 /* Post body (article content after hero) */
@@ -1750,13 +1798,13 @@ article.skills-page h1 {
 
 /* Pull-quote - for occasional emphasis (use sparingly, 1x per long essay max) */
 .pull-quote {
-	margin: var(--space-10) 0;
+	margin: var(--space-12) 0;
 	padding: var(--space-6) var(--space-8);
 	font-size: var(--font-size-lg);
-	line-height: var(--line-height-relaxed);
+	line-height: var(--leading-relaxed);
 	color: var(--color-text-primary);
 	border-left: 3px solid var(--color-accent-300);
-	background: var(--color-bg-subtle);
+	background: var(--color-bg-muted);
 }
 
 /* Links */
@@ -2207,7 +2255,7 @@ article.skills-page h1 {
 /* Chapter header */
 .chapter-page .chapter-header {
 	text-align: center;
-	margin-bottom: var(--space-10);
+	margin-bottom: var(--space-8);
 	padding-bottom: var(--space-8);
 	border-bottom: 1px solid var(--color-border-subtle);
 }
@@ -2818,7 +2866,7 @@ article.skills-page h1 {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .backlinks {
-	margin-top: var(--space-8);
+	margin-top: var(--space-12);
 	padding-top: var(--space-8);
 	border-top: 1px solid var(--color-border-subtle);
 	max-width: var(--content-width);

@@ -61,6 +61,8 @@ export const strings = {
 	thesis: {
 		headline: 'Software is no longer scarce. Judgment is.',
 		body: 'I build systems, interfaces, and identities that survive AI abundance.',
+		orientation:
+			'This is a space for thinking about judgment, systems, and design in an era where execution is cheap and discernment isn\u2019t.',
 	},
 
 	// Homepage sections

@@ -253,23 +253,3 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 		readingTime,
 	};
 }
-
-// ============================================================================
-// Batch Parsing (for efficiency)
-// ============================================================================
-
-export async function parseAllMarkdown(
-	contents: Array<{ slug: string; content: string }>,
-): Promise<Map<string, ParseResult>> {
-	// Initialize highlighter once before processing all files
-	await getShikiHighlighter();
-
-	const results = new Map<string, ParseResult>();
-
-	for (const { slug, content } of contents) {
-		const result = await parseMarkdown(content);
-		results.set(slug, result);
-	}
-
-	return results;
-}
