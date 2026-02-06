@@ -1,19 +1,19 @@
 ---
 title: "The Multi-Agent Moment"
-description: "Claude's Agent Teams vs Gas Town vs the community alternatives. A technical breakdown of where multi-agent orchestration actually is—and where it's going."
+description: "A technical breakdown of multi-agent orchestration: Claude's Agent Teams, OpenAI's Agents SDK, Gas Town, Beads, and the community alternatives."
 date: 2026-02-05
 type: note
 schemaVersion: 1
 tags:
   - ai
-  - systems
   - engineering
+  - tools
 heroImage: /images/posts/multi-agent-moment-hero.png
 tension: "Everyone's shipping multi-agent. Nobody agrees on what that means."
-preface: "Multi-agent is the new hotness. But the implementations vary wildly—from native CLI features to external orchestration frameworks to community experiments. Here's what's actually available."
+preface: "[[The SaaSpocalypse]] covered the existential weight. This is the tools companion—what's actually available for multi-agent orchestration, and how to choose."
 ---
 
-*This is a companion to [[The SaaSpocalypse]], which covers the market implications. This piece is about the tools.*
+*Less philosophy, more implementation. For the market panic and ecosystem shakeout, see [[The SaaSpocalypse]].*
 
 ---
 
