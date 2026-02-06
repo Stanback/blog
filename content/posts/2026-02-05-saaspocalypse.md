@@ -159,19 +159,21 @@ The pattern: **tools survive by becoming either infrastructure (AI needs you) or
 
 Everything in the middle—tools that automate what AI now does natively—faces compression.
 
-### The Platform Wars
+### Who's Winning the Vibe Coding Wars?
 
-The AI providers themselves are racing to own the orchestration layer—and their strategies reveal their priorities.
+The AI coding tools have stratified fast. Here's where things stand:
 
-**Anthropic** shipped [Agent Teams](https://docs.anthropic.com/en/docs/claude-code/agent-teams) as a native feature inside Claude Code. One CLI, one subscription, specialized agents coordinated by a lead. It's elegant, but it's also a lock-in play. Last month they [cracked down on third-party harnesses](https://venturebeat.com/technology/anthropic-cracks-down-on-unauthorized-claude-usage-by-third-party-harnesses)—tools like OpenCode that let you use your Claude subscription through external interfaces. The message: if you want flat-rate pricing, use our tools. Third-party automation gets API pricing, which runs 5-10x higher for heavy use.
+**Claude Code** is the current favorite for agentic work. [85% of developers](https://devecosystem-2025.jetbrains.com/artificial-intelligence) now use AI tools regularly, and Claude Code gets consistent praise for "just working"—especially for large refactors and multi-file changes. They just shipped [Agent Teams](https://docs.anthropic.com/en/docs/claude-code/agent-teams), letting you spawn specialized sub-agents from one CLI. It's the most integrated experience available.
 
-**OpenAI** took a modular approach. Codex CLI doesn't have native multi-agent built in, but they published [official documentation](https://developers.openai.com/codex/guides/agents-sdk/) for orchestrating it through their Agents SDK via MCP (Model Context Protocol). You run Codex as an MCP server, then connect orchestrator agents that can spawn specialized workers—a "complete software delivery pipeline" in their words. It's more assembly required than Anthropic's integrated approach, but the pieces are official and documented. Their bet: developers want composable tools over monolithic ones.
+**Cursor** leads for IDE integration. Developers who want AI woven into their existing workflow—not a separate terminal—gravitate here. It indexes your whole repo, tracks dependencies, and maintains context across sessions. The UI is polished. The tradeoff: you're in their editor, not yours.
 
-**Google** is furthest behind. Gemini CLI has a detailed [community proposal](https://github.com/google-gemini/gemini-cli/discussions/7637) for multi-agent architecture—complete with agent registries, event-driven communication, sandbox isolation, and specialized agents for React, backend, testing, and DevOps. The spec is thorough. But it's still just a proposal. Nothing shipped. Google appears to be watching what works before committing. Given their resources, they could catch up quickly—or they could be betting that orchestration commoditizes and the model layer is what matters.
+**Codex** has the most powerful underlying model, but the tooling feels less mature. OpenAI published [official multi-agent documentation](https://developers.openai.com/codex/guides/agents-sdk/) using their Agents SDK, but it's more assembly required. Their bet: developers want composable pieces over monolithic tools.
 
-The pattern: **every provider wants to be the platform, not just the model.** Anthropic is betting on integration (one tool that does everything). OpenAI is betting on ecosystem (many tools that compose). Google is betting on waiting (let others de-risk the approach).
+**Gemini CLI** is watching from the sidelines. Google has a [detailed community proposal](https://github.com/google-gemini/gemini-cli/discussions/7637) for multi-agent architecture, but nothing shipped. They're either waiting to see what works, or betting the orchestration layer commoditizes and only the model matters.
 
-For builders, this creates a choice: **optimize for one provider's vision, or build portable abstractions?** Native Agent Teams are convenient. External orchestrators like [claude-flow](https://github.com/ruvnet/claude-flow) or [Gas Town](https://github.com/AstroMavericks/gas-town) are portable. The "right" answer depends on how much you trust any single provider to remain the best option.
+The pattern: **Anthropic is winning on integration, Cursor on UX, OpenAI on raw capability, Google on... patience.**
+
+But here's the lock-in risk: Anthropic [cracked down on third-party harnesses](https://venturebeat.com/technology/anthropic-cracks-down-on-unauthorized-claude-usage-by-third-party-harnesses) last month—tools that let you use Claude subscriptions through external interfaces. The message: flat-rate pricing requires their tools. Third-party automation gets API pricing, 5-10x more expensive for heavy use. Every provider wants to be the platform, not just the model.
 
 ### The Subsidy Question
 
