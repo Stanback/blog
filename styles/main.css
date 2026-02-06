@@ -2101,7 +2101,7 @@ article.skills-page h1 {
 	gap: var(--space-8);
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: var(--space-6) var(--space-page-margin);
+	padding: var(--space-6) 0;
 	min-height: calc(100vh - 200px);
 }
 
@@ -2420,7 +2420,7 @@ article.skills-page h1 {
 @media (max-width: 900px) {
 	.book-reader {
 		grid-template-columns: 1fr;
-		padding: var(--space-4) var(--space-page-margin);
+		padding: var(--space-4) 0;
 	}
 
 	.book-sidebar {
@@ -2471,7 +2471,7 @@ article.skills-page h1 {
 .book-page {
 	max-width: var(--content-width);
 	margin: 0 auto;
-	padding: var(--space-8) var(--space-page-margin);
+	padding: var(--space-8) 0;
 }
 
 .book-header {
