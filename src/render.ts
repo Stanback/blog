@@ -99,6 +99,10 @@ function baseTemplate(options: {
 	heroImage?: string;
 	noIndex?: boolean;
 	cssFilename?: string;
+	// JSON-LD enhancements
+	tags?: string[];
+	wordCount?: number;
+	articleSection?: string;
 }): string {
 	const {
 		title,
@@ -111,6 +115,9 @@ function baseTemplate(options: {
 		heroImage,
 		noIndex,
 		cssFilename = 'styles.css',
+		tags,
+		wordCount,
+		articleSection,
 	} = options;
 
 	const fullUrl = `${config.url}${url}`;
@@ -153,6 +160,10 @@ function baseTemplate(options: {
     "description": "${description.replace(/"/g, '\\"')}",
     "datePublished": "${isoDate(date)}",
     ${updated ? `"dateModified": "${isoDate(updated)}",` : ''}
+    ${heroImage ? `"image": "${config.url}${heroImage}",` : ''}
+    ${tags && tags.length > 0 ? `"keywords": ${JSON.stringify(tags)},` : ''}
+    ${wordCount ? `"wordCount": ${wordCount},` : ''}
+    ${articleSection ? `"articleSection": "${articleSection}",` : ''}
     "author": {
       "@type": "Person",
       "name": "${config.author.name}",
@@ -321,6 +332,10 @@ function renderPost(post: Post, ctx: BuildContext): string {
 		heroImage: post.heroImage,
 		noIndex: post.noIndex,
 		cssFilename: ctx.cssFilename,
+		// JSON-LD enhancements
+		tags: post.tags,
+		wordCount: post.wordCount,
+		articleSection: 'posts',
 	});
 }
 
@@ -366,6 +381,10 @@ function renderNote(note: Note, ctx: BuildContext): string {
 		date: note.date,
 		heroImage: note.heroImage,
 		cssFilename: ctx.cssFilename,
+		// JSON-LD enhancements
+		tags: note.tags,
+		wordCount: note.wordCount,
+		articleSection: 'notes',
 	});
 }
 
