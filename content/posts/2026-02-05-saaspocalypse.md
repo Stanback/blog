@@ -143,7 +143,8 @@ They don't survive as "no-code" tools for humans who can't code. That market is 
 **Winners:**
 - **Tools that become infrastructure for AI** — Linear (agents as teammates), Zapier (MCP integrations), n8n (workflow orchestration)
 - **Core infrastructure AI can't replace** — AWS, GCP, Cloudflare, Fly.io. The compute and network layer isn't going anywhere.
-- **Tools that aggregate judgment** — Platforms where human decisions compound (Figma, Notion when used for strategy)
+- **Context repositories** — Notion, Confluence, wikis. AI needs business context, decisions, history. These become the knowledge layer agents pull from.
+- **Tools that aggregate judgment** — Platforms where human decisions compound (Figma for design, strategic docs)
 
 **Losers:**
 - **Single-function SaaS** — If Claude can do your core function, you're a feature now
