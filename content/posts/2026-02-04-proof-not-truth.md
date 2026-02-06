@@ -10,7 +10,7 @@ tags:
   - ai
   - systems
   - knowledge
-description: "Why knowledge systems should claim to show their work, not to know the truth. The case for Proof Graphs over Truth Graphs."
+description: "Why knowledge systems should show their work, not just claim truth. And why 'truth' might still be the right word—if we understand what truth means now."
 heroImage: /images/posts/proof-not-truth-hero.png
 tension: "Truth implies certainty. But the best we can do is justified belief with receipts."
 questions:
@@ -106,3 +106,37 @@ If you're building a knowledge system and calling it a "truth" anything, you're 
 Proofs can still be wrong. But when they are, at least you can trace why. That's the difference between a system that fails gracefully and one that fails mysteriously.
 
 **Claim proof, not truth.** Your users will trust you more, not less.
+
+---
+
+## Postscript: Truth, Redefined
+
+Here's where I land after sitting with this longer.
+
+The argument above is right about the *danger*—calling something "truth" when you mean "assertion with vibes" is epistemically reckless. But maybe the answer isn't to abandon the word. Maybe it's to reclaim it.
+
+Decompose "truth" from first principles. What did it ever mean?
+
+- In antiquity: correspondence with reality
+- In religion: divine revelation
+- In science: falsifiable theory that survives testing
+- In law: evidence beyond reasonable doubt
+- In journalism: multiple sources, verified
+
+Truth was never a single thing. It was always *truth-according-to-some-methodology*. The methodology was often implicit, which is how "truth" got sloppy—people started claiming it without showing their work.
+
+**In 2026, the methodology became explicit.**
+
+We're drowning in synthetic content. Deepfakes, hallucinations, AI-generated everything. The surface is untrustworthy. You can't look at a claim and know if it's real anymore.
+
+So truth—functional truth, truth that does work in the world—absorbed proof into itself. Not as a nice-to-have. As a *requirement*.
+
+> **Truth without proof isn't truth anymore. It's just assertion.**
+
+The graph doesn't store claims and call them true. It stores *evidence* and earns the right to call the output truth. Truth in 2026 means proven. The word upgraded.
+
+This is why "Truth Graph" can still hold weight—if the system actually embodies this. If every node carries its evidence chain. If confidence scores are first-class. If the graph *is* the proof apparatus.
+
+You didn't name it Proof Graph because truth already absorbed the proof. The receipts are inside the noun now.
+
+Call it a Truth Graph. But mean it the 2026 way: **truth is the status claims earn when the graph can verify them.** The graph is where assertions go to become true—or die trying.
