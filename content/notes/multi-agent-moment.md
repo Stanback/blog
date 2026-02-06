@@ -263,4 +263,16 @@ But the fundamental tension remains: **native is convenient, external is control
 
 ---
 
-*I'm still exploring Agent Teams myself. As I run more experiments, I'll update this with what actually works vs. what sounds good on paper.*
+## My Take So Far
+
+I've been running Agent Teams on real work. It works, but it's not always the right tool.
+
+**When it shines:** Parallelizing genuinely independent work—multiple features, different test suites, frontend + backend simultaneously. Also when you need true specialization: a visual designer agent reviewing UI while a backend agent handles the API.
+
+**When it's overkill:** Contained tasks where a single agent has enough context. Adding agents adds tokens (5x agents = 5x cost) and coordination overhead. For focused work, Plan Mode is often enough.
+
+**The multi-codebase question:** I initially thought Agent Teams would shine for tasks spanning multiple codebases with different constraints. But here's the thing: polyrepo architectures may be becoming *antipatterns* in the AI era. [Monorepos work better for agents](https://nx.dev/blog/nx-and-ai-why-they-work-together)—consolidated context means one agent can understand how subsystems interact. Splitting repos fragments the context that makes agents useful.
+
+So the winning pattern might not be "multi-agent across repos" but "consolidate repos so single-agent has full context." Multi-agent for parallelism within a unified codebase, not for bridging fragmented ones.
+
+Still experimenting. These are working hypotheses, not conclusions.
