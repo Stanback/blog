@@ -44,6 +44,16 @@ Colors are defined in OKLCH for perceptual uniformity. Typography uses fluid siz
 
 The corner mark is a weighted viewfinder—heavy anchor top-left, whispered echo bottom-right. It frames the implied rectangle of the content area.
 
+## Content Tiers
+
+Content here exists at different levels of doneness.
+
+**Drafts** — Half-formed. Vulnerable. Might be wrong, might be embarrassing. They live in the repo but never get published. (You won't see these.)
+
+**Notes** — Thinking out loud. The idea has enough shape to share but it's still moving. These can change anytime.
+
+**Writing** — Crystallized enough to put my name on. I've thought it through, but nothing here is final — I update posts when I learn something new.
+
 ## AI Discovery
 
 This site is designed for both humans and machines.
