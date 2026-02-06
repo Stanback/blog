@@ -103,6 +103,29 @@ html {
 	transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
+/* Text selection highlight */
+::selection {
+	background: var(--color-accent-200);
+	color: var(--color-text-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+	::selection {
+		background: var(--color-accent-400);
+		color: var(--color-text-primary);
+	}
+}
+
+[data-theme="dark"] ::selection {
+	background: var(--color-accent-400);
+	color: var(--color-text-primary);
+}
+
+[data-theme="light"] ::selection {
+	background: var(--color-accent-200);
+	color: var(--color-text-primary);
+}
+
 body {
 	min-height: 100dvh;
 	display: flex;

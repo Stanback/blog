@@ -28,7 +28,7 @@
 	--color-charcoal: oklch(0.25 0.01 60); /* dark warm gray */
 	--color-stone: oklch(0.35 0.01 60); /* medium warm gray */
 	--color-sand: oklch(0.7 0.02 60); /* light warm gray */
-	--color-cream: oklch(0.96 0.01 80); /* off-white warm - highlight bg */
+	--color-cream: oklch(0.94 0.01 80); /* off-white warm */
 	--color-paper: oklch(0.97 0.01 90); /* near-white - main bg */
 	--color-white: oklch(1.0 0.0 0); /* pure white */
 
@@ -260,7 +260,7 @@
 	--color-charcoal: oklch(0.25 0.01 60);
 	--color-stone: oklch(0.35 0.01 60);
 	--color-sand: oklch(0.7 0.02 60);
-	--color-cream: oklch(0.96 0.01 80);
+	--color-cream: oklch(0.94 0.01 80);
 	--color-paper: oklch(0.97 0.01 90);
 
 	--color-accent-100: oklch(0.95 0.02 350);
