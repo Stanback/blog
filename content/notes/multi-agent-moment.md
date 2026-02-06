@@ -8,7 +8,7 @@ tags:
   - ai
   - engineering
   - tools
-heroImage: /images/posts/multi-agent-imagen4-test.png
+heroImage: /images/posts/multi-agent-moment-hero.png
 tension: "Everyone's shipping multi-agent. Nobody agrees on what that means."
 preface: "[[The SaaSpocalypse]] covered the existential weight. This is the tools companion—what's actually available for multi-agent orchestration, and how to choose."
 ---
@@ -139,6 +139,8 @@ This is the distinction that matters:
 The SDLC simulators are solving the wrong problem. They recreate human coordination friction in software.
 
 Agent Teams and Gas Town both take the operational approach. The difference is where the coordination logic lives: inside the Claude Code binary (native) or outside (external).
+
+![Multi-agent landscape: native vs external, transparent vs opaque](/images/posts/multi-agent-imagen4-test.png)
 
 ---
 
