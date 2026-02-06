@@ -79,7 +79,9 @@ From their docs: "By exposing the CLI as a Model Context Protocol (MCP) server a
 
 ## Native: Google Antigravity
 
-While Gemini CLI is still proposal-stage for multi-agent, Google shipped [Antigravity](https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/) in November 2025—a full agentic development platform.
+Gemini CLI took a different path than Claude Code or Codex: Google [open-sourced it](https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-cli-open-source-ai-agent/) fully under Apache 2.0. This means multi-agent isn't waiting on Google's roadmap—the community can build it. A detailed [multi-agent proposal](https://github.com/google-gemini/gemini-cli/discussions/7637) exists (agent registry, pub/sub coordination, sandbox isolation), but it's community-driven rather than official.
+
+Meanwhile, Google shipped [Antigravity](https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/) in November 2025—a full agentic development platform.
 
 The architecture splits into two surfaces:
 - **Editor View** — Standard AI-powered IDE with completions and inline commands
