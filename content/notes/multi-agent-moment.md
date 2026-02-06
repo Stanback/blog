@@ -120,9 +120,9 @@ Built on [Beads](https://github.com/steveyegge/beads) for memory persistence. Gi
 
 **[claude-flow](https://github.com/ruvnet/claude-flow)** — Enterprise-positioned with 60+ specialized agents, self-learning architecture, consensus algorithms (Raft/BFT/Gossip). Works with multiple providers (Claude/GPT/Gemini/Ollama). Ambitious but unclear how much is implemented vs. architecture diagrams.
 
-**[ccswarm](https://github.com/ruvnet/ccswarm)** — Rust-native orchestration with Git worktree isolation. Clean implementation but still partial (AI execution simulated in places).
+**[Pheromind](https://github.com/mariusgavrila/pheromind)** — Swarm intelligence inspired by ant colonies. Agents coordinate via a shared `.pheromone` file containing structured JSON signals—no direct peer-to-peer commands. Decentralized stigmergy rather than hierarchical orchestration.
 
-**[oh-my-claudecode](https://github.com/ruvnet/oh-my-claudecode)** — 5 execution modes: Autopilot, Ultrapilot (3-5x parallel), Swarm, Pipeline, Ecomode. 32 specialized agents. Multiple modes for different needs, token-efficient options.
+**[oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode)** — 5 execution modes: Autopilot, Ultrapilot (3-5x parallel), Swarm, Pipeline, Ecomode. 32 specialized agents. Multiple modes for different needs, token-efficient options.
 
 The community tools trade polish for portability. They work across providers. They're not locked to anyone's subscription model. But they require more setup and maintenance.
 
@@ -241,7 +241,7 @@ If you want to experiment with multi-agent:
 
 **Gas Town + Beads** — Maximum power, maximum chaos. Requires expertise but gives you persistent memory and full control. This is the "vibe coding" stack.
 
-**claude-flow / ccswarm / oh-my-claudecode** — Interesting architectures, less battle-tested. Worth watching.
+**claude-flow / Pheromind / oh-my-claudecode** — Interesting architectures, less battle-tested. Worth watching.
 
 The native approach will improve. Anthropic will add session resumption, better persistence, more coordination options. The community tools will adapt or die.
 
