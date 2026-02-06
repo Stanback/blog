@@ -131,4 +131,4 @@ The receipts aren't separate from the truth. They're what *makes* it true. Proof
 
 > **A Truth Graph isn't a database of facts. It's a machine for earning and revoking the status "true."**
 
-That's not mental gymnastics. That's how science has always worked. We're just making it explicit—because in a world of synthetic everything, implicit methodology isn't good enough anymore.
+This is how science has always worked. We're just making it explicit—because in a world of synthetic everything, implicit methodology isn't good enough anymore.
