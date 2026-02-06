@@ -167,11 +167,19 @@ IMPORTANT: Output ONLY the image generation prompt. No explanations, no markdown
 	return text.trim();
 }
 
-// Call Gemini Imagen API to generate image
+// Available Imagen 4 models
+const IMAGEN_MODELS = {
+	standard: 'imagen-4.0-generate-001', // Balanced quality/speed
+	ultra: 'imagen-4.0-ultra-generate-001', // Highest quality
+	fast: 'imagen-4.0-fast-generate-001', // Fastest generation
+} as const;
+
+// Call Imagen 4 API to generate image
 async function generateImageWithGemini(
 	metaPrompt: string,
 	outputPath: string,
 	apiKey: string,
+	model: keyof typeof IMAGEN_MODELS = 'standard',
 ): Promise<void> {
 	// Step 1: Refine meta-prompt into direct image prompt
 	const imagePrompt = await refinePromptWithGemini(metaPrompt, apiKey);
@@ -179,23 +187,26 @@ async function generateImageWithGemini(
 	console.log(imagePrompt);
 	console.log('----------------------------\n');
 
-	// Step 2: Generate image with Gemini 2.0 Flash (image generation mode)
-	console.log('Generating image with Gemini 2.0 Flash...');
+	// Step 2: Generate image with Imagen 4
+	const modelId = IMAGEN_MODELS[model];
+	console.log(`Generating image with Imagen 4 (${modelId})...`);
 
 	const response = await fetch(
-		`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key=${apiKey}`,
+		`https://generativelanguage.googleapis.com/v1beta/models/${modelId}:predict`,
 		{
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
+			headers: {
+				'Content-Type': 'application/json',
+				'x-goog-api-key': apiKey,
+			},
 			body: JSON.stringify({
-				contents: [
-					{
-						parts: [{ text: `Generate an image: ${imagePrompt}` }],
+				instances: [{ prompt: imagePrompt }],
+				parameters: {
+					sampleCount: 1,
+					aspectRatio: '16:9', // Landscape for blog heroes
+					outputOptions: {
+						mimeType: 'image/png',
 					},
-				],
-				generationConfig: {
-					responseModalities: ['image', 'text'],
-					responseMimeType: 'text/plain',
 				},
 			}),
 		},
@@ -203,18 +214,14 @@ async function generateImageWithGemini(
 
 	if (!response.ok) {
 		const error = await response.text();
-		console.error('Gemini image generation error:', error);
+		console.error('Imagen 4 generation error:', error);
 		process.exit(1);
 	}
 
 	const data = await response.json();
 
-	// Find the inline_data part with the image
-	const parts = data.candidates?.[0]?.content?.parts || [];
-	const imagePart = parts.find((p: { inlineData?: { mimeType: string } }) =>
-		p.inlineData?.mimeType?.startsWith('image/'),
-	);
-	const imageData = imagePart?.inlineData?.data;
+	// Imagen 4 returns predictions array with bytesBase64Encoded
+	const imageData = data.predictions?.[0]?.bytesBase64Encoded;
 
 	if (!imageData) {
 		console.error('No image data in response');

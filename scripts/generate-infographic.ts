@@ -66,26 +66,41 @@ Landscape orientation, clean composition with breathing room.
 `.trim();
 }
 
+// Imagen 4 models
+const IMAGEN_MODELS = {
+	standard: 'imagen-4.0-generate-001',
+	ultra: 'imagen-4.0-ultra-generate-001',
+	fast: 'imagen-4.0-fast-generate-001',
+} as const;
+
 async function generateInfographic(
 	prompt: string,
 	outputPath: string,
 	apiKey: string,
+	model: keyof typeof IMAGEN_MODELS = 'standard',
 ): Promise<void> {
-	console.log('Generating infographic...');
+	const modelId = IMAGEN_MODELS[model];
+	console.log(`Generating infographic with Imagen 4 (${modelId})...`);
 	console.log('\n--- Prompt ---');
 	console.log(prompt);
 	console.log('--------------\n');
 
 	const response = await fetch(
-		`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key=${apiKey}`,
+		`https://generativelanguage.googleapis.com/v1beta/models/${modelId}:predict`,
 		{
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
+			headers: {
+				'Content-Type': 'application/json',
+				'x-goog-api-key': apiKey,
+			},
 			body: JSON.stringify({
-				contents: [{ parts: [{ text: `Generate an image: ${prompt}` }] }],
-				generationConfig: {
-					responseModalities: ['image', 'text'],
-					responseMimeType: 'text/plain',
+				instances: [{ prompt }],
+				parameters: {
+					sampleCount: 1,
+					aspectRatio: '1:1', // Square for infographics
+					outputOptions: {
+						mimeType: 'image/png',
+					},
 				},
 			}),
 		},
@@ -93,23 +108,20 @@ async function generateInfographic(
 
 	if (!response.ok) {
 		const error = await response.text();
-		console.error('API error:', error);
+		console.error('Imagen 4 error:', error);
 		process.exit(1);
 	}
 
 	const data = await response.json();
-	const parts = data.candidates?.[0]?.content?.parts || [];
-	const imagePart = parts.find((p: { inlineData?: { mimeType?: string; data?: string } }) =>
-		p.inlineData?.mimeType?.startsWith('image/'),
-	);
+	const imageData = data.predictions?.[0]?.bytesBase64Encoded;
 
-	if (!imagePart?.inlineData?.data) {
+	if (!imageData) {
 		console.error('No image in response');
 		console.error(JSON.stringify(data, null, 2));
 		process.exit(1);
 	}
 
-	const buf = Buffer.from(imagePart.inlineData.data, 'base64');
+	const buf = Buffer.from(imageData, 'base64');
 	writeFileSync(outputPath, buf);
 	console.log(`✓ Saved: ${outputPath}`);
 }
@@ -122,6 +134,7 @@ const { values } = parseArgs({
 		config: { type: 'string', short: 'c' },
 		output: { type: 'string', short: 'o', default: 'infographic.png' },
 		preset: { type: 'string', short: 'p' },
+		model: { type: 'string', short: 'm', default: 'standard' }, // standard, ultra, fast
 	},
 });
 
@@ -166,4 +179,5 @@ if (values.preset) {
 }
 
 const prompt = build2x2Prompt(config);
-await generateInfographic(prompt, values.output, apiKey);
+const model = (values.model as keyof typeof IMAGEN_MODELS) || 'standard';
+await generateInfographic(prompt, values.output, apiKey, model);
