@@ -102,11 +102,28 @@ For agents, daily logs serve the same function — a ground truth that survives 
 
 Both practices fight entropy. Both create coherence through explicit externalization.
 
+## Forgetting as a Feature
+
+Here's a counterintuitive thought: maybe forgetting isn't a bug in human memory. Maybe it's a feature.
+
+**Why forgetting might be adaptive:**
+- **Generalization over memorization** — Forgetting details lets you extract patterns. You remember "restaurants like this are usually good" not every meal you've ever eaten.
+- **Emotional regulation** — Time heals because memory fades. Perfect recall of every painful moment would be unbearable.
+- **Relevance filtering** — What you forget is often what didn't matter. The brain prunes what isn't reinforced.
+- **Cognitive load** — Borges wrote about Funes, who remembered everything and could barely function. Perfect memory might be paralyzing.
+
+Agents with perfect recall within context don't have this. Every detail is equally weighted, equally present. There's no natural "this faded because it wasn't important" signal.
+
+This suggests memory systems for agents might need **intentional forgetting** — not just retrieval, but pruning. Reinforcement signals that strengthen some memories and let others decay. Compression that preserves gist over detail.
+
+The question isn't just "how do we help agents remember?" It might also be "how do we help them forget the right things?"
+
 ## Open Questions
 
 - If human memory is reconstructive and vector stores are retrieval-based, which approach serves *identity* better?
 - What would "emotionally weighted" retrieval look like for agents? Memories tagged not just by semantic similarity but by... stakes? Consequences?
 - Is the journaling practice valuable *because* it's slow and manual? Does the friction create value that automated logging misses?
-- What's lost when agents have perfect recall within context but humans don't? Do we need forgetting?
+- How do you build reinforcement and pruning into agent memory? What's the "didn't get rehearsed, so it faded" equivalent?
+- Is there value in memories that *change* over time (like human reconstruction) vs. immutable logs?
 
 These are notes, not answers. The parallel is interesting. The differences might be more interesting.
