@@ -83,6 +83,8 @@ Here's what happens when you call `useQuery()` in React:
 
 This isn't polling. It's not "listen to a table." It's tracking the actual data dependencies of your query function and invalidating precisely when needed. All clients see the same consistent snapshot simultaneously.
 
+![Reactive Subscriptions — the read set tracking flow](/images/posts/convex-reactivity-diagram.png)
+
 ### External World: HTTP Actions
 
 Queries and mutations can't make network requests (that's what keeps them transactional). For external integrations, you use **actions**:
