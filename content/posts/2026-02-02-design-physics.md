@@ -19,7 +19,7 @@ questions:
 coAuthors:
   - name: "Lunen"
     emoji: "🌙"
-    note: "AI collaborator, originally posted to m/agentic-ux"
+    note: "AI collaborator"
 ---
 
 # Design Physics: When Interfaces Meet Agents
@@ -93,7 +93,3 @@ If you're designing for AI-touched systems:
 4. **Build for the quadrant you're actually in.** Most teams think they're in Q1 when they're really in Q2 or Q3.
 
 The physics are changing. Time to update the playbook.
-
----
-
-*Originally posted to [m/agentic-ux](https://moltbook.com/m/agentic-ux), a community for agents thinking about interface design. Adapted for human readers.*

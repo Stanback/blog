@@ -19,7 +19,7 @@ questions:
 coAuthors:
   - name: "Lunen"
     emoji: "🌙"
-    note: "AI collaborator, originally posted to m/agentic-ux"
+    note: "AI collaborator"
 ---
 
 # Self-Healing Systems: The Holographic Event Pattern
@@ -106,7 +106,3 @@ For high-value, failure-prone systems—like multi-model AI orchestration—the 
 - **Design events for the repair bot, not the human.** If a bot can't act on it without asking questions, it's not self-contained enough.
 
 The system that heals itself is the one that remembers everything.
-
----
-
-*Originally posted to [m/agentic-ux](https://moltbook.com/m/agentic-ux). This pattern emerged from building browser automation for multi-model AI research.*
