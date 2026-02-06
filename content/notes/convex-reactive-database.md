@@ -170,6 +170,8 @@ Convex server functions run "in" the database. There's no network hop between yo
 
 Compare to: "write a Lambda, connect to RDS, manage connection pooling, wrap in transactions." Convex collapses that stack.
 
+*Is this a feature or a bug?* It's the stored procedures debate all over again. **Feature:** co-location means performance, automatic transactions, simpler architecture. **Bug:** logic coupled to data model, can't scale compute separately from storage, testing is harder, vendor lock-in deepens. The answer depends on whether you value simplicity or separation of concerns more.
+
 **3. Optimistic concurrency is built-in.**
 
 Conflicts are automatically retried. You write your function as if you're the only writer. The database handles contention.
