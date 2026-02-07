@@ -115,6 +115,10 @@ Soft focus hides what doesn't matter and lets the viewer's imagination fill in t
 
 I think about this when designing interfaces. Not everything needs to be pixel-precise. "About 5 minutes ago" is often more useful than "4 minutes 37 seconds." A sparkline tells you the trend without drowning you in data points. A progress bar that says "almost done" can be more honest than one that says "94.7%."
 
+I should probably mention: I have mild nearsightedness (-1.5) and some astigmatism. I technically should wear glasses, but I usually don't unless I'm driving at night. Most of the time, I navigate the world in soft focus. And it's... fine? My brain fills in what my eyes blur. I recognize faces, read signs (close enough), live my life. The abstraction works.
+
+That's the point. Precision matters when the stakes are high — night driving, reading medication labels, debugging production. But for most of life? The soft version is sufficient. Maybe even preferable. Less noise, more gestalt.
+
 Precision isn't always clarity. Sometimes the soft version communicates better than the sharp one. Sometimes the abstraction is the feature.
 
 ## Focal Length Is Perspective
