@@ -74,6 +74,8 @@ But there's another approach: **tell them**.
 
 That's what a [[Why Everyone Should Have a SOUL.md|SOUL.md]] file does. It's a document that declares who you are — your values, your communication style, your boundaries, your preferences. Not inferred. Stated.
 
+And here's the key: it doesn't have to be purely descriptive. It can be aspirational. A manifesto for who you're striving to become, not just who you happen to be today. Write down the values you want to embody, and suddenly you have something to hold yourself accountable to — a test you can check your behavior against.
+
 It's the funeral test for your digital self: *If an AI had to represent me, what would I want it to embody?*
 
 The gap between what others would infer about you — whether an algorithm or a new coworker — and what you'd actually want represented? That's the same gap Covey identified. The difference between a life lived reactively (shaped by circumstances, by other people's expectations, by the path of least resistance) and a life lived intentionally (shaped by your own articulated values).
