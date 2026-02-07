@@ -1061,10 +1061,17 @@ main > .post-hero {
 .photo-card {
 	text-decoration: none;
 	display: block;
-	/* Subtle rotation variance based on index */
-	--rotation: calc((var(--i, 0) - 2) * 0.8deg);
-	transform: rotate(var(--rotation));
+	/* Alternating tilt: odd left, even right */
+	transform: rotate(calc(var(--tilt, 1) * 1.2deg));
 	transition: transform var(--transition-normal);
+}
+
+.photo-card:nth-child(odd) {
+	--tilt: -1;
+}
+
+.photo-card:nth-child(even) {
+	--tilt: 1;
 }
 
 .photo-card:hover {
