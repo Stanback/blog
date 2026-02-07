@@ -1,6 +1,6 @@
 ---
 title: "The Funeral Test for Your Digital Self"
-date: 2026-02-07T10:00
+date: 2026-02-06T14:00
 description: "From Covey's funeral visualization to company codexes to SOUL.md — the throughline is intentional identity. And now we need test harnesses for who we're becoming."
 type: note
 schemaVersion: 1
