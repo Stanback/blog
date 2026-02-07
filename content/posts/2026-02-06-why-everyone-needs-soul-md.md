@@ -76,6 +76,32 @@ Not algorithmic personalization — where platforms guess what you want based on
 
 This is a better model. More honest, more portable, more human.
 
+## USER.md vs SOUL.md
+
+There's a related concept worth distinguishing: USER.md.
+
+In agent systems, a USER.md is the agent's notes *about* its human. Context it's gathered. Preferences it's observed. A model of who you are, built from the outside.
+
+A SOUL.md is different. It's *your* declaration of who you are, written by you.
+
+| | USER.md | SOUL.md |
+|---|---------|---------|
+| **Author** | Someone else (or an AI) | You |
+| **Perspective** | External observation | Internal declaration |
+| **Content** | What they've noticed about you | What you want to be true |
+| **Energy** | "Here's what I know about Bri" | "Here's who Bri is becoming" |
+
+The distinction matters because **inferred identity and declared identity are not the same thing**.
+
+A USER.md might say: "Bri is a systems thinker who values clean architecture." True — but passive. It's pattern-matching on behavior.
+
+A SOUL.md says: "I believe software should be built for maintainability first. I value leverage and reusability over clever one-offs. When I encounter a problem, my first instinct is to ask what system produced it." That's a *commitment*. Something to be accountable to.
+
+USER.md is how the world sees you.
+SOUL.md is who you're choosing to be.
+
+Both are useful. But only one is yours.
+
 ## The Social Benefit
 
 There's a third angle: legibility to other humans.
