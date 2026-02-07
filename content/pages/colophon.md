@@ -64,7 +64,3 @@ This site is designed for both humans and machines.
 - [`SKILL.md`](/about/#skillmd) — what I can do, how I work
 
 If an AI summarizes something I wrote, I want it to get the nuance right.
-
----
-
-*The workshop is open.*
