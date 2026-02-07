@@ -76,9 +76,11 @@ That's what a [[Why Everyone Should Have a SOUL.md|SOUL.md]] file does. It's a d
 
 And here's the key: it doesn't have to be purely descriptive. It can be aspirational. A manifesto for who you're striving to become, not just who you happen to be today. Write down the values you want to embody, and suddenly you have something to hold yourself accountable to — a test you can check your behavior against.
 
-There's an idea I keep coming back to: authenticity isn't something you find buried inside yourself, waiting to be discovered. It's something you create. You shape it from the pieces you have — your experiences, your choices, your values. The authentic self isn't hidden. It's built.
+There's an idea I keep coming back to: the authentic self isn't fully pre-formed, waiting to be found. But it's not a blank canvas either. Some parts you discover — your nature, your wiring, the things that were always there but needed words. Some parts you create — your values, your habits, how you respond to what life throws at you.
 
-SOUL.md is the blueprint.
+Authenticity is both discovery and creation. You find the raw materials, then you build with them.
+
+SOUL.md is the blueprint for what you're building.
 
 One more nuance: your SOUL.md might be context-specific. A professional SOUL.md (how I show up at work) might differ from a personal one (how I show up as a parent). They're branches of the same root, but the emphasis shifts. The funeral test version would be the trunk — the unified identity beneath all the contexts.
 
