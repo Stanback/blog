@@ -31,7 +31,7 @@ Then the L lenses. Canon's red ring. Pro glass. The 24-70 f/2.8L. The 70-200 f/2
 
 Then strobe flashes. Speedlites at first — on-camera, then off-camera with wireless triggers. I discovered [Strobist](https://strobist.blogspot.com/), David Hobby's lighting blog, and fell down the rabbit hole. Learned about ratios, modifiers, the inverse square law. Built an entire portable studio setup — softboxes, beauty dishes, reflectors, light stands, sandbags. I could control every photon.
 
-I became *that guy*. Reading gear reviews obsessively. Checking [Canon Rumors](https://www.canonrumors.com/) daily. Watching for the next body announcement, the next lens patent. The forums, the communities, the endless debates about sharpness and bokeh and ISO performance.
+I became *that person*. Reading gear reviews obsessively. Checking [Canon Rumors](https://www.canonrumors.com/) daily. Watching for the next body announcement, the next lens patent. The forums, the communities, the endless debates about sharpness and bokeh and ISO performance.
 
 Then support. A proper tripod — not the $30 Amazon special, a real one. Carbon fiber. Arca-Swiss ball head. Then a gimbal for video. A slider for motion control. A drone for aerials.
 
