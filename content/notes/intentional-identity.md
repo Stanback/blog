@@ -13,7 +13,7 @@ tags:
   - parenting
 ---
 
-The company I work for, Demand.io, has a document called "The Codex."
+The company I work for, [Demand.io](https://demand.io), has a document called "The Codex."
 
 It's not a style guide or an employee handbook. It's a 6,000-word operating system for *how to think*. It covers everything from cognitive clarity ("your mind is for having ideas, not holding them") to strategic positioning ("be first or be different") to a core mandate we call "Product Over Process" — the reminder that documentation is potential energy, but shipped products are kinetic.
 
