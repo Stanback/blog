@@ -5,6 +5,7 @@ date: 2026-02-07T16:00
 type: note
 schemaVersion: 1
 draft: true
+heroImage: /images/posts/photography-after-ai-hero.png
 tags:
   - photography
   - ai
