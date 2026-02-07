@@ -114,15 +114,17 @@ The exploration shows you what's possible. The commitment shows you who you are.
 
 ## The Kit I Actually Use Now
 
-After all that — the lenses, the lights, the stands, the gimbals — here's what I reach for:
+After all that — the lenses, the lights, the stands, the gimbals — here's what I *mostly* reach for:
 
 - **iPhone.** For 80% of what I shoot. Always with me. Good enough.
-- **Fuji X100.** Fixed 35mm equivalent. No lens choices. Just see and shoot.
+- **Canon EOS R5.** Still a Canon loyalist after all these years.
+- **50mm f/1.2.** My favorite focal length. Finally committed.
+- **24-70.** For when I need versatility.
 - **One softbox.** When I need controlled light. Not a whole studio — one light, one modifier.
 
-That's it. Everything else is in a closet, available if I need it, not cluttering my decisions.
+Okay, I have more than that. I'm still figuring out how to let go. The 70-200 is still in the closet. The strobes are "just in case." Old habits.
 
-I take more photos now than I did with ten times the gear. And I enjoy it again.
+But I'm getting there. I take more photos now than I did at peak gear accumulation. And I enjoy it again — mostly because I stopped optimizing and started shooting.
 
 ---
 
