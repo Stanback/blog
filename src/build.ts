@@ -243,8 +243,10 @@ function buildContext(
 		if (item.draft) continue;
 
 		const links = extractWikilinks(item.bodyMarkdown);
-		for (const linkTitle of links) {
-			const targetUrl = wikilinkMap.get(linkTitle.toLowerCase());
+		// Dedupe links from same source to same target
+		const uniqueLinks = [...new Set(links.map((l) => l.toLowerCase()))];
+		for (const linkTitle of uniqueLinks) {
+			const targetUrl = wikilinkMap.get(linkTitle);
 			if (targetUrl) {
 				// Add to backlinks
 				if (!backlinks.has(targetUrl)) {
