@@ -129,7 +129,7 @@ Algorithms decide who we are based on what we click. Credit scores define us by 
 The countermovement is intentional identity. It's the act of defining yourself before others define you.
 
 Covey did it with the funeral test.
-Companies do it with codexes and manifestos.
+Some companies do it with codexes and manifestos (though most settle for generic values on a wall).
 We can do it with SOUL.md files for our AI agents.
 We can do it with test harnesses for our daily lives.
 We can do it as parents, by asking what story our children will tell.
