@@ -174,7 +174,7 @@ There's a role that's been trending in enterprise sales: the "Forward Deployed E
 
 I think this is temporary.
 
-Consider: Anthropic built Cowork—the plugin system that triggered the $285 billion selloff—in about ten days. They vibe coded an enterprise integration layer. Meanwhile, OpenAI just launched [Frontier](https://www.theverge.com/ai-artificial-intelligence/874258/openai-frontier-ai-agent-platform-management), their competing enterprise platform for deploying AI agents. Microsoft has Copilot Studio. Every major AI company is racing to be the enterprise agent layer.
+Consider: Anthropic built Cowork—the plugin system that triggered the $285 billion selloff—in about ten days. ["@claudeai wrote Cowork,"](https://x.com/felixrieseberg/status/2010882577113268372) their PM Felix Rieseberg confirmed. They vibe coded an enterprise integration layer. Meanwhile, OpenAI just launched [Frontier](https://www.theverge.com/ai-artificial-intelligence/874258/openai-frontier-ai-agent-platform-management), their competing enterprise platform for deploying AI agents. Microsoft has Copilot Studio. Every major AI company is racing to be the enterprise agent layer.
 
 But here's the thing: **the integration messiness that justifies FDEs is exactly what vibe working dissolves.**
 
