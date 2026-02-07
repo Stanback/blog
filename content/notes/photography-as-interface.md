@@ -2,9 +2,10 @@
 title: "Photography as Interface: What Cameras Taught Me About Software"
 description: "The arc of creative tools: diverge to learn, converge to create. Why more gear made me worse, and what that means for building software."
 date: 2026-02-07T10:00
-type: post
+type: note
 schemaVersion: 1
-draft: true
+draft: false
+heroImage: /images/posts/photography-as-interface-hero.png
 tags:
   - photography
   - design
