@@ -238,7 +238,9 @@ Digital changed everything. Shoot, review, adjust, shoot again. The feedback loo
 
 This is CI/CD. Ship small, get feedback fast, iterate continuously.
 
-I became a better photographer in one year of digital than in five years of film. Not because digital is better — film has qualities digital still can't match — but because the **feedback loop** was tighter. I could learn faster.
+I learned more in three months of digital than in two years of film. Not because digital is better — film has qualities digital still can't match. I love film grain; it has a texture and soul that digital noise never quite captures. And the slowness of film *forced* deliberation in a way that made every frame feel weightier.
+
+But the **feedback loop** was tighter with digital. I could learn faster. Experiment more. Fail cheaper.
 
 The lesson for software is obvious but easy to forget: the speed of your feedback loop is the speed of your learning. Anything that lengthens the loop (slow builds, manual QA, delayed deploys) is a tax on improvement. Anything that shortens it (hot reload, feature flags, observability) is an investment in getting better faster.
 
