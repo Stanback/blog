@@ -4,7 +4,7 @@ description: "What camera mechanics teach us about designing for attention, perc
 date: 2026-02-07T14:00
 type: note
 schemaVersion: 1
-draft: true
+draft: false
 heroImage: /images/posts/photography-interfaces-hero.png
 tags:
   - craft
@@ -42,16 +42,61 @@ This is how interfaces work. You don't design from a blank slate. You inherit co
 
 - **Shutter mechanics → discrete moments.** You couldn't capture continuous motion until video existed. Photography was inherently about *choosing the moment* — a constraint that became the entire art form.
 
-**The same pattern shows up everywhere:**
+**The same pattern shows up across interface paradigms:**
 
-| Photography | UI | API |
-|-------------|-------|-----|
-| Film size → aspect ratio | Screen size → viewport | JSON format → data shape |
-| Viewfinder type → how you see | Mobile vs desktop → interaction mode | REST verbs → action vocabulary |
-| Shutter → discrete moments | Request/response → discrete interactions | Rate limits → finite calls |
-| Lens mount → what glass fits | Platform → what components work | Schema → what shapes are valid |
+| Photography | Spatial UI | Conversational | API |
+|-------------|------------|----------------|-----|
+| Film size → aspect ratio | Viewport → what fits on screen | Context window → what's held in memory | Schema → what shapes are valid |
+| Viewfinder → what you see | Rendered page → what's visible | Turn history → what's remembered | Docs → what's discoverable |
+| Shutter → discrete moments | Click → discrete actions | Turn → discrete exchanges | Request → discrete calls |
+| Lens mount → compatible glass | Platform → compatible components | Model → compatible capabilities | Protocol → compatible clients |
 
 The interesting question isn't "what did they choose?" It's "what did the constraints make possible — and what did they make invisible?"
+
+## The Discovery Problem
+
+Here's where the paradigms diverge in a way that matters.
+
+A **spatial interface** — a dashboard, a settings page, a photo contact sheet — presents its possibilities. You see what's available. The menu shows the options. The viewport constrains what fits, but it also *reveals* what fits. You can explore without knowing what you're looking for.
+
+A **conversational interface** — voice assistant, chat, LLM — hides its possibilities. You can ask for anything. The ceiling is infinite. But the possibility space is invisible until you invoke it. You need to know what to ask, or at least how to ask.
+
+A **programmatic interface** — REST API, SDK, database — documents its possibilities. You can discover what's available, but discovery requires effort. Read the docs. Explore the schema. The constraints are explicit but not *presented*.
+
+Three paradigms. Three relationships to discovery:
+
+| | Spatial | Conversational | Programmatic |
+|---|---------|----------------|--------------|
+| **Possibilities** | Visible | Hidden | Documented |
+| **Discovery** | Built-in (explore the UI) | User-driven (know to ask) | Effort-driven (read the docs) |
+| **Ceiling** | Limited to what's rendered | Unlimited (in theory) | Limited to what's exposed |
+| **Floor** | Low (anyone can click around) | High (must articulate need) | Medium (must read, must code) |
+
+This tradeoff is sharpest with **analytics**.
+
+A dashboard puts data on a silver platter. Revenue by region. Monthly trends. Top customers. You don't need to know what's important — the designer decided and rendered it. This is powerful: anyone can glance at a dashboard and understand the business. But it's also limiting: you can't ask questions the designer didn't anticipate.
+
+Conversational analytics flips this. "Show me Q3 revenue for accounts over $50k, compared to last year, broken down by sales rep." You can ask *anything*. But you need to know what to ask. The person who doesn't know that "Q3 revenue by rep" is a meaningful question will never ask it.
+
+The dashboard lowers the floor. The conversation raises the ceiling. Neither solves both.
+
+**I'm skeptical we'll build dashboards the same way in ten years.**
+
+Not because dashboards are bad — they're good at what they do. But they're expensive to build, slow to change, and they encode assumptions that may not match what users actually need. How many dashboard projects have you seen where half the widgets go ignored, and users still export to Excel to answer their real questions?
+
+The emerging alternative: **generative UI**. You describe what you need; the interface materializes. Google's [A2UI spec](https://github.com/google/A2UI) is an early example — agents return structured UI descriptions, and the frontend renders them dynamically. Ask for "Q3 revenue by region" and get a chart. Ask for "compare to last year" and the chart updates. The UI isn't pre-built; it's generated on demand.
+
+This collapses the spatial/conversational divide. You converse to specify intent; you get spatial output to manipulate. The dashboard isn't designed once and deployed — it's synthesized per question.
+
+But there's something lost when nothing is presented by default. A dashboard is an *opinion* about what matters. It encodes institutional knowledge: these are the metrics we track, this is the shape of the business. A blank prompt encodes nothing. It assumes you already know what to ask — or at least how to start asking.
+
+*(This is probably a separate article. The tension between curated views and generated views is deep, and I'm not sure where it lands. But it's worth naming: the dashboards we build today may be a transitional form.)*
+
+The film parallel: contact sheets were dashboards. Every frame from a roll, presented in a grid. You could see what you shot. You could discover images you'd forgotten taking. Digital killed the contact sheet — now you query your library by date, by face, by keyword. More powerful, yes. But you have to know what you're looking for. The serendipity of browsing is gone unless you deliberately reconstruct it.
+
+Maybe the answer is **progressive disclosure across paradigms**. Start spatial: here's what we think matters. Go conversational when the user has a specific question. Expose the API for power users who want to build their own views.
+
+The constraint that makes something visible also makes it limited. The freedom that makes something unlimited also makes it invisible. Every interface navigates this tradeoff. The best ones let you move between modes.
 
 ## The Viewfinder Is a Mode of Perception
 
@@ -66,6 +111,8 @@ Before digital screens, you experienced a camera through its viewfinder — and 
 Each viewfinder was an interface that shaped perception differently. Same photographer, same scene, different viewfinder — different photographs. The tool wasn't neutral.
 
 The software parallel: mobile vs desktop isn't just a screen size change. It's a different *mode* of interaction. Thumb-scrolling on a subway vs. mouse-clicking at a desk. The "viewport" changes behavior, not just layout.
+
+Conversational interfaces are stranger still — there's no viewfinder at all. You don't see the possibility space; you describe what you want and something appears. It's like shooting blind: compose the image in your head, speak it into existence, see if it matches. The feedback loop is slower. The skill ceiling is different. You're not learning to see frames; you're learning to articulate intent.
 
 ## Framing Is Information Architecture
 
@@ -120,6 +167,8 @@ I should probably mention: I have mild nearsightedness (-1.5) and some astigmati
 That's the point. Precision matters when the stakes are high — night driving, reading medication labels, debugging production. But for most of life? The soft version is sufficient. Maybe even preferable. Less noise, more gestalt.
 
 Precision isn't always clarity. Sometimes the soft version communicates better than the sharp one. Sometimes the abstraction is the feature.
+
+Conversational interfaces are soft focus by default. "Find me something good for dinner nearby" is imprecise — and that's the point. The fuzziness is a feature, not a bug. Natural language lets you be vague when you don't yet know what you want. A structured query demands precision upfront. Sometimes you need "Italian, outdoor seating, under $50." Sometimes you need "something good." The soft query gets you started; you sharpen as you go.
 
 ## Focal Length Is Perspective
 
@@ -230,6 +279,8 @@ Cameras taught me to see interfaces differently:
 8. **Tools shape perception.** The interfaces we use train how we see the world. Design accordingly.
 
 9. **Constraints enable creativity.** A well-chosen limitation isn't a prison — it's a focusing lens.
+
+10. **Discovery is a design choice.** Spatial interfaces present possibilities; conversational interfaces hide them. Lowering the floor and raising the ceiling require different paradigms — and the best systems let you move between them.
 
 ---
 
