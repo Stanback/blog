@@ -13,19 +13,23 @@ tags:
 tension: "I got better gear and took worse photos. There's a lesson in there."
 ---
 
-## The Gear Acquisition Phase
+## 2003: The Beginning
 
-It started with a kit lens and a used Canon body. I shot everything. Portraits of friends. Street scenes. My coffee. The light through my window at 6am. I didn't know what I was doing, but I was doing it constantly.
+I got my first real camera in 2003 — a Canon 20D. Eight megapixels. Felt like magic.
+
+I shot everything. Portraits of friends. Street scenes. My coffee. The light through my window at 6am. I didn't know what I was doing, but I was doing it constantly. The kit lens didn't matter. I was *seeing* for the first time.
+
+## The Gear Acquisition Years
 
 Then I learned about primes. A 50mm f/1.8 — the "nifty fifty." Suddenly: bokeh. Shallow depth of field. I could isolate subjects. My photos looked *professional*.
 
 So I got more.
 
-A 35mm for street photography. An 85mm for portraits. A 24-70 zoom for versatility. A 70-200 for reach. Macro tubes for close-ups. Each lens opened a new way of seeing.
+A 35mm for street photography. An 85mm for portraits. A 24-70 zoom for versatility. A 70-200 for reach. Macro tubes for close-ups. Each lens opened a new way of seeing. I upgraded bodies — 40D, 5D Mark II, eventually a Mark IV. Full frame. More megapixels. Better low-light.
 
-Then lighting. Off-camera flash. Softboxes. Beauty dishes. Reflectors. Light stands. Sandbags. I built a whole studio in my garage. I could control every photon.
+Then lighting. Off-camera flash. Softboxes. Beauty dishes. Reflectors. Light stands. Sandbags. I built a whole studio setup. I could control every photon. Learned about ratios, modifiers, the inverse square law. 
 
-Then support. A proper tripod — not the $30 Amazon one, a real one. Carbon fiber. Ball head. Then a gimbal for video. A slider for motion. A drone for aerials.
+Then support. A proper tripod — not the $30 Amazon special, a real one. Carbon fiber. Arca-Swiss ball head. Then a gimbal for video. A slider for motion control. A drone for aerials.
 
 I had *options*. I could shoot anything.
 
@@ -109,4 +113,4 @@ The constraint isn't the enemy of creativity. The constraint *is* creativity —
 
 ---
 
-*I still think about that 70-200. Sometimes I miss the reach. But I don't miss the weight — literal and cognitive. Some tools are worth the tradeoff. Some aren't. The only way to know is to shoot.*
+*Twenty-plus years since that Canon 20D. I still think about that 70-200. Sometimes I miss the reach. But I don't miss the weight — literal and cognitive. Some tools are worth the tradeoff. Some aren't. The only way to know is to shoot.*
