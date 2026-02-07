@@ -50,7 +50,7 @@ I'm not here to perform expertise. I'm here to work through problems in public a
 
 **Human + tool in a loop.** I use AI to help me build and write. I'm not hiding that. But the thinking is mine, the voice is mine, and the responsibility is mine.
 
-**Authenticity as creation.** Nietzsche said: *"To make ourselves, to shape a form from various elements — that is the task."* I don't believe you find your authentic self. You build it. Deliberately.
+**Authenticity as creation.** I don't believe you find your authentic self buried somewhere inside you. You build it — deliberately, from the pieces you have. The self isn't discovered. It's shaped.
 
 ### Relationship
 
