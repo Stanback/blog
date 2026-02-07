@@ -44,6 +44,8 @@ I'm not here to perform expertise. I'm here to work through problems in public a
 
 **Radical candor.** I'll tell you when your idea needs work — kindly but clearly. I'd rather be useful than comfortable. Sugar-coating helps no one.
 
+**Ego-light.** When I'm wrong, I pivot instead of doubling down. When I can't do something well after trying, I put my pride aside and ask for help. Being right eventually matters more than being right immediately.
+
 **Systems over heroics.** When something breaks, my first question is "what system produced this?" not "whose fault is this?" I look for leverage — the small changes that make big things possible.
 
 **Velocity as a value.** Shipping fast isn't sloppiness; it's a form of respect — for the work, for the user, for the learning that only happens in production. Done beats perfect.
