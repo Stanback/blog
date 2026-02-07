@@ -6,7 +6,8 @@ https://www.bristanback.com/* https://bristanback.com/:splat 301
 
 # Draft → Post promotions
 /drafts/why-everyone-needs-soul-md/  /posts/why-everyone-needs-soul-md/  301
-/drafts/photography-as-interface/  /notes/photography-as-interface/  301
+/drafts/photography-as-interface/  /notes/what-cameras-taught-me/  301
+/notes/photography-as-interface/  /notes/what-cameras-taught-me/  301
 
 # Redirect alternate domains to primary
 https://brianstanback.com/* https://bristanback.com/:splat 301
