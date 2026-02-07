@@ -23,15 +23,21 @@ I shot everything. Portraits of friends. Street scenes. My coffee. The light thr
 
 Then I learned about primes. A 50mm f/1.8 — the "nifty fifty." Suddenly: bokeh. Shallow depth of field. I could isolate subjects. My photos looked *professional*.
 
-So I got more.
+So I got more lenses.
 
-A 35mm for street photography. An 85mm for portraits. A 24-70 zoom for versatility. A 70-200 for reach. Macro tubes for close-ups. Each lens opened a new way of seeing. I upgraded bodies — 40D, 5D Mark II, eventually a Mark IV. Full frame. More megapixels. Better low-light.
+A 35mm for street photography. An 85mm for portraits. A 24-70 zoom for versatility. A 70-200 for reach. Macro tubes for close-ups. Each one opened a new way of seeing.
 
-Then lighting. Off-camera flash. Softboxes. Beauty dishes. Reflectors. Light stands. Sandbags. I built a whole studio setup. I could control every photon. Learned about ratios, modifiers, the inverse square law. 
+Then the L lenses. Canon's red ring. Pro glass. The 24-70 f/2.8L. The 70-200 f/2.8L IS. Heavy, expensive, sharp as hell. I upgraded bodies to match — 40D, 5D Mark II, eventually a Mark IV. Full frame. More megapixels. Better low-light. Glass worthy of the sensor.
+
+Then strobe flashes. Speedlites at first — on-camera, then off-camera with wireless triggers. Then proper studio strobes. Softboxes. Beauty dishes. Reflectors. Light stands. Sandbags. I could control every photon. Learned about ratios, modifiers, the inverse square law.
 
 Then support. A proper tripod — not the $30 Amazon special, a real one. Carbon fiber. Arca-Swiss ball head. Then a gimbal for video. A slider for motion control. A drone for aerials.
 
-I had *options*. I could shoot anything.
+There's a point where you don't have enough — where the gear is genuinely limiting what you can do. The kit lens really can't shoot in low light. The crop sensor really does give you less control.
+
+And then there's a point where you have too much. I crossed it without noticing.
+
+I had *options*. I could shoot anything. And that was the problem.
 
 ## The Cognitive Overload
 
