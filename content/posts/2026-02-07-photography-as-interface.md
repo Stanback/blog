@@ -25,8 +25,6 @@ But understanding wasn't enough for me. I wanted *more*. So the Speedlites gave 
 
 ## The Inflection Point
 
-<!-- TODO: Add the specific moment when gear stopped mattering -->
-
 Somewhere along the way, the returns inverted. More gear didn't mean better photographs. It meant more decisions, more setup time, more friction between seeing something and capturing it.
 
 The best photographs I ever made weren't with the Mark IV and the 70-200. They were moments I almost missed because I was fiddling with settings.
@@ -47,8 +45,6 @@ Today my kit is:
 That's it. Not because I don't appreciate what a 70-200 f/2.8 can do, but because I *know* what it can do. I made that choice from knowledge, not ignorance.
 
 ## The Software Parallel
-
-<!-- TODO: Connect to software/systems thinking -->
 
 I see the same pattern in how I approach software now. Early in a project, divergence is valuable. Explore the options. Understand the tradeoffs. Read the forum debates about framework X versus framework Y.
 
