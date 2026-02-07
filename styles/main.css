@@ -1193,6 +1193,64 @@ main > .post-hero {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   PHOTO FILMSTRIP — Mini polaroid navigation
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.photo-filmstrip {
+	display: flex;
+	justify-content: center;
+	gap: var(--space-4);
+	margin-top: var(--space-8);
+	padding: var(--space-4) 0;
+}
+
+.filmstrip-thumb {
+	display: block;
+	width: 80px;
+	background: var(--color-bg-elevated);
+	padding: var(--space-1);
+	padding-bottom: var(--space-2);
+	border-radius: var(--radius-sm);
+	box-shadow: 0 2px 8px oklch(0 0 0 / 0.1);
+	opacity: 0.6;
+	transition: opacity var(--transition-fast), transform var(--transition-fast);
+	/* Tiny alternating tilts */
+	transform: rotate(calc(var(--tilt, 1) * 2deg));
+}
+
+.filmstrip-thumb:nth-child(odd) {
+	--tilt: -1;
+}
+
+.filmstrip-thumb:nth-child(even) {
+	--tilt: 1;
+}
+
+.filmstrip-thumb img {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	border-radius: 2px;
+}
+
+.filmstrip-thumb:hover {
+	opacity: 0.9;
+	transform: rotate(0deg) scale(1.05);
+}
+
+.filmstrip-thumb.is-current {
+	opacity: 1;
+	transform: rotate(0deg) scale(1.1);
+	box-shadow: 0 4px 12px oklch(0 0 0 / 0.15);
+}
+
+/* Dark mode */
+:root[data-theme="dark"] .filmstrip-thumb {
+	background: var(--color-bg-muted);
+	box-shadow: 0 2px 8px oklch(0 0 0 / 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    PHOTO LIGHTBOX — Pure CSS click-to-expand
    ═══════════════════════════════════════════════════════════════════════════ */
 

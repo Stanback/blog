@@ -403,6 +403,28 @@ function renderNote(note: Note, ctx: BuildContext): string {
 // Render single photo
 function renderPhoto(photo: Photo, ctx: BuildContext): string {
 	const photoId = `lightbox-${photo.slug}`;
+
+	// Get all published photos for filmstrip navigation
+	const allPhotos = ctx.photos
+		.filter((p) => !p.draft)
+		.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+	// Build filmstrip
+	const filmstrip =
+		allPhotos.length > 1
+			? `
+      <nav class="photo-filmstrip" aria-label="Photo navigation">
+        ${allPhotos
+					.map(
+						(p, i) => `
+          <a href="${getUrl(p)}" class="filmstrip-thumb${p.slug === photo.slug ? ' is-current' : ''}" style="--i: ${i}">
+            <img src="${p.image}" alt="${p.title}" loading="lazy">
+          </a>`,
+					)
+					.join('')}
+      </nav>`
+			: '';
+
 	const content = `
     <article class="photo-single">
       <input type="checkbox" id="${photoId}" class="lightbox-toggle" aria-hidden="true">
@@ -421,6 +443,7 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
       <label for="${photoId}" class="lightbox-overlay" aria-hidden="true">
         <img src="${photo.image}" alt="${photo.alt}">
       </label>
+      ${filmstrip}
       ${photo.html ? `<div class="prose photo-body">${photo.html}</div>` : ''}
     </article>`;
 
