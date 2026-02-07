@@ -1,6 +1,6 @@
 ---
 title: Cusco from Above
-date: 2026-02-07
+date: 2018-08-15
 draft: false
 image: /images/photos/cusco-overlook.jpg
 alt: Panoramic view of Cusco, Peru from a rocky hillside with the Andes mountains in the background
