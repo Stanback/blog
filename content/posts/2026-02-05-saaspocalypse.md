@@ -178,7 +178,11 @@ Consider: Anthropic built Cowork—the plugin system that triggered the $285 bil
 
 But here's the thing: **the integration messiness that justifies FDEs is exactly what vibe working dissolves.**
 
-Claude Code doesn't care that your Salesforce instance has 47 custom fields and a decade of technical debt. It reads the schema, understands the constraints, and builds the integration. The "complex enterprise context" that used to require months of on-site engineering becomes a conversation.
+From my own experience: Claude Code is remarkably good at reading API documentation—even poorly written ones—and using existing CLI tools to explore, investigate, triage, and connect systems together. It's not perfect for large datasets or deeply stateful processes, but it's improving fast.
+
+The contrast with browser automation is stark. Amazon's AGI Lab [published research](https://labs.amazon.science/blog/what-makes-browser-use-hard-for-ai-agents) on why browser use is so hard for AI agents: "Multiplication of uncertainties is the killer of reliability." Each step—perception, actuation, page load—might succeed only a certain percentage of the time. Multiply those probabilities across a multi-step task and reliability tanks. The WebArena benchmark shows even top models achieve only [35.8% success rates](https://www.infoworld.com/article/3812644/browser-use-an-open-source-ai-agent-to-automate-web-based-tasks.html) on real-world web tasks.
+
+But CLIs and APIs? Those are deterministic. The "complex enterprise context" that used to require months of on-site engineering becomes a conversation. Claude Code doesn't care that your Salesforce instance has 47 custom fields and a decade of technical debt. It reads the schema, understands the constraints, and builds the integration.
 
 Maybe I'm naive to enterprise. But I don't think integration points remain messy for long when AI can:
 - Read your existing codebase and infer conventions
