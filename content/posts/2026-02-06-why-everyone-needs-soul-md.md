@@ -80,7 +80,7 @@ This is a better model. More honest, more portable, more human.
 
 There's a related concept worth distinguishing: USER.md.
 
-In agent systems, a USER.md is the agent's notes *about* its human. Context it's gathered. Preferences it's observed. A model of who you are, built from the outside.
+I first encountered this in [OpenClaw](https://openclaw.ai), an AI agent framework. A USER.md is the agent's notes *about* its human — context it's gathered, preferences it's observed. A model of who you are, built from the outside.
 
 A SOUL.md is different. It's *your* declaration of who you are, written by you.
 
