@@ -5,6 +5,6 @@ draft: false
 image: /images/photos/autumn-aerial.jpg
 alt: Aerial view of a residential neighborhood in autumn with fall foliage and mountains in the distance
 tags: [aerial, urban]
-observation: From an aerial photography experiment that never became a business. The perspective changes everything — neighborhoods become patterns, streets become lines, and you realize how much of a city is just trees.
+observation: From SkyPhoto, a business I ran with a friend during the wild west of aerial photography. The perspective changes everything — neighborhoods become patterns, streets become lines, and you realize how much of a city is just trees.
 location: Denver, CO
 ---
