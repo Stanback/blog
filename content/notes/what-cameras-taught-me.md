@@ -14,9 +14,9 @@ tags:
 tension: "I got better gear and took worse photos. There's a lesson in there."
 ---
 
-## 2004: The Beginning
+## 2003: The Beginning
 
-I got my first real camera in 2004 — a Canon 20D. Eight megapixels. Felt like magic.
+I got my first real camera in 2003 — a Canon 10D. Six megapixels. Felt like magic.
 
 I shot everything. Portraits of friends. Street scenes. My coffee. The light through my window at 6am. I didn't know what I was doing, but I was doing it constantly. The kit lens didn't matter. I was *seeing* for the first time.
 
@@ -28,7 +28,7 @@ So I got more lenses.
 
 A 35mm for street photography. An 85mm for portraits. A 24-70 zoom for versatility. A 70-200 for reach. Macro tubes for close-ups. Each one opened a new way of seeing.
 
-Then the L lenses. Canon's red ring. Pro glass. The 24-70 f/2.8L. The 70-200 f/2.8L IS. Heavy, expensive, sharp as hell. I upgraded bodies to match — 40D, 5D Mark II, eventually a Mark IV. Full frame. More megapixels. Better low-light. Glass worthy of the sensor.
+Then the L lenses. Canon's red ring. Pro glass. The 24-70 f/2.8L. The 70-200 f/2.8L IS. Heavy, expensive, sharp as hell. I upgraded bodies to match — 20D, 40D, 5D Mark II, eventually a Mark IV. Full frame. More megapixels. Better low-light. Glass worthy of the sensor.
 
 Then strobe flashes. Speedlites at first — on-camera, then off-camera with wireless triggers. I discovered [Strobist](https://strobist.blogspot.com/), David Hobby's lighting blog, and fell down the rabbit hole. Learned about ratios, modifiers, the inverse square law. Built an entire portable studio setup — softboxes, beauty dishes, reflectors, light stands, sandbags. I could control every photon.
 
@@ -138,4 +138,4 @@ The constraint isn't the enemy of creativity. The constraint *is* creativity —
 
 ---
 
-*Twenty-plus years since that Canon 20D. I still think about that 70-200. Sometimes I miss the reach. But I don't miss the weight — literal and cognitive. Some tools are worth the tradeoff. Some aren't. The only way to know is to shoot.*
+*Twenty-plus years since that Canon 10D. I still think about that 70-200. Sometimes I miss the reach. But I don't miss the weight — literal and cognitive. Some tools are worth the tradeoff. Some aren't. The only way to know is to shoot.*
