@@ -10,7 +10,7 @@ tags:
   - tools
 heroImage: /images/posts/multi-agent-moment-hero.png
 tension: "Everyone's shipping multi-agent. Nobody agrees on what that means."
-preface: "[[The SaaSpocalypse]] covered the existential weight. This is the tools companion—what's actually available for multi-agent orchestration, and how to choose."
+preface: "The SaaSpocalypse covered the existential weight. This is the tools companion—what's actually available for multi-agent orchestration, and how to choose."
 ---
 
 *Less philosophy, more implementation. For the market panic and ecosystem shakeout, see [[The SaaSpocalypse]].*
