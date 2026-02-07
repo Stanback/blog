@@ -369,6 +369,17 @@ function renderNote(note: Note, ctx: BuildContext): string {
     ${heroSection}
     <article class="prose post-body">
       ${note.html}
+      ${
+				note.tags && note.tags.length > 0
+					? `
+      <footer>
+        <p class="tags-label">${strings.labels.tagged}</p>
+        <ul class="tags">
+          ${note.tags.map((tag) => `<li><span class="tag">${tag}</span></li>`).join('')}
+        </ul>
+      </footer>`
+					: ''
+			}
     </article>
     ${renderBacklinks(noteUrl, ctx.backlinks)}`;
 
