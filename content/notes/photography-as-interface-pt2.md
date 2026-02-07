@@ -24,17 +24,50 @@ A camera is a machine for seeing. More precisely: it's a **user interface for re
 
 I've spent twenty years building software interfaces. The deeper I go, the more I realize the camera already solved many of the problems we keep rediscovering.
 
-## The Viewfinder Is a UI
+## Every Interface Inherits Constraints
 
-Before digital screens, cameras had viewfinders — optical systems that showed you what the lens saw. You pressed your eye to the camera and the world narrowed to a rectangle.
+The 35mm film frame — that 2:3 rectangle that defined photography for decades — wasn't a design decision. It was an accident of industrial history. Oskar Barnack built the first Leica by repurposing cinema film stock, which happened to be 24mm wide. He doubled the cinema frame length to get a bigger image, and landed on 24×36mm.
 
-That rectangle was the first interface decision. Not the whole visual field — a *frame*. Edges that said: this matters, that doesn't. The viewfinder didn't show you reality. It showed you a **proposal** for reality. A version you might choose to keep.
+That's it. That's where the 2:3 aspect ratio came from. Not aesthetic theory. Not human vision research. Leftover movie film.
 
-Every interface does this. A dashboard isn't your business — it's a proposal about what matters in your business. A feed isn't the world — it's a frame around a sliver of it. The interface decides what's inside the rectangle. Everything else disappears.
+And then millions of photographers learned to *see* in 2:3. The constraint became the vocabulary.
 
-The question isn't whether to frame. You can't not frame. The question is whether you're intentional about what you include — and honest about what you're excluding.
+This is how interfaces work. You don't design from a blank slate. You inherit constraints — technical, historical, sometimes arbitrary — and those constraints shape what's *thinkable*. The frame comes first. Perception follows.
 
-## Framing Is Viewport Design
+**Some camera constraints that became creative vocabulary:**
+
+- **Film size → aspect ratio.** 35mm gave us 2:3. Medium format gave us 1:1 squares and 4:5 rectangles. Each feels different — 2:3 has directionality, 1:1 is balanced and static. Instagram trained a generation to see in squares, then pivoted to 4:5 for portraits.
+
+- **Viewfinder mechanics → how you relate to the image.** Early rangefinders showed you the scene *around* frame lines — you saw what was about to enter. SLRs showed you *exactly* what the lens saw — total immersion. Waist-level finders made you look *down*, reversed left-to-right, more contemplative. Each viewfinder type created a different cognitive relationship to reality.
+
+- **Shutter mechanics → discrete moments.** You couldn't capture continuous motion until video existed. Photography was inherently about *choosing the moment* — a constraint that became the entire art form.
+
+**The same pattern shows up everywhere:**
+
+| Photography | UI | API |
+|-------------|-------|-----|
+| Film size → aspect ratio | Screen size → viewport | JSON format → data shape |
+| Viewfinder type → how you see | Mobile vs desktop → interaction mode | REST verbs → action vocabulary |
+| Shutter → discrete moments | Request/response → discrete interactions | Rate limits → finite calls |
+| Lens mount → what glass fits | Platform → what components work | Schema → what shapes are valid |
+
+The interesting question isn't "what did they choose?" It's "what did the constraints make possible — and what did they make invisible?"
+
+## The Viewfinder Is a Mode of Perception
+
+Before digital screens, you experienced a camera through its viewfinder — and the viewfinder type shaped how you thought about images.
+
+**Rangefinders** (Leica, Contax) showed you the scene through a separate optical window, with bright frame lines overlaid. You saw *more* than the lens would capture. The world existed around your frame; you were selecting from abundance. This made you aware of edges — what was about to enter, what was about to leave.
+
+**SLRs** (your Canons, Nikons) used a mirror and pentaprism to show you exactly what the lens saw. Nothing more, nothing less. The world *became* the rectangle. This felt like immersion — like being inside the photograph. But you lost peripheral awareness. The frame wasn't a selection from reality; it *was* reality.
+
+**Waist-level finders** (Hasselblads, twin-lens Rolleiflexes) made you look *down* at a ground glass. The image was reversed left-to-right. This forced slower, more deliberate composition — your brain had to work harder, which made you more conscious of what you were doing.
+
+Each viewfinder was an interface that shaped perception differently. Same photographer, same scene, different viewfinder — different photographs. The tool wasn't neutral.
+
+The software parallel: mobile vs desktop isn't just a screen size change. It's a different *mode* of interaction. Thumb-scrolling on a subway vs. mouse-clicking at a desk. The "viewport" changes behavior, not just layout.
+
+## Framing Is Information Architecture
 
 In photography, "composition" sounds artistic. But it's really information architecture.
 
@@ -45,6 +78,8 @@ This is viewport design. What's above the fold? What requires scrolling? Where d
 I learned more about landing page design from studying Henri Cartier-Bresson than from any UX book. He understood that a frame isn't neutral. *Where* you place information changes *what* it means. A product in the center says "buy this." A product in the corner, with a human using it taking center stage, says "become this person."
 
 Same content. Different frame. Different meaning.
+
+The API version: the shape of your JSON response is a frame. What's at the top level? What's nested? What's included by default vs. requiring an extra call? These aren't just technical decisions — they're *information architecture*. They tell consumers what matters and what's secondary.
 
 ## Depth of Field Is Attention Design
 
