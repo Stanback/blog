@@ -72,6 +72,56 @@ Most analytics tools are overexposed. They show everything, which means they sho
 
 The best tools are properly exposed. They show you the full dynamic range — the highs and the lows, the signal and enough context to interpret it — without blowing out into noise.
 
+## Focus Isn't Always the Goal
+
+There's a reason portrait photographers love soft focus. A tack-sharp image shows every pore, every imperfection. Sometimes that's what you want — documentary honesty. But sometimes you want the dream, not the document.
+
+Soft focus hides what doesn't matter and lets the viewer's imagination fill in the rest. It's an abstraction. You're not showing less — you're showing *differently*. The information is still there, just... gentler.
+
+I think about this when designing interfaces. Not everything needs to be pixel-precise. "About 5 minutes ago" is often more useful than "4 minutes 37 seconds." A sparkline tells you the trend without drowning you in data points. A progress bar that says "almost done" can be more honest than one that says "94.7%."
+
+Precision isn't always clarity. Sometimes the soft version communicates better than the sharp one. Sometimes the abstraction is the feature.
+
+## Focal Length Is Perspective
+
+A 24mm wide-angle lens exaggerates distance. Things close look huge; things far look tiny. The world feels expansive, dramatic, slightly distorted.
+
+A 200mm telephoto compresses distance. Foreground and background seem to stack together. The world feels flattened, intimate, stacked.
+
+Same scene. Different lens. Different *meaning*.
+
+This is zoom level in interface design. The strategic view (wide) shows the ecosystem — how everything connects, where you fit in the bigger picture. More context, more cognitive load, less detail on any single thing.
+
+The tactical view (telephoto) isolates the task. Less context, more focus. You see the thing clearly but lose the surroundings.
+
+Neither is right. Both are tools. The question is: what does the user need *right now*? And can you let them zoom?
+
+## The Sensitivity/Noise Tradeoff
+
+ISO controls sensor sensitivity. Crank it up and you can shoot in near darkness — the sensor amplifies faint light into visible image. But amplification has a cost: noise. The higher the ISO, the grainier the image.
+
+This tradeoff is everywhere in systems design.
+
+Want to catch every potential fraud case? Turn up the sensitivity. But you'll also flag a lot of legitimate transactions — noise. Want to reduce false positives? Turn down the sensitivity. But you'll miss some real fraud — lost signal.
+
+Alerting systems, anomaly detection, spam filters — they all live on this curve. There's no free lunch. More sensitivity means more noise. Less noise means missed signals.
+
+The art is knowing where to set the dial for your context. A hospital monitor should be sensitive — false alarms are better than missed emergencies. A notification system should be quieter — alert fatigue is real. Match the ISO to the stakes.
+
+## Time and Motion (A Stretch, But...)
+
+Shutter speed controls how time collapses into a single frame. Fast shutter (1/1000s) freezes motion — a hummingbird's wing, a water droplet, a moment crystallized. Slow shutter (1s) blurs motion — car lights become streaks, waterfalls become silk, time becomes visible.
+
+The software parallel is real but less direct: do you show the instant or the trend?
+
+A real-time dashboard is a fast shutter — here's what's happening *right now*. A trailing average is a slow shutter — here's the motion over time, smoothed into a pattern.
+
+Point-in-time snapshots are useful for debugging. Trends are useful for understanding. Most good analytics do both — the instant and the blur, the moment and the motion.
+
+This one's a stretch, I know. But there's something there about how we collapse time into legible form. Photography does it with shutter speed. Interfaces do it with aggregation windows and refresh rates.
+
+---
+
 ## Controls Shape Perception
 
 Here's the part that took me years to understand: **using a camera changes how you see without the camera.**
@@ -128,13 +178,19 @@ Cameras taught me to see interfaces differently:
 
 **2. Hierarchy is attention design.** Blur the unimportant. Sharpen the essential. Don't make users find focus — guide them to it.
 
-**3. Exposure matters.** Too little information and users are lost. Too much and they're overwhelmed. Find the dynamic range where signal is legible.
+**3. Sharpness isn't always clarity.** Sometimes the abstraction communicates better than the precision. "Almost done" can be more honest than "94.7%."
 
-**4. Feedback loops determine learning speed.** The tighter the loop, the faster users (and builders) improve.
+**4. Zoom level changes meaning.** Wide shows context; telephoto shows detail. Neither is right. Let users choose their perspective.
 
-**5. Tools shape perception.** The interfaces we use train how we see the world. Design accordingly.
+**5. Sensitivity has a noise cost.** Every detection system trades false positives against missed signals. Match the dial to the stakes.
 
-**6. Constraints enable creativity.** A well-chosen limitation isn't a prison — it's a focusing lens.
+**6. Exposure matters.** Too little information and users are lost. Too much and they're overwhelmed. Find the dynamic range where signal is legible.
+
+**7. Feedback loops determine learning speed.** The tighter the loop, the faster users (and builders) improve.
+
+**8. Tools shape perception.** The interfaces we use train how we see the world. Design accordingly.
+
+**9. Constraints enable creativity.** A well-chosen limitation isn't a prison — it's a focusing lens.
 
 ---
 
