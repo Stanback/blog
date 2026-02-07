@@ -14,9 +14,9 @@ tags:
 tension: "I got better gear and took worse photos. There's a lesson in there."
 ---
 
-## 2003: The Beginning
+## 2004: The Beginning
 
-I got my first real camera in 2003 — a Canon 20D. Eight megapixels. Felt like magic.
+I got my first real camera in 2004 — a Canon 20D. Eight megapixels. Felt like magic.
 
 I shot everything. Portraits of friends. Street scenes. My coffee. The light through my window at 6am. I didn't know what I was doing, but I was doing it constantly. The kit lens didn't matter. I was *seeing* for the first time.
 
