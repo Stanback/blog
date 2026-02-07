@@ -138,6 +138,28 @@ updated: 2026-02-05  # Add when updating
 ---
 ```
 
+## Drafts
+
+**Drafts live in `content/notes/` with `draft: true`** — NOT in a separate drafts folder.
+
+```yaml
+---
+title: "Draft Title"
+date: 2026-02-07T10:00
+type: note
+schemaVersion: 1
+draft: true  # This is the key
+heroImage: /images/posts/slug-hero.png
+tags:
+  - topic
+---
+```
+
+- Drafts are accessible at `/drafts/slug/` (not `/notes/slug/`)
+- Drafts do NOT create backlinks (won't spoil existence of unpublished content)
+- To publish: change `draft: true` to `draft: false`
+- No separate `content/drafts/` folder exists — don't create one
+
 ## Image Generation
 
 Hero images via Gemini:
