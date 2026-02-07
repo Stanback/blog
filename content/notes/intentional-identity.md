@@ -2,9 +2,15 @@
 title: "The Funeral Test for Your Digital Self"
 date: 2026-02-07T10:00
 description: "From Covey's funeral visualization to company codexes to SOUL.md — the throughline is intentional identity. And now we need test harnesses for who we're becoming."
-tags: [identity, philosophy, ai, parenting]
-image: /images/posts/intentional-identity-hero.png
+type: note
+schemaVersion: 1
 draft: true
+heroImage: /images/posts/intentional-identity-hero.png
+tags:
+  - identity
+  - philosophy
+  - ai
+  - parenting
 ---
 
 There's a company I work with that has a document called "The Codex."
