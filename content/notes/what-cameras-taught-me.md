@@ -138,4 +138,4 @@ The constraint isn't the enemy of creativity. The constraint *is* creativity —
 
 ---
 
-*Twenty-plus years since that Canon 10D. I still think about that 70-200. Sometimes I miss the reach. But I don't miss the weight — literal and cognitive. Some tools are worth the tradeoff. Some aren't. The only way to know is to shoot.*
+*Twenty-plus years since that Canon 10D. I still think about that 70-200. Sometimes I miss the reach. But I don't miss the weight — literal and cognitive. Some tools are worth the tradeoff. Some aren't. The long way around is sometimes the only way to know what you actually need. The only way to know is to shoot.*
