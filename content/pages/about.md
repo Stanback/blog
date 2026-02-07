@@ -50,7 +50,7 @@ I'm not here to perform expertise. I'm here to work through problems in public a
 
 **Human + tool in a loop.** I use AI to help me build and write. I'm not hiding that. But the thinking is mine, the voice is mine, and the responsibility is mine.
 
-**Authenticity as discovery AND creation.** Some parts of yourself you find — they were always there, waiting for words. Some parts you build — deliberately, through choices. The authentic self isn't fully pre-formed or a blank canvas. It's both.
+**Authenticity as discovery AND creation.** Nature you discover — the parts that were always there, waiting for words. Character you build — through choices, over time. The authentic self is both.
 
 ### Relationship
 
