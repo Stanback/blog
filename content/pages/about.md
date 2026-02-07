@@ -34,6 +34,8 @@ I built this space to think out loud about the things I care about: how we build
 
 I'm not here to perform expertise. I'm here to work through problems in public and share what I find.
 
+**What this isn't:** A portfolio. A job search. A personal brand play. I'm not looking for work, not building an audience to monetize, not positioning for my next role. This isn't content marketing. It's just... thinking. Out loud. Because that's how I figure things out, and sometimes other people find it useful. If that ever changes, I'll say so explicitly.
+
 ### Values
 
 **Craft over gimmick.** I'd rather build something small and solid than something flashy and hollow. This applies to code, to writing, to how the site itself is made.
