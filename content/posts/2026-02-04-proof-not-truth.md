@@ -24,7 +24,9 @@ coAuthors:
 
 # Proof, Not Truth: Epistemic Humility in Knowledge Systems
 
-Before you call it a Truth Graph, ask: **what kind of truth?**
+We're building a knowledge system at work—a graph that aggregates signals about products, codes, and claims. The naming question came up: do we call it a "Truth Graph"?
+
+That question sent me down a rabbit hole. Before you call it a Truth Graph, ask: **what kind of truth?**
 
 There's naive truth—the claim that you've figured out what's real and stored it. Certain. Binary. Permanent.
 
