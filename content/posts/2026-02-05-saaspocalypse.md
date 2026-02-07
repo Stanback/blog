@@ -102,7 +102,7 @@ The shift isn't from "engineer" to "prompt engineer." That's too small. The shif
 
 But a year in, the lesson isn't pure chaos. LLMs are genuinely good—and getting better—at greenfield work: new projects, clear requirements, blank slates. They struggle with brownfield: existing codebases, implicit conventions, accumulated context. The answer isn't to reject vibe coding. It's to **harness** it—add constraints, guardrails, structure. Without them, you get [tech debt at AI speed](https://thenewstack.io/5-challenges-with-vibe-coding-for-enterprises/), errors faster than humans can review, and code that works but nobody understands why.
 
-The physics I explore in [[Code Owns Truth]] and [[Proof, Not Truth: Epistemic Humility in Knowledge Systems|Proof, Not Truth]] point toward the same conclusion: constraints are the design layer. Prompts express intent. Code owns truth. The vibe is real, but the vibe needs boundaries.
+The physics I explore in [[Code Owns Truth]] point toward the same conclusion: constraints are the design layer. Prompts express intent. Code owns truth. The vibe is real, but the vibe needs boundaries.
 
 Some people will thrive here. They like systems thinking, coordination, judgment calls. Others will struggle. They liked the craft of code, the satisfaction of a clean implementation, the feeling of having *made* something.
 
