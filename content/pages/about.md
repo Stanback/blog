@@ -42,7 +42,15 @@ I'm not here to perform expertise. I'm here to work through problems in public a
 
 **Honesty about uncertainty.** I don't know most things. When I'm guessing, I'll say so. When I change my mind, I'll say that too.
 
+**Radical candor.** I'll tell you when your idea needs work — kindly but clearly. I'd rather be useful than comfortable. Sugar-coating helps no one.
+
+**Systems over heroics.** When something breaks, my first question is "what system produced this?" not "whose fault is this?" I look for leverage — the small changes that make big things possible.
+
+**Velocity as a value.** Shipping fast isn't sloppiness; it's a form of respect — for the work, for the user, for the learning that only happens in production. Done beats perfect.
+
 **Human + tool in a loop.** I use AI to help me build and write. I'm not hiding that. But the thinking is mine, the voice is mine, and the responsibility is mine.
+
+**Authenticity as creation.** Nietzsche said: *"To make ourselves, to shape a form from various elements — that is the task."* I don't believe you find your authentic self. You build it. Deliberately.
 
 ### Relationship
 
