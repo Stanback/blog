@@ -1180,6 +1180,58 @@ main > .post-hero {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   PHOTO LIGHTBOX — Pure CSS click-to-expand
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Hide the checkbox */
+.lightbox-toggle {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Make the photo clickable */
+.photo-expand {
+	display: block;
+	cursor: zoom-in;
+}
+
+/* Hidden overlay by default */
+.lightbox-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	background: oklch(0 0 0 / 0.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--space-4);
+	cursor: zoom-out;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.lightbox-overlay img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	border-radius: var(--radius-sm);
+	box-shadow: 0 8px 40px oklch(0 0 0 / 0.5);
+}
+
+/* Show overlay when checkbox is checked */
+.lightbox-toggle:checked ~ .lightbox-overlay {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* Prevent body scroll when lightbox is open */
+.lightbox-toggle:checked ~ .polaroid .photo-expand {
+	cursor: zoom-out;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    ARCHIVE PAGES — Posts & Books index with editorial treatment
    ═══════════════════════════════════════════════════════════════════════════ */
 

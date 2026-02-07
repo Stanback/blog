@@ -402,10 +402,14 @@ function renderNote(note: Note, ctx: BuildContext): string {
 
 // Render single photo
 function renderPhoto(photo: Photo, ctx: BuildContext): string {
+	const photoId = `lightbox-${photo.slug}`;
 	const content = `
     <article class="photo-single">
+      <input type="checkbox" id="${photoId}" class="lightbox-toggle" aria-hidden="true">
       <figure class="polaroid">
-        <img src="${photo.image}" alt="${photo.alt}" loading="lazy">
+        <label for="${photoId}" class="photo-expand" title="Click to expand">
+          <img src="${photo.image}" alt="${photo.alt}" loading="lazy">
+        </label>
         <figcaption class="polaroid-caption">
           ${photo.observation ? `<p class="observation">${photo.observation}</p>` : ''}
           <div class="photo-meta">
@@ -414,6 +418,9 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
           </div>
         </figcaption>
       </figure>
+      <label for="${photoId}" class="lightbox-overlay" aria-hidden="true">
+        <img src="${photo.image}" alt="${photo.alt}">
+      </label>
       ${photo.html ? `<div class="prose photo-body">${photo.html}</div>` : ''}
     </article>`;
 
