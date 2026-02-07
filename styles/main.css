@@ -673,46 +673,93 @@ main > .post-hero {
 }
 
 /* Featured post — contained editorial card */
-.featured-card-link {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: var(--space-6);
-	padding: var(--space-6);
-	text-decoration: none;
-	color: var(--color-text-primary);
-	background: var(--color-bg-muted);
+/* Featured card with hero background */
+.featured-card {
+	position: relative;
 	border-radius: var(--radius-md);
+	overflow: hidden;
+	background-image: var(--featured-hero);
+	background-size: cover;
+	background-position: center;
+	min-height: 280px;
+}
+
+/* Gradient overlay — stronger than post hero (not fully transparent at top) */
+.featured-card::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		to bottom,
+		color-mix(in oklch, var(--color-bg) 40%, transparent) 0%,
+		color-mix(in oklch, var(--color-bg) 50%, transparent) 30%,
+		color-mix(in oklch, var(--color-bg) 70%, transparent) 50%,
+		color-mix(in oklch, var(--color-bg) 90%, transparent) 70%,
+		var(--color-bg) 100%
+	);
 	transition: background var(--transition-fast);
 }
 
+.featured-card:hover::before {
+	background: linear-gradient(
+		to bottom,
+		color-mix(in oklch, var(--color-bg) 30%, transparent) 0%,
+		color-mix(in oklch, var(--color-bg) 45%, transparent) 30%,
+		color-mix(in oklch, var(--color-bg) 65%, transparent) 50%,
+		color-mix(in oklch, var(--color-bg) 88%, transparent) 70%,
+		var(--color-bg) 100%
+	);
+}
+
+.featured-card-link {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-height: 280px;
+	padding: var(--space-6);
+	text-decoration: none;
+	color: var(--color-text-primary);
+}
+
 @media (min-width: 640px) {
+	.featured-card {
+		min-height: 320px;
+	}
 	.featured-card-link {
-		grid-template-columns: 1fr 200px;
-		align-items: start;
+		min-height: 320px;
 		padding: var(--space-8);
 	}
 }
 
-.featured-card-link:hover {
-	background: var(--color-bg-elevated);
-}
-
-/* "Latest" label */
+/* "Latest" label with background pill */
 .featured-label {
 	display: inline-block;
+	width: fit-content;
 	font-size: var(--font-size-xs);
 	font-weight: 600;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	color: var(--color-accent-500);
-	margin-bottom: var(--space-2);
+	color: var(--color-accent-600);
+	background: var(--color-accent-100);
+	padding: var(--space-1) var(--space-3);
+	border-radius: var(--radius-sm);
+	margin-bottom: var(--space-3);
 }
 
-.featured-card-body time {
+/* Dark mode label */
+:root[data-theme="dark"] .featured-label {
+	color: var(--color-accent-200);
+	background: color-mix(in oklch, var(--color-accent-700) 50%, transparent);
+}
+
+.featured-card-link time {
 	font-size: var(--font-size-sm);
-	color: var(--color-text-muted);
+	color: var(--color-text-secondary);
 	display: block;
 	margin-bottom: var(--space-3);
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .featured-card-title {
@@ -723,9 +770,10 @@ main > .post-hero {
 	line-height: var(--leading-tight);
 	margin: 0 0 var(--space-3);
 	transition: color var(--transition-fast);
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.featured-card-link:hover .featured-card-title {
+.featured-card:hover .featured-card-title {
 	color: var(--color-accent-500);
 }
 
@@ -735,18 +783,6 @@ main > .post-hero {
 	line-height: var(--leading-relaxed);
 	margin: 0;
 	max-width: 50ch;
-}
-
-.featured-card-image {
-	border-radius: var(--radius-sm);
-	overflow: hidden;
-	aspect-ratio: 3 / 2;
-}
-
-.featured-card-image img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
 }
 
 /* More Writing — Compact chronological list */

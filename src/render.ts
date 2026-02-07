@@ -791,19 +791,16 @@ function renderHome(ctx: BuildContext): string {
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
 		.slice(0, 3);
 
-	// Featured latest post — contained card treatment
+	// Featured latest post — hero background treatment
 	const latestWritingSection = latestPost
 		? `
     <section class="home-section home-featured" aria-label="Latest writing">
-      <article class="featured-card">
+      <article class="featured-card"${latestPost.heroImage ? ` style="--featured-hero: url('${latestPost.heroImage}')"` : ''}>
         <a href="${getUrl(latestPost)}" class="featured-card-link">
-          <div class="featured-card-body">
-            <span class="featured-label">Latest</span>
-            <time datetime="${isoDate(latestPost.date)}">${formatDate(latestPost.date)}</time>
-            <h2 class="featured-card-title">${latestPost.title}</h2>
-            ${latestPost.description ? `<p class="featured-card-desc">${latestPost.description}</p>` : ''}
-          </div>
-          ${latestPost.heroImage ? `<div class="featured-card-image" aria-hidden="true"><img src="${latestPost.heroImage}" alt="" loading="lazy" /></div>` : ''}
+          <span class="featured-label">Latest</span>
+          <time datetime="${isoDate(latestPost.date)}">${formatDate(latestPost.date)}</time>
+          <h2 class="featured-card-title">${latestPost.title}</h2>
+          ${latestPost.description ? `<p class="featured-card-desc">${latestPost.description}</p>` : ''}
         </a>
       </article>
     </section>`
