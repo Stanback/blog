@@ -1061,17 +1061,23 @@ main > .post-hero {
 .photo-card {
 	text-decoration: none;
 	display: block;
-	/* Alternating tilt: odd left, even right */
+	/* Tilt pattern for 2-col grid: left-right-right-left */
 	transform: rotate(calc(var(--tilt, 1) * 1.2deg));
 	transition: transform var(--transition-normal);
 }
 
-.photo-card:nth-child(odd) {
+/* 4-cycle pattern: 1=left, 2=right, 3=right, 4=left */
+.photo-card:nth-child(4n + 1) {
 	--tilt: -1;
 }
-
-.photo-card:nth-child(even) {
+.photo-card:nth-child(4n + 2) {
 	--tilt: 1;
+}
+.photo-card:nth-child(4n + 3) {
+	--tilt: 1;
+}
+.photo-card:nth-child(4n) {
+	--tilt: -1;
 }
 
 .photo-card:hover {
@@ -1122,9 +1128,9 @@ main > .post-hero {
 	color: var(--color-text-secondary);
 }
 
-/* Single photo page - larger Polaroid */
+/* Single photo page - larger Polaroid (breaks content-width for impact) */
 .photo-single {
-	max-width: 720px;
+	max-width: 900px;
 	margin: 0 auto;
 }
 
