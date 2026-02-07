@@ -168,6 +168,25 @@ The pattern: **tools survive by becoming either infrastructure (AI needs you) or
 
 Everything in the middle—tools that automate what AI now does natively—faces compression.
 
+### The Forward Deployed Engineer Illusion
+
+There's a role that's been trending in enterprise sales: the "Forward Deployed Engineer." Palantir pioneered it—embed engineers at customer sites to handle the complex integration work that software alone can't solve. The pitch: enterprise systems are too messy, too customized, too entangled for self-service. You need humans on the ground.
+
+I think this is temporary.
+
+Consider: Anthropic built Cowork—the plugin system that triggered the $285 billion selloff—in about ten days. They vibe coded an enterprise integration layer. Meanwhile, OpenAI just launched [Frontier](https://www.theverge.com/ai-artificial-intelligence/874258/openai-frontier-ai-agent-platform-management), their competing enterprise platform for deploying AI agents. Microsoft has Copilot Studio. Every major AI company is racing to be the enterprise agent layer.
+
+But here's the thing: **the integration messiness that justifies FDEs is exactly what vibe working dissolves.**
+
+Claude Code doesn't care that your Salesforce instance has 47 custom fields and a decade of technical debt. It reads the schema, understands the constraints, and builds the integration. The "complex enterprise context" that used to require months of on-site engineering becomes a conversation.
+
+Maybe I'm naive to enterprise. But I don't think integration points remain messy for long when AI can:
+- Read your existing codebase and infer conventions
+- Generate adapters between incompatible systems  
+- Handle the long tail of edge cases that used to require human judgment
+
+The FDE model assumes that understanding a customer's systems is hard work that scales linearly with headcount. Vibe working makes it scale with inference. The engineers who spent years learning one customer's Byzantine internal systems? That knowledge moat is evaporating.
+
 ### Who's Winning the Vibe Coding Wars?
 
 The AI coding tools have stratified fast. [85% of developers](https://devecosystem-2025.jetbrains.com/artificial-intelligence) now use AI tools regularly, with Claude Code, Cursor, and Codex fighting for dominance. Each is racing to ship multi-agent orchestration—the ability to spawn and coordinate multiple AI agents on a single task.
