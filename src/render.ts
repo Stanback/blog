@@ -284,7 +284,6 @@ function renderPost(post: Post, ctx: BuildContext): string {
 				<div class="post-meta">
 					${authorLine}
 					${post.readingTime ? `<span class="reading-time">${post.readingTime} min read</span>` : ''}
-					${updatedLine}
 				</div>
 			</div>
 		</header>`
@@ -295,7 +294,6 @@ function renderPost(post: Post, ctx: BuildContext): string {
 			<div class="post-meta">
 				${authorLine}
 				${post.readingTime ? `<span class="reading-time">${post.readingTime} min read</span>` : ''}
-				${updatedLine}
 			</div>
 		</header>`;
 
@@ -319,6 +317,7 @@ function renderPost(post: Post, ctx: BuildContext): string {
 					: ''
 			}
     </article>
+    ${updatedLine ? `<div class="article-updated">${updatedLine}</div>` : ''}
     ${renderBacklinks(postUrl, ctx.backlinks)}`;
 
 	return baseTemplate({
@@ -354,14 +353,12 @@ function renderNote(note: Note, ctx: BuildContext): string {
 			<div class="post-hero-content">
 				<time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
 				<h1>${note.title}</h1>
-				${updatedLine}
 			</div>
 		</header>`
 		: `
 		<header class="post-header-simple">
 			<time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
 			<h1>${note.title}</h1>
-			${updatedLine}
 		</header>`;
 
 	const noteUrl = getUrl(note);
@@ -370,6 +367,7 @@ function renderNote(note: Note, ctx: BuildContext): string {
     <article class="prose post-body">
       ${note.html}
     </article>
+    ${updatedLine ? `<div class="article-updated">${updatedLine}</div>` : ''}
     ${renderBacklinks(noteUrl, ctx.backlinks)}`;
 
 	return baseTemplate({
@@ -379,6 +377,7 @@ function renderNote(note: Note, ctx: BuildContext): string {
 		content,
 		type: 'article',
 		date: note.date,
+		updated: note.updated,
 		heroImage: note.heroImage,
 		cssFilename: ctx.cssFilename,
 		// JSON-LD enhancements

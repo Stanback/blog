@@ -1454,6 +1454,17 @@ article.prose > header .reading-time {
 	font-weight: 500;
 }
 
+/* Updated date at bottom of article (after content, before backlinks) */
+.article-updated {
+	max-width: var(--content-width);
+	margin: var(--space-8) auto var(--space-6);
+	padding-top: var(--space-4);
+	border-top: 1px solid var(--color-border);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-secondary);
+	font-style: italic;
+}
+
 /* Post hero banner with image overlay — FULL BLEED */
 .post-hero {
 	position: relative;
