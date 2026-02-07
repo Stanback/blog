@@ -94,6 +94,8 @@ Now the term is spreading beyond engineering. Anthropic's Scott White [announced
 
 > "Everybody has seen this transformation happen with software engineering in the last year and a half, where vibe coding started to exist as a concept... I think that we are now transitioning almost into vibe working."
 
+Anthropic demonstrated this with Cowork—the plugin system that triggered the $285 billion selloff—built in about ten days. ["@claudeai wrote Cowork,"](https://x.com/felixrieseberg/status/2010882577113268372) their PM Felix Rieseberg confirmed. They vibe coded an enterprise integration layer. OpenAI followed with [Frontier](https://www.theverge.com/ai-artificial-intelligence/874258/openai-frontier-ai-agent-platform-management), their competing platform for deploying AI agents in enterprises.
+
 Microsoft embedded the same idea into their [Copilot roadmap](https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/29/vibe-working-introducing-agent-mode-and-office-agent-in-microsoft-365-copilot/)—Agent Mode in Excel and Word, where you describe tasks in plain language and the AI handles the technical work. Brief an agent once, let it run in the background, steer and review.
 
 Salesforce went further: [Agentforce 360](https://www.salesforce.com/news/press-releases/2025/10/13/agentic-enterprise-announcement/) is their platform for "the Agentic Enterprise," and they literally shipped a feature called **Agentforce Vibes**—letting builders "vibe-code" apps grounded in company data. They're reporting 119% agent growth in the first half of 2025.
@@ -174,9 +176,7 @@ There's a role that's been trending in enterprise sales: the "Forward Deployed E
 
 I think this is temporary.
 
-Consider: Anthropic built Cowork—the plugin system that triggered the $285 billion selloff—in about ten days. ["@claudeai wrote Cowork,"](https://x.com/felixrieseberg/status/2010882577113268372) their PM Felix Rieseberg confirmed. They vibe coded an enterprise integration layer. Meanwhile, OpenAI just launched [Frontier](https://www.theverge.com/ai-artificial-intelligence/874258/openai-frontier-ai-agent-platform-management), their competing enterprise platform for deploying AI agents. Microsoft has Copilot Studio. Every major AI company is racing to be the enterprise agent layer.
-
-But here's the thing: **the integration messiness that justifies FDEs is exactly what vibe working dissolves.**
+Every major AI company is racing to be the enterprise agent layer—Cowork, Frontier, Copilot Studio. And **the integration messiness that justifies FDEs is exactly what vibe working dissolves.**
 
 From my own experience: Claude Code is remarkably good at reading API documentation—even poorly written ones—and using existing CLI tools to explore, investigate, triage, and connect systems together. It's not perfect for large datasets or deeply stateful processes, but it's improving fast.
 
