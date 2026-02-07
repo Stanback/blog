@@ -1886,6 +1886,11 @@ article.skills-page h1 {
 
 .prose ol {
 	list-style-type: decimal;
+	list-style-position: outside;
+}
+
+.prose ol li {
+	padding-left: var(--space-2);
 }
 
 .prose li {

@@ -213,23 +213,23 @@ The constraints aren't bugs. They're features. They're the frame that makes comp
 
 Cameras taught me to see interfaces differently:
 
-**1. Every interface is a frame.** It includes some information and excludes the rest. Be intentional about both.
+1. **Every interface is a frame.** It includes some information and excludes the rest. Be intentional about both.
 
-**2. Hierarchy is attention design.** Blur the unimportant. Sharpen the essential. Don't make users find focus — guide them to it.
+2. **Hierarchy is attention design.** Blur the unimportant. Sharpen the essential. Don't make users find focus — guide them to it.
 
-**3. Sharpness isn't always clarity.** Sometimes the abstraction communicates better than the precision. "Almost done" can be more honest than "94.7%."
+3. **Sharpness isn't always clarity.** Sometimes the abstraction communicates better than the precision. "Almost done" can be more honest than "94.7%."
 
-**4. Zoom level changes meaning.** Wide shows context; telephoto shows detail. Neither is right. Let users choose their perspective.
+4. **Zoom level changes meaning.** Wide shows context; telephoto shows detail. Neither is right. Let users choose their perspective.
 
-**5. Sensitivity has a noise cost.** Every detection system trades false positives against missed signals. Match the dial to the stakes.
+5. **Sensitivity has a noise cost.** Every detection system trades false positives against missed signals. Match the dial to the stakes.
 
-**6. Exposure matters.** Too little information and users are lost. Too much and they're overwhelmed. Find the dynamic range where signal is legible.
+6. **Exposure matters.** Too little information and users are lost. Too much and they're overwhelmed. Find the dynamic range where signal is legible.
 
-**7. Feedback loops determine learning speed.** The tighter the loop, the faster users (and builders) improve.
+7. **Feedback loops determine learning speed.** The tighter the loop, the faster users (and builders) improve.
 
-**8. Tools shape perception.** The interfaces we use train how we see the world. Design accordingly.
+8. **Tools shape perception.** The interfaces we use train how we see the world. Design accordingly.
 
-**9. Constraints enable creativity.** A well-chosen limitation isn't a prison — it's a focusing lens.
+9. **Constraints enable creativity.** A well-chosen limitation isn't a prison — it's a focusing lens.
 
 ---
 
