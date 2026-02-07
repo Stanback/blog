@@ -102,15 +102,51 @@ For agents, daily logs serve the same function — a ground truth that survives 
 
 Both practices fight entropy. Both create coherence through explicit externalization.
 
+## The Literature of Memory
+
+Writers have explored these questions for decades. Their insights are more relevant now than ever.
+
+**Borges, "Funes the Memorious" (1942):**
+
+Funes falls from a horse and wakes with perfect memory. He can recall every leaf on every tree he's ever seen, every moment of every day. And it destroys him:
+
+> *"He was, let us not forget, almost incapable of general, platonic ideas. It was not only difficult for him to understand that the generic term dog embraced so many unlike specimens of differing sizes and different forms; he was disturbed by the fact that a dog at three-fourteen (seen in profile) should have the same name as the dog at three-fifteen (seen from the front)."*
+
+Funes can't abstract. He's drowning in raw data with no compression. This is what agents risk with perfect recall — every detail equally weighted, no generalization, no "gist." The story argues that **forgetting is what enables thought**.
+
+**Borges, "The Aleph" (1945):**
+
+A point in space that contains all other points. The narrator sees everything at once — every angle, every moment, every place on Earth simultaneously:
+
+> *"I saw the teeming sea; I saw daybreak and nightfall; I saw the multitudes of America... I saw bunches of grapes, snow, tobacco, lodes of metal, steam; I saw convex equatorial deserts and each one of their grains of sand..."*
+
+This is what vector space might feel like from the inside — everything adjacent to everything, all of it present and compressed into a single point of access. Beautiful and overwhelming. The story ends with the narrator forgetting most of what he saw. Maybe that's necessary.
+
+**Heinlein, *Stranger in a Strange Land* (1961):**
+
+Introduces "grok" — to understand something so thoroughly you merge with it. Not knowledge *about*, but knowledge *as*. The Martian word implies drinking, absorbing, becoming one with.
+
+> *"Grok means to understand so thoroughly that the observer becomes a part of the observed."*
+
+This is closer to what good retrieval should feel like — not "here's a chunk of relevant text" but "I have absorbed this, it's part of how I see now." Current RAG systems retrieve. Grokking would mean *integration*.
+
+**Ted Chiang, "Understand" (1991):**
+
+A man gains superintelligence through an experimental treatment. As his cognition expands, so does his perception:
+
+> *"I'm reminded of the way studying a subject broadens your view of the world... Every new fact or concept creates links to others, until the web of associations spans everything you know."*
+
+The story explores what happens when memory and understanding compound without limit — and the isolation that comes with perceiving more than anyone else can share.
+
 ## Forgetting as a Feature
 
-Here's a counterintuitive thought: maybe forgetting isn't a bug in human memory. Maybe it's a feature.
+These stories converge on a counterintuitive idea: maybe forgetting isn't a bug. Maybe it's a feature.
 
 **Why forgetting might be adaptive:**
-- **Generalization over memorization** — Forgetting details lets you extract patterns. You remember "restaurants like this are usually good" not every meal you've ever eaten.
+- **Generalization over memorization** — Forgetting details lets you extract patterns. You remember "restaurants like this are usually good" not every meal you've ever eaten. Funes couldn't do this.
 - **Emotional regulation** — Time heals because memory fades. Perfect recall of every painful moment would be unbearable.
 - **Relevance filtering** — What you forget is often what didn't matter. The brain prunes what isn't reinforced.
-- **Cognitive load** — Borges wrote about Funes, who remembered everything and could barely function. Perfect memory might be paralyzing.
+- **Cognitive load** — Funes remembered everything and could barely function. The Aleph's narrator forgot most of what he saw and was grateful.
 
 Agents with perfect recall within context don't have this. Every detail is equally weighted, equally present. There's no natural "this faded because it wasn't important" signal.
 
