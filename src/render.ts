@@ -736,7 +736,7 @@ function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 	const content = `
     <header class="archive-header">
       <h1>Photos</h1>
-      <p class="archive-intro">A small archive, slowly growing. Mostly a placeholder for now.</p>
+      <p class="archive-intro">Sometimes words aren't the right container. A small archive — more placeholder than collection for now.</p>
     </header>
     ${
 			publishedPhotos.length > 0
