@@ -72,11 +72,11 @@ Right now, the answer is: they infer it. From your browsing history, your purcha
 
 But there's another approach: **tell them**.
 
-That's what a SOUL.md file does. It's a document that declares who you are — your values, your communication style, your boundaries, your preferences. Not inferred. Stated.
+That's what a [[Why Everyone Should Have a SOUL.md|SOUL.md]] file does. It's a document that declares who you are — your values, your communication style, your boundaries, your preferences. Not inferred. Stated.
 
 It's the funeral test for your digital self: *If an AI had to represent me, what would I want it to embody?*
 
-The gap between what an algorithm would infer about you and what you'd actually want represented — that's the same gap Covey identified. The difference between a life lived reactively (shaped by circumstances, by other people's expectations, by the path of least resistance) and a life lived intentionally (shaped by your own articulated values).
+The gap between what others would infer about you — whether an algorithm or a new coworker — and what you'd actually want represented? That's the same gap Covey identified. The difference between a life lived reactively (shaped by circumstances, by other people's expectations, by the path of least resistance) and a life lived intentionally (shaped by your own articulated values).
 
 SOUL.md is just the funeral test, encoded.
 
