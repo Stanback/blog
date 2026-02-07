@@ -52,7 +52,7 @@ That company Codex I mentioned? It's the same move, scaled to an organization.
 
 Most companies have values on a wall. "Integrity. Innovation. Excellence." Words so generic they could apply to a hospital, a hedge fund, or a hot dog stand.
 
-The Codex is different. It doesn't say "we value innovation." It says: *"The Designer's job is not to decorate — it's to engineer constraints that bound the mutation space."* It doesn't say "we value accountability." It says: *"Under HoldCo, you are a literal owner. A problem anywhere in the business is your problem."*
+The Codex is different. It doesn't say "we value productivity." It says: *"At the end of each week, ask: Did I change reality for a customer, or did I only change Notion?"* It doesn't say "we value accountability." It says: *"Under HoldCo, you are a literal owner. A problem anywhere in the business is your problem."*
 
 It's specific enough to be falsifiable. You could actually check whether someone is living by it.
 
