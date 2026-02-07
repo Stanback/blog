@@ -81,6 +81,8 @@ Same content. Different frame. Different meaning.
 
 The API version: the shape of your JSON response is a frame. What's at the top level? What's nested? What's included by default vs. requiring an extra call? These aren't just technical decisions — they're *information architecture*. They tell consumers what matters and what's secondary.
 
+---
+
 ## Depth of Field Is Attention Design
 
 A wide aperture (f/1.4, f/2) gives you shallow depth of field. The subject is sharp; the background dissolves into blur. A narrow aperture (f/11, f/16) keeps everything in focus — foreground to infinity.
