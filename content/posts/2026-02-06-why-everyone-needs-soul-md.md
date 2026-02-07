@@ -4,7 +4,7 @@ description: "The case for documented identity in an AI-saturated world. Not jus
 date: 2026-02-06T15:15
 type: post
 schemaVersion: 1
-draft: true
+draft: false
 tags:
   - ai
   - identity
@@ -69,6 +69,12 @@ Documented identity becomes *infrastructure*. Your values and craft philosophy a
 This isn't sci-fi. It's basically how agent systems already work. The agent has a SOUL.md. It reads it at startup. It behaves accordingly.
 
 Humans can do the same thing — for themselves, and for the systems they interact with.
+
+**Here's my position: SOUL.md is personalization for the agentic era.**
+
+Not algorithmic personalization — where platforms guess what you want based on surveillance. Declarative personalization — where you *tell* systems who you are, what you value, how you work. You control the input. The system adapts to your documented identity, not its inferences about your behavior.
+
+This is a better model. More honest, more portable, more human.
 
 ## The Social Benefit
 

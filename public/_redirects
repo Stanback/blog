@@ -4,6 +4,9 @@ https://www.bristanback.com/* https://bristanback.com/:splat 301
 # Note → Post promotions (add when promoting notes to posts)
 /notes/multi-agent-moment  /posts/2026/02/06/multi-agent-moment  301
 
+# Draft → Post promotions
+/drafts/why-everyone-needs-soul-md/  /posts/why-everyone-needs-soul-md/  301
+
 # Redirect alternate domains to primary
 https://brianstanback.com/* https://bristanback.com/:splat 301
 https://www.brianstanback.com/* https://bristanback.com/:splat 301
