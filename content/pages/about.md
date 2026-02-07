@@ -133,6 +133,6 @@ If you're considering working together:
 
 ## Find Me
 
-[LinkedIn](https://www.linkedin.com/in/bstanback/) · [X](https://x.com/bstanback)
+[LinkedIn](https://www.linkedin.com/in/bstanback/) · [X](https://x.com/Stanback)
 
 DMs open. I read everything.
