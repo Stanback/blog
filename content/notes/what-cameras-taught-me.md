@@ -6,6 +6,7 @@ type: note
 schemaVersion: 1
 draft: false
 heroImage: /images/posts/photography-as-interface-hero.png
+heroImage: /images/posts/what-cameras-taught-me-hero.png
 tags:
   - photography
   - design
