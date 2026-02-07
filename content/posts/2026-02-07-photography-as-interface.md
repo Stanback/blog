@@ -77,15 +77,29 @@ The mistake is staying in divergence mode forever. Accumulating options without 
 
 ## The Software Parallel
 
-I see the same pattern in software tools.
+I've been building software for twenty years. The same arc plays out.
 
-Early in a project, exploration is valuable. Try different frameworks. Experiment with architectures. Cast a wide net. You're learning what the problem actually is.
+Early in my career, I tried everything. Languages, frameworks, paradigms. Perl, PHP, Python, Ruby. jQuery, Backbone, Angular, React. Each one taught me something. The exploration wasn't wasted — it's how I developed taste.
 
-But at some point, you have to commit. Pick the stack. Accept the constraints. Stop re-evaluating every decision. The cognitive load of infinite optionality will kill your momentum.
+But I've watched teams get stuck in permanent exploration. Evaluating seventeen state management libraries. Debating build tools for months. The fear of choosing wrong becomes a way of not choosing at all. They never ship. They just *prepare* to ship.
 
-I've seen teams stuck in permanent divergence — evaluating seventeen state management libraries, debating build tools for months, never shipping. The fear of choosing wrong becomes a way of not choosing at all.
+The best engineers I know converge fast. They pick tools, learn their limits, and work within them. They're not afraid to be wrong — they know they'll learn more from building than from deciding.
 
-The best engineers I know converge fast. They pick tools, learn their limits, and work within them. They know the constraint isn't a prison — it's a *frame*. A 35mm lens doesn't limit what you can photograph. It shapes how you see.
+A 35mm lens doesn't limit what you can photograph. It shapes how you see. A tech stack works the same way. The constraint isn't a prison. It's a frame.
+
+## The Life Parallel
+
+Maybe this is about more than cameras and code.
+
+We're told to keep our options open. Explore. Don't commit too early. And that's right — for a while. You need to cast a wide net to discover what resonates.
+
+But there's a trap. Optionality feels like freedom, but at some point it becomes its own prison. You can spend your whole life exploring, never building. Collecting lenses, never taking photos. Learning frameworks, never shipping software. Dating, never committing. Researching, never writing.
+
+The divergence is necessary. The convergence is where life happens.
+
+I think about this with my daughter. She's three. Her whole world is divergence right now — trying everything, seeing what sticks. That's exactly right for her age. But someday she'll need to choose. Not because the other paths are bad, but because choosing is how you go deep. It's how you build something that matters.
+
+The exploration shows you what's possible. The commitment shows you who you are.
 
 ## What Cameras Taught Me
 
@@ -113,11 +127,11 @@ I take more photos now than I did with ten times the gear. And I enjoy it again.
 
 ## The Takeaway
 
-Whether you're building software or building a photography practice: **diverge early, converge deliberately.**
+Whether you're building software, building a photography practice, or building a life: **diverge early, converge deliberately.**
 
 Explore the options. Learn what's out there. But don't mistake exploration for creation. At some point, pick your 35mm. Accept what it can't do. Focus on what it can.
 
-The constraint isn't the enemy of creativity. The constraint *is* creativity — it's the frame that makes the composition possible.
+The constraint isn't the enemy of creativity. The constraint *is* creativity — it's the frame that makes the composition possible. The choice that lets you finally see.
 
 ---
 
