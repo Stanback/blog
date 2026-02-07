@@ -118,8 +118,8 @@ After all that — the lenses, the lights, the stands, the gimbals — here's wh
 
 - **iPhone.** For 80% of what I shoot. Always with me. Good enough.
 - **Canon EOS R5.** Still a Canon loyalist after all these years.
-- **50mm f/1.2.** My favorite focal length. Finally committed.
-- **24-70.** For when I need versatility.
+- **RF 50mm f/1.2L.** My favorite focal length. Finally committed.
+- **RF 24-70mm f/2.8L.** For when I need versatility.
 - **One softbox.** When I need controlled light. Not a whole studio — one light, one modifier.
 
 Okay, I have more than that. I'm still figuring out how to let go. The 70-200 is still in the closet. The strobes are "just in case." Old habits.
