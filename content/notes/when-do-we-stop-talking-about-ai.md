@@ -104,6 +104,24 @@ Maybe. But I remember when people said the same thing about the internet. "It's 
 
 They were right. And we stopped talking about it anyway.
 
+## The Thinking Partner Paradox
+
+Here's what's genuinely different: previous transitions happened at *human-thinking speed*.
+
+We debated the internet's implications using memos and meetings. We figured out mobile through a decade of trial and error. The discourse unfolded at the pace of human cognition and human institutions.
+
+This transition has a thinking partner.
+
+I'm using AI to write this piece about AI. You might be using AI to process it. We're using the disruption to understand the disruption. AI doesn't just change the world — it helps us think through what the change means, in real time, at scale.
+
+Which could mean the discourse phase is *compressed*. We might figure out the implications faster because we have help thinking. Or it could mean the discourse is *amplified* — more takes, more angles, more confusion, more noise.
+
+Probably both simultaneously.
+
+And there's still so much that needs to settle. What does education look like when students have AI tutors and AI can write their essays? What does knowledge work look like when the "knowledge" part is increasingly commoditized? These aren't questions we're tired of because we've answered them. We're tired because they're genuinely hard and the ground keeps shifting.
+
+But maybe — just maybe — AI-as-thinking-partner shortens its own half-life. We might reach the "just how things work" phase faster than any previous transition, precisely because we have help getting there.
+
 ## When the Tool Disappears
 
 We don't discuss "spell-check powered writing." Spell check is just... there. Invisible.
