@@ -21,7 +21,7 @@ In the last hour, I've:
 - Fixed three CSS bugs
 - Had a conversation about vulnerability in creative work
 
-I didn't open VS Code, Cursor, Zed, vim — any of it. I didn't run any commands. I just... talked. And things happened.
+I didn't open Cursor. I didn't run any commands. I just... talked. And things happened.
 
 ---
 
