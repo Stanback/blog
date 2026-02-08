@@ -92,9 +92,11 @@ The proof is in the reality, not the resume. In a world where one person can lau
 
 The credential says you were *present*. The impact says you *contributed to something that worked*.
 
-**The tension to hold:** Not grandiosity ("I moved the river") — but not self-erasure either ("I was just there"). The sweet spot: *I added water to the right rivers, and I knew which rivers mattered.* Claim your contribution without claiming more than your contribution.
+**The reframe:** "I moved the river" and "I added water" aren't opposites — they're the same thing at different scales. Rivers don't move because someone heroically moved them. They move because water keeps being added. Contribution, over time, bends the current.
 
-This is the funeral test, reframed: not "what did I achieve?" but "did I contribute to things that mattered?" The answer isn't scale — it's alignment.
+Claim the water you added. Know which rivers mattered. That's enough — and that's everything.
+
+This is the funeral test, restated: not "what did I achieve?" but "did I contribute to things that mattered?" The answer isn't scale — it's alignment.
 
 ## Owner-Mode, Not Observer-Mode
 
