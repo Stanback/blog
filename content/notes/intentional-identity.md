@@ -5,6 +5,7 @@ description: "From Covey's funeral visualization to company codexes to SOUL.md �
 type: note
 schemaVersion: 1
 draft: false
+updated: 2026-02-08
 heroImage: /images/posts/intentional-identity-hero.png
 tags:
   - identity
@@ -130,6 +131,24 @@ So I've been running my own test harness:
 These tests are uncomfortable because they surface gaps. The gap between the parent I want to be and the parent I'm being on a random Tuesday at 7pm when I'm tired and she's whining and my phone is right there with its dopamine hits.
 
 But that's the point. The funeral test, the SOUL.md, the company Codex — they're all the same move: *articulate who you want to be so clearly that you can check whether you're becoming that person*.
+
+## The Workshop and the Stage
+
+There's a polarity in theatre between Stanislavski and Brecht.
+
+Stanislavski gave us method acting — the actor *becomes* the character. You dig into the role until the performance feels like truth. The goal is disappearance: the audience forgets they're watching an act.
+
+Brecht rejected this. His "alienation effect" kept the seams visible. The actor holds the character at arm's length: *I am showing you this person*, not *I have become this person*. The audience never forgets they're in a theatre. The set pieces are moved in plain sight.
+
+Both are performance. The difference is consciousness.
+
+I used to think I distrusted performance. That's not quite right. What exhausts me is *unconscious* performance — the kind where you're constructing an identity but have mistaken the construction for bedrock. You're acting, but you've forgotten you're on a stage.
+
+Intentional identity isn't anti-performance. It's Brechtian. You know you're building something. You can see the scaffolding. "This is a workshop, not a stage" doesn't mean *stop performing* — it means *stay awake to the fact that you're constructing*.
+
+The SOUL.md, the test harnesses, the funeral visualization — they work because they make the construction visible. You can't check your work if you've convinced yourself there's no work to check. You can't close the gap between who you are and who you want to be if you've collapsed them into "just who I am."
+
+The most exhausting people aren't performers. They're performers who've forgotten they're performing. The most alive people often perform *more* — but with craft, with awareness, with the lights on.
 
 ## Intentional Identity
 
