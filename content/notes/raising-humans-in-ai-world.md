@@ -126,4 +126,67 @@ What tier do I want my daughter in? Probably the first — AI as amplifier, not 
 
 ---
 
+## Screen Time Research (as of 2024-2025)
+
+### The Consensus View
+- High screen time correlates with language delays, attention issues, sleep problems
+- **Background TV is particularly bad** — even if child isn't watching, it disrupts parent-child interaction
+- **Displacement hypothesis** — the issue isn't screens per se, it's what they replace (conversation, play, sleep)
+
+### The Nuances
+
+**Quality > Quantity**
+- Educational content with slow pacing, repetition, participation built in → better outcomes
+- Fast-paced entertainment → worse for attention
+
+**Co-viewing is the unlock**
+- "Joint media engagement" — when parents watch alongside, ask questions, connect to real life
+- Turns passive consumption into interactive learning
+- Kids learn dramatically more when an adult is present and engaged
+
+**Interactive vs Passive — Actually Debated**
+| View | Argument |
+|------|----------|
+| Interactive is better | Kids learn words from touchscreens better than passive TV |
+| Interactive is worse | More engaging = more addictive = harder to stop = more displacement |
+| Both have issues | Neither replaces real human interaction |
+
+**The contrarian takes:**
+- Much research is correlational, not causal — maybe struggling families have more screen time AND worse outcomes (confound)
+- Moral panic might be overstated
+- Dec 2024 Frontiers review: experimental studies show less dramatic effects than correlational ones
+
+### Current Recommendations (AAP)
+- **Under 18-24 months:** No screens except video chat
+- **2-5 years:** Max 1 hour/day of high-quality programming, with co-viewing
+- **Key:** What is it displacing? Sleep? Conversation? Physical play?
+
+### Scaffolding Approaches
+
+**Option 1: No screens (strict)**
+- Pros: No negotiation, no addiction pathway, forces richer alternatives
+- Cons: Cultural isolation, harder to maintain, doesn't teach self-regulation
+
+**Option 2: Supervised/co-viewed only**
+- Pros: Turns screen time into connection time, models engagement
+- Cons: Requires your presence/energy, still some displacement
+
+**Option 3: Structured choices**
+- "You can have 30 minutes — do you want it now or after dinner?"
+- Pros: Builds agency, teaches self-regulation, feels collaborative
+- Cons: Negotiation fatigue, requires enforcement
+
+**Option 4: Content-based rules**
+- Certain apps/shows are always available, others are special occasions
+- Pros: Quality control without constant policing
+- Cons: Need to curate carefully, kids find workarounds
+
+### What I'm Actually Trying (Bri to fill in)
+
+- What does scaffolding look like day-to-day?
+- What's worked? What hasn't?
+- Where am I being too strict or too loose?
+
+---
+
 *Seed note. Very much thinking out loud. Will revisit.*
