@@ -31,11 +31,9 @@ Right now we're stuck in a weird loop — and if you've been paying attention, y
 
 **The capability whiplash:** "Look what AI can do!" → "Actually it's wrong half the time" → "The new model is way better" → "Still hallucinates though" → "But it's improving exponentially" → repeat
 
-**The vibe shift:** "AI is going to be amazing" → "AI is going to be terrifying" → "AI is overhyped" → "AI is underhyped" → "I don't know what to think anymore"
-
 The exhaustion isn't a bug — it's a feature. It's how discourse dies. We don't stop talking about technologies because we've resolved the debates. We stop because we're tired of having them.
 
-That's kind of sad, actually. But maybe also liberating?
+That's sad. But maybe liberating too.
 
 ## The Noise vs The Signal
 
@@ -58,9 +56,7 @@ Here's my confession: I'm still going to write about AI. A lot. This piece isn't
 
 I find it both fascinating and tiring. Interesting and trite. The technology is legitimately transformative; the discourse around it is mostly noise.
 
-Maybe that's always true during a transition? The signal-to-noise ratio is terrible precisely because everyone's trying to figure it out at once. The good thinking is buried under mountains of "Top 10 AI Tools for Productivity."
-
-Does that resonate, or is it just me?
+Maybe that's always true during a transition. The signal-to-noise ratio is terrible precisely because everyone's trying to figure it out at once. The good thinking is buried under mountains of "Top 10 AI Tools for Productivity."
 
 ## The Half-Life of Disruption
 
@@ -86,17 +82,13 @@ But I'm less certain about this than I sound. The pattern might not hold this ti
 
 ## But What About the Jobs?
 
-Here's where it gets heavy: previous technologies displaced jobs gradually enough that we could pretend it wasn't happening. AI is faster, and that's *scary*.
+AI is faster than previous transitions, and that's *scary*. I wrote about this in [[The SaaSpocalypse|my SaaS piece]]: Microsoft's new AI exec says they're "ichiban" with a team of mostly models. Salesforce hired no software engineers in 2025. The CEO of Anthropic predicts "all code" will be AI-written within a year.
 
-I wrote about this in [[The SaaSpocalypse|my SaaS piece]]: Microsoft's new AI exec says they're "ichiban" with a team of mostly models. Salesforce hired no software engineers in 2025. The CEO of Anthropic predicts "all code" will be AI-written within a year.
+The fear isn't irrational. But here's the pattern: we had the same fears about every previous wave, and we stopped talking about them. Not because they were resolved — because we got tired.
 
-The fear isn't irrational. But here's what I keep noticing: we had the same fears about every previous wave, and we stopped talking about them. Not because they were resolved — because we got tired.
+The auto workers who lost jobs to robots didn't get them back. We just stopped making op-eds about it. The discourse ending doesn't mean the problems end. It means we normalize them.
 
-The auto workers who lost jobs to robots didn't get them back. We just stopped making op-eds about it. The retail workers displaced by e-commerce are still displaced. We just moved on to other conversations.
-
-The discourse ending doesn't mean the problems end. It means we normalize them.
-
-That's uncomfortable to sit with. I don't have a neat resolution for it.
+That's uncomfortable. I don't have a resolution.
 
 ## The Agentic Difference?
 
@@ -158,7 +150,7 @@ We're probably 3-5 years from the modifier dropping in casual use. Maybe 5-7 yea
 
 And then we'll find the next thing to obsess over while the actual changes — the job displacement, the power concentration, the creative disruption — continue quietly in the background, no longer interesting enough to discuss.
 
-I'm not sure if that's pessimistic or realistic. Maybe both.
+That's not pessimism. That's just how discourse works. The discomfort is noticing it while it happens.
 
 ---
 
