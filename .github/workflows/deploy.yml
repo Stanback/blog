@@ -48,7 +48,7 @@ jobs:
 
       - name: Install resume dependencies
         working-directory: _resume
-        run: bun install --frozen-lockfile
+        run: bun install
 
       - name: Build resume
         working-directory: _resume
