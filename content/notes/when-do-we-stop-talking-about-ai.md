@@ -4,7 +4,7 @@ description: "Every disruptive technology eventually becomes invisible. Electric
 date: 2026-02-07T17:00
 type: note
 schemaVersion: 1
-draft: false
+draft: true
 heroImage: /images/posts/when-stop-talking-ai-hero.png
 tags:
   - ai
