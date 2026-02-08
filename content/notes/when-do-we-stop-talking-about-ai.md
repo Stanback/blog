@@ -17,15 +17,15 @@ I'm tired.
 
 Not of AI — of *talking* about AI. The think pieces. The existential threads. The "everything will change" proclamations followed by the "nothing has changed" rebuttals. The breathless announcements and the weary corrections. The discourse.
 
-You're tired too. I can tell because you clicked on a piece called "When Do We Stop Talking About AI?" hoping someone would give you permission to stop.
+You're tired too, right? I can tell because you clicked on a piece called "When Do We Stop Talking About AI?" hoping someone would give you permission to stop.
 
-Here's the thing: every disruptive technology eventually becomes invisible. The discourse ends. The modifier drops. The thing that was going to "change everything" just becomes... everything.
+Here's what I keep coming back to: every disruptive technology eventually becomes invisible. The discourse ends. The modifier drops. The thing that was going to "change everything" just becomes... everything.
 
-So when does that happen with AI?
+So when does that happen with AI? I'm genuinely not sure. But I have some guesses.
 
 ## The Exhaustion Is the Tell
 
-Right now we're stuck in a weird loop:
+Right now we're stuck in a weird loop — and if you've been paying attention, you've probably felt it:
 
 **The existential spiral:** "AI will take my job" → "No wait, AI makes me more productive" → "But if everyone's more productive, fewer people are needed" → "But new jobs will emerge" → "Will they though?" → repeat
 
@@ -35,9 +35,11 @@ Right now we're stuck in a weird loop:
 
 The exhaustion isn't a bug — it's a feature. It's how discourse dies. We don't stop talking about technologies because we've resolved the debates. We stop because we're tired of having them.
 
+That's kind of sad, actually. But maybe also liberating?
+
 ## The Noise vs The Signal
 
-Here's my confession: I'm still going to write about AI. A lot. This piece isn't "I'm done" — it's trying to understand my own exhaustion.
+Here's my confession: I'm still going to write about AI. A lot. This piece isn't "I'm done" — it's me trying to understand my own exhaustion.
 
 **What I'm tired of:**
 - "10 prompts that will change your life"
@@ -56,7 +58,9 @@ Here's my confession: I'm still going to write about AI. A lot. This piece isn't
 
 I find it both fascinating and tiring. Interesting and trite. The technology is legitimately transformative; the discourse around it is mostly noise.
 
-Maybe that's always true during a transition. The signal-to-noise ratio is terrible precisely because everyone's trying to figure it out at once. The good thinking is buried under mountains of "Top 10 AI Tools for Productivity."
+Maybe that's always true during a transition? The signal-to-noise ratio is terrible precisely because everyone's trying to figure it out at once. The good thinking is buried under mountains of "Top 10 AI Tools for Productivity."
+
+Does that resonate, or is it just me?
 
 ## The Half-Life of Disruption
 
@@ -78,17 +82,21 @@ Disruption discourse ends when you stop needing to specify the technology.
 
 If the pattern holds: 5-7 years. By the early 2030s, "AI" might feel like "cyber" does today — a retro prefix from a more excitable time.
 
+But I'm less certain about this than I sound. The pattern might not hold this time.
+
 ## But What About the Jobs?
 
-Here's the existential crisis version: previous technologies displaced jobs gradually enough that we could pretend it wasn't happening. AI is faster.
+Here's where it gets heavy: previous technologies displaced jobs gradually enough that we could pretend it wasn't happening. AI is faster, and that's *scary*.
 
 I wrote about this in [[The SaaSpocalypse|my SaaS piece]]: Microsoft's new AI exec says they're "ichiban" with a team of mostly models. Salesforce hired no software engineers in 2025. The CEO of Anthropic predicts "all code" will be AI-written within a year.
 
-The fear isn't irrational. But here's the thing: we had the same fears about every previous wave, and we stopped talking about them. Not because they were resolved — because we got tired.
+The fear isn't irrational. But here's what I keep noticing: we had the same fears about every previous wave, and we stopped talking about them. Not because they were resolved — because we got tired.
 
 The auto workers who lost jobs to robots didn't get them back. We just stopped making op-eds about it. The retail workers displaced by e-commerce are still displaced. We just moved on to other conversations.
 
 The discourse ending doesn't mean the problems end. It means we normalize them.
+
+That's uncomfortable to sit with. I don't have a neat resolution for it.
 
 ## The Agentic Difference?
 
@@ -106,7 +114,7 @@ They were right. And we stopped talking about it anyway.
 
 ## The Thinking Partner Paradox
 
-Here's what's genuinely different: previous transitions happened at *human-thinking speed*.
+Here's what feels genuinely different to me: previous transitions happened at *human-thinking speed*.
 
 We debated the internet's implications using memos and meetings. We figured out mobile through a decade of trial and error. The discourse unfolded at the pace of human cognition and human institutions.
 
@@ -114,13 +122,15 @@ This transition has a thinking partner.
 
 I'm using AI to write this piece about AI. You might be using AI to process it. We're using the disruption to understand the disruption. AI doesn't just change the world — it helps us think through what the change means, in real time, at scale.
 
-Which could mean the discourse phase is *compressed*. We might figure out the implications faster because we have help thinking. Or it could mean the discourse is *amplified* — more takes, more angles, more confusion, more noise.
+Which could mean the discourse phase is *compressed* — we figure out the implications faster because we have help thinking. Or it could mean the discourse is *amplified* — more takes, more angles, more confusion, more noise.
 
-Probably both simultaneously.
+Probably both simultaneously? I honestly don't know.
 
 And there's still so much that needs to settle. What does education look like when students have AI tutors and AI can write their essays? What does knowledge work look like when the "knowledge" part is increasingly commoditized? These aren't questions we're tired of because we've answered them. We're tired because they're genuinely hard and the ground keeps shifting.
 
 But maybe — just maybe — AI-as-thinking-partner shortens its own half-life. We might reach the "just how things work" phase faster than any previous transition, precisely because we have help getting there.
+
+I find that possibility both exciting and a little melancholy.
 
 ## When the Tool Disappears
 
@@ -140,7 +150,7 @@ We stop talking about AI when:
 
 2. **The absence is notable.** Instead of flagging AI use, we'll flag non-AI use. "Made without AI" will be the artisanal marker, like "hand-crafted" or "organic."
 
-3. **The discourse exhausts itself.** We're close. The think pieces are blurring together. The debates are circular. The takes are recycled. Soon, writing about AI will feel like writing about "the internet" in 2020 — technically accurate but weirdly dated.
+3. **The discourse exhausts itself.** We're close — can you feel it? The think pieces are blurring together. The debates are circular. The takes are recycled. Soon, writing about AI will feel like writing about "the internet" in 2020 — technically accurate but weirdly dated.
 
 4. **New disruption arrives.** Something else will demand our attention. Biotech? Climate tech? Quantum? Something we're not tracking yet? The discourse doesn't end — it migrates.
 
@@ -148,6 +158,8 @@ We're probably 3-5 years from the modifier dropping in casual use. Maybe 5-7 yea
 
 And then we'll find the next thing to obsess over while the actual changes — the job displacement, the power concentration, the creative disruption — continue quietly in the background, no longer interesting enough to discuss.
 
+I'm not sure if that's pessimistic or realistic. Maybe both.
+
 ---
 
-*Written in 2026, when "AI" was still a thing you said out loud. When we were still tired but not yet bored. Check back in 2030 and see if this aged.*
+*Written in 2026, when "AI" was still a thing you said out loud. When we were still tired but not yet bored. Check back in 2030 and see if this aged — I'm curious too.*
