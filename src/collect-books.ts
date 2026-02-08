@@ -36,6 +36,23 @@ function extractChapterTitle(markdown: string): string {
 }
 
 /**
+ * Parse optional frontmatter from chapter markdown
+ * Returns { draft: boolean, content: string (markdown without frontmatter) }
+ */
+function parseChapterFrontmatter(markdown: string): { draft: boolean; content: string } {
+	const frontmatterMatch = markdown.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+	if (!frontmatterMatch) {
+		return { draft: false, content: markdown };
+	}
+
+	const frontmatter = YAML.parse(frontmatterMatch[1]) as { draft?: boolean };
+	return {
+		draft: frontmatter.draft === true,
+		content: frontmatterMatch[2],
+	};
+}
+
+/**
  * Create a slug from chapter number
  */
 function chapterSlug(chapterNum: number): string {
@@ -86,7 +103,8 @@ export async function collectBooks(booksDir: string): Promise<Book[]> {
 				if (!mdFile) continue;
 
 				const mdPath = join(chapterPath, mdFile);
-				const mdContent = await readFile(mdPath, 'utf-8');
+				const rawMdContent = await readFile(mdPath, 'utf-8');
+				const { draft: chapterDraft, content: mdContent } = parseChapterFrontmatter(rawMdContent);
 				const chapterNum = parseChapterNumber(chapterFolder.name);
 				const chapterTitle = extractChapterTitle(mdContent);
 
@@ -105,7 +123,7 @@ export async function collectBooks(booksDir: string): Promise<Book[]> {
 					schemaVersion: 1,
 					title: chapterTitle,
 					date: new Date(manifest.date),
-					draft: false,
+					draft: chapterDraft,
 					tags: [],
 					bodyMarkdown: mdContent,
 					html: fixedHtml,

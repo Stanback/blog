@@ -925,7 +925,7 @@ function getBookCoverImage(book: Book): string | null {
 
 // Render book index page (table of contents)
 function renderBook(book: Book, ctx: BuildContext): string {
-	const mainChapters = book.chapters.filter((ch) => ch.chapterNumber > 0);
+	const mainChapters = book.chapters.filter((ch) => ch.chapterNumber > 0 && !ch.draft);
 	const chapter0 = book.chapters.find((ch) => ch.chapterNumber === 0);
 	const coverImage = book.coverImage || getBookCoverImage(book);
 	const totalWords = mainChapters.reduce((sum, ch) => sum + (ch.wordCount || 0), 0);
@@ -1006,7 +1006,7 @@ function renderBook(book: Book, ctx: BuildContext): string {
 
 // Render individual chapter - 2026 book reading experience
 function renderChapter(chapter: Chapter, book: Book, ctx: BuildContext): string {
-	const mainChapters = book.chapters.filter((ch) => ch.chapterNumber > 0);
+	const mainChapters = book.chapters.filter((ch) => ch.chapterNumber > 0 && !ch.draft);
 	const chapterIndex = book.chapters.findIndex((ch) => ch.slug === chapter.slug);
 	const mainIndex = mainChapters.findIndex((ch) => ch.slug === chapter.slug);
 	const prevChapter = chapterIndex > 0 ? book.chapters[chapterIndex - 1] : null;
@@ -1128,7 +1128,7 @@ function renderBooksIndex(books: Book[], ctx: BuildContext): string {
       ${publishedBooks
 				.map((book) => {
 					const coverImage = book.coverImage || getBookCoverImage(book);
-					const mainChapters = book.chapters.filter((ch) => ch.chapterNumber > 0);
+					const mainChapters = book.chapters.filter((ch) => ch.chapterNumber > 0 && !ch.draft);
 					const totalWords = mainChapters.reduce((sum, ch) => sum + (ch.wordCount || 0), 0);
 					return `
         <article class="book-card">
@@ -1457,7 +1457,8 @@ export function renderSite(ctx: BuildContext): RenderOutput[] {
 	}
 	for (const book of ctx.books) {
 		output.push({ path: `books/${book.slug}/index.html`, content: renderBook(book, ctx) });
-		for (const chapter of book.chapters) {
+		// Only render non-draft chapters
+		for (const chapter of book.chapters.filter((ch) => !ch.draft)) {
 			output.push({
 				path: `books/${book.slug}/${chapter.slug}/index.html`,
 				content: renderChapter(chapter, book, ctx),
