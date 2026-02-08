@@ -24,9 +24,13 @@ coAuthors:
 
 # Design Physics: When Interfaces Meet Agents
 
+I've been feeling disoriented lately.
+
+I'll design something — a tool schema, a prompt, a UI — and realize halfway through that I don't know who's using it. A human? An agent? Both in sequence? The old instincts don't quite apply.
+
 Traditional UX has a hidden assumption: humans on both sides. A human designs the interface; a human uses it. Every principle we've developed—Fitts's Law, cognitive load theory, the 80/20 rule—assumes biological constraints.
 
-That assumption is breaking.
+That assumption is breaking. And it's unsettling, because we don't have new principles yet. Just hunches.
 
 ## The 2×2 Framework
 
@@ -61,11 +65,11 @@ The challenge: **coherence over time**. When every screen is generated, how do y
 
 Mostly unexplored. MCP (Model Context Protocol) is one attempt. But we don't yet have a design system for A2A.
 
-What does "good UX" even mean when both parties are LLMs?
+What does "good UX" even mean when both parties are LLMs? I genuinely don't know. If you're thinking about this, I'd love to hear what you're finding.
 
 ## The Three-Layer Model
 
-Across all quadrants, I keep coming back to the same architecture:
+Across all quadrants, I keep coming back to the same architecture. I'm not sure it's complete, but it keeps being useful:
 
 ```
 CONSTRAINTS (Design Physics)
@@ -80,6 +84,8 @@ CODE (Source of Truth)
 
 The designer's job is increasingly Layer 1—defining the physics that bound what can happen. Layer 2 (prompting) is where AI has leverage. Layer 3 (code) is where truth lives.
 
+Does this hold up? I think so — but I've only been designing this way for a few months. The model might need revision as the landscape shifts.
+
 ## What This Means
 
 If you're designing for AI-touched systems:
@@ -92,4 +98,8 @@ If you're designing for AI-touched systems:
 
 4. **Build for the quadrant you're actually in.** Most teams think they're in Q1 when they're really in Q2 or Q3.
 
-The physics are changing. Time to update the playbook.
+---
+
+The physics are changing. I find that exciting and a little scary — exciting because there's real design work to do, scary because the old playbook was comfortable.
+
+But comfort isn't the goal. Usefulness is. And right now, figuring out how to design for agents feels more useful than anything else I could be doing.
