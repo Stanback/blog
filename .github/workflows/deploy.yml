@@ -58,6 +58,7 @@ jobs:
         run: |
           mkdir -p static/resume
           cp -r _resume/dist/* static/resume/
+          rm -rf _resume  # Clean up to avoid lint picking up resume source
 
       # =========================================
       # Blog Build
