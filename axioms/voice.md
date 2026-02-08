@@ -78,6 +78,22 @@ Example:
 
 This positions voice without performing expertise.
 
+## Impact Over Credentials
+
+Don't cite titles, team sizes, or years of experience. Cite what changed. What exists now that wouldn't without you?
+
+"I built X" is weaker than "X exists and works because I built it."
+
+The proof is in the reality, not the resume. In a world where one person can launch a billion-dollar company, credentials mean less than artifacts. What changed because you were here?
+
+**Not this:** "I led a team of 12 engineers for 3 years."
+**This:** "I built the system that handles 10M requests/day — it's still running."
+
+**Not this:** "I have 15 years of experience in distributed systems."
+**This:** "I've been wrong about caching in three different ways. Here's what I learned."
+
+The credential says you were *present*. The impact says you *mattered*.
+
 ## Owner-Mode, Not Observer-Mode
 
 The writing gets sharper when you **own the claim** rather than describe it from a distance.
