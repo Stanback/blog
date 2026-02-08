@@ -8,7 +8,7 @@ on:
   pull_request:
     branches: [main]
   repository_dispatch:
-    types: [submodule-update]
+    types: [submodule-update, resume-update]
 
 jobs:
   build-and-deploy:
@@ -28,6 +28,40 @@ jobs:
         with:
           bun-version: latest
 
+      # =========================================
+      # Resume Build (external repo)
+      # =========================================
+      - name: Checkout resume repo
+        uses: actions/checkout@v4
+        with:
+          repository: Stanback/resume
+          token: ${{ secrets.GH_PAT }}
+          path: _resume
+
+      - name: Cache resume dependencies
+        uses: actions/cache@v4
+        with:
+          path: _resume/node_modules
+          key: resume-deps-${{ hashFiles('_resume/package-lock.json', '_resume/bun.lockb') }}
+          restore-keys: |
+            resume-deps-
+
+      - name: Install resume dependencies
+        working-directory: _resume
+        run: bun install --frozen-lockfile
+
+      - name: Build resume
+        working-directory: _resume
+        run: bun run build
+
+      - name: Stage resume to static/resume
+        run: |
+          mkdir -p static/resume
+          cp -r _resume/dist/* static/resume/
+
+      # =========================================
+      # Blog Build
+      # =========================================
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
