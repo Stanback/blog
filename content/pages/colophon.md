@@ -54,6 +54,12 @@ Content here exists at different levels of doneness.
 
 **Writing** — Crystallized enough to put my name on. I've thought it through, but nothing here is final — I update posts when I learn something new.
 
+## Living Documents
+
+Everything here is iterated in public. Posts aren't published and frozen — they're tended. I fix mistakes, add context, update thinking as it evolves. The date at the top is when something started; the content is where my thinking is now.
+
+This isn't a newspaper archive. It's a workshop.
+
 ## AI Discovery
 
 This site is designed for both humans and machines.
