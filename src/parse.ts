@@ -17,6 +17,19 @@ export interface ParseResult {
 	readingTime: number; // minutes
 }
 
+// ============================================================================
+// Heading Slugify (for anchor IDs)
+// ============================================================================
+
+function slugify(text: string): string {
+	return text
+		.toLowerCase()
+		.replace(/[^\w\s-]/g, '') // Remove non-word chars (except spaces and hyphens)
+		.replace(/\s+/g, '-') // Replace spaces with hyphens
+		.replace(/-+/g, '-') // Collapse multiple hyphens
+		.replace(/^-|-$/g, ''); // Trim leading/trailing hyphens
+}
+
 type CalloutType = 'aside' | 'constraints' | 'lens';
 
 // Wikilink resolver - maps titles to URLs
@@ -195,6 +208,21 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 	marked.use({
 		async: true,
 		renderer: {
+			// Add anchor links to headings
+			heading(token: Tokens.Heading): string {
+				const rawText = token.text;
+				// Check for explicit ID syntax: ## Heading {#custom-id}
+				const explicitMatch = rawText.match(/^(.+?)\s*\{#([\w-]+)\}\s*$/);
+
+				const displayText = explicitMatch ? explicitMatch[1].trim() : rawText;
+				const id = explicitMatch ? explicitMatch[2] : slugify(rawText);
+
+				// Only add anchors to h2 and h3 (skip h1 which is the title)
+				if (token.depth >= 2 && token.depth <= 3) {
+					return `<h${token.depth} id="${id}"><a href="#${id}" class="heading-anchor" aria-hidden="true">#</a>${displayText}</h${token.depth}>\n`;
+				}
+				return `<h${token.depth}>${displayText}</h${token.depth}>\n`;
+			},
 			// Wrap tables in scrollable container for mobile
 			table(token: Tokens.Table): string {
 				const header = token.header

@@ -2004,6 +2004,35 @@ article.skills-page h1 {
 	margin-top: 0;
 }
 
+/* Heading anchor links */
+.prose h2,
+.prose h3 {
+	position: relative;
+}
+
+.heading-anchor {
+	position: absolute;
+	left: -1.2em;
+	padding-right: 0.3em;
+	font-style: normal;
+	font-weight: 400;
+	text-decoration: none;
+	color: var(--color-text-muted);
+	opacity: 0;
+	transition: opacity 0.15s ease;
+}
+
+.prose h2:hover .heading-anchor,
+.prose h3:hover .heading-anchor,
+.heading-anchor:focus {
+	opacity: 0.5;
+}
+
+.heading-anchor:hover {
+	opacity: 1;
+	color: var(--color-accent);
+}
+
 /* Paragraphs */
 .prose p {
 	margin-bottom: var(--space-6);
