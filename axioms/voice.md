@@ -82,9 +82,7 @@ This positions voice without performing expertise.
 
 Don't cite titles, team sizes, or years of experience. Cite what changed. What exists now that wouldn't without you?
 
-"I built X" is weaker than "X exists and works because I built it."
-
-The proof is in the reality, not the resume. In a world where one person can launch a billion-dollar company, credentials mean less than artifacts. What changed because you were here?
+The proof is in the reality, not the resume. In a world where one person can launch a billion-dollar company, credentials mean less than artifacts.
 
 **Not this:** "I led a team of 12 engineers for 3 years."
 **This:** "I built the system that handles 10M requests/day — it's still running."
@@ -92,7 +90,9 @@ The proof is in the reality, not the resume. In a world where one person can lau
 **Not this:** "I have 15 years of experience in distributed systems."
 **This:** "I've been wrong about caching in three different ways. Here's what I learned."
 
-The credential says you were *present*. The impact says you *mattered*.
+The credential says you were *present*. The impact says you *contributed to something that worked*.
+
+**The tension to hold:** Not grandiosity ("I moved the river") — but not self-erasure either ("I was just there"). The sweet spot: *I added water to the right rivers, and I knew which rivers mattered.* Claim your contribution without claiming more than your contribution.
 
 ## Owner-Mode, Not Observer-Mode
 
