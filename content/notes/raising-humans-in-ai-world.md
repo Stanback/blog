@@ -53,7 +53,37 @@ The pattern: not specialized depth alone, not soft skills alone. The integration
 - **Strengths:** Deep intrinsic motivation
 - **Risks:** Gaps if curiosity doesn't naturally hit certain foundations
 
+### Slow Parenting / Intentional Parenting
+- Resistance to overscheduling and rushing
+- Quality time > quantity of activities
+- Responding vs reacting — parent with clarity, not fight-or-flight
+- **Research:** Unstructured time fosters creativity and resilience; kids who feel heard develop stronger self-esteem
+- **Fits AI world?** Intentionality and presence might be the counter to always-available AI. But could feel like resistance rather than integration?
+- **Tension:** "Slow" in a fast-paced world — privilege or necessity?
+
+### Free Range Parenting (Lenore Skenazy / Let Grow)
+- Push back against helicopter parenting and fear culture
+- Give kids independence, let them solve problems
+- "Let Grow Experience" — homework to do something new without parents
+- **Core claim:** We've become irrationally fearful; kids are more capable than we think
+- **Strengths:** Builds resilience, problem-solving, confidence
+- **Critiques:** Safety concerns; can tip into neglect if taken too far
+- **Fits AI world?** Independence and self-direction matter MORE when AI can do the routine stuff. The kid who can figure things out wins.
+
+### Peaceful / Respectful Parenting (RIE / Janet Lansbury)
+- Based on Magda Gerber's Resources for Infant Educarers (RIE)
+- Treat children with the same respect as adults — "ceremonious slowness"
+- Don't interrupt natural play; observe rather than entertain
+- Acknowledge feelings without rushing to fix them
+- Set limits with empathy, not punishment/rewards
+- **Core stance:** Children are capable from birth; trust them
+- **Strengths:** Emotional regulation, secure attachment, intrinsic motivation
+- **Critiques:** Can feel passive; requires a lot of parental patience/presence
+- **Fits AI world?** The emphasis on emotional attunement and *not* rushing to fix might build exactly the human skills AI can't replicate
+
 **Question:** Do any of these explicitly prepare for *thinking with* external systems? Or are they all assuming the mind is solo?
+
+**My instinct:** Free range + RIE might be the combo — independence AND emotional depth. But I'm still figuring this out.
 
 ## Developmental Frameworks
 
