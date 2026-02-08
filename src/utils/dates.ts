@@ -40,12 +40,14 @@ export function formatDateISO(date: Date): string {
 
 /**
  * Formats a date for display (e.g., "February 3, 2026")
+ * Always formats in PT to match content dates
  */
 export function formatDateLong(date: Date): string {
 	return date.toLocaleDateString('en-US', {
 		year: 'numeric',
 		month: 'long',
 		day: 'numeric',
+		timeZone: 'America/Los_Angeles',
 	});
 }
 
@@ -58,10 +60,12 @@ export function formatDateMachine(date: Date): string {
 
 /**
  * Formats a date without year (e.g., "February 3") - for use when year is shown elsewhere
+ * Always formats in PT to match content dates
  */
 export function formatDateNoYear(date: Date): string {
 	return date.toLocaleDateString('en-US', {
 		month: 'long',
 		day: 'numeric',
+		timeZone: 'America/Los_Angeles',
 	});
 }
