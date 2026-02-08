@@ -94,6 +94,8 @@ The credential says you were *present*. The impact says you *contributed to some
 
 **The tension to hold:** Not grandiosity ("I moved the river") — but not self-erasure either ("I was just there"). The sweet spot: *I added water to the right rivers, and I knew which rivers mattered.* Claim your contribution without claiming more than your contribution.
 
+This is the funeral test, reframed: not "what did I achieve?" but "did I contribute to things that mattered?" The answer isn't scale — it's alignment.
+
 ## Owner-Mode, Not Observer-Mode
 
 The writing gets sharper when you **own the claim** rather than describe it from a distance.
