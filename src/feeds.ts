@@ -145,7 +145,6 @@ ${urlEntries}
 export function generateRobots(): string {
 	return `User-agent: *
 Allow: /
-Disallow: /resume/
 
 Sitemap: ${config.url}/sitemap.xml
 `;
