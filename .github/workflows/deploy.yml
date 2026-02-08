@@ -58,6 +58,8 @@ jobs:
         run: |
           mkdir -p static/resume
           cp -r _resume/dist/* static/resume/
+          # Inject noindex meta tag into resume HTML (keep it out of search engines)
+          find static/resume -name "*.html" -exec sed -i 's/<head>/<head>\n    <meta name="robots" content="noindex, nofollow">/' {} \;
           rm -rf _resume  # Clean up to avoid lint picking up resume source
 
       # =========================================
