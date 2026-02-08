@@ -1333,6 +1333,17 @@ main > .post-hero {
 	line-height: var(--leading-relaxed);
 }
 
+.archive-intro a {
+	color: var(--color-link);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	text-decoration-thickness: 1px;
+}
+
+.archive-intro a:hover {
+	color: var(--color-link-hover);
+}
+
 /* Year-grouped archive grid */
 .archive-grid {
 	display: flex;
