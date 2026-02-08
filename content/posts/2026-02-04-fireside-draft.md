@@ -1,5 +1,5 @@
 ---
-title: "The Vehicle and the Destination"
+title: "Coherence"
 date: 2026-02-04T16:00
 type: post
 schemaVersion: 1
@@ -15,100 +15,122 @@ tags:
 description: "Fireside chat script for Kinn. NOT FOR PUBLICATION."
 ---
 
-# The Vehicle and the Destination
+# Coherence
 
-*Fireside Chat Script — Draft*
-
----
-
-Hi everyone — I'm Bri. I'm an engineer and engineering leader, and also a mom, which mostly means I'm very familiar with debugging systems while extremely tired.
-
-When people ask how I got into tech, I always pause a little — because it wasn't really a career decision. It was more like a long-standing instinct that eventually found a place to land.
-
-Even as a kid, I was pulled toward figuring out how things worked. Solving problems. Taking things apart. Tinkering. Building. Trying to invent things that didn't really need to exist.
-
-I actually told my mom one year that I didn't want toys for Christmas — I just wanted scrap wood so I could put things together.
-
-I wasn't especially interested in playing with the finished thing. I was interested in understanding it. How it held together. Where it might fail. What would happen if I changed one piece.
-
-That instinct — to poke at systems, to see where they break, to make them better — never really went away. Tech just turned out to be a place where that instinct was useful.
+*Fireside Chat — The Kinn, Venice*
 
 ---
 
-Early on in my career, I kept finding myself stretching into roles before I felt ready. More responsibility. Bigger decisions. More visibility. Often arriving faster than my confidence did.
+Hi everyone — I'm Bri. Engineer, engineering leader, mom of a three-year-old, which mostly means I'm familiar with debugging systems while extremely tired.
 
-And over time, I learned something that has stayed with me:
+When people ask how I got into tech, I pause — because it wasn't a career decision. It was more like an instinct that eventually found a place to land.
 
-> **Readiness usually comes after you say yes, not before.**
+Even as a kid, I was pulled toward figuring out how things worked. Taking things apart. Building. I told my mom one year I didn't want toys for Christmas — I just wanted scrap wood so I could put things together.
 
-That turned out to be true in more places than I expected.
+I wasn't interested in playing with the finished thing. I was interested in understanding it. How it held together. Where it might fail.
 
-People sometimes call that feeling imposter syndrome. That label never quite fit for me. What I was really learning was *calibration* — figuring out when I genuinely didn't know enough yet, and when I actually did, even if the room hadn't caught up.
-
-A lot of growth doesn't feel like confidence. It feels like responsibility arriving early and asking if you trust yourself enough to meet it.
+That instinct never went away. Tech turned out to be a place where it was useful.
 
 ---
 
-For a long time, I believed technical excellence was the goal. Build the best systems. Make them elegant. Make them scale. Make them correct.
+## Saying Yes Before You're Ready
 
-What shifted for me — especially as I moved into leadership — was realizing that technical excellence is actually the *vehicle*, not the *destination*.
+Early in my career, I kept stretching into roles before I felt ready. More responsibility. Bigger decisions. More visibility. Usually arriving faster than my confidence.
 
-The destination is the human on the other side.
+People call that imposter syndrome. That label never fit for me.
 
-Every slow page load, every broken flow, every confusing experience isn't just a technical issue — it's a small breach of trust.
+What I was actually learning was *calibration* — figuring out when I genuinely didn't know enough, versus when I did know enough and the room just hadn't caught up yet.
 
-**Code is how we decide what kind of world we're building for the people who use what we make.**
+Here's what I figured out:
+
+**Readiness usually comes *after* you say yes, not before.**
+
+Growth doesn't feel like confidence. It feels like responsibility showing up early and asking if you trust yourself enough to meet it.
 
 ---
 
-Around the same time professionally, I also went through a pretty major personal shift. I became more visible about who I am — including being transgender — while already in leadership roles.
+## The Biggest Yes
 
-Which is… not the order people usually recommend.
+A few years ago, I said yes to something that had nothing to do with my career — and everything to do with it.
 
-What surprised me wasn't the transition itself. It was how much clarity it created.
+I'm transgender. And I came out while already in leadership roles, which is... not the order people usually recommend.
+
+I want to be direct about this, because I think you can probably tell — and dancing around it would be weird.
+
+What surprised me wasn't the transition itself. It was how much *clarity* it created.
+
+For years, I'd been managing a low-grade static. Energy spent curating how I presented, hedging, monitoring. It wasn't dramatic — just constant.
+
+When that static stopped, I got something back I didn't know I'd lost: **coherence.**
 
 When I stopped hedging about who I was, I stopped hedging about my judgment.
 
+I started trusting my own read on situations. Speaking more directly. Making faster decisions. Not because I suddenly knew more — but because I wasn't splitting my attention anymore.
+
 **Authenticity isn't comfortable. It's coherent.**
 
-And coherence turns out to be the foundation of trust — in systems, and in leadership.
+And coherence, it turns out, is the foundation of trust — in yourself, and in how others experience you.
 
 ---
 
-That clarity forced another lesson I didn't learn gracefully.
+## What Coherence Unlocks
 
-I care deeply about people. My instinct has always been to support, to give grace, to assume good intent.
+Once I understood coherence in myself, I started seeing it everywhere.
 
-And at some point, I had to confront the fact that I was sometimes confusing kindness with avoiding hard truths.
+**In systems:** The best architectures aren't the cleverest — they're the ones where every piece knows what it's for. Where the design is honest about its constraints. Where you can reason about one part without holding the whole thing in your head.
 
-I learned the difference between being supportive and being *enabling*. Between creating psychological safety and quietly lowering the bar.
+**In leadership:** The best leaders aren't the ones with all the answers — they're the ones you can predict. Whose values are legible. Who you trust to be the same person in a crisis that they are on a normal Tuesday.
 
-**The deepest form of care isn't making people comfortable. It's refusing to let them — or yourself — settle for less than they're capable of.**
+**In care:** I used to confuse kindness with avoiding hard truths. I learned the difference between being supportive and being *enabling*. 
+
+The deepest form of care isn't making people comfortable. It's refusing to let them settle for less than they're capable of.
+
+That's coherence too — your actions matching what you actually believe.
 
 ---
 
-Today, my role is less about writing every line of code and more about designing environments — technical and human — where good work is easier than bad work.
+## The Vehicle and the Destination
+
+For a long time, I thought technical excellence was the goal. Build elegant systems. Make them scale. Make them correct.
+
+What shifted — especially in leadership — was realizing that technical excellence is the *vehicle*, not the *destination*.
+
+The destination is the human on the other side.
+
+Every slow page load, every broken flow, every confusing experience — that's not just a technical issue. It's a small breach of trust.
+
+**Code is how we decide what kind of world we're building for the people who use what we make.**
+
+The craft matters. But it matters because of who it serves.
+
+---
+
+## What I Build Now
+
+Today, my work is less about writing every line of code and more about designing environments — technical and human — where good work is easier than bad work.
 
 Where excellence isn't heroic. It's inevitable.
 
 Where standards are clear, tools are supportive, and pride in craft is shared.
 
-That applies far beyond software. It applies to teams, to leadership, and honestly, to life.
+That's what coherence looks like at scale. Systems where every part knows what it's for.
 
 ---
 
-In a lot of ways, I'm still doing the same thing I did as a kid with scrap wood — trying to build things that hold together, and fixing them when they don't.
+## One Thing
 
-If there's one thing I'd leave you with, it's this:
+If there's one thing I'd leave you with:
 
-**Growth rarely feels like confidence. It usually feels like responsibility showing up early.**
+**The thing you're hedging about might be the thing that unlocks everything else.**
 
-If you're in a season where you've said yes before you feel ready — professionally, personally, or both — you're probably closer than you think.
+It was for me. Not because transition is magic — but because coherence is. When you stop spending energy on the gap between who you are and how you present, that energy comes back.
 
-I'm really happy to talk, compare notes, or just hear what brought you here.
+If you're in a season where something feels off — where there's static you've gotten used to — it might be worth asking what you're managing that you could just... stop managing.
 
-Thank you for listening.
+The yes that scares you might be the one that simplifies everything.
 
 ---
 
-*This post is marked `draft: true` and `private: true` — it won't appear in feeds, sitemap, or llms-full.txt.*
+I'm really happy to talk, compare notes, or just hear what brought you here tonight.
+
+Thank you.
