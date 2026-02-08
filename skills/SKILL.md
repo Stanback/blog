@@ -1,6 +1,24 @@
+---
+name: blog
+description: Create and manage content on bristanback.com (posts, notes, photos). Load axioms/voice.md before writing. Use when user asks to write blog content, generate hero images, or publish.
+---
+
 # Blog Skills (bristanback.com)
 
 > Skills for creating and managing content on Bri's blog.
+
+## Before Writing
+
+**Load these before creating/editing content:**
+
+1. **Always**: `axioms/voice.md` — voice axioms (owner mode, human cost signals)
+2. **For design/CSS**: `axioms/design-system.md` + `axioms/accessibility.md`
+3. **For structure changes**: `axioms/architecture.md`
+4. **Full context**: `CLAUDE.md` (links to all axioms)
+
+The voice axiom is non-negotiable for content work. Owner mode = axiom, not suggestion.
+
+---
 
 ## Content Types
 
