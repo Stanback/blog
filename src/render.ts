@@ -759,7 +759,7 @@ function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 	const content = `
     <header class="archive-header">
       <h1>Photos</h1>
-      <p class="archive-intro">Sometimes words aren't the right container — sometimes <a href="/notes/photography-as-interface/">the frame is</a>. A small archive.</p>
+      <p class="archive-intro">Sometimes words aren't the right container — sometimes <a href="/posts/photography-as-interface/">the frame is</a>. A small archive.</p>
     </header>
     ${
 			publishedPhotos.length > 0

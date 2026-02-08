@@ -2,7 +2,7 @@
 title: "Photography as Interface"
 description: "What camera mechanics teach us about designing for attention, perception, and control."
 date: 2026-02-07T14:00
-type: note
+type: post
 schemaVersion: 1
 draft: false
 heroImage: /images/posts/photography-interfaces-hero.png
