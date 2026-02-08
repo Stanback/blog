@@ -2522,6 +2522,8 @@ article.skills-page h1 {
 	--polaroid-rotate: 0deg;
 	--polaroid-offset: 0%;
 	max-width: min(200px, 45%);
+	max-height: 200px;
+	width: auto;
 	height: auto;
 	display: block;
 	margin: var(--space-8) auto;
