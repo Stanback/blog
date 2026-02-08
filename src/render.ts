@@ -1,8 +1,5 @@
 // Render content to HTML and write to dist/
 
-import { existsSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
-import { parse as parseYaml } from 'yaml';
 import { config } from './config.js';
 import {
 	glyphCornerBR,
@@ -519,176 +516,6 @@ function renderSkills(skills: Skills, ctx: BuildContext): string {
 		title: skills.title,
 		description: skills.description || 'Capabilities manifest',
 		url: getUrl(skills),
-		content,
-		cssFilename: ctx.cssFilename,
-	});
-}
-
-// ============================================================================
-// Resume Rendering
-// ============================================================================
-
-interface ResumeData {
-	name: string;
-	title: string;
-	location: string;
-	contact: {
-		email: string;
-		linkedin: string;
-		github: string;
-		phone: string;
-	};
-	summary: string;
-	philosophy: {
-		quote: string;
-		points: string[];
-	};
-	experience: Array<{
-		title: string;
-		company?: string;
-		location?: string;
-		period: string;
-		summary?: string;
-		tech?: string;
-		impact?: string[];
-		roles?: Array<{
-			title: string;
-			company?: string;
-			year?: number;
-			period?: string;
-			note: string;
-		}>;
-	}>;
-	skills: Array<{
-		category: string;
-		items: string[];
-	}>;
-	education: {
-		degree: string;
-		school: string;
-		period: string;
-	};
-}
-
-function loadResumeData(): ResumeData | null {
-	const resumePath = join(process.cwd(), 'content/resume/data.yaml');
-	if (!existsSync(resumePath)) {
-		return null;
-	}
-	const yaml = readFileSync(resumePath, 'utf-8');
-	return parseYaml(yaml) as ResumeData;
-}
-
-function renderResume(ctx: BuildContext): string | null {
-	const data = loadResumeData();
-	if (!data) return null;
-
-	const experienceHtml = data.experience
-		.map((job) => {
-			if (job.roles) {
-				// Early career section with multiple roles
-				return `
-					<div class="resume-job resume-early-career">
-						<div class="resume-job-header">
-							<h3>${job.title}</h3>
-							<span class="resume-period">${job.period}</span>
-						</div>
-						<ul class="resume-roles">
-							${job.roles
-								.map(
-									(role) => `
-								<li>
-									<strong>${role.title}</strong>${role.company ? `, ${role.company}` : ''}
-									${role.year ? `(${role.year})` : role.period ? `(${role.period})` : ''}
-									— ${role.note}
-								</li>
-							`,
-								)
-								.join('')}
-						</ul>
-					</div>
-				`;
-			}
-			return `
-				<div class="resume-job">
-					<div class="resume-job-header">
-						<h3>${job.title}</h3>
-						<span class="resume-company">${job.company}</span>
-						<span class="resume-period">${job.period}</span>
-					</div>
-					${job.summary ? `<p class="resume-summary">${job.summary}</p>` : ''}
-					${
-						job.impact
-							? `
-						<ul class="resume-impact">
-							${job.impact.map((item) => `<li>${item}</li>`).join('')}
-						</ul>
-					`
-							: ''
-					}
-				</div>
-			`;
-		})
-		.join('');
-
-	const skillsHtml = data.skills
-		.map(
-			(cat) => `
-			<div class="resume-skill-category">
-				<h4>${cat.category}</h4>
-				<ul>
-					${cat.items.map((item) => `<li>${item}</li>`).join('')}
-				</ul>
-			</div>
-		`,
-		)
-		.join('');
-
-	const content = `
-		<article class="resume">
-			<header class="resume-header">
-				<h1>${data.name}</h1>
-				<p class="resume-title">${data.title}</p>
-				<p class="resume-contact">
-					<span>${data.location}</span>
-					<span><a href="mailto:${data.contact.email}">${data.contact.email}</a></span>
-					<span><a href="https://linkedin.com/in/${data.contact.linkedin}">LinkedIn</a></span>
-					<span><a href="https://github.com/${data.contact.github}">GitHub</a></span>
-				</p>
-			</header>
-
-			<section class="resume-section">
-				<p class="resume-summary-text">${data.summary}</p>
-			</section>
-
-			<section class="resume-section">
-				<h2>Experience</h2>
-				${experienceHtml}
-			</section>
-
-			<section class="resume-section resume-skills-section">
-				<h2>Technical Expertise</h2>
-				<div class="resume-skills-grid">
-					${skillsHtml}
-				</div>
-			</section>
-
-			<section class="resume-section">
-				<h2>Education</h2>
-				<p><strong>${data.education.degree}</strong><br>
-				${data.education.school}, ${data.education.period}</p>
-			</section>
-		</article>
-		
-		<div class="resume-print-hint no-print">
-			<p>💡 Use your browser's print function (⌘P / Ctrl+P) to save as PDF</p>
-		</div>
-	`;
-
-	return baseTemplate({
-		title: `${data.name} — Resume`,
-		description: `${data.title} with 15+ years building systems that scale with intention.`,
-		url: '/resume/',
 		content,
 		cssFilename: ctx.cssFilename,
 	});
@@ -1622,12 +1449,6 @@ export function renderSite(ctx: BuildContext): RenderOutput[] {
 	}
 	if (ctx.skills && !ctx.skills.draft) {
 		output.push({ path: 'about/skills/index.html', content: renderSkills(ctx.skills, ctx) });
-	}
-
-	// Resume (rendered from YAML data)
-	const resumeHtml = renderResume(ctx);
-	if (resumeHtml) {
-		output.push({ path: 'resume/index.html', content: resumeHtml });
 	}
 
 	// Books index and individual book pages
