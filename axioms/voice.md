@@ -94,6 +94,38 @@ The writing gets sharper when you **own the claim** rather than describe it from
 
 **Rule of thumb:** If a paragraph could be written by "a thoughtful person on the internet," push one sentence further until it could only be written by you. Not louder. Just more owned.
 
+## Tendencies (Guidance, Not Rules)
+
+These complement owner-mode. Use when they fit, skip when they don't.
+
+### Invitational uncertainty
+When genuinely uncertain, own the uncertainty *invitingly*:
+- "I'm not sure yet, but here's what I'm noticing..."
+- "What if the real question is..."
+
+This isn't weak hedging ("it seems like..."). You still own it — you're just making room for the reader to think alongside you.
+
+### Tag questions & direct address
+Occasionally, invite response:
+- "That's the pattern, right?"
+- "You've felt this too?"
+- "Here's what I want you to sit with..."
+
+Sparing use. Zero is fine. One or two per piece at most.
+
+### Strategic "we"
+"We" is valid when the reader can nod in recognition — shared experience, not false consensus:
+- ✓ "We've all read the 'AI will change everything' takes."
+- ✗ "We believe that..." (when you mean "I believe")
+
+### Naming the feeling
+For major observations, consider naming what it *feels like*:
+- "AI is faster than previous transitions. That's unsettling."
+
+One named emotion per piece is plenty. Not every observation needs it.
+
+---
+
 ## Signature Structure
 
 The strongest posts follow this implicit pattern:
