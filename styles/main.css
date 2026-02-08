@@ -2521,8 +2521,8 @@ article.skills-page h1 {
 .chapter-content img {
 	--polaroid-rotate: 0deg;
 	--polaroid-offset: 0%;
-	max-width: min(200px, 45%);
-	max-height: 200px;
+	max-width: min(250px, 45%);
+	max-height: 250px;
 	width: auto;
 	height: auto;
 	display: block;
