@@ -4,12 +4,12 @@ description: "What changes when the gap between thinking and shipping collapses"
 date: 2026-02-04T08:00
 type: post
 schemaVersion: 1
-draft: true
-private: true
+draft: false
 tags:
   - ai
   - building
   - reflection
+heroImage: /images/posts/speed-of-thought-hero.png
 ---
 
 I'm writing this from my phone. Lying in bed, probably. Talking to an AI through Telegram.
@@ -25,7 +25,7 @@ I didn't open VS Code. I didn't run any commands. I just... talked. And things h
 
 ---
 
-This is the thing that's hard to explain until you experience it: the gap between thinking and shipping can collapse almost entirely.
+Here's the thing: the gap between thinking and shipping can collapse almost entirely. It's hard to explain until you experience it — and then it's hard to go back.
 
 Not "AI writes code for me" — that's the boring version. More like: I have a thought, I say it out loud, and by the time I've finished the sentence, it's already being implemented. I can course-correct mid-stream. "Actually, no — more like this." Done.
 
@@ -38,7 +38,7 @@ The tools that enable this:
 - **Telegram** (or Signal, Discord, whatever) — where I already live
 - **An agent that has context** — knows my codebase, my preferences, my voice
 
-The key insight: the interface isn't a chat window. The interface is *my existing communication habits*. I'm not learning a new tool. I'm just... talking differently.
+The interface isn't a chat window. The interface is *my existing communication habits*. I'm not learning a new tool. I'm just... talking differently. That's the unlock.
 
 ---
 
@@ -54,7 +54,7 @@ What changes:
 
 ---
 
-The vulnerable part: this sounds like hype. "AI changes everything!" Yeah, yeah.
+This sounds like hype. "AI changes everything!" Yeah, yeah.
 
 But I'm not making a general claim. I'm describing what happened tonight. Real changes, shipped to a real site, while talking on my phone. The experience is qualitatively different from anything I've done before.
 
