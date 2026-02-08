@@ -37,9 +37,9 @@ That instinct never went away. Tech turned out to be a place where it was useful
 
 Early in my career, I kept stretching into roles before I felt ready. More responsibility. Bigger decisions. More visibility. Usually arriving faster than my confidence.
 
-People call that imposter syndrome. That label never fit for me.
+People call that imposter syndrome. I used to think that's what it was.
 
-What I was actually learning was *calibration* — figuring out when I genuinely didn't know enough, versus when I did know enough and the room just hadn't caught up yet.
+But looking back, what I was actually learning was *calibration* — figuring out when I genuinely didn't know enough, versus when I did know enough and the room just hadn't caught up yet.
 
 Here's what I figured out:
 
