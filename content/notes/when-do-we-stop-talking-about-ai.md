@@ -41,7 +41,7 @@ Every previous technology wave followed this pattern:
 
 **Electricity:** ~30 years. The 1880s were full of "electric" everything — electric lights, electric motors, electric appliances. People worried about electrocution, job displacement, the transformation of factories. By the 1920s, electricity was just infrastructure. You didn't advertise "electric-powered" because what else would it be?
 
-**The Internet:** ~20 years. "Dot-com" was a category. "Cyber" was a prefix. "Internet companies" were distinct from regular companies. People debated whether online shopping would ever work, whether anyone would do banking on a computer, whether kids were being ruined by screens. By 2015, that discourse was exhausted. Every company was an internet company or it wasn't a company.
+**The Internet:** ~20 years. "Dot-com" was a category. "Cyber" was a prefix. "Internet companies" were distinct from regular companies. We capitalized "Internet" like a proper noun. We hyphenated "e-mail." People debated whether online shopping would ever work, whether anyone would do banking on a computer, whether kids were being ruined by screens. By 2015, that discourse was exhausted. Every company was an internet company or it wasn't a company.
 
 **Mobile:** ~10 years. "Mobile apps" versus desktop apps. "Mobile-first design." Debates about whether phones would replace computers, whether constant connectivity was healthy, whether anyone would type on glass. By 2017, apps were assumed to be mobile. The modifier became redundant.
 
