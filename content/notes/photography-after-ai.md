@@ -66,7 +66,19 @@ The constraints of reality force decisions. They make the image *about* somethin
 
 Generated images aren't chosen from reality. They're specified from imagination. That's not worse — it's just different. And it means they can't do what photographs do: prove that something happened.
 
-## What Survives
+## What Gets Eaten
+
+I used to sell stock photos on iStockPhoto. It paid for a meaningful chunk of my camera gear — proof that "generic image of thing" had value. Business people shaking hands. Coffee cups on desks. Laptop in a cafe. The bar for stock was already "good enough," and I could clear it with a decent eye and some patience.
+
+AI clears that bar trivially now. Why pay a photographer for "person typing on laptop" when you can generate infinite variations in seconds? The market that paid for my gear is getting eaten because the images weren't witnesses to anything — they were just... images. Pixels that conveyed a concept. AI does concepts better.
+
+*(The hero image above? AI-generated. And that's fine. This piece isn't about what I saw — it's about what I think. The image is illustration, not witness.)*
+
+What survives is what AI can't fake: the referent. The "this actually happened." Weddings, events, journalism — you need someone *there*. Product photography where you need *this exact item*, not "a coffee mug." Legal documentation. Family photos where the value isn't the pixels, it's the memory they unlock.
+
+The through-line: **photography survives where the image is evidence, not decoration.**
+
+## What Remains
 
 If AI makes the *output* trivial, what's left?
 
@@ -112,4 +124,4 @@ The same is true for building software. AI can generate anything. The question i
 
 ---
 
-*I'm still figuring this out. The photos on this site aren't better than what AI could generate. But they're mine — evidence of moments I actually witnessed. That feels like it means something.*
+*The photos on this site aren't technically better than what AI could generate. But they're evidence — proof that I was somewhere, saw something, chose to press the shutter. The AI images are illustrations. The photographs are witnesses. Both are useful. They're just not the same thing.*
