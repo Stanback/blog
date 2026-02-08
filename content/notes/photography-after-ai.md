@@ -124,4 +124,4 @@ The same is true for building software. AI can generate anything. The question i
 
 ---
 
-*The photos on this site aren't technically better than what AI could generate. But they're evidence — proof that I was somewhere, saw something, chose to press the shutter. The AI images are illustrations. The photographs are witnesses. Both are useful. They're just not the same thing.*
+*The photos on this site aren't as good as what AI could generate — I'm sure of that. AI would nail the composition, the lighting, the technical details. But my photos are evidence — proof that I was somewhere, saw something, chose to press the shutter. The AI images are illustrations. The photographs are witnesses. Both are useful. They're just not the same thing.*
