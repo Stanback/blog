@@ -35,6 +35,29 @@ Right now we're stuck in a weird loop:
 
 The exhaustion isn't a bug — it's a feature. It's how discourse dies. We don't stop talking about technologies because we've resolved the debates. We stop because we're tired of having them.
 
+## The Noise vs The Signal
+
+Here's my confession: I'm still going to write about AI. A lot. This piece isn't "I'm done" — it's trying to understand my own exhaustion.
+
+**What I'm tired of:**
+- "10 prompts that will change your life"
+- LinkedIn thought leaders discovering ChatGPT
+- Breathless hype from people selling shovels
+- Doomer vs boomer discourse that generates heat but no light
+- The outrage cycle (AI bad → AI overhyped → AI actually good → AI stealing jobs → repeat)
+- Marketing disguised as insight
+
+**What I'm not tired of:**
+- Actually building with it
+- Thinking through what it means for craft
+- The real patterns emerging — how constraints shape AI interfaces, how judgment becomes the scarce resource, how photography and code face the same questions about what humans are still for
+- Watching an entire industry restructure in real-time
+- The genuinely weird philosophical questions (what is creativity? what is understanding? what are we?)
+
+I find it both fascinating and tiring. Interesting and trite. The technology is legitimately transformative; the discourse around it is mostly noise.
+
+Maybe that's always true during a transition. The signal-to-noise ratio is terrible precisely because everyone's trying to figure it out at once. The good thinking is buried under mountains of "Top 10 AI Tools for Productivity."
+
 ## The Half-Life of Disruption
 
 Every previous technology wave followed this pattern:
