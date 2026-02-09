@@ -146,7 +146,7 @@ I used to think I distrusted performance. That's not quite right. What exhausts 
 
 Intentional identity isn't anti-performance. It's Brechtian. You know you're building something. You can see the scaffolding. "This is a workshop, not a stage" doesn't mean *stop performing* — it means *stay awake to the fact that you're constructing*.
 
-The SOUL.md, the test harnesses, the funeral visualization — they work because they make the construction visible. You can't check your work if you've convinced yourself there's no work to check. You can't close the gap between who you are and who you want to be if you've declared the gap illusory.
+The SOUL.md, the test harnesses, the funeral visualization — they work because they make the construction visible. You can't check your work if you've convinced yourself there's no work to check. You can't close the gap between who you are and who you want to be if you've declared the gap illusory. The distinction between workshop and stage isn't about denying performance — it's about naming it. Naming the act frees you to shape it intentionally rather than unconsciously.
 
 The most exhausting people aren't performers. They're performers who've forgotten they're performing. The most alive people often perform *more* — but with craft, with awareness, with the lights on.
 
