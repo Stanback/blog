@@ -2203,13 +2203,12 @@ article.skills-page h1 {
 
 .prose code {
 	font-family: var(--font-mono);
-	font-size: 0.875em;
+	font-size: 0.9em;
 	font-weight: 500;
-	background: var(--color-accent-100);
-	color: var(--color-accent-700);
-	padding: 0.2em 0.4em;
+	background: var(--color-bg-muted);
+	color: var(--color-text-primary);
+	padding: 0.15em 0.35em;
 	border-radius: var(--radius-sm);
-	border: 1px solid var(--color-accent-200);
 }
 
 .prose pre {
