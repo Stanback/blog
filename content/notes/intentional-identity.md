@@ -134,6 +134,8 @@ But that's the point. The funeral test, the SOUL.md, the company Codex — they'
 
 ## The Workshop and the Stage
 
+Making the invisible visible — that's what intentional identity work really is. One way to see it is through a theatre metaphor.
+
 There's a polarity in theatre between Stanislavski and Brecht.
 
 Stanislavski gave us method acting — the actor *becomes* the character. You dig into the role until the performance feels like truth. The goal is disappearance: the audience forgets they're watching an act.
