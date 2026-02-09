@@ -109,6 +109,36 @@ The pattern: not specialized depth alone, not soft skills alone. The integration
 
 **Kegan might be especially relevant** — his model is about what we can hold as "object" vs what we're "subject" to. AI collaboration requires making your own thinking visible, holding it as object. That's Kegan stage 4-5 work.
 
+## Beyond Growth Mindset
+
+Every modern parent has heard the Dweck gospel: praise effort, not ability. "You worked hard on that" beats "You're so smart." Fixed mindset bad, growth mindset good.
+
+It's not wrong. But it might not be enough.
+
+**Growth mindset says:** "You can change. You can get better at things."
+
+**Brechtian awareness says:** "You're *always already* constructing who you are — are you awake to that fact?"
+
+Growth mindset is about capability beliefs. Can I improve? It's still treating the self as a *thing* that can be developed.
+
+The deeper move is ontological awareness — there's no stable "thing" underneath, just ongoing construction. The question isn't "can I change?" but "do I notice that I'm always already performing?"
+
+You can have growth mindset and still be asleep at the wheel. A kid who believes they can improve at math, improve at sports, improve at social skills — but has never questioned *who built the version of themselves they're improving toward*. They're a Stanislavski actor: fully merged with the role, working hard to get better at it, but having forgotten it's a role.
+
+**The skills question ("can I improve?") matters less when AI can do the skills.**
+
+**The construction question ("who am I becoming and do I notice?") matters more.**
+
+What does this look like in practice?
+
+- Instead of just "you worked hard" → "I notice you decided to keep going when it got frustrating. What made you choose that?"
+- Instead of just "you can get better" → "Who do you want to become? What kind of person does this?"
+- Making the construction visible: "You're building yourself right now. What are you building?"
+
+The goal isn't to undermine their sense of self. It's to give them *authorship* of the construction they're already doing unconsciously.
+
+**Growth mindset is necessary but not sufficient.** You need to believe change is possible *and* stay awake to the construction.
+
 ## Personality / Cognitive Frameworks
 
 | Framework | What it measures | AI-relevance? |
