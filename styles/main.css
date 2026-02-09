@@ -3286,17 +3286,17 @@ article.skills-page h1 {
 	right: var(--space-4);
 	transform: translateY(-50%);
 	z-index: 50;
-	max-height: 60vh;
-	overflow-y: auto;
-	overflow-x: hidden;
-	/* Collapsed state - just show dashes */
+	/* Collapsed state - compact, no scroll */
 	width: 20px;
-	transition: width 0.2s ease;
+	overflow: hidden;
+	transition: width 0.2s ease, max-height 0.2s ease, padding 0.2s ease;
 }
 
 /* Expand on hover */
 .toc-sidebar:hover {
 	width: 220px;
+	max-height: 60vh;
+	overflow-y: auto;
 	background: var(--color-bg-elevated);
 	border-radius: var(--radius-md);
 	box-shadow: var(--shadow-md);
@@ -3309,6 +3309,12 @@ article.skills-page h1 {
 	padding: 0;
 	display: flex;
 	flex-direction: column;
+	/* Tight spacing when collapsed */
+	gap: 2px;
+	transition: gap 0.2s ease;
+}
+
+.toc-sidebar:hover .toc-list {
 	gap: var(--space-1);
 }
 
@@ -3328,23 +3334,28 @@ article.skills-page h1 {
 	text-decoration: none;
 	color: var(--color-text-muted);
 	font-size: var(--font-size-xs);
-	padding: var(--space-1) 0;
-	transition: color 0.15s ease;
+	/* Tight padding when collapsed */
+	padding: 1px 0;
+	transition: color 0.15s ease, padding 0.15s ease;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+.toc-sidebar:hover .toc-link {
+	padding: var(--space-1) 0;
 }
 
 .toc-link:hover {
 	color: var(--color-text-primary);
 }
 
-/* The dash indicator */
+/* The dash indicator - thicker for visibility */
 .toc-dash {
 	flex-shrink: 0;
 	width: 12px;
-	height: 2px;
+	height: 3px;
 	background: var(--color-border-strong);
-	border-radius: 1px;
+	border-radius: 1.5px;
 	transition: background 0.15s ease;
 }
 
