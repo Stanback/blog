@@ -21,11 +21,11 @@ description: "Fireside chat script for Kinn. NOT FOR PUBLICATION."
 
 ---
 
-Hi everyone — I'm Bri. Engineer, engineering leader, mom of a three-year-old, which mostly means I'm familiar with debugging systems while extremely tired.
+Hi everyone — I'm Bri. Engineer, engineering leader, mom of a three-year-old — which mostly means I debug systems while extremely tired.
 
 When people ask how I got into tech, I pause — because it wasn't a career decision. It was more like an instinct that eventually found a place to land.
 
-Even as a kid, I was pulled toward figuring out how things worked. Taking things apart. Building. I told my mom one year I didn't want toys for Christmas — I just wanted scrap wood so I could put things together.
+Even as a kid, I was pulled toward figuring out how things worked. Taking things apart. Building. I told my mom one year I didn't want toys for Christmas — I just wanted scrap wood so I could build things in the garage.
 
 I wasn't interested in playing with the finished thing. I was interested in understanding it. How it held together. Where it might fail.
 
@@ -45,7 +45,7 @@ Here's what I figured out:
 
 **Readiness usually comes *after* you say yes, not before.**
 
-Growth doesn't feel like confidence. It feels like responsibility showing up early and asking if you trust yourself enough to meet it.
+Growth doesn't feel like confidence. It feels like responsibility arriving early and asking whether you'll meet it.
 
 ---
 
@@ -53,13 +53,13 @@ Growth doesn't feel like confidence. It feels like responsibility showing up ear
 
 A few years ago, I said yes to something that had nothing to do with my career — and everything to do with it.
 
-I'm transgender. And I came out while already in leadership roles, which is... not the order people usually recommend.
+I'm transgender. And I came out while already in leadership roles — which is not the order people usually recommend.
 
 I want to be direct about this, because I think you can probably tell — and dancing around it would be weird.
 
 What surprised me wasn't the transition itself. It was how much *clarity* it created.
 
-For years, I'd been managing a low-grade static. Energy spent curating how I presented, hedging, monitoring. It wasn't dramatic — just constant.
+For years, I'd been managing a low-grade static. Energy spent curating how I presented. Hedging. Monitoring. It wasn't dramatic — just constant.
 
 When that static stopped, I got something back I didn't know I'd lost: **coherence.**
 
@@ -69,7 +69,7 @@ I started trusting my own read on situations. Speaking more directly. Making fas
 
 **Authenticity isn't comfortable. It's coherent.**
 
-And coherence, it turns out, is the foundation of trust — in yourself, and in how others experience you.
+And coherence, it turns out, is what makes trust possible.
 
 ---
 
@@ -111,7 +111,7 @@ Today, my work is less about writing every line of code and more about designing
 
 Where excellence isn't heroic. It's inevitable.
 
-Where standards are clear, tools are supportive, and pride in craft is shared.
+Where standards are clear, tools help instead of fight you, and pride in craft is shared.
 
 That's what coherence looks like at scale. Systems where every part knows what it's for.
 
@@ -119,18 +119,16 @@ That's what coherence looks like at scale. Systems where every part knows what i
 
 ## One Thing
 
-If there's one thing I'd leave you with:
+If there's one thing I've learned, it's this:
 
-**The thing you're hedging about might be the thing that unlocks everything else.**
+The thing you're hedging about might be costing more than you realize.
 
-It was for me. Not because transition is magic — but because coherence is. When you stop spending energy on the gap between who you are and how you present, that energy comes back.
+Not because it's dramatic. But because managing static is expensive. When you stop splitting yourself, energy comes back.
 
-If you're in a season where something feels off — where there's static you've gotten used to — it might be worth asking what you're managing that you could just... stop managing.
+The day my daughter started using my name without hesitation — that was the moment I knew coherence matters more than comfort.
 
-The yes that scares you might be the one that simplifies everything.
+That's been true for me. If something feels slightly off in your life — not catastrophic, just... misaligned — it might be worth asking what you're managing that you don't actually have to.
 
 ---
 
-I'm really happy to talk, compare notes, or just hear what brought you here tonight.
-
-Thank you.
+Thank you for being here tonight.
