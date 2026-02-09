@@ -11,10 +11,17 @@ import { calculateReadingTime, countWords } from './utils/text.js';
 // Types
 // ============================================================================
 
+export interface TocEntry {
+	id: string;
+	text: string;
+	depth: number; // 2 or 3
+}
+
 export interface ParseResult {
 	html: string;
 	wordCount: number;
 	readingTime: number; // minutes
+	toc: TocEntry[];
 }
 
 // ============================================================================
@@ -204,6 +211,9 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 
 	const marked = new Marked();
 
+	// Collect TOC entries during parsing
+	const tocEntries: TocEntry[] = [];
+
 	// Configure marked with Shiki highlighting
 	marked.use({
 		async: true,
@@ -219,6 +229,8 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 
 				// Only add anchors to h2 and h3 (skip h1 which is the title)
 				if (token.depth >= 2 && token.depth <= 3) {
+					// Collect for TOC
+					tocEntries.push({ id, text: displayText, depth: token.depth });
 					return `<h${token.depth} id="${id}"><a href="#${id}" class="heading-anchor" aria-hidden="true">#</a>${displayText}</h${token.depth}>\n`;
 				}
 				return `<h${token.depth}>${displayText}</h${token.depth}>\n`;
@@ -282,5 +294,6 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 		html,
 		wordCount,
 		readingTime,
+		toc: tocEntries,
 	};
 }

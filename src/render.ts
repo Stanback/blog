@@ -21,8 +21,31 @@ import type {
 	Post,
 	Skills,
 	Soul,
+	TocEntry,
 } from './types.js';
 import { formatDateLong, formatDateMachine, formatDateNoYear } from './utils/dates.js';
+
+// Render table of contents sidebar (Notion-style: dashes that expand on hover)
+function renderToc(toc: TocEntry[] | undefined): string {
+	if (!toc || toc.length < 2) return ''; // Only show TOC if 2+ headings
+
+	const items = toc
+		.map(
+			(entry) =>
+				`<li class="toc-item toc-depth-${entry.depth}">
+					<a href="#${entry.id}" class="toc-link">
+						<span class="toc-dash"></span>
+						<span class="toc-text">${entry.text}</span>
+					</a>
+				</li>`,
+		)
+		.join('');
+
+	return `
+		<nav class="toc-sidebar" aria-label="Table of contents">
+			<ul class="toc-list">${items}</ul>
+		</nav>`;
+}
 
 // URL patterns per content type
 function getUrl(content: Content): string {
@@ -305,6 +328,7 @@ function renderPost(post: Post, ctx: BuildContext): string {
 	const content = `
     ${heroSection}
     ${prefaceSection}
+    ${renderToc(post.toc)}
     <article class="prose post-body">
       ${post.html}
       ${
@@ -367,6 +391,7 @@ function renderNote(note: Note, ctx: BuildContext): string {
 	const noteUrl = getUrl(note);
 	const content = `
     ${heroSection}
+    ${renderToc(note.toc)}
     <article class="prose post-body">
       ${note.html}
       ${

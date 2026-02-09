@@ -125,7 +125,7 @@ async function parseContent(items: ValidatedContentItem[]): Promise<Content[]> {
 	const results: Content[] = [];
 
 	for (const item of items) {
-		const { html, wordCount, readingTime } = await parseMarkdown(item.bodyMarkdown);
+		const { html, wordCount, readingTime, toc } = await parseMarkdown(item.bodyMarkdown);
 		const fm = item.frontmatter;
 
 		// Build content with type-safe field extraction
@@ -134,6 +134,7 @@ async function parseContent(items: ValidatedContentItem[]): Promise<Content[]> {
 			html,
 			wordCount,
 			readingTime,
+			toc,
 		};
 
 		let content: Content;

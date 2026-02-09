@@ -3199,6 +3199,112 @@ article.skills-page h1 {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   TABLE OF CONTENTS SIDEBAR (Notion-style)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.toc-sidebar {
+	position: fixed;
+	top: 50%;
+	right: var(--space-4);
+	transform: translateY(-50%);
+	z-index: 50;
+	max-height: 60vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+	/* Collapsed state - just show dashes */
+	width: 20px;
+	transition: width 0.2s ease;
+}
+
+/* Expand on hover */
+.toc-sidebar:hover {
+	width: 220px;
+	background: var(--color-bg-elevated);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-md);
+	padding: var(--space-3);
+}
+
+.toc-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+}
+
+.toc-item {
+	display: flex;
+	align-items: center;
+}
+
+.toc-depth-3 {
+	padding-left: var(--space-3);
+}
+
+.toc-link {
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+	text-decoration: none;
+	color: var(--color-text-muted);
+	font-size: var(--font-size-xs);
+	padding: var(--space-1) 0;
+	transition: color 0.15s ease;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.toc-link:hover {
+	color: var(--color-text-primary);
+}
+
+/* The dash indicator */
+.toc-dash {
+	flex-shrink: 0;
+	width: 12px;
+	height: 2px;
+	background: var(--color-border-strong);
+	border-radius: 1px;
+	transition: background 0.15s ease;
+}
+
+.toc-depth-3 .toc-dash {
+	width: 8px;
+}
+
+.toc-link:hover .toc-dash {
+	background: var(--color-accent-500);
+}
+
+/* Text hidden by default, shown on hover */
+.toc-text {
+	opacity: 0;
+	transition: opacity 0.15s ease;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.toc-sidebar:hover .toc-text {
+	opacity: 1;
+}
+
+/* Hide on mobile/tablet */
+@media (max-width: 1100px) {
+	.toc-sidebar {
+		display: none;
+	}
+}
+
+/* Hide in print */
+@media print {
+	.toc-sidebar {
+		display: none;
+	}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    KNOWLEDGE GRAPH PAGE
    ═══════════════════════════════════════════════════════════════════════════ */
 

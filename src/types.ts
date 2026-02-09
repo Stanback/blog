@@ -2,6 +2,13 @@
 // Schema version for future migrations
 export const SCHEMA_VERSION = 1 as const;
 
+// Table of contents entry
+export interface TocEntry {
+	id: string;
+	text: string;
+	depth: number; // 2 or 3
+}
+
 // ═══════════════════════════════════════════════════════════════════════════
 // BOUNDED TAG SYSTEM
 // Tags are constrained to known values for consistency and discoverability
@@ -71,6 +78,7 @@ export interface ContentItem {
 	// Computed
 	readingTime?: number;
 	wordCount?: number;
+	toc?: TocEntry[]; // Table of contents entries (h2/h3)
 
 	// Source file (for error messages)
 	filepath: string;

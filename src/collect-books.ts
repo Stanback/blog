@@ -109,7 +109,7 @@ export async function collectBooks(booksDir: string): Promise<Book[]> {
 				const chapterTitle = extractChapterTitle(mdContent);
 
 				// Parse markdown to HTML
-				const { html, wordCount, readingTime } = await parseMarkdown(mdContent);
+				const { html, wordCount, readingTime, toc } = await parseMarkdown(mdContent);
 
 				// Fix image paths - make them relative to /books/[book-slug]/
 				const fixedHtml = html.replace(
@@ -129,6 +129,7 @@ export async function collectBooks(booksDir: string): Promise<Book[]> {
 					html: fixedHtml,
 					readingTime,
 					wordCount,
+					toc,
 					filepath: mdPath,
 					bookSlug: folder.name,
 					chapterNumber: chapterNum,
