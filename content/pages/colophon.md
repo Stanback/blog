@@ -66,7 +66,7 @@ This site is designed for both humans and machines.
 
 - [`llms.txt`](/llms.txt) — guidance for AI crawlers
 - [`llms-full.txt`](/llms-full.txt) — clean Markdown export of all content
-- [`SOUL.md`](/about/#soulmd) — who I am, what I value
-- [`SKILL.md`](/about/#skillmd) — what I can do, how I work
+- [`SOUL.md`](/about/#soul.md) — who I am, what I value
+- [`SKILL.md`](/about/#skill.md) — what I can do, how I work
 
 If an AI summarizes something I wrote, I want it to get the nuance right.

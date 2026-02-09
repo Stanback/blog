@@ -37,7 +37,7 @@ The architecture:
 - **Lead agent** — Coordinates the team, delegates tasks, synthesizes results
 - **Specialized agents** — You define these (visual designer, frontend dev, QA, etc.)
 - **Shared task list** — Agents self-coordinate with direct messaging
-- **Same context** — CLAUDE.md, MCP servers, skills load automatically
+- **Same context** — `CLAUDE.md`, MCP servers, skills load automatically
 
 **Strengths:**
 - Zero setup — just enable the flag

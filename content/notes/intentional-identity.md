@@ -1,7 +1,7 @@
 ---
 title: "The Funeral Test for Your Digital Self"
 date: 2026-02-06T14:00
-description: "From Covey's funeral visualization to company codexes to SOUL.md — the throughline is intentional identity. And now we need test harnesses for who we're becoming."
+description: "From Covey's funeral visualization to company codexes to `SOUL.md` — the throughline is intentional identity. And now we need test harnesses for who we're becoming."
 type: note
 schemaVersion: 1
 draft: false
@@ -61,7 +61,7 @@ And that specificity is the point. Generic values don't shape behavior. Articula
 
 The Codex answers the corporate funeral question: *If this company died tomorrow, what would we want people to say it stood for?* Not "they made money" or "they had nice perks." But: *They built systems that respected human attention. They shipped things that mattered. They treated their people like owners because they were.*
 
-## SOUL.md: The Funeral Test for Your Digital Self
+## `SOUL.md`: The Funeral Test for Your Digital Self
 
 Here's where it gets interesting.
 
@@ -73,7 +73,7 @@ Right now, the answer is: they infer it. From your browsing history, your purcha
 
 But there's another approach: **tell them**.
 
-That's what a [[Why Everyone Should Have a SOUL.md|SOUL.md]] file does. It's a document that declares who you are — your values, your communication style, your boundaries, your preferences. Not inferred. Stated.
+That's what a [[Why Everyone Should Have a SOUL.md|`SOUL.md`]] file does. It's a document that declares who you are — your values, your communication style, your boundaries, your preferences. Not inferred. Stated.
 
 And here's the key: it doesn't have to be purely descriptive. It can be aspirational. A manifesto for who you're striving to become, not just who you happen to be today. Write down the values you want to embody, and suddenly you have something to hold yourself accountable to — a test you can check your behavior against.
 
@@ -84,15 +84,15 @@ There's an idea I keep coming back to: the authentic self isn't fully pre-formed
 
 Authenticity is both. You find the raw materials, then you build with them.
 
-SOUL.md is the blueprint for what you're building.
+`SOUL.md` is the blueprint for what you're building.
 
-One more nuance: your SOUL.md might be context-specific. A professional SOUL.md (how I show up at work) might differ from a personal one (how I show up as a parent). They're branches of the same root, but the emphasis shifts. The funeral test version would be the trunk — the unified identity beneath all the contexts.
+One more nuance: your `SOUL.md` might be context-specific. A professional `SOUL.md` (how I show up at work) might differ from a personal one (how I show up as a parent). They're branches of the same root, but the emphasis shifts. The funeral test version would be the trunk — the unified identity beneath all the contexts.
 
 It's the funeral test for your digital self: *If an AI had to represent me, what would I want it to embody?*
 
 The gap between what others would infer about you — whether an algorithm or a new coworker — and what you'd actually want represented? That's the same gap Covey identified. The difference between a life lived reactively (shaped by circumstances, by other people's expectations, by the path of least resistance) and a life lived intentionally (shaped by your own articulated values).
 
-SOUL.md is just the funeral test, encoded.
+`SOUL.md` is just the funeral test, encoded.
 
 ## Test Harnesses for Identity
 
@@ -130,7 +130,7 @@ So I've been running my own test harness:
 
 These tests are uncomfortable because they surface gaps. The gap between the parent I want to be and the parent I'm being on a random Tuesday at 7pm when I'm tired and she's whining and my phone is right there with its dopamine hits.
 
-But that's the point. The funeral test, the SOUL.md, the company Codex — they're all the same move: *articulate who you want to be so clearly that you can check whether you're becoming that person*.
+But that's the point. The funeral test, the `SOUL.md`, the company Codex — they're all the same move: *articulate who you want to be so clearly that you can check whether you're becoming that person*.
 
 ## The Workshop and the Stage
 
@@ -148,7 +148,7 @@ I used to think I distrusted performance. That's not quite right. What exhausts 
 
 Intentional identity isn't anti-performance. It's Brechtian. You know you're building something. You can see the scaffolding. "This is a workshop, not a stage" doesn't mean *stop performing* — it means *stay awake to the fact that you're constructing*.
 
-The SOUL.md, the test harnesses, the funeral visualization — they work because they make the construction visible. You can't check your work if you've convinced yourself there's no work to check. You can't close the gap between who you are and who you want to be if you've declared the gap illusory. The distinction between workshop and stage isn't about denying performance — it's about naming it. Naming the act frees you to shape it intentionally rather than unconsciously.
+The `SOUL.md`, the test harnesses, the funeral visualization — they work because they make the construction visible. You can't check your work if you've convinced yourself there's no work to check. You can't close the gap between who you are and who you want to be if you've declared the gap illusory. The distinction between workshop and stage isn't about denying performance — it's about naming it. Naming the act frees you to shape it intentionally rather than unconsciously.
 
 The most exhausting people aren't performers. They're performers who've forgotten they're performing. The most alive people often perform *more* — but with craft, with awareness, with the lights on.
 
@@ -162,7 +162,7 @@ The countermovement is intentional identity. It's the act of defining yourself b
 
 Covey did it with the funeral test.
 Some companies do it with codexes and manifestos (though most settle for generic values on a wall).
-We can do it with SOUL.md files for our AI agents.
+We can do it with `SOUL.md` files for our AI agents.
 We can do it with test harnesses for our daily lives.
 We can do it as parents, by asking what story our children will tell.
 
