@@ -3367,6 +3367,15 @@ article.skills-page h1 {
 	background: var(--color-accent-500);
 }
 
+/* Active state (current section) */
+.toc-link.toc-active .toc-dash {
+	background: var(--color-accent-500);
+}
+
+.toc-link.toc-active {
+	color: var(--color-text-primary);
+}
+
 /* Text hidden by default, shown on hover */
 .toc-text {
 	opacity: 0;
