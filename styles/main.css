@@ -2205,7 +2205,7 @@ article.skills-page h1 {
 	font-family: var(--font-mono);
 	font-size: 0.9em;
 	font-weight: 500;
-	background: var(--color-accent-100);
+	background: color-mix(in oklch, var(--color-accent-100) 40%, var(--color-bg-main));
 	color: var(--color-text-primary);
 	padding: 0.05em 0.2em;
 	border-radius: var(--radius-sm);
