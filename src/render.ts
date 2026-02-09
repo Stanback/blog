@@ -19,11 +19,35 @@ import type {
 	Page,
 	Photo,
 	Post,
+	RelatedPost,
 	Skills,
 	Soul,
 	TocEntry,
 } from './types.js';
 import { formatDateLong, formatDateMachine, formatDateNoYear } from './utils/dates.js';
+
+// Render related posts section
+function renderRelatedPosts(relatedPosts: RelatedPost[] | undefined): string {
+	if (!relatedPosts || relatedPosts.length === 0) return '';
+
+	return `
+		<aside class="related-posts" aria-label="Related posts">
+			<h2 class="related-posts-title">Related</h2>
+			<ul class="related-posts-list">
+				${relatedPosts
+					.map(
+						(post) => `
+					<li class="related-post-item">
+						<a href="${post.url}" class="related-post-link">
+							<span class="related-post-title">${post.title}</span>
+							${post.description ? `<span class="related-post-desc">${post.description}</span>` : ''}
+						</a>
+					</li>`,
+					)
+					.join('')}
+			</ul>
+		</aside>`;
+}
 
 // Render table of contents sidebar (Notion-style: dashes that expand on hover)
 function renderToc(toc: TocEntry[] | undefined): string {
@@ -343,6 +367,7 @@ function renderPost(post: Post, ctx: BuildContext): string {
 					: ''
 			}
     </article>
+    ${renderRelatedPosts(post.relatedPosts)}
     ${renderBacklinks(postUrl, ctx.backlinks)}`;
 
 	return baseTemplate({
@@ -406,6 +431,7 @@ function renderNote(note: Note, ctx: BuildContext): string {
 					: ''
 			}
     </article>
+    ${renderRelatedPosts(note.relatedPosts)}
     ${renderBacklinks(noteUrl, ctx.backlinks)}`;
 
 	return baseTemplate({

@@ -9,6 +9,15 @@ export interface TocEntry {
 	depth: number; // 2 or 3
 }
 
+// Related content reference
+export interface RelatedPost {
+	slug: string;
+	title: string;
+	url: string;
+	description?: string;
+	score: number; // similarity score for sorting
+}
+
 // ═══════════════════════════════════════════════════════════════════════════
 // BOUNDED TAG SYSTEM
 // Tags are constrained to known values for consistency and discoverability
@@ -79,6 +88,7 @@ export interface ContentItem {
 	readingTime?: number;
 	wordCount?: number;
 	toc?: TocEntry[]; // Table of contents entries (h2/h3)
+	relatedPosts?: RelatedPost[]; // Related posts by tag similarity
 
 	// Source file (for error messages)
 	filepath: string;

@@ -21,6 +21,7 @@ import type {
 	Page,
 	Photo,
 	Post,
+	RelatedPost,
 	Skills,
 	Soul,
 	ValidatedContentItem,
@@ -29,6 +30,70 @@ import { validateContent } from './validate.js';
 
 // Constants
 const CSS_HASH_LENGTH = 8;
+const MAX_RELATED_POSTS = 3;
+
+/**
+ * Compute related posts using tag similarity with TF-IDF-lite weighting.
+ * Rarer tags are worth more (inverse document frequency).
+ */
+function computeRelatedPosts(items: (Post | Note)[]): void {
+	// Only consider published items
+	const published = items.filter((item) => !item.draft);
+
+	// Build tag frequency map (for IDF weighting)
+	const tagCounts = new Map<string, number>();
+	for (const item of published) {
+		for (const tag of item.tags) {
+			tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+		}
+	}
+
+	// Compute IDF weights (log(N / count))
+	const totalDocs = published.length;
+	const tagIdf = new Map<string, number>();
+	for (const [tag, count] of tagCounts) {
+		tagIdf.set(tag, Math.log(totalDocs / count));
+	}
+
+	// For each item, find related items by tag similarity
+	for (const item of published) {
+		if (item.tags.length === 0) {
+			item.relatedPosts = [];
+			continue;
+		}
+
+		const scores: Array<{ item: Post | Note; score: number }> = [];
+
+		for (const other of published) {
+			if (other.slug === item.slug) continue; // Skip self
+			if (other.tags.length === 0) continue;
+
+			// Compute weighted tag overlap
+			let score = 0;
+			for (const tag of item.tags) {
+				if (other.tags.includes(tag)) {
+					score += tagIdf.get(tag) || 1;
+				}
+			}
+
+			if (score > 0) {
+				scores.push({ item: other, score });
+			}
+		}
+
+		// Sort by score descending, take top N
+		scores.sort((a, b) => b.score - a.score);
+		const topRelated = scores.slice(0, MAX_RELATED_POSTS);
+
+		item.relatedPosts = topRelated.map(({ item: related, score }) => ({
+			slug: related.slug,
+			title: related.title,
+			url: related.type === 'post' ? `/posts/${related.slug}/` : `/notes/${related.slug}/`,
+			description: related.description,
+			score,
+		}));
+	}
+}
 
 interface TimingResult {
 	step: string;
@@ -308,6 +373,9 @@ function buildContext(
 	posts.sort((a, b) => b.date.getTime() - a.date.getTime());
 	notes.sort((a, b) => b.date.getTime() - a.date.getTime());
 	photos.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+	// Compute related posts using tag similarity
+	computeRelatedPosts([...posts, ...notes]);
 
 	return {
 		config,
