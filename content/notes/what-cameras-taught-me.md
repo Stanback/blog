@@ -40,17 +40,17 @@ There's a point where you don't have enough — where the gear is genuinely limi
 
 And then there's a point where you have too much. I crossed it without noticing.
 
-I had *options*. I could shoot anything. And that was the problem.
-
 ## The Cognitive Overload
 
-And then I stopped shooting.
+I remember the afternoon it became visible. I wanted to go shoot — just walk around downtown, take some photos. I stood in front of my gear shelf for fifteen minutes.
 
-Not consciously. I just... did it less. Every time I thought about taking photos, there was a decision tree. What lens? What body? Do I need lights? Which modifier? Tripod or handheld? The creative impulse got buried under logistics.
+The 35mm for street? The 85mm in case I found a portrait? The 24-70 to cover both? Do I need a flash? What if the light is bad?
 
-I'd pack a bag with three lenses "just in case." I'd spend twenty minutes setting up lights for a shot that should have taken two. I'd miss the moment because I was changing focal lengths.
+I packed three lenses, a flash, and a reflector. Just in case.
 
-The gear that was supposed to enable creativity became a tax on it. Every additional option was another decision. Every decision was cognitive load. The load accumulated until the activation energy to just *take a photo* exceeded my motivation.
+I walked for an hour. I took four photos. I spent more time changing lenses than looking at anything.
+
+Every additional option was another decision before I could start. The creative impulse got buried under logistics. The gear that was supposed to enable creativity became a tax on it. The activation energy to just *take a photo* exceeded my motivation.
 
 I had become a photographer who didn't photograph.
 
@@ -66,7 +66,7 @@ The constraint freed me.
 
 ## Diverge, Then Converge
 
-Here's what I learned: **the wide exploration wasn't wasted.**
+Here's what I came to understand: the wide exploration wasn't wasted.
 
 I needed to try the 85mm to know I preferred the 35mm. I needed studio lighting to understand that I loved natural light. I needed the tripod to realize I shoot better handheld. The divergence — the casting of a wide net — was how I discovered my actual preferences.
 
@@ -136,7 +136,7 @@ Whether you're building software, building a photography practice, or building a
 
 Explore the options. Learn what's out there. But don't mistake exploration for creation. At some point, pick your 35mm. Accept what it can't do. Focus on what it can.
 
-The constraint isn't the enemy of creativity. The constraint *is* creativity — it's the frame that makes the composition possible. The choice that lets you finally see.
+[The constraint isn't the enemy of creativity](/posts/code-owns-truth/). The constraint *is* creativity — it's the frame that makes the composition possible. The choice that lets you finally see.
 
 ---
 
