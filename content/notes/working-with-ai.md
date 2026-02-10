@@ -68,7 +68,7 @@ It read like a very good summary of a novel rather than a novel.
 
 The structural work survived because structure is pattern — and pattern is what AI does. The prose didn't survive because fiction lives at the sentence level, in word choice and rhythm and the tiny accumulation of decisions that become a voice. AI can approximate voice. The approximation is worse than absence because it feels dead in a way that rough-but-human writing doesn't.
 
-It's the same lesson as [photography](/notes/what-cameras-taught-me/). AI can generate a better-composed image than I'd take with my phone. It can't generate the night I froze in Poudre Canyon watching the exposure accumulate. The output is superior. The experience is empty.
+It's the same lesson as [photography](/posts/photography-as-interface/). AI can generate a better-composed image than I'd take with my phone. It can't generate the night I froze in Poudre Canyon watching the exposure accumulate. The output is superior. The experience is empty.
 
 In fiction, the sentence is the experience. There's nothing underneath it to point to.
 
