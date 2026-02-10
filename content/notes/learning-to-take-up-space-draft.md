@@ -17,7 +17,7 @@ Both are performance. The difference is consciousness.
 
 What exhausts me isn't performance. It's *unconscious* performance — constructing an identity while mistaking the construction for bedrock. Acting, but forgetting you're on a stage.
 
-I'm not writing this from the other side. I'm mid-process. And honestly, that became real for me when I got feedback at work that landed hard. It was about presence. Ownership. The way I show up — or don't. It wasn't easy to hear, and some of it was harsh. But it was right. I *had* been disappearing. I'd made it a survival strategy, and it was costing me.
+I'm not writing this from the other side. I'm mid-process. And honestly, that became real for me when I got feedback at work that landed hard. I remember rereading the message, feeling my chest tighten. It was about presence. Ownership. The way I show up — or don't. It wasn't easy to hear, and some of it was harsh. But it was right. I *had* been disappearing. I'd made it a survival strategy, and it was costing me.
 
 So I'm trying to change. But I don't have practice yet. Sometimes I overcorrect. Sometimes the new language comes out wrong.
 
@@ -31,7 +31,7 @@ In conversation, I mold myself to the room. I anticipate what the other person n
 
 It *works*. People feel seen. Consensus emerges. Conflict dissolves.
 
-But I vanish in the process. At the end of a good conversation, I sometimes can't remember what *I* actually thought. I was too busy being the surface that reflected them.
+But I vanish in the process. At the end of a good conversation, I sometimes can't remember what *I* actually thought. Just a faint hollowness, like I'd been holding my breath without noticing. I was too busy being the surface that reflected them.
 
 The shadow of disappearing is erasure. You become so good at reading the room that you stop existing except as a mirror.
 
@@ -49,7 +49,7 @@ Recently I reconnected with someone I'd known years ago. We fell into one of tho
 
 For hours, I did my pattern. Drew them out. Asked good questions. Appreciated their references. Tolerated a framework that didn't quite match how I see things, because I was being curious and generous.
 
-By the end, I was exhausted. They signed off warmly. It was done.
+By the end, I was exhausted — that particular tiredness where your face aches from holding an expression too long. They signed off warmly. It was done.
 
 And then I kept going.
 
