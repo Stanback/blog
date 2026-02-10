@@ -52,11 +52,13 @@ What I meant as pacing landed as lecture.
 
 It was the last message of the night. I was exhausted. I sent it and went to sleep.
 
-In the morning I saw their reply — gracious, but the ease was gone. The energy had shifted from warmth to something colder, more careful.
+In the morning I saw their reply. It was clear, direct, and hurt. They named exactly what I'd done — lectured after the conversation was already over, set boundaries after the fact instead of during, made them the problem when I was the one who hadn't self-advocated.
+
+They were right.
 
 I apologized. Owned it fully — that I over-explain instead of just stating limits plainly, that I was tired and clumsy, that I shifted blame when I should have just said *I'm tapped out*. No defensiveness, no demand for reconciliation.
 
-They didn't come back.
+They didn't wish to communicate further.
 
 I keep turning this over. The apology was clean. The repair was real. And it didn't matter. Some doors close even when you do the work correctly.
 
