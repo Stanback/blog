@@ -1,118 +1,87 @@
 ---
-title: Code Owns Truth
-description: "A frame for thinking about AI systems: constraints bound mutation, prompts express intent, code is the artifact"
-date: 2026-02-04T11:00
+title: "Code Owns Truth"
+date: 2026-02-04T12:00
 type: post
 schemaVersion: 1
-draft: false
-featured: true
-tags:
-  - architecture
-  - ai
-  - mental-models
+description: "We obsess over prompt engineering when we should obsess over constraint engineering. The prompt is a request. The constraints are the physics. The code is what ships."
 heroImage: /images/posts/code-owns-truth-hero.png
-tension: "We obsess over prompts when we should be obsessing over constraints."
-questions:
-  - "What actually survives a context window?"
-  - "Why is 'prompt engineering' the wrong frame?"
-coAuthors:
-  - name: "Lunen"
-    emoji: "🌙"
+tags:
+  - ai
+  - architecture
+  - engineering
 ---
 
 The prompt is not the product. The code that emerges is.
 
-Here's the frame:
+This is a frame I've been developing, and I want to lay it out clearly even though I don't have all the concrete examples yet. The framework feels right. The proof will come from using it.
 
-**Constraints** bound the mutation space.  
-**Prompts** express intent (inherently fuzzy).  
-**Code** is the source of truth.
+---
 
-We obsess over prompt engineering when we should obsess over constraint engineering. The prompt is a mutation—temporary, lossy, context-dependent. The code is what survives.
+Here's the claim: we obsess over prompt engineering when we should obsess over constraint engineering.
 
-## What counts as a constraint?
+A prompt expresses intent. It's the why, the what, the how — but it's inherently fuzzy. The model interprets it. It mutates within whatever space you've given it. And then the session ends, the context window closes, and the prompt is gone. It was temporary, lossy, context-dependent.
 
-Constraints come in two flavors:
+Constraints are different. Constraints survive.
 
-**Mechanical constraints** (machines can verify):
-- **Test suites (TDD)** — define success criteria before implementation
-- **Agent harnesses** — the "operating system" that governs how agents operate
-- **Type systems** — what shapes are valid
-- **Linters, CI/CD** — what patterns are allowed
-- **Feature lists** — what "done" looks like
+A test suite survives. A type system survives. A feature list, a linter config, a CI pipeline — these persist across sessions, across context windows, across models. They bound the mutation space. They define what "correct" looks like before anyone starts building.
 
-**Human constraints** (require judgment):
-- **Taste** — what's elegant vs ugly, what belongs vs doesn't
-- **Axioms** — foundational assumptions you build on
-- **Proofs** — logical certainty, mathematical rigor
-- **Physics** — actual laws that can't be violated
-- **Judgment** — wisdom from experience, knowing when to break rules
+The prompt is a request. The constraints are the physics. The code is what ships.
 
-Both survive context windows. Both persist across sessions. But only the mechanical ones are automatically verifiable — the human constraints require... humans.
+"Prompt engineering" as a discipline has always felt slightly wrong to me, and I think this is why. You're not engineering the prompt. You're engineering the *constraints that shape what prompts can produce*. The prompt is the thing you say to the contractor. The constraints are the building code. One is a conversation. The other is law.
 
-This is why judgment matters more than prompts. The mechanical constraints are table stakes. Anyone can set up tests and linters. The *taste and judgment constraints* are what differentiate.
+---
 
-(See also: [[Memory and Journals]] for how these constraints relate to identity persistence.)
+Constraints come in two kinds, and the distinction matters.
 
-## What's a prompt then?
+**Mechanical constraints** are the ones machines can verify. Test suites — define what success looks like before implementation. Type systems — define what shapes are valid. Linters, CI/CD — define what patterns are allowed. Feature lists — define what "done" means.
 
-The prompt expresses *intent* — the why, what, how. The goal. But it's fuzzy. The model interprets it. It mutates within the constraint space.
+These are automatically checkable. You run them, they pass or fail, no judgment required.
 
-This is why "prompt engineering" feels wrong as a discipline. You're not engineering the prompt — you're engineering the *constraints that shape what prompts can produce*. The prompt is just the request. The code is the artifact.
+**Human constraints** are the ones that require a person. Taste — what's elegant versus ugly, what belongs versus what's noise. Axioms — the foundational assumptions you build on. Judgment — the wisdom from experience that tells you when to follow the rules and when to break them.
 
-## The pattern
+Both survive context windows. Both persist across sessions.
 
-```
-CONSTRAINT → MUTATION → VERIFICATION
-```
+But here's the thing: the mechanical constraints are table stakes. Anyone can set up tests and linters. AI can write them. The human constraints — taste, judgment, the sense of what a thing should *be* — those are the differentiator. Those are what make one system thoughtful and another system merely functional.
 
-| Paradigm | Constraint | Mutation | Verification |
-|----------|-----------|----------|--------------|
-| TDD | Failing test | Write code | Test passes |
-| Harness Engineering | Feature list + progress file | Agent codes | End-to-end test |
-| This frame | Layer 1 (constraints) | Layer 2 (prompts) | Code artifact |
+This is why I keep coming back to judgment as the scarce resource. Not prompting skill. Not execution speed. The ability to set the right constraints — to know what the physics of your system should be before anything gets built.
 
-In all three:
-1. Spec precedes implementation
-2. Spec survives context changes
-3. Artifact gets verified objectively
+---
 
-## Harness engineering
+The pattern underneath all of this is older than AI.
 
-Anthropic's approach to long-running agents illustrates this well:
+Test-driven development works the same way: you write a failing test (constraint), you write code to pass it (mutation), you verify (the test passes). The spec precedes the implementation. The spec survives context changes. The artifact gets checked against something objective.
 
-> "The core challenge of long-running agents is that they must work in discrete sessions, and each new session begins with no memory of what came before."
+Anthropic's approach to long-running agents follows the same structure. Their harness engineering model uses an initializer agent to create a feature list — sometimes 200+ requirements, all marked as incomplete. A coding agent works through them one at a time. A progress file persists across context windows so nothing gets lost between sessions. End-to-end testing verifies the result.
 
-Their solution:
-- **Initializer agent** creates feature list (200+ requirements, all marked `passes: false`)
-- **Coding agent** works one feature at a time
-- **Progress file** (`claude-progress.txt`) persists across context windows
-- **End-to-end testing** verifies completion
+The feature list and progress file are constraints. The coding prompt is intent. The code is truth.
 
-The feature list and progress file are *constraints*. The coding prompt is *intent*. The code is *truth*.
+Phil Schmid frames it well: the harness is the operating system, the model is the CPU, context is RAM, the agent is the application. And his key insight lands the point: "The ability to improve a system is proportional to how easily you can verify its output."
 
-Phil Schmid frames it as: harness = OS, model = CPU, context = RAM, agent = application. The harness implements "Context Engineering" strategies that survive the model's context limitations.
+That's the whole argument in one sentence. If you can verify it, you can improve it. If your constraints are weak — if "done" means "looks done" — your outputs will drift and you won't know until it's too late.
 
-Key insight from Schmid: *"The ability to improve a system is proportional to how easily you can verify its output."*
+---
 
-## So what?
+I'm still working out what this looks like in daily practice.
 
-Designer's job = Layer 1 (the physics, the constraints).  
-AI handles Layer 2 (mutations within bounds).  
-Code is what ships.
+The framework is new enough to me that I'm testing it more than demonstrating it. I don't have the clean war stories yet — the moment where strong constraints saved a project, or where weak ones let everything drift. Those will come. I'll write them up when they do.
 
-If you're building AI systems and your constraints are weak, your outputs will drift. If your verification is fuzzy ("looks done"), you'll ship bugs.
+But I'll say what I believe so far: if you're building with AI and you're spending most of your energy on prompts, you're optimizing the wrong layer. The prompts are ephemeral. The constraints are what compound.
 
-Strong constraints + clear verification = reliable systems.
+Invest in the thing that survives the session.
 
-## What this blog is trying to do
+---
 
-Mechanical constraints are table stakes — anyone can set up tests and linters. The human constraints are harder.
+This blog is an attempt to practice the human constraint layer.
 
-This site is an attempt to practice the human constraint layer: taste in what gets published, judgment in how ideas connect, axioms about what matters. Whether it succeeds is a different question. But that's the intent — to be the physics, not just the prompt.
+Taste in what gets published, judgment in how ideas connect, axioms about what matters. The mechanical side — the site builds, the deploys, the formatting — is table stakes. The human side is the work.
 
-## References
+Whether it succeeds is a different question. But that's the intent.
 
+To be the physics, not just the prompt.
+
+---
+
+**References:**
 - [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Anthropic's approach to multi-session agents
 - [The importance of Agent Harness in 2026](https://www.philschmid.de/agent-harness-2026) — Phil Schmid on harness as OS
 - [Context Engineering](https://www.philschmid.de/context-engineering) — strategies for managing limited context
