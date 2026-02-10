@@ -229,13 +229,30 @@ export async function parseMarkdown(content: string): Promise<ParseResult> {
 				// Check for explicit ID syntax: ## Heading {#custom-id}
 				const explicitMatch = rawText.match(/^(.+?)\s*\{#([\w-]+)\}\s*$/);
 
-				const displayText = explicitMatch ? explicitMatch[1].trim() : rawText;
+				// Render inline tokens (code, emphasis, etc.) instead of raw text
+				const renderInline = (tokens: Tokens.Generic[]): string => {
+					return tokens
+						.map((t) => {
+							if (t.type === 'codespan') return `<code>${t.text}</code>`;
+							if (t.type === 'em') return `<em>${t.text}</em>`;
+							if (t.type === 'strong') return `<strong>${t.text}</strong>`;
+							if (t.type === 'text') return t.text;
+							return 'raw' in t ? String(t.raw) : '';
+						})
+						.join('');
+				};
+
+				const displayText = explicitMatch
+					? explicitMatch[1].trim()
+					: token.tokens
+						? renderInline(token.tokens as Tokens.Generic[])
+						: rawText;
 				const id = explicitMatch ? explicitMatch[2] : slugify(rawText);
 
 				// Only add anchors to h2 and h3 (skip h1 which is the title)
 				if (token.depth >= 2 && token.depth <= 3) {
-					// Collect for TOC
-					tocEntries.push({ id, text: displayText, depth: token.depth });
+					// Collect for TOC (use raw text for TOC, not HTML)
+					tocEntries.push({ id, text: rawText, depth: token.depth });
 					return `<h${token.depth} id="${id}"><a href="#${id}" class="heading-anchor" aria-hidden="true">#</a>${displayText}</h${token.depth}>\n`;
 				}
 				return `<h${token.depth}>${displayText}</h${token.depth}>\n`;
