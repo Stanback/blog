@@ -1,4 +1,8 @@
 # Redirects for promoted notes → posts
 /notes/photography-as-interface/ /posts/photography-as-interface/ 301
 /notes/photography-as-interface /posts/photography-as-interface/ 301
+/notes/convex-reactive-database/ /posts/convex-reactive-database/ 301
+/notes/convex-reactive-database /posts/convex-reactive-database/ 301
+/notes/rapid-generative-prototyping/ /posts/rapid-generative-prototyping/ 301
+/notes/rapid-generative-prototyping /posts/rapid-generative-prototyping/ 301
 /posts/speed-of-thought  /notes/speed-of-thought  301
