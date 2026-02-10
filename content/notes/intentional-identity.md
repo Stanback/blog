@@ -118,7 +118,9 @@ And here's the thing about tests: sometimes they're flaky.
 
 In software, a flaky test is one that fails intermittently — not because the code is broken, but because the conditions weren't quite right. You were tired. The environment was off. Something external interfered. You run it again later and it passes.
 
-You're allowed to have flaky tests. You're allowed to have days where you're contracted instead of expansive. Where you're not the most generous person in the room. Where you don't pass the Tuesday Night Test because you just needed to stare at a wall.
+I have plenty of flaky tests. I spiral about whether I tipped enough at dinner (sometimes I realize I didn't; usually I just wasn't thinking). I fixate on something stupid I said in passing. There are times I really fumble the ball — not because I'm a bad person, but because I was depleted, distracted, or just having a contracted day.
+
+You're allowed to have those days. Days where you're not the most generous person in the room. Where you don't pass the Tuesday Night Test because you just needed to stare at a wall.
 
 The goal isn't a perfect pass rate. The goal is noticing. Catching the pattern over time. Distinguishing between "I failed this test once because I was exhausted" and "I've been failing this test for six months and something needs to change."
 
