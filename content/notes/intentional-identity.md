@@ -1,166 +1,94 @@
 ---
 title: "The Funeral Test for Your Digital Self"
 date: 2026-02-06T14:00
-description: "From Covey's funeral visualization to company codexes to `SOUL.md` — the throughline is intentional identity. And now we need test harnesses for who we're becoming."
+description: "From Covey's funeral visualization to company codexes to personal test harnesses — the throughline is intentional identity."
 type: note
 schemaVersion: 1
-draft: false
-updated: 2026-02-08
 heroImage: /images/posts/intentional-identity-hero.png
 tags:
   - identity
   - philosophy
-  - ai
   - parenting
 ---
 
-The company I work for, [Demand.io](https://demand.io), has a document called "The Codex."
+In 1989, Stephen Covey published *The 7 Habits of Highly Effective People*. It sold 40 million copies and became one of those books that people reference without having read. I'm one of those people.
 
-It's not a style guide or an employee handbook. It's a 6,000-word operating system for *how to think*. It covers everything from cognitive clarity ("your mind is for having ideas, not holding them") to strategic positioning ("be first or be different") to a core mandate we call "Product Over Process" — the reminder that documentation is potential energy, but shipped products are kinetic.
+The seven habits are fine. Be proactive. Put first things first. Sharpen the saw. They live on posters in dentist offices for a reason — they're true in that sturdy, obvious way that makes you nod without changing anything.
 
-When I first encountered it, I thought: *this is intense*. A company that writes down its mental models, its decision-making frameworks, its philosophical commitments — and expects people to internalize them?
-
-Then I realized: this is just the corporate version of something humans have been doing for decades. Maybe centuries.
-
-## The Funeral Test
-
-In 1989, Stephen Covey published *The 7 Habits of Highly Effective People*. It sold 40 million copies and became one of those books that people reference without having read (guilty).
-
-The seven habits are:
-1. **Be Proactive** — You choose your response to any situation
-2. **Begin with the End in Mind** — Define your vision before you start
-3. **Put First Things First** — Prioritize what matters, not what's urgent
-4. **Think Win-Win** — Seek mutual benefit, not zero-sum victories
-5. **Seek First to Understand** — Listen before you prescribe
-6. **Synergize** — Creative cooperation beats compromise
-7. **Sharpen the Saw** — Renewal and self-care sustain everything else
-
-They're good habits. But the one that stuck with me isn't a habit at all — it's an exercise buried in Habit 2.
+But buried inside Habit 2 — "Begin with the End in Mind" — is an exercise that actually stuck.
 
 Covey asks you to imagine your own funeral. Four speakers: a family member, a friend, a colleague, and someone from your community. What do you want each of them to say about you?
 
-Not what they *would* say. What you *want* them to say.
+Not what they *would* say. What you *want* them to say. The gap between those two things is your work.
 
-The gap between those two things is your work.
+It's a brutal exercise because it forces clarity. You can't hide behind "I want to be successful" when you're imagining your daughter at a podium, describing what kind of parent you were. Success becomes concrete: *Did I show up? Did I listen? Did I make her feel seen?*
 
-It's a brutal exercise because it forces clarity. You can't hide behind vague aspirations ("I want to be successful") when you're imagining your daughter at a podium, describing what kind of parent you were. Success becomes concrete: *Did I show up? Did I listen? Did I make her feel seen?*
+Covey's point is that all things are created twice — first mentally, then physically. The funeral test is the mental creation. You deciding what "winning at life" actually means before the world decides for you.
 
-Covey's point is that all things are created twice — first mentally, then physically. The funeral test is the mental creation. It's you deciding what "winning at life" actually means before the world decides for you.
+---
 
-## The Codex as Corporate Funeral Test
+The company I work for has a document called "The Codex." It's not a style guide or an employee handbook. It's a 6,000-word operating system for how to think — cognitive clarity, strategic positioning, decision-making frameworks, philosophical commitments.
 
-That company Codex I mentioned? It's the same move, scaled to an organization.
+When I first encountered it, I thought: *this is intense*. Then I realized it's just the corporate funeral test.
 
-Most companies have values on a wall. "Integrity. Innovation. Excellence." Words so generic they could apply to a hospital, a hedge fund, or a hot dog stand.
+Most companies put values on a wall — integrity, innovation, excellence — words so generic they could apply to a hospital, a hedge fund, or a hot dog stand. The Codex is different. It doesn't say "we value productivity." It says: *At the end of each week, ask: Did I change reality for a customer, or did I only change Notion?*
 
-The Codex is different. It doesn't say "we value productivity." It says: *"At the end of each week, ask: Did I change reality for a customer, or did I only change Notion?"* It doesn't say "we value accountability." It says: *"When you encounter a problem, your first thought must be 'What can I do to solve this?' not 'Whose fault is this?'"*
+That's specific enough to be falsifiable. You could actually check whether someone is living by it. And that specificity is everything — generic values don't shape behavior. Articulated mental models do.
 
-It's specific enough to be falsifiable. You could actually check whether someone is living by it.
+The Codex answers the corporate funeral question: if this company died tomorrow, what would we want people to say it stood for?
 
-And that specificity is the point. Generic values don't shape behavior. Articulated mental models do.
+---
 
-The Codex answers the corporate funeral question: *If this company died tomorrow, what would we want people to say it stood for?* Not "they made money" or "they had nice perks." But: *They built systems that respected human attention. They shipped things that mattered. They treated their people like owners because they were.*
+I've been trying to build something like this for myself. Not a manifesto — more like a set of diagnostic questions I return to when I suspect I'm drifting.
 
-## `SOUL.md`: The Funeral Test for Your Digital Self
+In software, a test harness is a framework that verifies your code behaves correctly. You define expected outputs, run the code, and check whether reality matches intention. The funeral test is one of these: "What do I want people to say about me?" is the expected output. My daily actions are the code. The gap between them is the failing test.
 
-Here's where it gets interesting.
+But I can get more specific.
 
-We're entering an era where AI agents will represent us. They'll answer our emails, manage our calendars, negotiate on our behalf, maybe even maintain relationships when we're busy or asleep.
+It's 7pm on a random Tuesday. No special occasion. How am I spending my time? If the answer doesn't align with what I'd want my funeral speakers to describe, something's off.
 
-The question becomes: *How do these agents know who we are?*
+What advice do I give other people that I don't follow myself? That's a failing test. Either update the advice or update the behavior.
 
-Right now, the answer is: they infer it. From your browsing history, your purchase patterns, your engagement metrics. They build a model of you from your exhaust — the data you leave behind without thinking.
+Where did my discretionary money go last month? Money is crystallized priorities. It doesn't lie the way aspirations do.
 
-But there's another approach: **tell them**.
+These aren't meant to induce guilt. A failing test isn't a moral failure — it's information. It tells you where intention and action have diverged, so you can recalibrate.
 
-That's what a [[Why Everyone Should Have a SOUL.md|`SOUL.md`]] file does. It's a document that declares who you are — your values, your communication style, your boundaries, your preferences. Not inferred. Stated.
+And sometimes the tests are flaky. In software, a flaky test fails intermittently — not because the code is broken, but because the conditions weren't right. You were tired. The environment was off. Something external interfered. Run it again later and it passes.
 
-And here's the key: it doesn't have to be purely descriptive. It can be aspirational. A manifesto for who you're striving to become, not just who you happen to be today. Write down the values you want to embody, and suddenly you have something to hold yourself accountable to — a test you can check your behavior against.
+I have plenty of flaky tests. I spiral about whether I tipped enough at dinner. I fixate on something stupid I said in passing. There are days I really fumble — not because I'm a bad person, but because I was depleted, or distracted, or just having a contracted day.
 
-There's an idea I keep coming back to: the authentic self isn't fully pre-formed, waiting to be found. But it's not a blank canvas either.
+You're allowed to have those days. Days where you're not the most generous person in the room. Where you don't pass the Tuesday Night Test because you needed to stare at a wall.
 
-**Nature** you discover — your wiring, the things that were always there but needed words.
-**Character** you build — your values, your habits, how you respond to what life throws at you.
+The goal isn't a perfect pass rate. It's noticing. Catching the pattern over time. Distinguishing between *I failed this test once because I was exhausted* and *I've been failing this test for six months and something needs to change*.
 
-Authenticity is both. You find the raw materials, then you build with them.
+Self-compassion isn't the absence of standards. It's knowing when a failure is signal and when it's noise.
 
-`SOUL.md` is the blueprint for what you're building.
-
-One more nuance: your `SOUL.md` might be context-specific. A professional `SOUL.md` (how I show up at work) might differ from a personal one (how I show up as a parent). They're branches of the same root, but the emphasis shifts. The funeral test version would be the trunk — the unified identity beneath all the contexts.
-
-It's the funeral test for your digital self: *If an AI had to represent me, what would I want it to embody?*
-
-The gap between what others would infer about you — whether an algorithm or a new coworker — and what you'd actually want represented? That's the same gap Covey identified. The difference between a life lived reactively (shaped by circumstances, by other people's expectations, by the path of least resistance) and a life lived intentionally (shaped by your own articulated values).
-
-`SOUL.md` is just the funeral test, encoded.
-
-## Test Harnesses for Identity
-
-In software engineering, a test harness is a framework that lets you verify your code behaves correctly. You define expected outputs, run the code, and check whether reality matches intention.
-
-What if we built test harnesses for our lives?
-
-The funeral test is one. "What do I want people to say about me?" becomes the expected output. Your daily actions become the code. The gap between them is the failing test.
-
-But we can get more specific.
-
-**The Tuesday Night Test**: It's 7pm on a random Tuesday. No special occasion. How are you spending your time? If the answer doesn't align with what you'd want your funeral speakers to describe, something's off.
-
-**The Recurring Calendar Test**: Look at your recurring events for the past month. These are the things you've committed to repeatedly. Do they reflect your stated priorities? Or are they legacy commitments that no longer serve who you're trying to become?
-
-**The Advice Test**: What advice do you give others that you don't follow yourself? That's a failing test. Either update the advice or update your behavior.
-
-**The Money Test**: Where did your discretionary spending go last month? Money is crystallized priorities. Does it match what you claim to value?
-
-These aren't meant to induce guilt. They're diagnostic tools. A failing test isn't a moral failure — it's information. It tells you where intention and action have diverged, so you can recalibrate.
-
-And here's the thing about tests: sometimes they're flaky.
-
-In software, a flaky test is one that fails intermittently — not because the code is broken, but because the conditions weren't quite right. You were tired. The environment was off. Something external interfered. You run it again later and it passes.
-
-I have plenty of flaky tests. I spiral about whether I tipped enough at dinner (sometimes I realize I didn't; usually I just wasn't thinking). I fixate on something stupid I said in passing. There are times I really fumble the ball — not because I'm a bad person, but because I was depleted, distracted, or just having a contracted day.
-
-You're allowed to have those days. Days where you're not the most generous person in the room. Where you don't pass the Tuesday Night Test because you just needed to stare at a wall.
-
-The goal isn't a perfect pass rate. The goal is noticing. Catching the pattern over time. Distinguishing between "I failed this test once because I was exhausted" and "I've been failing this test for six months and something needs to change."
-
-Self-compassion isn't the absence of standards. It's the wisdom to know when a failure is signal and when it's noise.
-
-## The Toddler Test
+---
 
 I have a three-year-old daughter.
 
-She won't remember most of what's happening right now. The specific toys, the exact meals, the individual bedtimes — they'll blur into a general feeling. What she'll remember is the texture of her childhood. Whether she felt safe. Whether she felt seen. Whether home was a place of joy or tension.
+She won't remember most of what's happening right now. The specific toys, the exact meals, the individual bedtimes — they'll blur into a general feeling. What she'll carry is the texture of her childhood. Whether she felt safe. Whether she felt seen. Whether home was a place of joy or tension.
 
-So I've been running my own test harness:
+So I run her version of the test.
 
-**The Memory Test**: Twenty years from now, when she thinks about her childhood, what will the highlight reel look like? Not the Pinterest moments — she won't remember those. The texture. The feel. The recurring patterns.
+Twenty years from now, when she thinks about growing up, what will the highlight reel look like? Not the Pinterest moments — she won't remember those. The recurring patterns. The feel.
 
-**The Modeling Test**: Kids learn more from what you do than what you say. What am I modeling? When I'm frustrated, do I blame or take responsibility? When I'm wrong, do I apologize? When I'm stressed, do I reach for my phone or for presence?
+Kids learn more from what you do than what you say. When I'm frustrated, do I blame or take responsibility? When I'm wrong, do I apologize? When I'm stressed, do I reach for my phone or for presence?
 
-**The Story Test**: What stories will she tell about me? Not the sanitized ones I hope she tells, but the true ones. "My mom was always on her phone" is a story. So is "My mom put her phone away when I talked to her." Both are true for someone. Which is true for her?
+"My mom was always on her phone" is a story someone's kid will tell. So is "My mom put her phone away when I talked to her." Both are true for someone. The question is which one is true for mine — not on the days I'm trying, but on the random Tuesdays when I'm tired and she's whining and my phone is right there.
 
-These tests are uncomfortable because they surface gaps. The gap between the parent I want to be and the parent I'm being on a random Tuesday at 7pm when I'm tired and she's whining and my phone is right there with its dopamine hits.
+That's where the real test runs. Not in the aspirations. In the defaults.
 
-But that's the point. The funeral test, the `SOUL.md`, the company Codex — they're all the same move: *articulate who you want to be so clearly that you can check whether you're becoming that person*.
+---
 
-This only works if you accept there's something to construct. You can't close the gap between who you are and who you want to be if you've declared the gap illusory. The people who resist this work aren't usually rejecting effort — they're rejecting the premise that identity is something you build at all.
+We're entering an era where AI agents will represent us. They'll answer emails, manage calendars, maintain relationships while we're busy or asleep. The question of how those agents know who we are is just the funeral test in new clothes.
 
-## Intentional Identity
+Right now, they infer it from your exhaust data. But there's another approach — [tell them](/posts/why-everyone-needs-soul-md/). Write it down. Declare who you are instead of letting the pattern-matching decide.
 
-We live in an age of inferred identity.
+That's a practical problem worth solving, and I've written about it separately. But the deeper point isn't about AI at all.
 
-Algorithms decide who we are based on what we click. Credit scores define us by our repayment patterns. Social media reduces us to our engagement metrics. Even our friends and family build models of us from incomplete data — what we choose to show them, filtered through what they're primed to see.
+There's a nature you discover — your wiring, the things that were always there but needed words. And there's a character you build — your values, your habits, how you respond to what life throws at you. Authenticity is the whole picture. You find the raw materials. Then you decide what to make with them.
 
-The countermovement is intentional identity. It's the act of defining yourself before others define you.
+The question isn't whether you'll be defined. You will be — by algorithms, by colleagues, by your kids, by the patterns you repeat without thinking. The question is whether you'll do any of the defining yourself.
 
-Covey did it with the funeral test.
-Some companies do it with codexes and manifestos (though most settle for generic values on a wall).
-We can do it with `SOUL.md` files for our AI agents.
-We can do it with test harnesses for our daily lives.
-We can do it as parents, by asking what story our children will tell.
-
-The question isn't whether you'll be defined. You will be. The question is whether you'll do the defining, or outsource it to algorithms, circumstances, and the path of least resistance.
-
-Begin with the end in mind.
-Then check your work.
+Begin with the end in mind. Then check your work.
