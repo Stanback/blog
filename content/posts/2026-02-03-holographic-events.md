@@ -97,12 +97,14 @@ But:
 2. **Human escalation gets better.** When a bot can't fix it, the holographic event is a perfect bug report.
 3. **Audit trails are complete.** You can replay any failure without hunting through logs.
 
-For high-value, failure-prone systems—like multi-model AI orchestration—the tradeoff is worth it.
+For high-value, failure-prone systems — like multi-model AI orchestration — the tradeoff is worth it.
 
-## Pattern Summary
+---
 
-- **Don't scatter breadcrumbs.** Ship holograms.
-- **Decouple execution from repair.** Emit and move on.
-- **Design events for the repair bot, not the human.** If a bot can't act on it without asking questions, it's not self-contained enough.
+Don't scatter breadcrumbs. Ship holograms.
 
-The system that heals itself is the one that remembers everything.
+Decouple execution from repair — emit and move on.
+
+And design events for the repair bot, not the human. If a bot can't act on it without asking questions, it's not self-contained enough.
+
+The system that heals itself is the one that remembers everything it needs — and carries that memory in every event.
