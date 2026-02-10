@@ -851,7 +851,8 @@ main > .post-hero {
 	grid-column: 2;
 }
 
-.post-list-compact .post-title code {
+.post-list-compact .post-title code,
+.post-list-compact .post-desc code {
 	font-family: inherit;
 	font-size: inherit;
 	background: none;
@@ -914,7 +915,8 @@ main > .post-hero {
 	transition: color var(--transition-fast);
 }
 
-.note-title code {
+.note-title code,
+.note-desc code {
 	font-family: inherit;
 	font-size: inherit;
 	background: none;
@@ -1447,7 +1449,8 @@ main > .post-hero {
 	transition: color var(--transition-fast);
 }
 
-.archive-title code {
+.archive-title code,
+.archive-desc code {
 	font-family: inherit;
 	font-size: inherit;
 	background: none;
@@ -3312,7 +3315,8 @@ article.skills-page h1 {
 	transition: color var(--transition-fast);
 }
 
-.related-post-title code {
+.related-post-title code,
+.related-post-desc code {
 	font-family: inherit;
 	font-size: inherit;
 	background: none;

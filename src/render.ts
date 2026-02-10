@@ -45,7 +45,7 @@ function renderRelatedPosts(relatedPosts: RelatedPost[] | undefined): string {
 					<li class="related-post-item">
 						<a href="${post.url}" class="related-post-link">
 							<span class="related-post-title">${processInlineMarkdown(post.title)}</span>
-							${post.description ? `<span class="related-post-desc">${post.description}</span>` : ''}
+							${post.description ? `<span class="related-post-desc">${processInlineMarkdown(post.description)}</span>` : ''}
 						</a>
 					</li>`,
 					)
@@ -620,7 +620,7 @@ function renderPostsIndex(posts: Post[], ctx: BuildContext): string {
               <time datetime="${isoDate(post.date)}">${formatDateArchive(post.date)}</time>
               <a href="${getUrl(post)}" class="archive-link">
                 <span class="archive-title">${processInlineMarkdown(post.title)}</span>
-                <span class="archive-desc">${post.description}</span>
+                <span class="archive-desc">${processInlineMarkdown(post.description)}</span>
               </a>
             </li>`,
 							)
@@ -685,7 +685,7 @@ function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
                 <time datetime="${isoDate(note.date)}">${formatDateArchive(note.date)}</time>
                 <a href="${getUrl(note)}" class="archive-link">
                   <span class="archive-title">${processInlineMarkdown(note.title)}</span>
-                  ${note.description ? `<span class="archive-desc">${note.description}</span>` : ''}
+                  ${note.description ? `<span class="archive-desc">${processInlineMarkdown(note.description)}</span>` : ''}
                 </a>
               </li>`,
 							)
@@ -736,7 +736,7 @@ function renderDraftsScratchpad(ctx: BuildContext): string {
               <time datetime="${isoDate(post.date)}">${formatDateArchive(post.date)}</time>
               <a href="/drafts/${post.slug}/" class="archive-link">
                 <span class="archive-title">${processInlineMarkdown(post.title)}</span>
-                ${post.description ? `<span class="archive-desc">${post.description}</span>` : ''}
+                ${post.description ? `<span class="archive-desc">${processInlineMarkdown(post.description)}</span>` : ''}
               </a>
             </li>`,
 						)
@@ -759,7 +759,7 @@ function renderDraftsScratchpad(ctx: BuildContext): string {
               <time datetime="${isoDate(note.date)}">${formatDateArchive(note.date)}</time>
               <a href="/drafts/${note.slug}/" class="archive-link">
                 <span class="archive-title">${processInlineMarkdown(note.title)}</span>
-                ${note.description ? `<span class="archive-desc">${note.description}</span>` : ''}
+                ${note.description ? `<span class="archive-desc">${processInlineMarkdown(note.description)}</span>` : ''}
               </a>
             </li>`,
 						)
@@ -782,7 +782,7 @@ function renderDraftsScratchpad(ctx: BuildContext): string {
               <span class="archive-item-spacer"></span>
               <a href="/books/${book.slug}/" class="archive-link">
                 <span class="archive-title">${processInlineMarkdown(book.title)}</span>
-                ${book.description ? `<span class="archive-desc">${book.description}</span>` : ''}
+                ${book.description ? `<span class="archive-desc">${processInlineMarkdown(book.description)}</span>` : ''}
               </a>
             </li>`,
 						)
@@ -909,7 +909,7 @@ function renderHome(ctx: BuildContext): string {
           <a href="${getUrl(post)}">
             <time datetime="${isoDate(post.date)}">${formatDateArchive(post.date)}</time>
             <span class="post-title">${processInlineMarkdown(post.title)}</span>
-            ${post.description ? `<span class="post-desc">${post.description}</span>` : ''}
+            ${post.description ? `<span class="post-desc">${processInlineMarkdown(post.description)}</span>` : ''}
           </a>
         </li>`,
 					)
@@ -934,7 +934,7 @@ function renderHome(ctx: BuildContext): string {
         <li class="note-item">
           <a href="${getUrl(note)}" class="note-link">
             <span class="note-title">${processInlineMarkdown(note.title)}</span>
-            ${note.description ? `<span class="note-desc">${note.description}</span>` : ''}
+            ${note.description ? `<span class="note-desc">${processInlineMarkdown(note.description)}</span>` : ''}
           </a>
         </li>`,
 					)
