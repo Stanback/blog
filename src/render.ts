@@ -486,9 +486,9 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
       </nav>
       <script>
         document.addEventListener('keydown', function(e) {
-          if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
           var lb = document.getElementById('${photoId}');
-          if (lb && lb.checked) { if (e.key === 'Escape') lb.checked = false; return; }
+          if (lb && lb.checked) { if (e.key === 'Escape') { lb.checked = false; lb.blur(); } return; }
+          if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
           ${leftPhoto ? `if (e.key === 'ArrowLeft') window.location.href = '${getUrl(leftPhoto)}';` : ''}
           ${rightPhoto ? `if (e.key === 'ArrowRight') window.location.href = '${getUrl(rightPhoto)}';` : ''}
         });
