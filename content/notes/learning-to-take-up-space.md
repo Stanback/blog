@@ -4,7 +4,7 @@ date: 2026-02-09T19:00
 description: "On the difference between disappearing and controlling — and the third thing that isn't either."
 type: note
 schemaVersion: 1
-draft: true
+draft: false
 tags:
   - identity
   - philosophy
