@@ -48,21 +48,19 @@ From merging to managing. It can look like leadership. It can also look like con
 
 ## Learning a New Language
 
-Recently I reconnected with someone I'd known years ago. We fell into one of those late-night conversations that go deep, fast — identity, authenticity, all the heavy stuff.
+Recently I reconnected with someone I'd known years ago. We fell into one of those conversations that go deep quickly — identity, authenticity, all the heavy stuff.
 
-For hours, I did my pattern. Drew them out. Asked good questions. Appreciated their references. Worked within a framework that didn't quite match how I see things, because I was being curious and generous.
+For a while, I did my pattern. Drew them out. Asked good questions. Appreciated their references. Worked within a framework that didn't quite match how I see things, because I was being curious and generous.
 
-By the end, I was exhausted — that particular tiredness where your face aches from holding an expression too long. They signed off warmly. It was done.
+By the end, I was tired — not dramatic, just the kind of tired that comes from a long day and a 5am wake-up. They signed off warmly. It was done.
 
-And then I kept going.
+And then I added one more message.
 
-I added a few more messages. Tried to explain my pacing, narrate my limits, manage how I'd be perceived. What I was *trying* to say was: "I have boundaries and I'm learning to hold them."
+It wasn't a rant. It wasn't a lecture. It was a slightly unedited, unfinished attempt to say: *I have limits. I'm learning to name them.*
 
-What I *actually* said landed as: "I'm more regulated than you."
+What I was trying to communicate was pacing. What it sounded like was correction.
 
-That's the curse word. When you're learning a new language, sometimes you reach for a boundary and accidentally say something that sounds like judgment.
-
-They felt it. They named it. And the door closed.
+That gap — between intention and impact — is the part I'm still learning to see sooner.
 
 ## The Apology That Didn't Save It
 
