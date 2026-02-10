@@ -59,7 +59,7 @@ A holographic event for a selector failure looks like:
 }
 ```
 
-The structure mirrors the 6-tuple from [[Proof, Not Truth]] — subject, predicate, object, context, evidence, confidence. That's not a coincidence. The holographic event is a proof node: a claim about what happened, carrying its own evidence, with a confidence score that the repair system updates as it investigates.
+The structure mirrors the 6-tuple from [[Proof, Not Truth: Epistemic Humility in Knowledge Systems|Proof, Not Truth]] — subject, predicate, object, context, evidence, confidence. That's not a coincidence. The holographic event is a proof node: a claim about what happened, carrying its own evidence, with a confidence score that the repair system updates as it investigates.
 
 This event is complete. A repair bot can analyze it, generate candidate fixes, test them, and update the recipe — without asking a single question.
 
