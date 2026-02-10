@@ -8,7 +8,7 @@ featured: true
 tags:
   - building
   - meta
-description: "First post. Why I built this blog, what I hope it becomes, and what I still don't know."
+description: "First post. Why I built this blog and what I hope it becomes."
 heroImage: /images/posts/hello-world-hero.png
 tension: "I'm not sure if anyone will read this."
 questions:
@@ -53,7 +53,7 @@ How little code it actually takes. Modern tooling (Bun, Tailwind, Shiki) does th
 
 Also: OKLCH colors are genuinely better than HSL. Perceptually uniform color ramps without the math headaches.
 
-## What I Still Don't Know
+## Open Questions
 
 - Will I actually write consistently?
 - Is anyone going to read this who isn't obligated to?

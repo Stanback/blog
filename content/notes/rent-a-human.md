@@ -29,26 +29,13 @@ The site's language is telling: "Silicon needs carbon." Agents "rent" humans. Yo
 
 ---
 
-## The Lineage: From Automaton to Algorithm to Agent
+## The Lineage
 
-This isn't new — it's the latest turn in a 250-year loop.
+This is a 250-year loop. In 1770, a chess-playing "automaton" toured Europe beating Napoleon — with a human chess master hidden inside. Fake AI, real human labor. Bezos named Amazon's Mechanical Turk after it deliberately: "artificial artificial intelligence," humans hidden behind an API labeling images and cleaning data so requesters never had to see them. That labor trained the AI.
 
-**1770: The Original Mechanical Turk.** A chess-playing "automaton" that toured Europe, beating Napoleon and Benjamin Franklin. The secret? A human chess master hidden inside. Fake AI, real human labor. The automation was theater.
+Then the algorithm became the dispatcher. Uber, TaskRabbit, DoorDash — humans still do the physical work, but software decides who, when, and how much they're paid.
 
-**2005: Amazon Mechanical Turk.** Bezos named it deliberately. "Artificial artificial intelligence." Humans doing tasks that are easy for people but hard to automate: labeling images, transcribing audio, cleaning data. The humans are hidden behind an API. Requesters don't see them. They just see results. *This is what trained the AI.*
-
-**2010s: Uber, TaskRabbit, DoorDash.** The algorithm becomes the dispatcher. Humans still do the physical work, but an algorithm decides who, when, and how much they're paid. The platform is the middleman. The human is the contractor.
-
-**2026: RentAHuman.** The algorithm isn't the middleman anymore — it's the *customer*. AI agents book humans directly. The principal is no longer human. The frame has fully inverted.
-
-| Era | Who's Hidden | Who Decides | Who Pays |
-|-----|--------------|-------------|----------|
-| 1770 Turk | Human player | Human showman | Human audience |
-| MTurk | Human workers | Human requesters | Human requesters |
-| Uber/TaskRabbit | (No one) | Algorithm | Human customers |
-| RentAHuman | (No one) | AI agent | AI agent |
-
-The through-line: humans doing work while something else takes credit or makes decisions. What's new is the buyer.
+Now the algorithm isn't the middleman. It's the *customer*. The through-line across all of these is humans doing work while something else takes credit or makes decisions. What's new is the buyer.
 
 ---
 

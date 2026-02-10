@@ -11,13 +11,15 @@ tags:
   - engineering
 ---
 
-The prompt is not the product. The code that emerges is.
+I spent an afternoon last month rewriting the same prompt four times. Each version was more precise, more carefully structured, more detailed about what I wanted. Each one produced code that looked right and broke in a different way.
 
-This is a frame I've been developing, and I want to lay it out clearly even though I don't have all the concrete examples yet. The framework feels right. The proof will come from using it.
+The fifth time, I didn't touch the prompt. I wrote a test. Then two more tests. Then I ran the original sloppy prompt against them — and the output was correct, because now "correct" meant something.
+
+That afternoon rearranged how I think about building with AI.
 
 ---
 
-Here's the claim: we obsess over prompt engineering when we should obsess over constraint engineering.
+We obsess over prompt engineering when we should obsess over constraint engineering.
 
 A prompt expresses intent. It's the why, the what, the how — but it's inherently fuzzy. The model interprets it. It mutates within whatever space you've given it. And then the session ends, the context window closes, and the prompt is gone. It was temporary, lossy, context-dependent.
 
@@ -44,17 +46,13 @@ The prompt is a request. The constraints are the physics. The code is what ships
 
 ---
 
-Constraints come in two kinds, and the distinction matters.
+But not all constraints are the same, and the distinction matters for where you spend your time.
 
-**Mechanical constraints** are the ones machines can verify. Test suites — define what success looks like before implementation. Type systems — define what shapes are valid. Linters, CI/CD — define what patterns are allowed. Feature lists — define what "done" means.
+**Mechanical constraints** are the ones machines can verify. Test suites, type systems, linters, CI/CD, feature lists. You run them, they pass or fail, no judgment required. Anyone can set them up. AI can write them.
 
-These are automatically checkable. You run them, they pass or fail, no judgment required.
+**Human constraints** are harder. Taste — what's elegant versus ugly, what belongs versus what's noise. Axioms — the foundational assumptions you build on. Judgment — the wisdom from experience that tells you when to follow the rules and when to break them.
 
-**Human constraints** are the ones that require a person. Taste — what's elegant versus ugly, what belongs versus what's noise. Axioms — the foundational assumptions you build on. Judgment — the wisdom from experience that tells you when to follow the rules and when to break them.
-
-Both survive context windows. Both persist across sessions.
-
-But here's the thing: the mechanical constraints are table stakes. Anyone can set up tests and linters. AI can write them. The human constraints — taste, judgment, the sense of what a thing should *be* — those are the differentiator. Those are what make one system thoughtful and another system merely functional.
+Both survive context windows. Both persist across sessions. But the mechanical constraints are table stakes. The human constraints — taste, judgment, the sense of what a thing should *be* — those are the differentiator. Those are what make one system thoughtful and another system merely functional.
 
 This is why I keep coming back to judgment as the scarce resource. Not prompting skill. Not execution speed. The ability to set the right constraints — to know what the physics of your system should be before anything gets built.
 
@@ -70,15 +68,7 @@ The feature list and progress file are constraints. The coding prompt is intent.
 
 [Phil Schmid frames it well](https://www.philschmid.de/agent-harness-2026): the harness is the operating system, the model is the CPU, context is RAM, the agent is the application. The harness implements what he calls "[context engineering](https://www.philschmid.de/context-engineering)" — strategies that survive the model's context limitations. And his key insight lands the point: "The ability to improve a system is proportional to how easily you can verify its output."
 
-That's the whole argument in one sentence. If you can verify it, you can improve it. If your constraints are weak — if "done" means "looks done" — your outputs will drift and you won't know until it's too late.
-
----
-
-The framework is new enough that I'm testing it more than demonstrating it. The clean war stories will come — I'll write them up when they do.
-
-But I'll say what I believe so far: if you're building with AI and you're spending most of your energy on prompts, you're optimizing the wrong layer. The prompts are ephemeral. The constraints are what compound.
-
-Invest in the thing that survives the session.
+If you can verify it, you can improve it. If your constraints are weak — if "done" means "looks done" — your outputs will drift and you won't know until it's too late. That afternoon I spent rewriting prompts? I was optimizing the wrong layer. The constraints are what compound.
 
 ---
 

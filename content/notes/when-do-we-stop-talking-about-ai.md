@@ -32,15 +32,9 @@ The exhaustion isn't incidental. It's how discourse dies. We don't stop talking 
 
 ---
 
-Every previous technology wave followed this arc.
+Every previous technology wave followed this arc, and each one faster than the last.
 
-Electricity took about thirty years. The 1880s were full of "electric" everything — electric lights, electric motors, electric appliances. People worried about electrocution, job displacement, the transformation of factories. By the 1920s, electricity was infrastructure. You didn't advertise "electric-powered" because what else would it be?
-
-The internet took about twenty. "Dot-com" was a category. "Cyber" was a prefix. We capitalized "Internet" like a proper noun and hyphenated "e-mail." People debated whether online shopping would ever work. By 2015, every company was an internet company or it wasn't a company. The modifier was redundant.
-
-Mobile took about ten. "Mobile-first design." "Mobile apps" versus desktop. Debates about whether phones would replace computers. By 2017, apps were assumed to be mobile.
-
-Each wave faster than the last. The half-life of disruption discourse is shrinking.
+Electricity took about thirty years. The 1880s were full of "electric" everything — electric lights, electric motors, electric appliances. People worried about electrocution, job displacement, the transformation of factories. By the 1920s, electricity was infrastructure. You didn't advertise "electric-powered" because what else would it be? The internet compressed the same arc into twenty years — from capitalizing "Internet" and hyphenating "e-mail" to every company being an internet company or not being a company. Mobile did it in ten.
 
 If the pattern holds, "AI-powered" will sound as quaint as "internet-enabled" within five to seven years. By the early 2030s, "AI" might feel like "cyber" does today — a retro prefix from a more excitable time.
 

@@ -31,29 +31,19 @@ But the more I sat with it, the more I realized the problem isn't the word *trut
 
 ---
 
-There are two kinds of truth, and most systems conflate them.
+Take a promo code. SAVE20 is "true" — it works at checkout — until it isn't. It expires, gets rate-limited, or the retailer kills it without notice. Yesterday's working code is today's expired one.
 
-**Naive truth** is binary. Something is true or it isn't. The system stores it and you trust it. This is how most "truth" systems implicitly operate, even when their architects know better. The data goes in, the label says true, and nobody asks what happens when the evidence changes.
+Most systems treat this as binary: valid or invalid. But the reality is messier. Verified 2 hours ago, 847 successful applies this week, confidence 0.91 — but decaying, because a failure signal came in 23 minutes ago. The system knows it's getting stale. The truth has a half-life, and the half-life is part of the data model.
 
-**Scientific truth** is different. It's provisional — the best-verified model given available evidence, subject to revision when better data arrives. Not "we know this" but "this is currently holding." True until proven otherwise.
+Product recommendations are the same problem at a different timescale. We make claims like "best vacuum for pet hair." That's not a fact — it's a position backed by 47 reviews, 3 teardown videos, and 12k purchase signals, carrying 0.84 confidence. When a better product launches or new reviews come in, the confidence updates. The claim is traceable. Someone can check the receipts.
+
+These are two problems I'm actually working on, and they taught me the same thing: most systems conflate two very different kinds of truth.
+
+**Naive truth** is binary. Something is true or it isn't. The data goes in, the label says true, and nobody asks what happens when the evidence changes. **Scientific truth** is provisional — the best-verified model given available evidence, subject to revision when better data arrives. Not "we know this" but "this is currently holding."
 
 The essay I almost wrote argued for replacing truth with proof. The essay I'm actually writing argues for making truth mean something rigorous — and building systems that enforce the rigor.
 
----
-
-Here's what the difference looks like across the two problems I'm actually working on.
-
-**Product recommendations.** We make claims like "best vacuum for pet hair." In a naive truth system, that's a binary assertion — it is or it isn't. In an earned truth system, that claim carries its evidence: based on 47 reviews, 3 teardown videos, and 12k purchase signals, this has 0.84 confidence for the "best for pet hair" claim. The claim is traceable. Someone can check the receipts. And when a better product launches or new reviews come in, the confidence updates.
-
-This is about combining qualitative and quantitative signals into a defensible confidence score.
-
-**Promo codes.** A code like SAVE20 is "true" — it works at checkout — until it isn't. It expires, gets rate-limited, or the retailer kills it without notice. Yesterday's working code is today's expired one.
-
-In a naive truth system, SAVE20 is marked valid or invalid. Binary. In an earned truth system, it carries its evidence: verified 2 hours ago, 847 successful applies this week, confidence 0.91 — but decaying, because a failure signal came in 23 minutes ago. The system knows it's getting stale. The truth has a half-life, and the half-life is part of the data model.
-
-This is about ephemerality.
-
-The same architecture handles both problems, but promo codes make the time-boundedness explicit in a way that product recommendations don't. In both cases, the proof framing is honest about uncertainty (confidence scores), traceable (evidence sources), updatable (new evidence revises the proof), and falsifiable (you can check the receipts).
+In both cases — promo codes and product claims — the proof framing is honest about uncertainty (confidence scores), traceable (evidence sources), updatable (new evidence revises the proof), and falsifiable (you can check the receipts).
 
 When it's wrong, you can trace why. That's the difference between a system that fails gracefully and one that fails mysteriously.
 

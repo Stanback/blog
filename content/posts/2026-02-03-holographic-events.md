@@ -13,19 +13,11 @@ tags:
 
 Browser automation breaks constantly. Selectors change, sites add Cloudflare challenges, responses take longer than expected.
 
-The traditional fix is breadcrumbs: log what happened, wait for an alert, reconstruct context, diagnose, patch, deploy. Hours of feedback loop.
+The traditional fix is breadcrumbs: log what happened, wait for an alert, reconstruct context, diagnose, patch, deploy. Hours of feedback loop. That works when failures are rare and humans are cheap. Neither is true for AI-orchestrated systems running 24/7.
 
-That's too slow. The system needs to repair itself — and to do that, every event must carry everything a repair bot needs to act without asking questions.
+We've been building toward a different pattern on a browser automation system for AI research. The architecture is live, not fully in production yet, but promising enough that I want to document the thinking.
 
-We've been building toward this pattern on a browser automation system for AI research. It's not fully in production yet, but the architecture is live and the early results are promising enough that I want to document the thinking.
-
-## The Problem with Breadcrumbs
-
-Traditional logging assumes a human in the loop. You scatter traces through your code, ship to Datadog, wait for an alert, reconstruct the context, diagnose, patch, deploy.
-
-This works when failures are rare and humans are cheap. Neither is true for AI-orchestrated systems running 24/7.
-
-The deeper problem: breadcrumbs are incomplete. A log line says "selector failed" but doesn't include the DOM snapshot, the screenshot, the selectors already tried, or the recipe version. To diagnose, you need to reconstruct state from multiple sources — and by then, the state may have changed.
+The deeper problem with breadcrumbs: they're incomplete. A log line says "selector failed" but doesn't include the DOM snapshot, the screenshot, the selectors already tried, or the recipe version. To diagnose, you need to reconstruct state from multiple sources — and by then, the state may have changed.
 
 ## Holographic Events
 
