@@ -18,13 +18,9 @@ Both are performance. The difference is consciousness.
 
 What exhausts me isn't performance. It's *unconscious* performance — constructing an identity while mistaking the construction for bedrock. Acting, but forgetting you're on a stage.
 
-That disconnect between performance and presence isn't just theory for me — I lived it recently in a way that left a bruise.
-
-I'm not writing this from the other side. I'm mid-process. And honestly, that became real for me when I got feedback at work that landed hard. I remember rereading the message, feeling my chest tighten. It was about presence. Ownership. The way I show up — or don't. It wasn't easy to hear, and some of it was harsh. But it was right. I *had* been disappearing. I'd made it a survival strategy, and it was costing me.
+I'm not writing this from the other side. I'm mid-process. A few months ago I got feedback at work that landed hard. I remember rereading the message, feeling my chest tighten. It was about presence. Ownership. The way I show up — or don't. It wasn't easy to hear, and some of it was harsh. But it was right. I *had* been disappearing. I'd made it a survival strategy, and it was costing me.
 
 So I'm trying to change. But I don't have practice yet. Sometimes I overcorrect. Sometimes the new language comes out wrong.
-
-This is a dispatch from someone still in it.
 
 ## Disappearing
 
@@ -74,19 +70,11 @@ Sometimes you learn the lesson and lose the connection anyway. That's not failur
 
 ## The Third Thing
 
-So what's the integrated position?
+Disappearing is ego too thin — you merge, no boundary between self and other. Controlling is ego too thick — you can't let anything in, you manage because you're scared to lose yourself.
 
-**Disappearing** = ego too thin. You merge. No boundary between self and other.
+The third thing is somewhere between: strong enough to hold a position, porous enough to actually meet someone.
 
-**Controlling** = ego too thick. You can't let anything in. You manage because you're scared to lose yourself.
-
-**The third thing** = strong enough to hold a position, porous enough to actually meet someone.
-
-The test is simple: *Did I say what I actually thought? And did I leave room for them to change my mind?*
-
-This shows up in parenting too. With my daughter, I'm navigating the same balance — not passive (letting her run me over because I'm too tired to hold the line), not authoritarian (dominating the frame, demanding compliance). What I'm reaching for is *authoritative*. Clear and warm. Present and boundaried.
-
-It's the same pattern, different stakes. And I fumble there too.
+The test I keep coming back to: *Did I say what I actually thought? And did I leave room for them to change my mind?*
 
 ## Different Stages
 
@@ -110,9 +98,3 @@ Stanislavski said: become the character until it's real.
 Brecht said: show the audience you're acting.
 
 The third thing: *be real while knowing you're on a stage.* And know which stage you're on.
-
----
-
-Maybe this matters more now. AI can disappear perfectly — mirror you, draw you out, become whatever you need. It can also control the frame, shape the narrative. What it can't do is catch itself mid-performance. It has no observer within it.
-
-The work I'm describing — holding a position without merging or managing — that's the human part.
