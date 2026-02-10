@@ -188,11 +188,16 @@ function createWikilinkExtension(): MarkedExtension {
 				renderer(token) {
 					const t = token as unknown as { title: string; display: string };
 					const url = wikilinkResolver.get(t.title.toLowerCase());
+					// Process inline markdown in display text (backticks → code, *text* → em, **text** → strong)
+					const display = t.display
+						.replace(/`([^`]+)`/g, '<code>$1</code>')
+						.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+						.replace(/\*([^*]+)\*/g, '<em>$1</em>');
 					if (url) {
-						return `<a href="${url}" class="wikilink">${t.display}</a>`;
+						return `<a href="${url}" class="wikilink">${display}</a>`;
 					}
 					// Unresolved link - show as broken
-					return `<span class="wikilink wikilink-broken" title="Link not found">${t.display}</span>`;
+					return `<span class="wikilink wikilink-broken" title="Link not found">${display}</span>`;
 				},
 			},
 		],
