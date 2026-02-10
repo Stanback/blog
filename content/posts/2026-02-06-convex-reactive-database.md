@@ -2,7 +2,7 @@
 title: "Convex and the Reactive Database Paradigm"
 description: "How Convex challenges our mental models of databases—not relational, not NoSQL, but something new."
 date: 2026-02-06T11:00
-type: note
+type: post
 schemaVersion: 1
 tags:
   - architecture
