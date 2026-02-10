@@ -90,7 +90,9 @@ That judgment, ironically, is the thing that can't be built at the speed of thou
 
 I don't want to understate what's happening here, though.
 
-Building from my phone, in bed, through a conversation — that's qualitatively different from anything I've done in fifteen years of writing software. The conversation *is* the work. Ideas don't die in TODO comments. Iteration is instant.
+Building from my phone, in bed, through a conversation — that's qualitatively different from anything I've done in twenty years of writing software. The conversation *is* the work. Ideas don't die in TODO comments. Iteration is instant.
+
+Though honestly, it reminds me of how I started. Early on I wasn't running much locally — I'd edit the file, SCP it up, and test it live. In production. Reckless, sure, but the fact that it was *live on a website* kept the momentum going. Higher stakes meant higher energy. Somewhere along the way we got responsible — local dev servers, staging environments, CI pipelines — and lost that feedback loop. This feels like getting it back, but with a thinking partner instead of a cowboy FTP client.
 
 The gap between thinking and shipping can collapse to nothing.
 
