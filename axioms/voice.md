@@ -165,7 +165,17 @@ The strongest posts follow this implicit pattern:
 
 Make this explicit mentally, not visually.
 
-**Watch for structural tics.** The 2×2 grid, the comparison table, the diverge/converge arc — these are good moves, but they become predictable when every post uses them. Not every insight needs a quadrant. Sometimes the most honest structure is narrative: this happened, then this, and I'm not sure what it means yet.
+### Frameworks as devices
+
+The 2×2 grid, the comparison table, the named model — these are genuine contributions. A reader walks away with a mental model they can use. That's valuable and worth doing.
+
+**But earn the framework.** Let the narrative build tension before the framework resolves it. The grid should feel like relief — "oh, *that's* the shape of this" — not like a table of contents. Christensen doesn't open with a 2×2 of disruptive vs. sustaining innovation. He tells you about the disk drive industry and the framework crystallizes out of the story. You remember it forever because you remember how you got there.
+
+**Don't walk the grid.** Once you've proposed the quadrants, you don't have to tour each cell sequentially. That's where it starts reading like a slide deck. Pick the interesting cell, or the one you're wrong about, or the edge case that breaks the model.
+
+**Let the model be imperfect.** The most convincing frameworks have one cell that doesn't quite work, and you say so. Four clean quadrants read as tidy. Three clean and one messy reads as honest.
+
+**Vary the delivery.** Not every insight needs a quadrant. Some are better as narrative (this happened, then this, and here's what I think it means). The framework is one device among several — use it when the shape of the idea is genuinely two-dimensional, not as a default container for every argument.
 
 ## Craft Principles (Elements of Style)
 
