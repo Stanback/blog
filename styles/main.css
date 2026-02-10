@@ -781,6 +781,15 @@ main > .post-hero {
 	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+.featured-card-title code {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	background: none;
+	padding: 0;
+	color: var(--color-accent-200);
+}
+
 .featured-card:hover .featured-card-title {
 	color: var(--color-accent-500);
 }
@@ -842,6 +851,14 @@ main > .post-hero {
 	grid-column: 2;
 }
 
+.post-list-compact .post-title code {
+	font-family: inherit;
+	font-size: inherit;
+	background: none;
+	padding: 0;
+	color: var(--color-accent-200);
+}
+
 .post-list-compact .post-desc {
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
@@ -895,6 +912,14 @@ main > .post-hero {
 	font-weight: 400;
 	color: var(--color-text-primary);
 	transition: color var(--transition-fast);
+}
+
+.note-title code {
+	font-family: inherit;
+	font-size: inherit;
+	background: none;
+	padding: 0;
+	color: var(--color-accent-200);
 }
 
 .note-link:hover .note-title {
@@ -1420,6 +1445,14 @@ main > .post-hero {
 	color: var(--color-text-primary);
 	line-height: var(--leading-snug);
 	transition: color var(--transition-fast);
+}
+
+.archive-title code {
+	font-family: inherit;
+	font-size: inherit;
+	background: none;
+	padding: 0;
+	color: var(--color-accent-200);
 }
 
 .archive-link:hover .archive-title {
@@ -2217,6 +2250,19 @@ article.skills-page h1 {
 	color: var(--color-text-primary);
 	padding: 0.05em 0.2em;
 	border-radius: var(--radius-sm);
+}
+
+/* Code in headings: keep heading font, subtle distinction */
+.prose h1 code,
+.prose h2 code,
+.prose h3 code,
+.prose h4 code {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: normal;
+	background: none;
+	padding: 0;
+	color: var(--color-accent-200);
 }
 
 .prose pre {
@@ -3264,6 +3310,14 @@ article.skills-page h1 {
 	font-weight: 500;
 	color: var(--color-text-primary);
 	transition: color var(--transition-fast);
+}
+
+.related-post-title code {
+	font-family: inherit;
+	font-size: inherit;
+	background: none;
+	padding: 0;
+	color: var(--color-accent-200);
 }
 
 .related-post-link:hover .related-post-title {
