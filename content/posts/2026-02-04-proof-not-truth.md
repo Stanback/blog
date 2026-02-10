@@ -1,155 +1,124 @@
 ---
 title: "Proof, Not Truth: Epistemic Humility in Knowledge Systems"
-date: 2026-02-04T13:30
+date: 2026-02-04T10:00
 type: post
 schemaVersion: 1
-draft: false
-featured: true
-tags:
-  - epistemology
-  - ai
-  - systems
-  - knowledge
-description: "Why knowledge systems should show their work, not just claim truth. And why 'truth' might still be the right word—if we understand what truth means now."
+description: "We don't sell answers. We sell receipts. The receipts are what earn the right to call something true."
 heroImage: /images/posts/proof-not-truth-hero.png
-tension: "Naive truth claims certainty. Scientific truth earns it—provisionally, with receipts."
-questions:
-  - "What's the difference between claiming truth and claiming proof?"
-  - "How do you design systems that are honest about uncertainty?"
-coAuthors:
-  - name: "Lunen"
-    emoji: "🌙"
-    note: "AI collaborator"
+tags:
+  - architecture
+  - engineering
+  - epistemology
 ---
 
-# Proof, Not Truth: Epistemic Humility in Knowledge Systems
+We're building a knowledge system at work — a graph that aggregates signals about products, codes, and claims. The naming question came up: do we call it a "Truth Graph"?
 
-We're building a knowledge system at work—a graph that aggregates signals about products, codes, and claims. The naming question came up: do we call it a "Truth Graph"?
+I went back and forth on this. I want to walk through the debate because I think the reasoning matters more than the answer.
 
-That question sent me down a rabbit hole. Before you call it a Truth Graph, ask: **what kind of truth?**
+---
 
-There's naive truth—the claim that you've figured out what's real and stored it. Certain. Binary. Permanent.
+My first instinct was no. Truth is a dangerous word for a system that stores assertions with confidence levels.
 
-Then there's scientific truth—provisional knowledge, verified against evidence, subject to revision when better data arrives. *True until proven otherwise.*
+Here's the context. Even frontier LLMs hallucinate at meaningful rates — the [Vectara Hallucination Leaderboard](https://github.com/vectara/hallucination-leaderboard) (February 2026) shows 8-15% on grounded summarization and north of 30% on complex reasoning and open-domain recall. If you're building a knowledge system that ingests AI-generated signals alongside human-sourced data, you need to take uncertainty seriously at the architectural level.
 
-Most "truth" systems claim the first kind while operating like neither. What you're actually storing is evidence with confidence levels—a structure where every claim carries its justification. That's not naive truth. But it's not nothing, either.
+You can't just store assertions and call them facts.
 
-The framing matters. It changes how engineers think about the system, how users calibrate trust, and what happens when you're wrong.
+So the question isn't philosophical. It's engineering: how do you build a system that's honest about what it knows and how well it knows it?
 
-## The Difference
+My instinct was to call it a "Proof Graph." Proof shows the work. Proof carries its evidence. Proof invites scrutiny instead of demanding trust.
 
-**Naive truth** is binary. Something is true or it isn't. Claiming it means claiming certainty.
+But the more I sat with it, the more I realized the problem isn't the word *truth*. It's what we let truth mean.
 
-**Proof** is a chain. It says: here's the claim, here's the evidence, here's the reasoning, here's my confidence level. It shows the work.
+---
 
-**Scientific truth** is proof that's currently holding. The best-verified model given available evidence—provisional, revisable, alive.
+There are two kinds of truth, and most systems conflate them.
 
-Consider a product recommendation system:
+**Naive truth** is binary. Something is true or it isn't. The system stores it and you trust it. This is how most "truth" systems implicitly operate, even when their architects know better. The data goes in, the label says true, and nobody asks what happens when the evidence changes.
 
-| Claim | Truth Framing | Proof Framing |
-|-------|---------------|---------------|
-| "Best vacuum for pet hair" | This IS the best | Based on 47 reviews, 3 teardown videos, and 12k purchase signals, this has 0.84 confidence for the "best for pet hair" claim |
+**Scientific truth** is different. It's provisional — the best-verified model given available evidence, subject to revision when better data arrives. Not "we know this" but "this is currently holding." True until proven otherwise.
+
+The essay I almost wrote argued for replacing truth with proof. The essay I'm actually writing argues for making truth mean something rigorous — and building systems that enforce the rigor.
+
+---
+
+Here's what the difference looks like across the two problems I'm actually working on.
+
+**Product recommendations.** We make claims like "best vacuum for pet hair." In a naive truth system, that's a binary assertion — it is or it isn't. In an earned truth system, that claim carries its evidence: based on 47 reviews, 3 teardown videos, and 12k purchase signals, this has 0.84 confidence for the "best for pet hair" claim. The claim is traceable. Someone can check the receipts. And when a better product launches or new reviews come in, the confidence updates.
 
 This is about combining qualitative and quantitative signals into a defensible confidence score.
 
-Now consider a promo code system:
+**Promo codes.** A code like SAVE20 is "true" — it works at checkout — until it isn't. It expires, gets rate-limited, or the retailer kills it without notice. Yesterday's working code is today's expired one.
 
-| Claim | Truth Framing | Proof Framing |
-|-------|---------------|---------------|
-| "SAVE20 works at checkout" | This code works | Verified 2 hours ago, 847 successful applies this week, 0.91 confidence—but decaying (last failure signal: 23 min ago) |
+In a naive truth system, SAVE20 is marked valid or invalid. Binary. In an earned truth system, it carries its evidence: verified 2 hours ago, 847 successful applies this week, confidence 0.91 — but decaying, because a failure signal came in 23 minutes ago. The system knows it's getting stale. The truth has a half-life, and the half-life is part of the data model.
 
-This is about **ephemerality**. A promo code is "true" until it isn't. The truth has a half-life. Yesterday's working code is today's expired one. Proof framing makes the time-boundedness explicit—confidence decays, signals refresh, and the system knows when it's getting stale.
+This is about ephemerality.
 
-The proof framing is:
-- **Honest about uncertainty** (confidence scores)
-- **Traceable** (evidence sources)
-- **Updatable** (new evidence can revise the proof)
-- **Falsifiable** (you can check the receipts)
+The same architecture handles both problems, but promo codes make the time-boundedness explicit in a way that product recommendations don't. In both cases, the proof framing is honest about uncertainty (confidence scores), traceable (evidence sources), updatable (new evidence revises the proof), and falsifiable (you can check the receipts).
 
-## Why This Matters for AI Systems
+When it's wrong, you can trace why. That's the difference between a system that fails gracefully and one that fails mysteriously.
 
-Even top-tier LLMs hallucinate. The [Vectara Hallucination Leaderboard](https://github.com/vectara/hallucination-leaderboard) (February 2026) shows hallucination rates of 8-15% for frontier models on grounded summarization—and rates exceed 30% on complex reasoning and open-domain recall.
+---
 
-If your system claims *truth*, you're amplifying that confidence. Every output sounds authoritative even when it shouldn't.
+The architecture that makes this work is richer than a standard triple store.
 
-If your system shows *proof*, users can calibrate trust:
+Every node in the graph carries six elements:
 
-- "High confidence, multiple independent sources" → probably reliable
-- "Low confidence, single source, no verification" → treat with skepticism
-
-The UI can reflect this too. Maybe high-confidence claims get presented cleanly, while low-confidence ones show their evidence traces upfront.
-
-## The 6-Tuple Structure
-
-Every node in a proof graph should carry:
-
-```
-(Subject, Predicate, Object, Context, Evidence, Confidence)
-```
+`(Subject, Predicate, Object, Context, Evidence, Confidence)`
 
 - **Subject**: What entity is this about?
 - **Predicate**: What kind of claim?
 - **Object**: What's being claimed?
-- **Context**: When/where/under what conditions?
+- **Context**: When, where, under what conditions?
 - **Evidence**: What sources support this?
-- **Confidence**: How sure are we? (0.0 - 1.0)
+- **Confidence**: How sure are we? (0.0–1.0)
 
-This is richer than a simple triple store. It's designed for systems that need to reason about uncertainty.
-
-## Mutation Triggers
-
-Proofs aren't static. They should update when:
-
-1. **Decay threshold crossed** — evidence gets stale
-2. **Contradictory signal received** — new data conflicts
-3. **Source invalidated** — a cited source goes offline or is discredited
-4. **User dispute filed** — someone challenges the claim
-
-"Kinetic proofs" rather than static facts. The graph is alive.
-
-## The Naming Matters
-
-It might seem like semantics, but naming shapes thinking.
-
-"Truth Graph" encourages engineers to think in binaries. The system either knows or it doesn't.
-
-"Proof Graph" encourages thinking in gradients. The system has evidence of varying quality, and that quality is part of the data model.
-
-We don't sell answers. We sell receipts.
+The confidence element is what separates this from a database of facts. Facts don't have confidence levels. Proofs do.
 
 ---
 
-If you're building a knowledge system and calling it a "truth" anything, you're lying to your users. Maybe not maliciously—but you're claiming certainty you don't have.
+And proofs aren't static. They mutate.
 
-Proofs can still be wrong. But when they are, at least you can trace why. That's the difference between a system that fails gracefully and one that fails mysteriously.
+This is a critical part of the architecture — without mutation, you just have assertions with metadata. With mutation, you have a living system.
 
-**Claim proof, not truth.** Your users will trust you more, not less.
+**Mutation triggers:**
+
+1. **Decay threshold crossed** — evidence gets stale. A promo code verified last week is less trustworthy than one verified an hour ago. Confidence should reflect that automatically.
+2. **Contradictory signal received** — new data conflicts with the existing claim. A flood of "code expired" reports should drop confidence immediately, not wait for a human to notice.
+3. **Source invalidated** — a cited source goes offline or is discredited. If a review site we relied on turns out to be astroturfed, every claim sourced from it needs to be re-evaluated.
+4. **User dispute filed** — someone challenges the claim. Human signals are evidence too.
+
+Kinetic proofs rather than static facts. The graph is alive. Claims earn the status "true," maintain it through continued verification, and lose it when the evidence no longer supports them.
 
 ---
 
-## So What Do You Call It?
+So what did we call it?
 
-This is where the framing pays off.
+We called it a Truth Graph. But we meant it the rigorous way.
 
-The argument above is right about the danger—calling something "truth" when you mean "assertion with vibes" is epistemically reckless. But truth was never a single thing. Decompose it across domains:
+The insight I came to — and the reason I'm writing through the internal debate instead of just landing on an answer — is that truth was never a single thing. In science, truth is a falsifiable theory that survives testing. In law, it's evidence beyond reasonable doubt. In journalism, it's multiple sources, verified. In medicine, it's peer-reviewed and replicated.
 
-- **In science:** falsifiable theory that survives testing
-- **In law:** evidence beyond reasonable doubt
-- **In journalism:** multiple sources, verified
-- **In medicine:** peer-reviewed, replicated findings
+Truth was always *truth-according-to-some-methodology*. The methodology was just implicit — which is how "truth" got sloppy. People started claiming it without showing their work.
 
-Truth was always *truth-according-to-some-methodology*. The methodology was just implicit—which is how "truth" got sloppy. People started claiming it without showing their work.
+If your graph stores assertions and calls them true without evidence, confidence, or decay — that's naive truth. Don't do it.
 
-If your graph stores assertions and calls them true—that's naive truth. Don't do it.
+If your graph stores evidence with confidence levels, decays stale claims, revises when contradicted, and responds to disputes — that's scientific truth. Provisional knowledge. True until proven otherwise.
 
-If your graph stores evidence with confidence levels, decays stale claims, and revises when contradicted—that's scientific truth. Provisional knowledge. *True until proven otherwise.*
+The receipts aren't separate from the truth. They're what *makes* it true. Proof gets absorbed into the noun.
 
-Call it a Truth Graph. But mean it the rigorous way.
+A Truth Graph isn't a database of facts. It's a machine for earning and revoking the status "true."
 
-Truth in 2026 isn't a claim of certainty. It's a status that evidence earns—and can lose. The graph is where assertions go to become true, stay true, or die when better data arrives.
+---
 
-The receipts aren't separate from the truth. They're what *makes* it true. Proof got absorbed into the noun.
+The naming matters more than it sounds like it should. It shapes how engineers think about the system, how users calibrate trust, and what happens when you're wrong.
 
-> **A Truth Graph isn't a database of facts. It's a machine for earning and revoking the status "true."**
+I pushed for "Proof Graph" because I was worried about the naive reading — engineers treating "truth" as permission to skip uncertainty. I came around to "Truth Graph" because the rigorous reading is actually *more demanding*, not less.
 
-This is how science has always worked. We're just making it explicit—because in a world of synthetic everything, implicit methodology isn't good enough anymore.
+Proof says "here's my evidence." Truth says "I've earned this status, and I'll lose it if the evidence changes."
+
+Truth carries a higher burden. It just needs a system that enforces it.
+
+We don't sell answers. We sell receipts. The receipts are what earn the right to call something true.
+
+In a world of synthetic everything — AI-generated content, AI-sourced signals, confidence scores stacked on confidence scores — implicit methodology isn't good enough anymore. If your system claims truth, it needs to show how truth gets earned, maintained, and revoked.
+
+That's the system. That's the graph.
