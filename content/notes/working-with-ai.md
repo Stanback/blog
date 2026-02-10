@@ -61,3 +61,19 @@ Not for information. AI synthesizes that on demand. The how-to post, the explain
 What's left is testimony. Someone with a name, a history, and real stakes saying: I believe this, and here's why.
 
 The value isn't in the information. It's in the fact that a specific person is willing to attach their credibility to it. It's situated — my view from *somewhere*, shaped by particular experiences, carrying actual risk if I'm wrong.
+
+The test isn't "did AI touch this?" It's "could AI have written this without me?"
+
+If yes, I haven't pushed far enough. Not louder, not more elaborate — more *owned*. More costly.
+
+---
+
+We're in a moment where using AI is either a secret or a flex. I don't find either posture useful.
+
+I use AI because it lets me work at the level I've spent a decade preparing for. I don't use it as a replacement for thinking.
+
+And the thing I keep coming back to is this: the tool changed what I spend my time on, but it didn't change what the work requires.
+
+The work still requires judgment, taste, and the willingness to be wrong in public.
+
+AI made the typing cheaper. It didn't make any of that easier.
