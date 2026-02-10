@@ -16,6 +16,14 @@ Both are performance. The difference is consciousness.
 
 What exhausts me isn't performance. It's *unconscious* performance — constructing an identity while mistaking the construction for bedrock. Acting, but forgetting you're on a stage.
 
+I'm not writing this from the other side. I'm mid-process.
+
+A few months ago, I got feedback at work that landed hard. It was about presence. Ownership. The way I show up — or don't. It wasn't easy to hear, and some of it was harsh. But it was right. I *had* been disappearing. I'd made it a survival strategy, and it was costing me.
+
+So I'm trying to change. But I don't have practice yet. Sometimes I overcorrect. Sometimes the new language comes out wrong.
+
+This is a dispatch from someone still in it.
+
 ## Disappearing
 
 My default mode is disappearance.
