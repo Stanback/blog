@@ -12,94 +12,52 @@ heroImage: /images/posts/working-with-ai-hero.png
 
 I use AI to build and write. Not sometimes—daily. Claude, ChatGPT, local models when they make sense. It's part of my workflow the same way Git or VS Code is.
 
-Some people find this concerning. Others assume it means the work isn't mine. Both reactions miss what's actually happening.
+I'm not going to walk you through my setup. You can find a thousand posts about using AI for scaffolding, refactoring, research, and drafting. They all say roughly the same thing, and they're all roughly correct.
 
-## How I Use It
+What I want to talk about is what surprised me.
 
-**For code:** scaffolding, refactoring, pattern recognition. AI is excellent at boilerplate and structure. I still write the architecture, make the judgment calls, and own the decisions. But if I need to convert a function to use async/await, or generate a type from a schema, AI does that faster than I can.
+---
 
-**For writing:** thought partner, not ghostwriter. I'll draft an idea, ask Claude to help me clarify it, then rewrite what it gives me. Sometimes I keep the structure. Sometimes I keep a sentence or two. Always, the thinking is mine.
+I spent a decade building judgment. Learning which abstractions hold up and which collapse under pressure. Developing a feel for when code is clean and when it's just tidy. Figuring out what to build, not just how to build it.
 
-**For research:** summarizing documentation, finding edge cases, explaining concepts I'm rusty on. It's a better search engine for technical context.
+For most of that decade, I couldn't fully use that judgment because I was also doing the typing. The boilerplate, the plumbing, the conversion of decisions into syntax. The strategic layer and the execution layer were fused, and execution ate most of the clock.
 
-## The Creative Director Shift
+AI split them apart.
 
-Here's the part that surprised me: **this is actually liberating.**
+I thought this would feel like a loss — less hands-on, less craft, more management. It feels like the opposite. It feels like being promoted to creative director of my own work.
 
-I used to think the shift from "maker" to "orchestrator" would feel like a loss. Less hands-on. Less craft. More... management.
+A director doesn't operate the camera, but the film is still theirs. They set the vision, make the calls, decide what works and what gets cut. The craft is in the judgment, not the execution.
 
-It doesn't feel that way. It feels like being promoted to creative director of your own work.
+I'm not writing less. I'm deciding more. What to build, what's good enough, what needs to be scrapped, what the thing is actually *about*. And I like that work more than I liked grinding through implementation details.
 
-You know how a director doesn't operate the camera, but the film is still *theirs*? They set the vision, make the calls, decide what works. The craft is in the judgment, not the execution.
+I spent a decade building the instincts to make those calls. Now I actually get to use them.
 
-That's what working with AI feels like now. I'm not writing less—I'm deciding more. What to build, what's good enough, what needs to be scrapped, what the thing is actually *about*. The taste layer. The strategy layer.
+Not everyone will feel this way. Some people love the execution itself — the satisfaction of a clean implementation, the meditative quality of code flowing from your hands. That's real. But for me, the shift has been a relief, not a compromise.
 
-And honestly? I like that work more than I liked grinding through boilerplate. I spent a decade building the judgment to make those calls. Now I actually get to use it, instead of burning cycles on implementation details.
+---
 
-Not everyone will feel this way. Some people love the execution—the craft of the code itself, the satisfaction of a clean implementation. That's valid. But for me, the shift to orchestration has been a relief, not a compromise.
+Here's what I've learned not to trust.
 
-## Where I Don't Trust It
+AI optimizes for coherence, not resonance. Left alone, it produces smooth, forgettable prose — the written equivalent of stock photography. Everything is correct and nothing is alive. You have to fight it constantly to keep your voice, your edges, the specific roughness that makes writing sound like a person instead of a summary.
 
-**Judgment.** AI doesn't know when something is a bad idea. It will confidently give you the wrong answer if that's what the pattern suggests.
+It doesn't know when something is a bad idea. It will confidently scaffold the wrong abstraction if that's what the pattern suggests. It has no taste — or rather, it has consensus taste, which is worse than no taste because it's harder to detect.
 
-**Taste.** It optimizes for coherence, not resonance. Left alone, it produces smooth, forgettable prose. You have to fight it to keep your voice.
+And it doesn't share consequences. If I ship code that breaks production, that's on me. If I publish an idea that's wrong, that's on me. The tool is irrelevant. The accountability isn't.
 
-**Responsibility.** If I ship code that breaks, that's on me. If I publish an idea that's wrong, that's on me. AI is a tool, not a collaborator who shares the consequences.
+Before anything goes out, I ask one question: would I defend this in a room full of people who know what they're talking about? If the answer is no, it doesn't ship. Doesn't matter who wrote which sentence.
 
-**Current information.** AI training data has a cutoff. If you're building in a fast-moving space, you can't rely on it to know what shipped last week.
+---
 
-## What Co-Authorship Means
+Some of my posts list an AI as co-author. That means the AI meaningfully shaped the output — proposed framings I wouldn't have reached alone, suggested structures that survived into the final piece. It doesn't mean I typed a prompt and hit publish.
 
-Some of my posts list an AI as a co-author. Here's what that means:
+The thinking is mine. I stand behind every word.
 
-- The structure of the piece came from conversation with the AI
-- It proposed framings I wouldn't have thought of alone
-- The final text is substantially shaped by its contributions
+I mark the contribution because I think hiding it would be worse than any discomfort the label creates.
 
-Here's what it doesn't mean:
+But the co-authorship question is less interesting than the one underneath it: if AI can generate infinite content, why write at all?
 
-- I typed a prompt and hit publish
-- The thinking is AI-generated
-- I don't stand behind every word
+Not for information. AI synthesizes that on demand. The how-to post, the explainer, the consensus overview — those are commodities now.
 
-If something is co-authored, it's because the AI meaningfully shaped the output—not just cleaned up my grammar. I mark it because I think transparency matters.
+What's left is testimony. Someone with a name, a history, and real stakes saying: I believe this, and here's why.
 
-## The Litmus Test
-
-Before I publish anything, I ask: "Would I defend this in a room full of people who know what they're talking about?"
-
-If the answer is no, it doesn't go out. Doesn't matter if AI wrote it, I wrote it, or we wrote it together.
-
-The tool is irrelevant. The accountability isn't.
-
-## What's Actually Valuable Now
-
-Here's the deeper question: if AI can generate infinite content, why write at all?
-
-Not for **information**. AI can synthesize that on demand. Regurgitating or aggregating existing knowledge is now table stakes.
-
-For **testimony**. Someone with a name, stakes, and history saying "I believe this, and here's why."
-
-What AI commoditizes:
-- Information synthesis
-- How-to content  
-- Basic analysis
-- Consensus views
-
-What a blog still provides:
-- **Situated perspective** — my view from *somewhere*, not generic insight
-- **Stakes** — real consequences if I'm wrong
-- **First-person experience** — "I tried this, here's what happened"
-- **Provocation** — positions AI won't take
-
-The litmus test isn't "did AI touch this?" It's "could AI have generated this given the same prompt?" If yes, I haven't pushed far enough. Not louder—more *owned*, more *situated*, more *costly*.
-
-Using AI doesn't undermine that. It just means I have to be clearer about what I'm actually adding.
-
-## Why This Matters
-
-We're in a weird moment where using AI is either a secret or a flex. Neither is useful.
-
-I use AI because it makes me more effective. I don't use it as a replacement for thinking. And I don't pretend I'm doing this alone when the tools are doing real work.
-
-That's the deal. If you think that undermines the work, I get it. But I think hiding it would be worse.
+The value isn't in the information. It's in the fact that a specific person is willing to attach their credibility to it. It's situated — my view from *somewhere*, shaped by particular experiences, carrying actual risk if I'm wrong.
