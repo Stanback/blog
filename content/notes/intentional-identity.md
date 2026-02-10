@@ -11,7 +11,7 @@ tags:
   - parenting
 ---
 
-In 1989, Stephen Covey published *The 7 Habits of Highly Effective People*. It sold 40 million copies and became one of those books that people reference without having read. I'm one of those people.
+In 1989, Stephen Covey published *The 7 Habits of Highly Effective People*. It sold 40 million copies and became one of those books that people reference without having read. I was one of those people until recently.
 
 The seven habits are fine. Be proactive. Put first things first. Sharpen the saw. They live on posters in dentist offices for a reason — they're true in that sturdy, obvious way that makes you nod without changing anything.
 
