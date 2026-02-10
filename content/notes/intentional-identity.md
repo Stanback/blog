@@ -114,6 +114,16 @@ But we can get more specific.
 
 These aren't meant to induce guilt. They're diagnostic tools. A failing test isn't a moral failure — it's information. It tells you where intention and action have diverged, so you can recalibrate.
 
+And here's the thing about tests: sometimes they're flaky.
+
+In software, a flaky test is one that fails intermittently — not because the code is broken, but because the conditions weren't quite right. You were tired. The environment was off. Something external interfered. You run it again later and it passes.
+
+You're allowed to have flaky tests. You're allowed to have days where you're contracted instead of expansive. Where you're not the most generous person in the room. Where you don't pass the Tuesday Night Test because you just needed to stare at a wall.
+
+The goal isn't a perfect pass rate. The goal is noticing. Catching the pattern over time. Distinguishing between "I failed this test once because I was exhausted" and "I've been failing this test for six months and something needs to change."
+
+Self-compassion isn't the absence of standards. It's the wisdom to know when a failure is signal and when it's noise.
+
 ## The Toddler Test
 
 I have a three-year-old daughter.
