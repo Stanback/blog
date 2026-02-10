@@ -14,6 +14,8 @@ Before that: Salesforce tools, sustainability SaaS, drone photography (DSLR on a
 
 This blog is where I think out loud about the things I care about: building software, design, photography, parenting, AI, and the ongoing project of making sense of a world that keeps changing faster than I can keep up.
 
+**If you only read one thing:** Start with [Why Everyone Should Have a SOUL.md](/posts/why-everyone-needs-soul-md/) — it's the closest thing to a thesis. If you're into personal cognition, browse the [Notes](/notes/). If you're into technical systems, start with [Writing](/posts/).
+
 These ideas come from building systems where mistakes were expensive and ambiguity was unavoidable. Not theory—experience. Not credentials—judgment earned through getting it wrong enough times to recognize the patterns.
 
 ## A Note on Format
@@ -76,7 +78,7 @@ This isn't a resume. It's a statement of craft philosophy.
 
 ### What I'm Good At
 
-**Building consumer-facing products.** I've spent over a decade shipping things people actually use. I know what it feels like when something works—and when it almost works, which is worse.
+**Building end-to-end platforms.** I spent eleven years building [SimplyCodes](https://simplycodes.com) from inception to millions of monthly users — not just the interface, but the crowdsourcing systems, event pipelines, ML classifiers, infrastructure migrations, and the ops layer underneath all of it. I know what it feels like when something works at scale — and when it almost works, which is worse.
 
 **Bridging technical and human concerns.** I care about the code *and* the person using it. I think in systems, but I communicate in stories. UX isn't a phase of the project; it's a lens.
 
@@ -135,4 +137,4 @@ Also: how to explain complex technical ideas to my kids without lying or oversim
 
 [LinkedIn](https://www.linkedin.com/in/bstanback/) · [X](https://x.com/Stanback)
 
-DMs open. I read everything.
+DMs open. If you send a note, I'll read it — replies may be slow.

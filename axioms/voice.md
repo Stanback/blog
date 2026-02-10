@@ -77,6 +77,25 @@ Example:
 
 This positions voice without performing expertise.
 
+### Receipts Over Proclamations
+
+Don't announce authority — embed it. The goal is to bake proof of experience into individual articles rather than proclaiming credentials in one place.
+
+**The `preface` frontmatter field** is designed for this. Use it to ground a post in concrete experience before the essay begins:
+
+```yaml
+preface: "This comes from building event pipelines that process 100M+ events/day at SimplyCodes."
+```
+
+**In-article asides** work too — a one-line mention of real scale, a real failure, a real system. Just enough to establish standing, then move on:
+
+> "I ran into this when we migrated 11 years of production data from AWS to GCP — zero downtime, which meant zero margin for the kind of mistake I'm about to describe."
+
+The receipts aren't the point of the post. They're the reason you earned the right to write it.
+
+**Not this:** A "Selected Work" section on the about page.
+**This:** Every post carries its own proof of standing, woven into the narrative.
+
 ## Impact Over Credentials
 
 Don't cite titles, team sizes, or years of experience. Cite what changed. What exists now that wouldn't without you?
