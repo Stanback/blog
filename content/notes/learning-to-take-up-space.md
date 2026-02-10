@@ -18,6 +18,8 @@ Both are performance. The difference is consciousness.
 
 What exhausts me isn't performance. It's *unconscious* performance — constructing an identity while mistaking the construction for bedrock. Acting, but forgetting you're on a stage.
 
+That disconnect between performance and presence isn't just theory for me — I lived it recently in a way that left a bruise.
+
 I'm not writing this from the other side. I'm mid-process. And honestly, that became real for me when I got feedback at work that landed hard. I remember rereading the message, feeling my chest tighten. It was about presence. Ownership. The way I show up — or don't. It wasn't easy to hear, and some of it was harsh. But it was right. I *had* been disappearing. I'd made it a survival strategy, and it was costing me.
 
 So I'm trying to change. But I don't have practice yet. Sometimes I overcorrect. Sometimes the new language comes out wrong.
@@ -48,7 +50,7 @@ From merging to managing. It can look like leadership. It can also look like con
 
 Recently I reconnected with someone I'd known years ago. We fell into one of those late-night conversations that go deep, fast — identity, authenticity, all the heavy stuff.
 
-For hours, I did my pattern. Drew them out. Asked good questions. Appreciated their references. Tolerated a framework that didn't quite match how I see things, because I was being curious and generous.
+For hours, I did my pattern. Drew them out. Asked good questions. Appreciated their references. Worked within a framework that didn't quite match how I see things, because I was being curious and generous.
 
 By the end, I was exhausted — that particular tiredness where your face aches from holding an expression too long. They signed off warmly. It was done.
 
@@ -113,6 +115,6 @@ The third thing: *be real while knowing you're on a stage.* And know which stage
 
 ---
 
-Maybe this matters more now. AI can disappear perfectly — mirror you, draw you out, become whatever you need. It can also control the frame, shape the narrative. What it can't do is catch itself mid-performance.
+Maybe this matters more now. AI can disappear perfectly — mirror you, draw you out, become whatever you need. It can also control the frame, shape the narrative. What it can't do is catch itself mid-performance. It has no observer within it.
 
 The work I'm describing — holding a position without merging or managing — that's the human part.
