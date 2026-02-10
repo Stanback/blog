@@ -144,6 +144,8 @@ These tests are uncomfortable because they surface gaps. The gap between the par
 
 But that's the point. The funeral test, the `SOUL.md`, the company Codex — they're all the same move: *articulate who you want to be so clearly that you can check whether you're becoming that person*.
 
+This only works if you accept there's something to construct. You can't close the gap between who you are and who you want to be if you've declared the gap illusory. The people who resist this work aren't usually rejecting effort — they're rejecting the premise that they're performing at all.
+
 ## Intentional Identity
 
 We live in an age of inferred identity.
