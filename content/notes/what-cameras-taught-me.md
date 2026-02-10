@@ -78,15 +78,17 @@ The mistake is staying in divergence mode forever. Accumulating options without 
 
 ## The Software Parallel
 
-I've been building software for twenty years. The same arc plays out.
+I've been building software for twenty years. The same arc played out — and I can see it clearly in the tools I've reached for.
 
-Early in my career, I tried everything. Languages, frameworks, paradigms. Perl, PHP, Python, Ruby. jQuery, Backbone, Angular, React. Each one taught me something. The exploration wasn't wasted — it's how I developed taste.
+Frontend: static sites → jQuery → ExtJS/Sencha → Ember → React → Vue → SolidJS → and now… back to static sites. Backend: Perl → PHP → Express → NestJS → Hono/Bun.
 
-But I've watched teams get stuck in permanent exploration. Evaluating seventeen state management libraries. Debating build tools for months. The fear of choosing wrong becomes a way of not choosing at all. They never ship. They just *prepare* to ship.
+If you squint, both arcs tell the same story as the gear shelf. Scrappy simplicity, then complexity accumulation — each framework solving real problems but also adding ceremony, adding choices, adding weight — then a return to simplicity. But a different simplicity. Not naive. Earned.
 
-The best engineers I know converge fast. They pick tools, learn their limits, and work within them. They're not afraid to be wrong — they know they'll learn more from building than from deciding.
+I remember the year I was evaluating frontend frameworks. I had a side project I wanted to build. I spent three months reading docs, running benchmarks, comparing bundle sizes, arguing with people on Twitter about reactivity models. I never built the project. I was doing photography-shelf logistics with JavaScript: standing in front of the options, paralyzed by the fear of choosing wrong.
 
-A 35mm lens doesn't limit what you can photograph. It shapes how you see. A tech stack works the same way. The constraint isn't a prison. It's a frame.
+The engineers I admire most converge fast. They pick tools, learn their limits, and work within them. They're not afraid to be wrong because they know they'll learn more from building than from deciding. A 35mm lens doesn't limit what you can photograph. It shapes how you see. A tech stack works the same way.
+
+I know what React's reconciler is doing. I know what NestJS decorators are for. And now I can choose Hono or plain HTML *knowing what I'm giving up* and deciding I don't need it. The constraint isn't a prison. It's a frame.
 
 ## The Life Parallel
 
@@ -97,10 +99,6 @@ We're told to keep our options open. Explore. Don't commit too early. And that's
 But there's a trap. Optionality feels like freedom, but at some point it becomes its own prison. You can spend your whole life exploring, never building. Collecting lenses, never taking photos. Learning frameworks, never shipping software. Dating, never committing. Researching, never writing.
 
 The divergence is necessary. The convergence is where life happens.
-
-I think about this with my daughter. She's three. Her whole world is divergence right now — trying everything, seeing what sticks. That's exactly right for her age. But someday she'll need to choose. Not because the other paths are bad, but because choosing is how you go deep. It's how you build something that matters.
-
-The exploration shows you what's possible. The commitment shows you who you are.
 
 ## What Cameras Taught Me
 
@@ -114,7 +112,7 @@ The exploration shows you what's possible. The commitment shows you who you are.
 
 ## The Kit I Actually Use Now
 
-After all that — the lenses, the lights, the stands, the gimbals — here's what I *mostly* reach for:
+After all that — the lenses, the lights, the stands, the gimbals — here's what I mostly reach for:
 
 - **iPhone.** For 80% of what I shoot. Always with me. Good enough.
 - **Canon EOS R5.** Still a Canon loyalist after all these years.
@@ -125,6 +123,10 @@ After all that — the lenses, the lights, the stands, the gimbals — here's wh
 Okay, I have more than that. I'm still figuring out how to let go. The 70-200 is still in the closet. The strobes are "just in case." Old habits.
 
 But I'm getting there. I take more photos now than I did at peak gear accumulation. And I enjoy it again — mostly because I stopped optimizing and started shooting.
+
+I think about this with my daughter sometimes. She's three. Her whole world is divergence right now — trying everything, seeing what sticks. That's exactly right for her age. But someday she'll need to choose. Not because the other paths are bad, but because choosing is how you go deep.
+
+The exploration shows you what's possible. The commitment shows you who you are.
 
 ---
 
