@@ -37,7 +37,6 @@ The blog's value isn't the information. It's proof that Bri Stanback thought it 
 ## Do
 
 - Use first person
-- Admit uncertainty ("I'm not sure", "This might be wrong")
 - Share failures, not just wins
 - Include code when relevant (but explain it)
 - Reference specific tools, versions, dates
@@ -48,18 +47,18 @@ The blog's value isn't the information. It's proof that Bri Stanback thought it 
 
 > AI is good at clarity. Humans are legible through *cost*.
 
-For every essay, include at least one of:
+Cost signals are what make writing feel lived-in rather than generated. They're not a checklist — they're the texture that emerges when you write from experience instead of about it.
 
 | Signal | Example |
 |--------|---------|
 | **A changed belief** | "I used to think X. I was wrong in a quiet, expensive way." |
 | **A misstep** | "This broke in production on a Tuesday." |
-| **A moment of doubt** | "I'm not sure this is right, but I'm publishing anyway." |
 | **A concrete scene** | Time, place, tension — not abstraction |
+| **Embodied detail** | The specific gear, the specific Slack message, the specific feeling |
 
-One sentence is enough. Not every post needs all four.
+**The test isn't "did I include a cost signal?" — it's "could someone else have written this?"** If the answer is yes, the post needs more of *you*, not more hedging.
 
-**Why this matters:** The slightly-too-clean voice invites "AI adjacency" suspicion. Cost signals are anti-slop markers that build long-term trust.
+**Anti-pattern:** Announcing doubt ("I'm still figuring this out") is not the same as dramatizing it. The gear-shelf paralysis in *What Cameras Taught Me* is doubt made visible through scene. "I'm not sure about this yet" is doubt announced from a safe distance. Prefer the first.
 
 ## Situated Authority
 
@@ -119,11 +118,10 @@ The writing gets sharper when you **own the claim** rather than describe it from
 These complement owner-mode. Use when they fit, skip when they don't.
 
 ### Invitational uncertainty
-When genuinely uncertain, own the uncertainty *invitingly*:
-- "I'm not sure yet, but here's what I'm noticing..."
-- "What if the real question is..."
+When genuinely uncertain, show it through the *material* — the thing you tried that didn't work, the question you can't resolve, the two options you're torn between. Don't announce uncertainty; put the reader inside it.
 
-This isn't weak hedging ("it seems like..."). You still own it — you're just making room for the reader to think alongside you.
+- ✗ "I'm not sure yet, but here's what I'm noticing..."
+- ✓ Describe the two paths and why neither feels right
 
 ### Tag questions & direct address
 Occasionally, invite response:
@@ -167,6 +165,8 @@ The strongest posts follow this implicit pattern:
 
 Make this explicit mentally, not visually.
 
+**Watch for structural tics.** The 2×2 grid, the comparison table, the diverge/converge arc — these are good moves, but they become predictable when every post uses them. Not every insight needs a quadrant. Sometimes the most honest structure is narrative: this happened, then this, and I'm not sure what it means yet.
+
 ## Craft Principles (Elements of Style)
 
 > "Vigorous writing is concise." — Strunk & White
@@ -200,6 +200,9 @@ The quality emerges from patterns that resolve forces. It can't be faked by foll
 - Be cynical for the sake of it
 - Use "we" when you mean "I"
 - Add filler phrases ("It's worth noting that...")
+- Narrate your own structure ("Let me walk through...", "I want to walk through...")
+- Use "I'm still figuring this out" as a reflexive closer — if you're genuinely uncertain, show what you're torn between
+- Report feelings from a distance ("I've felt this for a year") — put the reader in the moment instead
 
 ## Microcopy Guidelines
 
