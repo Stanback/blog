@@ -36,7 +36,7 @@ I didn't know yet how badly that practice could misfire.
 
 ---
 
-A few weeks ago I reconnected with someone I'd known years ago. We fell into one of those conversations that go deep quickly — identity, authenticity, the heavy stuff.
+A few days ago I reconnected with someone I'd known years ago. We fell into one of those conversations that go deep quickly — identity, authenticity, the heavy stuff.
 
 For a while I did my pattern. Drew them out. Asked good questions. Worked within a framework that didn't quite match how I see things, because I was being curious, being open.
 
