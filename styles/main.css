@@ -785,9 +785,9 @@ main > .post-hero {
 	font-family: inherit;
 	font-size: inherit;
 	font-style: inherit;
-	background: none;
-	padding: 0;
-	color: var(--color-accent-200);
+	background: color-mix(in oklch, var(--color-accent-100) 40%, var(--color-bg-main));
+	padding: 0.05em 0.2em;
+	border-radius: var(--radius-sm);
 }
 
 .featured-card:hover .featured-card-title {
@@ -855,9 +855,9 @@ main > .post-hero {
 .post-list-compact .post-desc code {
 	font-family: inherit;
 	font-size: inherit;
-	background: none;
-	padding: 0;
-	color: var(--color-accent-200);
+	background: color-mix(in oklch, var(--color-accent-100) 40%, var(--color-bg-main));
+	padding: 0.05em 0.2em;
+	border-radius: var(--radius-sm);
 }
 
 .post-list-compact .post-desc {
@@ -919,9 +919,9 @@ main > .post-hero {
 .note-desc code {
 	font-family: inherit;
 	font-size: inherit;
-	background: none;
-	padding: 0;
-	color: var(--color-accent-200);
+	background: color-mix(in oklch, var(--color-accent-100) 40%, var(--color-bg-main));
+	padding: 0.05em 0.2em;
+	border-radius: var(--radius-sm);
 }
 
 .note-link:hover .note-title {
@@ -1453,9 +1453,9 @@ main > .post-hero {
 .archive-desc code {
 	font-family: inherit;
 	font-size: inherit;
-	background: none;
-	padding: 0;
-	color: var(--color-accent-200);
+	background: color-mix(in oklch, var(--color-accent-100) 40%, var(--color-bg-main));
+	padding: 0.05em 0.2em;
+	border-radius: var(--radius-sm);
 }
 
 .archive-link:hover .archive-title {
@@ -2255,7 +2255,7 @@ article.skills-page h1 {
 	border-radius: var(--radius-sm);
 }
 
-/* Code in headings: keep heading font, subtle distinction */
+/* Code in headings: keep heading font, match body code styling */
 .prose h1 code,
 .prose h2 code,
 .prose h3 code,
@@ -2263,9 +2263,9 @@ article.skills-page h1 {
 	font-family: inherit;
 	font-size: inherit;
 	font-style: normal;
-	background: none;
-	padding: 0;
-	color: var(--color-accent-200);
+	background: color-mix(in oklch, var(--color-accent-100) 40%, var(--color-bg-main));
+	padding: 0.05em 0.2em;
+	border-radius: var(--radius-sm);
 }
 
 .prose pre {
@@ -3319,9 +3319,9 @@ article.skills-page h1 {
 .related-post-desc code {
 	font-family: inherit;
 	font-size: inherit;
-	background: none;
-	padding: 0;
-	color: var(--color-accent-200);
+	background: color-mix(in oklch, var(--color-accent-100) 40%, var(--color-bg-main));
+	padding: 0.05em 0.2em;
+	border-radius: var(--radius-sm);
 }
 
 .related-post-link:hover .related-post-title {
