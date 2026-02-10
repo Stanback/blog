@@ -14,218 +14,78 @@ tags:
 
 *Applying the three-layer model from [[Code Owns Truth]] to design: what happens when constraints replace mockups.*
 
-## The Rupture
+---
 
-Design in 2026 is still running on print-era physics. The fundamental assumptions:
+Design has been running on print-era assumptions. The designer produces a static layout. A developer manually translates it into code. The handoff takes five to ten days. The designer's value is measured by speed in Figma — how fast they can push pixels into a mockup that someone else will rebuild from scratch.
 
-1. **The layout is the constant.** Designers produce static mockups that define pixel-perfect UIs.
-2. **The human is the compiler.** Developers manually translate visual artifacts into code.
-3. **The handoff is the bottleneck.** Design → Engineering is a one-way process with 5-10 day latency.
-4. **Visual craft is the moat.** A designer's value is measured by their speed in Figma.
+AI broke this model. Not slowly, not partially — the economics flipped. Tools like v0.dev, Lovable, Cursor, and Figma Make can generate "good enough" visual design in seconds. The mockup is no longer scarce. The handoff is no longer necessary. The pixel-pushing throughput that defined a designer's value is now the cheapest part of the stack.
 
-This model is existentially broken. Not failing—*broken*. Here's why:
+This doesn't mean designers are obsolete. The best ones I've worked with have already adapted — they use generative tools to explore more options faster, then apply judgment to curate. More creativity, not less.
 
-**AI can now generate "good enough" visual design in seconds.** Tools like v0.dev, Lovable, Cursor, and Figma Make have commoditized the artifact. The mockup is no longer scarce. The handoff is no longer necessary. The pixel-pushing throughput that defined a designer's value? Machines do it faster.
+But the role is changing. The question isn't whether AI replaces designers. It's what design *becomes* when the artifact is no longer the bottleneck.
 
-So what's left?
+Figma's own 2025 AI Report captures the tension: developers use AI for core work at nearly double the rate designers do. Code generation works. Design generation is catching up but isn't reliable yet — 78% of practitioners say AI enhances efficiency, but only 32% say they can trust the output.
 
-**A caveat before we go further:** This isn't the whole story. Figma's Code Connect, Dev Mode, and Make are evolving fast. The generated code is still "guidance, not production" — but the gap is closing. And not every designer is running from this shift. At Adobe MAX 2024, attendees complained the conference felt like an "AI conference, not a design conference." But plenty of designers have embraced these tools as *augmentation*, not replacement. The best ones I've worked with use AI to explore more options faster, then apply judgment to curate. More creativity, not less. The real question isn't whether AI replaces designers — it's what design *becomes* when the artifact is no longer the bottleneck.
-
-[Figma's 2025 AI Report](https://www.figma.com/reports/ai-2025/) shows the tension clearly: 85% of designers and developers say learning to work with AI is essential for their future. But there's a gap — 82% of developers are satisfied with AI tools, while only 69% of designers feel the same. The reason? Code generation *works*. 59% of developers use AI for core work like generating code. Only 31% of designers use it for core design work. Developers found immediate utility; designers are still figuring out where these tools fit. And 78% say AI enhances efficiency — but only 32% say they can rely on the output. The quality gap is real, even as adoption deepens.
+That gap is where the new discipline lives.
 
 ---
 
-## The New Physics
+In [[Code Owns Truth]] I proposed a three-layer model: constraints bound the mutation space, prompts express intent, code is the source of truth. Design is where this model gets concrete.
 
-Design in the agentic economy is not artifact creation. It's **constraint architecture**.
+The **prompt layer** is how humans talk to machines. "Make a card with a header and call-to-action." That's useful, but prompts alone produce unacceptable variance. Every generation is different. Some are good, some are garbage, and there's no systematic way to tell the machine what "good" means.
 
-The designer's role inverts:
-- **FROM:** Pixel-pushing author of static layouts
-- **TO:** Architect of constraint systems that govern generative UI
+The **constraint layer** is the designer's new job. Not drawing the card — defining what a card *can be*. What's required, what's optional, what's forbidden. The token hierarchies, the spacing rules, the typography scales, the allowable states. The physics that makes prompts reliable.
 
-The new deliverable isn't a Figma file. It's a set of rules that tell AI what's *allowed* — and more importantly, what isn't.
+The **code layer** is what ships. Generated within constraints, validated against them, versioned and testable. No ambiguity.
 
----
-
-## The Three-Layer Model
-
-```
-┌─────────────────────────────────────┐
-│  CONSTRAINTS (Design Physics)       │  ← Bounds the mutation space
-├─────────────────────────────────────┤
-│  PROMPTS (Mutation Layer)           │  ← Expresses intent, inherently fuzzy
-├─────────────────────────────────────┤
-│  CODE (Source of Truth)             │  ← Deterministic, versioned, testable
-└─────────────────────────────────────┘
-```
-
-**Code owns truth.** The generated component is what ships. It's versioned, testable, deterministic. No ambiguity.
-
-**Prompts express intent.** "Make a card with a header and call-to-action" is how humans talk to machines. But prompts alone produce unacceptable variance.
-
-**Constraints bound the variance.** This is the designer's new job. Not drawing the card — defining what a card *can be*. Token hierarchies. Spacing rules. Typography scales. Allowable states. The physics that makes prompts reliable.
-
-The pattern repeats everywhere:
-- **SQL:** Schema (constraints) → Queries (prompts) → Tables (truth)
-- **Git:** Branch policies (constraints) → Commits (prompts) → Main (truth)
-- **GenDOS:** Design physics (constraints) → Generative prompts (mutations) → Component code (truth)
+The designer's role inverts. From pixel-pushing author of static layouts to architect of constraint systems that govern generative UI. The deliverable isn't a Figma file. It's a set of rules that tell AI what's allowed — and more importantly, what isn't.
 
 ---
 
-## What Constraints Look Like
+What does a constraint system actually look like? Let me walk through one example fully rather than gesture at several.
 
-### Token Architecture (3-Tier)
+A **design token architecture** has three tiers. Primitives are raw physical values — `--gray-900: #111111`, a specific hex code. You never use these directly in components. Semantics are context-aware mappings — `--surface-base` points to `--gray-900` in dark mode and `--white` in light mode. The meaning is stable even as the value changes. Components are scoped overrides — `--card-bg` points to `--surface-layer`, which is itself a semantic token.
 
-```
-Primitives → Semantics → Components
-```
+The designer's job is engineering this hierarchy. Not picking colors for individual mockups — building the system of relationships that makes every generated component automatically consistent. When the token architecture is right, you can change your entire color palette by editing primitives, and every component inherits the change correctly. When it's wrong, every generated component is a one-off that drifts from everything else.
 
-1. **Primitives:** Raw physical values. `--gray-900: #111111`. Never use directly.
-2. **Semantics:** Context-aware mappings. `--surface-base: var(--gray-900)` in dark mode, `var(--white)` in light mode.
-3. **Components:** Scoped overrides. `--card-bg: var(--surface-layer)`.
+On top of the token architecture, you define what I'm calling **generative grammars** — machine-readable schemas that specify the structure of allowable UI. A card, for example: header and body are required, image and footer and CTA are optional. The header can't exceed 60 characters. The CTA can only be primary, secondary, or ghost variant.
 
-The designer's job is engineering this hierarchy — not picking colors for individual mockups.
+The LLM can generate infinite variations of this card. But it can only generate *valid* cards. Invalid structures fail validation automatically.
 
-### Generative Grammars
+And then **variance budgets** — mathematical bounds on the output. Headline length between 40 and 80 characters. Tone constrained to formal, terse, or warm. Color values must come from semantic tokens, never hardcoded hex. Spacing must use scale values only.
 
-Machine-readable schemas that define allowable UI structures:
+If a generated component violates the budget, it fails. No human review needed for the mechanical checks.
 
-```yaml
-card:
-  required:
-    - header
-    - body
-  optional:
-    - image
-    - footer
-    - cta
-  constraints:
-    header.maxLength: 60
-    body.maxLength: 200
-    cta.variant: [primary, secondary, ghost]
-```
-
-The LLM can generate infinite variations of a card. But it can only generate *valid* cards.
-
-### Variance Budgets
-
-Mathematical bounds on acceptable output:
-
-- Headline length: 40-80 characters
-- Tone: `['formal', 'terse', 'warm']`
-- Color: semantic tokens only (no hardcoded hex)
-- Spacing: scale values only (`--space-4`, `--space-6`)
-
-If a generated component violates the budget, it fails validation. Automatically.
+The designer ships these three things — token architecture, generative grammars, variance budgets — instead of mockups. The constraints are the deliverable. The artifacts flow from them.
 
 ---
 
-## The Designer as Context Engineer
+This changes the workflow fundamentally.
 
-The designer doesn't draw anymore. They serialize strategic intent into machine-parseable constraints.
+The old process: PM writes requirements, designer interprets into mockup, engineer interprets mockup into code. Two handoffs, each losing roughly 40% of the original intent. Five to ten days per iteration. By the time you see working code, the requirements have often changed.
 
-**Old workflow:**
-1. PM writes requirements
-2. Designer interprets → mockup
-3. Engineer interprets → code
-4. 40% intent loss per handoff
-5. 5-10 day latency per iteration
+The new process: strategy becomes design physics (the constraints), a prompt generates code within those constraints, validation checks the output against the rules, and you ship or reject. Minutes, not weeks. And because the constraints are explicit and machine-readable, there's no interpretation loss. The system either passes or it doesn't.
 
-**New workflow:**
-1. Strategy → Design Physics (constraints)
-2. Prompt → Generated code (within constraints)
-3. Validation → Ship or reject
-4. Minutes, not weeks
-
-The designer's moat isn't pixel-pushing speed. It's the *quality of constraints* — how well they compress strategic intent into rules that produce good outcomes at scale.
+This is what I mean by rapid generative prototyping. You're not designing screens. You're designing the rules that generate screens — and then generating ten or twenty variations in the time it used to take to mockup one. The exploration space explodes. The curation becomes the craft.
 
 ---
 
-## Why "Design Physics"?
+I want to be honest about where this thinking is.
 
-Physics isn't a metaphor. It's literal.
+I believe the framework is right. I've started working this way on smaller projects and the speed difference is real — constraints plus generation plus validation is dramatically faster than the mockup-to-handoff pipeline.
 
-In the physical world, you don't draw every atom. You define the laws — gravity, electromagnetism, thermodynamics — and the universe instantiates consistent matter from those laws.
+But I haven't battle-tested it at scale. I don't know yet where it breaks, where the constraints need to be tighter than I expect, where human review can't be automated away.
 
-You don't draw every component. You define the constraints — token hierarchies, grammars, variance budgets — and the system generates consistent UI from those constraints.
+What I do know: "constraints are crystallized taste" is the sentence I keep coming back to. Constraints don't write themselves. Someone has to decide what matters, what's non-negotiable, what variance is acceptable, where the system should be tight and where it should be loose. That's judgment. That's strategy. That's the thing AI can't do yet — and it's the thing most design education doesn't teach, because the old model valued execution speed over constraint quality.
 
-The designer becomes a physicist. Not painting the universe. Writing its rules.
+The post-Figma designer might not open Figma at all. They write design physics before anyone touches a screen. They define grammars that make bad designs impossible. They tune variance budgets until generation is reliable. They review outputs, not mockups.
 
----
-
-## The Deliverables
-
-What does a designer ship in this world?
-
-1. **Design Physics** — Axioms. Immutable rules. Token architecture.
-2. **Generative Grammars** — Schemas that constrain structure.
-3. **Variance Budgets** — Mathematical bounds on output.
-4. **Containment Protocols** — What AI can do autonomously vs. what requires human approval.
-
-Not Figma files. *Constraint systems.*
+Figma becomes optional — a polish tool, a legacy bridge for stakeholders who need to see the design. But not the source of truth. The source of truth is the constraint system. The artifacts flow from it.
 
 ---
 
-## The Hard Question
+I'll keep updating this as I learn more. The framework is a stake in the ground, not a finished building.
 
-If AI generates the artifacts and constraints bound the generation — what's the human doing?
+But the direction feels clear: design is moving from artifact creation to constraint architecture. The designers who thrive will be the ones who realize their value was never in the pixels. It was in the judgment that made the pixels right.
 
-**Judgment.** 
-
-Constraints don't write themselves. Someone has to decide:
-- What matters
-- What's non-negotiable
-- What variance is acceptable
-- Where the system should be tight vs. loose
-
-That's taste. That's strategy. That's the thing AI can't do yet.
-
-The designer's job is encoding their judgment into durable, machine-executable form. Constraints are crystallized taste.
-
----
-
-## The New Workflow
-
-Rapid Generative Prototyping flips the entire process:
-
-1. **Start with constraints** — token architecture, grammars, variance budgets
-2. **Prompt for variations** — generate 10-20 options in minutes, not days
-3. **Score against physics** — automated validation, not subjective review
-4. **Ship the code** — the generated component *is* the deliverable
-
-No Figma handoff. No pixel-pushing. No 5-day latency.
-
-Strategy → Constraints → Generation → Production. In hours.
-
----
-
-## The Post-Figma Designer
-
-Figma was the pinnacle of the old physics — the fastest way to push pixels. But speed in a deprecated paradigm isn't a moat.
-
-The post-Figma designer doesn't open Figma first. They might not open it at all. Instead:
-
-- They write design physics before anyone touches a screen
-- They define grammars that make bad designs impossible
-- They tune variance budgets until generation is reliable
-- They review outputs, not mockups
-
-Figma becomes optional. A polish tool, maybe. A legacy bridge for stakeholders who need to "see the design." But not the source of truth.
-
-**The source of truth is the constraint system.** The artifacts flow from it.
-
----
-
-## Who This Is For
-
-This isn't for designers who want to keep pixel-pushing. Those jobs are shrinking.
-
-This is for designers who want to become **context engineers** — people who understand that their value isn't in the artifact, but in the constraint system that produces artifacts at scale.
-
-It's for the people who'd rather write the laws of physics than draw every atom.
-
----
-
-*What is "design" when the artifact is no longer the deliverable?*
-
-*It's the constraint architecture that makes good artifacts inevitable.*
+That judgment doesn't go away when AI generates the artifacts. It becomes the only thing that matters.
