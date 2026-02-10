@@ -18,7 +18,11 @@ tension: "The camera is a UI for reality. What does that mean for the UIs we bui
 
 ---
 
-In [[What Cameras Taught Me About Software (and Life)|Part 1]], I wrote about the gear arc — diverging through every lens and light modifier, then converging back to simplicity. But there's another layer to what cameras taught me. Not about the *tools*, but about the *interface itself*.
+I rented a Hasselblad 500C/M once — a medium format camera with a waist-level finder. You hold it at your chest and look *down* into a ground glass screen. The image is reversed left-to-right. I spent the first hour fighting it, trying to compose the way I normally do, and every time I moved the camera right the image went left. My brain couldn't reconcile.
+
+And then something shifted. I slowed down. The reversal forced me to actually *look* at the composition instead of just pointing the camera at things. I started noticing spatial relationships I'd been missing for years. The inconvenience wasn't a bug — it was the entire point. The interface was shaping how I saw.
+
+That afternoon rearranged something for me. In [[What Cameras Taught Me About Software (and Life)|Part 1]], I wrote about the gear arc — diverging through every lens and light modifier, then converging back to simplicity. But there's another layer to what cameras taught me. Not about the *tools*, but about the *interface itself*.
 
 A camera is a machine for seeing. More precisely: it's a **user interface for reality**. Every design decision — the viewfinder, the controls, the constraints — shapes not just what you capture, but how you perceive.
 

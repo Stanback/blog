@@ -14,22 +14,13 @@ tension: "The market is reacting to the wrong thing. This isn't about tools repl
 preface: "Software stocks just had their worst week since April. The market is probably overreacting. But the anxiety driving the selloff? That's been building for a year. AI is just forcing the conversation into the open."
 ---
 
-## The $285 Billion Question
+I was watching the ticker on Tuesday morning when Thomson Reuters dropped 15.8% in an hour. Then LegalZoom, nearly 20%. I kept refreshing, the way you do when something feels like it might matter. By noon, $285 billion had evaporated from software, financial services, and legal tech. They're calling it the "SaaSpocalypse."
 
-On Tuesday, Anthropic's Cowork plugins triggered a [$285 billion selloff](https://www.bloomberg.com/news/articles/2026-02-03/legal-software-stocks-plunge-as-anthropic-releases-new-ai-tool) across software, financial services, and legal tech. Thomson Reuters dropped 15.8%. LegalZoom fell nearly 20%. They're calling it the "SaaSpocalypse."
+The trigger was Anthropic's Cowork plugins — but the trigger isn't the interesting part. What caught me was the feeling in my chest while I watched. Relief that the conversation is finally public. Dread that it's real enough to price. The skills I spent a decade building are becoming... not worthless, but *different*. Cheaper. More abundant. The thing that made me valuable is now something I coordinate rather than do.
 
-Is it an overreaction? Probably.
+Is it an [overreaction](https://www.reuters.com/business/media-telecom/global-software-stocks-hit-by-anthropic-wake-up-call-ai-disruption-2026-02-04/)? Probably. When DeepSeek triggered a similar panic last year, Nvidia lost $600 billion in a day. A year later, the feared disruption never materialized. Markets overcorrect. Fear spreads faster than fundamentals.
 
-> "Perhaps this is an overreaction, but the threat is real and valuations must account for that."
-> — [Reuters](https://www.reuters.com/business/media-telecom/global-software-stocks-hit-by-anthropic-wake-up-call-ai-disruption-2026-02-04/)
-
-When DeepSeek triggered a similar panic last year, Nvidia lost $600 billion in a day. A year later, the feared disruption never materialized. Markets overcorrect. Fear spreads faster than fundamentals.
-
-But here's what's different this time: **the conversation is finally public.**
-
-The anxiety that builders have felt privately for a year—"wait, can AI actually do my job?"—is now being priced into the market. Wall Street is catching up to what anyone using Claude Code already knew: execution is getting cheaper. Fast.
-
-I've been watching that selloff ticker and feeling something I can't quite name. Relief that the conversation is out in the open. Dread that it's real enough to price. The skills I spent a decade building are becoming... not worthless, but *different*. Cheaper. More abundant. The thing that made me valuable is now something I coordinate rather than do.
+But here's what's different this time: **the conversation is finally public.** The anxiety that builders have felt privately for a year — "wait, can AI actually do my job?" — is now being priced into the market. Wall Street is catching up to what anyone using Claude Code already knew: execution is getting cheaper. Fast.
 
 > "In 2026, writing code is no longer the hard part. AI can generate features, refactor services, and accelerate delivery at scale. Speed is now expected, not a differentiator. What AI removed is friction, not responsibility."
 > — [Security Boulevard](https://securityboulevard.com/2026/01/why-senior-software-engineers-will-matter-more-in-2026-in-an-ai-first-world/)

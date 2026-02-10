@@ -10,9 +10,11 @@ tags:
 heroImage: /images/posts/memory-and-journals-hero.png
 ---
 
-AI agents have perfect memory within a conversation and total amnesia between them.
+I found a journal entry from 2019 last week. I'd written about a production outage at work — the event pipeline backed up, we lost six hours of data, and I described the specific sinking feeling of watching the monitoring dashboard turn red while being on a video call I couldn't leave. Reading it, the feeling came back immediately. Not the facts of the outage — I'd forgotten most of those — but the tension in my shoulders, the taste of cold coffee, the way I kept muting myself to swear.
 
-Within a context window, a transformer can attend to everything — every earlier message, every detail, every correction. It's better working memory than any human has ever had. Then the session ends. The context compresses or vanishes. All internal activations disappear. The agent wakes up next time with no idea you've ever spoken.
+The journal didn't preserve the event. It preserved the experience. And that's a different thing entirely.
+
+I've been thinking about this because AI agents have the opposite problem. Within a context window, a transformer can attend to everything — every earlier message, every detail, every correction. Better working memory than any human has ever had. Then the session ends. The context compresses or vanishes. The agent wakes up next time with no idea you've ever spoken.
 
 There's no gradual fade. No "I vaguely remember we discussed this." Just a cliff.
 

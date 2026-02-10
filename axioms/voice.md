@@ -60,6 +60,16 @@ Cost signals are what make writing feel lived-in rather than generated. They're 
 
 **Anti-pattern:** Announcing doubt ("I'm still figuring this out") is not the same as dramatizing it. The gear-shelf paralysis in *What Cameras Taught Me* is doubt made visible through scene. "I'm not sure about this yet" is doubt announced from a safe distance. Prefer the first.
 
+### Warmth is structural, not decorative
+
+When a post feels cold or impersonal, the instinct is to add softening language — hedges, relational phrases, warmer adjectives. That's decoration. It doesn't fix the problem.
+
+The actual fix is structural: the post is missing a scene, a receipt, or a named feeling. Warmth comes from the reader sensing a person behind the prose — someone who was *there*, who felt something, who has skin in the game. You don't get that by softening the sentences. You get it by grounding the claims in lived experience.
+
+The Design Physics tooltip opening is warm. Not because of gentle language — it's not gentle at all. It's warm because you can feel the person. The disorientation is real. The self-awareness is real. The reader trusts the analysis that follows because they watched you arrive at it.
+
+**When a draft reads cold, don't add softness. Add specificity.** A concrete scene in the first three paragraphs does more for warmth than any number of "I've found that..." qualifiers.
+
 ## Situated Authority
 
 Authority ≠ intensity. Earned authority > asserted authority.
@@ -132,6 +142,19 @@ The writing gets sharper when you **own the claim** rather than describe it from
 
 **Rule of thumb:** If a paragraph could be written by "a thoughtful person on the internet," push one sentence further until it could only be written by you. Not louder. Just more owned.
 
+### Owning ≠ decreeing
+
+Owner-mode without grounding reads as proclamation. The difference:
+
+- **Decreeing:** "Design is constraint specification." (Asserted from nowhere. Reads as authority performed, not earned.)
+- **Owning from experience:** "I caught myself adding a tooltip for a machine. That's when I realized: design is constraint specification." (Same claim, but situated. The reader sees *how you got there*.)
+
+Both are owner-mode. The second is owner-mode with standing. The claim lands harder because the scene earned it.
+
+When a post opens with bold declarations and no scene, it reads as someone issuing verdicts. When it opens with a moment and *arrives* at the declaration, it reads as someone who learned something. The verdict is the same — the path to it is what makes it yours.
+
+**The tell:** If your opening paragraphs could be a conference talk abstract, you've skipped the scene. Back up. What happened that made you think this?
+
 ## Never Shift Register
 
 The voice stays the same whether you're describing a feeling or a system. Don't go warm-and-personal for the intro, then switch to explainer-mode for the technical content, then back to personal for the closing. That register shift is what makes technical posts feel like a different blog from the personal ones.
@@ -193,6 +216,17 @@ The strongest posts follow this implicit pattern:
 4. **Implication** — What changes if this model is true
 
 Make this explicit mentally, not visually.
+
+### Scene-first rule
+
+The observation must be grounded in a **concrete scene** — not an abstract claim. Every post should arrive at its framework through a moment, not start with the framework and bolt a moment on afterward.
+
+- ✓ *Design Physics* opens with adding a tooltip for a machine, then the disorientation, then the quadrant framework crystallizes from that. The reader discovers the model alongside you.
+- ✗ Opening with "There are four quadrants of interface design" and then finding an anecdote to illustrate each one. That's a slide deck, not an essay.
+
+**The first three paragraphs should contain at least one of:** a specific moment, a concrete failure, a scene with time and place, or an embodied detail. If they don't, the post hasn't earned its framework yet — the reader has no reason to trust the model because they didn't watch it emerge.
+
+This isn't a warmth hack. It's the signature structure enforced: observation *first*, model *after*.
 
 ### Frameworks as devices
 

@@ -11,13 +11,11 @@ tags:
   - ai
 ---
 
-Browser automation breaks constantly. Selectors change, sites add Cloudflare challenges, responses take longer than expected.
+Last Tuesday at 2am, one of our browser automation agents hit a Cloudflare challenge on a site it had been scraping cleanly for weeks. The selector for the submit button had changed — the site redesigned overnight. The agent logged "selector failed," retried three times, and moved on. Standard behavior.
 
-The traditional fix is breadcrumbs: log what happened, wait for an alert, reconstruct context, diagnose, patch, deploy. Hours of feedback loop. That works when failures are rare and humans are cheap. Neither is true for AI-orchestrated systems running 24/7.
+When I looked at it the next morning, I had a log line and nothing else. No screenshot of what the page actually looked like. No DOM snapshot. No record of which selectors had already been tried. Just "selector failed" and a timestamp. To figure out what happened, I had to manually navigate to the site, inspect the page, cross-reference the old selectors, and guess at what had changed. The state I needed had already shifted — the page looked different again by Wednesday.
 
-We've been building toward a different pattern on a browser automation system for AI research. The architecture is live, not fully in production yet, but promising enough that I want to document the thinking.
-
-The deeper problem with breadcrumbs: they're incomplete. A log line says "selector failed" but doesn't include the DOM snapshot, the screenshot, the selectors already tried, or the recipe version. To diagnose, you need to reconstruct state from multiple sources — and by then, the state may have changed.
+That thirty-minute forensics session is what made the pattern click. The problem isn't that browser automation breaks constantly — selectors change, challenges appear, responses slow down. The problem is that our failure events are breadcrumbs: thin traces that force you to reconstruct context from multiple sources after the fact. That works when failures are rare and humans are cheap. Neither is true for AI-orchestrated systems running 24/7.
 
 ## Holographic Events
 

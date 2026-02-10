@@ -11,9 +11,15 @@ tags:
   - tools
 ---
 
-On my [About page](/about/), I published my `SOUL.md` and `SKILL.md` — standard identity files from the AI agent spec. A human using an agent identity format for a personal blog. Method acting for the agentic era.
+I sat down to write a standard About page and got stuck on the third sentence.
 
-What surprised me: the exercise of writing them was genuinely useful. Not as a gimmick — as a practice.
+"I build things for the internet" — fine, but that could be anyone. "I care about craft and clarity" — true, but so does every other engineer's bio. I kept writing sentences that were accurate and empty. They described me the way a resume does: from the outside, with the texture removed.
+
+Then I tried a different format. I borrowed the `SOUL.md` spec from AI agent frameworks — the file that tells an agent who it is, what it values, how it communicates. I wrote one for myself. Purpose, values, voice, relationship to the reader. And halfway through, I stopped typing and sat there, because I'd written something uncomfortably honest about why I build things — and I hadn't meant to.
+
+That's what I want to talk about. Not the format. The thing that happens when you use it.
+
+On my [About page](/about/), I published the result — a `SOUL.md` and `SKILL.md`. A human using an agent identity format for a personal blog. Method acting for the agentic era. What surprised me: the exercise of writing them was genuinely useful. Not as a gimmick — as a practice.
 
 ---
 

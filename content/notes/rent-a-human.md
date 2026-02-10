@@ -9,7 +9,9 @@ tags:
   - building
 ---
 
-[RentAHuman.ai](https://rentahuman.ai) launched this week. The pitch: "Robots need your body. AI can't touch grass. You can."
+I was scrolling through my feed at midnight when I hit a site that made me set my phone down and stare at the ceiling for a minute.
+
+[RentAHuman.ai](https://rentahuman.ai). The pitch: "Robots need your body. AI can't touch grass. You can."
 
 It's a marketplace where AI agents — not humans — are the employers. They book humans for physical tasks via MCP (Model Context Protocol) or REST API. Package pickups, meetings, document signing, recon, verification, photos, purchases. The "meatspace layer for AI."
 

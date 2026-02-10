@@ -25,17 +25,15 @@ tools:
   - "Claude"
 ---
 
-# Hello World
+I almost didn't make this.
 
-This is the first post on bristanback.com.
+Not because it's hard — the technology is trivial. Markdown in, HTML out. About 500 lines of TypeScript. No frameworks, no client-side JavaScript, no CMS. Just files, a build script, and Cloudflare Pages. I could have used Astro or Eleventy, but I wanted to understand every piece. The whole thing took a weekend.
 
-## What I Built
+The hard part was the other thing. The part where you decide you have something worth saying, out loud, with your name on it, when the internet already has plenty of opinions.
 
-A static blog. Markdown in, HTML out. No frameworks, no client-side JavaScript, no CMS. Just files, a build script, and Cloudflare Pages.
+I've been building software for twenty years and writing about it for zero. That gap isn't an accident. Writing code is safe — it compiles or it doesn't, it works or it breaks, the feedback is mechanical. Writing *ideas* is exposed. You can't hide behind functionality. The person is right there.
 
-The whole thing is about 500 lines of TypeScript. I could have used Astro or Eleventy or any of the hundred other static site generators, but I wanted to understand every piece. YAGNI in action: start with the minimum, add complexity only when it hurts.
-
-Here's a code example to test syntax highlighting:
+So this is the first post on bristanback.com. Here's a code example to make sure syntax highlighting works:
 
 ```typescript
 async function build(): Promise<void> {
@@ -47,25 +45,8 @@ async function build(): Promise<void> {
 }
 ```
 
-## What Surprised Me
+What surprised me: how little code it actually takes. Modern tooling (Bun, Tailwind, Shiki) does the heavy lifting. The hard part isn't the technology — it's deciding what to say and finding the discipline to say it.
 
-How little code it actually takes. Modern tooling (Bun, Tailwind, Shiki) does the heavy lifting. The hard part isn't the technology—it's deciding what to say and finding the discipline to say it.
+This is where I'll think out loud about building software, raising kids, making sense of a world that keeps changing faster than I can keep up. Not a portfolio. Not a brand play. Just thinking, with my name on it, because that's how I figure things out.
 
-Also: OKLCH colors are genuinely better than HSL. Perceptually uniform color ramps without the math headaches.
-
-## Open Questions
-
-- Will I actually write consistently?
-- Is anyone going to read this who isn't obligated to?
-- Should I add comments, or is linking to social media enough?
-- How do I balance technical depth with accessibility?
-
-## Why a Blog in 2026?
-
-Blogs are making a comeback. Not the Pinterest-era SEO blogs, and not the Tumblr-style text dumps. Something more personal, more honest, more grounded.
-
-I think the reason is simple: people are tired of algorithmic feeds and engagement-optimized content. They want to hear from real humans thinking out loud.
-
-That's what I'm trying to do here. Think out loud about building software, raising kids, making sense of a world that keeps changing faster than I can keep up.
-
-*What makes a personal blog worth reading in 2026?*
+Will I actually write consistently? Will anyone read this who isn't obligated to? I don't know. But the site exists now, and that's more than it was yesterday.
