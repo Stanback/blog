@@ -74,9 +74,7 @@ That's the whole argument in one sentence. If you can verify it, you can improve
 
 ---
 
-I'm still working out what this looks like in daily practice.
-
-The framework is new enough to me that I'm testing it more than demonstrating it. I don't have the clean war stories yet — the moment where strong constraints saved a project, or where weak ones let everything drift. Those will come. I'll write them up when they do.
+The framework is new enough that I'm testing it more than demonstrating it. The clean war stories will come — I'll write them up when they do.
 
 But I'll say what I believe so far: if you're building with AI and you're spending most of your energy on prompts, you're optimizing the wrong layer. The prompts are ephemeral. The constraints are what compound.
 

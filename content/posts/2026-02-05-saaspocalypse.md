@@ -38,7 +38,7 @@ This is the cope. And it's partially true. But "judgment still rests with humans
 
 ## The Existential Weight
 
-I've felt this for a year now. A low-grade anxiety that doesn't quite resolve.
+A low-grade anxiety that doesn't quite resolve.
 
 It's not fear of being replaced—not exactly. It's something weirder. The sense that the skills I spent a decade building are becoming... not worthless, but *different*. Cheaper. More abundant. The thing that made me valuable is now something I coordinate rather than do.
 
@@ -281,4 +281,4 @@ The existential crisis isn't about being replaced. It's about becoming someone n
 
 ---
 
-*I'm still figuring this out. If you're feeling the same weight, I'd like to hear how you're navigating it.*
+*If you're feeling the same weight, I'd like to hear how you're navigating it.*

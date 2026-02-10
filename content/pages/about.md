@@ -18,7 +18,7 @@ These ideas come from building systems where mistakes were expensive and ambigui
 
 ## A Note on Format
 
-What follows is my `SOUL.md` and `SKILL.md` — standard identity files for AI agents. Yes, I'm a human using the agent identity spec for my personal blog. Call it method acting for the agentic era.
+Below are my `SOUL.md` and `SKILL.md` — standard identity files for AI agents. Yes, I'm a human using the agent identity spec for my personal blog. Call it method acting for the agentic era.
 
 Or maybe I just think [everyone should have a documented soul](/posts/why-everyone-needs-soul-md/) and a clear statement of what they're good at.
 

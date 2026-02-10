@@ -13,7 +13,7 @@ tags:
 
 We're building a knowledge system at work — a graph that aggregates signals about products, codes, and claims. The naming question came up: do we call it a "Truth Graph"?
 
-I went back and forth on this. I want to walk through the debate because I think the reasoning matters more than the answer.
+I went back and forth on this. The reasoning matters more than the answer.
 
 ---
 

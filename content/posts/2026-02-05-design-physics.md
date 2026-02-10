@@ -26,7 +26,7 @@ When you account for AI agents as both creators and consumers of interfaces, you
 | **By Humans** | Traditional UX | Context Engineering      |
 | **By Agents** | Generative UI  | Agent-to-Agent Protocols |
 
-Each quadrant has different physics. I want to walk through what I think I know about each, which is uneven — I've spent years in the first quadrant and months in the others.
+Each quadrant has different physics. What I know is uneven — years in the first quadrant, months in the others.
 
 ---
 

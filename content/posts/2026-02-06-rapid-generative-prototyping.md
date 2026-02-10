@@ -42,7 +42,7 @@ The designer's role inverts. From pixel-pushing author of static layouts to arch
 
 ---
 
-What does a constraint system actually look like? Let me walk through one example fully rather than gesture at several.
+What does a constraint system actually look like?
 
 A **design token architecture** has three tiers. Primitives are raw physical values — `--gray-900: #111111`, a specific hex code. You never use these directly in components. Semantics are context-aware mappings — `--surface-base` points to `--gray-900` in dark mode and `--white` in light mode. The meaning is stable even as the value changes. Components are scoped overrides — `--card-bg` points to `--surface-layer`, which is itself a semantic token.
 
