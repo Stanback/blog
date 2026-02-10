@@ -465,7 +465,11 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
 		.filter((p) => !p.draft)
 		.sort((a, b) => b.date.getTime() - a.date.getTime());
 
-	// Build filmstrip
+	// Build filmstrip + arrow key navigation
+	const currentIndex = allPhotos.findIndex((p) => p.slug === photo.slug);
+	const prevPhoto = currentIndex < allPhotos.length - 1 ? allPhotos[currentIndex + 1] : null;
+	const nextPhoto = currentIndex > 0 ? allPhotos[currentIndex - 1] : null;
+
 	const filmstrip =
 		allPhotos.length > 1
 			? `
@@ -478,7 +482,14 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
           </a>`,
 					)
 					.join('')}
-      </nav>`
+      </nav>
+      <script>
+        document.addEventListener('keydown', function(e) {
+          if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+          ${prevPhoto ? `if (e.key === 'ArrowLeft') window.location.href = '${getUrl(prevPhoto)}';` : ''}
+          ${nextPhoto ? `if (e.key === 'ArrowRight') window.location.href = '${getUrl(nextPhoto)}';` : ''}
+        });
+      </script>`
 			: '';
 
 	const content = `
