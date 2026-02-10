@@ -8,6 +8,7 @@ draft: true
 tags:
   - identity
   - philosophy
+  - parenting
 ---
 
 There's a polarity in theatre between Stanislavski and Brecht. Stanislavski gave us method acting — the actor *becomes* the character until the performance feels like truth. Brecht rejected this. His "alienation effect" kept the seams visible: *I am showing you this person*, not *I have become this person*.
@@ -68,7 +69,7 @@ I apologized. Owned it fully — that I over-explain instead of just stating lim
 
 The apology was clean. No defensiveness, no demand for reconciliation.
 
-They didn't come back.
+They didn't come back. Some doors close even when you do the repair correctly.
 
 Sometimes you learn the lesson and lose the connection anyway. That's not failure. That's cost. Learning a new language means some conversations won't survive the learning.
 
@@ -83,6 +84,10 @@ So what's the integrated position?
 **The third thing** = strong enough to hold a position, porous enough to actually meet someone.
 
 The test is simple: *Did I say what I actually thought? And did I leave room for them to change my mind?*
+
+This shows up in parenting too. With my daughter, I'm navigating the same balance — not passive (letting her run me over because I'm too tired to hold the line), not authoritarian (dominating the frame, demanding compliance). What I'm reaching for is *authoritative*. Clear and warm. Present and boundaried.
+
+It's the same pattern, different stakes. And I fumble there too.
 
 ## Staying Awake
 
