@@ -51,11 +51,11 @@ The pattern underneath all of this is older than AI.
 
 Test-driven development works the same way: you write a failing test (constraint), you write code to pass it (mutation), you verify (the test passes). The spec precedes the implementation. The spec survives context changes. The artifact gets checked against something objective.
 
-Anthropic's approach to long-running agents follows the same structure. Their harness engineering model uses an initializer agent to create a feature list — sometimes 200+ requirements, all marked as incomplete. A coding agent works through them one at a time. A progress file persists across context windows so nothing gets lost between sessions. End-to-end testing verifies the result.
+[Anthropic's approach to long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) follows the same structure. Their harness engineering model uses an initializer agent to create a feature list — sometimes 200+ requirements, all marked as incomplete. A coding agent works through them one at a time. A progress file persists across context windows so nothing gets lost between sessions. End-to-end testing verifies the result.
 
 The feature list and progress file are constraints. The coding prompt is intent. The code is truth.
 
-Phil Schmid frames it well: the harness is the operating system, the model is the CPU, context is RAM, the agent is the application. And his key insight lands the point: "The ability to improve a system is proportional to how easily you can verify its output."
+[Phil Schmid frames it well](https://www.philschmid.de/agent-harness-2026): the harness is the operating system, the model is the CPU, context is RAM, the agent is the application. The harness implements what he calls "[context engineering](https://www.philschmid.de/context-engineering)" — strategies that survive the model's context limitations. And his key insight lands the point: "The ability to improve a system is proportional to how easily you can verify its output."
 
 That's the whole argument in one sentence. If you can verify it, you can improve it. If your constraints are weak — if "done" means "looks done" — your outputs will drift and you won't know until it's too late.
 
@@ -78,10 +78,3 @@ Taste in what gets published, judgment in how ideas connect, axioms about what m
 Whether it succeeds is a different question. But that's the intent.
 
 To be the physics, not just the prompt.
-
----
-
-**References:**
-- [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Anthropic's approach to multi-session agents
-- [The importance of Agent Harness in 2026](https://www.philschmid.de/agent-harness-2026) — Phil Schmid on harness as OS
-- [Context Engineering](https://www.philschmid.de/context-engineering) — strategies for managing limited context
