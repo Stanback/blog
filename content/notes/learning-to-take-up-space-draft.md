@@ -28,7 +28,7 @@ This is a dispatch from someone still in it.
 
 My default mode is disappearance.
 
-In conversation, I mold myself to the room. I anticipate what the other person needs — to be heard, to be drawn out, to feel brilliant — and I become that. I ask good questions. I appreciate their thinking. I mirror their framework back to them, more articulate than they gave it.
+In conversation, I mold myself to the room. I anticipate what the other person needs — to be heard, to be drawn out, to feel brilliant — and I become that. I ask good questions. I appreciate their thinking. I become the surface that makes them feel understood.
 
 It *works*. People feel seen. Consensus emerges. Conflict dissolves.
 
