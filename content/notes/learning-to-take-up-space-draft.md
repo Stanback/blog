@@ -89,6 +89,16 @@ This shows up in parenting too. With my daughter, I'm navigating the same balanc
 
 It's the same pattern, different stakes. And I fumble there too.
 
+## Different Stages
+
+Context matters. The gradient shifts.
+
+Work is one kind of stage — ownership there means crisp commitments, dates not disclaimers. Parenting is another — our preschool director once gently corrected me for framing things as questions. "Can you put your shoes on?" gives a three-year-old veto power she doesn't need. Just say what needs to happen.
+
+Friendships feel closer to bedrock, but even there: the balance exists. Disappearing into someone else's needs isn't intimacy. It's abandonment of self dressed up as generosity.
+
+Same practice, different calibrations. The work is staying awake enough to know which stage you're on.
+
 ## Staying Awake
 
 There's a part of me that watches all this happen. That notices the merge. Notices the control. Notices the correction.
@@ -97,9 +107,10 @@ That's the part worth protecting. Not the patterns — the awareness of them. Th
 
 The goal isn't to stop performing. It's to stay awake inside it. To know you're building something. To see the scaffolding while you're standing on it.
 
----
+Stanislavski said: become the character until it's real.
+Brecht said: show the audience you're acting.
 
-*This is a workshop, not a stage.*
+The third thing: *be real while knowing you're on a stage.* And know which stage you're on.
 
 ---
 
