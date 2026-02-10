@@ -60,6 +60,16 @@ I keep turning this over. The apology was clean. The repair was real. And it did
 
 What I'm sitting with now is the specific way I failed — not by disappearing, which is the old failure, but by overcorrecting into something that felt like management. From merging to controlling. I swung from one edge to the other and there was a person standing in between who got hit.
 
+What I'm starting to see is that these aren't really opposites. They're variations of the same avoidance.
+
+Disappearing is obvious — you dissolve into the other person and there's no self left to find. But the overcorrection into frameworks and authorship? That's subtler. You're in the room now. You're saying things. But you've built scaffolding around the feeling — given it structure, given it labels, made it legible — because the feeling alone feels too exposed.
+
+It looks like taking up space. It's actually a more sophisticated version of not taking up space.
+
+I do this in writing too. When I write fast and don't catch myself, I reach for frameworks. The three-part model. The clean distinction. The labeled pattern. It looks like clarity. Sometimes it is. But sometimes it's armor — a way of being in the room without being in the room. The scaffolding goes up and the person disappears behind it.
+
+One mode dissolves the self. The other armors it. Neither is actually present.
+
 ---
 
 Our preschool director corrected me once for framing things as questions with my daughter. "Can you put your shoes on?" gives a three-year-old veto power she doesn't need. Just say what needs to happen.
