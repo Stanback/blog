@@ -497,7 +497,7 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
 
 	const content = `
     <article class="photo-single">
-      <input type="checkbox" id="${photoId}" class="lightbox-toggle" aria-hidden="true" tabindex="-1">
+      <input type="checkbox" id="${photoId}" class="lightbox-toggle" tabindex="-1">
       <figure class="polaroid">
         <label for="${photoId}" class="photo-expand" title="Click to expand">
           <img src="${photo.image}" alt="${photo.alt}" loading="lazy">
