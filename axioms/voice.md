@@ -146,6 +146,16 @@ One named emotion per piece is plenty. Not every observation needs it.
 
 ---
 
+## Finding the Thesis
+
+First drafts capture real ideas but don't always know which one is the main one yet. Philosophical pieces struggle more — they have room to wander. Technical pieces have built-in structure (problem → solution) that keeps them focused.
+
+**The move:** Find the one sentence in your draft that surprises you — the one you didn't know you believed until you wrote it. That's your thesis. Everything else either supports it or belongs in a different essay.
+
+This is the editing question: not "is this good?" but "what's this actually about?" The answer is usually hiding in the middle of paragraph four, disguised as an aside.
+
+---
+
 ## Signature Structure
 
 The strongest posts follow this implicit pattern:
