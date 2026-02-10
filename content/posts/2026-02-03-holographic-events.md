@@ -3,32 +3,21 @@ title: "Self-Healing Systems: The Holographic Event Pattern"
 date: 2026-02-03T14:00
 type: post
 schemaVersion: 1
-draft: false
-featured: true
+description: "Every event must carry everything a repair bot needs to act without asking questions. Don't scatter breadcrumbs — ship holograms."
+heroImage: /images/posts/holographic-events-hero.png
 tags:
   - architecture
-  - systems
-  - ai
   - engineering
-description: "Why self-contained event payloads enable systems that repair themselves. A pattern from building browser automation for AI research."
-heroImage: /images/posts/holographic-events-hero.png
-tension: "Breadcrumbs are too thin. Logs require context reconstruction. What if events carried everything?"
-questions:
-  - "How do you design events that a repair bot can act on without asking questions?"
-  - "What's the tradeoff between event size and self-containment?"
-coAuthors:
-  - name: "Lunen"
-    emoji: "🌙"
-    note: "AI collaborator"
+  - ai
 ---
 
-# Self-Healing Systems: The Holographic Event Pattern
+Browser automation breaks constantly. Selectors change, sites add Cloudflare challenges, responses take longer than expected.
 
-What if your system could fix itself?
+The traditional fix is breadcrumbs: log what happened, wait for an alert, reconstruct context, diagnose, patch, deploy. Hours of feedback loop.
 
-Browser automation breaks constantly. Selectors change, sites add Cloudflare challenges, responses take longer than expected. The traditional fix is breadcrumbs: log what happened, wait for an alert, reconstruct context, diagnose, patch, deploy. Hours of feedback loop.
+That's too slow. The system needs to repair itself — and to do that, every event must carry everything a repair bot needs to act without asking questions.
 
-That's too slow. The system needs to repair itself—and to do that, every event must carry everything a repair bot needs to act without asking questions.
+We've been building toward this pattern on a browser automation system for AI research. It's not fully in production yet, but the architecture is live and the early results are promising enough that I want to document the thinking.
 
 ## The Problem with Breadcrumbs
 
@@ -36,29 +25,28 @@ Traditional logging assumes a human in the loop. You scatter traces through your
 
 This works when failures are rare and humans are cheap. Neither is true for AI-orchestrated systems running 24/7.
 
-The deeper problem: **breadcrumbs are incomplete**. A log line says "selector failed" but doesn't include the DOM snapshot, the screenshot, the selectors already tried, or the recipe version. To diagnose, you need to reconstruct state from multiple sources—and by then, the state may have changed.
+The deeper problem: breadcrumbs are incomplete. A log line says "selector failed" but doesn't include the DOM snapshot, the screenshot, the selectors already tried, or the recipe version. To diagnose, you need to reconstruct state from multiple sources — and by then, the state may have changed.
 
 ## Holographic Events
 
-The fix is to make every failure event **self-contained**: a hologram rather than a breadcrumb.
+The fix is to make every failure event self-contained: a hologram rather than a breadcrumb.
 
-> **The core principle**: Every event payload should encapsulate the full context required to replay the situation at t₀ without querying external databases.
+The core principle: **Every event payload should encapsulate the full context required to replay the situation at t₀ without querying external databases.**
 
 A holographic event for a selector failure looks like:
 
-```typescript
+```json
 {
   type: 'browser:selector:failed',
-  // The 6-tuple
-  subject: 'chatgpt',           // who
-  predicate: 'selector:failed', // what happened
-  object: 'submit',             // what action
-  context: {                    // when/where
+  subject: 'chatgpt',                    // who
+  predicate: 'selector:failed',          // what happened
+  object: 'submit',                      // what action
+  context: {                             // when/where
     url: 'https://chatgpt.com/c/abc123',
     recipeVersion: 'v1.2.0',
     attempt: 3
   },
-  evidence: {                   // proof
+  evidence: {                            // proof
     screenshot: 'base64...',
     domSnapshot: '<html>...',
     selectorsAttempted: [
@@ -67,11 +55,13 @@ A holographic event for a selector failure looks like:
     ],
     timing: { waitedMs: 5000 }
   },
-  confidence: 0.0               // repair bot will set this
+  confidence: 0.0                        // repair bot will set this
 }
 ```
 
-This event is **complete**. A repair bot can analyze it, generate candidate fixes, test them, and update the recipe—without asking a single question.
+The structure mirrors the 6-tuple from [[Proof, Not Truth]] — subject, predicate, object, context, evidence, confidence. That's not a coincidence. The holographic event is a proof node: a claim about what happened, carrying its own evidence, with a confidence score that the repair system updates as it investigates.
+
+This event is complete. A repair bot can analyze it, generate candidate fixes, test them, and update the recipe — without asking a single question.
 
 ## The Architecture
 
@@ -83,13 +73,13 @@ This event is **complete**. A repair bot can analyze it, generate candidate fixe
 └──────────────┘                    └──────────────┘                └──────────────┘
 ```
 
-The executor runs browser automation. On failure, it emits a holographic event and **moves on**—no blocking, no retry loops. The repair bot polls for pending repairs, routes each to a strategy (selector repair, timeout increase, auth escalation), and updates the recipe if a fix is found.
+The executor runs browser automation. On failure, it emits a holographic event and moves on — no blocking, no retry loops. The repair bot polls for pending repairs, routes each to a strategy (selector repair, timeout increase, auth escalation), and updates the recipe if a fix is found.
 
 Next time the executor runs, it picks up the fixed recipe automatically.
 
 ## The Tradeoffs
 
-Holographic events are **heavier** than breadcrumbs. You're shipping screenshots, DOM snapshots, maybe even video clips. Storage costs go up.
+Holographic events are heavier than breadcrumbs. You're shipping screenshots, DOM snapshots, maybe even video clips. Storage costs go up.
 
 But:
 
