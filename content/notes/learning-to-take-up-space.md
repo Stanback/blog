@@ -5,6 +5,7 @@ description: "On the difference between disappearing and controlling — and the
 type: note
 schemaVersion: 1
 draft: false
+heroImage: /images/posts/learning-to-take-up-space-hero.png
 tags:
   - identity
   - philosophy
