@@ -27,6 +27,19 @@ A test suite survives. A type system survives. A feature list, a linter config, 
 
 The prompt is a request. The constraints are the physics. The code is what ships.
 
+```
+┌─────────────────────────────────────────────────────┐
+│  CONSTRAINTS   →  bounds the mutation space         │
+│  (tests, types, specs, taste, judgment)             │
+├─────────────────────────────────────────────────────┤
+│  PROMPTS       →  expresses intent, inherently fuzzy│
+│  (requests, direction, context)                     │
+├─────────────────────────────────────────────────────┤
+│  CODE          →  source of truth                   │
+│  (deterministic, versioned, what ships)             │
+└─────────────────────────────────────────────────────┘
+```
+
 "Prompt engineering" as a discipline has always felt slightly wrong to me, and I think this is why. You're not engineering the prompt. You're engineering the *constraints that shape what prompts can produce*. The prompt is the thing you say to the contractor. The constraints are the building code. One is a conversation. The other is law.
 
 ---
