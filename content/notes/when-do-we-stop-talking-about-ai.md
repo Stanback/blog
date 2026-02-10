@@ -86,4 +86,18 @@ We're probably three to five years from the modifier dropping. Five to seven fro
 
 ---
 
+The moment we stop talking about AI won't be the moment it disappears. It will be the moment it has reorganized the substrate.
+
+Every technological revolution eventually reshapes the career ladder. Electricity didn't eliminate electricians — it eliminated the novelty of electrification. The skill moved from spectacle to infrastructure. The internet didn't kill engineers — it made "internet strategy" redundant. It became table stakes. Mobile didn't remain a specialization. It became the baseline assumption of product.
+
+AI will follow the same pattern. Right now, we talk about AI like it's a feature. Or a team. Or a layer. Eventually, it won't be. It will be the condition under which competence is measured.
+
+And when that happens, the early rungs of the ladder move. The junior engineer is no longer evaluated on how many lines they can implement. They're evaluated on how well they can reason about output, trace causality, define constraints, and decide what not to ship. Execution compresses. Judgment becomes visible earlier.
+
+The early rungs won't disappear. They'll shift. And whenever the ladder shifts, the way we learn to climb changes with it.
+
+We stop talking about AI the same way we stopped talking about electricity — not because it didn't matter, but because it became the air.
+
+---
+
 *Written in 2026, when "AI" was still a thing you said out loud. When we were still tired but not yet bored.*
