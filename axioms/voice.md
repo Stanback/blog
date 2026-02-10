@@ -113,6 +113,16 @@ The writing gets sharper when you **own the claim** rather than describe it from
 
 **Rule of thumb:** If a paragraph could be written by "a thoughtful person on the internet," push one sentence further until it could only be written by you. Not louder. Just more owned.
 
+## Never Shift Register
+
+The voice stays the same whether you're describing a feeling or a system. Don't go warm-and-personal for the intro, then switch to explainer-mode for the technical content, then back to personal for the closing. That register shift is what makes technical posts feel like a different blog from the personal ones.
+
+Didion writes about California water infrastructure in the same voice she writes about grief. Kimmerer teaches you how moss reproduces because she's on her hands and knees looking at it with her daughter. Le Guin makes a devastating argument about narrative theory in the tone she'd use telling you about her cat. The technical detail arrives *inside* the narrative — it never gets its own mode.
+
+**The camera pieces already do this.** Focal lengths, sensor sizes, lens choices arrive inside the story of standing at the gear shelf. You never step back into explainer mode. That's the voice. When the technical posts lose it, it's because the framework gets separated from the experience that produced it.
+
+**The fix isn't "be less technical."** It's: stay in the scene while being technical. Let the system description arrive through the story of encountering the problem, not as a standalone architecture diagram with narrative bolted on.
+
 ## Tendencies (Guidance, Not Rules)
 
 These complement owner-mode. Use when they fit, skip when they don't.
