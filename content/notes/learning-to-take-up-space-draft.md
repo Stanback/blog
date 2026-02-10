@@ -17,9 +17,7 @@ Both are performance. The difference is consciousness.
 
 What exhausts me isn't performance. It's *unconscious* performance — constructing an identity while mistaking the construction for bedrock. Acting, but forgetting you're on a stage.
 
-I'm not writing this from the other side. I'm mid-process.
-
-A few months ago, I got feedback at work that landed hard. It was about presence. Ownership. The way I show up — or don't. It wasn't easy to hear, and some of it was harsh. But it was right. I *had* been disappearing. I'd made it a survival strategy, and it was costing me.
+I'm not writing this from the other side. I'm mid-process. And honestly, that became real for me when I got feedback at work that landed hard. It was about presence. Ownership. The way I show up — or don't. It wasn't easy to hear, and some of it was harsh. But it was right. I *had* been disappearing. I'd made it a survival strategy, and it was costing me.
 
 So I'm trying to change. But I don't have practice yet. Sometimes I overcorrect. Sometimes the new language comes out wrong.
 
@@ -114,6 +112,6 @@ The third thing: *be real while knowing you're on a stage.* And know which stage
 
 ---
 
-Maybe this matters more now. AI can disappear perfectly — mirror you, draw you out, become whatever you need. It can also control the frame, shape the narrative. What it can't do is catch itself mid-performance. No awareness. No waking up inside it.
+Maybe this matters more now. AI can disappear perfectly — mirror you, draw you out, become whatever you need. It can also control the frame, shape the narrative. What it can't do is catch itself mid-performance.
 
 The work I'm describing — holding a position without merging or managing — that's the human part.
