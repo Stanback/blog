@@ -6,12 +6,6 @@ type: page
 schemaVersion: 1
 ---
 
-# About
-
-Bri Stanback — builder, parent, person trying to make sense of things.
-
----
-
 I'm Bri Stanback. I build things for the internet.
 
 By day, I work at [Demand.io](https://demand.io), where I've been building for a decade. Still writing code—by choice. Still surprised by what I don't know.
