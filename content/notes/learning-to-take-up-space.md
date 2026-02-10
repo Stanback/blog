@@ -50,7 +50,9 @@ But what came out was slightly unedited, slightly too long, slightly shaped like
 
 What I meant as pacing landed as lecture.
 
-I could feel it as soon as I sent it. The way the energy in the conversation shifted from warmth to something colder, more careful. They were gracious. But the ease was gone.
+It was the last message of the night. I was exhausted. I sent it and went to sleep.
+
+In the morning I saw their reply — gracious, but the ease was gone. The energy had shifted from warmth to something colder, more careful.
 
 I apologized. Owned it fully — that I over-explain instead of just stating limits plainly, that I was tired and clumsy, that I shifted blame when I should have just said *I'm tapped out*. No defensiveness, no demand for reconciliation.
 
