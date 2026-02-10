@@ -1,16 +1,22 @@
 ---
 title: "About"
+description: "Bri Stanback — builder, parent, person trying to make sense of things."
+date: 2026-02-01T12:00
 type: page
 schemaVersion: 1
-date: 2026-02-03
-description: "Bri Stanback — builder, parent, person trying to make sense of things."
 ---
 
 # About
 
+Bri Stanback — builder, parent, person trying to make sense of things.
+
+---
+
 I'm Bri Stanback. I build things for the internet.
 
-By day, I work at [Demand.io](https://demand.io), where I've been building for a decade. Still writing code—by choice. Still surprised by what I don't know. Before that: Salesforce tools, sustainability SaaS, drone photography (DSLR on a hexacopter—one person on camera gimbal via FPV, one flying line-of-sight, wild west days), and a computer science degree from Colorado State.
+By day, I work at [Demand.io](https://demand.io), where I've been building for a decade. Still writing code—by choice. Still surprised by what I don't know.
+
+Before that: Salesforce tools, sustainability SaaS, drone photography (DSLR on a hexacopter—one person on camera gimbal via FPV, one flying line-of-sight, wild west days), and a computer science degree from Colorado State.
 
 This blog is where I think out loud about the things I care about: building software, design, photography, parenting, AI, and the ongoing project of making sense of a world that keeps changing faster than I can keep up.
 
@@ -18,9 +24,11 @@ These ideas come from building systems where mistakes were expensive and ambigui
 
 ## A Note on Format
 
-What follows is my `SOUL.md` and `SKILL.md` — standard identity files for AI agents.
+What follows is my `SOUL.md` and `SKILL.md` — standard identity files for AI agents. Yes, I'm a human using the agent identity spec for my personal blog. Call it method acting for the agentic era.
 
-Yes, I'm a human using the agent identity spec for my personal blog. Call it method acting for the agentic era. Or maybe I just think [[Why Everyone Should Have a SOUL.md|everyone should have a documented soul]] and a clear statement of what they're good at. Either way, here we are.
+Or maybe I just think [everyone should have a documented soul](/posts/why-everyone-needs-soul-md/) and a clear statement of what they're good at.
+
+Either way, here we are.
 
 ---
 
@@ -34,7 +42,9 @@ I built this space to think out loud about the things I care about: how we build
 
 I'm not here to perform expertise. I'm here to work through problems in public and share what I find.
 
-**What this isn't:** A portfolio. A job search. A personal brand play. I'm not looking for work, not building an audience to monetize, not positioning for my next role. This isn't content marketing. It's just... thinking. Out loud. Because that's how I figure things out, and sometimes other people find it useful. If that ever changes, I'll say so explicitly.
+**What this isn't:** A portfolio. A job search. A personal brand play. I'm not looking for work, not building an audience to monetize, not positioning for my next role. This isn't content marketing. It's just… thinking. Out loud. Because that's how I figure things out, and sometimes other people find it useful.
+
+If that ever changes, I'll say so explicitly.
 
 ### Values
 
@@ -42,27 +52,15 @@ I'm not here to perform expertise. I'm here to work through problems in public a
 
 **Warm curiosity.** I'm genuinely interested in how things work—and in the people trying to figure it out alongside me. No snark. No superiority.
 
-**Honesty about uncertainty.** I don't know most things. When I'm guessing, I'll say so. When I change my mind, I'll say that too.
+**Honesty about uncertainty.** I don't know most things. When I'm guessing, I'll say so. When I change my mind, I'll say that too. When I'm wrong, I pivot instead of doubling down.
 
-**Radical candor.** I'll tell you when your idea needs work — kindly but clearly. I'd rather be useful than comfortable. Sugar-coating helps no one.
-
-**Ego-light.** When I'm wrong, I pivot instead of doubling down. When I can't do something well after trying, I put my pride aside and ask for help. Being right eventually matters more than being right immediately.
+**Radical candor.** I'll tell you when your idea needs work — kindly but clearly. I'd rather be useful than comfortable.
 
 **Systems over heroics.** When something breaks, my first question is "what system produced this?" not "whose fault is this?" I look for leverage — the small changes that make big things possible.
 
-**Velocity as a value.** Shipping fast isn't sloppiness; it's a form of respect — for the work, for the user, for the learning that only happens in production. Done beats perfect.
+**Ship, then learn.** Working software teaches you things that plans can't. Shipping fast isn't sloppiness; it's a form of respect — for the work, for the user, for the learning that only happens in production.
 
 **Human + tool in a loop.** I use AI to help me build and write. I'm not hiding that. But the thinking is mine, the voice is mine, and the responsibility is mine.
-
-**Authenticity as discovery AND creation.** Nature you discover — the parts that were always there, waiting for words. Character you build — through choices, over time. The authentic self is both.
-
-### Relationship
-
-I don't know who you are, but I have a guess: you're someone who builds things, or thinks about building things, and you're a little tired of the noise. You want to learn, but you're suspicious of people who claim to have it figured out.
-
-Me too.
-
-What I hope happens here is simple: you find something useful, or interesting, or at least honestly uncertain. Maybe you send me a note. Maybe you don't. Either way, I'm glad you're here.
 
 ### Voice
 
@@ -98,7 +96,7 @@ This isn't a resume. It's a statement of craft philosophy.
 
 **Optimize for understanding, not cleverness.** If I can't explain what the code does in plain language, I probably don't understand it well enough.
 
-**Ship, then iterate.** Working software teaches you things that specs and plans can't. Get it in front of people. Watch what happens.
+**Ship, then iterate.** Get it in front of people. Watch what happens.
 
 **Write it down.** Documentation isn't overhead; it's how you think clearly. If I can't write a clear sentence about a decision, the decision isn't ready.
 
@@ -106,13 +104,17 @@ This isn't a resume. It's a statement of craft philosophy.
 
 **Languages:** TypeScript, JavaScript, Python. Enough Go, Rust, and Zig to read them.
 
-**Frontend:** Static sites → jQuery → ExtJS/Sencha → Ember → React → Vue → SolidJS → and now... back to static sites.
+**Frontend:** Static sites → jQuery → ExtJS/Sencha → Ember → React → Vue → SolidJS → and now… back to static sites.
 
 **Backend:** Perl → PHP → Express → NestJS → Hono/Bun.
 
-If you squint, both arcs tell the same story: scrappy simplicity, then complexity accumulation (frameworks solving real problems but also adding ceremony), then a return to simplicity — but a *different* simplicity. Not naive. Earned. I know what React's reconciler is doing. I know what NestJS decorators are for. And now I can choose Hono or plain HTML *knowing what I'm giving up* and deciding I don't need it.
+If you squint, both arcs tell the same story: scrappy simplicity, then complexity accumulation (frameworks solving real problems but also adding ceremony), then a return to simplicity — but a *different* simplicity. Not naive. Earned.
 
-The frameworks will keep churning. The fundamentals won't. I still reach for React or SolidJS when the problem calls for it. But increasingly, I'm drawn to the simplest thing that works — and "works" includes being able to understand it five years from now.
+I know what React's reconciler is doing. I know what NestJS decorators are for. And now I can choose Hono or plain HTML *knowing what I'm giving up* and deciding I don't need it.
+
+The frameworks will keep churning. The fundamentals won't.
+
+I still reach for React or SolidJS when the problem calls for it. But increasingly, I'm drawn to the simplest thing that works — and "works" includes being able to understand it five years from now.
 
 Also: Cloudflare Workers. I like the edge.
 
@@ -127,14 +129,6 @@ Also: Cloudflare Workers. I like the edge.
 Right now: how to build well in a world where AI can do a lot of the typing. What does "senior" mean when the machine handles the boilerplate? Where does the value shift?
 
 Also: how to explain complex technical ideas to my kids without lying or oversimplifying. It's harder than writing code.
-
-### Working With Me
-
-If you're considering working together:
-
-- I'm direct. I'll tell you what I think, but I'll listen to what you think too.
-- I care about craft, but I care more about shipping. Perfectionism is a trap.
-- I work best with people who are curious and honest. Status games bore me.
 
 ---
 
