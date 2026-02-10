@@ -50,7 +50,7 @@ From merging to managing. It can look like leadership. It can also look like con
 
 Recently I reconnected with someone I'd known years ago. We fell into one of those conversations that go deep quickly — identity, authenticity, all the heavy stuff.
 
-For a while, I did my pattern. Drew them out. Asked good questions. Appreciated their references. Worked within a framework that didn't quite match how I see things, because I was being curious and generous.
+For a while, I did my pattern. Drew them out. Asked good questions. Appreciated their references. Worked within a framework that didn't quite match how I see things, because I was being curious and open.
 
 By the end, I was tired — not dramatic, just the kind of tired that comes from a long day and a 5am wake-up. They signed off warmly. It was done.
 
