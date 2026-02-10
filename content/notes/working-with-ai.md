@@ -54,6 +54,30 @@ The thinking is mine. I stand behind every word.
 
 I mark the contribution because I think hiding it would be worse than any discomfort the label creates.
 
+---
+
+I tested this boundary recently with fiction.
+
+I used AI to build the world — character backstories, plot architecture, motif tracking, chapter beats. The structural work was genuinely good. The grandmother whose Hungarian embroidery patterns become the protagonist's mathematical intuition? AI helped me find that. The engineering of a ten-chapter arc with interlocking themes? Faster and more coherent than I'd have managed alone.
+
+Then I let it write the chapters.
+
+The prose was competent. Every sentence was correct. No sentence was alive. The protagonist experienced anxiety through stock physical markers — her stomach dropped, her mouth went dry. The dialogue delivered exposition instead of revealing character. The descriptions were arranged for the reader's benefit rather than filtered through a specific consciousness.
+
+It read like a very good summary of a novel rather than a novel.
+
+The structural work survived because structure is pattern — and pattern is what AI does. The prose didn't survive because fiction lives at the sentence level, in word choice and rhythm and the tiny accumulation of decisions that become a voice. AI can approximate voice. The approximation is worse than absence because it feels dead in a way that rough-but-human writing doesn't.
+
+It's the same lesson as [photography](/notes/what-cameras-taught-me/). AI can generate a better-composed image than I'd take with my phone. It can't generate the night I froze in Poudre Canyon watching the exposure accumulate. The output is superior. The experience is empty.
+
+In fiction, the sentence is the experience. There's nothing underneath it to point to.
+
+I took the experiment down. The world-building stays in my notes. If I write the novel, the prose will be mine — messy, probably, but inhabited.
+
+Some things need a witness, not a generator.
+
+---
+
 But the co-authorship question is less interesting than the one underneath it: if AI can generate infinite content, why write at all?
 
 Not for information. AI synthesizes that on demand. The how-to post, the explainer, the consensus overview — those are commodities now.
