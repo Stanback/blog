@@ -7,7 +7,7 @@ description: "Every disruptive technology eventually becomes invisible. The disc
 tags:
   - ai
   - culture
-heroImage: /images/posts/when-do-we-stop-talking-about-ai-hero.png
+heroImage: /images/posts/when-stop-talking-ai-hero.png
 ---
 
 I'm tired.
