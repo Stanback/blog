@@ -467,8 +467,9 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
 
 	// Build filmstrip + arrow key navigation
 	const currentIndex = allPhotos.findIndex((p) => p.slug === photo.slug);
-	const prevPhoto = currentIndex < allPhotos.length - 1 ? allPhotos[currentIndex + 1] : null;
-	const nextPhoto = currentIndex > 0 ? allPhotos[currentIndex - 1] : null;
+	// Filmstrip is left-to-right newest-first, so left arrow = lower index (newer), right = higher (older)
+	const leftPhoto = currentIndex > 0 ? allPhotos[currentIndex - 1] : null;
+	const rightPhoto = currentIndex < allPhotos.length - 1 ? allPhotos[currentIndex + 1] : null;
 
 	const filmstrip =
 		allPhotos.length > 1
@@ -488,8 +489,8 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
           if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
           var lb = document.getElementById('${photoId}');
           if (lb && lb.checked) { if (e.key === 'Escape') lb.checked = false; return; }
-          ${prevPhoto ? `if (e.key === 'ArrowLeft') window.location.href = '${getUrl(prevPhoto)}';` : ''}
-          ${nextPhoto ? `if (e.key === 'ArrowRight') window.location.href = '${getUrl(nextPhoto)}';` : ''}
+          ${leftPhoto ? `if (e.key === 'ArrowLeft') window.location.href = '${getUrl(leftPhoto)}';` : ''}
+          ${rightPhoto ? `if (e.key === 'ArrowRight') window.location.href = '${getUrl(rightPhoto)}';` : ''}
         });
       </script>`
 			: '';
