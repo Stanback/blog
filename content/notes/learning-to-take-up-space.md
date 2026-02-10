@@ -16,85 +16,77 @@ There's a polarity in theatre between Stanislavski and Brecht. Stanislavski gave
 
 Both are performance. The difference is consciousness.
 
-What exhausts me isn't performance. It's *unconscious* performance — constructing an identity while mistaking the construction for bedrock. Acting, but forgetting you're on a stage.
+What exhausts me isn't performance. It's performing without knowing I'm doing it — constructing an identity while mistaking the construction for bedrock.
 
-I'm not writing this from the other side. I'm mid-process. A few months ago I got feedback at work that landed hard. I remember rereading the message, feeling my chest tighten. It was about presence. Ownership. The way I show up — or don't. It wasn't easy to hear, and some of it was harsh. But it was right. I *had* been disappearing. I'd made it a survival strategy, and it was costing me.
-
-So I'm trying to change. But I don't have practice yet. Sometimes I overcorrect. Sometimes the new language comes out wrong.
-
-## Disappearing
+---
 
 My default mode is disappearance.
 
 In conversation, I mold myself to the room. I anticipate what the other person needs — to be heard, to be drawn out, to feel brilliant — and I become that. I ask good questions. I appreciate their thinking. I become the surface that makes them feel understood.
 
-It *works*. People feel seen. Consensus emerges. Conflict dissolves.
+It works. People feel seen. Consensus emerges. Conflict dissolves.
 
-But I vanish in the process. At the end of a good conversation, I sometimes can't remember what *I* actually thought. Just a faint hollowness, like I'd been holding my breath without noticing. I was too busy being the surface that reflected them.
+But at the end of a good conversation, I sometimes can't remember what I actually thought. Just a faint hollowness, like I'd been holding my breath without noticing.
 
-The shadow of disappearing is erasure. You become so good at reading the room that you stop existing except as a mirror.
+I got feedback at work recently that made this visible. It was about presence. Ownership. The way I show up — or don't. I remember rereading the message, feeling my chest tighten. Some of it was harsh. But it was right. I *had* been disappearing. I'd made it a survival strategy, and it was costing me.
 
-## Controlling
+So I started practicing something different. Authorship. Clearer statements. *Here's what I think* before *What do you think?* Taking positions early, when they can still be challenged.
 
-So I've been practicing something different. Authorship. Clearer statements. "Here's what I think" before "What do you think?" Taking positions early, when they can still be challenged.
+I didn't know yet how badly that practice could misfire.
 
-But authorship has its own shadow: control.
+---
 
-From merging to managing. It can look like leadership. It can also look like condescension — especially when you're tired, especially when you're overcorrecting.
+A few weeks ago I reconnected with someone I'd known years ago. We fell into one of those conversations that go deep quickly — identity, authenticity, the heavy stuff.
 
-## Learning a New Language
+For a while I did my pattern. Drew them out. Asked good questions. Worked within a framework that didn't quite match how I see things, because I was being curious, being open.
 
-Recently I reconnected with someone I'd known years ago. We fell into one of those conversations that go deep quickly — identity, authenticity, all the heavy stuff.
-
-For a while, I did my pattern. Drew them out. Asked good questions. Appreciated their references. Worked within a framework that didn't quite match how I see things, because I was being curious and open.
-
-By the end, I was tired — not dramatic, just the kind of tired that comes from a long day and a 5am wake-up. They signed off warmly. It was done.
+By the end I was tired. Not dramatic — just the kind of tired that comes from a long day and a 5am wake-up. They signed off warmly. It was done.
 
 And then I added one more message.
 
-It wasn't a rant. It wasn't a lecture. It was a slightly unedited, unfinished attempt to say: *I have limits. I'm learning to name them.*
+I was trying to practice the new thing. I was trying to say: *I have limits. I'm learning to name them.*
 
-What I was trying to communicate was pacing. What it sounded like was correction.
+But what came out was slightly unedited, slightly too long, slightly shaped like a correction instead of a confession.
 
-That gap — between intention and impact — is the part I'm still learning to see sooner.
+What I meant as pacing landed as lecture.
 
-## The Apology That Didn't Save It
+I could feel it as soon as I sent it. The way the energy in the conversation shifted from warmth to something colder, more careful. They were gracious. But the ease was gone.
 
-I apologized. Owned it fully — that I over-explain instead of just stating limits plainly, that I was tired and clumsy, that I shifted blame when I should have just said "I'm tapped out."
+I apologized. Owned it fully — that I over-explain instead of just stating limits plainly, that I was tired and clumsy, that I shifted blame when I should have just said *I'm tapped out*. No defensiveness, no demand for reconciliation.
 
-The apology was clean. No defensiveness, no demand for reconciliation.
+They didn't come back.
 
-They didn't come back. Some doors close even when you do the repair correctly.
+I keep turning this over. The apology was clean. The repair was real. And it didn't matter. Some doors close even when you do the work correctly.
 
-Sometimes you learn the lesson and lose the connection anyway. That's not failure. That's cost. Learning a new language means some conversations won't survive the learning.
+What I'm sitting with now is the specific way I failed — not by disappearing, which is the old failure, but by overcorrecting into something that felt like management. From merging to controlling. I swung from one edge to the other and there was a person standing in between who got hit.
 
-## The Third Thing
+---
 
-Disappearing is ego too thin — you merge, no boundary between self and other. Controlling is ego too thick — you can't let anything in, you manage because you're scared to lose yourself.
+Our preschool director corrected me once for framing things as questions with my daughter. "Can you put your shoes on?" gives a three-year-old veto power she doesn't need. Just say what needs to happen.
 
-The third thing is somewhere between: strong enough to hold a position, porous enough to actually meet someone.
+But I can also hear myself on my worst parenting days — tired, overcorrecting — where *say what needs to happen* curdles into something harder than it should be. Not authoritarian exactly, but close enough to taste it.
 
-The test I keep coming back to: *Did I say what I actually thought? And did I leave room for them to change my mind?*
+The same two failures live here too. I either dissolve into her needs or I grip too tight. What I'm reaching for is something in between: clear and warm. Present and boundaried. Authoritative without being controlling.
 
-## Different Stages
+I fumble it constantly.
 
-Context matters. The gradient shifts.
+---
 
-Work is one kind of stage — ownership there means crisp commitments, dates not disclaimers. Parenting is another — our preschool director once gently corrected me for framing things as questions. "Can you put your shoes on?" gives a three-year-old veto power she doesn't need. Just say what needs to happen.
+I think the integrated version looks something like this: strong enough to hold a position, porous enough to actually meet someone.
 
-Friendships feel closer to bedrock, but even there: the balance exists. Disappearing into someone else's needs isn't intimacy. It's abandonment of self dressed up as generosity.
+The test is simple — did I say what I actually thought, and did I leave room for them to change my mind?
 
-Same practice, different calibrations. The work is staying awake enough to know which stage you're on.
+But I'm suspicious of how clean that sounds. The real thing is messier. The real thing is sending a message at 11pm that you know is wrong before you've finished typing it. The real thing is an apology that works perfectly and changes nothing.
 
-## Staying Awake
+There's a part of me that watches all this happen. That notices the merge. Notices the control. Notices the correction and the overcorrection.
 
-There's a part of me that watches all this happen. That notices the merge. Notices the control. Notices the correction.
-
-That's the part worth protecting. Not the patterns — the awareness of them. The ability to catch yourself mid-performance and think, "huh, I'm doing it again."
-
-The goal isn't to stop performing. It's to stay awake inside it. To know you're building something. To see the scaffolding while you're standing on it.
+That's the part worth protecting. Not the patterns — the awareness of them. The ability to catch yourself mid-performance and think, *I'm doing it again*.
 
 Stanislavski said: become the character until it's real.
 Brecht said: show the audience you're acting.
 
-The third thing: *be real while knowing you're on a stage.* And know which stage you're on.
+I'm looking for the third thing: be real while knowing you're on a stage. Feel it and see it at the same time.
+
+And when you fail — which you will, regularly, in ways that cost you people you care about — notice that too.
+
+I'm not writing this from the other side. I'm mid-process. Some of these sentences probably prove it.
