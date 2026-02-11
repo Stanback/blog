@@ -353,6 +353,10 @@ ${
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
+  <!-- Preload critical resources -->
+  <link rel="preload" as="font" href="/fonts/Inter-Variable.woff2" type="font/woff2" crossorigin>
+  ${heroImage ? `<link rel="preload" as="image" href="${toWebP(heroImage)}" type="image/webp">` : ''}
+
   <!-- Styles -->
   <link rel="stylesheet" href="/css/${cssFilename}">
 
