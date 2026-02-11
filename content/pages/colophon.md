@@ -10,6 +10,8 @@ description: "How this site is made — tools, philosophy, and why you don't nee
 
 This site is handmade. No framework. No CMS. Just files.
 
+I build AI systems all day. This site is deliberately not that. The blog is a separation of concerns — a place where the craft is visible, the tools are boring, and nothing is trying to be clever. If you want to see what I think about AI, read the posts. If you want to see how I build for myself when nobody's watching, you're looking at it.
+
 ## The Secret
 
 There isn't one. This entire blog is ~600 lines of TypeScript. Markdown goes in, HTML comes out. That's it.
