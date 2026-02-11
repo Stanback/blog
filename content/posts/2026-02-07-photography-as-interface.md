@@ -30,9 +30,9 @@ I've spent twenty years building software interfaces. The deeper I go, the more 
 
 ## Every Interface Inherits Constraints
 
-The 35mm film frame — that 2:3 rectangle that defined photography for decades — wasn't a design decision. It was an accident of industrial history. Oskar Barnack built the first Leica by repurposing cinema film stock, which happened to be 24mm wide. He doubled the cinema frame length to get a bigger image, and landed on 24×36mm.
+The 35mm film frame — that 2:3 rectangle that defined photography for decades — wasn't a design decision. It was an accident of industrial history. Oskar Barnack built the first Leica by repurposing cinema film stock. Cinema frames were 18×24mm. He rotated the orientation and doubled the shorter dimension, landing on 24×36mm.
 
-That's it. That's where the 2:3 aspect ratio came from. Not aesthetic theory. Not human vision research. Leftover movie film.
+That's it. That's where the 2:3 aspect ratio came from. Not aesthetic theory. Not human vision research. Leftover movie film. And it still defines full-frame sensors and most aspect ratios today.
 
 And then millions of photographers learned to *see* in 2:3. The constraint became the vocabulary.
 
