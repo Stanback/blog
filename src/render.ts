@@ -216,15 +216,32 @@ function baseTemplate(options: {
     ${tags && tags.length > 0 ? `"keywords": ${JSON.stringify(tags)},` : ''}
     ${wordCount ? `"wordCount": ${wordCount},` : ''}
     ${articleSection ? `"articleSection": "${articleSection}",` : ''}
+    "inLanguage": "${config.language}",
+    "isAccessibleForFree": true,
+    "copyrightYear": ${date.getFullYear()},
+    "copyrightHolder": {
+      "@type": "Person",
+      "name": "${config.author.name}"
+    },
     "author": {
       "@type": "Person",
       "name": "${config.author.name}",
-      "url": "${config.author.url}"
+      "url": "${config.author.url}"${
+				config.author.sameAs
+					? `,
+      "sameAs": ${JSON.stringify(config.author.sameAs)}`
+					: ''
+			}
     },
     "publisher": {
       "@type": "Person",
       "name": "${config.author.name}",
-      "url": "${config.url}"
+      "url": "${config.url}"${
+				config.author.sameAs
+					? `,
+      "sameAs": ${JSON.stringify(config.author.sameAs)}`
+					: ''
+			}
     },
     "mainEntityOfPage": {
       "@type": "WebPage",

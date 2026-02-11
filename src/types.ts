@@ -190,6 +190,7 @@ export interface SiteConfig {
 		name: string;
 		email?: string;
 		url?: string;
+		sameAs?: string[];
 	};
 
 	// Build

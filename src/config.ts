@@ -12,6 +12,11 @@ export const config: SiteConfig = {
 	author: {
 		name: 'Bri Stanback',
 		url: 'https://bristanback.com/about/',
+		sameAs: [
+			'https://twitter.com/Stanback',
+			'https://linkedin.com/in/bstanback',
+			'https://github.com/Stanback',
+		],
 	},
 
 	// Build paths
