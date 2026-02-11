@@ -10,7 +10,7 @@ import sharp from 'sharp';
 
 const STATIC_DIR = 'static';
 const IMAGE_DIRS = ['images/posts', 'images/photos', 'images'];
-const QUALITY = 85;
+const QUALITY = 90;
 const SKIP_IF_EXISTS = true; // Don't regenerate if WebP already exists
 
 interface OptimizeResult {
