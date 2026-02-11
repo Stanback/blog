@@ -251,6 +251,37 @@ function baseTemplate(options: {
   </script>`
 			: ''
 	}
+${
+	url === '/'
+		? `
+  <!-- JSON-LD Schema: WebSite + Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "${config.url}/#website",
+        "name": "${config.title}",
+        "url": "${config.url}",
+        "description": "${config.description.replace(/"/g, '\\"')}",
+        "inLanguage": "${config.language}",
+        "publisher": {
+          "@id": "${config.url}/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "${config.url}/#person",
+        "name": "${config.author.name}",
+        "url": "${config.author.url}",
+        "sameAs": ${JSON.stringify(config.author.sameAs)}
+      }
+    ]
+  }
+  </script>`
+		: ''
+}
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
