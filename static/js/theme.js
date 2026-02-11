@@ -24,32 +24,34 @@
 
 		if (headings.length) {
 			let active = null;
-			const visible = new Set();
+			const setActive = (link) => {
+				if (link === active) return;
+				if (active) active.classList.remove('toc-active');
+				link?.classList.add('toc-active');
+				active = link;
+			};
 			const obs = new IntersectionObserver(
 				(entries) => {
 					entries.forEach((e) => {
-						if (e.isIntersecting) visible.add(e.target);
-						else visible.delete(e.target);
+						if (e.isIntersecting) {
+							setActive(toc.querySelector(`a[href="#${e.target.id}"]`));
+						} else {
+							// Heading left the detection band — check if it exited
+							// downward (user scrolled up). The band top is at 10% of
+							// viewport, so if the heading is below that, activate previous.
+							const bandTop = window.innerHeight * 0.1;
+							if (e.boundingClientRect.top >= bandTop) {
+								const idx = headings.indexOf(e.target);
+								if (idx > 0) {
+									setActive(toc.querySelector(`a[href="#${headings[idx - 1].id}"]`));
+								} else {
+									setActive(null);
+								}
+							}
+						}
 					});
-					// Pick the last visible heading in DOM order
-					let current = null;
-					for (const h of headings) {
-						if (visible.has(h)) current = h;
-					}
-					const link = current
-						? toc.querySelector(`a[href="#${current.id}"]`)
-						: null;
-					if (link === active) return;
-					if (active) active.classList.remove('toc-active');
-					if (link) link.classList.add('toc-active');
-					active = link;
 				},
-				{
-					// Large positive top margin: headings above viewport stay "visible"
-					// Bottom margin: match scroll-margin-top (--space-6: 24px) so the
-					// activation line aligns with where headings land after a jump click
-					rootMargin: `${document.documentElement.scrollHeight}px 0px ${-(window.innerHeight - 24)}px 0px`,
-				},
+				{ rootMargin: '-10% 0px -80% 0px' },
 			);
 			headings.forEach((h) => obs.observe(h));
 		}
