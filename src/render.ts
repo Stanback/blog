@@ -406,7 +406,7 @@ ${
     </div>
   </footer>
 
-  <script src="/js/theme.js"></script>
+  <script src="/js/site.js"></script>
 </body>
 </html>`;
 }

@@ -52,16 +52,20 @@
 				active = link;
 			};
 
-			const update = () => {
-				// Find last heading above the 20% line
-				let current = null;
-				for (const h of headings) {
-					if (h.getBoundingClientRect().top < window.innerHeight * 0.2) current = h;
-				}
-				setActive(current ? toc.querySelector(`a[href="#${current.id}"]`) : null);
-			};
-
-			const obs = new IntersectionObserver(update, { rootMargin: '-10% 0px -80% 0px' });
+			const obs = new IntersectionObserver(
+				(entries) => {
+					for (const e of entries) {
+						e.target._tocVisible = e.isIntersecting;
+					}
+					// Activate the last visible heading in document order
+					let current = null;
+					for (const h of headings) {
+						if (h._tocVisible) current = h;
+					}
+					setActive(current ? toc.querySelector(`a[href="#${current.id}"]`) : null);
+				},
+				{ rootMargin: '0px 0px -80% 0px' },
+			);
 			headings.forEach((h) => obs.observe(h));
 		}
 	}
