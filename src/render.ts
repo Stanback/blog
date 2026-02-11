@@ -358,7 +358,7 @@ ${
           <li><a href="/photos/">Photos</a></li>
           <li><a href="/about/">About</a></li>
         </ul>
-        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
           ${iconSun}
           ${iconMoon}
         </button>
@@ -1397,7 +1397,9 @@ function renderGraph(ctx: BuildContext): string {
         <h1>Knowledge Graph</h1>
         <p class="graph-intro">Connections between ideas. Click a node to visit, drag to explore.</p>
       </header>
-      <div id="graph-container" class="graph-container"></div>
+      <div id="graph-container" class="graph-container" role="img" aria-label="Interactive knowledge graph visualization">
+        <p class="sr-only">Interactive knowledge graph showing connections between posts and notes. Use the posts and notes indexes for an accessible list of all content.</p>
+      </div>
     </div>
     <script type="module">
       const graphData = ${graphJson};

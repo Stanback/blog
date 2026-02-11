@@ -47,7 +47,7 @@
 	--color-bg-elevated: var(--color-white);
 	--color-text-primary: var(--color-ink);
 	--color-text-secondary: var(--color-stone);
-	--color-text-muted: oklch(0.45 0.01 60);
+	--color-text-muted: oklch(0.4 0.01 60); /* Darkened for WCAG AA contrast */
 	--color-border-subtle: oklch(0.85 0.01 80);
 	--color-border-strong: var(--color-sand);
 
@@ -276,7 +276,7 @@
 	--color-bg-elevated: var(--color-white);
 	--color-text-primary: oklch(0.18 0.01 60);
 	--color-text-secondary: oklch(0.35 0.01 60);
-	--color-text-muted: oklch(0.45 0.01 60);
+	--color-text-muted: oklch(0.4 0.01 60); /* Darkened for WCAG AA contrast */
 	--color-border-subtle: oklch(0.85 0.01 80);
 	--color-border-strong: oklch(0.7 0.02 60);
 

@@ -6,6 +6,15 @@
 
 	if (s) h.dataset.theme = s;
 
+	// Set initial aria-pressed state
+	const updateAriaPressed = () => {
+		const isDark =
+			h.dataset.theme === 'dark' ||
+			(h.dataset.theme !== 'light' && window.matchMedia('(prefers-color-scheme:dark)').matches);
+		t?.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+	};
+	updateAriaPressed();
+
 	t?.addEventListener('click', () => {
 		const isDark =
 			h.dataset.theme === 'dark' ||
@@ -13,6 +22,7 @@
 		const n = isDark ? 'light' : 'dark';
 		h.dataset.theme = n;
 		localStorage.setItem('theme', n);
+		t.setAttribute('aria-pressed', n === 'dark' ? 'true' : 'false');
 	});
 
 	// TOC scroll tracking
