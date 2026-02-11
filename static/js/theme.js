@@ -24,14 +24,24 @@
 
 		if (headings.length) {
 			let active = null;
+			const setActive = (link) => {
+				if (link === active) return;
+				if (active) active.classList.remove('toc-active');
+				link?.classList.add('toc-active');
+				active = link;
+			};
 			const obs = new IntersectionObserver(
 				(entries) => {
 					entries.forEach((e) => {
 						if (e.isIntersecting) {
-							const link = toc.querySelector(`a[href="#${e.target.id}"]`);
-							if (active) active.classList.remove('toc-active');
-							link?.classList.add('toc-active');
-							active = link;
+							setActive(toc.querySelector(`a[href="#${e.target.id}"]`));
+						} else if (e.boundingClientRect.top > 0) {
+							// Heading left the zone going downward (we scrolled up)
+							// Activate the previous heading
+							const idx = headings.indexOf(e.target);
+							if (idx > 0) {
+								setActive(toc.querySelector(`a[href="#${headings[idx - 1].id}"]`));
+							}
 						}
 					});
 				},
