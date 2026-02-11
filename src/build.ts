@@ -11,6 +11,7 @@ import { collectBooks } from './collect-books.js';
 import { collectContent } from './collect.js';
 import { config } from './config.js';
 import { generateFeeds } from './feeds.js';
+import { optimizeImages } from './optimize-images.js';
 import { extractWikilinks, parseMarkdown, setWikilinkResolver } from './parse.js';
 import { renderSite } from './render.js';
 import type {
@@ -486,7 +487,12 @@ export async function build(): Promise<void> {
 		);
 	});
 
-	// 10. Assets: copy static files (CSS already built in step 4)
+	// 10. Optimize images (generate WebP versions)
+	await timeAsync('images', async () => {
+		await optimizeImages();
+	});
+
+	// 11. Assets: copy static files (CSS already built in step 4)
 	await timeAsync('assets', async () => {
 		await Promise.all([
 			copyStatic(config.staticDir, config.outputDir),

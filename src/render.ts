@@ -26,6 +26,33 @@ import type {
 } from './types.js';
 import { formatDateLong, formatDateMachine, formatDateNoYear } from './utils/dates.js';
 
+// Convert image URL to WebP version (assumes WebP exists alongside original)
+function toWebP(url: string): string {
+	return url.replace(/\.(png|jpe?g)$/i, '.webp');
+}
+
+// Generate CSS image-set for WebP with fallback
+function imageSet(url: string): string {
+	const webp = toWebP(url);
+	// If already webp or no extension match, just return url
+	if (webp === url) return `url('${url}')`;
+	// Use image-set with WebP preferred, fallback to original
+	return `image-set(url('${webp}') type('image/webp'), url('${url}') type('image/${url.endsWith('.png') ? 'png' : 'jpeg'}'))`;
+}
+
+// Generate <picture> element with WebP source
+function pictureElement(url: string, alt: string, attrs = ''): string {
+	const webp = toWebP(url);
+	// If no WebP conversion possible, just return img
+	if (webp === url) return `<img src="${url}" alt="${alt}"${attrs ? ` ${attrs}` : ''}>`;
+	const mimeType = url.endsWith('.png') ? 'image/png' : 'image/jpeg';
+	return `<picture>
+          <source srcset="${webp}" type="image/webp">
+          <source srcset="${url}" type="${mimeType}">
+          <img src="${url}" alt="${alt}"${attrs ? ` ${attrs}` : ''}>
+        </picture>`;
+}
+
 // Process inline markdown (backticks → code)
 function processInlineMarkdown(text: string): string {
 	return text.replace(/`([^`]+)`/g, '<code>$1</code>');
@@ -406,7 +433,7 @@ function renderPost(post: Post, ctx: BuildContext): string {
 	// Hero banner with image background and text overlay
 	const heroSection = post.heroImage
 		? `
-		<header class="post-hero" style="--hero-image: url('${post.heroImage}')">
+		<header class="post-hero" style="--hero-image: ${imageSet(post.heroImage)}">
 			<div class="post-hero-content">
 				<time datetime="${isoDate(post.date)}">${formatDate(post.date)}</time>
 				<h1>${post.title}</h1>
@@ -486,7 +513,7 @@ function renderNote(note: Note, ctx: BuildContext): string {
 	// Hero section - same treatment as posts
 	const heroSection = note.heroImage
 		? `
-		<header class="post-hero" style="--hero-image: url('${note.heroImage}')">
+		<header class="post-hero" style="--hero-image: ${imageSet(note.heroImage)}">
 			<div class="post-hero-content">
 				<time datetime="${isoDate(note.date)}">${formatDate(note.date)}</time>
 				<h1>${note.title}</h1>
@@ -587,7 +614,7 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
       <input type="checkbox" id="${photoId}" class="lightbox-toggle" tabindex="-1" aria-controls="lightbox-panel-${photo.slug}">
       <figure class="polaroid">
         <label for="${photoId}" class="photo-expand" title="Click to expand">
-          <img src="${photo.image}" alt="${photo.alt}" loading="lazy">
+          ${pictureElement(photo.image, photo.alt, 'loading="lazy"')}
         </label>
         <figcaption class="polaroid-caption">
           ${photo.observation ? `<p class="observation">${photo.observation}</p>` : ''}
@@ -598,7 +625,7 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
         </figcaption>
       </figure>
       <label for="${photoId}" id="lightbox-panel-${photo.slug}" class="lightbox-overlay" aria-hidden="true" tabindex="-1">
-        <img src="${photo.image}" alt="${photo.alt}">
+        ${pictureElement(photo.image, photo.alt)}
         <span class="sr-only">Press Escape to close</span>
       </label>
       <script>
@@ -971,7 +998,7 @@ function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 					(photo, i) => `
       <a href="${getUrl(photo)}" class="photo-card" style="--i: ${i}">
         <figure class="polaroid-thumb">
-          <img src="${photo.image}" alt="${photo.alt}" loading="lazy">
+          ${pictureElement(photo.image, photo.alt, 'loading="lazy"')}
           <figcaption>
             ${photo.observation ? `<span class="observation-preview">${photo.observation}</span>` : `<span class="photo-title">${photo.title}</span>`}
           </figcaption>
@@ -1030,7 +1057,7 @@ function renderHome(ctx: BuildContext): string {
 	const latestWritingSection = latestPost
 		? `
     <section class="home-section home-featured" aria-label="Latest writing">
-      <article class="featured-card"${latestPost.heroImage ? ` style="--featured-hero: url('${latestPost.heroImage}')"` : ''}>
+      <article class="featured-card"${latestPost.heroImage ? ` style="--featured-hero: ${imageSet(latestPost.heroImage)}"` : ''}>
         <a href="${getUrl(latestPost)}" class="featured-card-link">
           <span class="featured-label">Latest</span>
           <time datetime="${isoDate(latestPost.date)}">${formatDate(latestPost.date)}</time>
