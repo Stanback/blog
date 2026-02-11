@@ -14,7 +14,7 @@ I build AI systems all day. This site is deliberately not that. The blog is a se
 
 ## The Secret
 
-There isn't one. This entire blog is ~600 lines of TypeScript. Markdown goes in, HTML comes out. That's it.
+There isn't one. This entire blog is ~600 lines of TypeScript. Markdown goes in, HTML comes out. It builds in under 500ms. That's it.
 
 If you want to build something similar, here's the whole recipe:
 
