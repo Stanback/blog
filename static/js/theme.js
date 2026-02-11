@@ -30,26 +30,40 @@
 				link?.classList.add('toc-active');
 				active = link;
 			};
+
+			// Track which headings are currently in the observation band
+			const visibleIds = new Set();
+			const bandTop = 0.1; // 10% from top
+
 			const obs = new IntersectionObserver(
 				(entries) => {
-					entries.forEach((e) => {
+					// Update visibility set
+					for (const e of entries) {
 						if (e.isIntersecting) {
-							setActive(toc.querySelector(`a[href="#${e.target.id}"]`));
+							visibleIds.add(e.target.id);
 						} else {
-							// Heading left the detection band — check if it exited
-							// downward (user scrolled up). The band top is at 10% of
-							// viewport, so if the heading is below that, activate previous.
-							const bandTop = window.innerHeight * 0.1;
-							if (e.boundingClientRect.top >= bandTop) {
-								const idx = headings.indexOf(e.target);
-								if (idx > 0) {
-									setActive(toc.querySelector(`a[href="#${headings[idx - 1].id}"]`));
-								} else {
-									setActive(null);
-								}
-							}
+							visibleIds.delete(e.target.id);
 						}
-					});
+					}
+
+					// Activate first visible heading (in document order)
+					for (const h of headings) {
+						if (visibleIds.has(h.id)) {
+							setActive(toc.querySelector(`a[href="#${h.id}"]`));
+							return;
+						}
+					}
+
+					// No heading in band — find last heading above the band
+					for (let i = headings.length - 1; i >= 0; i--) {
+						const rect = headings[i].getBoundingClientRect();
+						if (rect.top < window.innerHeight * bandTop) {
+							setActive(toc.querySelector(`a[href="#${headings[i].id}"]`));
+							return;
+						}
+					}
+
+					setActive(null);
 				},
 				{ rootMargin: '-10% 0px -80% 0px' },
 			);
