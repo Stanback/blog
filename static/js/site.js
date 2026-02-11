@@ -58,9 +58,16 @@
 				link?.setAttribute('aria-current', 'true');
 				activeLink = link;
 			};
-			document.addEventListener('scroll', () => {
-				if (!ticking) { ticking = true; requestAnimationFrame(update); }
-			}, { passive: true });
+			document.addEventListener(
+				'scroll',
+				() => {
+					if (!ticking) {
+						ticking = true;
+						requestAnimationFrame(update);
+					}
+				},
+				{ passive: true },
+			);
 			update();
 		}
 	}
