@@ -13,9 +13,9 @@ tension: "The old database categories don't fit anymore."
 
 # Convex and the Reactive Database Paradigm
 
-I've been building a browser automation system that coordinates multiple AI sessions against different platforms. The state management problem is brutal: session state, selector validity, authentication tokens, rate limits — all changing asynchronously while agents work in parallel.
+I've been building a research automation system that coordinates multiple queries across different sources. The state management problem is brutal: session state, query validity, authentication tokens, rate limits — all changing asynchronously while agents work in parallel.
 
-My first pass was traditional: poll for changes, maintain local state, reconcile conflicts. It was fragile. Stale reads caused retries, retries caused rate limits, rate limits caused cascading failures. What I actually wanted was simpler: every component subscribes to the state it cares about and reacts when it changes. Agent starts working? UI updates. Selector breaks? Repair pipeline triggers. Token expires? Re-auth flow kicks off. No polling, no reconciliation, no "did I miss an update?"
+My first pass was traditional: poll for changes, maintain local state, reconcile conflicts. It was fragile. Stale reads caused retries, retries caused rate limits, rate limits caused cascading failures. What I actually wanted was simpler: every component subscribes to the state it cares about and reacts when it changes. Agent starts working? UI updates. Query fails? Repair pipeline triggers. Token expires? Re-auth flow kicks off. No polling, no reconciliation, no "did I miss an update?"
 
 That's what led me to [Convex](https://convex.dev), and it's messing with my mental models.
 
@@ -73,7 +73,7 @@ Philosophy: prototype without a schema, add one when you've solidified your plan
 
 ### Reactivity: Dependency Tracking
 
-This is where it clicked for my browser automation problem. Convex's reactive query system works like this:
+This is where it clicked for my research automation problem. Convex's reactive query system works like this:
 
 1. **Client opens WebSocket** — a persistent connection to Convex (not HTTP request/response)
 2. **Client subscribes** to a query function over that connection
@@ -86,7 +86,7 @@ This is where it clicked for my browser automation problem. Convex's reactive qu
 
 The read-set tracking means you don't declare subscriptions manually — your code implicitly subscribes to whatever it reads. Change propagation is automatic and precise.
 
-For my browser automation system, this enables a clean separation of concerns. The executor runs prompts against ChatGPT/Gemini/Claude and writes failures to a `repairs` table. A separate repair bot subscribes to pending repairs — when a selector fails, the repair bot sees it immediately, analyzes the DOM snapshot, and pushes a fix back to the `recipes` table. The executor, still running, sees the recipe update and retries with the new selector. No polling, no coordination logic, no race conditions. Each component just reads what it needs and reacts when it changes.
+For my research automation system, this enables a clean separation of concerns. The executor runs queries and writes failures to a `repairs` table. A separate repair bot subscribes to pending repairs — when something breaks, the repair bot sees it immediately, analyzes the context, and pushes a fix back to the `recipes` table. The executor, still running, sees the update and retries. No polling, no coordination logic, no race conditions. Each component just reads what it needs and reacts when it changes.
 
 ![Reactive data flow — one change propagates to all connected clients](/images/posts/convex-reactivity-diagram.png)
 
