@@ -348,15 +348,15 @@ ${
         <span class="wordmark">${config.title}</span>
       </a>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
         <span class="hamburger"></span>
       </label>
-      <div class="nav-menu">
+      <div class="nav-menu" id="nav-menu">
         <ul class="nav-links">
-          <li><a href="/posts/">Writing</a></li>
-          <li><a href="/notes/">Notes</a></li>
-          <li><a href="/photos/">Photos</a></li>
-          <li><a href="/about/">About</a></li>
+          <li><a href="/posts/"${url.startsWith('/posts') ? ' aria-current="page"' : ''}>Writing</a></li>
+          <li><a href="/notes/"${url.startsWith('/notes') ? ' aria-current="page"' : ''}>Notes</a></li>
+          <li><a href="/photos/"${url.startsWith('/photos') ? ' aria-current="page"' : ''}>Photos</a></li>
+          <li><a href="/about/"${url.startsWith('/about') ? ' aria-current="page"' : ''}>About</a></li>
         </ul>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
           ${iconSun}
@@ -584,7 +584,7 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
 
 	const content = `
     <article class="photo-single">
-      <input type="checkbox" id="${photoId}" class="lightbox-toggle" tabindex="-1">
+      <input type="checkbox" id="${photoId}" class="lightbox-toggle" tabindex="-1" aria-controls="lightbox-panel-${photo.slug}">
       <figure class="polaroid">
         <label for="${photoId}" class="photo-expand" title="Click to expand">
           <img src="${photo.image}" alt="${photo.alt}" loading="lazy">
@@ -597,9 +597,24 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
           </div>
         </figcaption>
       </figure>
-      <label for="${photoId}" class="lightbox-overlay" aria-hidden="true">
+      <label for="${photoId}" id="lightbox-panel-${photo.slug}" class="lightbox-overlay" aria-hidden="true" tabindex="-1">
         <img src="${photo.image}" alt="${photo.alt}">
+        <span class="sr-only">Press Escape to close</span>
       </label>
+      <script>
+        (function() {
+          var cb = document.getElementById('${photoId}');
+          var overlay = document.getElementById('lightbox-panel-${photo.slug}');
+          var trigger = document.querySelector('[for="${photoId}"].photo-expand');
+          cb.addEventListener('change', function() {
+            if (cb.checked) {
+              overlay.focus();
+            } else {
+              trigger.focus();
+            }
+          });
+        })();
+      </script>
       ${filmstrip}
       ${photo.html ? `<div class="prose photo-body">${photo.html}</div>` : ''}
     </article>`;

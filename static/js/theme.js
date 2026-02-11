@@ -1,4 +1,13 @@
 (() => {
+	// Mobile nav toggle - sync aria-expanded with checkbox
+	const navToggle = document.getElementById('nav-toggle');
+	const navLabel = document.querySelector('.nav-toggle-label');
+	if (navToggle && navLabel) {
+		navToggle.addEventListener('change', () => {
+			navLabel.setAttribute('aria-expanded', navToggle.checked ? 'true' : 'false');
+		});
+	}
+
 	// Theme toggle
 	const t = document.querySelector('.theme-toggle');
 	const h = document.documentElement;
@@ -37,7 +46,9 @@
 			const setActive = (link) => {
 				if (link === active) return;
 				active?.classList.remove('toc-active');
+				active?.removeAttribute('aria-current');
 				link?.classList.add('toc-active');
+				link?.setAttribute('aria-current', 'true');
 				active = link;
 			};
 
