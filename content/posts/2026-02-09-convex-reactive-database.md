@@ -73,7 +73,7 @@ Philosophy: prototype without a schema, add one when you've solidified your plan
 
 ### Reactivity: Dependency Tracking
 
-This is where it clicked for my browser automation problem. When you call `useQuery()` in React:
+This is where it clicked for my browser automation problem. Convex's reactive query system works like this:
 
 1. **Client opens WebSocket** — a persistent connection to Convex (not HTTP request/response)
 2. **Client subscribes** to a query function over that connection
@@ -84,7 +84,9 @@ This is where it clicked for my browser automation problem. When you call `useQu
 7. **Convex checks**: did this mutation touch any document in any active query's read set?
 8. **If yes**: rerun the query, push new result over the WebSocket to all subscribers
 
-The read-set tracking means you don't declare subscriptions manually — your code implicitly subscribes to whatever it reads. Change propagation is automatic and precise. For my automation system, this means every component subscribes to the state it cares about just by reading it.
+The read-set tracking means you don't declare subscriptions manually — your code implicitly subscribes to whatever it reads. Change propagation is automatic and precise.
+
+For my browser automation system, this enables a clean separation of concerns. The executor runs prompts against ChatGPT/Gemini/Claude and writes failures to a `repairs` table. A separate repair bot subscribes to pending repairs — when a selector fails, the repair bot sees it immediately, analyzes the DOM snapshot, and pushes a fix back to the `recipes` table. The executor, still running, sees the recipe update and retries with the new selector. No polling, no coordination logic, no race conditions. Each component just reads what it needs and reacts when it changes.
 
 ![Reactive data flow — one change propagates to all connected clients](/images/posts/convex-reactivity-diagram.png)
 
