@@ -24,28 +24,32 @@
 
 		if (headings.length) {
 			let active = null;
-			const setActive = (link) => {
-				if (link === active) return;
-				if (active) active.classList.remove('toc-active');
-				link?.classList.add('toc-active');
-				active = link;
-			};
+			const visible = new Set();
 			const obs = new IntersectionObserver(
 				(entries) => {
 					entries.forEach((e) => {
-						if (e.isIntersecting) {
-							setActive(toc.querySelector(`a[href="#${e.target.id}"]`));
-						} else if (e.boundingClientRect.top > 0) {
-							// Heading left the zone going downward (we scrolled up)
-							// Activate the previous heading
-							const idx = headings.indexOf(e.target);
-							if (idx > 0) {
-								setActive(toc.querySelector(`a[href="#${headings[idx - 1].id}"]`));
-							}
-						}
+						if (e.isIntersecting) visible.add(e.target);
+						else visible.delete(e.target);
 					});
+					// Pick the last visible heading in DOM order
+					let current = null;
+					for (const h of headings) {
+						if (visible.has(h)) current = h;
+					}
+					const link = current
+						? toc.querySelector(`a[href="#${current.id}"]`)
+						: null;
+					if (link === active) return;
+					if (active) active.classList.remove('toc-active');
+					if (link) link.classList.add('toc-active');
+					active = link;
 				},
-				{ rootMargin: '-10% 0px -80% 0px' },
+				{
+					// Large positive top margin: headings above viewport stay "visible"
+					// Bottom margin: match scroll-margin-top (--space-6: 24px) so the
+					// activation line aligns with where headings land after a jump click
+					rootMargin: `${document.documentElement.scrollHeight}px 0px ${-(window.innerHeight - 24)}px 0px`,
+				},
 			);
 			headings.forEach((h) => obs.observe(h));
 		}
