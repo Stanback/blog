@@ -26,47 +26,21 @@
 			let active = null;
 			const setActive = (link) => {
 				if (link === active) return;
-				if (active) active.classList.remove('toc-active');
+				active?.classList.remove('toc-active');
 				link?.classList.add('toc-active');
 				active = link;
 			};
 
-			// Track which headings are currently in the observation band
-			const visibleIds = new Set();
-			const bandTop = 0.1; // 10% from top
+			const update = () => {
+				// Find last heading above the 20% line
+				let current = null;
+				for (const h of headings) {
+					if (h.getBoundingClientRect().top < window.innerHeight * 0.2) current = h;
+				}
+				setActive(current ? toc.querySelector(`a[href="#${current.id}"]`) : null);
+			};
 
-			const obs = new IntersectionObserver(
-				(entries) => {
-					// Update visibility set
-					for (const e of entries) {
-						if (e.isIntersecting) {
-							visibleIds.add(e.target.id);
-						} else {
-							visibleIds.delete(e.target.id);
-						}
-					}
-
-					// Activate first visible heading (in document order)
-					for (const h of headings) {
-						if (visibleIds.has(h.id)) {
-							setActive(toc.querySelector(`a[href="#${h.id}"]`));
-							return;
-						}
-					}
-
-					// No heading in band — find last heading above the band
-					for (let i = headings.length - 1; i >= 0; i--) {
-						const rect = headings[i].getBoundingClientRect();
-						if (rect.top < window.innerHeight * bandTop) {
-							setActive(toc.querySelector(`a[href="#${headings[i].id}"]`));
-							return;
-						}
-					}
-
-					setActive(null);
-				},
-				{ rootMargin: '-10% 0px -80% 0px' },
-			);
+			const obs = new IntersectionObserver(update, { rootMargin: '-10% 0px -80% 0px' });
 			headings.forEach((h) => obs.observe(h));
 		}
 	}
