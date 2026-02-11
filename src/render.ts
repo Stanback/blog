@@ -359,15 +359,6 @@ ${
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/${cssFilename}">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SF06LM00TC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SF06LM00TC');
-  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
