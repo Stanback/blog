@@ -140,6 +140,9 @@ function renderBacklinks(
 const atelierMark = glyphMarkFull.replace('class="glyph glyph-mark"', 'class="atelier-mark"');
 
 // Base HTML template
+// Breadcrumb item for structured data
+type BreadcrumbItem = { name: string; url: string };
+
 function baseTemplate(options: {
 	title: string;
 	description: string;
@@ -155,6 +158,7 @@ function baseTemplate(options: {
 	tags?: string[];
 	wordCount?: number;
 	articleSection?: string;
+	breadcrumbs?: BreadcrumbItem[];
 }): string {
 	const {
 		title,
@@ -170,6 +174,7 @@ function baseTemplate(options: {
 		tags,
 		wordCount,
 		articleSection,
+		breadcrumbs,
 	} = options;
 
 	const fullUrl = `${config.url}${url}`;
@@ -277,6 +282,30 @@ ${
         "url": "${config.author.url}",
         "sameAs": ${JSON.stringify(config.author.sameAs)}
       }
+    ]
+  }
+  </script>`
+		: ''
+}
+${
+	breadcrumbs && breadcrumbs.length > 0
+		? `
+  <!-- JSON-LD Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      ${breadcrumbs
+				.map(
+					(item, i) => `{
+        "@type": "ListItem",
+        "position": ${i + 1},
+        "name": "${item.name.replace(/"/g, '\\"')}",
+        "item": "${config.url}${item.url}"
+      }`,
+				)
+				.join(',\n      ')}
     ]
   }
   </script>`
@@ -438,6 +467,11 @@ function renderPost(post: Post, ctx: BuildContext): string {
 		tags: post.tags,
 		wordCount: post.wordCount,
 		articleSection: 'posts',
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'Posts', url: '/posts/' },
+			{ name: post.title, url: postUrl },
+		],
 	});
 }
 
@@ -501,6 +535,11 @@ function renderNote(note: Note, ctx: BuildContext): string {
 		tags: note.tags,
 		wordCount: note.wordCount,
 		articleSection: 'notes',
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'Notes', url: '/notes/' },
+			{ name: note.title, url: noteUrl },
+		],
 	});
 }
 
@@ -565,15 +604,21 @@ function renderPhoto(photo: Photo, ctx: BuildContext): string {
       ${photo.html ? `<div class="prose photo-body">${photo.html}</div>` : ''}
     </article>`;
 
+	const photoUrl = getUrl(photo);
 	return baseTemplate({
 		title: photo.title,
 		description: photo.observation || photo.alt,
-		url: getUrl(photo),
+		url: photoUrl,
 		content,
 		type: 'article',
 		date: photo.date,
 		heroImage: photo.image,
 		cssFilename: ctx.cssFilename,
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'Photos', url: '/photos/' },
+			{ name: photo.title, url: photoUrl },
+		],
 	});
 }
 
@@ -588,12 +633,17 @@ function renderPage(page: Page, ctx: BuildContext): string {
       ${page.html}
     </article>`;
 
+	const pageUrl = getUrl(page);
 	return baseTemplate({
 		title: page.title,
 		description: page.description || config.description,
-		url: getUrl(page),
+		url: pageUrl,
 		content,
 		cssFilename: ctx.cssFilename,
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: page.title, url: pageUrl },
+		],
 	});
 }
 
@@ -615,6 +665,11 @@ function renderSoul(soul: Soul, ctx: BuildContext): string {
 		url: getUrl(soul),
 		content,
 		cssFilename: ctx.cssFilename,
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'About', url: '/about/' },
+			{ name: soul.title, url: getUrl(soul) },
+		],
 	});
 }
 
@@ -636,6 +691,11 @@ function renderSkills(skills: Skills, ctx: BuildContext): string {
 		url: getUrl(skills),
 		content,
 		cssFilename: ctx.cssFilename,
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'About', url: '/about/' },
+			{ name: skills.title, url: getUrl(skills) },
+		],
 	});
 }
 
@@ -701,6 +761,10 @@ function renderPostsIndex(posts: Post[], ctx: BuildContext): string {
 		url: '/posts/',
 		content,
 		cssFilename: ctx.cssFilename,
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'Posts', url: '/posts/' },
+		],
 	});
 }
 
@@ -766,6 +830,10 @@ function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
 		url: '/notes/',
 		content,
 		cssFilename: ctx.cssFilename,
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'Notes', url: '/notes/' },
+		],
 	});
 }
 
@@ -906,6 +974,10 @@ function renderPhotosIndex(photos: Photo[], ctx: BuildContext): string {
 		url: '/photos/',
 		content,
 		cssFilename: ctx.cssFilename,
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'Photos', url: '/photos/' },
+		],
 	});
 }
 
@@ -1119,6 +1191,11 @@ function renderBook(book: Book, ctx: BuildContext): string {
 		url: getBookUrl(book),
 		content,
 		cssFilename: ctx.cssFilename,
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'Books', url: '/books/' },
+			{ name: book.title, url: getBookUrl(book) },
+		],
 	});
 }
 
@@ -1226,6 +1303,12 @@ function renderChapter(chapter: Chapter, book: Book, ctx: BuildContext): string 
 		url: getUrl(chapter),
 		content,
 		cssFilename: ctx.cssFilename,
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'Books', url: '/books/' },
+			{ name: book.title, url: getBookUrl(book) },
+			{ name: chapter.chapterTitle, url: getUrl(chapter) },
+		],
 	});
 }
 
@@ -1278,6 +1361,10 @@ function renderBooksIndex(books: Book[], ctx: BuildContext): string {
 		// Don't index if no published books
 		noIndex: publishedBooks.length === 0,
 		cssFilename: ctx.cssFilename,
+		breadcrumbs: [
+			{ name: 'Home', url: '/' },
+			{ name: 'Books', url: '/books/' },
+		],
 	});
 }
 
