@@ -42,31 +42,26 @@
 		const headings = ids.map((id) => document.getElementById(id)).filter(Boolean);
 
 		if (headings.length) {
-			let active = null;
-			const setActive = (link) => {
-				if (link === active) return;
-				active?.classList.remove('toc-active');
-				active?.removeAttribute('aria-current');
+			let activeLink = null;
+			let ticking = false;
+			const update = () => {
+				ticking = false;
+				let current = headings[0];
+				for (const h of headings) {
+					if (h.getBoundingClientRect().top <= 100) current = h;
+				}
+				const link = toc.querySelector(`a[href="#${current.id}"]`);
+				if (link === activeLink) return;
+				activeLink?.classList.remove('toc-active');
+				activeLink?.removeAttribute('aria-current');
 				link?.classList.add('toc-active');
 				link?.setAttribute('aria-current', 'true');
-				active = link;
+				activeLink = link;
 			};
-
-			const obs = new IntersectionObserver(
-				(entries) => {
-					for (const e of entries) {
-						e.target._tocVisible = e.isIntersecting;
-					}
-					// Activate the last visible heading in document order
-					let current = null;
-					for (const h of headings) {
-						if (h._tocVisible) current = h;
-					}
-					setActive(current ? toc.querySelector(`a[href="#${current.id}"]`) : null);
-				},
-				{ rootMargin: '0px 0px -80% 0px' },
-			);
-			headings.forEach((h) => obs.observe(h));
+			document.addEventListener('scroll', () => {
+				if (!ticking) { ticking = true; requestAnimationFrame(update); }
+			}, { passive: true });
+			update();
 		}
 	}
 })();
