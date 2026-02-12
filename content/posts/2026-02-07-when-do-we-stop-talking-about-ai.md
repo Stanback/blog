@@ -10,17 +10,17 @@ tags:
 heroImage: /images/posts/when-stop-talking-ai-hero.png
 ---
 
-Every previous technological revolution automated what humans did reluctantly. Machines replaced muscles. We built new jobs for minds.
-
-This one automates what humans thought made them special.
-
-That's the difference. Not speed. Not scale. The *kind* of work being displaced. Manual labor vs. thinking. And that's why the discourse feels different — more charged, more exhausting, more personal. We're not debating whether machines will take the hard jobs. We're debating whether the thing we do when we're not doing the hard jobs still matters.
-
 I'm tired.
 
 Not of AI — of *talking* about AI. The think pieces. The existential threads. The "everything will change" proclamations followed by the "nothing has changed" rebuttals. The breathless announcements and the weary corrections. The discourse.
 
 You're tired too, right? I can tell because you clicked on a piece called "When Do We Stop Talking About AI?" hoping someone would give you permission to stop.
+
+But here's why I can't stop thinking about it: every previous technological revolution automated what humans did reluctantly. Machines replaced muscles. We built new jobs for minds.
+
+This one automates the minds.
+
+That's why the discourse is more exhausting. We're not debating whether machines will take the hard jobs. We're debating whether the thing we do when we're *not* doing the hard jobs still matters. It's personal in a way the industrial revolution debates never were.
 
 Every disruptive technology eventually becomes invisible. The modifier drops. The thing that was going to "change everything" just becomes… everything.
 
