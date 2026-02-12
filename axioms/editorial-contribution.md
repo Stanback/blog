@@ -19,8 +19,9 @@ Before publishing a post or note, the draft must pass all four checks:
 - Include at least one concrete artifact not previously used:
 - New experiment, production failure, metric, source, case study, or first-hand scene.
 
-3. Model Delta
-- Add one net-new model/framework, or materially revise an existing one.
+3. Model Delta (Posts) / Lens Delta (Notes)
+- **Posts**: Add one net-new model/framework, or materially revise an existing one.
+- **Notes**: May substitute a new lens, contradiction, or evidence synthesis that reframes existing models.
 
 4. Reader Delta
 - State what the reader can now do, decide, or see differently after reading.
@@ -37,9 +38,9 @@ When a draft is strong but not net-new:
 
 ## Scope by Content Type
 
-- Posts: Must pass all four checks.
-- Notes: May be lighter on model depth, but must still show claim/evidence/reader delta.
-- Pages: Exempt unless they present new arguments.
+- **Posts**: Must pass all four checks with full model delta.
+- **Notes**: Must pass claim/evidence/reader delta; model delta may be substituted with lens delta (new contradiction, evidence synthesis, or audience reframe).
+- **Pages**: Exempt unless they present new arguments.
 
 ## Anti-Patterns
 
