@@ -140,9 +140,9 @@ describe('validateContent', () => {
 	});
 
 	test('validates tags as array of strings', () => {
-		const items: RawContentItem[] = [makeRawItem({ tags: ['building', 'code'] })];
+		const items: RawContentItem[] = [makeRawItem({ tags: ['building', 'engineering'] })];
 		const result = validateContent(items);
-		expect(result[0].tags).toEqual(['building', 'code']);
+		expect(result[0].tags).toEqual(['building']);
 	});
 
 	test('fails on non-array tags', () => {
