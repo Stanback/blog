@@ -18,42 +18,56 @@ export interface RelatedPost {
 	score: number; // similarity score for sorting
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-// BOUNDED TAG SYSTEM
-// Tags are constrained to known values for consistency and discoverability
-// ═══════════════════════════════════════════════════════════════════════════
-
-// Domain tags - what the content is about
-export const DOMAIN_TAGS = [
-	'building', // software, systems, making things
-	'design', // UX, interfaces, aesthetics
-	'ai', // agents, LLMs, the new world
-	'architecture', // patterns, structure, systems thinking
-	'mental-models', // frameworks, ways of seeing
-	'leadership', // teams, management, growth
-	'life', // parenting, personal, the human stuff
+// Canonical tag system
+// Tags are normalized to keep taxonomy consistent across content.
+export const CANONICAL_TAGS = [
+	'aerial',
+	'ai',
+	'architecture',
+	'building',
+	'craft',
+	'creativity',
+	'culture',
+	'design',
+	'education',
+	'epistemology',
+	'identity',
+	'judgment',
+	'landscape',
+	'leadership',
+	'life',
+	'mental-models',
+	'night',
+	'observation',
+	'photography',
+	'reflection',
+	'systems',
+	'tools',
+	'travel',
+	'tutorial',
+	'urban',
 ] as const;
-export type DomainTag = (typeof DOMAIN_TAGS)[number];
+export type CanonicalTag = (typeof CANONICAL_TAGS)[number];
 
-// Format tags - what kind of content (optional)
-export const FORMAT_TAGS = [
-	'essay', // argued position
-	'observation', // quick insight (notes default to this)
-	'tutorial', // how-to
-	'reflection', // looking back
-] as const;
-export type FormatTag = (typeof FORMAT_TAGS)[number];
+// Non-canonical tags that should collapse to canonical taxonomy.
+const TAG_ALIASES: Record<string, CanonicalTag> = {
+	constraints: 'architecture',
+	engineering: 'building',
+	interfaces: 'design',
+	meta: 'reflection',
+	parenting: 'life',
+	philosophy: 'mental-models',
+	talk: 'reflection',
+};
 
-// All valid tags
-export const ALL_TAGS = [...DOMAIN_TAGS, ...FORMAT_TAGS] as const;
-export type ValidTag = DomainTag | FormatTag;
-
-// Helper to check if a tag is valid
-export function isValidTag(tag: string): tag is ValidTag {
-	return ALL_TAGS.includes(tag as ValidTag);
+export function normalizeTag(tag: string): CanonicalTag | null {
+	const normalized = tag.trim().toLowerCase();
+	if (!normalized) return null;
+	if ((CANONICAL_TAGS as readonly string[]).includes(normalized)) {
+		return normalized as CanonicalTag;
+	}
+	return TAG_ALIASES[normalized] ?? null;
 }
-
-// ═══════════════════════════════════════════════════════════════════════════
 
 export type ContentType =
 	| 'post'

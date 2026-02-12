@@ -48,13 +48,13 @@ The corner mark is a weighted viewfinder—heavy anchor top-left, whispered echo
 
 ## Content Tiers
 
-Content here exists at different levels of doneness.
+Content here is split by lens, not prestige.
 
 **Drafts** — Half-formed. Vulnerable. Might be wrong, might be embarrassing. They live in the repo but never get published. (You won't see these.)
 
-**Notes** — Thinking out loud. The idea has enough shape to share but it's still moving. These can change anytime.
+**Notes** — Personal cognition and in-process sensemaking. I use these to think in public, test language, and track how ideas evolve.
 
-**Writing** — Crystallized enough to put my name on. I've thought it through, but nothing here is final — I update posts when I learn something new.
+**Writing** — Technical systems and argued models. These are more structured and explicit about claims, but still living documents.
 
 ## Living Documents
 

@@ -1,6 +1,13 @@
 // Content validation - validates content against schema, fails fast with clear errors
 
-import type { ContentType, RawContentItem, SCHEMA_VERSION, ValidatedContentItem } from './types.js';
+import {
+	CANONICAL_TAGS,
+	normalizeTag,
+	type ContentType,
+	type RawContentItem,
+	type SCHEMA_VERSION,
+	type ValidatedContentItem,
+} from './types.js';
 import { parseDate } from './utils/dates.js';
 import { calculateReadingTime, countWords } from './utils/text.js';
 
@@ -135,6 +142,12 @@ function validateItem(
 					errors.push({ filepath, message: 'tags must be strings' });
 					break;
 				}
+				if (!normalizeTag(tag)) {
+					errors.push({
+						filepath,
+						message: `invalid tag "${tag}" (must be canonical or known alias: ${CANONICAL_TAGS.join(', ')})`,
+					});
+				}
 			}
 		}
 	}
@@ -156,6 +169,7 @@ function toValidatedItem(item: RawContentItem): ValidatedContentItem {
 	// Calculate word count and reading time using shared utilities
 	const wordCount = countWords(bodyMarkdown);
 	const readingTime = calculateReadingTime(wordCount);
+	const normalizedTags = [...new Set(((frontmatter.tags as string[] | undefined) ?? []).map((tag) => normalizeTag(tag)).filter((tag): tag is NonNullable<typeof tag> => tag !== null))];
 
 	return {
 		filepath,
@@ -166,7 +180,7 @@ function toValidatedItem(item: RawContentItem): ValidatedContentItem {
 		date,
 		updated,
 		draft: (frontmatter.draft as boolean) ?? false,
-		tags: (frontmatter.tags as string[]) ?? [],
+		tags: normalizedTags,
 		description: frontmatter.description as string | undefined,
 		bodyMarkdown,
 		wordCount,

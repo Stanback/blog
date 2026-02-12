@@ -28,12 +28,14 @@ export function generateRss(ctx: BuildContext): string {
 			const url = `${config.url}${getUrl(item)}`;
 			const description =
 				item.description || (item.type === 'note' ? item.bodyMarkdown.slice(0, 200) : '');
+			const updated = item.updated && item.updated.getTime() !== item.date.getTime() ? item.updated : item.date;
 
 			return `    <item>
       <title>${escapeXml(item.title)}</title>
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
       <pubDate>${item.date.toUTCString()}</pubDate>
+      <atom:updated>${updated.toISOString()}</atom:updated>
       <description>${escapeXml(description)}</description>
     </item>`;
 		})
@@ -55,74 +57,69 @@ ${rssItems}
 
 // Generate sitemap.xml (all non-draft, non-noIndex content)
 export function generateSitemap(ctx: BuildContext): string {
-	const urls: { loc: string; lastmod?: Date; priority?: number }[] = [];
+	const urls = new Map<string, { loc: string; lastmod?: Date; priority?: number }>();
+
+	function addUrl(loc: string, lastmod?: Date, priority?: number): void {
+		const existing = urls.get(loc);
+		if (!existing) {
+			urls.set(loc, { loc, lastmod, priority });
+			return;
+		}
+
+		const mergedLastmod =
+			existing.lastmod && lastmod
+				? new Date(Math.max(existing.lastmod.getTime(), lastmod.getTime()))
+				: (existing.lastmod ?? lastmod);
+		const mergedPriority =
+			existing.priority !== undefined && priority !== undefined
+				? Math.max(existing.priority, priority)
+				: (existing.priority ?? priority);
+
+		urls.set(loc, { loc, lastmod: mergedLastmod, priority: mergedPriority });
+	}
 
 	// Home page
-	urls.push({ loc: '/', priority: 1.0 });
+	addUrl('/', undefined, 1.0);
 
 	// Index pages
-	urls.push({ loc: '/posts/', priority: 0.8 });
-	urls.push({ loc: '/notes/', priority: 0.7 });
-	urls.push({ loc: '/photos/', priority: 0.7 });
-	urls.push({ loc: '/about/', priority: 0.8 });
+	addUrl('/posts/', undefined, 0.8);
+	addUrl('/notes/', undefined, 0.7);
+	addUrl('/photos/', undefined, 0.7);
+	addUrl('/about/', undefined, 0.8);
 
 	// Posts (exclude drafts and noIndex)
 	for (const post of ctx.posts) {
 		if (post.draft || post.noIndex) continue;
-		urls.push({
-			loc: getUrl(post),
-			lastmod: post.updated || post.date,
-			priority: 0.8,
-		});
+		addUrl(getUrl(post), post.updated || post.date, 0.8);
 	}
 
 	// Notes (exclude drafts)
 	for (const note of ctx.notes) {
 		if (note.draft) continue;
-		urls.push({
-			loc: getUrl(note),
-			lastmod: note.updated || note.date,
-			priority: 0.6,
-		});
+		addUrl(getUrl(note), note.updated || note.date, 0.6);
 	}
 
 	// Photos (exclude drafts)
 	for (const photo of ctx.photos) {
 		if (photo.draft) continue;
-		urls.push({
-			loc: getUrl(photo),
-			lastmod: photo.updated || photo.date,
-			priority: 0.5,
-		});
+		addUrl(getUrl(photo), photo.updated || photo.date, 0.5);
 	}
 
 	// Pages (exclude drafts)
 	for (const page of ctx.pages) {
 		if (page.draft) continue;
-		urls.push({
-			loc: getUrl(page),
-			lastmod: page.updated || page.date,
-			priority: 0.7,
-		});
+		addUrl(getUrl(page), page.updated || page.date, 0.7);
 	}
 
 	// Soul and Skills
 	if (ctx.soul && !ctx.soul.draft) {
-		urls.push({
-			loc: getUrl(ctx.soul),
-			lastmod: ctx.soul.updated || ctx.soul.date,
-			priority: 0.9,
-		});
+		addUrl(getUrl(ctx.soul), ctx.soul.updated || ctx.soul.date, 0.9);
 	}
 	if (ctx.skills && !ctx.skills.draft) {
-		urls.push({
-			loc: getUrl(ctx.skills),
-			lastmod: ctx.skills.updated || ctx.skills.date,
-			priority: 0.8,
-		});
+		addUrl(getUrl(ctx.skills), ctx.skills.updated || ctx.skills.date, 0.8);
 	}
 
-	const urlEntries = urls
+	const urlEntries = [...urls.values()]
 		.map((url) => {
 			const lastmod = url.lastmod
 				? `\n    <lastmod>${isoDate(url.lastmod).split('T')[0]}</lastmod>`

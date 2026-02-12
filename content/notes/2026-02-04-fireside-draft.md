@@ -1,7 +1,7 @@
 ---
 title: "Coherence"
 date: 2026-02-04T16:00
-type: post
+type: note
 schemaVersion: 1
 draft: true
 private: true

@@ -133,6 +133,10 @@ const formatDate = formatDateLong;
 const formatDateArchive = formatDateNoYear;
 const isoDate = formatDateMachine;
 
+function getEffectiveUpdatedDate(item: { date: Date; updated?: Date }): Date {
+	return item.updated && item.updated.getTime() !== item.date.getTime() ? item.updated : item.date;
+}
+
 // Render backlinks section if any exist
 function renderBacklinks(
 	url: string,
@@ -842,15 +846,15 @@ function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
           <h2 class="year-heading">${year}</h2>
           <ul class="archive-list">
             ${notesByYear[year]
-							.map(
-								(note) => `
-              <li class="archive-item">
-                <time datetime="${isoDate(note.date)}">${formatDateArchive(note.date)}</time>
-                <a href="${getUrl(note)}" class="archive-link">
-                  <span class="archive-title">${processInlineMarkdown(note.title)}</span>
-                  ${note.description ? `<span class="archive-desc">${processInlineMarkdown(note.description)}</span>` : ''}
-                </a>
-              </li>`,
+								.map(
+									(note) => `
+	              <li class="archive-item">
+	                <time datetime="${isoDate(getEffectiveUpdatedDate(note))}">Updated ${formatDateArchive(getEffectiveUpdatedDate(note))}</time>
+	                <a href="${getUrl(note)}" class="archive-link">
+	                  <span class="archive-title">${processInlineMarkdown(note.title)}</span>
+	                  ${note.description ? `<span class="archive-desc">${processInlineMarkdown(note.description)}</span>` : ''}
+	                </a>
+	              </li>`,
 							)
 							.join('')}
           </ul>
@@ -1089,7 +1093,7 @@ function renderHome(ctx: BuildContext): string {
     </section>`
 			: '';
 
-	// Notes section - living documents, no dates (undated list style)
+	// Notes section - living documents with visible update recency
 	const notesSection =
 		recentNotes.length > 0
 			? `
@@ -1105,6 +1109,7 @@ function renderHome(ctx: BuildContext): string {
         <li class="note-item">
           <a href="${getUrl(note)}" class="note-link">
             <span class="note-title">${processInlineMarkdown(note.title)}</span>
+            <time class="note-updated" datetime="${isoDate(getEffectiveUpdatedDate(note))}">Updated ${formatDateArchive(getEffectiveUpdatedDate(note))}</time>
             ${note.description ? `<span class="note-desc">${processInlineMarkdown(note.description)}</span>` : ''}
           </a>
         </li>`,

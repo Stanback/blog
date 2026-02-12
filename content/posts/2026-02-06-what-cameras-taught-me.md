@@ -2,7 +2,7 @@
 title: "What Cameras Taught Me About Software (and Life)"
 description: "The arc of creative tools: diverge to learn, converge to create. Why more gear made me worse, and what that means for building software."
 date: 2026-02-06T10:00
-type: note
+type: post
 schemaVersion: 1
 draft: false
 heroImage: /images/posts/photography-as-interface-hero.png

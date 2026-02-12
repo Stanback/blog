@@ -1,7 +1,7 @@
 ---
 title: "When Do We Stop Talking About AI?"
 date: 2026-02-07T21:00
-type: note
+type: post
 schemaVersion: 1
 description: "Every disruptive technology eventually becomes invisible. The discourse ends. The modifier drops. When does that happen with AI?"
 tags:
