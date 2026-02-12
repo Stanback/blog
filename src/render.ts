@@ -846,8 +846,8 @@ function renderNotesIndex(notes: Note[], ctx: BuildContext): string {
           <h2 class="year-heading">${year}</h2>
           <ul class="archive-list">
             ${notesByYear[year]
-								.map(
-									(note) => `
+							.map(
+								(note) => `
 	              <li class="archive-item">
 	                <time datetime="${isoDate(getEffectiveUpdatedDate(note))}">Updated ${formatDateArchive(getEffectiveUpdatedDate(note))}</time>
 	                <a href="${getUrl(note)}" class="archive-link">

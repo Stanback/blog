@@ -2,11 +2,11 @@
 
 import {
 	CANONICAL_TAGS,
-	normalizeTag,
 	type ContentType,
 	type RawContentItem,
 	type SCHEMA_VERSION,
 	type ValidatedContentItem,
+	normalizeTag,
 } from './types.js';
 import { parseDate } from './utils/dates.js';
 import { calculateReadingTime, countWords } from './utils/text.js';
@@ -169,7 +169,13 @@ function toValidatedItem(item: RawContentItem): ValidatedContentItem {
 	// Calculate word count and reading time using shared utilities
 	const wordCount = countWords(bodyMarkdown);
 	const readingTime = calculateReadingTime(wordCount);
-	const normalizedTags = [...new Set(((frontmatter.tags as string[] | undefined) ?? []).map((tag) => normalizeTag(tag)).filter((tag): tag is NonNullable<typeof tag> => tag !== null))];
+	const normalizedTags = [
+		...new Set(
+			((frontmatter.tags as string[] | undefined) ?? [])
+				.map((tag) => normalizeTag(tag))
+				.filter((tag): tag is NonNullable<typeof tag> => tag !== null),
+		),
+	];
 
 	return {
 		filepath,

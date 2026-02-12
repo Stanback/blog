@@ -28,7 +28,8 @@ export function generateRss(ctx: BuildContext): string {
 			const url = `${config.url}${getUrl(item)}`;
 			const description =
 				item.description || (item.type === 'note' ? item.bodyMarkdown.slice(0, 200) : '');
-			const updated = item.updated && item.updated.getTime() !== item.date.getTime() ? item.updated : item.date;
+			const updated =
+				item.updated && item.updated.getTime() !== item.date.getTime() ? item.updated : item.date;
 
 			return `    <item>
       <title>${escapeXml(item.title)}</title>
