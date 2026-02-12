@@ -55,6 +55,7 @@ Constitutional-level guidance lives in `axioms/`. Load relevant ones:
 | `axioms/accessibility.md` | Any UI changes |
 | `axioms/voice.md` | Any content work |
 | `axioms/editorial-contribution.md` | Publishing/editing posts and notes |
+| `axioms/editorial-programming.md` | Planning themed series, avoiding repetition |
 | `axioms/architecture.md` | Any build/structure changes |
 | `axioms/content-types.md` | Adding content |
 | `axioms/thesis.md` | Understanding site purpose |
