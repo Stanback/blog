@@ -54,6 +54,8 @@ This transition has a thinking partner.
 
 I'm using AI to write this piece about AI. You might be using AI to process it. We're using the disruption to understand the disruption — in real time, at scale, with the tool itself helping us figure out what the tool means.
 
+Fish discussing water.
+
 I don't know what that does to the timeline. It could compress the discourse phase — we reach the implications faster because we have help thinking. It could amplify it — more takes, more angles, more noise, the same circular debates spinning faster. Probably both at once.
 
 What I notice is that it changes the *texture* of the exhaustion. Previous waves wore people out through slow repetition — the same arguments recycled over years until everyone moved on. This one is wearing people out through velocity. The arguments aren't just repetitive; they're accelerating. The think pieces are blurring together not because we've been having the conversation too long but because we're having it too fast.
@@ -89,6 +91,8 @@ And then the actual changes continue in the background, no longer interesting en
 That's not pessimism. That's just the pattern. The discomfort is being awake to it while it's happening and knowing that being awake to it doesn't change anything.
 
 We're probably three to five years from the modifier dropping. Five to seven from "AI" feeling dated as a category. And then we'll be tired of something else, and the questions we couldn't answer will quietly become the conditions we live in.
+
+At some point it will feel like debating whether electricity will catch on — while standing in a room full of lights.
 
 ---
 
