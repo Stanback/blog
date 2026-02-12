@@ -7,7 +7,7 @@ description: "AI agents have perfect memory within a conversation and total amne
 tags:
   - ai
   - philosophy
-heroImage: /images/posts/memory-and-journals-hero.png
+heroImage: /images/posts/memory-journals-hero.png
 ---
 
 I found a journal entry from 2019 last week. I'd written about a production outage at work — the event pipeline backed up, we lost six hours of data, and I described the specific sinking feeling of watching the monitoring dashboard turn red while being on a video call I couldn't leave. Reading it, the feeling came back immediately. Not the facts of the outage — I'd forgotten most of those — but the tension in my shoulders, the taste of cold coffee, the way I kept muting myself to swear.
