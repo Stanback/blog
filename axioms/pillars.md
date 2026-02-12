@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: all
+layer: editorial
+depends: [thesis]
+updated: 2026-02-04
+---
+
 # Pillars Axiom
 
 > The architectural spine of this site. Everything maps to these.

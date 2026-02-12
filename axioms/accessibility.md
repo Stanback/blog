@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: all
+layer: design
+depends: [design-system]
+updated: 2026-02-04
+---
+
 # Accessibility Axiom
 
 > Accessibility is not a feature—it is a constraint that improves everything.

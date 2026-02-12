@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: infrastructure
+layer: technical
+depends: [pillars]
+updated: 2026-02-05
+---
+
 # Architecture Axiom
 
 > The simplest thing that works. Add complexity only when pain emerges.

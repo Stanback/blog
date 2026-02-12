@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: [posts, notes]
+layer: editorial
+depends: [editorial-contribution]
+updated: 2026-02-11
+---
+
 # Editorial Programming Axiom
 
 > Build a themed body of work with deliberate variation in form, evidence, and endings.

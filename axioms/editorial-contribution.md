@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: [posts, notes]
+layer: editorial
+depends: [pillars, voice]
+updated: 2026-02-11
+---
+
 # Editorial Contribution Axiom
 
 > Every published piece must add net-new value to the body of work.

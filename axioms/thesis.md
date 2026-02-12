@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: all
+layer: editorial
+depends: []
+updated: 2026-02-04
+---
+
 # Thesis Axiom
 
 > The homepage is not a lobby. It is a filter that answers: "Can I trust this person's filter of the world?"

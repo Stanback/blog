@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: all
+layer: editorial
+depends: [pillars]
+updated: 2026-02-04
+---
+
 # Content Types Axiom
 
 > The distinction between content types should reflect how knowledge actually works, not arbitrary categories.

@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: all
+layer: design
+depends: [pillars]
+updated: 2026-02-04
+---
+
 # Design System Axiom
 
 > Editorial atelier. Feels like a personal notebook crossed with a Parisian photo book crossed with a well-maintained codebase.

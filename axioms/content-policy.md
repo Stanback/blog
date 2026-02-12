@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: all
+layer: policy
+depends: [voice]
+updated: 2026-02-04
+---
+
 # Content Policy Axiom
 
 > What we publish shapes how we're understood. Be intentional.

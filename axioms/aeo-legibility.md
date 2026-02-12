@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: all
+layer: technical
+depends: [voice, architecture]
+updated: 2026-02-04
+---
+
 # AEO & Legibility Axiom
 
 > Be legible to reasoning systems without flattening your thinking.

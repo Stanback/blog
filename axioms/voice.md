@@ -1,3 +1,11 @@
+---
+type: axiom
+scope: [posts, notes]
+layer: editorial
+depends: [pillars]
+updated: 2026-02-10
+---
+
 # Voice Axiom
 
 > The site should feel like a digital atelier: precise craft, warm light, honest work-in-progress.
