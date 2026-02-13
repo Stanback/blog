@@ -134,6 +134,24 @@ Claim the water you added. Know which rivers mattered. That's enough — and tha
 
 This is the funeral test, restated: not "what did I achieve?" but "did I contribute to things that mattered?" The answer isn't scale — it's alignment.
 
+## Brutal Honesty
+
+The best pieces confess rather than analyze.
+
+"I noticed I was skimming" hits harder than "people are becoming desensitized." The first is a receipt. The second is a take.
+
+**What brutal honesty looks like:**
+- Admitting you don't have the answer — and not faking one
+- Naming the uncomfortable thing you're complicit in
+- Letting the piece end unresolved if the problem is unresolved
+- Confessing the feeling before you've figured out what to do with it
+
+**The structural version:** Form matches content. A piece about exhaustion should feel tired. A piece about uncertainty shouldn't land on false certainty. Don't perform insight you don't have.
+
+**The test:** Could a careful writer have written this without risk? If yes, push further. The honesty that costs something is the honesty that lands.
+
+---
+
 ## Owner-Mode, Not Observer-Mode
 
 The writing gets sharper when you **own the claim** rather than describe it from a distance.
