@@ -3,105 +3,107 @@ title: "When Do We Stop Talking About AI?"
 date: 2026-02-07T21:00
 type: post
 schemaVersion: 1
-description: "The particular exhaustion of a generation that can feel the stitch where human cognition and machine cognition got sewn together."
+description: "The specific exhaustion of a generation that can feel the stitch where human thinking and machine fluency got sewn together."
 tags:
   - ai
   - culture
 heroImage: /images/posts/when-stop-talking-ai-hero.png
 ---
 
-I asked an AI to help me outline this essay. It gave me three angles I'd already read — the historical pattern, the labor displacement argument, the "taste becomes the new moat" reframe. All perfectly adequate. All instantly forgettable.
+This is the third major revision of this essay in a week.
 
-And then I spent ten minutes editing its suggestions into something that felt like mine, not entirely sure where its thinking ended and mine began.
+The first draft came fast. I used AI to help outline it, and within an hour I had something that sounded right — clean structure, solid analogies, a confident arc from observation to insight. It read like a good essay.
 
-That ten minutes is what I want to talk about.
+The problem was I didn't believe it. Not because it was wrong, but because I couldn't tell if it was what I actually thought or just what sounded like what I thought. So I rewrote it.
 
----
+The second version was closer — more honest in places, sharper in others. But there was still something off, a gap between what was on the page and what I was trying to say, and I couldn't locate it until I talked it through with a friend who asked a question the essay hadn't considered.
 
-Not the discourse. Not the think pieces or the existential threads or the breathless announcements. I'm not tired of AI. I'm energized by it — by the tools, the possibilities, the daily surprise of watching something genuinely new take shape.
+Now I'm on version three. I think this is closer. I'm still not sure.
 
-What I'm tired of is something smaller and harder to name: the ambient mental cost of using a tool that thinks.
+This is the actual experience of writing with AI, and it's nothing like the way people describe it. It's not an identity crisis about authorship. It's not "where does my thinking end and the machine's begin?" You know what's yours. You changed the words.
 
-Every previous technology became invisible once it worked well enough. Heidegger had a word for this — *ready-to-hand* — the idea that a tool disappears into the act it enables. You don't think about a hammer while hammering. You don't think about electricity while making toast. The tool recedes, and you're left with the task.
+What it is, is a specific kind of grind: the tool gets you to *adequate* almost instantly, and then you spend days trying to push past adequate to *true*. Past "sounds right" to "is right." And that gap — between fluent and honest — turns out to be where all the work lives.
 
-That recession is how technologies stop being topics and start being infrastructure. It's why we stopped talking about electricity, the internet, mobile. The modifier dropped because the tool disappeared.
-
-AI hasn't disappeared. And I don't think it can — not for us. Not for anyone who adopted it as an adult.
-
-The reason is almost stupidly simple once you see it: AI operates in the same medium as the thinking you would use to stop thinking about it.
-
-A hammer works in the domain of physical force. You think in a different domain. So the hammer vanishes.
-
-AI works in the domain of cognition — writing, reasoning, analyzing, deciding. You think in that same domain. So every time you use it, some part of your attention is monitoring the boundary between its contribution and yours. Not because anyone asked you to. Not because the discourse demands a position. Because a tool that *resembles your own thinking* cannot become cognitively invisible in the way a tool that moves atoms can.
-
-That monitoring is the fatigue. Not the hot takes. Not the obligation to have opinions. The quiet, persistent work of navigating a seam that runs through the middle of your own thought process.
+That gap is what I want to talk about. Because I think it's the same gap that's making everyone tired.
 
 ---
 
-I notice it most when I'm writing.
+Not tired of AI. I want to be clear about that. I'm not tired of the tools or the possibilities or the daily surprise of watching something genuinely new take shape.
 
-I'll use AI to draft something, and then I'll reshape it — changing a word here, restructuring a paragraph there — until it feels like mine. But "feels like mine" is doing a lot of work in that sentence. What does it mean for a thought to feel like yours when you arrived at it through dialogue with a machine that was trained on millions of other people's thoughts?
+I'm tired of a specific thing that doesn't have a name yet — the persistent, low-grade cognitive effort of using a tool that operates in the same domain as your own thinking.
 
-The question isn't philosophical in the abstract. It's a micro-sensation I experience dozens of times a day, a tiny cognitive hiccup, like trying to remember whether you locked the door.
+Every previous technology became invisible once it worked well enough. You don't think about a hammer while hammering. You don't think about electricity while making toast. The tool recedes into the act it enables, and eventually the act is all that's left. That's how technologies stop being topics and start being infrastructure. It's why we stopped talking about electricity, the internet, mobile. The modifier dropped because the tool disappeared.
 
-With every other tool I've adopted, there was a period of awkward visibility followed by transparency. I remember being conscious of Google as a tool — opening a browser, typing a query, evaluating results. Now I just *know things*, and some of those things came from search and some from memory, and I genuinely cannot tell the difference most of the time. Google became invisible. It merged with the feeling of knowing.
+AI hasn't disappeared. And I think the reason is almost stupidly simple: AI works in the domain of cognition — writing, reasoning, analyzing — and you think in that same domain. A hammer doesn't resemble the hand that holds it. AI resembles the mind that uses it.
 
-AI is trying to do the same thing with the feeling of *thinking*. And it's close enough to create the uncanny valley but not close enough to cross it. The output is almost me but not quite. That "not quite" is where the exhaustion lives — in the gap between what the tool produces and what I'd produce, a gap I can still perceive and therefore have to manage, every single time.
+So every time you use it, some part of your attention is doing quality control not on the output but on the *thinking* — is this what I actually mean, or is it what the tool thinks I should mean? Is this my reasoning or a plausible version of my reasoning?
+
+That monitoring is the fatigue. Not the hot takes. Not the discourse. The quiet, repetitive work of telling the difference between "sounds right" and "is right," dozens of times a day, with a tool that is extremely good at the former and has no concept of the latter.
 
 ---
 
-But here's where I have to be honest with myself: I don't think this is permanent.
+I notice it most when I'm writing, but it's not only writing.
 
-The seam I feel — between my thinking and AI-assisted thinking — depends on having a baseline. I know what my unassisted writing sounds like. I know what my own reasoning feels like from the inside. I have decades of experience thinking without a thinking partner, and that experience is what makes the boundary detectable.
+It's the meeting where someone presents an AI-drafted strategy and you can feel that it's coherent but you can't tell if it's *true* — if it reflects what the team actually knows or just what a plausible strategy document sounds like. It's the moment you read an AI-assisted email and realize you're spending more effort evaluating its tone than you would have spent just writing the thing yourself. It's the small, accumulating friction of a tool that's always fluent and never quite honest.
 
-Take away the baseline, and the boundary dissolves.
+With every other tool I've adopted, there was a period of awkward visibility followed by transparency. I remember being aware of Google as a tool — opening a browser, typing a query, evaluating results. Now I just know things, and some of those things came from search and some from memory, and I can't tell the difference. Google became invisible. It merged with the feeling of knowing.
+
+AI is trying to do the same thing with the feeling of *thinking*. And it's close enough to create the uncanny valley but not close enough to cross it. The output is almost right but not quite. And "not quite" is expensive, because catching it requires the exact kind of careful, slow judgment that the tool was supposed to save you from needing.
+
+---
+
+Here's where I have to be honest with myself, though: I don't think this is permanent.
+
+The gap I'm describing — between fluent and true — depends on having a baseline. I know what my unassisted thinking feels like. I have decades of experience reasoning and writing without a thinking partner, and that experience is what lets me detect when something sounds right but isn't.
+
+Take away the baseline, and the gap becomes undetectable. Not because it closes, but because no one remembers the other side.
 
 Which is exactly what will happen generationally.
 
-Kids growing up with AI as a default collaborator won't experience this seam. They'll never have established a feel for "thinking without AI" any more than they have a feel for "navigating without GPS" or "researching without search engines." The tool will be ready-to-hand from the start — not because it stopped operating in the domain of cognition, but because they never knew cognition without it.
+Kids growing up with AI as a default collaborator won't feel this friction. They'll never have established a sense of what "thinking without AI" feels like, any more than they have a feel for "navigating without GPS" or "researching without search engines." The tool will feel native from the start.
 
-You can't feel a boundary if you never knew the other side.
+You can't notice a seam if you never knew the fabric was two pieces.
 
-This has happened before, quietly. People who grew up with smartphones don't feel the separation between "online" and "offline" that felt so structurally important to those of us who remember dial-up. That boundary was real and consequential and for a while it seemed like it would define everything. Now it's invisible to a generation that never experienced the seam.
+This has happened before. People who grew up with smartphones don't feel the boundary between "online" and "offline" that felt so fundamental to those of us who remember dial-up. That boundary was real and consequential and for a while it seemed like it would define everything. Now it's invisible to a generation that never experienced it.
 
 The internet didn't change. The baseline shifted.
 
-AI will follow the same path. The tool won't become invisible by getting better at mimicking us. It'll become invisible because the people using it won't have a "before" to compare it to.
+AI will follow the same path. Not because the tool gets better at mimicking our thinking. Because the people using it won't have a "before" to compare it to.
 
 ---
 
-And this, I think, is the actual source of the exhaustion.
+And this is the thing I keep landing on.
 
-Not the discourse. Not the pace of change. Not even the tool itself.
+The fatigue isn't about AI. It's about being the transitional generation.
 
-It's being the transitional generation.
+The ones who can feel the seam between AI-assisted thinking and unassisted thinking — and who can also see that this feeling is temporary. That the next generation will collaborate with AI the way we collaborate with search: seamlessly, unremarkably, without the constant micro-friction of checking whether the output matches what we actually believe.
 
-We're the ones who can feel the seam — who notice, every time we use AI, the little negotiation between its thinking and ours. We're also the ones who can see that this noticing is temporary. That the kids will think-with-AI the way we think-with-Google: seamlessly, unremarkably, without the micro-friction of boundary management.
+That's a specific kind of tired. Not the exhaustion of too many think pieces or too much change. The exhaustion of perceiving a gap that you know is generational, not fundamental. Of doing the slow work of distinguishing "sounds right" from "is right," over and over, knowing that this work will quietly stop being necessary when the people doing it no longer remember thinking any other way.
 
-And we're the ones stuck in the middle, unable to stop noticing and unable to make the noticing matter.
+The people who argued about whether the internet would destroy deep thinking — they weren't wrong. The internet did change thinking. But their children don't experience that change as a loss because they never had the thing that was lost. The debate didn't resolve. It aged out.
 
-That's a specific kind of tired. Not the fatigue of too many think pieces. The fatigue of perceiving a cognitive boundary that you know is generational, not fundamental. Of doing the mental work of monitoring a seam that will quietly stop existing when you do.
-
-The people who argued passionately about whether the internet would destroy deep thinking — they weren't wrong, exactly. The internet did change thinking. But their children don't experience that change as a loss because they never had the thing that was lost. The debate didn't resolve. It just aged out.
-
-The same will happen with AI. The questions we're asking now — about what's ours and what's the machine's, about the nature of authorship and originality and authentic thought — these are real questions. But they're our questions. Rooted in our baseline. Meaningful because we have the "before" that makes the "after" visible.
+The same will happen here. The questions we're asking — about what it means to think with a machine, about the difference between fluency and understanding, about whether an idea is yours if you needed help finding it — these are real questions. But they're *our* questions. Rooted in our baseline. Meaningful because we have the "before" that makes the "after" visible.
 
 ---
 
 So when do we stop talking about AI?
 
-Not when the technology matures. Not when the discourse burns itself out. Not when some new disruption steals the spotlight.
+Not when the technology matures. Not when the discourse exhausts itself.
 
-We stop talking about AI when the people who remember thinking without it are no longer the ones setting the terms of the conversation. When the seam becomes invisible not because it closed but because no one has the reference point to see it.
+We stop when the people who remember thinking without it are no longer the ones setting the terms. When the seam becomes invisible not because it closed but because no one has the reference point to feel it.
 
-That's probably fifteen to twenty years. One generation of professionals cycling through. The same rough timeline it took for "Do you have a website?" to become a nonsensical question.
+That's maybe fifteen or twenty years. One generation of professionals cycling through.
 
-Until then, we're here — the generation that feels the seam. Noticing the boundary every time we use the tool. Knowing the boundary is real. Knowing it's also temporary. Getting tired not of AI but of the noticing itself, the low-grade cognitive hum of being a person who remembers what thinking felt like before and can't quite stop comparing.
+Until then, we're here. The generation that can feel the difference between "sounds right" and "is right." Getting tired not of AI but of the noticing itself — the constant, low-grade work of quality-checking our own cognition against a tool that's fluent in a way that we used to have a monopoly on.
 
-I don't think there's a fix for this. It's not a problem to solve. It's the texture of being alive during a transition in the medium of thought — something that has arguably never happened before at this speed, with this intimacy, in this domain.
+I don't think there's a fix. It's not a problem. It's the texture of being alive during a transition in the medium of thought itself — something that has, as far as I can tell, never happened before at this speed, in this domain, with this intimacy.
 
-The best I can offer is a name for it. Not AI fatigue. Seam fatigue.
+The best I can offer is a name for it. Not AI fatigue. *Seam fatigue*.
 
-The particular exhaustion of a generation that can feel the stitch where human cognition and machine cognition got sewn together — and knows the stitch will be invisible to everyone who comes after.
+The specific exhaustion of a generation that can feel the stitch where human thinking and machine fluency got sewn together — and knows the stitch will be invisible to everyone who comes after.
+
+This is the third draft. I think it's closer now. I'm still not sure.
+
+That's the seam.
 
 *Written in 2026, while the seam was still visible.*
