@@ -32,7 +32,7 @@ Not tired of AI. I want to be clear about that. I'm not tired of the tools or th
 
 I'm tired of a specific thing that doesn't have a name yet — the persistent, low-grade cognitive effort of using a tool that operates in the same domain as your own thinking.
 
-Every previous technology became invisible once it worked well enough. You don't think about a hammer while hammering. You don't think about electricity while making toast. The tool recedes into the act it enables, and eventually the act is all that's left. That's how technologies stop being topics and start being infrastructure. It's why we stopped talking about electricity, the internet, mobile. The modifier dropped because the tool disappeared.
+Every previous technology became invisible once it worked well enough. You don't think about a hammer while hammering. You don't think about electricity while making toast. The tool recedes into the act it enables, and eventually the act is all that's left. That's how technologies stop being topics and start being infrastructure. It's why we stopped talking about electricity, the internet, mobile. The modifier dropped because the tool disappeared. *E-mail* became email. *The Internet* lost its capital. *Cyber-* stopped being a prefix. The novelty faded into the ordinary.
 
 AI hasn't disappeared. And I think the reason is almost stupidly simple: AI works in the domain of cognition — writing, reasoning, analyzing — and you think in that same domain. A hammer doesn't resemble the hand that holds it. AI resembles the mind that uses it.
 
