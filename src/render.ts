@@ -149,25 +149,22 @@ function renderBacklinks(
 	if (!links || links.length === 0) return '';
 
 	return `
-    <aside class="backlinks" aria-label="Pages that link here">
-      <h2 class="backlinks-title">Linked from</h2>
-      <ul class="backlinks-list">
-        ${links
-					.map((link) => {
-						const datePart = link.date
-							? `<time datetime="${formatDateMachine(link.date)}">${formatDateLong(link.date)}</time>`
-							: '';
-						const descPart = link.description
-							? `<span class="backlink-desc">${link.description}</span>`
-							: '';
-						return `<li class="backlink-item">
-              <a href="${link.url}" class="backlink-title">${link.title}</a>
-              ${datePart || descPart ? `<div class="backlink-meta">${datePart}${datePart && descPart ? ' · ' : ''}${descPart}</div>` : ''}
-            </li>`;
-					})
+		<aside class="related-posts" aria-label="Pages that link here">
+			<h2 class="related-posts-title">Linked from</h2>
+			<ul class="related-posts-list">
+				${links
+					.map(
+						(link) => `
+					<li class="related-post-item">
+						<a href="${link.url}" class="related-post-link">
+							<span class="related-post-title">${link.title}</span>
+							${link.description ? `<span class="related-post-desc">${link.description}</span>` : ''}
+						</a>
+					</li>`,
+					)
 					.join('')}
-      </ul>
-    </aside>`;
+			</ul>
+		</aside>`;
 }
 
 // Atelier Mark for header (G0 - Full Mark)
