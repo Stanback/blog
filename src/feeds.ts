@@ -103,7 +103,7 @@ export function generateSitemap(ctx: BuildContext): string {
 	// Photos (exclude drafts)
 	for (const photo of ctx.photos) {
 		if (photo.draft) continue;
-		addUrl(getUrl(photo), photo.updated || photo.date, 0.5);
+		addUrl(getUrl(photo), photo.updated || photo.date, 0.3);
 	}
 
 	// Pages (exclude drafts)
