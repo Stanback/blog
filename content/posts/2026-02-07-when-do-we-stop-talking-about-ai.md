@@ -10,7 +10,7 @@ tags:
 heroImage: /images/posts/when-stop-talking-ai-hero.png
 ---
 
-I asked an AI to help me outline this essay. It gave me three angles: the historical pattern (electricity, internet, mobile — you know the one), the labor displacement angle, and the "taste becomes the new moat" argument.
+I asked an AI to help me outline this essay. It gave me three angles: the historical pattern (electricity, internet, mobile — you know the one), the labor displacement angle (industrial revolution framing — you know that one too), and the "taste becomes the new moat" argument.
 
 I'd already read all three. I'd read them dozens of times, in dozens of pieces, some of which I'd written myself.
 
