@@ -78,6 +78,30 @@ I wrote [elsewhere](/posts/saaspocalypse/) about the specific shape this is taki
 
 ---
 
+But here's what I keep circling back to.
+
+Every previous revolution had a retreat position. The industrial revolution automated muscles, so we retreated to minds. Factory workers became office workers. "Learn to think for a living" was the escape route.
+
+This one automates minds. So where do we retreat?
+
+Maybe the retreat is from *execution* to *direction*. If AI handles the how, humans focus on the what and why. The bottleneck shifts from "people who can do things" to "people who know what's worth doing."
+
+That's not necessarily fewer jobs. It's different jobs. Creation gets cheaper. Execution bottlenecks dissolve. Your vision is no longer limited by what you can personally build. Taste becomes the scarce resource because there's infinite content to curate.
+
+In that world, creativity and agency could explode. More people get to direct. More people get to decide. The privilege of "figuring out what to do" — which used to belong to executives and artists and founders — spreads outward.
+
+But I'm not sure everyone wants that.
+
+Some people find meaning in executing well. In craft. In the satisfaction of making something with their hands — or their code, or their prose. Not everyone wants to be a director. And telling a generation of skilled workers that the new job is "having vision" might land as hollow as telling factory workers to "learn to code."
+
+So the real question isn't whether new jobs emerge. It's whether AI democratizes direction — everyone gets to have a vision — or just automates execution while the same few people decide what gets done.
+
+Probably both, unevenly distributed. Like everything.
+
+The moat isn't gone. The moat is moving. And nobody knows where it settles.
+
+---
+
 Here's my guess at the sequence.
 
 The modifier drops first. "AI-generated" becomes "generated." "AI-assisted" becomes just how you work. This is already happening.
