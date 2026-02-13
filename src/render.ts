@@ -58,15 +58,22 @@ function processInlineMarkdown(text: string): string {
 	return text.replace(/`([^`]+)`/g, '<code>$1</code>');
 }
 
-// Render related posts section
-function renderRelatedPosts(relatedPosts: RelatedPost[] | undefined): string {
+// Render related posts section (excluding any already shown in backlinks)
+function renderRelatedPosts(
+	relatedPosts: RelatedPost[] | undefined,
+	backlinkedUrls: Set<string> = new Set(),
+): string {
 	if (!relatedPosts || relatedPosts.length === 0) return '';
+
+	// Filter out posts that are already in backlinks
+	const filtered = relatedPosts.filter((post) => !backlinkedUrls.has(post.url));
+	if (filtered.length === 0) return '';
 
 	return `
 		<aside class="related-posts" aria-label="Related posts">
 			<h2 class="related-posts-title">Related</h2>
 			<ul class="related-posts-list">
-				${relatedPosts
+				${filtered
 					.map(
 						(post) => `
 					<li class="related-post-item">
@@ -471,8 +478,8 @@ function renderPost(post: Post, ctx: BuildContext): string {
 					: ''
 			}
     </article>
-    ${renderRelatedPosts(post.relatedPosts)}
-    ${renderBacklinks(postUrl, ctx.backlinks)}`;
+    ${renderBacklinks(postUrl, ctx.backlinks)}
+    ${renderRelatedPosts(post.relatedPosts, new Set(ctx.backlinks.get(postUrl)?.map((b) => b.url) ?? []))}`;
 
 	return baseTemplate({
 		title: post.title,
@@ -540,8 +547,8 @@ function renderNote(note: Note, ctx: BuildContext): string {
 					: ''
 			}
     </article>
-    ${renderRelatedPosts(note.relatedPosts)}
-    ${renderBacklinks(noteUrl, ctx.backlinks)}`;
+    ${renderBacklinks(noteUrl, ctx.backlinks)}
+    ${renderRelatedPosts(note.relatedPosts, new Set(ctx.backlinks.get(noteUrl)?.map((b) => b.url) ?? []))}`;
 
 	return baseTemplate({
 		title: note.title,
