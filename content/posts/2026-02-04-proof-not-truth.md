@@ -112,3 +112,7 @@ We don't sell answers. We sell receipts. The receipts are what earn the right to
 In a world of synthetic everything — AI-generated content, AI-sourced signals, confidence scores stacked on confidence scores — implicit methodology isn't good enough anymore. If your system claims truth, it needs to show how truth gets earned, maintained, and revoked.
 
 That's the system. That's the graph.
+
+---
+
+*The production implementation of these principles is documented in [Anatomy of a Verdict: How SimplyCodes Adjudicates Truth in a Broken Economy](https://zenodo.org/records/18625118), a technical whitepaper on our verification architecture.*
