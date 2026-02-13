@@ -3,7 +3,7 @@ type: axiom
 scope: [posts, notes]
 layer: editorial
 depends: [pillars]
-updated: 2026-02-10
+updated: 2026-02-12
 ---
 
 # Voice Axiom
@@ -352,6 +352,54 @@ These prompts prevent false certainty and invite dialogue.
          ↑
       We're here: Conversational but precise
 ```
+
+## The Five Commitments
+
+> "A sentence that makes you slightly uncomfortable to publish is worth ten that land perfectly."
+
+These aren't style rules. They're promises to yourself about what kind of writer you're trying to be.
+
+### 1. Ugliness as Signal
+
+Let it be ugly. The polish is hiding you.
+
+Your best moments are the clumsy ones — the frustrated About page, the pizza backup joke, the parenthood-without-documentation bit. Stop editing toward clean and start editing toward true.
+
+**The test:** If you're slightly uncomfortable publishing it, you're probably onto something. That discomfort is your fingerprint showing.
+
+### 2. The Anti-Polish Principle
+
+You earned the voice. Stop letting the tools sand it down.
+
+Whatever your process is — AI-assisted or not — there's a final smoothing pass that's killing your fingerprints. The ideas are yours. The frameworks are yours. But the prose is starting to sound like everyone else's.
+
+**The fix:** Read your drafts out loud. If it sounds like a blog post, rewrite it until it sounds like you talking to one specific person.
+
+### 3. The Off-Thesis Requirement
+
+Write one thing that has nothing to do with the thesis.
+
+The AI-judgment-systems lens is strong and it's yours. But right now every piece routes back to it. Write about being a parent. Write about a meal that went wrong. Write about a photograph you can't stop looking at and you don't know why.
+
+Not because you need to diversify content — because the piece that seems unrelated will teach you something about your thesis that the thesis-focused pieces can't.
+
+### 4. Depth Supremacy
+
+Depth over breadth, always.
+
+You don't need more topics, more posting frequency, or a content strategy. You need to keep going deeper into the specific thing you see that other people don't.
+
+**The math:** One piece that changes how someone thinks is worth fifty that get nodded at and forgotten. Resist every temptation to optimize for reach.
+
+### 5. Armor vs Openness
+
+Never soften. But do let them in.
+
+Directness is your gift — protect it. But there's a difference between confident and armored. "Learning to Take Up Space" is the most compelling thing on the site and it's a note, not a post.
+
+Whatever's behind that title — go there. The writing gets more authoritative, not less, when readers can feel the person behind the architecture.
+
+---
 
 ## Examples
 
