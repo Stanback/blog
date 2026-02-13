@@ -10,80 +10,70 @@ tags:
 heroImage: /images/posts/when-stop-talking-ai-hero.png
 ---
 
-I asked an AI to help me outline this essay. It gave me three angles: the historical pattern (electricity, internet, mobile — you know the one), the labor displacement angle (industrial revolution framing — you know that one too), and the "taste becomes the new moat" argument.
+I asked an AI to help me outline this essay. It gave me three angles I'd already read — the historical pattern, the labor displacement argument, the "taste becomes the new moat" reframe. Perfectly adequate. Instantly forgettable. The kind of thing that could be published on any Substack tomorrow and get a few hundred polite likes.
 
-I'd already read all three. I'd read them dozens of times, in dozens of pieces, some of which I'd written myself.
-
-The tool didn't help me think. It helped me think faster about things I'd already thought.
-
-That moment — not the discourse, but the recursive blur of it — is what I can't stop sitting with.
+That's the thing I can't stop sitting with. Not the discourse itself, but how cheap it's become to produce.
 
 ---
 
-Here's what nobody talks about when they talk about AI fatigue.
+There's a version of this essay that frames AI discourse exhaustion as something new and unprecedented. I almost wrote it. The pitch would be: AI is the first technology that participates in its own debate, generating the enthusiasm and the skepticism and the nuanced middle take, spinning the flywheel until we can't keep up.
 
-The exhaustion isn't coming from repetition. It's coming from velocity.
+That's a nice line, but it's mostly wrong.
 
-Previous technology debates wore people down slowly. You'd hear the same arguments about the internet recycled across years of magazine covers and conference panels until one day you realized you'd stopped caring. The repetition was the mechanism. Say something enough times and it becomes background noise.
+The printing press participated in its own discourse. Television shaped the conversation about television. Twitter was the dominant platform for debating whether Twitter was destroying society. Technologies have always been entangled with the conversations about them.
 
-This is different. The arguments aren't just repetitive — they're accelerating. I encounter the optimistic take and the pessimistic take and the carefully "nuanced" take that splits the difference, and then I encounter them again, slightly remixed, before I've finished processing the first round. The think pieces aren't blurring together because we've been having the conversation too long. They're blurring because we're having it too fast.
+What's actually different this time is simpler and, I think, more unsettling: AI has made it nearly free to produce adequate commentary on anything, including itself.
 
-And the tool is doing this to us. AI is fluent enough to generate the discourse about itself — to produce the enthusiasm and the skepticism and the exhaustion and the commentary on the exhaustion. The loop is becoming self-sustaining. Not people debating a technology, but a technology participating in its own debate, spinning the flywheel faster than human attention can track.
+The discourse isn't being written by AI in some dramatic, recursive way. It's being *flooded* — by humans using AI to write faster, to publish more, to generate takes at a volume that outpaces anyone's ability to absorb them. The signal-to-noise ratio hasn't shifted because the signal changed. It shifted because the noise got cheaper.
 
-I don't know what to do with that. I don't think anyone does. We've never had a disruption that could narrate itself.
+That's why the exhaustion feels different from previous tech debates. The internet discourse of the early 2000s wore people out through slow repetition — the same arguments recycled across years of magazine covers and conference panels until everyone moved on. This one is wearing people out through volume. The think pieces aren't blurring together because we've been having the conversation too long. They're blurring because there are too many of them and they all sound roughly the same, because "roughly the same" is what you get when production costs drop to zero.
 
 ---
 
 I want to tell you a small, specific thing that happened to me last month.
 
-I was reading a thread about creative workers being displaced by generative tools — illustrators, copywriters, junior designers. The kind of thread that would have made my stomach drop a year ago. And I noticed I was skimming.
+I was reading a thread about creative workers being displaced by generative tools — illustrators, copywriters, junior designers losing work. The kind of thread that would have made my stomach drop a year ago. And I noticed I was skimming.
 
-Not because the stories weren't real or the people weren't suffering. Because I'd read this thread before. Or something close enough that my nervous system couldn't tell the difference.
+Not because the stories weren't real or the people weren't hurting. Because I'd seen this thread before. Or something close enough that my nervous system couldn't tell the difference.
 
 That's the part that unsettles me. Not the displacement itself, but the moment I caught myself normalizing it. The shrug that arrived before I'd decided to shrug.
 
-I think this is how discourse actually dies. Not through resolution — we never resolve these debates. Not even through boredom, exactly. Through a kind of saturation where your emotional bandwidth for a topic quietly fills up and the new information just runs off the surface. You're still aware of it. You just can't feel it anymore.
+I think this is how discourse actually dies. Not through resolution — we never resolve these debates. Not even through boredom, exactly. Through a kind of saturation where your capacity for a topic quietly fills up and the new information just runs off the surface. You're still aware. You just can't feel it anymore.
 
-And here's what makes this different from, say, getting numb to news cycles: my own exhaustion is part of the mechanism. The more tired I get of the conversation, the less resistance I offer to the changes happening underneath it. The normalization isn't something that happens *to* the discourse. It's something the discourse *does*, and my fatigue is a load-bearing part of the structure.
+The auto workers who lost jobs to robots in the 1980s didn't get them back. We just stopped writing op-eds about it. The creative workers being displaced now won't all find new roles. We'll just stop finding that interesting. Not because anyone decided it was fine, but because the conversation moved on and the people affected didn't have the platform to pull it back.
 
-I'm watching this happen to me in real time. I'm participating in it by writing about it. I don't think being aware of it changes anything, which is its own kind of vertigo.
-
----
-
-People keep reaching for the historical analogies. Electricity took thirty years to become invisible. The internet compressed the same arc into twenty. Mobile did it in ten. If the pattern holds, "AI-powered" will sound as dated as "internet-enabled" by the early 2030s.
-
-I used to find that framing reassuring. The pattern says this will all settle down. The modifier will drop. We'll stop capitalizing it.
-
-But the pattern assumed the technology and the discourse about the technology were separate things. Humans debated electricity using letters and newspapers. We debated the internet using the internet, which was weird but manageable — the tool sped up distribution but humans still did the thinking.
-
-This time the tool is doing some of the thinking. We're using AI to process the implications of AI, to write the analyses, to generate the counterarguments, to summarize the summaries. Fish discussing water, except the water is also writing some of the discussion.
-
-I genuinely don't know what that does to the timeline. Maybe it compresses the discourse phase — we reach the implications faster because we have help reasoning through them. Maybe it stretches it — more takes, more angles, more noise, the same circular debates spinning at higher RPM without ever gaining traction. Probably both at once, which is not a satisfying answer but might be the honest one.
+That's not a prediction about AI. It's an observation about how discourse works, and it's the same every time. The uncomfortable part is watching it happen while it happens — noticing the normalization in progress and knowing your own fatigue is part of the machinery.
 
 ---
 
-What I keep circling back to is the texture of the complicity.
+Because here's what I've come to believe: normalization doesn't require your consent. It just requires your bandwidth to run out.
 
-The auto workers who lost jobs to robots in the 1980s didn't get them back. We just stopped writing op-eds about it. The loss became a background condition — something everyone knew about, nobody discussed, and policy mostly ignored. The conversation didn't end because the problem was solved. It ended because the problem aged out of novelty.
+And the specific thing AI does — the thing that actually is new — is accelerate the bandwidth depletion. Not by writing the discourse. By making it so cheap to produce that the volume becomes unprocessable. A hundred blog posts about the future of work, all competent, none essential, each one taking a small slice of your attention budget until there's nothing left for the hundred-and-first, which might have been the one that mattered.
 
-I watch this process beginning now with creative displacement, with the junior roles disappearing from tech companies, with the restructuring that's happening quietly while the loud debate focuses on whether the models can really reason. And I can feel myself beginning to let it recede. Not because I've decided it doesn't matter. Because I'm tired, and there are only so many hours in a day, and the thread I'd need to read to stay current was probably half-written by the thing I'm supposed to be worried about.
+The flood isn't sinister. Nobody's orchestrating it. It's just what happens when the cost of adequate writing approaches zero and the platforms still reward volume. The result is a discourse environment where everything is roughly right and nothing cuts through, and the exhaustion that produces is functionally identical to resolution. We stop talking about it. The questions remain. The conditions settle.
 
-The uncomfortable truth is that normalization doesn't require your consent. It just requires your bandwidth to run out. And the faster the discourse spins, the faster the bandwidth depletes.
+People keep reaching for the historical analogies — electricity took thirty years to become invisible, the internet compressed it to twenty, mobile to ten. If the pattern holds, "AI-powered" will sound as dated as "internet-enabled" by the early 2030s.
 
----
+I used to find that reassuring. The pattern says things settle down.
 
-I don't have a neat ending for this.
-
-I started writing it thinking I'd arrive at something — a framework, a prediction, at minimum a useful reframe. I haven't.
-
-What I have is this: we are living through the first technological disruption that can participate in the conversation about itself. That participation is accelerating the discourse to a speed that exhausts human attention. And that exhaustion is the mechanism by which the disruption becomes normal — not accepted, not understood, just no longer remarkable.
-
-We'll stop talking about AI the same way we stopped talking about everything else. Not because it stopped mattering but because we got tired. The difference is that this time, the thing we're getting tired of is helping us get tired of it.
-
-I don't know when the modifier drops. I don't know when "AI" starts to sound like "cyber" — a retro prefix from a more excitable era. But I know that when it happens, the questions we couldn't answer won't have been answered. They'll just have become the conditions we live in.
-
-And our fatigue will have been load-bearing all the way down.
+But the pattern also says that what settles isn't the problem. It's the conversation about the problem. The displacement continues. The concentration continues. We just run out of things to say about it that feel new, and then we move on to whatever demands our attention next — biotech, climate, quantum, something we're not tracking yet — and the unanswered questions quietly become the conditions we live in.
 
 ---
 
-*Written in 2026, while the loop was still visible.*
+I don't have a clean ending for this.
+
+I started writing it thinking I'd arrive somewhere — a framework, a prediction, at minimum a reframe that felt useful. I haven't, entirely.
+
+What I have is this: the discourse about AI is dying faster than previous technology debates, and the primary reason is that AI makes it cheap to produce more discourse than anyone can absorb. That's not poetic and it's not recursive and it doesn't make for a great opening line. But I think it's what's actually happening.
+
+And underneath the discourse, the real changes continue — the jobs restructuring, the power concentrating, the question of what education and craft and expertise mean when the knowledge part is commoditized. Those things won't stop when we stop talking about them. They'll just stop being interesting enough to discuss.
+
+My own fatigue is load-bearing in that process. So is yours. We're not failing to pay attention. We're being outpaced. And the gap between our attention and the volume of the conversation is where the normalization lives.
+
+I don't know when the modifier drops. I don't know when "AI" starts to sound like "cyber" — a retro prefix from a more excitable era. But I know that when it happens, it won't be because we figured anything out. It'll be because we got tired.
+
+And the things we were tired of talking about will still be happening, just quietly, no longer novel enough for a think piece.
+
+---
+
+*Written in 2026, while the pattern was still visible.*
