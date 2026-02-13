@@ -90,6 +90,14 @@ That's not necessarily fewer jobs. It's different jobs. Creation gets cheaper. E
 
 In that world, creativity and agency could explode. More people get to direct. More people get to decide. The privilege of "figuring out what to do" — which used to belong to executives and artists and founders — spreads outward.
 
+There's a saying that got hammered into every founder for two decades: "It's not about the idea, it's about the execution." Ideas are cheap. Everyone has them. The team that ships wins.
+
+If execution gets commoditized, that flips. Or at least it swings.
+
+But not completely — because "execution" is splitting in two. Technical execution (making the thing) is collapsing in cost. Editorial execution (deciding what's good enough to ship) is still human. The new formulation might be: *it's not about the execution, it's about knowing when it's done.*
+
+That's a different skill. Not making the thing. Knowing when the thing is right.
+
 But I'm not sure everyone wants that.
 
 Some people find meaning in executing well. In craft. In the satisfaction of making something with their hands — or their code, or their prose. Not everyone wants to be a director. And telling a generation of skilled workers that the new job is "having vision" might land as hollow as telling factory workers to "learn to code."
